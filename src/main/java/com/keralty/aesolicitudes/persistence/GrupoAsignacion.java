@@ -460,6 +460,7 @@ public class GrupoAsignacion extends AbstractAppEntity {
      * @return Map with the values of the attributes.
      */
     @JsonIgnore
+	@Override
     public Map<String, Object> getValues() {
         return values;
     }
@@ -507,6 +508,7 @@ public class GrupoAsignacion extends AbstractAppEntity {
    /**
     * This method sets all flags modifiers with false value.
     */
+	@Override	
     public void clearModifiedFlags() {
     	values = new HashMap<>();
     	modifiedGrupoAsignacionTipo = false;
@@ -525,6 +527,7 @@ public class GrupoAsignacion extends AbstractAppEntity {
     /**
      * This method sets all the derived attributes with null value.
      */
+	@Override
     public void cleanDerivations() {
         // There are no derivations defined in this class
     }
@@ -533,6 +536,7 @@ public class GrupoAsignacion extends AbstractAppEntity {
      * Returns the <code>GrupoAsignacionOid</code> object that identifies this instance of <code>GrupoAsignacion</code>.
      * @return <code>GrupoAsignacionOid </code> object that identifies this instance of <code>GrupoAsignacion</code>
      */
+	@Override
     public GrupoAsignacionOid getOid() {
         return new GrupoAsignacionOid(getGrupoAsignacionId());
     }
@@ -548,6 +552,7 @@ public class GrupoAsignacion extends AbstractAppEntity {
      * @return the list of active facets.
      */
     @JsonIgnore
+	@Override
     public List<String> getActiveFacets() {
         return this.getFacets();
     }
@@ -567,11 +572,12 @@ public class GrupoAsignacion extends AbstractAppEntity {
         return activeFacets;
     }
 
-   /**
-    * Returns true if this instance can be observed by the connected agent.
-    * @param agent Connected agent instance
-    * @return TRUE if the connected agent can observe this instance. FALSE otherwise.
-    */
+    /**
+     * Returns true if this instance can be observed by the connected agent.
+     * @param agent Connected agent instance
+     * @return TRUE if the connected agent can observe this instance. FALSE otherwise.
+     */
+    @Override
     public boolean checkHorizontalVisibility(IEntity agent) {
         boolean returnValue = (!this.isNull());
 
@@ -591,6 +597,7 @@ public class GrupoAsignacion extends AbstractAppEntity {
      * @throws IntegrityConstraintException if an integrity constraint isn't fulfilled.
      * @throws SystemException if there is any error on having checked integrity constraints.
      */
+	@Override
     public void checkIntegrityConstraints() throws IntegrityConstraintException, SystemException {
         /* There are no Integrity Constraints defined in this class */
     }

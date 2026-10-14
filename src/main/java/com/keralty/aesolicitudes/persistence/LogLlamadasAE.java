@@ -583,6 +583,7 @@ NUMCOLS=2;
      * @return Map with the values of the attributes.
      */
     @JsonIgnore
+	@Override
     public Map<String, Object> getValues() {
         return values;
     }
@@ -619,6 +620,7 @@ NUMCOLS=2;
    /**
     * This method sets all flags modifiers with false value.
     */
+	@Override	
     public void clearModifiedFlags() {
     	values = new HashMap<>();
     	modifiedLogLlamadasAETipoServicio = false;
@@ -650,6 +652,7 @@ NUMCOLS=2;
     /**
      * This method sets all the derived attributes with null value.
      */
+	@Override
     public void cleanDerivations() {
         // There are no derivations defined in this class
     }
@@ -658,6 +661,7 @@ NUMCOLS=2;
      * Returns the <code>LogLlamadasAEOid</code> object that identifies this instance of <code>LogLlamadasAE</code>.
      * @return <code>LogLlamadasAEOid </code> object that identifies this instance of <code>LogLlamadasAE</code>
      */
+	@Override
     public LogLlamadasAEOid getOid() {
         return new LogLlamadasAEOid(getLogLlamadasAEID());
     }
@@ -673,6 +677,7 @@ NUMCOLS=2;
      * @return the list of active facets.
      */
     @JsonIgnore
+	@Override
     public List<String> getActiveFacets() {
         return this.getFacets();
     }
@@ -692,11 +697,12 @@ NUMCOLS=2;
         return activeFacets;
     }
 
-   /**
-    * Returns true if this instance can be observed by the connected agent.
-    * @param agent Connected agent instance
-    * @return TRUE if the connected agent can observe this instance. FALSE otherwise.
-    */
+    /**
+     * Returns true if this instance can be observed by the connected agent.
+     * @param agent Connected agent instance
+     * @return TRUE if the connected agent can observe this instance. FALSE otherwise.
+     */
+    @Override
     public boolean checkHorizontalVisibility(IEntity agent) {
         boolean returnValue = (!this.isNull());
 
@@ -716,6 +722,7 @@ NUMCOLS=2;
      * @throws IntegrityConstraintException if an integrity constraint isn't fulfilled.
      * @throws SystemException if there is any error on having checked integrity constraints.
      */
+	@Override
     public void checkIntegrityConstraints() throws IntegrityConstraintException, SystemException {
         /* There are no Integrity Constraints defined in this class */
     }

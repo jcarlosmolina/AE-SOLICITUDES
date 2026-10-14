@@ -815,6 +815,7 @@ Si se selecciona “No condicionada”, no será obligatorio diligenciar el dato
      * @return Map with the values of the attributes.
      */
     @JsonIgnore
+	@Override
     public Map<String, Object> getValues() {
         return values;
     }
@@ -892,6 +893,7 @@ Si se selecciona “No condicionada”, no será obligatorio diligenciar el dato
    /**
     * This method sets all flags modifiers with false value.
     */
+	@Override	
     public void clearModifiedFlags() {
     	values = new HashMap<>();
     	modifiedPreguntaNumOrden = false;
@@ -928,6 +930,7 @@ Si se selecciona “No condicionada”, no será obligatorio diligenciar el dato
     /**
      * This method sets all the derived attributes with null value.
      */
+	@Override
     public void cleanDerivations() {
             preguntadrvValoresPosibles = null;
     }
@@ -936,6 +939,7 @@ Si se selecciona “No condicionada”, no será obligatorio diligenciar el dato
      * Returns the <code>PreguntaOid</code> object that identifies this instance of <code>Pregunta</code>.
      * @return <code>PreguntaOid </code> object that identifies this instance of <code>Pregunta</code>
      */
+	@Override
     public PreguntaOid getOid() {
         return new PreguntaOid(getPreguntaNumero());
     }
@@ -957,6 +961,7 @@ Si se selecciona “No condicionada”, no será obligatorio diligenciar el dato
      * @return the list of active facets.
      */
     @JsonIgnore
+	@Override
     public List<String> getActiveFacets() {
         return this.getFacets();
     }
@@ -976,11 +981,12 @@ Si se selecciona “No condicionada”, no será obligatorio diligenciar el dato
         return activeFacets;
     }
 
-   /**
-    * Returns true if this instance can be observed by the connected agent.
-    * @param agent Connected agent instance
-    * @return TRUE if the connected agent can observe this instance. FALSE otherwise.
-    */
+    /**
+     * Returns true if this instance can be observed by the connected agent.
+     * @param agent Connected agent instance
+     * @return TRUE if the connected agent can observe this instance. FALSE otherwise.
+     */
+    @Override
     public boolean checkHorizontalVisibility(IEntity agent) {
         boolean returnValue = (!this.isNull());
 
@@ -1000,6 +1006,7 @@ Si se selecciona “No condicionada”, no será obligatorio diligenciar el dato
      * @throws IntegrityConstraintException if an integrity constraint isn't fulfilled.
      * @throws SystemException if there is any error on having checked integrity constraints.
      */
+	@Override
     public void checkIntegrityConstraints() throws IntegrityConstraintException, SystemException {
         /* There are no Integrity Constraints defined in this class */
     }

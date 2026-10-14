@@ -304,6 +304,7 @@ public class LogFuncionario extends AbstractAppEntity {
      * @return Map with the values of the attributes.
      */
     @JsonIgnore
+	@Override
     public Map<String, Object> getValues() {
         return values;
     }
@@ -347,6 +348,7 @@ public class LogFuncionario extends AbstractAppEntity {
    /**
     * This method sets all flags modifiers with false value.
     */
+	@Override	
     public void clearModifiedFlags() {
     	values = new HashMap<>();
     	modifiedLogFuncionarioFecha = false;
@@ -361,6 +363,7 @@ public class LogFuncionario extends AbstractAppEntity {
     /**
      * This method sets all the derived attributes with null value.
      */
+	@Override
     public void cleanDerivations() {
         // There are no derivations defined in this class
     }
@@ -369,6 +372,7 @@ public class LogFuncionario extends AbstractAppEntity {
      * Returns the <code>LogFuncionarioOid</code> object that identifies this instance of <code>LogFuncionario</code>.
      * @return <code>LogFuncionarioOid </code> object that identifies this instance of <code>LogFuncionario</code>
      */
+	@Override
     public LogFuncionarioOid getOid() {
         return new LogFuncionarioOid(getLogFuncionarioId());
     }
@@ -390,6 +394,7 @@ public class LogFuncionario extends AbstractAppEntity {
      * @return the list of active facets.
      */
     @JsonIgnore
+	@Override
     public List<String> getActiveFacets() {
         return this.getFacets();
     }
@@ -409,11 +414,12 @@ public class LogFuncionario extends AbstractAppEntity {
         return activeFacets;
     }
 
-   /**
-    * Returns true if this instance can be observed by the connected agent.
-    * @param agent Connected agent instance
-    * @return TRUE if the connected agent can observe this instance. FALSE otherwise.
-    */
+    /**
+     * Returns true if this instance can be observed by the connected agent.
+     * @param agent Connected agent instance
+     * @return TRUE if the connected agent can observe this instance. FALSE otherwise.
+     */
+    @Override
     public boolean checkHorizontalVisibility(IEntity agent) {
         boolean returnValue = (!this.isNull());
 
@@ -433,6 +439,7 @@ public class LogFuncionario extends AbstractAppEntity {
      * @throws IntegrityConstraintException if an integrity constraint isn't fulfilled.
      * @throws SystemException if there is any error on having checked integrity constraints.
      */
+	@Override
     public void checkIntegrityConstraints() throws IntegrityConstraintException, SystemException {
         /* There are no Integrity Constraints defined in this class */
     }

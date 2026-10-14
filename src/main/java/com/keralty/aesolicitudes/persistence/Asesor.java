@@ -1891,6 +1891,7 @@ Indica el número de solicitudes no terminadas que tiene asignadas el usuario. S
      * @return Map with the values of the attributes.
      */
     @JsonIgnore
+	@Override
     public Map<String, Object> getValues() {
         return values;
     }
@@ -2065,6 +2066,7 @@ Indica el número de solicitudes no terminadas que tiene asignadas el usuario. S
    /**
     * This method sets all flags modifiers with false value.
     */
+	@Override	
     public void clearModifiedFlags() {
     	values = new HashMap<>();
     	modifiedAsesorModDBasicosPersona = false;
@@ -2101,6 +2103,7 @@ Indica el número de solicitudes no terminadas que tiene asignadas el usuario. S
     /**
      * This method sets all the derived attributes with null value.
      */
+	@Override
     public void cleanDerivations() {
 
 
@@ -2114,6 +2117,7 @@ Indica el número de solicitudes no terminadas que tiene asignadas el usuario. S
      * Returns the <code>AsesorOid</code> object that identifies this instance of <code>Asesor</code>.
      * @return <code>AsesorOid </code> object that identifies this instance of <code>Asesor</code>
      */
+	@Override
     public AsesorOid getOid() {
         return new AsesorOid(getFuncionarioId());
     }
@@ -2135,6 +2139,7 @@ Indica el número de solicitudes no terminadas que tiene asignadas el usuario. S
      * @return the list of active facets.
      */
     @JsonIgnore
+	@Override
     public List<String> getActiveFacets() {
         return this.getFuncionarioFacet().getFacets();
     }
@@ -2154,11 +2159,12 @@ Indica el número de solicitudes no terminadas que tiene asignadas el usuario. S
         return activeFacets;
     }
 
-   /**
-    * Returns true if this instance can be observed by the connected agent.
-    * @param agent Connected agent instance
-    * @return TRUE if the connected agent can observe this instance. FALSE otherwise.
-    */
+    /**
+     * Returns true if this instance can be observed by the connected agent.
+     * @param agent Connected agent instance
+     * @return TRUE if the connected agent can observe this instance. FALSE otherwise.
+     */
+    @Override
     public boolean checkHorizontalVisibility(IEntity agent) {
         boolean returnValue = (!this.isNull());
 
@@ -2182,6 +2188,7 @@ Indica el número de solicitudes no terminadas que tiene asignadas el usuario. S
      * @throws IntegrityConstraintException if an integrity constraint isn't fulfilled.
      * @throws SystemException if there is any error on having checked integrity constraints.
      */
+	@Override
     public void checkIntegrityConstraints() throws IntegrityConstraintException, SystemException {
         /* There are no Integrity Constraints defined in this class */
     }

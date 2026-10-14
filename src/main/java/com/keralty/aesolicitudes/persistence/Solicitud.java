@@ -5439,6 +5439,7 @@ Se requiere que el nuevo estado “Recibido” sea homologado en la pantalla de 
      * @return Map with the values of the attributes.
      */
     @JsonIgnore
+	@Override
     public Map<String, Object> getValues() {
         return values;
     }
@@ -7595,6 +7596,7 @@ Se requiere que el nuevo estado “Recibido” sea homologado en la pantalla de 
    /**
     * This method sets all flags modifiers with false value.
     */
+	@Override	
     public void clearModifiedFlags() {
     	values = new HashMap<>();
     	modifiedSolicitudNumRadicado = false;
@@ -7722,6 +7724,7 @@ Se requiere que el nuevo estado “Recibido” sea homologado en la pantalla de 
     /**
      * This method sets all the derived attributes with null value.
      */
+	@Override
     public void cleanDerivations() {
             solicituddrvReqCuesMed = null;
             solicituddrvYaTieneContratante = null;
@@ -7784,6 +7787,7 @@ Se requiere que el nuevo estado “Recibido” sea homologado en la pantalla de 
      * Returns the <code>SolicitudOid</code> object that identifies this instance of <code>Solicitud</code>.
      * @return <code>SolicitudOid </code> object that identifies this instance of <code>Solicitud</code>
      */
+	@Override
     public SolicitudOid getOid() {
         return new SolicitudOid(getAesolicitudesidsolicitud());
     }
@@ -7805,6 +7809,7 @@ Se requiere que el nuevo estado “Recibido” sea homologado en la pantalla de 
      * @return the list of active facets.
      */
     @JsonIgnore
+	@Override
     public List<String> getActiveFacets() {
         return this.getFacets();
     }
@@ -7824,11 +7829,12 @@ Se requiere que el nuevo estado “Recibido” sea homologado en la pantalla de 
         return activeFacets;
     }
 
-   /**
-    * Returns true if this instance can be observed by the connected agent.
-    * @param agent Connected agent instance
-    * @return TRUE if the connected agent can observe this instance. FALSE otherwise.
-    */
+    /**
+     * Returns true if this instance can be observed by the connected agent.
+     * @param agent Connected agent instance
+     * @return TRUE if the connected agent can observe this instance. FALSE otherwise.
+     */
+    @Override
     public boolean checkHorizontalVisibility(IEntity agent) {
         boolean returnValue = (!this.isNull());
 
@@ -7896,6 +7902,7 @@ Se requiere que el nuevo estado “Recibido” sea homologado en la pantalla de 
      * @throws IntegrityConstraintException if an integrity constraint isn't fulfilled.
      * @throws SystemException if there is any error on having checked integrity constraints.
      */
+	@Override
     public void checkIntegrityConstraints() throws IntegrityConstraintException, SystemException {
         /* There are no Integrity Constraints defined in this class */
     }

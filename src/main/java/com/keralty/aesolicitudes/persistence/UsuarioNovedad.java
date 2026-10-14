@@ -1518,6 +1518,7 @@ Si existe un conyuge no activo su vigencia no puede estar traslapada con el nuev
      * @return Map with the values of the attributes.
      */
     @JsonIgnore
+	@Override
     public Map<String, Object> getValues() {
         return values;
     }
@@ -2188,6 +2189,7 @@ Si existe un conyuge no activo su vigencia no puede estar traslapada con el nuev
    /**
     * This method sets all flags modifiers with false value.
     */
+	@Override	
     public void clearModifiedFlags() {
     	values = new HashMap<>();
     	modifiedUsuarioNovedadNumIdentificacion = false;
@@ -2236,6 +2238,7 @@ Si existe un conyuge no activo su vigencia no puede estar traslapada con el nuev
     /**
      * This method sets all the derived attributes with null value.
      */
+	@Override
     public void cleanDerivations() {
             usuarioNovedaddrvEstaActivo = null;
             usuarioNovedaddrvParentescoOK = null;
@@ -2257,6 +2260,7 @@ Si existe un conyuge no activo su vigencia no puede estar traslapada con el nuev
      * Returns the <code>UsuarioNovedadOid</code> object that identifies this instance of <code>UsuarioNovedad</code>.
      * @return <code>UsuarioNovedadOid </code> object that identifies this instance of <code>UsuarioNovedad</code>
      */
+	@Override
     public UsuarioNovedadOid getOid() {
         return new UsuarioNovedadOid(getUsuarioNovedadidUsuarioNovedad());
     }
@@ -2278,6 +2282,7 @@ Si existe un conyuge no activo su vigencia no puede estar traslapada con el nuev
      * @return the list of active facets.
      */
     @JsonIgnore
+	@Override
     public List<String> getActiveFacets() {
         return this.getFacets();
     }
@@ -2297,11 +2302,12 @@ Si existe un conyuge no activo su vigencia no puede estar traslapada con el nuev
         return activeFacets;
     }
 
-   /**
-    * Returns true if this instance can be observed by the connected agent.
-    * @param agent Connected agent instance
-    * @return TRUE if the connected agent can observe this instance. FALSE otherwise.
-    */
+    /**
+     * Returns true if this instance can be observed by the connected agent.
+     * @param agent Connected agent instance
+     * @return TRUE if the connected agent can observe this instance. FALSE otherwise.
+     */
+    @Override
     public boolean checkHorizontalVisibility(IEntity agent) {
         boolean returnValue = (!this.isNull());
 
@@ -2321,6 +2327,7 @@ Si existe un conyuge no activo su vigencia no puede estar traslapada con el nuev
      * @throws IntegrityConstraintException if an integrity constraint isn't fulfilled.
      * @throws SystemException if there is any error on having checked integrity constraints.
      */
+	@Override
     public void checkIntegrityConstraints() throws IntegrityConstraintException, SystemException {
         /* There are no Integrity Constraints defined in this class */
     }

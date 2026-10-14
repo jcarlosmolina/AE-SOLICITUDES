@@ -891,6 +891,7 @@ public class DirSucursalC extends AbstractAppEntity {
      * @return Map with the values of the attributes.
      */
     @JsonIgnore
+	@Override
     public Map<String, Object> getValues() {
         return values;
     }
@@ -982,6 +983,7 @@ public class DirSucursalC extends AbstractAppEntity {
    /**
     * This method sets all flags modifiers with false value.
     */
+	@Override	
     public void clearModifiedFlags() {
     	values = new HashMap<>();
     	modifiedDirSucursalCCodLegalSucursal = false;
@@ -1008,6 +1010,7 @@ public class DirSucursalC extends AbstractAppEntity {
     /**
      * This method sets all the derived attributes with null value.
      */
+	@Override
     public void cleanDerivations() {
             dirSucursalCdrvCiudad = null;
     }
@@ -1016,6 +1019,7 @@ public class DirSucursalC extends AbstractAppEntity {
      * Returns the <code>DirSucursalCOid</code> object that identifies this instance of <code>DirSucursalC</code>.
      * @return <code>DirSucursalCOid </code> object that identifies this instance of <code>DirSucursalC</code>
      */
+	@Override
     public DirSucursalCOid getOid() {
         return new DirSucursalCOid(getDirSucursalCCodigo());
     }
@@ -1037,6 +1041,7 @@ public class DirSucursalC extends AbstractAppEntity {
      * @return the list of active facets.
      */
     @JsonIgnore
+	@Override
     public List<String> getActiveFacets() {
         return this.getFacets();
     }
@@ -1056,11 +1061,12 @@ public class DirSucursalC extends AbstractAppEntity {
         return activeFacets;
     }
 
-   /**
-    * Returns true if this instance can be observed by the connected agent.
-    * @param agent Connected agent instance
-    * @return TRUE if the connected agent can observe this instance. FALSE otherwise.
-    */
+    /**
+     * Returns true if this instance can be observed by the connected agent.
+     * @param agent Connected agent instance
+     * @return TRUE if the connected agent can observe this instance. FALSE otherwise.
+     */
+    @Override
     public boolean checkHorizontalVisibility(IEntity agent) {
         boolean returnValue = (!this.isNull());
 
@@ -1080,6 +1086,7 @@ public class DirSucursalC extends AbstractAppEntity {
      * @throws IntegrityConstraintException if an integrity constraint isn't fulfilled.
      * @throws SystemException if there is any error on having checked integrity constraints.
      */
+	@Override
     public void checkIntegrityConstraints() throws IntegrityConstraintException, SystemException {
         /* There are no Integrity Constraints defined in this class */
     }

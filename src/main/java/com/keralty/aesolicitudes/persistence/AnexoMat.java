@@ -433,6 +433,7 @@ public class AnexoMat extends AbstractAppEntity {
      * @return Map with the values of the attributes.
      */
     @JsonIgnore
+	@Override
     public Map<String, Object> getValues() {
         return values;
     }
@@ -508,6 +509,7 @@ public class AnexoMat extends AbstractAppEntity {
    /**
     * This method sets all flags modifiers with false value.
     */
+	@Override	
     public void clearModifiedFlags() {
     	values = new HashMap<>();
     	modifiedAnexoMatFechaUltRegla = false;
@@ -522,6 +524,7 @@ public class AnexoMat extends AbstractAppEntity {
     /**
      * This method sets all the derived attributes with null value.
      */
+	@Override
     public void cleanDerivations() {
             anexoMatdrvValor = null;
     }
@@ -530,6 +533,7 @@ public class AnexoMat extends AbstractAppEntity {
      * Returns the <code>AnexoMatOid</code> object that identifies this instance of <code>AnexoMat</code>.
      * @return <code>AnexoMatOid </code> object that identifies this instance of <code>AnexoMat</code>
      */
+	@Override
     public AnexoMatOid getOid() {
         return new AnexoMatOid(getAnexoMatIdentificador());
     }
@@ -551,6 +555,7 @@ public class AnexoMat extends AbstractAppEntity {
      * @return the list of active facets.
      */
     @JsonIgnore
+	@Override
     public List<String> getActiveFacets() {
         return this.getFacets();
     }
@@ -570,11 +575,12 @@ public class AnexoMat extends AbstractAppEntity {
         return activeFacets;
     }
 
-   /**
-    * Returns true if this instance can be observed by the connected agent.
-    * @param agent Connected agent instance
-    * @return TRUE if the connected agent can observe this instance. FALSE otherwise.
-    */
+    /**
+     * Returns true if this instance can be observed by the connected agent.
+     * @param agent Connected agent instance
+     * @return TRUE if the connected agent can observe this instance. FALSE otherwise.
+     */
+    @Override
     public boolean checkHorizontalVisibility(IEntity agent) {
         boolean returnValue = (!this.isNull());
 
@@ -594,6 +600,7 @@ public class AnexoMat extends AbstractAppEntity {
      * @throws IntegrityConstraintException if an integrity constraint isn't fulfilled.
      * @throws SystemException if there is any error on having checked integrity constraints.
      */
+	@Override
     public void checkIntegrityConstraints() throws IntegrityConstraintException, SystemException {
         /* There are no Integrity Constraints defined in this class */
     }

@@ -775,6 +775,7 @@ En el caso de novedad solo será documento de identificación. Lo mantenemos com
      * @return Map with the values of the attributes.
      */
     @JsonIgnore
+	@Override
     public Map<String, Object> getValues() {
         return values;
     }
@@ -827,6 +828,7 @@ En el caso de novedad solo será documento de identificación. Lo mantenemos com
    /**
     * This method sets all flags modifiers with false value.
     */
+	@Override	
     public void clearModifiedFlags() {
     	values = new HashMap<>();
     	modifiedDocumentoNovedadTipo = false;
@@ -859,6 +861,7 @@ En el caso de novedad solo será documento de identificación. Lo mantenemos com
     /**
      * This method sets all the derived attributes with null value.
      */
+	@Override
     public void cleanDerivations() {
         // There are no derivations defined in this class
     }
@@ -867,6 +870,7 @@ En el caso de novedad solo será documento de identificación. Lo mantenemos com
      * Returns the <code>DocumentoNovedadOid</code> object that identifies this instance of <code>DocumentoNovedad</code>.
      * @return <code>DocumentoNovedadOid </code> object that identifies this instance of <code>DocumentoNovedad</code>
      */
+	@Override
     public DocumentoNovedadOid getOid() {
         return new DocumentoNovedadOid(getDocumentoNovedadIdDocumento());
     }
@@ -888,6 +892,7 @@ En el caso de novedad solo será documento de identificación. Lo mantenemos com
      * @return the list of active facets.
      */
     @JsonIgnore
+	@Override
     public List<String> getActiveFacets() {
         return this.getFacets();
     }
@@ -907,11 +912,12 @@ En el caso de novedad solo será documento de identificación. Lo mantenemos com
         return activeFacets;
     }
 
-   /**
-    * Returns true if this instance can be observed by the connected agent.
-    * @param agent Connected agent instance
-    * @return TRUE if the connected agent can observe this instance. FALSE otherwise.
-    */
+    /**
+     * Returns true if this instance can be observed by the connected agent.
+     * @param agent Connected agent instance
+     * @return TRUE if the connected agent can observe this instance. FALSE otherwise.
+     */
+    @Override
     public boolean checkHorizontalVisibility(IEntity agent) {
         boolean returnValue = (!this.isNull());
 
@@ -931,6 +937,7 @@ En el caso de novedad solo será documento de identificación. Lo mantenemos com
      * @throws IntegrityConstraintException if an integrity constraint isn't fulfilled.
      * @throws SystemException if there is any error on having checked integrity constraints.
      */
+	@Override
     public void checkIntegrityConstraints() throws IntegrityConstraintException, SystemException {
         /* There are no Integrity Constraints defined in this class */
     }
