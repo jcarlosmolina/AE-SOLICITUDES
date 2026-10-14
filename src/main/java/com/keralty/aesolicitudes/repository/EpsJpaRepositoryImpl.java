@@ -34,15 +34,18 @@ public class EpsJpaRepositoryImpl extends AbstractRepository implements EpsJpaRe
     private TypedQueryBuilder<Eps> getQueryBuilder() {
         return new TypedQueryBuilder<>(em, Eps.class);
     }
-    
+
+    @Override	
     public List<Eps> solveQuery(SQLSelect select) {
         return solveQuery(select, 0, 0);
     }
 
+    @Override
     public List<Eps> solveQuery(SQLSelect select, int pageSize, int pageNumber) {
         return getQueryBuilder().build(select, pageSize, pageNumber).execute();
     }
 
+    @Override
     public void refreshEntity(Object object) {
         super.refreshEntity(object);
     }

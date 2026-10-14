@@ -39,16 +39,19 @@ public class DocumentoGJpaRepositoryImpl extends AbstractRepository implements D
     private TypedQueryBuilder<DocumentoG> getQueryBuilder() {
         return new TypedQueryBuilder<>(em, DocumentoG.class);
     }
-    
+
+    @Override	
     public List<DocumentoG> solveQuery(SQLSelect select) {
         return solveQuery(select, 0, 0);
     }
 
+    @Override
     public List<DocumentoG> solveQuery(SQLSelect select, int pageSize, int pageNumber) {
         return getQueryBuilder().build(select, pageSize, pageNumber).execute();
     }
 
     // AssocOperator: AssocOperator000
+	@Override
     public Collection<ObsEstado> assocOperator000(DocumentoG instance) throws SystemException {
         try {
             // FOR ALL ObsEstado DO ObsEstado.eliminar(ObsEstado)
@@ -61,6 +64,7 @@ public class DocumentoGJpaRepositoryImpl extends AbstractRepository implements D
     }
 
     // Range 1 for AssocOperator AssocOperator000
+	@Override
     public Collection<ObsEstado> assocOperator000Range1 (DocumentoG instance) throws SystemException {
 
         SQLSelect sql = assocOperator000Range1Query(instance);
@@ -68,6 +72,7 @@ public class DocumentoGJpaRepositoryImpl extends AbstractRepository implements D
     }
 
     // Range Query 1 for AssocOperator AssocOperator000
+	@Override
     public SQLPopulation assocOperator000Range1Query (DocumentoG instance) throws SystemException {
         try {
             return new SQLPopulation(DocumentoGConstants.CLASS_NAME, ObsEstadoConstants.CLASS_NAME, instance.getOid(), DocumentoGConstants.ROLE_NAME_OBSESTADO);
@@ -78,6 +83,7 @@ public class DocumentoGJpaRepositoryImpl extends AbstractRepository implements D
         }
     }
 
+    @Override
     public void refreshEntity(Object object) {
         super.refreshEntity(object);
     }

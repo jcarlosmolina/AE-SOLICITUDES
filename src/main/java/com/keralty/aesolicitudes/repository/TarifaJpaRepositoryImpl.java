@@ -34,15 +34,18 @@ public class TarifaJpaRepositoryImpl extends AbstractRepository implements Tarif
     private TypedQueryBuilder<Tarifa> getQueryBuilder() {
         return new TypedQueryBuilder<>(em, Tarifa.class);
     }
-    
+
+    @Override	
     public List<Tarifa> solveQuery(SQLSelect select) {
         return solveQuery(select, 0, 0);
     }
 
+    @Override
     public List<Tarifa> solveQuery(SQLSelect select, int pageSize, int pageNumber) {
         return getQueryBuilder().build(select, pageSize, pageNumber).execute();
     }
 
+    @Override
     public void refreshEntity(Object object) {
         super.refreshEntity(object);
     }

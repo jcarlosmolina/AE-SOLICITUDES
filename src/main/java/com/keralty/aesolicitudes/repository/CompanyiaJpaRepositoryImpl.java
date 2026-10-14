@@ -34,15 +34,18 @@ public class CompanyiaJpaRepositoryImpl extends AbstractRepository implements Co
     private TypedQueryBuilder<Companyia> getQueryBuilder() {
         return new TypedQueryBuilder<>(em, Companyia.class);
     }
-    
+
+    @Override	
     public List<Companyia> solveQuery(SQLSelect select) {
         return solveQuery(select, 0, 0);
     }
 
+    @Override
     public List<Companyia> solveQuery(SQLSelect select, int pageSize, int pageNumber) {
         return getQueryBuilder().build(select, pageSize, pageNumber).execute();
     }
 
+    @Override
     public void refreshEntity(Object object) {
         super.refreshEntity(object);
     }

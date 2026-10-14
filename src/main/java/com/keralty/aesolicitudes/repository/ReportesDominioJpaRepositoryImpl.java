@@ -46,16 +46,19 @@ public class ReportesDominioJpaRepositoryImpl extends AbstractRepository impleme
     private TypedQueryBuilder<ReportesDominio> getQueryBuilder() {
         return new TypedQueryBuilder<>(em, ReportesDominio.class);
     }
-    
+
+    @Override	
     public List<ReportesDominio> solveQuery(SQLSelect select) {
         return solveQuery(select, 0, 0);
     }
 
+    @Override
     public List<ReportesDominio> solveQuery(SQLSelect select, int pageSize, int pageNumber) {
         return getQueryBuilder().build(select, pageSize, pageNumber).execute();
     }
 
     // AssocOperator: AssocOperator000
+	@Override
     public Long assocOperator000(ReportesDominio instance) throws SystemException {
         try {
             // COUNT (Dominio.ReportesDominio) WHERE (Dominio.ReportesDominio.PlantillaReporte.Tipo = PlantillaReporte.Tipo AND Dominio.ReportesDominio.PlantillaReporte.FechaVigencia > PlantillaReporte.FechaVigencia)
@@ -68,12 +71,14 @@ public class ReportesDominioJpaRepositoryImpl extends AbstractRepository impleme
     }
 
     // Range 1 for AssocOperator AssocOperator000
+	@Override
     public Long assocOperator000Range1 (ReportesDominio instance) throws SystemException {
         SQLCount sql = assocOperator000Range1Query(instance);
         return Long.valueOf(solveCountQuery(sql));
     }
 
     // Range Query 1 for AssocOperator AssocOperator000
+	@Override
     public SQLCount assocOperator000Range1Query (ReportesDominio instance) throws SystemException {
         try {
             // The path starts with a role
@@ -117,6 +122,7 @@ public class ReportesDominioJpaRepositoryImpl extends AbstractRepository impleme
     }
 
     // AssocOperator: AssocOperator001
+	@Override
     public Date assocOperator001(ReportesDominio instance) throws SystemException {
         try {
             // MIN (Dominio.ReportesDominio.PlantillaReporte.FechaVigencia) WHERE (Dominio.ReportesDominio.PlantillaReporte.Tipo = PlantillaReporte.Tipo AND Dominio.ReportesDominio.PlantillaReporte.FechaVigencia > PlantillaReporte.FechaVigencia)
@@ -129,6 +135,7 @@ public class ReportesDominioJpaRepositoryImpl extends AbstractRepository impleme
     }
 
     // Range 1 for AssocOperator AssocOperator001
+	@Override
     public Date assocOperator001Range1 (ReportesDominio instance) throws SystemException {
         SQLMin sql = assocOperator001Range1Query(instance);
         java.util.Date tempResult = new TypedQueryBuilder<java.util.Date>(em, java.util.Date.class).build(sql).getSingleResult();
@@ -136,6 +143,7 @@ public class ReportesDominioJpaRepositoryImpl extends AbstractRepository impleme
     }
 
     // Range Query 1 for AssocOperator AssocOperator001
+	@Override
     public SQLMin assocOperator001Range1Query (ReportesDominio instance) throws SystemException {
         try {
             // The path starts with a role
@@ -178,6 +186,7 @@ public class ReportesDominioJpaRepositoryImpl extends AbstractRepository impleme
         }
     }
 
+    @Override
     public void refreshEntity(Object object) {
         super.refreshEntity(object);
     }

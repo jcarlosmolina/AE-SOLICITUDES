@@ -34,15 +34,18 @@ public class ProteccionDatosCJpaRepositoryImpl extends AbstractRepository implem
     private TypedQueryBuilder<ProteccionDatosC> getQueryBuilder() {
         return new TypedQueryBuilder<>(em, ProteccionDatosC.class);
     }
-    
+
+    @Override	
     public List<ProteccionDatosC> solveQuery(SQLSelect select) {
         return solveQuery(select, 0, 0);
     }
 
+    @Override
     public List<ProteccionDatosC> solveQuery(SQLSelect select, int pageSize, int pageNumber) {
         return getQueryBuilder().build(select, pageSize, pageNumber).execute();
     }
 
+    @Override
     public void refreshEntity(Object object) {
         super.refreshEntity(object);
     }

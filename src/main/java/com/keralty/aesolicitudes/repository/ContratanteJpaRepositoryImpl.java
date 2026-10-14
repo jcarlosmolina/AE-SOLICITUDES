@@ -37,16 +37,19 @@ public class ContratanteJpaRepositoryImpl extends AbstractRepository implements 
     private TypedQueryBuilder<Contratante> getQueryBuilder() {
         return new TypedQueryBuilder<>(em, Contratante.class);
     }
-    
+
+    @Override	
     public List<Contratante> solveQuery(SQLSelect select) {
         return solveQuery(select, 0, 0);
     }
 
+    @Override
     public List<Contratante> solveQuery(SQLSelect select, int pageSize, int pageNumber) {
         return getQueryBuilder().build(select, pageSize, pageNumber).execute();
     }
 
     // AssocOperator: AssocOperator000
+	@Override
     public Boolean assocOperator000(Contratante instance) throws SystemException {
         try {
             // EXIST (DepartamentoNac)
@@ -59,12 +62,14 @@ public class ContratanteJpaRepositoryImpl extends AbstractRepository implements 
     }
 
     // Range 1 for AssocOperator AssocOperator000
+	@Override
     public Boolean assocOperator000Range1 (Contratante instance) throws SystemException {
         SQLExists sql = assocOperator000Range1Query(instance);
         return !new TypedQueryBuilder<Contratante>(em, Contratante.class).build(sql).execute().isEmpty();
     }
 
     // Range Query 1 for AssocOperator AssocOperator000
+	@Override
     public SQLExists assocOperator000Range1Query (Contratante instance) throws SystemException {
         try {
             // The path starts with a role
@@ -77,6 +82,7 @@ public class ContratanteJpaRepositoryImpl extends AbstractRepository implements 
     }
 
     // AssocOperator: AssocOperator001
+	@Override
     public Boolean assocOperator001(Contratante instance) throws SystemException {
         try {
             // EXIST (DepartamentoNac)
@@ -89,12 +95,14 @@ public class ContratanteJpaRepositoryImpl extends AbstractRepository implements 
     }
 
     // Range 1 for AssocOperator AssocOperator001
+	@Override
     public Boolean assocOperator001Range1 (Contratante instance) throws SystemException {
         SQLExists sql = assocOperator001Range1Query(instance);
         return !new TypedQueryBuilder<Contratante>(em, Contratante.class).build(sql).execute().isEmpty();
     }
 
     // Range Query 1 for AssocOperator AssocOperator001
+	@Override
     public SQLExists assocOperator001Range1Query (Contratante instance) throws SystemException {
         try {
             // The path starts with a role
@@ -107,6 +115,7 @@ public class ContratanteJpaRepositoryImpl extends AbstractRepository implements 
     }
 
     // AssocOperator: AssocOperator003
+	@Override
     public Boolean assocOperator003(Contratante instance) throws SystemException {
         try {
             // EXIST (MunicipioNac)
@@ -119,12 +128,14 @@ public class ContratanteJpaRepositoryImpl extends AbstractRepository implements 
     }
 
     // Range 1 for AssocOperator AssocOperator003
+	@Override
     public Boolean assocOperator003Range1 (Contratante instance) throws SystemException {
         SQLExists sql = assocOperator003Range1Query(instance);
         return !new TypedQueryBuilder<Contratante>(em, Contratante.class).build(sql).execute().isEmpty();
     }
 
     // Range Query 1 for AssocOperator AssocOperator003
+	@Override
     public SQLExists assocOperator003Range1Query (Contratante instance) throws SystemException {
         try {
             // The path starts with a role
@@ -137,6 +148,7 @@ public class ContratanteJpaRepositoryImpl extends AbstractRepository implements 
     }
 
     // AssocOperator: AssocOperator004
+	@Override
     public Boolean assocOperator004(Contratante instance) throws SystemException {
         try {
             // EXIST (MunicipioNac)
@@ -149,12 +161,14 @@ public class ContratanteJpaRepositoryImpl extends AbstractRepository implements 
     }
 
     // Range 1 for AssocOperator AssocOperator004
+	@Override
     public Boolean assocOperator004Range1 (Contratante instance) throws SystemException {
         SQLExists sql = assocOperator004Range1Query(instance);
         return !new TypedQueryBuilder<Contratante>(em, Contratante.class).build(sql).execute().isEmpty();
     }
 
     // Range Query 1 for AssocOperator AssocOperator004
+	@Override
     public SQLExists assocOperator004Range1Query (Contratante instance) throws SystemException {
         try {
             // The path starts with a role
@@ -167,6 +181,7 @@ public class ContratanteJpaRepositoryImpl extends AbstractRepository implements 
     }
 
     // AssocOperator: AssocOperator006
+	@Override
     public Boolean assocOperator006(Contratante instance) throws SystemException {
         try {
             // EXIST (DepartamentoNac)
@@ -179,12 +194,14 @@ public class ContratanteJpaRepositoryImpl extends AbstractRepository implements 
     }
 
     // Range 1 for AssocOperator AssocOperator006
+	@Override
     public Boolean assocOperator006Range1 (Contratante instance) throws SystemException {
         SQLExists sql = assocOperator006Range1Query(instance);
         return !new TypedQueryBuilder<Contratante>(em, Contratante.class).build(sql).execute().isEmpty();
     }
 
     // Range Query 1 for AssocOperator AssocOperator006
+	@Override
     public SQLExists assocOperator006Range1Query (Contratante instance) throws SystemException {
         try {
             // The path starts with a role
@@ -197,6 +214,7 @@ public class ContratanteJpaRepositoryImpl extends AbstractRepository implements 
     }
 
     // AssocOperator: AssocOperator007
+	@Override
     public Boolean assocOperator007(Contratante instance) throws SystemException {
         try {
             // EXIST (MunicipioNac)
@@ -209,12 +227,14 @@ public class ContratanteJpaRepositoryImpl extends AbstractRepository implements 
     }
 
     // Range 1 for AssocOperator AssocOperator007
+	@Override
     public Boolean assocOperator007Range1 (Contratante instance) throws SystemException {
         SQLExists sql = assocOperator007Range1Query(instance);
         return !new TypedQueryBuilder<Contratante>(em, Contratante.class).build(sql).execute().isEmpty();
     }
 
     // Range Query 1 for AssocOperator AssocOperator007
+	@Override
     public SQLExists assocOperator007Range1Query (Contratante instance) throws SystemException {
         try {
             // The path starts with a role
@@ -227,6 +247,7 @@ public class ContratanteJpaRepositoryImpl extends AbstractRepository implements 
     }
 
     // AssocOperator: AssocOperator010
+	@Override
     public Boolean assocOperator010(Contratante instance) throws SystemException {
         try {
             // EXIST (DepartamentoRes)
@@ -239,12 +260,14 @@ public class ContratanteJpaRepositoryImpl extends AbstractRepository implements 
     }
 
     // Range 1 for AssocOperator AssocOperator010
+	@Override
     public Boolean assocOperator010Range1 (Contratante instance) throws SystemException {
         SQLExists sql = assocOperator010Range1Query(instance);
         return !new TypedQueryBuilder<Contratante>(em, Contratante.class).build(sql).execute().isEmpty();
     }
 
     // Range Query 1 for AssocOperator AssocOperator010
+	@Override
     public SQLExists assocOperator010Range1Query (Contratante instance) throws SystemException {
         try {
             // The path starts with a role
@@ -257,6 +280,7 @@ public class ContratanteJpaRepositoryImpl extends AbstractRepository implements 
     }
 
     // AssocOperator: AssocOperator011
+	@Override
     public Boolean assocOperator011(Contratante instance) throws SystemException {
         try {
             // EXIST (MunicipioRes)
@@ -269,12 +293,14 @@ public class ContratanteJpaRepositoryImpl extends AbstractRepository implements 
     }
 
     // Range 1 for AssocOperator AssocOperator011
+	@Override
     public Boolean assocOperator011Range1 (Contratante instance) throws SystemException {
         SQLExists sql = assocOperator011Range1Query(instance);
         return !new TypedQueryBuilder<Contratante>(em, Contratante.class).build(sql).execute().isEmpty();
     }
 
     // Range Query 1 for AssocOperator AssocOperator011
+	@Override
     public SQLExists assocOperator011Range1Query (Contratante instance) throws SystemException {
         try {
             // The path starts with a role
@@ -286,6 +312,7 @@ public class ContratanteJpaRepositoryImpl extends AbstractRepository implements 
         }
     }
 
+    @Override
     public void refreshEntity(Object object) {
         super.refreshEntity(object);
     }

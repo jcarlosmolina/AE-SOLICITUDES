@@ -34,15 +34,18 @@ public class LogLlamadasBHJpaRepositoryImpl extends AbstractRepository implement
     private TypedQueryBuilder<LogLlamadasBH> getQueryBuilder() {
         return new TypedQueryBuilder<>(em, LogLlamadasBH.class);
     }
-    
+
+    @Override	
     public List<LogLlamadasBH> solveQuery(SQLSelect select) {
         return solveQuery(select, 0, 0);
     }
 
+    @Override
     public List<LogLlamadasBH> solveQuery(SQLSelect select, int pageSize, int pageNumber) {
         return getQueryBuilder().build(select, pageSize, pageNumber).execute();
     }
 
+    @Override
     public void refreshEntity(Object object) {
         super.refreshEntity(object);
     }

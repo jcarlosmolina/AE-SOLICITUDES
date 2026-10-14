@@ -34,15 +34,18 @@ public class NovedadCTJpaRepositoryImpl extends AbstractRepository implements No
     private TypedQueryBuilder<NovedadCT> getQueryBuilder() {
         return new TypedQueryBuilder<>(em, NovedadCT.class);
     }
-    
+
+    @Override	
     public List<NovedadCT> solveQuery(SQLSelect select) {
         return solveQuery(select, 0, 0);
     }
 
+    @Override
     public List<NovedadCT> solveQuery(SQLSelect select, int pageSize, int pageNumber) {
         return getQueryBuilder().build(select, pageSize, pageNumber).execute();
     }
 
+    @Override
     public void refreshEntity(Object object) {
         super.refreshEntity(object);
     }

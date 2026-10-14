@@ -34,15 +34,18 @@ public class TipoIdentificacionJpaRepositoryImpl extends AbstractRepository impl
     private TypedQueryBuilder<TipoIdentificacion> getQueryBuilder() {
         return new TypedQueryBuilder<>(em, TipoIdentificacion.class);
     }
-    
+
+    @Override	
     public List<TipoIdentificacion> solveQuery(SQLSelect select) {
         return solveQuery(select, 0, 0);
     }
 
+    @Override
     public List<TipoIdentificacion> solveQuery(SQLSelect select, int pageSize, int pageNumber) {
         return getQueryBuilder().build(select, pageSize, pageNumber).execute();
     }
 
+    @Override
     public void refreshEntity(Object object) {
         super.refreshEntity(object);
     }

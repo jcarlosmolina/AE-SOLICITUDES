@@ -47,16 +47,19 @@ public class AnexoNeoJpaRepositoryImpl extends AbstractRepository implements Ane
     private TypedQueryBuilder<AnexoNeo> getQueryBuilder() {
         return new TypedQueryBuilder<>(em, AnexoNeo.class);
     }
-    
+
+    @Override	
     public List<AnexoNeo> solveQuery(SQLSelect select) {
         return solveQuery(select, 0, 0);
     }
 
+    @Override
     public List<AnexoNeo> solveQuery(SQLSelect select, int pageSize, int pageNumber) {
         return getQueryBuilder().build(select, pageSize, pageNumber).execute();
     }
 
     // AssocOperator: AssocOperator000
+	@Override
     public Double assocOperator000(AnexoNeo instance) throws SystemException {
         try {
             // GETONE (InstitucionNeonatal.Tarifa.DetallesTarifa.Valor) WHERE (InstitucionNeonatal.Tarifa.DetallesTarifa.Anyo = getYear(Usuario.Solicitud.FInicioContrato) AND InstitucionNeonatal.Tarifa.DetallesTarifa.LimInferiorEdad <= Usuario.drvEdad AND Usuario.drvEdad <= InstitucionNeonatal.Tarifa.DetallesTarifa.LimSuperiorEdad)
@@ -69,6 +72,7 @@ public class AnexoNeoJpaRepositoryImpl extends AbstractRepository implements Ane
     }
 
     // Range 1 for AssocOperator AssocOperator000
+	@Override
     public Double assocOperator000Range1 (AnexoNeo instance) throws SystemException {
         SQLGetOne sql = assocOperator000Range1Query(instance);
         List<Double> results = new TypedQueryBuilder<Double>(em, Double.class).build(sql).execute();
@@ -76,6 +80,7 @@ public class AnexoNeoJpaRepositoryImpl extends AbstractRepository implements Ane
     }
 
     // Range Query 1 for AssocOperator AssocOperator000
+	@Override
     public SQLGetOne assocOperator000Range1Query (AnexoNeo instance) throws SystemException {
         try {
             // The path starts with a role
@@ -136,6 +141,7 @@ public class AnexoNeoJpaRepositoryImpl extends AbstractRepository implements Ane
         }
     }
 
+    @Override
     public void refreshEntity(Object object) {
         super.refreshEntity(object);
     }

@@ -37,16 +37,19 @@ public class NovedadJpaRepositoryImpl extends AbstractRepository implements Nove
     private TypedQueryBuilder<Novedad> getQueryBuilder() {
         return new TypedQueryBuilder<>(em, Novedad.class);
     }
-    
+
+    @Override	
     public List<Novedad> solveQuery(SQLSelect select) {
         return solveQuery(select, 0, 0);
     }
 
+    @Override
     public List<Novedad> solveQuery(SQLSelect select, int pageSize, int pageNumber) {
         return getQueryBuilder().build(select, pageSize, pageNumber).execute();
     }
 
     // AssocOperator: AssocOperator000
+	@Override
     public Long assocOperator000(Novedad instance) throws SystemException {
         try {
             // COUNT (Causales)
@@ -59,12 +62,14 @@ public class NovedadJpaRepositoryImpl extends AbstractRepository implements Nove
     }
 
     // Range 1 for AssocOperator AssocOperator000
+	@Override
     public Long assocOperator000Range1 (Novedad instance) throws SystemException {
         SQLCount sql = assocOperator000Range1Query(instance);
         return Long.valueOf(solveCountQuery(sql));
     }
 
     // Range Query 1 for AssocOperator AssocOperator000
+	@Override
     public SQLCount assocOperator000Range1Query (Novedad instance) throws SystemException {
         try {
             // The path starts with a role
@@ -77,6 +82,7 @@ public class NovedadJpaRepositoryImpl extends AbstractRepository implements Nove
     }
 
     // AssocOperator: AssocOperator001
+	@Override
     public Long assocOperator001(Novedad instance) throws SystemException {
         try {
             // COUNT (CausasExclusion)
@@ -89,12 +95,14 @@ public class NovedadJpaRepositoryImpl extends AbstractRepository implements Nove
     }
 
     // Range 1 for AssocOperator AssocOperator001
+	@Override
     public Long assocOperator001Range1 (Novedad instance) throws SystemException {
         SQLCount sql = assocOperator001Range1Query(instance);
         return Long.valueOf(solveCountQuery(sql));
     }
 
     // Range Query 1 for AssocOperator AssocOperator001
+	@Override
     public SQLCount assocOperator001Range1Query (Novedad instance) throws SystemException {
         try {
             // The path starts with a role
@@ -106,6 +114,7 @@ public class NovedadJpaRepositoryImpl extends AbstractRepository implements Nove
         }
     }
 
+    @Override
     public void refreshEntity(Object object) {
         super.refreshEntity(object);
     }

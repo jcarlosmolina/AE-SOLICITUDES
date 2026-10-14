@@ -34,15 +34,18 @@ public class ObservacionesCJpaRepositoryImpl extends AbstractRepository implemen
     private TypedQueryBuilder<ObservacionesC> getQueryBuilder() {
         return new TypedQueryBuilder<>(em, ObservacionesC.class);
     }
-    
+
+    @Override	
     public List<ObservacionesC> solveQuery(SQLSelect select) {
         return solveQuery(select, 0, 0);
     }
 
+    @Override
     public List<ObservacionesC> solveQuery(SQLSelect select, int pageSize, int pageNumber) {
         return getQueryBuilder().build(select, pageSize, pageNumber).execute();
     }
 
+    @Override
     public void refreshEntity(Object object) {
         super.refreshEntity(object);
     }

@@ -34,15 +34,18 @@ public class InstitucionMatNeoJpaRepositoryImpl extends AbstractRepository imple
     private TypedQueryBuilder<InstitucionMatNeo> getQueryBuilder() {
         return new TypedQueryBuilder<>(em, InstitucionMatNeo.class);
     }
-    
+
+    @Override	
     public List<InstitucionMatNeo> solveQuery(SQLSelect select) {
         return solveQuery(select, 0, 0);
     }
 
+    @Override
     public List<InstitucionMatNeo> solveQuery(SQLSelect select, int pageSize, int pageNumber) {
         return getQueryBuilder().build(select, pageSize, pageNumber).execute();
     }
 
+    @Override
     public void refreshEntity(Object object) {
         super.refreshEntity(object);
     }

@@ -34,15 +34,18 @@ public class TelefonoCJpaRepositoryImpl extends AbstractRepository implements Te
     private TypedQueryBuilder<TelefonoC> getQueryBuilder() {
         return new TypedQueryBuilder<>(em, TelefonoC.class);
     }
-    
+
+    @Override	
     public List<TelefonoC> solveQuery(SQLSelect select) {
         return solveQuery(select, 0, 0);
     }
 
+    @Override
     public List<TelefonoC> solveQuery(SQLSelect select, int pageSize, int pageNumber) {
         return getQueryBuilder().build(select, pageSize, pageNumber).execute();
     }
 
+    @Override
     public void refreshEntity(Object object) {
         super.refreshEntity(object);
     }

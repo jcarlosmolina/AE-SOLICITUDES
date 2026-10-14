@@ -38,15 +38,18 @@ public class AreaMedicaJpaRepositoryImpl extends AbstractRepository implements A
     private TypedQueryBuilder<AreaMedica> getQueryBuilder() {
         return new TypedQueryBuilder<>(em, AreaMedica.class);
     }
-    
+
+    @Override	
     public List<AreaMedica> solveQuery(SQLSelect select) {
         return solveQuery(select, 0, 0);
     }
 
+    @Override
     public List<AreaMedica> solveQuery(SQLSelect select, int pageSize, int pageNumber) {
         return getQueryBuilder().build(select, pageSize, pageNumber).execute();
     }
 
+    @Override
     public Funcionario findParent(Long oid) {
         return em.find(Funcionario.class, oid);
     }
@@ -61,6 +64,7 @@ public class AreaMedicaJpaRepositoryImpl extends AbstractRepository implements A
         join.getWheres().add(myAlias + "." + AreaMedicaConstants.FLD_FUNCIONARIOID + " = " + parentAlias + "." + FuncionarioConstants.ATTR_FIELD_FUNCIONARIOID);
     }
 
+    @Override
     public void refreshEntity(Object object) {
         super.refreshEntity(object);
     }

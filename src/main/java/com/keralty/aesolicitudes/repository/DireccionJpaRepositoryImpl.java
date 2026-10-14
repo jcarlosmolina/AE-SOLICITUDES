@@ -37,16 +37,19 @@ public class DireccionJpaRepositoryImpl extends AbstractRepository implements Di
     private TypedQueryBuilder<Direccion> getQueryBuilder() {
         return new TypedQueryBuilder<>(em, Direccion.class);
     }
-    
+
+    @Override	
     public List<Direccion> solveQuery(SQLSelect select) {
         return solveQuery(select, 0, 0);
     }
 
+    @Override
     public List<Direccion> solveQuery(SQLSelect select, int pageSize, int pageNumber) {
         return getQueryBuilder().build(select, pageSize, pageNumber).execute();
     }
 
     // AssocOperator: AssocOperator000
+	@Override
     public Boolean assocOperator000(Direccion instance) throws SystemException {
         try {
             // EXIST (Departamento)
@@ -59,12 +62,14 @@ public class DireccionJpaRepositoryImpl extends AbstractRepository implements Di
     }
 
     // Range 1 for AssocOperator AssocOperator000
+	@Override
     public Boolean assocOperator000Range1 (Direccion instance) throws SystemException {
         SQLExists sql = assocOperator000Range1Query(instance);
         return !new TypedQueryBuilder<Direccion>(em, Direccion.class).build(sql).execute().isEmpty();
     }
 
     // Range Query 1 for AssocOperator AssocOperator000
+	@Override
     public SQLExists assocOperator000Range1Query (Direccion instance) throws SystemException {
         try {
             // The path starts with a role
@@ -77,6 +82,7 @@ public class DireccionJpaRepositoryImpl extends AbstractRepository implements Di
     }
 
     // AssocOperator: AssocOperator001
+	@Override
     public Boolean assocOperator001(Direccion instance) throws SystemException {
         try {
             // EXIST (Departamento)
@@ -89,12 +95,14 @@ public class DireccionJpaRepositoryImpl extends AbstractRepository implements Di
     }
 
     // Range 1 for AssocOperator AssocOperator001
+	@Override
     public Boolean assocOperator001Range1 (Direccion instance) throws SystemException {
         SQLExists sql = assocOperator001Range1Query(instance);
         return !new TypedQueryBuilder<Direccion>(em, Direccion.class).build(sql).execute().isEmpty();
     }
 
     // Range Query 1 for AssocOperator AssocOperator001
+	@Override
     public SQLExists assocOperator001Range1Query (Direccion instance) throws SystemException {
         try {
             // The path starts with a role
@@ -107,6 +115,7 @@ public class DireccionJpaRepositoryImpl extends AbstractRepository implements Di
     }
 
     // AssocOperator: AssocOperator003
+	@Override
     public Boolean assocOperator003(Direccion instance) throws SystemException {
         try {
             // EXIST (Municipio)
@@ -119,12 +128,14 @@ public class DireccionJpaRepositoryImpl extends AbstractRepository implements Di
     }
 
     // Range 1 for AssocOperator AssocOperator003
+	@Override
     public Boolean assocOperator003Range1 (Direccion instance) throws SystemException {
         SQLExists sql = assocOperator003Range1Query(instance);
         return !new TypedQueryBuilder<Direccion>(em, Direccion.class).build(sql).execute().isEmpty();
     }
 
     // Range Query 1 for AssocOperator AssocOperator003
+	@Override
     public SQLExists assocOperator003Range1Query (Direccion instance) throws SystemException {
         try {
             // The path starts with a role
@@ -137,6 +148,7 @@ public class DireccionJpaRepositoryImpl extends AbstractRepository implements Di
     }
 
     // AssocOperator: AssocOperator004
+	@Override
     public Boolean assocOperator004(Direccion instance) throws SystemException {
         try {
             // EXIST (Municipio)
@@ -149,12 +161,14 @@ public class DireccionJpaRepositoryImpl extends AbstractRepository implements Di
     }
 
     // Range 1 for AssocOperator AssocOperator004
+	@Override
     public Boolean assocOperator004Range1 (Direccion instance) throws SystemException {
         SQLExists sql = assocOperator004Range1Query(instance);
         return !new TypedQueryBuilder<Direccion>(em, Direccion.class).build(sql).execute().isEmpty();
     }
 
     // Range Query 1 for AssocOperator AssocOperator004
+	@Override
     public SQLExists assocOperator004Range1Query (Direccion instance) throws SystemException {
         try {
             // The path starts with a role
@@ -167,6 +181,7 @@ public class DireccionJpaRepositoryImpl extends AbstractRepository implements Di
     }
 
     // AssocOperator: AssocOperator006
+	@Override
     public Boolean assocOperator006(Direccion instance) throws SystemException {
         try {
             // EXIST (Pais)
@@ -179,12 +194,14 @@ public class DireccionJpaRepositoryImpl extends AbstractRepository implements Di
     }
 
     // Range 1 for AssocOperator AssocOperator006
+	@Override
     public Boolean assocOperator006Range1 (Direccion instance) throws SystemException {
         SQLExists sql = assocOperator006Range1Query(instance);
         return !new TypedQueryBuilder<Direccion>(em, Direccion.class).build(sql).execute().isEmpty();
     }
 
     // Range Query 1 for AssocOperator AssocOperator006
+	@Override
     public SQLExists assocOperator006Range1Query (Direccion instance) throws SystemException {
         try {
             // The path starts with a role
@@ -197,6 +214,7 @@ public class DireccionJpaRepositoryImpl extends AbstractRepository implements Di
     }
 
     // AssocOperator: AssocOperator007
+	@Override
     public Boolean assocOperator007(Direccion instance) throws SystemException {
         try {
             // EXIST (Pais)
@@ -209,12 +227,14 @@ public class DireccionJpaRepositoryImpl extends AbstractRepository implements Di
     }
 
     // Range 1 for AssocOperator AssocOperator007
+	@Override
     public Boolean assocOperator007Range1 (Direccion instance) throws SystemException {
         SQLExists sql = assocOperator007Range1Query(instance);
         return !new TypedQueryBuilder<Direccion>(em, Direccion.class).build(sql).execute().isEmpty();
     }
 
     // Range Query 1 for AssocOperator AssocOperator007
+	@Override
     public SQLExists assocOperator007Range1Query (Direccion instance) throws SystemException {
         try {
             // The path starts with a role
@@ -227,6 +247,7 @@ public class DireccionJpaRepositoryImpl extends AbstractRepository implements Di
     }
 
     // AssocOperator: AssocOperator009
+	@Override
     public Boolean assocOperator009(Direccion instance) throws SystemException {
         try {
             // EXIST (TipoDireccion)
@@ -239,12 +260,14 @@ public class DireccionJpaRepositoryImpl extends AbstractRepository implements Di
     }
 
     // Range 1 for AssocOperator AssocOperator009
+	@Override
     public Boolean assocOperator009Range1 (Direccion instance) throws SystemException {
         SQLExists sql = assocOperator009Range1Query(instance);
         return !new TypedQueryBuilder<Direccion>(em, Direccion.class).build(sql).execute().isEmpty();
     }
 
     // Range Query 1 for AssocOperator AssocOperator009
+	@Override
     public SQLExists assocOperator009Range1Query (Direccion instance) throws SystemException {
         try {
             // The path starts with a role
@@ -257,6 +280,7 @@ public class DireccionJpaRepositoryImpl extends AbstractRepository implements Di
     }
 
     // AssocOperator: AssocOperator010
+	@Override
     public Boolean assocOperator010(Direccion instance) throws SystemException {
         try {
             // EXIST (TipoDireccion)
@@ -269,12 +293,14 @@ public class DireccionJpaRepositoryImpl extends AbstractRepository implements Di
     }
 
     // Range 1 for AssocOperator AssocOperator010
+	@Override
     public Boolean assocOperator010Range1 (Direccion instance) throws SystemException {
         SQLExists sql = assocOperator010Range1Query(instance);
         return !new TypedQueryBuilder<Direccion>(em, Direccion.class).build(sql).execute().isEmpty();
     }
 
     // Range Query 1 for AssocOperator AssocOperator010
+	@Override
     public SQLExists assocOperator010Range1Query (Direccion instance) throws SystemException {
         try {
             // The path starts with a role
@@ -287,6 +313,7 @@ public class DireccionJpaRepositoryImpl extends AbstractRepository implements Di
     }
 
     // AssocOperator: AssocOperator012
+	@Override
     public Boolean assocOperator012(Direccion instance) throws SystemException {
         try {
             // EXIST (Departamento)
@@ -299,12 +326,14 @@ public class DireccionJpaRepositoryImpl extends AbstractRepository implements Di
     }
 
     // Range 1 for AssocOperator AssocOperator012
+	@Override
     public Boolean assocOperator012Range1 (Direccion instance) throws SystemException {
         SQLExists sql = assocOperator012Range1Query(instance);
         return !new TypedQueryBuilder<Direccion>(em, Direccion.class).build(sql).execute().isEmpty();
     }
 
     // Range Query 1 for AssocOperator AssocOperator012
+	@Override
     public SQLExists assocOperator012Range1Query (Direccion instance) throws SystemException {
         try {
             // The path starts with a role
@@ -317,6 +346,7 @@ public class DireccionJpaRepositoryImpl extends AbstractRepository implements Di
     }
 
     // AssocOperator: AssocOperator013
+	@Override
     public Boolean assocOperator013(Direccion instance) throws SystemException {
         try {
             // EXIST (Municipio)
@@ -329,12 +359,14 @@ public class DireccionJpaRepositoryImpl extends AbstractRepository implements Di
     }
 
     // Range 1 for AssocOperator AssocOperator013
+	@Override
     public Boolean assocOperator013Range1 (Direccion instance) throws SystemException {
         SQLExists sql = assocOperator013Range1Query(instance);
         return !new TypedQueryBuilder<Direccion>(em, Direccion.class).build(sql).execute().isEmpty();
     }
 
     // Range Query 1 for AssocOperator AssocOperator013
+	@Override
     public SQLExists assocOperator013Range1Query (Direccion instance) throws SystemException {
         try {
             // The path starts with a role
@@ -347,6 +379,7 @@ public class DireccionJpaRepositoryImpl extends AbstractRepository implements Di
     }
 
     // AssocOperator: AssocOperator014
+	@Override
     public Boolean assocOperator014(Direccion instance) throws SystemException {
         try {
             // EXIST (Pais)
@@ -359,12 +392,14 @@ public class DireccionJpaRepositoryImpl extends AbstractRepository implements Di
     }
 
     // Range 1 for AssocOperator AssocOperator014
+	@Override
     public Boolean assocOperator014Range1 (Direccion instance) throws SystemException {
         SQLExists sql = assocOperator014Range1Query(instance);
         return !new TypedQueryBuilder<Direccion>(em, Direccion.class).build(sql).execute().isEmpty();
     }
 
     // Range Query 1 for AssocOperator AssocOperator014
+	@Override
     public SQLExists assocOperator014Range1Query (Direccion instance) throws SystemException {
         try {
             // The path starts with a role
@@ -377,6 +412,7 @@ public class DireccionJpaRepositoryImpl extends AbstractRepository implements Di
     }
 
     // AssocOperator: AssocOperator015
+	@Override
     public Boolean assocOperator015(Direccion instance) throws SystemException {
         try {
             // EXIST (TipoDireccion)
@@ -389,12 +425,14 @@ public class DireccionJpaRepositoryImpl extends AbstractRepository implements Di
     }
 
     // Range 1 for AssocOperator AssocOperator015
+	@Override
     public Boolean assocOperator015Range1 (Direccion instance) throws SystemException {
         SQLExists sql = assocOperator015Range1Query(instance);
         return !new TypedQueryBuilder<Direccion>(em, Direccion.class).build(sql).execute().isEmpty();
     }
 
     // Range Query 1 for AssocOperator AssocOperator015
+	@Override
     public SQLExists assocOperator015Range1Query (Direccion instance) throws SystemException {
         try {
             // The path starts with a role
@@ -406,6 +444,7 @@ public class DireccionJpaRepositoryImpl extends AbstractRepository implements Di
         }
     }
 
+    @Override
     public void refreshEntity(Object object) {
         super.refreshEntity(object);
     }

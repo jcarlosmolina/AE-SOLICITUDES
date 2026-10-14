@@ -35,15 +35,18 @@ public class TipoIVAJpaRepositoryImpl extends AbstractRepository implements Tipo
     private TypedQueryBuilder<TipoIVA> getQueryBuilder() {
         return new TypedQueryBuilder<>(em, TipoIVA.class);
     }
-    
+
+    @Override	
     public List<TipoIVA> solveQuery(SQLSelect select) {
         return solveQuery(select, 0, 0);
     }
 
+    @Override
     public List<TipoIVA> solveQuery(SQLSelect select, int pageSize, int pageNumber) {
         return getQueryBuilder().build(select, pageSize, pageNumber).execute();
     }
 
+    @Override
     public void refreshEntity(Object object) {
         super.refreshEntity(object);
     }

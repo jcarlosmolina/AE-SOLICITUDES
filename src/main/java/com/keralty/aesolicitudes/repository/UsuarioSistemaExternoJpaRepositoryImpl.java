@@ -34,15 +34,18 @@ public class UsuarioSistemaExternoJpaRepositoryImpl extends AbstractRepository i
     private TypedQueryBuilder<UsuarioSistemaExterno> getQueryBuilder() {
         return new TypedQueryBuilder<>(em, UsuarioSistemaExterno.class);
     }
-    
+
+    @Override	
     public List<UsuarioSistemaExterno> solveQuery(SQLSelect select) {
         return solveQuery(select, 0, 0);
     }
 
+    @Override
     public List<UsuarioSistemaExterno> solveQuery(SQLSelect select, int pageSize, int pageNumber) {
         return getQueryBuilder().build(select, pageSize, pageNumber).execute();
     }
 
+    @Override
     public void refreshEntity(Object object) {
         super.refreshEntity(object);
     }

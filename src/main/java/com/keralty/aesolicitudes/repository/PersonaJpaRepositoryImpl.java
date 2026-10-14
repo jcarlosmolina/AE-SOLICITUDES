@@ -48,16 +48,19 @@ public class PersonaJpaRepositoryImpl extends AbstractRepository implements Pers
     private TypedQueryBuilder<Persona> getQueryBuilder() {
         return new TypedQueryBuilder<>(em, Persona.class);
     }
-    
+
+    @Override	
     public List<Persona> solveQuery(SQLSelect select) {
         return solveQuery(select, 0, 0);
     }
 
+    @Override
     public List<Persona> solveQuery(SQLSelect select, int pageSize, int pageNumber) {
         return getQueryBuilder().build(select, pageSize, pageNumber).execute();
     }
 
     // AssocOperator: AssocOperator000
+	@Override
     public Boolean assocOperator000(Persona instance) throws SystemException {
         try {
             // EXIST (Direcciones)
@@ -70,12 +73,14 @@ public class PersonaJpaRepositoryImpl extends AbstractRepository implements Pers
     }
 
     // Range 1 for AssocOperator AssocOperator000
+	@Override
     public Boolean assocOperator000Range1 (Persona instance) throws SystemException {
         SQLExists sql = assocOperator000Range1Query(instance);
         return !new TypedQueryBuilder<Persona>(em, Persona.class).build(sql).execute().isEmpty();
     }
 
     // Range Query 1 for AssocOperator AssocOperator000
+	@Override
     public SQLExists assocOperator000Range1Query (Persona instance) throws SystemException {
         try {
             // The path starts with a role
@@ -88,6 +93,7 @@ public class PersonaJpaRepositoryImpl extends AbstractRepository implements Pers
     }
 
     // AssocOperator: AssocOperator001
+	@Override
     public Boolean assocOperator001(Persona instance) throws SystemException {
         try {
             // EXIST (SolicitudesContratante.GrupoAsociado)
@@ -100,12 +106,14 @@ public class PersonaJpaRepositoryImpl extends AbstractRepository implements Pers
     }
 
     // Range 1 for AssocOperator AssocOperator001
+	@Override
     public Boolean assocOperator001Range1 (Persona instance) throws SystemException {
         SQLExists sql = assocOperator001Range1Query(instance);
         return !new TypedQueryBuilder<Persona>(em, Persona.class).build(sql).execute().isEmpty();
     }
 
     // Range Query 1 for AssocOperator AssocOperator001
+	@Override
     public SQLExists assocOperator001Range1Query (Persona instance) throws SystemException {
         try {
             // The path starts with a role
@@ -118,6 +126,7 @@ public class PersonaJpaRepositoryImpl extends AbstractRepository implements Pers
     }
 
     // AssocOperator: AssocOperator002
+	@Override
     public Boolean assocOperator002(Persona instance) throws SystemException {
         try {
             // EXIST (SolicitudesContratante) WHERE (SolicitudesContratante.Tramite = 2)
@@ -130,12 +139,14 @@ public class PersonaJpaRepositoryImpl extends AbstractRepository implements Pers
     }
 
     // Range 1 for AssocOperator AssocOperator002
+	@Override
     public Boolean assocOperator002Range1 (Persona instance) throws SystemException {
         SQLExists sql = assocOperator002Range1Query(instance);
         return !new TypedQueryBuilder<Persona>(em, Persona.class).build(sql).execute().isEmpty();
     }
 
     // Range Query 1 for AssocOperator AssocOperator002
+	@Override
     public SQLExists assocOperator002Range1Query (Persona instance) throws SystemException {
         try {
             // The path starts with a role
@@ -165,6 +176,7 @@ public class PersonaJpaRepositoryImpl extends AbstractRepository implements Pers
     }
 
     // AssocOperator: AssocOperator003
+	@Override
     public Boolean assocOperator003(Persona instance) throws SystemException {
         try {
             // EXIST (SolicitudesTitular) WHERE (SolicitudesTitular.Tramite = 1)
@@ -177,12 +189,14 @@ public class PersonaJpaRepositoryImpl extends AbstractRepository implements Pers
     }
 
     // Range 1 for AssocOperator AssocOperator003
+	@Override
     public Boolean assocOperator003Range1 (Persona instance) throws SystemException {
         SQLExists sql = assocOperator003Range1Query(instance);
         return !new TypedQueryBuilder<Persona>(em, Persona.class).build(sql).execute().isEmpty();
     }
 
     // Range Query 1 for AssocOperator AssocOperator003
+	@Override
     public SQLExists assocOperator003Range1Query (Persona instance) throws SystemException {
         try {
             // The path starts with a role
@@ -212,6 +226,7 @@ public class PersonaJpaRepositoryImpl extends AbstractRepository implements Pers
     }
 
     // AssocOperator: AssocOperator004
+	@Override
     public Boolean assocOperator004(Persona instance) throws SystemException {
         try {
             // EXIST (SolicitudesTitular) WHERE (SolicitudesTitular.Tramite <> 1 AND SolicitudesTitular.NumFamilia = NULL)
@@ -224,12 +239,14 @@ public class PersonaJpaRepositoryImpl extends AbstractRepository implements Pers
     }
 
     // Range 1 for AssocOperator AssocOperator004
+	@Override
     public Boolean assocOperator004Range1 (Persona instance) throws SystemException {
         SQLExists sql = assocOperator004Range1Query(instance);
         return !new TypedQueryBuilder<Persona>(em, Persona.class).build(sql).execute().isEmpty();
     }
 
     // Range Query 1 for AssocOperator AssocOperator004
+	@Override
     public SQLExists assocOperator004Range1Query (Persona instance) throws SystemException {
         try {
             // The path starts with a role
@@ -273,6 +290,7 @@ public class PersonaJpaRepositoryImpl extends AbstractRepository implements Pers
     }
 
     // AssocOperator: AssocOperator015
+	@Override
     public Boolean assocOperator015(Persona instance) throws SystemException {
         try {
             // EXIST (DepartamentoNacimiento)
@@ -285,12 +303,14 @@ public class PersonaJpaRepositoryImpl extends AbstractRepository implements Pers
     }
 
     // Range 1 for AssocOperator AssocOperator015
+	@Override
     public Boolean assocOperator015Range1 (Persona instance) throws SystemException {
         SQLExists sql = assocOperator015Range1Query(instance);
         return !new TypedQueryBuilder<Persona>(em, Persona.class).build(sql).execute().isEmpty();
     }
 
     // Range Query 1 for AssocOperator AssocOperator015
+	@Override
     public SQLExists assocOperator015Range1Query (Persona instance) throws SystemException {
         try {
             // The path starts with a role
@@ -303,6 +323,7 @@ public class PersonaJpaRepositoryImpl extends AbstractRepository implements Pers
     }
 
     // AssocOperator: AssocOperator016
+	@Override
     public Boolean assocOperator016(Persona instance) throws SystemException {
         try {
             // EXIST (DepartamentoNacimiento)
@@ -315,12 +336,14 @@ public class PersonaJpaRepositoryImpl extends AbstractRepository implements Pers
     }
 
     // Range 1 for AssocOperator AssocOperator016
+	@Override
     public Boolean assocOperator016Range1 (Persona instance) throws SystemException {
         SQLExists sql = assocOperator016Range1Query(instance);
         return !new TypedQueryBuilder<Persona>(em, Persona.class).build(sql).execute().isEmpty();
     }
 
     // Range Query 1 for AssocOperator AssocOperator016
+	@Override
     public SQLExists assocOperator016Range1Query (Persona instance) throws SystemException {
         try {
             // The path starts with a role
@@ -333,6 +356,7 @@ public class PersonaJpaRepositoryImpl extends AbstractRepository implements Pers
     }
 
     // AssocOperator: AssocOperator018
+	@Override
     public Boolean assocOperator018(Persona instance) throws SystemException {
         try {
             // EXIST (MunicipioNacimiento)
@@ -345,12 +369,14 @@ public class PersonaJpaRepositoryImpl extends AbstractRepository implements Pers
     }
 
     // Range 1 for AssocOperator AssocOperator018
+	@Override
     public Boolean assocOperator018Range1 (Persona instance) throws SystemException {
         SQLExists sql = assocOperator018Range1Query(instance);
         return !new TypedQueryBuilder<Persona>(em, Persona.class).build(sql).execute().isEmpty();
     }
 
     // Range Query 1 for AssocOperator AssocOperator018
+	@Override
     public SQLExists assocOperator018Range1Query (Persona instance) throws SystemException {
         try {
             // The path starts with a role
@@ -363,6 +389,7 @@ public class PersonaJpaRepositoryImpl extends AbstractRepository implements Pers
     }
 
     // AssocOperator: AssocOperator019
+	@Override
     public Boolean assocOperator019(Persona instance) throws SystemException {
         try {
             // EXIST (MunicipioNacimiento)
@@ -375,12 +402,14 @@ public class PersonaJpaRepositoryImpl extends AbstractRepository implements Pers
     }
 
     // Range 1 for AssocOperator AssocOperator019
+	@Override
     public Boolean assocOperator019Range1 (Persona instance) throws SystemException {
         SQLExists sql = assocOperator019Range1Query(instance);
         return !new TypedQueryBuilder<Persona>(em, Persona.class).build(sql).execute().isEmpty();
     }
 
     // Range Query 1 for AssocOperator AssocOperator019
+	@Override
     public SQLExists assocOperator019Range1Query (Persona instance) throws SystemException {
         try {
             // The path starts with a role
@@ -393,6 +422,7 @@ public class PersonaJpaRepositoryImpl extends AbstractRepository implements Pers
     }
 
     // AssocOperator: AssocOperator021
+	@Override
     public Boolean assocOperator021(Persona instance) throws SystemException {
         try {
             // EXIST (EstadoCivil)
@@ -405,12 +435,14 @@ public class PersonaJpaRepositoryImpl extends AbstractRepository implements Pers
     }
 
     // Range 1 for AssocOperator AssocOperator021
+	@Override
     public Boolean assocOperator021Range1 (Persona instance) throws SystemException {
         SQLExists sql = assocOperator021Range1Query(instance);
         return !new TypedQueryBuilder<Persona>(em, Persona.class).build(sql).execute().isEmpty();
     }
 
     // Range Query 1 for AssocOperator AssocOperator021
+	@Override
     public SQLExists assocOperator021Range1Query (Persona instance) throws SystemException {
         try {
             // The path starts with a role
@@ -423,6 +455,7 @@ public class PersonaJpaRepositoryImpl extends AbstractRepository implements Pers
     }
 
     // AssocOperator: AssocOperator022
+	@Override
     public Boolean assocOperator022(Persona instance) throws SystemException {
         try {
             // EXIST (EstadoCivil)
@@ -435,12 +468,14 @@ public class PersonaJpaRepositoryImpl extends AbstractRepository implements Pers
     }
 
     // Range 1 for AssocOperator AssocOperator022
+	@Override
     public Boolean assocOperator022Range1 (Persona instance) throws SystemException {
         SQLExists sql = assocOperator022Range1Query(instance);
         return !new TypedQueryBuilder<Persona>(em, Persona.class).build(sql).execute().isEmpty();
     }
 
     // Range Query 1 for AssocOperator AssocOperator022
+	@Override
     public SQLExists assocOperator022Range1Query (Persona instance) throws SystemException {
         try {
             // The path starts with a role
@@ -453,6 +488,7 @@ public class PersonaJpaRepositoryImpl extends AbstractRepository implements Pers
     }
 
     // AssocOperator: AssocOperator024
+	@Override
     public Boolean assocOperator024(Persona instance) throws SystemException {
         try {
             // EXIST (DepartamentoNacimiento)
@@ -465,12 +501,14 @@ public class PersonaJpaRepositoryImpl extends AbstractRepository implements Pers
     }
 
     // Range 1 for AssocOperator AssocOperator024
+	@Override
     public Boolean assocOperator024Range1 (Persona instance) throws SystemException {
         SQLExists sql = assocOperator024Range1Query(instance);
         return !new TypedQueryBuilder<Persona>(em, Persona.class).build(sql).execute().isEmpty();
     }
 
     // Range Query 1 for AssocOperator AssocOperator024
+	@Override
     public SQLExists assocOperator024Range1Query (Persona instance) throws SystemException {
         try {
             // The path starts with a role
@@ -483,6 +521,7 @@ public class PersonaJpaRepositoryImpl extends AbstractRepository implements Pers
     }
 
     // AssocOperator: AssocOperator025
+	@Override
     public Boolean assocOperator025(Persona instance) throws SystemException {
         try {
             // EXIST (DepartamentoNacimiento)
@@ -495,12 +534,14 @@ public class PersonaJpaRepositoryImpl extends AbstractRepository implements Pers
     }
 
     // Range 1 for AssocOperator AssocOperator025
+	@Override
     public Boolean assocOperator025Range1 (Persona instance) throws SystemException {
         SQLExists sql = assocOperator025Range1Query(instance);
         return !new TypedQueryBuilder<Persona>(em, Persona.class).build(sql).execute().isEmpty();
     }
 
     // Range Query 1 for AssocOperator AssocOperator025
+	@Override
     public SQLExists assocOperator025Range1Query (Persona instance) throws SystemException {
         try {
             // The path starts with a role
@@ -513,6 +554,7 @@ public class PersonaJpaRepositoryImpl extends AbstractRepository implements Pers
     }
 
     // AssocOperator: AssocOperator026
+	@Override
     public Boolean assocOperator026(Persona instance) throws SystemException {
         try {
             // EXIST (DepartamentoNacimiento)
@@ -525,12 +567,14 @@ public class PersonaJpaRepositoryImpl extends AbstractRepository implements Pers
     }
 
     // Range 1 for AssocOperator AssocOperator026
+	@Override
     public Boolean assocOperator026Range1 (Persona instance) throws SystemException {
         SQLExists sql = assocOperator026Range1Query(instance);
         return !new TypedQueryBuilder<Persona>(em, Persona.class).build(sql).execute().isEmpty();
     }
 
     // Range Query 1 for AssocOperator AssocOperator026
+	@Override
     public SQLExists assocOperator026Range1Query (Persona instance) throws SystemException {
         try {
             // The path starts with a role
@@ -543,6 +587,7 @@ public class PersonaJpaRepositoryImpl extends AbstractRepository implements Pers
     }
 
     // AssocOperator: AssocOperator027
+	@Override
     public Boolean assocOperator027(Persona instance) throws SystemException {
         try {
             // EXIST (MunicipioNacimiento)
@@ -555,12 +600,14 @@ public class PersonaJpaRepositoryImpl extends AbstractRepository implements Pers
     }
 
     // Range 1 for AssocOperator AssocOperator027
+	@Override
     public Boolean assocOperator027Range1 (Persona instance) throws SystemException {
         SQLExists sql = assocOperator027Range1Query(instance);
         return !new TypedQueryBuilder<Persona>(em, Persona.class).build(sql).execute().isEmpty();
     }
 
     // Range Query 1 for AssocOperator AssocOperator027
+	@Override
     public SQLExists assocOperator027Range1Query (Persona instance) throws SystemException {
         try {
             // The path starts with a role
@@ -573,6 +620,7 @@ public class PersonaJpaRepositoryImpl extends AbstractRepository implements Pers
     }
 
     // AssocOperator: AssocOperator028
+	@Override
     public Boolean assocOperator028(Persona instance) throws SystemException {
         try {
             // EXIST (MunicipioNacimiento)
@@ -585,12 +633,14 @@ public class PersonaJpaRepositoryImpl extends AbstractRepository implements Pers
     }
 
     // Range 1 for AssocOperator AssocOperator028
+	@Override
     public Boolean assocOperator028Range1 (Persona instance) throws SystemException {
         SQLExists sql = assocOperator028Range1Query(instance);
         return !new TypedQueryBuilder<Persona>(em, Persona.class).build(sql).execute().isEmpty();
     }
 
     // Range Query 1 for AssocOperator AssocOperator028
+	@Override
     public SQLExists assocOperator028Range1Query (Persona instance) throws SystemException {
         try {
             // The path starts with a role
@@ -603,6 +653,7 @@ public class PersonaJpaRepositoryImpl extends AbstractRepository implements Pers
     }
 
     // AssocOperator: AssocOperator029
+	@Override
     public Boolean assocOperator029(Persona instance) throws SystemException {
         try {
             // EXIST (MunicipioNacimiento)
@@ -615,12 +666,14 @@ public class PersonaJpaRepositoryImpl extends AbstractRepository implements Pers
     }
 
     // Range 1 for AssocOperator AssocOperator029
+	@Override
     public Boolean assocOperator029Range1 (Persona instance) throws SystemException {
         SQLExists sql = assocOperator029Range1Query(instance);
         return !new TypedQueryBuilder<Persona>(em, Persona.class).build(sql).execute().isEmpty();
     }
 
     // Range Query 1 for AssocOperator AssocOperator029
+	@Override
     public SQLExists assocOperator029Range1Query (Persona instance) throws SystemException {
         try {
             // The path starts with a role
@@ -633,6 +686,7 @@ public class PersonaJpaRepositoryImpl extends AbstractRepository implements Pers
     }
 
     // AssocOperator: AssocOperator030
+	@Override
     public Boolean assocOperator030(Persona instance) throws SystemException {
         try {
             // EXIST (EstadoPersona)
@@ -645,12 +699,14 @@ public class PersonaJpaRepositoryImpl extends AbstractRepository implements Pers
     }
 
     // Range 1 for AssocOperator AssocOperator030
+	@Override
     public Boolean assocOperator030Range1 (Persona instance) throws SystemException {
         SQLExists sql = assocOperator030Range1Query(instance);
         return !new TypedQueryBuilder<Persona>(em, Persona.class).build(sql).execute().isEmpty();
     }
 
     // Range Query 1 for AssocOperator AssocOperator030
+	@Override
     public SQLExists assocOperator030Range1Query (Persona instance) throws SystemException {
         try {
             // The path starts with a role
@@ -663,6 +719,7 @@ public class PersonaJpaRepositoryImpl extends AbstractRepository implements Pers
     }
 
     // AssocOperator: AssocOperator031
+	@Override
     public Boolean assocOperator031(Persona instance) throws SystemException {
         try {
             // EXIST (DepartamentoNacimiento)
@@ -675,12 +732,14 @@ public class PersonaJpaRepositoryImpl extends AbstractRepository implements Pers
     }
 
     // Range 1 for AssocOperator AssocOperator031
+	@Override
     public Boolean assocOperator031Range1 (Persona instance) throws SystemException {
         SQLExists sql = assocOperator031Range1Query(instance);
         return !new TypedQueryBuilder<Persona>(em, Persona.class).build(sql).execute().isEmpty();
     }
 
     // Range Query 1 for AssocOperator AssocOperator031
+	@Override
     public SQLExists assocOperator031Range1Query (Persona instance) throws SystemException {
         try {
             // The path starts with a role
@@ -693,6 +752,7 @@ public class PersonaJpaRepositoryImpl extends AbstractRepository implements Pers
     }
 
     // AssocOperator: AssocOperator032
+	@Override
     public Boolean assocOperator032(Persona instance) throws SystemException {
         try {
             // EXIST (MunicipioNacimiento)
@@ -705,12 +765,14 @@ public class PersonaJpaRepositoryImpl extends AbstractRepository implements Pers
     }
 
     // Range 1 for AssocOperator AssocOperator032
+	@Override
     public Boolean assocOperator032Range1 (Persona instance) throws SystemException {
         SQLExists sql = assocOperator032Range1Query(instance);
         return !new TypedQueryBuilder<Persona>(em, Persona.class).build(sql).execute().isEmpty();
     }
 
     // Range Query 1 for AssocOperator AssocOperator032
+	@Override
     public SQLExists assocOperator032Range1Query (Persona instance) throws SystemException {
         try {
             // The path starts with a role
@@ -723,6 +785,7 @@ public class PersonaJpaRepositoryImpl extends AbstractRepository implements Pers
     }
 
     // AssocOperator: AssocOperator033
+	@Override
     public Boolean assocOperator033(Persona instance) throws SystemException {
         try {
             // EXIST (EstadoCivil)
@@ -735,12 +798,14 @@ public class PersonaJpaRepositoryImpl extends AbstractRepository implements Pers
     }
 
     // Range 1 for AssocOperator AssocOperator033
+	@Override
     public Boolean assocOperator033Range1 (Persona instance) throws SystemException {
         SQLExists sql = assocOperator033Range1Query(instance);
         return !new TypedQueryBuilder<Persona>(em, Persona.class).build(sql).execute().isEmpty();
     }
 
     // Range Query 1 for AssocOperator AssocOperator033
+	@Override
     public SQLExists assocOperator033Range1Query (Persona instance) throws SystemException {
         try {
             // The path starts with a role
@@ -753,6 +818,7 @@ public class PersonaJpaRepositoryImpl extends AbstractRepository implements Pers
     }
 
     // AssocOperator: AssocOperator052
+	@Override
     public Boolean assocOperator052(Persona instance) throws SystemException {
         try {
             // EXIST (DepartamentoNacimiento)
@@ -765,12 +831,14 @@ public class PersonaJpaRepositoryImpl extends AbstractRepository implements Pers
     }
 
     // Range 1 for AssocOperator AssocOperator052
+	@Override
     public Boolean assocOperator052Range1 (Persona instance) throws SystemException {
         SQLExists sql = assocOperator052Range1Query(instance);
         return !new TypedQueryBuilder<Persona>(em, Persona.class).build(sql).execute().isEmpty();
     }
 
     // Range Query 1 for AssocOperator AssocOperator052
+	@Override
     public SQLExists assocOperator052Range1Query (Persona instance) throws SystemException {
         try {
             // The path starts with a role
@@ -783,6 +851,7 @@ public class PersonaJpaRepositoryImpl extends AbstractRepository implements Pers
     }
 
     // AssocOperator: AssocOperator053
+	@Override
     public Boolean assocOperator053(Persona instance) throws SystemException {
         try {
             // EXIST (DepartamentoNacimiento)
@@ -795,12 +864,14 @@ public class PersonaJpaRepositoryImpl extends AbstractRepository implements Pers
     }
 
     // Range 1 for AssocOperator AssocOperator053
+	@Override
     public Boolean assocOperator053Range1 (Persona instance) throws SystemException {
         SQLExists sql = assocOperator053Range1Query(instance);
         return !new TypedQueryBuilder<Persona>(em, Persona.class).build(sql).execute().isEmpty();
     }
 
     // Range Query 1 for AssocOperator AssocOperator053
+	@Override
     public SQLExists assocOperator053Range1Query (Persona instance) throws SystemException {
         try {
             // The path starts with a role
@@ -813,6 +884,7 @@ public class PersonaJpaRepositoryImpl extends AbstractRepository implements Pers
     }
 
     // AssocOperator: AssocOperator055
+	@Override
     public Boolean assocOperator055(Persona instance) throws SystemException {
         try {
             // EXIST (MunicipioNacimiento)
@@ -825,12 +897,14 @@ public class PersonaJpaRepositoryImpl extends AbstractRepository implements Pers
     }
 
     // Range 1 for AssocOperator AssocOperator055
+	@Override
     public Boolean assocOperator055Range1 (Persona instance) throws SystemException {
         SQLExists sql = assocOperator055Range1Query(instance);
         return !new TypedQueryBuilder<Persona>(em, Persona.class).build(sql).execute().isEmpty();
     }
 
     // Range Query 1 for AssocOperator AssocOperator055
+	@Override
     public SQLExists assocOperator055Range1Query (Persona instance) throws SystemException {
         try {
             // The path starts with a role
@@ -843,6 +917,7 @@ public class PersonaJpaRepositoryImpl extends AbstractRepository implements Pers
     }
 
     // AssocOperator: AssocOperator056
+	@Override
     public Boolean assocOperator056(Persona instance) throws SystemException {
         try {
             // EXIST (MunicipioNacimiento)
@@ -855,12 +930,14 @@ public class PersonaJpaRepositoryImpl extends AbstractRepository implements Pers
     }
 
     // Range 1 for AssocOperator AssocOperator056
+	@Override
     public Boolean assocOperator056Range1 (Persona instance) throws SystemException {
         SQLExists sql = assocOperator056Range1Query(instance);
         return !new TypedQueryBuilder<Persona>(em, Persona.class).build(sql).execute().isEmpty();
     }
 
     // Range Query 1 for AssocOperator AssocOperator056
+	@Override
     public SQLExists assocOperator056Range1Query (Persona instance) throws SystemException {
         try {
             // The path starts with a role
@@ -873,6 +950,7 @@ public class PersonaJpaRepositoryImpl extends AbstractRepository implements Pers
     }
 
     // AssocOperator: AssocOperator058
+	@Override
     public Boolean assocOperator058(Persona instance) throws SystemException {
         try {
             // EXIST (EstadoCivil)
@@ -885,12 +963,14 @@ public class PersonaJpaRepositoryImpl extends AbstractRepository implements Pers
     }
 
     // Range 1 for AssocOperator AssocOperator058
+	@Override
     public Boolean assocOperator058Range1 (Persona instance) throws SystemException {
         SQLExists sql = assocOperator058Range1Query(instance);
         return !new TypedQueryBuilder<Persona>(em, Persona.class).build(sql).execute().isEmpty();
     }
 
     // Range Query 1 for AssocOperator AssocOperator058
+	@Override
     public SQLExists assocOperator058Range1Query (Persona instance) throws SystemException {
         try {
             // The path starts with a role
@@ -903,6 +983,7 @@ public class PersonaJpaRepositoryImpl extends AbstractRepository implements Pers
     }
 
     // AssocOperator: AssocOperator059
+	@Override
     public Boolean assocOperator059(Persona instance) throws SystemException {
         try {
             // EXIST (EstadoCivil)
@@ -915,12 +996,14 @@ public class PersonaJpaRepositoryImpl extends AbstractRepository implements Pers
     }
 
     // Range 1 for AssocOperator AssocOperator059
+	@Override
     public Boolean assocOperator059Range1 (Persona instance) throws SystemException {
         SQLExists sql = assocOperator059Range1Query(instance);
         return !new TypedQueryBuilder<Persona>(em, Persona.class).build(sql).execute().isEmpty();
     }
 
     // Range Query 1 for AssocOperator AssocOperator059
+	@Override
     public SQLExists assocOperator059Range1Query (Persona instance) throws SystemException {
         try {
             // The path starts with a role
@@ -933,6 +1016,7 @@ public class PersonaJpaRepositoryImpl extends AbstractRepository implements Pers
     }
 
     // AssocOperator: AssocOperator061
+	@Override
     public Boolean assocOperator061(Persona instance) throws SystemException {
         try {
             // EXIST (EstadoPersona)
@@ -945,12 +1029,14 @@ public class PersonaJpaRepositoryImpl extends AbstractRepository implements Pers
     }
 
     // Range 1 for AssocOperator AssocOperator061
+	@Override
     public Boolean assocOperator061Range1 (Persona instance) throws SystemException {
         SQLExists sql = assocOperator061Range1Query(instance);
         return !new TypedQueryBuilder<Persona>(em, Persona.class).build(sql).execute().isEmpty();
     }
 
     // Range Query 1 for AssocOperator AssocOperator061
+	@Override
     public SQLExists assocOperator061Range1Query (Persona instance) throws SystemException {
         try {
             // The path starts with a role
@@ -963,6 +1049,7 @@ public class PersonaJpaRepositoryImpl extends AbstractRepository implements Pers
     }
 
     // AssocOperator: AssocOperator062
+	@Override
     public Boolean assocOperator062(Persona instance) throws SystemException {
         try {
             // EXIST (DepartamentoNacimiento)
@@ -975,12 +1062,14 @@ public class PersonaJpaRepositoryImpl extends AbstractRepository implements Pers
     }
 
     // Range 1 for AssocOperator AssocOperator062
+	@Override
     public Boolean assocOperator062Range1 (Persona instance) throws SystemException {
         SQLExists sql = assocOperator062Range1Query(instance);
         return !new TypedQueryBuilder<Persona>(em, Persona.class).build(sql).execute().isEmpty();
     }
 
     // Range Query 1 for AssocOperator AssocOperator062
+	@Override
     public SQLExists assocOperator062Range1Query (Persona instance) throws SystemException {
         try {
             // The path starts with a role
@@ -993,6 +1082,7 @@ public class PersonaJpaRepositoryImpl extends AbstractRepository implements Pers
     }
 
     // AssocOperator: AssocOperator063
+	@Override
     public Boolean assocOperator063(Persona instance) throws SystemException {
         try {
             // EXIST (MunicipioNacimiento)
@@ -1005,12 +1095,14 @@ public class PersonaJpaRepositoryImpl extends AbstractRepository implements Pers
     }
 
     // Range 1 for AssocOperator AssocOperator063
+	@Override
     public Boolean assocOperator063Range1 (Persona instance) throws SystemException {
         SQLExists sql = assocOperator063Range1Query(instance);
         return !new TypedQueryBuilder<Persona>(em, Persona.class).build(sql).execute().isEmpty();
     }
 
     // Range Query 1 for AssocOperator AssocOperator063
+	@Override
     public SQLExists assocOperator063Range1Query (Persona instance) throws SystemException {
         try {
             // The path starts with a role
@@ -1023,6 +1115,7 @@ public class PersonaJpaRepositoryImpl extends AbstractRepository implements Pers
     }
 
     // AssocOperator: AssocOperator064
+	@Override
     public Boolean assocOperator064(Persona instance) throws SystemException {
         try {
             // EXIST (EstadoCivil)
@@ -1035,12 +1128,14 @@ public class PersonaJpaRepositoryImpl extends AbstractRepository implements Pers
     }
 
     // Range 1 for AssocOperator AssocOperator064
+	@Override
     public Boolean assocOperator064Range1 (Persona instance) throws SystemException {
         SQLExists sql = assocOperator064Range1Query(instance);
         return !new TypedQueryBuilder<Persona>(em, Persona.class).build(sql).execute().isEmpty();
     }
 
     // Range Query 1 for AssocOperator AssocOperator064
+	@Override
     public SQLExists assocOperator064Range1Query (Persona instance) throws SystemException {
         try {
             // The path starts with a role
@@ -1053,6 +1148,7 @@ public class PersonaJpaRepositoryImpl extends AbstractRepository implements Pers
     }
 
     // AssocOperator: AssocOperator071
+	@Override
     public Collection<Direccion> assocOperator071(Persona instance) throws SystemException {
         try {
             // FOR ALL Direcciones WHERE (Direcciones.TipoDireccion.EsResidencia = true) DO Direcciones.TMODIFICAR(Direcciones, ptpDireccionCompleta, ptpRural, ptpevcDepartamento, ptpevcMunicipio, ptpagrPais, Direcciones.TipoDireccion)
@@ -1065,6 +1161,7 @@ public class PersonaJpaRepositoryImpl extends AbstractRepository implements Pers
     }
 
     // Range 1 for AssocOperator AssocOperator071
+	@Override
     public Collection<Direccion> assocOperator071Range1 (Persona instance) throws SystemException {
 
         SQLSelect sql = assocOperator071Range1Query(instance);
@@ -1072,6 +1169,7 @@ public class PersonaJpaRepositoryImpl extends AbstractRepository implements Pers
     }
 
     // Range Query 1 for AssocOperator AssocOperator071
+	@Override
     public SQLPopulation assocOperator071Range1Query (Persona instance) throws SystemException {
         try {
             SQLPopulation sql = new SQLPopulation(PersonaConstants.CLASS_NAME, DireccionConstants.CLASS_NAME, instance.getOid(), PersonaConstants.ROLE_NAME_DIRECCIONES);
@@ -1100,6 +1198,7 @@ public class PersonaJpaRepositoryImpl extends AbstractRepository implements Pers
     }
 
     // AssocOperator: AssocOperator073
+	@Override
     public Collection<Direccion> assocOperator073(Persona instance) throws SystemException {
         try {
             // FOR ALL Direcciones WHERE (Direcciones.TipoDireccion.EsCorrespondencia = true) DO Direcciones.TMODIFICAR(Direcciones, pDCDireccionCompleta, pDCRural, pDCDepartamento, pDCMunicipio, ptpagrPais, Direcciones.TipoDireccion)
@@ -1112,6 +1211,7 @@ public class PersonaJpaRepositoryImpl extends AbstractRepository implements Pers
     }
 
     // Range 1 for AssocOperator AssocOperator073
+	@Override
     public Collection<Direccion> assocOperator073Range1 (Persona instance) throws SystemException {
 
         SQLSelect sql = assocOperator073Range1Query(instance);
@@ -1119,6 +1219,7 @@ public class PersonaJpaRepositoryImpl extends AbstractRepository implements Pers
     }
 
     // Range Query 1 for AssocOperator AssocOperator073
+	@Override
     public SQLPopulation assocOperator073Range1Query (Persona instance) throws SystemException {
         try {
             SQLPopulation sql = new SQLPopulation(PersonaConstants.CLASS_NAME, DireccionConstants.CLASS_NAME, instance.getOid(), PersonaConstants.ROLE_NAME_DIRECCIONES);
@@ -1147,6 +1248,7 @@ public class PersonaJpaRepositoryImpl extends AbstractRepository implements Pers
     }
 
     // AssocOperator: AssocOperator074
+	@Override
     public Boolean assocOperator074(Persona instance) throws SystemException {
         try {
             // EXIST (Direcciones) WHERE (Direcciones.TipoDireccion.EsResidencia = true)
@@ -1159,12 +1261,14 @@ public class PersonaJpaRepositoryImpl extends AbstractRepository implements Pers
     }
 
     // Range 1 for AssocOperator AssocOperator074
+	@Override
     public Boolean assocOperator074Range1 (Persona instance) throws SystemException {
         SQLExists sql = assocOperator074Range1Query(instance);
         return !new TypedQueryBuilder<Persona>(em, Persona.class).build(sql).execute().isEmpty();
     }
 
     // Range Query 1 for AssocOperator AssocOperator074
+	@Override
     public SQLExists assocOperator074Range1Query (Persona instance) throws SystemException {
         try {
             // The path starts with a role
@@ -1194,6 +1298,7 @@ public class PersonaJpaRepositoryImpl extends AbstractRepository implements Pers
     }
 
     // AssocOperator: AssocOperator075
+	@Override
     public Boolean assocOperator075(Persona instance) throws SystemException {
         try {
             // EXIST (Direcciones) WHERE (Direcciones.TipoDireccion.EsCorrespondencia = true)
@@ -1206,12 +1311,14 @@ public class PersonaJpaRepositoryImpl extends AbstractRepository implements Pers
     }
 
     // Range 1 for AssocOperator AssocOperator075
+	@Override
     public Boolean assocOperator075Range1 (Persona instance) throws SystemException {
         SQLExists sql = assocOperator075Range1Query(instance);
         return !new TypedQueryBuilder<Persona>(em, Persona.class).build(sql).execute().isEmpty();
     }
 
     // Range Query 1 for AssocOperator AssocOperator075
+	@Override
     public SQLExists assocOperator075Range1Query (Persona instance) throws SystemException {
         try {
             // The path starts with a role
@@ -1240,6 +1347,7 @@ public class PersonaJpaRepositoryImpl extends AbstractRepository implements Pers
         }
     }
 
+    @Override
     public void refreshEntity(Object object) {
         super.refreshEntity(object);
     }

@@ -57,11 +57,13 @@ public class FamiliaCJpaRepositoryImpl extends AbstractRepository implements Fam
     private TypedQueryBuilder<FamiliaC> getQueryBuilder() {
         return new TypedQueryBuilder<>(em, FamiliaC.class);
     }
-    
+
+    @Override	
     public List<FamiliaC> solveQuery(SQLSelect select) {
         return solveQuery(select, 0, 0);
     }
 
+    @Override
     public List<FamiliaC> solveQuery(SQLSelect select, int pageSize, int pageNumber) {
         return getQueryBuilder().build(select, pageSize, pageNumber).execute();
     }
@@ -88,6 +90,7 @@ public class FamiliaCJpaRepositoryImpl extends AbstractRepository implements Fam
     }
 
     // AssocOperator: AssocOperator000
+	@Override
     public Collection<BeneficiarioC> assocOperator000(FamiliaC instance) throws SystemException {
         try {
             // FOR ALL BeneficiariosC DO BeneficiariosC.TELIMINAR(BeneficiariosC)
@@ -100,6 +103,7 @@ public class FamiliaCJpaRepositoryImpl extends AbstractRepository implements Fam
     }
 
     // Range 1 for AssocOperator AssocOperator000
+	@Override
     public Collection<BeneficiarioC> assocOperator000Range1 (FamiliaC instance) throws SystemException {
 
         SQLSelect sql = assocOperator000Range1Query(instance);
@@ -107,6 +111,7 @@ public class FamiliaCJpaRepositoryImpl extends AbstractRepository implements Fam
     }
 
     // Range Query 1 for AssocOperator AssocOperator000
+	@Override
     public SQLPopulation assocOperator000Range1Query (FamiliaC instance) throws SystemException {
         try {
             return new SQLPopulation(FamiliaCConstants.CLASS_NAME, BeneficiarioCConstants.CLASS_NAME, instance.getOid(), FamiliaCConstants.ROLE_NAME_BENEFICIARIOSC);
@@ -118,6 +123,7 @@ public class FamiliaCJpaRepositoryImpl extends AbstractRepository implements Fam
     }
 
     // AssocOperator: AssocOperator002
+	@Override
     public Boolean assocOperator002(FamiliaC instance) throws SystemException {
         try {
             // EXIST (PersonaCTitular)
@@ -130,12 +136,14 @@ public class FamiliaCJpaRepositoryImpl extends AbstractRepository implements Fam
     }
 
     // Range 1 for AssocOperator AssocOperator002
+	@Override
     public Boolean assocOperator002Range1 (FamiliaC instance) throws SystemException {
         SQLExists sql = assocOperator002Range1Query(instance);
         return !new TypedQueryBuilder<FamiliaC>(em, FamiliaC.class).build(sql).execute().isEmpty();
     }
 
     // Range Query 1 for AssocOperator AssocOperator002
+	@Override
     public SQLExists assocOperator002Range1Query (FamiliaC instance) throws SystemException {
         try {
             // The path starts with a role
@@ -148,6 +156,7 @@ public class FamiliaCJpaRepositoryImpl extends AbstractRepository implements Fam
     }
 
     // AssocOperator: AssocOperator003
+	@Override
     public Collection<Usuario> assocOperator003(Solicitud familiaCTNEWDESDEAEptSolicitud) throws SystemException {
         try {
             // FOR ALL ptSolicitud.Usuarios DO BeneficiariosC.TNEWDESDEAE(ptContratoC, this, ptSolicitud.Usuarios, ptSolicitud)
@@ -160,6 +169,7 @@ public class FamiliaCJpaRepositoryImpl extends AbstractRepository implements Fam
     }
 
     // Range 1 for AssocOperator AssocOperator003
+	@Override
     public Collection<Usuario> assocOperator003Range1 (Solicitud familiaCTNEWDESDEAEptSolicitud) throws SystemException {
 
         SQLSelect sql = assocOperator003Range1Query(familiaCTNEWDESDEAEptSolicitud);
@@ -167,6 +177,7 @@ public class FamiliaCJpaRepositoryImpl extends AbstractRepository implements Fam
     }
 
     // Range Query 1 for AssocOperator AssocOperator003
+	@Override
     public SQLPopulation assocOperator003Range1Query (Solicitud familiaCTNEWDESDEAEptSolicitud) throws SystemException {
         try {
             return new SQLPopulation(FamiliaCConstants.CLASS_NAME, UsuarioConstants.CLASS_NAME, FamiliaCConstants.ARG_NAME_TNEWDESDEAE_FAMILIACTNEWDESDEAEPTSOLICITUD + "." + SolicitudConstants.ROLE_NAME_USUARIOS, familiaCTNEWDESDEAEptSolicitud.getOid(), FamiliaCConstants.ARG_NAME_TNEWDESDEAE_FAMILIACTNEWDESDEAEPTSOLICITUD);
@@ -178,6 +189,7 @@ public class FamiliaCJpaRepositoryImpl extends AbstractRepository implements Fam
     }
 
     // AssocOperator: AssocOperator005
+	@Override
     public Collection<BeneficiarioC> assocOperator005(FamiliaC instance, TipoIdentificacion familiaCTCREARACTBENEFptptTipoId, String familiaCTCREARACTBENEFptptNumIdentificacion) throws SystemException {
         try {
             // FOR ALL BeneficiariosC WHERE (BeneficiariosC.PersonaC.TipoIdentificacionC = ptptTipoId AND BeneficiariosC.PersonaC.NumIdentificacion = ptptNumIdentificacion) DO BeneficiariosC.TPOSTNOTIFICAR(BeneficiariosC, ptpatrEstadoMedico, ptpatrFechaAntiguedadRealOSI, ptpatrTienePreexistencias, ptpatrFechaInicioVigencia, ptpatrFechaFinVigencia, ptpatrNumUsuario, ptpatrCodigoTipoUsuario, ptpatrIndicadorBBGestacion, ptpatrCodUsuarioBancoRep, ptpatrFechaAntiguedad, ptpagrEstadoBeneficiarioC, ptpagrEPSC, ptpagrCompanyiaMPC, ptpagrParentescoC, ptptNombreCompleto)
@@ -190,6 +202,7 @@ public class FamiliaCJpaRepositoryImpl extends AbstractRepository implements Fam
     }
 
     // Range 1 for AssocOperator AssocOperator005
+	@Override
     public Collection<BeneficiarioC> assocOperator005Range1 (FamiliaC instance, TipoIdentificacion familiaCTCREARACTBENEFptptTipoId, String familiaCTCREARACTBENEFptptNumIdentificacion) throws SystemException {
 
         SQLSelect sql = assocOperator005Range1Query(instance, familiaCTCREARACTBENEFptptTipoId, familiaCTCREARACTBENEFptptNumIdentificacion);
@@ -197,6 +210,7 @@ public class FamiliaCJpaRepositoryImpl extends AbstractRepository implements Fam
     }
 
     // Range Query 1 for AssocOperator AssocOperator005
+	@Override
     public SQLPopulation assocOperator005Range1Query (FamiliaC instance, TipoIdentificacion familiaCTCREARACTBENEFptptTipoId, String familiaCTCREARACTBENEFptptNumIdentificacion) throws SystemException {
         try {
             SQLPopulation sql = new SQLPopulation(FamiliaCConstants.CLASS_NAME, BeneficiarioCConstants.CLASS_NAME, instance.getOid(), FamiliaCConstants.ROLE_NAME_BENEFICIARIOSC);
@@ -240,6 +254,7 @@ public class FamiliaCJpaRepositoryImpl extends AbstractRepository implements Fam
     }
 
     // AssocOperator: AssocOperator006
+	@Override
     public Boolean assocOperator006(FamiliaC instance, TipoIdentificacion familiaCTCREARACTBENEFptptTipoId, String familiaCTCREARACTBENEFptptNumIdentificacion) throws SystemException {
         try {
             // EXIST (BeneficiariosC.PersonaC) WHERE (BeneficiariosC.PersonaC.TipoIdentificacionC = ptptTipoId AND BeneficiariosC.PersonaC.NumIdentificacion = ptptNumIdentificacion)
@@ -252,12 +267,14 @@ public class FamiliaCJpaRepositoryImpl extends AbstractRepository implements Fam
     }
 
     // Range 1 for AssocOperator AssocOperator006
+	@Override
     public Boolean assocOperator006Range1 (FamiliaC instance, TipoIdentificacion familiaCTCREARACTBENEFptptTipoId, String familiaCTCREARACTBENEFptptNumIdentificacion) throws SystemException {
         SQLExists sql = assocOperator006Range1Query(instance, familiaCTCREARACTBENEFptptTipoId, familiaCTCREARACTBENEFptptNumIdentificacion);
         return !new TypedQueryBuilder<FamiliaC>(em, FamiliaC.class).build(sql).execute().isEmpty();
     }
 
     // Range Query 1 for AssocOperator AssocOperator006
+	@Override
     public SQLExists assocOperator006Range1Query (FamiliaC instance, TipoIdentificacion familiaCTCREARACTBENEFptptTipoId, String familiaCTCREARACTBENEFptptNumIdentificacion) throws SystemException {
         try {
             // The path starts with a role
@@ -302,6 +319,7 @@ public class FamiliaCJpaRepositoryImpl extends AbstractRepository implements Fam
     }
 
     // AssocOperator: AssocOperator009
+	@Override
     public Boolean assocOperator009(FamiliaC instance) throws SystemException {
         try {
             // EXIST (MunicipioC)
@@ -314,12 +332,14 @@ public class FamiliaCJpaRepositoryImpl extends AbstractRepository implements Fam
     }
 
     // Range 1 for AssocOperator AssocOperator009
+	@Override
     public Boolean assocOperator009Range1 (FamiliaC instance) throws SystemException {
         SQLExists sql = assocOperator009Range1Query(instance);
         return !new TypedQueryBuilder<FamiliaC>(em, FamiliaC.class).build(sql).execute().isEmpty();
     }
 
     // Range Query 1 for AssocOperator AssocOperator009
+	@Override
     public SQLExists assocOperator009Range1Query (FamiliaC instance) throws SystemException {
         try {
             // The path starts with a role
@@ -332,6 +352,7 @@ public class FamiliaCJpaRepositoryImpl extends AbstractRepository implements Fam
     }
 
     // AssocOperator: AssocOperator010
+	@Override
     public Boolean assocOperator010(FamiliaC instance) throws SystemException {
         try {
             // EXIST (PersonaCTitular)
@@ -344,12 +365,14 @@ public class FamiliaCJpaRepositoryImpl extends AbstractRepository implements Fam
     }
 
     // Range 1 for AssocOperator AssocOperator010
+	@Override
     public Boolean assocOperator010Range1 (FamiliaC instance) throws SystemException {
         SQLExists sql = assocOperator010Range1Query(instance);
         return !new TypedQueryBuilder<FamiliaC>(em, FamiliaC.class).build(sql).execute().isEmpty();
     }
 
     // Range Query 1 for AssocOperator AssocOperator010
+	@Override
     public SQLExists assocOperator010Range1Query (FamiliaC instance) throws SystemException {
         try {
             // The path starts with a role
@@ -361,6 +384,7 @@ public class FamiliaCJpaRepositoryImpl extends AbstractRepository implements Fam
         }
     }
 
+    @Override
     public void refreshEntity(Object object) {
         super.refreshEntity(object);
     }

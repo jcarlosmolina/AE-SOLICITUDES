@@ -42,11 +42,13 @@ public class AgentexProductoJpaRepositoryImpl extends AbstractRepository impleme
     private TypedQueryBuilder<AgentexProducto> getQueryBuilder() {
         return new TypedQueryBuilder<>(em, AgentexProducto.class);
     }
-    
+
+    @Override	
     public List<AgentexProducto> solveQuery(SQLSelect select) {
         return solveQuery(select, 0, 0);
     }
 
+    @Override
     public List<AgentexProducto> solveQuery(SQLSelect select, int pageSize, int pageNumber) {
         return getQueryBuilder().build(select, pageSize, pageNumber).execute();
     }
@@ -72,6 +74,7 @@ public class AgentexProductoJpaRepositoryImpl extends AbstractRepository impleme
         }
     }
 
+    @Override
     public void refreshEntity(Object object) {
         super.refreshEntity(object);
     }

@@ -52,16 +52,19 @@ public class CuestionarioPJpaRepositoryImpl extends AbstractRepository implement
     private TypedQueryBuilder<CuestionarioP> getQueryBuilder() {
         return new TypedQueryBuilder<>(em, CuestionarioP.class);
     }
-    
+
+    @Override	
     public List<CuestionarioP> solveQuery(SQLSelect select) {
         return solveQuery(select, 0, 0);
     }
 
+    @Override
     public List<CuestionarioP> solveQuery(SQLSelect select, int pageSize, int pageNumber) {
         return getQueryBuilder().build(select, pageSize, pageNumber).execute();
     }
 
     // AssocOperator: AssocOperator000
+	@Override
     public Collection<Seccion> assocOperator000(CuestionarioMed cuestionarioPTCREARYSECCIONESptCuestionario) throws SystemException {
         try {
             // FOR ALL ptCuestionario.Secciones ORDER BY ((ptCuestionario.Secciones.NumOrden "A")) DO Secciones.TCREARYPREGUNTAS(ptCuestionario.Secciones, this)
@@ -74,6 +77,7 @@ public class CuestionarioPJpaRepositoryImpl extends AbstractRepository implement
     }
 
     // Range 1 for AssocOperator AssocOperator000
+	@Override
     public Collection<Seccion> assocOperator000Range1 (CuestionarioMed cuestionarioPTCREARYSECCIONESptCuestionario) throws SystemException {
 
         SQLSelect sql = assocOperator000Range1Query(cuestionarioPTCREARYSECCIONESptCuestionario);
@@ -81,6 +85,7 @@ public class CuestionarioPJpaRepositoryImpl extends AbstractRepository implement
     }
 
     // Range Query 1 for AssocOperator AssocOperator000
+	@Override
     public SQLPopulation assocOperator000Range1Query (CuestionarioMed cuestionarioPTCREARYSECCIONESptCuestionario) throws SystemException {
         try {
             SQLPopulation sql = new SQLPopulation(CuestionarioPConstants.CLASS_NAME, SeccionConstants.CLASS_NAME, CuestionarioPConstants.ARG_NAME_TCREARYSECCIONES_CUESTIONARIOPTCREARYSECCIONESPTCUESTIONARIO + "." + CuestionarioMedConstants.ROLE_NAME_SECCIONES, cuestionarioPTCREARYSECCIONESptCuestionario.getOid(), CuestionarioPConstants.ARG_NAME_TCREARYSECCIONES_CUESTIONARIOPTCREARYSECCIONESPTCUESTIONARIO);
@@ -99,6 +104,7 @@ public class CuestionarioPJpaRepositoryImpl extends AbstractRepository implement
     }
 
     // AssocOperator: AssocOperator001
+	@Override
     public Collection<SeccionP> assocOperator001(CuestionarioP instance) throws SystemException {
         try {
             // FOR ALL Secciones WHERE (COUNT (Secciones.Preguntas) = 0) DO Secciones.TELIMINAR(Secciones)
@@ -111,6 +117,7 @@ public class CuestionarioPJpaRepositoryImpl extends AbstractRepository implement
     }
 
     // Range 1 for AssocOperator AssocOperator001
+	@Override
     public Collection<SeccionP> assocOperator001Range1 (CuestionarioP instance) throws SystemException {
 
         SQLSelect sql = assocOperator001Range1Query(instance);
@@ -118,6 +125,7 @@ public class CuestionarioPJpaRepositoryImpl extends AbstractRepository implement
     }
 
     // Range Query 1 for AssocOperator AssocOperator001
+	@Override
     public SQLPopulation assocOperator001Range1Query (CuestionarioP instance) throws SystemException {
         try {
             SQLPopulation sql = new SQLPopulation(CuestionarioPConstants.CLASS_NAME, SeccionPConstants.CLASS_NAME, instance.getOid(), CuestionarioPConstants.ROLE_NAME_SECCIONES);
@@ -147,6 +155,7 @@ public class CuestionarioPJpaRepositoryImpl extends AbstractRepository implement
     }
 
     // AssocOperator: AssocOperator002
+	@Override
     public Long assocOperator002(CuestionarioP instance) throws SystemException {
         try {
             // COUNT (Secciones.Preguntas)
@@ -159,12 +168,14 @@ public class CuestionarioPJpaRepositoryImpl extends AbstractRepository implement
     }
 
     // Range 1 for AssocOperator AssocOperator002
+	@Override
     public Long assocOperator002Range1 (CuestionarioP instance) throws SystemException {
         SQLCount sql = assocOperator002Range1Query(instance, null);
         return Long.valueOf(solveCountQuery(sql));
     }
 
     // Range Query 1 for AssocOperator AssocOperator002
+	@Override
     public SQLCount assocOperator002Range1Query (CuestionarioP instance, SQLSelect superQuery) throws SystemException {
         try {
             // Path starts with a class in the subquery
@@ -177,6 +188,7 @@ public class CuestionarioPJpaRepositoryImpl extends AbstractRepository implement
     }
 
     // AssocOperator: AssocOperator003
+	@Override
     public Collection<SeccionP> assocOperator003(CuestionarioP instance) throws SystemException {
         try {
             // FOR ALL Secciones DO Secciones.TELIMINAR(Secciones)
@@ -189,6 +201,7 @@ public class CuestionarioPJpaRepositoryImpl extends AbstractRepository implement
     }
 
     // Range 1 for AssocOperator AssocOperator003
+	@Override
     public Collection<SeccionP> assocOperator003Range1 (CuestionarioP instance) throws SystemException {
 
         SQLSelect sql = assocOperator003Range1Query(instance);
@@ -196,6 +209,7 @@ public class CuestionarioPJpaRepositoryImpl extends AbstractRepository implement
     }
 
     // Range Query 1 for AssocOperator AssocOperator003
+	@Override
     public SQLPopulation assocOperator003Range1Query (CuestionarioP instance) throws SystemException {
         try {
             return new SQLPopulation(CuestionarioPConstants.CLASS_NAME, SeccionPConstants.CLASS_NAME, instance.getOid(), CuestionarioPConstants.ROLE_NAME_SECCIONES);
@@ -207,6 +221,7 @@ public class CuestionarioPJpaRepositoryImpl extends AbstractRepository implement
     }
 
     // AssocOperator: AssocOperator007
+	@Override
     public Collection<PreguntaP> assocOperator007(CuestionarioP instance, Long cuestionarioPTMARCARDATOSPREGUNTACOREptNumPregunta) throws SystemException {
         try {
             // FOR ALL Secciones.Preguntas WHERE (Secciones.Preguntas.Numero = ptNumPregunta) DO Secciones.Preguntas.marcarDatosCORE(Secciones.Preguntas, ptpRespuestaSiNo, ptpRespuestaObs)
@@ -219,6 +234,7 @@ public class CuestionarioPJpaRepositoryImpl extends AbstractRepository implement
     }
 
     // Range 1 for AssocOperator AssocOperator007
+	@Override
     public Collection<PreguntaP> assocOperator007Range1 (CuestionarioP instance, Long cuestionarioPTMARCARDATOSPREGUNTACOREptNumPregunta) throws SystemException {
 
         SQLSelect sql = assocOperator007Range1Query(instance, cuestionarioPTMARCARDATOSPREGUNTACOREptNumPregunta);
@@ -226,6 +242,7 @@ public class CuestionarioPJpaRepositoryImpl extends AbstractRepository implement
     }
 
     // Range Query 1 for AssocOperator AssocOperator007
+	@Override
     public SQLPopulation assocOperator007Range1Query (CuestionarioP instance, Long cuestionarioPTMARCARDATOSPREGUNTACOREptNumPregunta) throws SystemException {
         try {
             SQLPopulation sql = new SQLPopulation(CuestionarioPConstants.CLASS_NAME, PreguntaPConstants.CLASS_NAME, instance.getOid(), CuestionarioPConstants.ROLE_NAME_SECCIONES + "." + SeccionPConstants.ROLE_NAME_PREGUNTAS);
@@ -254,6 +271,7 @@ public class CuestionarioPJpaRepositoryImpl extends AbstractRepository implement
     }
 
     // AssocOperator: AssocOperator008
+	@Override
     public Collection<PreguntaP> assocOperator008(CuestionarioP instance) throws SystemException {
         try {
             // FOR ALL Secciones.Preguntas WHERE (Secciones.Preguntas.Numero = 108) DO Secciones.Preguntas.marcarRespuesta(Secciones.Preguntas, true, fugetValorParametroConf("COMENTARIOSPREGUNTA108"), "")
@@ -266,6 +284,7 @@ public class CuestionarioPJpaRepositoryImpl extends AbstractRepository implement
     }
 
     // Range 1 for AssocOperator AssocOperator008
+	@Override
     public Collection<PreguntaP> assocOperator008Range1 (CuestionarioP instance) throws SystemException {
 
         SQLSelect sql = assocOperator008Range1Query(instance);
@@ -273,6 +292,7 @@ public class CuestionarioPJpaRepositoryImpl extends AbstractRepository implement
     }
 
     // Range Query 1 for AssocOperator AssocOperator008
+	@Override
     public SQLPopulation assocOperator008Range1Query (CuestionarioP instance) throws SystemException {
         try {
             SQLPopulation sql = new SQLPopulation(CuestionarioPConstants.CLASS_NAME, PreguntaPConstants.CLASS_NAME, instance.getOid(), CuestionarioPConstants.ROLE_NAME_SECCIONES + "." + SeccionPConstants.ROLE_NAME_PREGUNTAS);
@@ -300,6 +320,7 @@ public class CuestionarioPJpaRepositoryImpl extends AbstractRepository implement
         }
     }
 
+    @Override
     public void refreshEntity(Object object) {
         super.refreshEntity(object);
     }

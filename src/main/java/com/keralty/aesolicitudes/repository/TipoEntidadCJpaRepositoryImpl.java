@@ -34,15 +34,18 @@ public class TipoEntidadCJpaRepositoryImpl extends AbstractRepository implements
     private TypedQueryBuilder<TipoEntidadC> getQueryBuilder() {
         return new TypedQueryBuilder<>(em, TipoEntidadC.class);
     }
-    
+
+    @Override	
     public List<TipoEntidadC> solveQuery(SQLSelect select) {
         return solveQuery(select, 0, 0);
     }
 
+    @Override
     public List<TipoEntidadC> solveQuery(SQLSelect select, int pageSize, int pageNumber) {
         return getQueryBuilder().build(select, pageSize, pageNumber).execute();
     }
 
+    @Override
     public void refreshEntity(Object object) {
         super.refreshEntity(object);
     }

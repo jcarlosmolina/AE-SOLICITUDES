@@ -47,16 +47,19 @@ public class ProductosJpaRepositoryImpl extends AbstractRepository implements Pr
     private TypedQueryBuilder<Productos> getQueryBuilder() {
         return new TypedQueryBuilder<>(em, Productos.class);
     }
-    
+
+    @Override	
     public List<Productos> solveQuery(SQLSelect select) {
         return solveQuery(select, 0, 0);
     }
 
+    @Override
     public List<Productos> solveQuery(SQLSelect select, int pageSize, int pageNumber) {
         return getQueryBuilder().build(select, pageSize, pageNumber).execute();
     }
 
     // AssocOperator: AssocOperator010
+	@Override
     public Boolean assocOperator010(Productos instance) throws SystemException {
         try {
             // EXIST (AgentexProducto) WHERE (AgentexProducto.Asesor = AGENTAsesor AND AgentexProducto.drvVigente = true)
@@ -74,6 +77,7 @@ public class ProductosJpaRepositoryImpl extends AbstractRepository implements Pr
     }
 
     // Range 1 for AssocOperator AssocOperator010
+	@Override
     public Collection<AgentexProducto> assocOperator010Range1 (Productos instance) throws SystemException {
 
         SQLSelect sql = assocOperator010Range1Query(instance);
@@ -81,6 +85,7 @@ public class ProductosJpaRepositoryImpl extends AbstractRepository implements Pr
     }
 
     // Range Query 1 for AssocOperator AssocOperator010
+	@Override
     public SQLPopulation assocOperator010Range1Query (Productos instance) throws SystemException {
         try {
             SQLPopulation sql = new SQLPopulation(ProductosConstants.CLASS_NAME, AgentexProductoConstants.CLASS_NAME, instance.getOid(), ProductosConstants.ROLE_NAME_AGENTEXPRODUCTO);
@@ -110,6 +115,7 @@ public class ProductosJpaRepositoryImpl extends AbstractRepository implements Pr
     }
 
     // AssocOperator: AssocOperator011
+	@Override
     public Boolean assocOperator011(Productos instance) throws SystemException {
         try {
             // EXIST (AgentexProducto) WHERE (AgentexProducto.Asesor = AGENTAsesor AND AgentexProducto.drvVigente = true)
@@ -127,6 +133,7 @@ public class ProductosJpaRepositoryImpl extends AbstractRepository implements Pr
     }
 
     // Range 1 for AssocOperator AssocOperator011
+	@Override
     public Collection<AgentexProducto> assocOperator011Range1 (Productos instance) throws SystemException {
 
         SQLSelect sql = assocOperator011Range1Query(instance);
@@ -134,6 +141,7 @@ public class ProductosJpaRepositoryImpl extends AbstractRepository implements Pr
     }
 
     // Range Query 1 for AssocOperator AssocOperator011
+	@Override
     public SQLPopulation assocOperator011Range1Query (Productos instance) throws SystemException {
         try {
             SQLPopulation sql = new SQLPopulation(ProductosConstants.CLASS_NAME, AgentexProductoConstants.CLASS_NAME, instance.getOid(), ProductosConstants.ROLE_NAME_AGENTEXPRODUCTO);
@@ -163,6 +171,7 @@ public class ProductosJpaRepositoryImpl extends AbstractRepository implements Pr
     }
 
     // AssocOperator: AssocOperator012
+	@Override
     public Boolean assocOperator012(Productos instance) throws SystemException {
         try {
             // EXIST (AgentexProducto) WHERE (AgentexProducto.Asesor = AGENTAsesor AND AgentexProducto.drvVigente = true)
@@ -180,6 +189,7 @@ public class ProductosJpaRepositoryImpl extends AbstractRepository implements Pr
     }
 
     // Range 1 for AssocOperator AssocOperator012
+	@Override
     public Collection<AgentexProducto> assocOperator012Range1 (Productos instance) throws SystemException {
 
         SQLSelect sql = assocOperator012Range1Query(instance);
@@ -187,6 +197,7 @@ public class ProductosJpaRepositoryImpl extends AbstractRepository implements Pr
     }
 
     // Range Query 1 for AssocOperator AssocOperator012
+	@Override
     public SQLPopulation assocOperator012Range1Query (Productos instance) throws SystemException {
         try {
             SQLPopulation sql = new SQLPopulation(ProductosConstants.CLASS_NAME, AgentexProductoConstants.CLASS_NAME, instance.getOid(), ProductosConstants.ROLE_NAME_AGENTEXPRODUCTO);
@@ -216,6 +227,7 @@ public class ProductosJpaRepositoryImpl extends AbstractRepository implements Pr
     }
 
     // AssocOperator: AssocOperator013
+	@Override
     public Boolean assocOperator013(Productos instance) throws SystemException {
         try {
             // EXIST (AgentexProducto) WHERE (AgentexProducto.Asesor = AGENTAsesor AND AgentexProducto.drvVigente = true)
@@ -233,6 +245,7 @@ public class ProductosJpaRepositoryImpl extends AbstractRepository implements Pr
     }
 
     // Range 1 for AssocOperator AssocOperator013
+	@Override
     public Collection<AgentexProducto> assocOperator013Range1 (Productos instance) throws SystemException {
 
         SQLSelect sql = assocOperator013Range1Query(instance);
@@ -240,6 +253,7 @@ public class ProductosJpaRepositoryImpl extends AbstractRepository implements Pr
     }
 
     // Range Query 1 for AssocOperator AssocOperator013
+	@Override
     public SQLPopulation assocOperator013Range1Query (Productos instance) throws SystemException {
         try {
             SQLPopulation sql = new SQLPopulation(ProductosConstants.CLASS_NAME, AgentexProductoConstants.CLASS_NAME, instance.getOid(), ProductosConstants.ROLE_NAME_AGENTEXPRODUCTO);
@@ -268,6 +282,7 @@ public class ProductosJpaRepositoryImpl extends AbstractRepository implements Pr
         }
     }
 
+    @Override
     public void refreshEntity(Object object) {
         super.refreshEntity(object);
     }

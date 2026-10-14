@@ -54,16 +54,19 @@ public class ParentescoJpaRepositoryImpl extends AbstractRepository implements P
     private TypedQueryBuilder<Parentesco> getQueryBuilder() {
         return new TypedQueryBuilder<>(em, Parentesco.class);
     }
-    
+
+    @Override	
     public List<Parentesco> solveQuery(SQLSelect select) {
         return solveQuery(select, 0, 0);
     }
 
+    @Override
     public List<Parentesco> solveQuery(SQLSelect select, int pageSize, int pageNumber) {
         return getQueryBuilder().build(select, pageSize, pageNumber).execute();
     }
 
     // AssocOperator: AssocOperator001
+	@Override
     public Boolean assocOperator001(Usuario usuarioTMODIFICARATTRpthisAttrUsuario) throws SystemException {
         try {
             // EXIST (ParentescosDom) WHERE (ParentescosDom.Dominio.ProductoT = pthisAttrUsuario.Solicitud.Aesolicitudes.ProductoT AND ParentescosDom.Dominio.PlanT = pthisAttrUsuario.Solicitud.Aesolicitudes.PlanT)
@@ -76,12 +79,14 @@ public class ParentescoJpaRepositoryImpl extends AbstractRepository implements P
     }
 
     // Range 0 for AssocOperator AssocOperator001
+	@Override
     public Boolean assocOperator001Range1 (Usuario usuarioTMODIFICARATTRpthisAttrUsuario) throws SystemException {
         SQLExists sql = assocOperator001Range1Query(usuarioTMODIFICARATTRpthisAttrUsuario, null);
         return !new TypedQueryBuilder<Parentesco>(em, Parentesco.class).build(sql).execute().isEmpty();
     }
 
     // Range Query 0 for AssocOperator AssocOperator001
+	@Override
     public SQLExists assocOperator001Range1Query (Usuario usuarioTMODIFICARATTRpthisAttrUsuario, SQLSelect superQuery) throws SystemException {
         try {
             // The path starts with a role
@@ -134,6 +139,7 @@ public class ParentescoJpaRepositoryImpl extends AbstractRepository implements P
     }
 
     // AssocOperator: AssocOperator002
+	@Override
     public Boolean assocOperator002(UsuarioNovedad usuarioNovedadTCAMBIARPARENTESCOpthisUsuarioNovedad) throws SystemException {
         try {
             // EXIST (ParentescosDom.Dominio.PlanT) WHERE (ParentescosDom.Dominio.PlanT = pthisUsuarioNovedad.FamiliaNovedad.Solicitud.PlanT)
@@ -146,12 +152,14 @@ public class ParentescoJpaRepositoryImpl extends AbstractRepository implements P
     }
 
     // Range 0 for AssocOperator AssocOperator002
+	@Override
     public Boolean assocOperator002Range1 (UsuarioNovedad usuarioNovedadTCAMBIARPARENTESCOpthisUsuarioNovedad) throws SystemException {
         SQLExists sql = assocOperator002Range1Query(usuarioNovedadTCAMBIARPARENTESCOpthisUsuarioNovedad, null);
         return !new TypedQueryBuilder<Parentesco>(em, Parentesco.class).build(sql).execute().isEmpty();
     }
 
     // Range Query 0 for AssocOperator AssocOperator002
+	@Override
     public SQLExists assocOperator002Range1Query (UsuarioNovedad usuarioNovedadTCAMBIARPARENTESCOpthisUsuarioNovedad, SQLSelect superQuery) throws SystemException {
         try {
             // The path starts with a role
@@ -181,6 +189,7 @@ public class ParentescoJpaRepositoryImpl extends AbstractRepository implements P
         }
     }
 
+    @Override
     public void refreshEntity(Object object) {
         super.refreshEntity(object);
     }

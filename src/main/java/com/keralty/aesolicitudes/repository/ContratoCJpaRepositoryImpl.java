@@ -65,16 +65,19 @@ public class ContratoCJpaRepositoryImpl extends AbstractRepository implements Co
     private TypedQueryBuilder<ContratoC> getQueryBuilder() {
         return new TypedQueryBuilder<>(em, ContratoC.class);
     }
-    
+
+    @Override	
     public List<ContratoC> solveQuery(SQLSelect select) {
         return solveQuery(select, 0, 0);
     }
 
+    @Override
     public List<ContratoC> solveQuery(SQLSelect select, int pageSize, int pageNumber) {
         return getQueryBuilder().build(select, pageSize, pageNumber).execute();
     }
 
     // AssocOperator: AssocOperator000
+	@Override
     public Double assocOperator000(ContratoC instance) throws SystemException {
         try {
             // SUM (BeneficiariosC.drvValorCuotaAfiliacion)
@@ -91,6 +94,7 @@ public class ContratoCJpaRepositoryImpl extends AbstractRepository implements Co
     }
 
     // Range 1 for AssocOperator AssocOperator000
+	@Override
     public Collection<BeneficiarioC> assocOperator000Range1 (ContratoC instance) throws SystemException {
 
         SQLSelect sql = assocOperator000Range1Query(instance);
@@ -98,6 +102,7 @@ public class ContratoCJpaRepositoryImpl extends AbstractRepository implements Co
     }
 
     // Range Query 1 for AssocOperator AssocOperator000
+	@Override
     public SQLPopulation assocOperator000Range1Query (ContratoC instance) throws SystemException {
         try {
             return new SQLPopulation(ContratoCConstants.CLASS_NAME, BeneficiarioCConstants.CLASS_NAME, instance.getOid(), ContratoCConstants.ROLE_NAME_BENEFICIARIOSC);
@@ -109,6 +114,7 @@ public class ContratoCJpaRepositoryImpl extends AbstractRepository implements Co
     }
 
     // AssocOperator: AssocOperator001
+	@Override
     public Double assocOperator001(ContratoC instance) throws SystemException {
         try {
             // SUM (BeneficiariosC.drvValorInicialContrato) WHERE (BeneficiariosC.PersonaC.TipoIdentificacionC.NombreCorto = "MS")
@@ -125,6 +131,7 @@ public class ContratoCJpaRepositoryImpl extends AbstractRepository implements Co
     }
 
     // Range 1 for AssocOperator AssocOperator001
+	@Override
     public Collection<BeneficiarioC> assocOperator001Range1 (ContratoC instance) throws SystemException {
 
         SQLSelect sql = assocOperator001Range1Query(instance);
@@ -132,6 +139,7 @@ public class ContratoCJpaRepositoryImpl extends AbstractRepository implements Co
     }
 
     // Range Query 1 for AssocOperator AssocOperator001
+	@Override
     public SQLPopulation assocOperator001Range1Query (ContratoC instance) throws SystemException {
         try {
             SQLPopulation sql = new SQLPopulation(ContratoCConstants.CLASS_NAME, BeneficiarioCConstants.CLASS_NAME, instance.getOid(), ContratoCConstants.ROLE_NAME_BENEFICIARIOSC);
@@ -160,6 +168,7 @@ public class ContratoCJpaRepositoryImpl extends AbstractRepository implements Co
     }
 
     // AssocOperator: AssocOperator002
+	@Override
     public Double assocOperator002(ContratoC instance) throws SystemException {
         try {
             // SUM (BeneficiariosC.drvValorCuotaBruta)
@@ -176,6 +185,7 @@ public class ContratoCJpaRepositoryImpl extends AbstractRepository implements Co
     }
 
     // Range 1 for AssocOperator AssocOperator002
+	@Override
     public Collection<BeneficiarioC> assocOperator002Range1 (ContratoC instance) throws SystemException {
 
         SQLSelect sql = assocOperator002Range1Query(instance);
@@ -183,6 +193,7 @@ public class ContratoCJpaRepositoryImpl extends AbstractRepository implements Co
     }
 
     // Range Query 1 for AssocOperator AssocOperator002
+	@Override
     public SQLPopulation assocOperator002Range1Query (ContratoC instance) throws SystemException {
         try {
             return new SQLPopulation(ContratoCConstants.CLASS_NAME, BeneficiarioCConstants.CLASS_NAME, instance.getOid(), ContratoCConstants.ROLE_NAME_BENEFICIARIOSC);
@@ -194,6 +205,7 @@ public class ContratoCJpaRepositoryImpl extends AbstractRepository implements Co
     }
 
     // AssocOperator: AssocOperator003
+	@Override
     public Boolean assocOperator003(ContratoC instance) throws SystemException {
         try {
             // EXIST (ProductoC.Dominios) WHERE (ProductoC.Dominios.PlanT = PlanC AND ProductoC.Dominios.MostrarPreexAnexos = true)
@@ -206,12 +218,14 @@ public class ContratoCJpaRepositoryImpl extends AbstractRepository implements Co
     }
 
     // Range 1 for AssocOperator AssocOperator003
+	@Override
     public Boolean assocOperator003Range1 (ContratoC instance) throws SystemException {
         SQLExists sql = assocOperator003Range1Query(instance);
         return !new TypedQueryBuilder<ContratoC>(em, ContratoC.class).build(sql).execute().isEmpty();
     }
 
     // Range Query 1 for AssocOperator AssocOperator003
+	@Override
     public SQLExists assocOperator003Range1Query (ContratoC instance) throws SystemException {
         try {
             // The path starts with a role
@@ -256,6 +270,7 @@ public class ContratoCJpaRepositoryImpl extends AbstractRepository implements Co
     }
 
     // AssocOperator: AssocOperator004
+	@Override
     public Boolean assocOperator004(ContratoC instance) throws SystemException {
         try {
             // EXIST (ProductoC.Dominios) WHERE (ProductoC.Dominios.PlanT = PlanC AND ProductoC.Dominios.MostrarPreexContrato = true)
@@ -268,12 +283,14 @@ public class ContratoCJpaRepositoryImpl extends AbstractRepository implements Co
     }
 
     // Range 1 for AssocOperator AssocOperator004
+	@Override
     public Boolean assocOperator004Range1 (ContratoC instance) throws SystemException {
         SQLExists sql = assocOperator004Range1Query(instance);
         return !new TypedQueryBuilder<ContratoC>(em, ContratoC.class).build(sql).execute().isEmpty();
     }
 
     // Range Query 1 for AssocOperator AssocOperator004
+	@Override
     public SQLExists assocOperator004Range1Query (ContratoC instance) throws SystemException {
         try {
             // The path starts with a role
@@ -318,6 +335,7 @@ public class ContratoCJpaRepositoryImpl extends AbstractRepository implements Co
     }
 
     // AssocOperator: AssocOperator005
+	@Override
     public Boolean assocOperator005(ContratoC instance) throws SystemException {
         try {
             // EXIST (FamiliasC) WHERE (FamiliasC.NumFamilia <> NULL)
@@ -330,12 +348,14 @@ public class ContratoCJpaRepositoryImpl extends AbstractRepository implements Co
     }
 
     // Range 1 for AssocOperator AssocOperator005
+	@Override
     public Boolean assocOperator005Range1 (ContratoC instance) throws SystemException {
         SQLExists sql = assocOperator005Range1Query(instance);
         return !new TypedQueryBuilder<ContratoC>(em, ContratoC.class).build(sql).execute().isEmpty();
     }
 
     // Range Query 1 for AssocOperator AssocOperator005
+	@Override
     public SQLExists assocOperator005Range1Query (ContratoC instance) throws SystemException {
         try {
             // The path starts with a role
@@ -365,6 +385,7 @@ public class ContratoCJpaRepositoryImpl extends AbstractRepository implements Co
     }
 
     // AssocOperator: AssocOperator006
+	@Override
     public String assocOperator006(ContratoC instance) throws SystemException {
         try {
             // GETONE (FamiliasC.NumFamilia) WHERE (FamiliasC.NumFamilia <> NULL)
@@ -377,6 +398,7 @@ public class ContratoCJpaRepositoryImpl extends AbstractRepository implements Co
     }
 
     // Range 1 for AssocOperator AssocOperator006
+	@Override
     public String assocOperator006Range1 (ContratoC instance) throws SystemException {
         SQLGetOne sql = assocOperator006Range1Query(instance);
         List<String> results = new TypedQueryBuilder<String>(em, String.class).build(sql).execute();
@@ -384,6 +406,7 @@ public class ContratoCJpaRepositoryImpl extends AbstractRepository implements Co
     }
 
     // Range Query 1 for AssocOperator AssocOperator006
+	@Override
     public SQLGetOne assocOperator006Range1Query (ContratoC instance) throws SystemException {
         try {
             // The path starts with a role
@@ -413,6 +436,7 @@ public class ContratoCJpaRepositoryImpl extends AbstractRepository implements Co
     }
 
     // AssocOperator: AssocOperator007
+	@Override
     public Double assocOperator007(ContratoC instance) throws SystemException {
         try {
             // SUM (BeneficiariosC.drvDescuentoComercial)
@@ -429,6 +453,7 @@ public class ContratoCJpaRepositoryImpl extends AbstractRepository implements Co
     }
 
     // Range 1 for AssocOperator AssocOperator007
+	@Override
     public Collection<BeneficiarioC> assocOperator007Range1 (ContratoC instance) throws SystemException {
 
         SQLSelect sql = assocOperator007Range1Query(instance);
@@ -436,6 +461,7 @@ public class ContratoCJpaRepositoryImpl extends AbstractRepository implements Co
     }
 
     // Range Query 1 for AssocOperator AssocOperator007
+	@Override
     public SQLPopulation assocOperator007Range1Query (ContratoC instance) throws SystemException {
         try {
             return new SQLPopulation(ContratoCConstants.CLASS_NAME, BeneficiarioCConstants.CLASS_NAME, instance.getOid(), ContratoCConstants.ROLE_NAME_BENEFICIARIOSC);
@@ -447,6 +473,7 @@ public class ContratoCJpaRepositoryImpl extends AbstractRepository implements Co
     }
 
     // AssocOperator: AssocOperator008
+	@Override
     public Double assocOperator008(ContratoC instance) throws SystemException {
         try {
             // SUM (BeneficiariosC.drvDescuentoFinanciero)
@@ -463,6 +490,7 @@ public class ContratoCJpaRepositoryImpl extends AbstractRepository implements Co
     }
 
     // Range 1 for AssocOperator AssocOperator008
+	@Override
     public Collection<BeneficiarioC> assocOperator008Range1 (ContratoC instance) throws SystemException {
 
         SQLSelect sql = assocOperator008Range1Query(instance);
@@ -470,6 +498,7 @@ public class ContratoCJpaRepositoryImpl extends AbstractRepository implements Co
     }
 
     // Range Query 1 for AssocOperator AssocOperator008
+	@Override
     public SQLPopulation assocOperator008Range1Query (ContratoC instance) throws SystemException {
         try {
             return new SQLPopulation(ContratoCConstants.CLASS_NAME, BeneficiarioCConstants.CLASS_NAME, instance.getOid(), ContratoCConstants.ROLE_NAME_BENEFICIARIOSC);
@@ -481,6 +510,7 @@ public class ContratoCJpaRepositoryImpl extends AbstractRepository implements Co
     }
 
     // AssocOperator: AssocOperator011
+	@Override
     public Boolean assocOperator011(ContratoC instance) throws SystemException {
         try {
             // EXIST (PeriodicidadC)
@@ -493,12 +523,14 @@ public class ContratoCJpaRepositoryImpl extends AbstractRepository implements Co
     }
 
     // Range 1 for AssocOperator AssocOperator011
+	@Override
     public Boolean assocOperator011Range1 (ContratoC instance) throws SystemException {
         SQLExists sql = assocOperator011Range1Query(instance);
         return !new TypedQueryBuilder<ContratoC>(em, ContratoC.class).build(sql).execute().isEmpty();
     }
 
     // Range Query 1 for AssocOperator AssocOperator011
+	@Override
     public SQLExists assocOperator011Range1Query (ContratoC instance) throws SystemException {
         try {
             // The path starts with a role
@@ -511,6 +543,7 @@ public class ContratoCJpaRepositoryImpl extends AbstractRepository implements Co
     }
 
     // AssocOperator: AssocOperator012
+	@Override
     public Boolean assocOperator012(ContratoC instance) throws SystemException {
         try {
             // EXIST (FormaPagoC)
@@ -523,12 +556,14 @@ public class ContratoCJpaRepositoryImpl extends AbstractRepository implements Co
     }
 
     // Range 1 for AssocOperator AssocOperator012
+	@Override
     public Boolean assocOperator012Range1 (ContratoC instance) throws SystemException {
         SQLExists sql = assocOperator012Range1Query(instance);
         return !new TypedQueryBuilder<ContratoC>(em, ContratoC.class).build(sql).execute().isEmpty();
     }
 
     // Range Query 1 for AssocOperator AssocOperator012
+	@Override
     public SQLExists assocOperator012Range1Query (ContratoC instance) throws SystemException {
         try {
             // The path starts with a role
@@ -541,6 +576,7 @@ public class ContratoCJpaRepositoryImpl extends AbstractRepository implements Co
     }
 
     // AssocOperator: AssocOperator013
+	@Override
     public Boolean assocOperator013(ContratoC instance) throws SystemException {
         try {
             // EXIST (EstadoContratoC)
@@ -553,12 +589,14 @@ public class ContratoCJpaRepositoryImpl extends AbstractRepository implements Co
     }
 
     // Range 1 for AssocOperator AssocOperator013
+	@Override
     public Boolean assocOperator013Range1 (ContratoC instance) throws SystemException {
         SQLExists sql = assocOperator013Range1Query(instance);
         return !new TypedQueryBuilder<ContratoC>(em, ContratoC.class).build(sql).execute().isEmpty();
     }
 
     // Range Query 1 for AssocOperator AssocOperator013
+	@Override
     public SQLExists assocOperator013Range1Query (ContratoC instance) throws SystemException {
         try {
             // The path starts with a role
@@ -571,6 +609,7 @@ public class ContratoCJpaRepositoryImpl extends AbstractRepository implements Co
     }
 
     // AssocOperator: AssocOperator014
+	@Override
     public Boolean assocOperator014(ContratoC instance) throws SystemException {
         try {
             // EXIST (EstadoContratoC)
@@ -583,12 +622,14 @@ public class ContratoCJpaRepositoryImpl extends AbstractRepository implements Co
     }
 
     // Range 1 for AssocOperator AssocOperator014
+	@Override
     public Boolean assocOperator014Range1 (ContratoC instance) throws SystemException {
         SQLExists sql = assocOperator014Range1Query(instance);
         return !new TypedQueryBuilder<ContratoC>(em, ContratoC.class).build(sql).execute().isEmpty();
     }
 
     // Range Query 1 for AssocOperator AssocOperator014
+	@Override
     public SQLExists assocOperator014Range1Query (ContratoC instance) throws SystemException {
         try {
             // The path starts with a role
@@ -601,6 +642,7 @@ public class ContratoCJpaRepositoryImpl extends AbstractRepository implements Co
     }
 
     // AssocOperator: AssocOperator016
+	@Override
     public Boolean assocOperator016(ContratoC instance) throws SystemException {
         try {
             // EXIST (EstadoContratoC)
@@ -613,12 +655,14 @@ public class ContratoCJpaRepositoryImpl extends AbstractRepository implements Co
     }
 
     // Range 1 for AssocOperator AssocOperator016
+	@Override
     public Boolean assocOperator016Range1 (ContratoC instance) throws SystemException {
         SQLExists sql = assocOperator016Range1Query(instance);
         return !new TypedQueryBuilder<ContratoC>(em, ContratoC.class).build(sql).execute().isEmpty();
     }
 
     // Range Query 1 for AssocOperator AssocOperator016
+	@Override
     public SQLExists assocOperator016Range1Query (ContratoC instance) throws SystemException {
         try {
             // The path starts with a role
@@ -631,6 +675,7 @@ public class ContratoCJpaRepositoryImpl extends AbstractRepository implements Co
     }
 
     // AssocOperator: AssocOperator018
+	@Override
     public Collection<DireccionC> assocOperator018(ContratoC instance, Solicitud contratoCTCREAROMODDIRDEAEpSolicitudAE) throws SystemException {
         try {
             // FOR ALL DireccionesC WHERE (DireccionesC.TipoDireccionC = pSolicitudAE.Direccion.TipoDireccion) DO DireccionesC.TMODIFICAR(DireccionesC, pSolicitudAE.Direccion.DireccionCompleta, pSolicitudAE.Direccion.Departamento, pSolicitudAE.Direccion.Municipio, pSolicitudAE.Direccion.Pais, DireccionesC.TipoDireccionC, DireccionesC.Localidad)
@@ -643,6 +688,7 @@ public class ContratoCJpaRepositoryImpl extends AbstractRepository implements Co
     }
 
     // Range 1 for AssocOperator AssocOperator018
+	@Override
     public Collection<DireccionC> assocOperator018Range1 (ContratoC instance, Solicitud contratoCTCREAROMODDIRDEAEpSolicitudAE) throws SystemException {
 
         SQLSelect sql = assocOperator018Range1Query(instance, contratoCTCREAROMODDIRDEAEpSolicitudAE);
@@ -650,6 +696,7 @@ public class ContratoCJpaRepositoryImpl extends AbstractRepository implements Co
     }
 
     // Range Query 1 for AssocOperator AssocOperator018
+	@Override
     public SQLPopulation assocOperator018Range1Query (ContratoC instance, Solicitud contratoCTCREAROMODDIRDEAEpSolicitudAE) throws SystemException {
         try {
             SQLPopulation sql = new SQLPopulation(ContratoCConstants.CLASS_NAME, DireccionCConstants.CLASS_NAME, instance.getOid(), ContratoCConstants.ROLE_NAME_DIRECCIONESC);
@@ -686,6 +733,7 @@ public class ContratoCJpaRepositoryImpl extends AbstractRepository implements Co
     }
 
     // AssocOperator: AssocOperator020
+	@Override
     public Boolean assocOperator020(Solicitud contratoCTCREAROMODDIRDEAEpSolicitudAE) throws SystemException {
         try {
             // EXIST (pSolicitudAE.Direccion)
@@ -698,12 +746,14 @@ public class ContratoCJpaRepositoryImpl extends AbstractRepository implements Co
     }
 
     // Range 1 for AssocOperator AssocOperator020
+	@Override
     public Boolean assocOperator020Range1 (Solicitud contratoCTCREAROMODDIRDEAEpSolicitudAE) throws SystemException {
         SQLExists sql = assocOperator020Range1Query(contratoCTCREAROMODDIRDEAEpSolicitudAE, null);
         return !new TypedQueryBuilder<ContratoC>(em, ContratoC.class).build(sql).execute().isEmpty();
     }
 
     // Range Query 1 for AssocOperator AssocOperator020
+	@Override
     public SQLExists assocOperator020Range1Query (Solicitud contratoCTCREAROMODDIRDEAEpSolicitudAE, SQLSelect superQuery) throws SystemException {
         try {
             SQLExists sql;
@@ -722,6 +772,7 @@ public class ContratoCJpaRepositoryImpl extends AbstractRepository implements Co
     }
 
     // AssocOperator: AssocOperator021
+	@Override
     public Boolean assocOperator021(ContratoC instance, Solicitud contratoCTCREAROMODDIRDEAEpSolicitudAE) throws SystemException {
         try {
             // EXIST (DireccionesC) WHERE (DireccionesC.TipoDireccionC = pSolicitudAE.Direccion.TipoDireccion)
@@ -734,12 +785,14 @@ public class ContratoCJpaRepositoryImpl extends AbstractRepository implements Co
     }
 
     // Range 1 for AssocOperator AssocOperator021
+	@Override
     public Boolean assocOperator021Range1 (ContratoC instance, Solicitud contratoCTCREAROMODDIRDEAEpSolicitudAE) throws SystemException {
         SQLExists sql = assocOperator021Range1Query(instance, contratoCTCREAROMODDIRDEAEpSolicitudAE);
         return !new TypedQueryBuilder<ContratoC>(em, ContratoC.class).build(sql).execute().isEmpty();
     }
 
     // Range Query 1 for AssocOperator AssocOperator021
+	@Override
     public SQLExists assocOperator021Range1Query (ContratoC instance, Solicitud contratoCTCREAROMODDIRDEAEpSolicitudAE) throws SystemException {
         try {
             // The path starts with a role
@@ -777,6 +830,7 @@ public class ContratoCJpaRepositoryImpl extends AbstractRepository implements Co
     }
 
     // AssocOperator: AssocOperator022
+	@Override
     public Collection<FamiliaC> assocOperator022(ContratoC instance) throws SystemException {
         try {
             // FOR ALL FamiliasC DO FamiliasC.TELIMINAR(FamiliasC)
@@ -789,6 +843,7 @@ public class ContratoCJpaRepositoryImpl extends AbstractRepository implements Co
     }
 
     // Range 1 for AssocOperator AssocOperator022
+	@Override
     public Collection<FamiliaC> assocOperator022Range1 (ContratoC instance) throws SystemException {
 
         SQLSelect sql = assocOperator022Range1Query(instance);
@@ -796,6 +851,7 @@ public class ContratoCJpaRepositoryImpl extends AbstractRepository implements Co
     }
 
     // Range Query 1 for AssocOperator AssocOperator022
+	@Override
     public SQLPopulation assocOperator022Range1Query (ContratoC instance) throws SystemException {
         try {
             return new SQLPopulation(ContratoCConstants.CLASS_NAME, FamiliaCConstants.CLASS_NAME, instance.getOid(), ContratoCConstants.ROLE_NAME_FAMILIASC);
@@ -807,6 +863,7 @@ public class ContratoCJpaRepositoryImpl extends AbstractRepository implements Co
     }
 
     // AssocOperator: AssocOperator024
+	@Override
     public Collection<ObservacionesC> assocOperator024(ContratoC instance) throws SystemException {
         try {
             // FOR ALL ObservacionesC DO ObservacionesC.eliminar(ObservacionesC)
@@ -819,6 +876,7 @@ public class ContratoCJpaRepositoryImpl extends AbstractRepository implements Co
     }
 
     // Range 1 for AssocOperator AssocOperator024
+	@Override
     public Collection<ObservacionesC> assocOperator024Range1 (ContratoC instance) throws SystemException {
 
         SQLSelect sql = assocOperator024Range1Query(instance);
@@ -826,6 +884,7 @@ public class ContratoCJpaRepositoryImpl extends AbstractRepository implements Co
     }
 
     // Range Query 1 for AssocOperator AssocOperator024
+	@Override
     public SQLPopulation assocOperator024Range1Query (ContratoC instance) throws SystemException {
         try {
             return new SQLPopulation(ContratoCConstants.CLASS_NAME, ObservacionesCConstants.CLASS_NAME, instance.getOid(), ContratoCConstants.ROLE_NAME_OBSERVACIONESC);
@@ -837,6 +896,7 @@ public class ContratoCJpaRepositoryImpl extends AbstractRepository implements Co
     }
 
     // AssocOperator: AssocOperator025
+	@Override
     public Collection<DireccionC> assocOperator025(ContratoC instance) throws SystemException {
         try {
             // FOR ALL DireccionesC DO DireccionesC.TELIMINAR(DireccionesC)
@@ -849,6 +909,7 @@ public class ContratoCJpaRepositoryImpl extends AbstractRepository implements Co
     }
 
     // Range 1 for AssocOperator AssocOperator025
+	@Override
     public Collection<DireccionC> assocOperator025Range1 (ContratoC instance) throws SystemException {
 
         SQLSelect sql = assocOperator025Range1Query(instance);
@@ -856,6 +917,7 @@ public class ContratoCJpaRepositoryImpl extends AbstractRepository implements Co
     }
 
     // Range Query 1 for AssocOperator AssocOperator025
+	@Override
     public SQLPopulation assocOperator025Range1Query (ContratoC instance) throws SystemException {
         try {
             return new SQLPopulation(ContratoCConstants.CLASS_NAME, DireccionCConstants.CLASS_NAME, instance.getOid(), ContratoCConstants.ROLE_NAME_DIRECCIONESC);
@@ -867,6 +929,7 @@ public class ContratoCJpaRepositoryImpl extends AbstractRepository implements Co
     }
 
     // AssocOperator: AssocOperator026
+	@Override
     public Boolean assocOperator026(ContratoC instance) throws SystemException {
         try {
             // EXIST (PersonaCContratante)
@@ -879,12 +942,14 @@ public class ContratoCJpaRepositoryImpl extends AbstractRepository implements Co
     }
 
     // Range 1 for AssocOperator AssocOperator026
+	@Override
     public Boolean assocOperator026Range1 (ContratoC instance) throws SystemException {
         SQLExists sql = assocOperator026Range1Query(instance);
         return !new TypedQueryBuilder<ContratoC>(em, ContratoC.class).build(sql).execute().isEmpty();
     }
 
     // Range Query 1 for AssocOperator AssocOperator026
+	@Override
     public SQLExists assocOperator026Range1Query (ContratoC instance) throws SystemException {
         try {
             // The path starts with a role
@@ -897,6 +962,7 @@ public class ContratoCJpaRepositoryImpl extends AbstractRepository implements Co
     }
 
     // AssocOperator: AssocOperator028
+	@Override
     public Collection<PersonaC> assocOperator028(ContratoC instance) throws SystemException {
         try {
             // FOR ALL PersonaCContratante DO PersonaCContratante.TMODIFICAR(PersonaCContratante, ptNombreCompletoContratante, ptNumIdentificacionContratante, ptTipoIdContratante)
@@ -909,6 +975,7 @@ public class ContratoCJpaRepositoryImpl extends AbstractRepository implements Co
     }
 
     // Range 1 for AssocOperator AssocOperator028
+	@Override
     public Collection<PersonaC> assocOperator028Range1 (ContratoC instance) throws SystemException {
 
         SQLSelect sql = assocOperator028Range1Query(instance);
@@ -916,6 +983,7 @@ public class ContratoCJpaRepositoryImpl extends AbstractRepository implements Co
     }
 
     // Range Query 1 for AssocOperator AssocOperator028
+	@Override
     public SQLPopulation assocOperator028Range1Query (ContratoC instance) throws SystemException {
         try {
             return new SQLPopulation(ContratoCConstants.CLASS_NAME, PersonaCConstants.CLASS_NAME, instance.getOid(), ContratoCConstants.ROLE_NAME_PERSONACCONTRATANTE);
@@ -927,6 +995,7 @@ public class ContratoCJpaRepositoryImpl extends AbstractRepository implements Co
     }
 
     // AssocOperator: AssocOperator032
+	@Override
     public Collection<FamiliaC> assocOperator032(ContratoC instance) throws SystemException {
         try {
             // FOR ALL FamiliasC DO FamiliasC.TPOSTNOTICREAR(FamiliasC, ptNumFamilia, ptpeFechaFinVigencia, ptDireccionCompletaTitular, ptMunicipioDireccionTitular, ptTipoIdTitular, ptNumIdentificacionTitular, ptNombreCompletoTitular)
@@ -939,6 +1008,7 @@ public class ContratoCJpaRepositoryImpl extends AbstractRepository implements Co
     }
 
     // Range 1 for AssocOperator AssocOperator032
+	@Override
     public Collection<FamiliaC> assocOperator032Range1 (ContratoC instance) throws SystemException {
 
         SQLSelect sql = assocOperator032Range1Query(instance);
@@ -946,6 +1016,7 @@ public class ContratoCJpaRepositoryImpl extends AbstractRepository implements Co
     }
 
     // Range Query 1 for AssocOperator AssocOperator032
+	@Override
     public SQLPopulation assocOperator032Range1Query (ContratoC instance) throws SystemException {
         try {
             return new SQLPopulation(ContratoCConstants.CLASS_NAME, FamiliaCConstants.CLASS_NAME, instance.getOid(), ContratoCConstants.ROLE_NAME_FAMILIASC);
@@ -957,6 +1028,7 @@ public class ContratoCJpaRepositoryImpl extends AbstractRepository implements Co
     }
 
     // AssocOperator: AssocOperator033
+	@Override
     public Boolean assocOperator033(ContratoC instance) throws SystemException {
         try {
             // EXIST (PersonaCContratante)
@@ -969,12 +1041,14 @@ public class ContratoCJpaRepositoryImpl extends AbstractRepository implements Co
     }
 
     // Range 1 for AssocOperator AssocOperator033
+	@Override
     public Boolean assocOperator033Range1 (ContratoC instance) throws SystemException {
         SQLExists sql = assocOperator033Range1Query(instance);
         return !new TypedQueryBuilder<ContratoC>(em, ContratoC.class).build(sql).execute().isEmpty();
     }
 
     // Range Query 1 for AssocOperator AssocOperator033
+	@Override
     public SQLExists assocOperator033Range1Query (ContratoC instance) throws SystemException {
         try {
             // The path starts with a role
@@ -987,6 +1061,7 @@ public class ContratoCJpaRepositoryImpl extends AbstractRepository implements Co
     }
 
     // AssocOperator: AssocOperator034
+	@Override
     public Boolean assocOperator034(ContratoC instance) throws SystemException {
         try {
             // EXIST (MunicipioC)
@@ -999,12 +1074,14 @@ public class ContratoCJpaRepositoryImpl extends AbstractRepository implements Co
     }
 
     // Range 1 for AssocOperator AssocOperator034
+	@Override
     public Boolean assocOperator034Range1 (ContratoC instance) throws SystemException {
         SQLExists sql = assocOperator034Range1Query(instance);
         return !new TypedQueryBuilder<ContratoC>(em, ContratoC.class).build(sql).execute().isEmpty();
     }
 
     // Range Query 1 for AssocOperator AssocOperator034
+	@Override
     public SQLExists assocOperator034Range1Query (ContratoC instance) throws SystemException {
         try {
             // The path starts with a role
@@ -1017,6 +1094,7 @@ public class ContratoCJpaRepositoryImpl extends AbstractRepository implements Co
     }
 
     // AssocOperator: AssocOperator035
+	@Override
     public Boolean assocOperator035(ContratoC instance) throws SystemException {
         try {
             // EXIST (AsesorC)
@@ -1029,12 +1107,14 @@ public class ContratoCJpaRepositoryImpl extends AbstractRepository implements Co
     }
 
     // Range 1 for AssocOperator AssocOperator035
+	@Override
     public Boolean assocOperator035Range1 (ContratoC instance) throws SystemException {
         SQLExists sql = assocOperator035Range1Query(instance);
         return !new TypedQueryBuilder<ContratoC>(em, ContratoC.class).build(sql).execute().isEmpty();
     }
 
     // Range Query 1 for AssocOperator AssocOperator035
+	@Override
     public SQLExists assocOperator035Range1Query (ContratoC instance) throws SystemException {
         try {
             // The path starts with a role
@@ -1047,6 +1127,7 @@ public class ContratoCJpaRepositoryImpl extends AbstractRepository implements Co
     }
 
     // AssocOperator: AssocOperator036
+	@Override
     public Boolean assocOperator036(ContratoC instance) throws SystemException {
         try {
             // EXIST (PeriodicidadC)
@@ -1059,12 +1140,14 @@ public class ContratoCJpaRepositoryImpl extends AbstractRepository implements Co
     }
 
     // Range 1 for AssocOperator AssocOperator036
+	@Override
     public Boolean assocOperator036Range1 (ContratoC instance) throws SystemException {
         SQLExists sql = assocOperator036Range1Query(instance);
         return !new TypedQueryBuilder<ContratoC>(em, ContratoC.class).build(sql).execute().isEmpty();
     }
 
     // Range Query 1 for AssocOperator AssocOperator036
+	@Override
     public SQLExists assocOperator036Range1Query (ContratoC instance) throws SystemException {
         try {
             // The path starts with a role
@@ -1076,6 +1159,7 @@ public class ContratoCJpaRepositoryImpl extends AbstractRepository implements Co
         }
     }
 
+    @Override
     public void refreshEntity(Object object) {
         super.refreshEntity(object);
     }

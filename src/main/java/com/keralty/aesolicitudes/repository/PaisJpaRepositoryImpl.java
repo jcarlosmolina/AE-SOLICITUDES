@@ -34,15 +34,18 @@ public class PaisJpaRepositoryImpl extends AbstractRepository implements PaisJpa
     private TypedQueryBuilder<Pais> getQueryBuilder() {
         return new TypedQueryBuilder<>(em, Pais.class);
     }
-    
+
+    @Override	
     public List<Pais> solveQuery(SQLSelect select) {
         return solveQuery(select, 0, 0);
     }
 
+    @Override
     public List<Pais> solveQuery(SQLSelect select, int pageSize, int pageNumber) {
         return getQueryBuilder().build(select, pageSize, pageNumber).execute();
     }
 
+    @Override
     public void refreshEntity(Object object) {
         super.refreshEntity(object);
     }

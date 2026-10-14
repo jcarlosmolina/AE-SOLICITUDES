@@ -34,15 +34,18 @@ public class PregCuesMedCJpaRepositoryImpl extends AbstractRepository implements
     private TypedQueryBuilder<PregCuesMedC> getQueryBuilder() {
         return new TypedQueryBuilder<>(em, PregCuesMedC.class);
     }
-    
+
+    @Override	
     public List<PregCuesMedC> solveQuery(SQLSelect select) {
         return solveQuery(select, 0, 0);
     }
 
+    @Override
     public List<PregCuesMedC> solveQuery(SQLSelect select, int pageSize, int pageNumber) {
         return getQueryBuilder().build(select, pageSize, pageNumber).execute();
     }
 
+    @Override
     public void refreshEntity(Object object) {
         super.refreshEntity(object);
     }

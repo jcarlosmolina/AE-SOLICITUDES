@@ -34,15 +34,18 @@ public class PreguntaJpaRepositoryImpl extends AbstractRepository implements Pre
     private TypedQueryBuilder<Pregunta> getQueryBuilder() {
         return new TypedQueryBuilder<>(em, Pregunta.class);
     }
-    
+
+    @Override	
     public List<Pregunta> solveQuery(SQLSelect select) {
         return solveQuery(select, 0, 0);
     }
 
+    @Override
     public List<Pregunta> solveQuery(SQLSelect select, int pageSize, int pageNumber) {
         return getQueryBuilder().build(select, pageSize, pageNumber).execute();
     }
 
+    @Override
     public void refreshEntity(Object object) {
         super.refreshEntity(object);
     }

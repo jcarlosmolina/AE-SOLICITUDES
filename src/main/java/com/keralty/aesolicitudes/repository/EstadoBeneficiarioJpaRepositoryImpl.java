@@ -34,15 +34,18 @@ public class EstadoBeneficiarioJpaRepositoryImpl extends AbstractRepository impl
     private TypedQueryBuilder<EstadoBeneficiario> getQueryBuilder() {
         return new TypedQueryBuilder<>(em, EstadoBeneficiario.class);
     }
-    
+
+    @Override	
     public List<EstadoBeneficiario> solveQuery(SQLSelect select) {
         return solveQuery(select, 0, 0);
     }
 
+    @Override
     public List<EstadoBeneficiario> solveQuery(SQLSelect select, int pageSize, int pageNumber) {
         return getQueryBuilder().build(select, pageSize, pageNumber).execute();
     }
 
+    @Override
     public void refreshEntity(Object object) {
         super.refreshEntity(object);
     }

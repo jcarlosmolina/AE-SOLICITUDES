@@ -34,15 +34,18 @@ public class RolJpaRepositoryImpl extends AbstractRepository implements RolJpaRe
     private TypedQueryBuilder<Rol> getQueryBuilder() {
         return new TypedQueryBuilder<>(em, Rol.class);
     }
-    
+
+    @Override	
     public List<Rol> solveQuery(SQLSelect select) {
         return solveQuery(select, 0, 0);
     }
 
+    @Override
     public List<Rol> solveQuery(SQLSelect select, int pageSize, int pageNumber) {
         return getQueryBuilder().build(select, pageSize, pageNumber).execute();
     }
 
+    @Override
     public void refreshEntity(Object object) {
         super.refreshEntity(object);
     }

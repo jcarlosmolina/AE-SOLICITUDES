@@ -51,16 +51,19 @@ public class PeriodicidadJpaRepositoryImpl extends AbstractRepository implements
     private TypedQueryBuilder<Periodicidad> getQueryBuilder() {
         return new TypedQueryBuilder<>(em, Periodicidad.class);
     }
-    
+
+    @Override	
     public List<Periodicidad> solveQuery(SQLSelect select) {
         return solveQuery(select, 0, 0);
     }
 
+    @Override
     public List<Periodicidad> solveQuery(SQLSelect select, int pageSize, int pageNumber) {
         return getQueryBuilder().build(select, pageSize, pageNumber).execute();
     }
 
     // AssocOperator: AssocOperator001
+	@Override
     public Boolean assocOperator001(Dominio dominioInsPeriodicidadDominiopthisDominio) throws SystemException {
         try {
             // EXIST (Dominios) WHERE (Dominios = pthisDominio)
@@ -73,12 +76,14 @@ public class PeriodicidadJpaRepositoryImpl extends AbstractRepository implements
     }
 
     // Range 0 for AssocOperator AssocOperator001
+	@Override
     public Boolean assocOperator001Range1 (Dominio dominioInsPeriodicidadDominiopthisDominio) throws SystemException {
         SQLExists sql = assocOperator001Range1Query(dominioInsPeriodicidadDominiopthisDominio, null);
         return !new TypedQueryBuilder<Periodicidad>(em, Periodicidad.class).build(sql).execute().isEmpty();
     }
 
     // Range Query 0 for AssocOperator AssocOperator001
+	@Override
     public SQLExists assocOperator001Range1Query (Dominio dominioInsPeriodicidadDominiopthisDominio, SQLSelect superQuery) throws SystemException {
         try {
             // The path starts with a role
@@ -109,6 +114,7 @@ public class PeriodicidadJpaRepositoryImpl extends AbstractRepository implements
     }
 
     // AssocOperator: AssocOperator002
+	@Override
     public Boolean assocOperator002(Dominio dominioDelPeriodicidadDominiopthisDominio) throws SystemException {
         try {
             // EXIST (Dominios) WHERE (Dominios = pthisDominio)
@@ -121,12 +127,14 @@ public class PeriodicidadJpaRepositoryImpl extends AbstractRepository implements
     }
 
     // Range 0 for AssocOperator AssocOperator002
+	@Override
     public Boolean assocOperator002Range1 (Dominio dominioDelPeriodicidadDominiopthisDominio) throws SystemException {
         SQLExists sql = assocOperator002Range1Query(dominioDelPeriodicidadDominiopthisDominio, null);
         return !new TypedQueryBuilder<Periodicidad>(em, Periodicidad.class).build(sql).execute().isEmpty();
     }
 
     // Range Query 0 for AssocOperator AssocOperator002
+	@Override
     public SQLExists assocOperator002Range1Query (Dominio dominioDelPeriodicidadDominiopthisDominio, SQLSelect superQuery) throws SystemException {
         try {
             // The path starts with a role
@@ -157,6 +165,7 @@ public class PeriodicidadJpaRepositoryImpl extends AbstractRepository implements
     }
 
     // AssocOperator: AssocOperator003
+	@Override
     public Boolean assocOperator003(Solicitud solicitudTMODIFICARINFOPAGOpthisSolicitud) throws SystemException {
         try {
             // EXIST (Dominios) WHERE (Dominios.ProductoT = pthisSolicitud.Aesolicitudes.ProductoT AND Dominios.PlanT = pthisSolicitud.Aesolicitudes.PlanT)
@@ -169,12 +178,14 @@ public class PeriodicidadJpaRepositoryImpl extends AbstractRepository implements
     }
 
     // Range 0 for AssocOperator AssocOperator003
+	@Override
     public Boolean assocOperator003Range1 (Solicitud solicitudTMODIFICARINFOPAGOpthisSolicitud) throws SystemException {
         SQLExists sql = assocOperator003Range1Query(solicitudTMODIFICARINFOPAGOpthisSolicitud, null);
         return !new TypedQueryBuilder<Periodicidad>(em, Periodicidad.class).build(sql).execute().isEmpty();
     }
 
     // Range Query 0 for AssocOperator AssocOperator003
+	@Override
     public SQLExists assocOperator003Range1Query (Solicitud solicitudTMODIFICARINFOPAGOpthisSolicitud, SQLSelect superQuery) throws SystemException {
         try {
             // The path starts with a role
@@ -227,6 +238,7 @@ public class PeriodicidadJpaRepositoryImpl extends AbstractRepository implements
     }
 
     // AssocOperator: AssocOperator004
+	@Override
     public Boolean assocOperator004(SolicitudNovedad solicitudNovedadTCHGNUEVAPERIODICIDADpthisSolicitudNovedad) throws SystemException {
         try {
             // EXIST (Dominios) WHERE (Dominios.ProductoT = pthisSolicitudNovedad.PlanT.ProductoT AND Dominios.PlanT = pthisSolicitudNovedad.PlanT)
@@ -239,12 +251,14 @@ public class PeriodicidadJpaRepositoryImpl extends AbstractRepository implements
     }
 
     // Range 0 for AssocOperator AssocOperator004
+	@Override
     public Boolean assocOperator004Range1 (SolicitudNovedad solicitudNovedadTCHGNUEVAPERIODICIDADpthisSolicitudNovedad) throws SystemException {
         SQLExists sql = assocOperator004Range1Query(solicitudNovedadTCHGNUEVAPERIODICIDADpthisSolicitudNovedad, null);
         return !new TypedQueryBuilder<Periodicidad>(em, Periodicidad.class).build(sql).execute().isEmpty();
     }
 
     // Range Query 0 for AssocOperator AssocOperator004
+	@Override
     public SQLExists assocOperator004Range1Query (SolicitudNovedad solicitudNovedadTCHGNUEVAPERIODICIDADpthisSolicitudNovedad, SQLSelect superQuery) throws SystemException {
         try {
             // The path starts with a role
@@ -289,6 +303,7 @@ public class PeriodicidadJpaRepositoryImpl extends AbstractRepository implements
         }
     }
 
+    @Override
     public void refreshEntity(Object object) {
         super.refreshEntity(object);
     }

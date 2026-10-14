@@ -37,16 +37,19 @@ public class TitularJpaRepositoryImpl extends AbstractRepository implements Titu
     private TypedQueryBuilder<Titular> getQueryBuilder() {
         return new TypedQueryBuilder<>(em, Titular.class);
     }
-    
+
+    @Override	
     public List<Titular> solveQuery(SQLSelect select) {
         return solveQuery(select, 0, 0);
     }
 
+    @Override
     public List<Titular> solveQuery(SQLSelect select, int pageSize, int pageNumber) {
         return getQueryBuilder().build(select, pageSize, pageNumber).execute();
     }
 
     // AssocOperator: AssocOperator000
+	@Override
     public Boolean assocOperator000(Titular instance) throws SystemException {
         try {
             // EXIST (DepartamentoNac)
@@ -59,12 +62,14 @@ public class TitularJpaRepositoryImpl extends AbstractRepository implements Titu
     }
 
     // Range 1 for AssocOperator AssocOperator000
+	@Override
     public Boolean assocOperator000Range1 (Titular instance) throws SystemException {
         SQLExists sql = assocOperator000Range1Query(instance);
         return !new TypedQueryBuilder<Titular>(em, Titular.class).build(sql).execute().isEmpty();
     }
 
     // Range Query 1 for AssocOperator AssocOperator000
+	@Override
     public SQLExists assocOperator000Range1Query (Titular instance) throws SystemException {
         try {
             // The path starts with a role
@@ -77,6 +82,7 @@ public class TitularJpaRepositoryImpl extends AbstractRepository implements Titu
     }
 
     // AssocOperator: AssocOperator001
+	@Override
     public Boolean assocOperator001(Titular instance) throws SystemException {
         try {
             // EXIST (DepartamentoNac)
@@ -89,12 +95,14 @@ public class TitularJpaRepositoryImpl extends AbstractRepository implements Titu
     }
 
     // Range 1 for AssocOperator AssocOperator001
+	@Override
     public Boolean assocOperator001Range1 (Titular instance) throws SystemException {
         SQLExists sql = assocOperator001Range1Query(instance);
         return !new TypedQueryBuilder<Titular>(em, Titular.class).build(sql).execute().isEmpty();
     }
 
     // Range Query 1 for AssocOperator AssocOperator001
+	@Override
     public SQLExists assocOperator001Range1Query (Titular instance) throws SystemException {
         try {
             // The path starts with a role
@@ -107,6 +115,7 @@ public class TitularJpaRepositoryImpl extends AbstractRepository implements Titu
     }
 
     // AssocOperator: AssocOperator003
+	@Override
     public Boolean assocOperator003(Titular instance) throws SystemException {
         try {
             // EXIST (MunicipioNac)
@@ -119,12 +128,14 @@ public class TitularJpaRepositoryImpl extends AbstractRepository implements Titu
     }
 
     // Range 1 for AssocOperator AssocOperator003
+	@Override
     public Boolean assocOperator003Range1 (Titular instance) throws SystemException {
         SQLExists sql = assocOperator003Range1Query(instance);
         return !new TypedQueryBuilder<Titular>(em, Titular.class).build(sql).execute().isEmpty();
     }
 
     // Range Query 1 for AssocOperator AssocOperator003
+	@Override
     public SQLExists assocOperator003Range1Query (Titular instance) throws SystemException {
         try {
             // The path starts with a role
@@ -137,6 +148,7 @@ public class TitularJpaRepositoryImpl extends AbstractRepository implements Titu
     }
 
     // AssocOperator: AssocOperator004
+	@Override
     public Boolean assocOperator004(Titular instance) throws SystemException {
         try {
             // EXIST (MunicipioNac)
@@ -149,12 +161,14 @@ public class TitularJpaRepositoryImpl extends AbstractRepository implements Titu
     }
 
     // Range 1 for AssocOperator AssocOperator004
+	@Override
     public Boolean assocOperator004Range1 (Titular instance) throws SystemException {
         SQLExists sql = assocOperator004Range1Query(instance);
         return !new TypedQueryBuilder<Titular>(em, Titular.class).build(sql).execute().isEmpty();
     }
 
     // Range Query 1 for AssocOperator AssocOperator004
+	@Override
     public SQLExists assocOperator004Range1Query (Titular instance) throws SystemException {
         try {
             // The path starts with a role
@@ -167,6 +181,7 @@ public class TitularJpaRepositoryImpl extends AbstractRepository implements Titu
     }
 
     // AssocOperator: AssocOperator006
+	@Override
     public Boolean assocOperator006(Titular instance) throws SystemException {
         try {
             // EXIST (DepartamentoNac)
@@ -179,12 +194,14 @@ public class TitularJpaRepositoryImpl extends AbstractRepository implements Titu
     }
 
     // Range 1 for AssocOperator AssocOperator006
+	@Override
     public Boolean assocOperator006Range1 (Titular instance) throws SystemException {
         SQLExists sql = assocOperator006Range1Query(instance);
         return !new TypedQueryBuilder<Titular>(em, Titular.class).build(sql).execute().isEmpty();
     }
 
     // Range Query 1 for AssocOperator AssocOperator006
+	@Override
     public SQLExists assocOperator006Range1Query (Titular instance) throws SystemException {
         try {
             // The path starts with a role
@@ -197,6 +214,7 @@ public class TitularJpaRepositoryImpl extends AbstractRepository implements Titu
     }
 
     // AssocOperator: AssocOperator007
+	@Override
     public Boolean assocOperator007(Titular instance) throws SystemException {
         try {
             // EXIST (MunicipioNac)
@@ -209,12 +227,14 @@ public class TitularJpaRepositoryImpl extends AbstractRepository implements Titu
     }
 
     // Range 1 for AssocOperator AssocOperator007
+	@Override
     public Boolean assocOperator007Range1 (Titular instance) throws SystemException {
         SQLExists sql = assocOperator007Range1Query(instance);
         return !new TypedQueryBuilder<Titular>(em, Titular.class).build(sql).execute().isEmpty();
     }
 
     // Range Query 1 for AssocOperator AssocOperator007
+	@Override
     public SQLExists assocOperator007Range1Query (Titular instance) throws SystemException {
         try {
             // The path starts with a role
@@ -227,6 +247,7 @@ public class TitularJpaRepositoryImpl extends AbstractRepository implements Titu
     }
 
     // AssocOperator: AssocOperator009
+	@Override
     public Boolean assocOperator009(Titular instance) throws SystemException {
         try {
             // EXIST (Direccion)
@@ -239,12 +260,14 @@ public class TitularJpaRepositoryImpl extends AbstractRepository implements Titu
     }
 
     // Range 1 for AssocOperator AssocOperator009
+	@Override
     public Boolean assocOperator009Range1 (Titular instance) throws SystemException {
         SQLExists sql = assocOperator009Range1Query(instance);
         return !new TypedQueryBuilder<Titular>(em, Titular.class).build(sql).execute().isEmpty();
     }
 
     // Range Query 1 for AssocOperator AssocOperator009
+	@Override
     public SQLExists assocOperator009Range1Query (Titular instance) throws SystemException {
         try {
             // The path starts with a role
@@ -257,6 +280,7 @@ public class TitularJpaRepositoryImpl extends AbstractRepository implements Titu
     }
 
     // AssocOperator: AssocOperator010
+	@Override
     public Boolean assocOperator010(Titular instance) throws SystemException {
         try {
             // EXIST (Direccion)
@@ -269,12 +293,14 @@ public class TitularJpaRepositoryImpl extends AbstractRepository implements Titu
     }
 
     // Range 1 for AssocOperator AssocOperator010
+	@Override
     public Boolean assocOperator010Range1 (Titular instance) throws SystemException {
         SQLExists sql = assocOperator010Range1Query(instance);
         return !new TypedQueryBuilder<Titular>(em, Titular.class).build(sql).execute().isEmpty();
     }
 
     // Range Query 1 for AssocOperator AssocOperator010
+	@Override
     public SQLExists assocOperator010Range1Query (Titular instance) throws SystemException {
         try {
             // The path starts with a role
@@ -286,6 +312,7 @@ public class TitularJpaRepositoryImpl extends AbstractRepository implements Titu
         }
     }
 
+    @Override
     public void refreshEntity(Object object) {
         super.refreshEntity(object);
     }

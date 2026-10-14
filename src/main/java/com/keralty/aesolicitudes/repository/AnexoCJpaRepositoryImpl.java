@@ -34,15 +34,18 @@ public class AnexoCJpaRepositoryImpl extends AbstractRepository implements Anexo
     private TypedQueryBuilder<AnexoC> getQueryBuilder() {
         return new TypedQueryBuilder<>(em, AnexoC.class);
     }
-    
+
+    @Override	
     public List<AnexoC> solveQuery(SQLSelect select) {
         return solveQuery(select, 0, 0);
     }
 
+    @Override
     public List<AnexoC> solveQuery(SQLSelect select, int pageSize, int pageNumber) {
         return getQueryBuilder().build(select, pageSize, pageNumber).execute();
     }
 
+    @Override
     public void refreshEntity(Object object) {
         super.refreshEntity(object);
     }

@@ -38,15 +38,18 @@ public class MesaDeApoyoJpaRepositoryImpl extends AbstractRepository implements 
     private TypedQueryBuilder<MesaDeApoyo> getQueryBuilder() {
         return new TypedQueryBuilder<>(em, MesaDeApoyo.class);
     }
-    
+
+    @Override	
     public List<MesaDeApoyo> solveQuery(SQLSelect select) {
         return solveQuery(select, 0, 0);
     }
 
+    @Override
     public List<MesaDeApoyo> solveQuery(SQLSelect select, int pageSize, int pageNumber) {
         return getQueryBuilder().build(select, pageSize, pageNumber).execute();
     }
 
+    @Override
     public Funcionario findParent(Long oid) {
         return em.find(Funcionario.class, oid);
     }
@@ -61,6 +64,7 @@ public class MesaDeApoyoJpaRepositoryImpl extends AbstractRepository implements 
         join.getWheres().add(myAlias + "." + MesaDeApoyoConstants.FLD_FUNCIONARIOID + " = " + parentAlias + "." + FuncionarioConstants.ATTR_FIELD_FUNCIONARIOID);
     }
 
+    @Override
     public void refreshEntity(Object object) {
         super.refreshEntity(object);
     }

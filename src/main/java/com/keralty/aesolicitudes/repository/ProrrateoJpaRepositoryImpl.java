@@ -42,11 +42,13 @@ public class ProrrateoJpaRepositoryImpl extends AbstractRepository implements Pr
     private TypedQueryBuilder<Prorrateo> getQueryBuilder() {
         return new TypedQueryBuilder<>(em, Prorrateo.class);
     }
-    
+
+    @Override	
     public List<Prorrateo> solveQuery(SQLSelect select) {
         return solveQuery(select, 0, 0);
     }
 
+    @Override
     public List<Prorrateo> solveQuery(SQLSelect select, int pageSize, int pageNumber) {
         return getQueryBuilder().build(select, pageSize, pageNumber).execute();
     }
@@ -72,6 +74,7 @@ public class ProrrateoJpaRepositoryImpl extends AbstractRepository implements Pr
         }
     }
 
+    @Override
     public void refreshEntity(Object object) {
         super.refreshEntity(object);
     }

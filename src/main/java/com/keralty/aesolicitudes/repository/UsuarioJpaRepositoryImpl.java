@@ -82,11 +82,13 @@ public class UsuarioJpaRepositoryImpl extends AbstractRepository implements Usua
     private TypedQueryBuilder<Usuario> getQueryBuilder() {
         return new TypedQueryBuilder<>(em, Usuario.class);
     }
-    
+
+    @Override	
     public List<Usuario> solveQuery(SQLSelect select) {
         return solveQuery(select, 0, 0);
     }
 
+    @Override
     public List<Usuario> solveQuery(SQLSelect select, int pageSize, int pageNumber) {
         return getQueryBuilder().build(select, pageSize, pageNumber).execute();
     }
@@ -113,6 +115,7 @@ public class UsuarioJpaRepositoryImpl extends AbstractRepository implements Usua
     }
 
     // AssocOperator: AssocOperator000
+	@Override
     public Boolean assocOperator000(Usuario instance) throws SystemException {
         try {
             // EXIST (Parentesco)
@@ -125,12 +128,14 @@ public class UsuarioJpaRepositoryImpl extends AbstractRepository implements Usua
     }
 
     // Range 1 for AssocOperator AssocOperator000
+	@Override
     public Boolean assocOperator000Range1 (Usuario instance) throws SystemException {
         SQLExists sql = assocOperator000Range1Query(instance);
         return !new TypedQueryBuilder<Usuario>(em, Usuario.class).build(sql).execute().isEmpty();
     }
 
     // Range Query 1 for AssocOperator AssocOperator000
+	@Override
     public SQLExists assocOperator000Range1Query (Usuario instance) throws SystemException {
         try {
             // The path starts with a role
@@ -143,6 +148,7 @@ public class UsuarioJpaRepositoryImpl extends AbstractRepository implements Usua
     }
 
     // AssocOperator: AssocOperator001
+	@Override
     public Boolean assocOperator001(Usuario instance) throws SystemException {
         try {
             // EXIST (CuestionarioP)
@@ -155,12 +161,14 @@ public class UsuarioJpaRepositoryImpl extends AbstractRepository implements Usua
     }
 
     // Range 1 for AssocOperator AssocOperator001
+	@Override
     public Boolean assocOperator001Range1 (Usuario instance) throws SystemException {
         SQLExists sql = assocOperator001Range1Query(instance);
         return !new TypedQueryBuilder<Usuario>(em, Usuario.class).build(sql).execute().isEmpty();
     }
 
     // Range Query 1 for AssocOperator AssocOperator001
+	@Override
     public SQLExists assocOperator001Range1Query (Usuario instance) throws SystemException {
         try {
             // The path starts with a role
@@ -173,6 +181,7 @@ public class UsuarioJpaRepositoryImpl extends AbstractRepository implements Usua
     }
 
     // AssocOperator: AssocOperator002
+	@Override
     public Boolean assocOperator002(Usuario instance) throws SystemException {
         try {
             // EXIST (Solicitud.Aesolicitudes.ProductoT.Dominios) WHERE (Solicitud.Aesolicitudes.ProductoT.Dominios.PlanT = Solicitud.Aesolicitudes.PlanT AND Solicitud.Aesolicitudes.ProductoT.Dominios.AcepCuesMat = true)
@@ -185,12 +194,14 @@ public class UsuarioJpaRepositoryImpl extends AbstractRepository implements Usua
     }
 
     // Range 1 for AssocOperator AssocOperator002
+	@Override
     public Boolean assocOperator002Range1 (Usuario instance) throws SystemException {
         SQLExists sql = assocOperator002Range1Query(instance);
         return !new TypedQueryBuilder<Usuario>(em, Usuario.class).build(sql).execute().isEmpty();
     }
 
     // Range Query 1 for AssocOperator AssocOperator002
+	@Override
     public SQLExists assocOperator002Range1Query (Usuario instance) throws SystemException {
         try {
             // The path starts with a role
@@ -242,6 +253,7 @@ public class UsuarioJpaRepositoryImpl extends AbstractRepository implements Usua
     }
 
     // AssocOperator: AssocOperator003
+	@Override
     public Boolean assocOperator003(Usuario instance) throws SystemException {
         try {
             // EXIST (Solicitud.Aesolicitudes.ProductoT.Dominios) WHERE (Solicitud.Aesolicitudes.ProductoT.Dominios.PlanT = Solicitud.Aesolicitudes.PlanT AND Solicitud.Aesolicitudes.ProductoT.Dominios.AcepCuesNeo = true)
@@ -254,12 +266,14 @@ public class UsuarioJpaRepositoryImpl extends AbstractRepository implements Usua
     }
 
     // Range 1 for AssocOperator AssocOperator003
+	@Override
     public Boolean assocOperator003Range1 (Usuario instance) throws SystemException {
         SQLExists sql = assocOperator003Range1Query(instance);
         return !new TypedQueryBuilder<Usuario>(em, Usuario.class).build(sql).execute().isEmpty();
     }
 
     // Range Query 1 for AssocOperator AssocOperator003
+	@Override
     public SQLExists assocOperator003Range1Query (Usuario instance) throws SystemException {
         try {
             // The path starts with a role
@@ -311,6 +325,7 @@ public class UsuarioJpaRepositoryImpl extends AbstractRepository implements Usua
     }
 
     // AssocOperator: AssocOperator004
+	@Override
     public Boolean assocOperator004(Usuario instance) throws SystemException {
         try {
             // EXIST (AnexoMat)
@@ -323,12 +338,14 @@ public class UsuarioJpaRepositoryImpl extends AbstractRepository implements Usua
     }
 
     // Range 1 for AssocOperator AssocOperator004
+	@Override
     public Boolean assocOperator004Range1 (Usuario instance) throws SystemException {
         SQLExists sql = assocOperator004Range1Query(instance);
         return !new TypedQueryBuilder<Usuario>(em, Usuario.class).build(sql).execute().isEmpty();
     }
 
     // Range Query 1 for AssocOperator AssocOperator004
+	@Override
     public SQLExists assocOperator004Range1Query (Usuario instance) throws SystemException {
         try {
             // The path starts with a role
@@ -341,6 +358,7 @@ public class UsuarioJpaRepositoryImpl extends AbstractRepository implements Usua
     }
 
     // AssocOperator: AssocOperator005
+	@Override
     public Boolean assocOperator005(Usuario instance) throws SystemException {
         try {
             // EXIST (CuestionarioP)
@@ -353,12 +371,14 @@ public class UsuarioJpaRepositoryImpl extends AbstractRepository implements Usua
     }
 
     // Range 1 for AssocOperator AssocOperator005
+	@Override
     public Boolean assocOperator005Range1 (Usuario instance) throws SystemException {
         SQLExists sql = assocOperator005Range1Query(instance);
         return !new TypedQueryBuilder<Usuario>(em, Usuario.class).build(sql).execute().isEmpty();
     }
 
     // Range Query 1 for AssocOperator AssocOperator005
+	@Override
     public SQLExists assocOperator005Range1Query (Usuario instance) throws SystemException {
         try {
             // The path starts with a role
@@ -371,6 +391,7 @@ public class UsuarioJpaRepositoryImpl extends AbstractRepository implements Usua
     }
 
     // AssocOperator: AssocOperator006
+	@Override
     public Boolean assocOperator006(Usuario instance) throws SystemException {
         try {
             // EXIST (CuestionarioP) WHERE (CuestionarioP.YaDiligenciado = true)
@@ -383,12 +404,14 @@ public class UsuarioJpaRepositoryImpl extends AbstractRepository implements Usua
     }
 
     // Range 1 for AssocOperator AssocOperator006
+	@Override
     public Boolean assocOperator006Range1 (Usuario instance) throws SystemException {
         SQLExists sql = assocOperator006Range1Query(instance);
         return !new TypedQueryBuilder<Usuario>(em, Usuario.class).build(sql).execute().isEmpty();
     }
 
     // Range Query 1 for AssocOperator AssocOperator006
+	@Override
     public SQLExists assocOperator006Range1Query (Usuario instance) throws SystemException {
         try {
             // The path starts with a role
@@ -421,6 +444,7 @@ public class UsuarioJpaRepositoryImpl extends AbstractRepository implements Usua
     }
 
     // AssocOperator: AssocOperator007
+	@Override
     public Boolean assocOperator007(Usuario instance) throws SystemException {
         try {
             // EXIST (EstadoBeneficiario)
@@ -433,12 +457,14 @@ public class UsuarioJpaRepositoryImpl extends AbstractRepository implements Usua
     }
 
     // Range 1 for AssocOperator AssocOperator007
+	@Override
     public Boolean assocOperator007Range1 (Usuario instance) throws SystemException {
         SQLExists sql = assocOperator007Range1Query(instance);
         return !new TypedQueryBuilder<Usuario>(em, Usuario.class).build(sql).execute().isEmpty();
     }
 
     // Range Query 1 for AssocOperator AssocOperator007
+	@Override
     public SQLExists assocOperator007Range1Query (Usuario instance) throws SystemException {
         try {
             // The path starts with a role
@@ -451,6 +477,7 @@ public class UsuarioJpaRepositoryImpl extends AbstractRepository implements Usua
     }
 
     // AssocOperator: AssocOperator008
+	@Override
     public Boolean assocOperator008(Usuario instance) throws SystemException {
         try {
             // EXIST (CuestionarioP.Secciones.Preguntas) WHERE (CuestionarioP.Secciones.Preguntas.Pregunta.Numero = StrToInt(fugetValorParametroConf("PREGUNTAEMBARAZO")) AND CuestionarioP.Secciones.Preguntas.RespuestaSiNo = true AND CuestionarioP.Secciones.Preguntas.ValoresRespuestas <> NULL)
@@ -463,12 +490,14 @@ public class UsuarioJpaRepositoryImpl extends AbstractRepository implements Usua
     }
 
     // Range 1 for AssocOperator AssocOperator008
+	@Override
     public Boolean assocOperator008Range1 (Usuario instance) throws SystemException {
         SQLExists sql = assocOperator008Range1Query(instance);
         return !new TypedQueryBuilder<Usuario>(em, Usuario.class).build(sql).execute().isEmpty();
     }
 
     // Range Query 1 for AssocOperator AssocOperator008
+	@Override
     public SQLExists assocOperator008Range1Query (Usuario instance) throws SystemException {
         try {
             // The path starts with a role
@@ -530,6 +559,7 @@ public class UsuarioJpaRepositoryImpl extends AbstractRepository implements Usua
     }
 
     // AssocOperator: AssocOperator009
+	@Override
     public String assocOperator009(Usuario instance) throws SystemException {
         try {
             // GETONE (CuestionarioP.Secciones.Preguntas.ValoresRespuestas) WHERE (CuestionarioP.Secciones.Preguntas.Pregunta.Numero = StrToInt(fugetValorParametroConf("PREGUNTAEMBARAZO")) AND CuestionarioP.Secciones.Preguntas.RespuestaSiNo = true)
@@ -542,6 +572,7 @@ public class UsuarioJpaRepositoryImpl extends AbstractRepository implements Usua
     }
 
     // Range 1 for AssocOperator AssocOperator009
+	@Override
     public String assocOperator009Range1 (Usuario instance) throws SystemException {
         SQLGetOne sql = assocOperator009Range1Query(instance);
         List<String> results = new TypedQueryBuilder<String>(em, String.class).build(sql).execute();
@@ -549,6 +580,7 @@ public class UsuarioJpaRepositoryImpl extends AbstractRepository implements Usua
     }
 
     // Range Query 1 for AssocOperator AssocOperator009
+	@Override
     public SQLGetOne assocOperator009Range1Query (Usuario instance) throws SystemException {
         try {
             // The path starts with a role
@@ -596,6 +628,7 @@ public class UsuarioJpaRepositoryImpl extends AbstractRepository implements Usua
     }
 
     // AssocOperator: AssocOperator010
+	@Override
     public Boolean assocOperator010(Usuario instance) throws SystemException {
         try {
             // EXIST (EstadoBeneficiario)
@@ -608,12 +641,14 @@ public class UsuarioJpaRepositoryImpl extends AbstractRepository implements Usua
     }
 
     // Range 1 for AssocOperator AssocOperator010
+	@Override
     public Boolean assocOperator010Range1 (Usuario instance) throws SystemException {
         SQLExists sql = assocOperator010Range1Query(instance);
         return !new TypedQueryBuilder<Usuario>(em, Usuario.class).build(sql).execute().isEmpty();
     }
 
     // Range Query 1 for AssocOperator AssocOperator010
+	@Override
     public SQLExists assocOperator010Range1Query (Usuario instance) throws SystemException {
         try {
             // The path starts with a role
@@ -626,6 +661,7 @@ public class UsuarioJpaRepositoryImpl extends AbstractRepository implements Usua
     }
 
     // AssocOperator: AssocOperator011
+	@Override
     public Boolean assocOperator011(Usuario instance) throws SystemException {
         try {
             // EXIST (Parentesco)
@@ -638,12 +674,14 @@ public class UsuarioJpaRepositoryImpl extends AbstractRepository implements Usua
     }
 
     // Range 1 for AssocOperator AssocOperator011
+	@Override
     public Boolean assocOperator011Range1 (Usuario instance) throws SystemException {
         SQLExists sql = assocOperator011Range1Query(instance);
         return !new TypedQueryBuilder<Usuario>(em, Usuario.class).build(sql).execute().isEmpty();
     }
 
     // Range Query 1 for AssocOperator AssocOperator011
+	@Override
     public SQLExists assocOperator011Range1Query (Usuario instance) throws SystemException {
         try {
             // The path starts with a role
@@ -656,6 +694,7 @@ public class UsuarioJpaRepositoryImpl extends AbstractRepository implements Usua
     }
 
     // AssocOperator: AssocOperator012
+	@Override
     public Boolean assocOperator012(Usuario instance) throws SystemException {
         try {
             // EXIST (Solicitud.Aesolicitudes.PlanT.Dominios.ParentescosDom) WHERE (Solicitud.Aesolicitudes.PlanT.Dominios.ParentescosDom.Dominio.ProductoT = Solicitud.Aesolicitudes.ProductoT AND Solicitud.Aesolicitudes.PlanT.Dominios.ParentescosDom.Parentesco = Parentesco AND Solicitud.Aesolicitudes.PlanT.Dominios.ParentescosDom.EdadMaximaA <> NULL)
@@ -668,12 +707,14 @@ public class UsuarioJpaRepositoryImpl extends AbstractRepository implements Usua
     }
 
     // Range 1 for AssocOperator AssocOperator012
+	@Override
     public Boolean assocOperator012Range1 (Usuario instance) throws SystemException {
         SQLExists sql = assocOperator012Range1Query(instance);
         return !new TypedQueryBuilder<Usuario>(em, Usuario.class).build(sql).execute().isEmpty();
     }
 
     // Range Query 1 for AssocOperator AssocOperator012
+	@Override
     public SQLExists assocOperator012Range1Query (Usuario instance) throws SystemException {
         try {
             // The path starts with a role
@@ -733,6 +774,7 @@ public class UsuarioJpaRepositoryImpl extends AbstractRepository implements Usua
     }
 
     // AssocOperator: AssocOperator013
+	@Override
     public Long assocOperator013(Usuario instance) throws SystemException {
         try {
             // SUM (Solicitud.Aesolicitudes.PlanT.Dominios.ParentescosDom.EdadMaximaA) WHERE (Solicitud.Aesolicitudes.PlanT.Dominios.ParentescosDom.Dominio.ProductoT = Solicitud.Aesolicitudes.ProductoT AND Solicitud.Aesolicitudes.PlanT.Dominios.ParentescosDom.Parentesco = Parentesco)
@@ -745,12 +787,14 @@ public class UsuarioJpaRepositoryImpl extends AbstractRepository implements Usua
     }
 
     // Range 1 for AssocOperator AssocOperator013
+	@Override
     public Long assocOperator013Range1 (Usuario instance) throws SystemException {
         SQLSum sql = assocOperator013Range1Query(instance);
         return new TypedQueryBuilder<Long>(em, Long.class).build(sql).getSingleResult();
     }
 
     // Range Query 1 for AssocOperator AssocOperator013
+	@Override
     public SQLSum assocOperator013Range1Query (Usuario instance) throws SystemException {
         try {
             // The path starts with a role
@@ -796,6 +840,7 @@ public class UsuarioJpaRepositoryImpl extends AbstractRepository implements Usua
     }
 
     // AssocOperator: AssocOperator014
+	@Override
     public Boolean assocOperator014(Usuario instance) throws SystemException {
         try {
             // EXIST (Parentesco)
@@ -808,12 +853,14 @@ public class UsuarioJpaRepositoryImpl extends AbstractRepository implements Usua
     }
 
     // Range 1 for AssocOperator AssocOperator014
+	@Override
     public Boolean assocOperator014Range1 (Usuario instance) throws SystemException {
         SQLExists sql = assocOperator014Range1Query(instance);
         return !new TypedQueryBuilder<Usuario>(em, Usuario.class).build(sql).execute().isEmpty();
     }
 
     // Range Query 1 for AssocOperator AssocOperator014
+	@Override
     public SQLExists assocOperator014Range1Query (Usuario instance) throws SystemException {
         try {
             // The path starts with a role
@@ -826,6 +873,7 @@ public class UsuarioJpaRepositoryImpl extends AbstractRepository implements Usua
     }
 
     // AssocOperator: AssocOperator015
+	@Override
     public Boolean assocOperator015(Usuario instance) throws SystemException {
         try {
             // EXIST (Solicitud.Aesolicitudes.PlanT.Dominios.ParentescosDom) WHERE (Solicitud.Aesolicitudes.PlanT.Dominios.ParentescosDom.Dominio.ProductoT = Solicitud.Aesolicitudes.ProductoT AND Solicitud.Aesolicitudes.PlanT.Dominios.ParentescosDom.Parentesco = Parentesco AND Solicitud.Aesolicitudes.PlanT.Dominios.ParentescosDom.EdadMaximaP <> NULL)
@@ -838,12 +886,14 @@ public class UsuarioJpaRepositoryImpl extends AbstractRepository implements Usua
     }
 
     // Range 1 for AssocOperator AssocOperator015
+	@Override
     public Boolean assocOperator015Range1 (Usuario instance) throws SystemException {
         SQLExists sql = assocOperator015Range1Query(instance);
         return !new TypedQueryBuilder<Usuario>(em, Usuario.class).build(sql).execute().isEmpty();
     }
 
     // Range Query 1 for AssocOperator AssocOperator015
+	@Override
     public SQLExists assocOperator015Range1Query (Usuario instance) throws SystemException {
         try {
             // The path starts with a role
@@ -903,6 +953,7 @@ public class UsuarioJpaRepositoryImpl extends AbstractRepository implements Usua
     }
 
     // AssocOperator: AssocOperator016
+	@Override
     public Long assocOperator016(Usuario instance) throws SystemException {
         try {
             // SUM (Solicitud.Aesolicitudes.PlanT.Dominios.ParentescosDom.EdadMaximaP) WHERE (Solicitud.Aesolicitudes.PlanT.Dominios.ParentescosDom.Dominio.ProductoT = Solicitud.Aesolicitudes.ProductoT AND Solicitud.Aesolicitudes.PlanT.Dominios.ParentescosDom.Parentesco = Parentesco)
@@ -915,12 +966,14 @@ public class UsuarioJpaRepositoryImpl extends AbstractRepository implements Usua
     }
 
     // Range 1 for AssocOperator AssocOperator016
+	@Override
     public Long assocOperator016Range1 (Usuario instance) throws SystemException {
         SQLSum sql = assocOperator016Range1Query(instance);
         return new TypedQueryBuilder<Long>(em, Long.class).build(sql).getSingleResult();
     }
 
     // Range Query 1 for AssocOperator AssocOperator016
+	@Override
     public SQLSum assocOperator016Range1Query (Usuario instance) throws SystemException {
         try {
             // The path starts with a role
@@ -966,6 +1019,7 @@ public class UsuarioJpaRepositoryImpl extends AbstractRepository implements Usua
     }
 
     // AssocOperator: AssocOperator017
+	@Override
     public Boolean assocOperator017(Usuario instance) throws SystemException {
         try {
             // EXIST (AnexoMat)
@@ -978,12 +1032,14 @@ public class UsuarioJpaRepositoryImpl extends AbstractRepository implements Usua
     }
 
     // Range 1 for AssocOperator AssocOperator017
+	@Override
     public Boolean assocOperator017Range1 (Usuario instance) throws SystemException {
         SQLExists sql = assocOperator017Range1Query(instance);
         return !new TypedQueryBuilder<Usuario>(em, Usuario.class).build(sql).execute().isEmpty();
     }
 
     // Range Query 1 for AssocOperator AssocOperator017
+	@Override
     public SQLExists assocOperator017Range1Query (Usuario instance) throws SystemException {
         try {
             // The path starts with a role
@@ -996,6 +1052,7 @@ public class UsuarioJpaRepositoryImpl extends AbstractRepository implements Usua
     }
 
     // AssocOperator: AssocOperator018
+	@Override
     public Boolean assocOperator018(Usuario instance) throws SystemException {
         try {
             // EXIST (AnexoNeo)
@@ -1008,12 +1065,14 @@ public class UsuarioJpaRepositoryImpl extends AbstractRepository implements Usua
     }
 
     // Range 1 for AssocOperator AssocOperator018
+	@Override
     public Boolean assocOperator018Range1 (Usuario instance) throws SystemException {
         SQLExists sql = assocOperator018Range1Query(instance);
         return !new TypedQueryBuilder<Usuario>(em, Usuario.class).build(sql).execute().isEmpty();
     }
 
     // Range Query 1 for AssocOperator AssocOperator018
+	@Override
     public SQLExists assocOperator018Range1Query (Usuario instance) throws SystemException {
         try {
             // The path starts with a role
@@ -1026,6 +1085,7 @@ public class UsuarioJpaRepositoryImpl extends AbstractRepository implements Usua
     }
 
     // AssocOperator: AssocOperator019
+	@Override
     public Boolean assocOperator019(Usuario instance) throws SystemException {
         try {
             // EXIST (AnexoMat)
@@ -1038,12 +1098,14 @@ public class UsuarioJpaRepositoryImpl extends AbstractRepository implements Usua
     }
 
     // Range 1 for AssocOperator AssocOperator019
+	@Override
     public Boolean assocOperator019Range1 (Usuario instance) throws SystemException {
         SQLExists sql = assocOperator019Range1Query(instance);
         return !new TypedQueryBuilder<Usuario>(em, Usuario.class).build(sql).execute().isEmpty();
     }
 
     // Range Query 1 for AssocOperator AssocOperator019
+	@Override
     public SQLExists assocOperator019Range1Query (Usuario instance) throws SystemException {
         try {
             // The path starts with a role
@@ -1056,6 +1118,7 @@ public class UsuarioJpaRepositoryImpl extends AbstractRepository implements Usua
     }
 
     // AssocOperator: AssocOperator020
+	@Override
     public Boolean assocOperator020(Usuario instance) throws SystemException {
         try {
             // EXIST (AnexoNeo)
@@ -1068,12 +1131,14 @@ public class UsuarioJpaRepositoryImpl extends AbstractRepository implements Usua
     }
 
     // Range 1 for AssocOperator AssocOperator020
+	@Override
     public Boolean assocOperator020Range1 (Usuario instance) throws SystemException {
         SQLExists sql = assocOperator020Range1Query(instance);
         return !new TypedQueryBuilder<Usuario>(em, Usuario.class).build(sql).execute().isEmpty();
     }
 
     // Range Query 1 for AssocOperator AssocOperator020
+	@Override
     public SQLExists assocOperator020Range1Query (Usuario instance) throws SystemException {
         try {
             // The path starts with a role
@@ -1086,6 +1151,7 @@ public class UsuarioJpaRepositoryImpl extends AbstractRepository implements Usua
     }
 
     // AssocOperator: AssocOperator021
+	@Override
     public Boolean assocOperator021(Usuario instance) throws SystemException {
         try {
             // EXIST (AnexoMat)
@@ -1098,12 +1164,14 @@ public class UsuarioJpaRepositoryImpl extends AbstractRepository implements Usua
     }
 
     // Range 1 for AssocOperator AssocOperator021
+	@Override
     public Boolean assocOperator021Range1 (Usuario instance) throws SystemException {
         SQLExists sql = assocOperator021Range1Query(instance);
         return !new TypedQueryBuilder<Usuario>(em, Usuario.class).build(sql).execute().isEmpty();
     }
 
     // Range Query 1 for AssocOperator AssocOperator021
+	@Override
     public SQLExists assocOperator021Range1Query (Usuario instance) throws SystemException {
         try {
             // The path starts with a role
@@ -1116,6 +1184,7 @@ public class UsuarioJpaRepositoryImpl extends AbstractRepository implements Usua
     }
 
     // AssocOperator: AssocOperator022
+	@Override
     public Boolean assocOperator022(Usuario instance) throws SystemException {
         try {
             // EXIST (AnexoNeo)
@@ -1128,12 +1197,14 @@ public class UsuarioJpaRepositoryImpl extends AbstractRepository implements Usua
     }
 
     // Range 1 for AssocOperator AssocOperator022
+	@Override
     public Boolean assocOperator022Range1 (Usuario instance) throws SystemException {
         SQLExists sql = assocOperator022Range1Query(instance);
         return !new TypedQueryBuilder<Usuario>(em, Usuario.class).build(sql).execute().isEmpty();
     }
 
     // Range Query 1 for AssocOperator AssocOperator022
+	@Override
     public SQLExists assocOperator022Range1Query (Usuario instance) throws SystemException {
         try {
             // The path starts with a role
@@ -1146,6 +1217,7 @@ public class UsuarioJpaRepositoryImpl extends AbstractRepository implements Usua
     }
 
     // AssocOperator: AssocOperator023
+	@Override
     public Boolean assocOperator023(Usuario instance) throws SystemException {
         try {
             // EXIST (Eps) WHERE (Eps.EpsSanitas = true)
@@ -1158,12 +1230,14 @@ public class UsuarioJpaRepositoryImpl extends AbstractRepository implements Usua
     }
 
     // Range 1 for AssocOperator AssocOperator023
+	@Override
     public Boolean assocOperator023Range1 (Usuario instance) throws SystemException {
         SQLExists sql = assocOperator023Range1Query(instance);
         return !new TypedQueryBuilder<Usuario>(em, Usuario.class).build(sql).execute().isEmpty();
     }
 
     // Range Query 1 for AssocOperator AssocOperator023
+	@Override
     public SQLExists assocOperator023Range1Query (Usuario instance) throws SystemException {
         try {
             // The path starts with a role
@@ -1196,6 +1270,7 @@ public class UsuarioJpaRepositoryImpl extends AbstractRepository implements Usua
     }
 
     // AssocOperator: AssocOperator024
+	@Override
     public Boolean assocOperator024(Usuario instance) throws SystemException {
         try {
             // EXIST (Parentesco)
@@ -1208,12 +1283,14 @@ public class UsuarioJpaRepositoryImpl extends AbstractRepository implements Usua
     }
 
     // Range 1 for AssocOperator AssocOperator024
+	@Override
     public Boolean assocOperator024Range1 (Usuario instance) throws SystemException {
         SQLExists sql = assocOperator024Range1Query(instance);
         return !new TypedQueryBuilder<Usuario>(em, Usuario.class).build(sql).execute().isEmpty();
     }
 
     // Range Query 1 for AssocOperator AssocOperator024
+	@Override
     public SQLExists assocOperator024Range1Query (Usuario instance) throws SystemException {
         try {
             // The path starts with a role
@@ -1226,6 +1303,7 @@ public class UsuarioJpaRepositoryImpl extends AbstractRepository implements Usua
     }
 
     // AssocOperator: AssocOperator025
+	@Override
     public Long assocOperator025(Usuario instance) throws SystemException {
         try {
             // COUNT (Solicitud.Usuarios) WHERE (Solicitud.Usuarios.Identificador <> Identificador AND Solicitud.Usuarios.Parentesco.EsTitular = true)
@@ -1238,12 +1316,14 @@ public class UsuarioJpaRepositoryImpl extends AbstractRepository implements Usua
     }
 
     // Range 1 for AssocOperator AssocOperator025
+	@Override
     public Long assocOperator025Range1 (Usuario instance) throws SystemException {
         SQLCount sql = assocOperator025Range1Query(instance);
         return Long.valueOf(solveCountQuery(sql));
     }
 
     // Range Query 1 for AssocOperator AssocOperator025
+	@Override
     public SQLCount assocOperator025Range1Query (Usuario instance) throws SystemException {
         try {
             // The path starts with a role
@@ -1287,6 +1367,7 @@ public class UsuarioJpaRepositoryImpl extends AbstractRepository implements Usua
     }
 
     // AssocOperator: AssocOperator026
+	@Override
     public Long assocOperator026(Usuario instance) throws SystemException {
         try {
             // COUNT (Solicitud.UsuariosRegistrados) WHERE (Solicitud.UsuariosRegistrados.EstadoBeneficiario.EsActivo = true AND Solicitud.UsuariosRegistrados.Parentesco.EsTitular = true)
@@ -1299,12 +1380,14 @@ public class UsuarioJpaRepositoryImpl extends AbstractRepository implements Usua
     }
 
     // Range 1 for AssocOperator AssocOperator026
+	@Override
     public Long assocOperator026Range1 (Usuario instance) throws SystemException {
         SQLCount sql = assocOperator026Range1Query(instance);
         return Long.valueOf(solveCountQuery(sql));
     }
 
     // Range Query 1 for AssocOperator AssocOperator026
+	@Override
     public SQLCount assocOperator026Range1Query (Usuario instance) throws SystemException {
         try {
             // The path starts with a role
@@ -1348,6 +1431,7 @@ public class UsuarioJpaRepositoryImpl extends AbstractRepository implements Usua
     }
 
     // AssocOperator: AssocOperator027
+	@Override
     public Boolean assocOperator027(Usuario instance) throws SystemException {
         try {
             // EXIST (CuestionarioP)
@@ -1360,12 +1444,14 @@ public class UsuarioJpaRepositoryImpl extends AbstractRepository implements Usua
     }
 
     // Range 1 for AssocOperator AssocOperator027
+	@Override
     public Boolean assocOperator027Range1 (Usuario instance) throws SystemException {
         SQLExists sql = assocOperator027Range1Query(instance);
         return !new TypedQueryBuilder<Usuario>(em, Usuario.class).build(sql).execute().isEmpty();
     }
 
     // Range Query 1 for AssocOperator AssocOperator027
+	@Override
     public SQLExists assocOperator027Range1Query (Usuario instance) throws SystemException {
         try {
             // The path starts with a role
@@ -1378,6 +1464,7 @@ public class UsuarioJpaRepositoryImpl extends AbstractRepository implements Usua
     }
 
     // AssocOperator: AssocOperator028
+	@Override
     public Double assocOperator028(Usuario instance) throws SystemException {
         try {
             // SUM (Solicitud.Aesolicitudes.PlanT.Tarifas.DetallesTarifa.Valor) WHERE (Solicitud.Aesolicitudes.PlanT.Tarifas.DetallesTarifa.Tarifa.TipoContrato = Solicitud.tipoContrato AND Solicitud.Aesolicitudes.PlanT.Tarifas.DetallesTarifa.Anyo = getYear(Solicitud.Aesolicitudes.Fechaasignacion) AND drvEdad >= Solicitud.Aesolicitudes.PlanT.Tarifas.DetallesTarifa.LimInferiorEdad AND drvEdad <= Solicitud.Aesolicitudes.PlanT.Tarifas.DetallesTarifa.LimSuperiorEdad)
@@ -1390,12 +1477,14 @@ public class UsuarioJpaRepositoryImpl extends AbstractRepository implements Usua
     }
 
     // Range 1 for AssocOperator AssocOperator028
+	@Override
     public Double assocOperator028Range1 (Usuario instance) throws SystemException {
         SQLSum sql = assocOperator028Range1Query(instance);
         return new TypedQueryBuilder<Double>(em, Double.class).build(sql).getSingleResult();
     }
 
     // Range Query 1 for AssocOperator AssocOperator028
+	@Override
     public SQLSum assocOperator028Range1Query (Usuario instance) throws SystemException {
         try {
             // The path starts with a role
@@ -1471,6 +1560,7 @@ public class UsuarioJpaRepositoryImpl extends AbstractRepository implements Usua
     }
 
     // AssocOperator: AssocOperator029
+	@Override
     public Boolean assocOperator029(Usuario instance) throws SystemException {
         try {
             // EXIST (UsuarioPersona.Direcciones) WHERE (UsuarioPersona.Direcciones.TipoDireccion = fugetTipoDirResidencial() AND UsuarioPersona.Direcciones.Municipio.EsValidoEPS = false)
@@ -1483,12 +1573,14 @@ public class UsuarioJpaRepositoryImpl extends AbstractRepository implements Usua
     }
 
     // Range 1 for AssocOperator AssocOperator029
+	@Override
     public Boolean assocOperator029Range1 (Usuario instance) throws SystemException {
         SQLExists sql = assocOperator029Range1Query(instance);
         return !new TypedQueryBuilder<Usuario>(em, Usuario.class).build(sql).execute().isEmpty();
     }
 
     // Range Query 1 for AssocOperator AssocOperator029
+	@Override
     public SQLExists assocOperator029Range1Query (Usuario instance) throws SystemException {
         try {
             // The path starts with a role
@@ -1540,6 +1632,7 @@ public class UsuarioJpaRepositoryImpl extends AbstractRepository implements Usua
     }
 
     // AssocOperator: AssocOperator030
+	@Override
     public Boolean assocOperator030(Usuario instance) throws SystemException {
         try {
             // EXIST (CuestionarioP)
@@ -1552,12 +1645,14 @@ public class UsuarioJpaRepositoryImpl extends AbstractRepository implements Usua
     }
 
     // Range 1 for AssocOperator AssocOperator030
+	@Override
     public Boolean assocOperator030Range1 (Usuario instance) throws SystemException {
         SQLExists sql = assocOperator030Range1Query(instance);
         return !new TypedQueryBuilder<Usuario>(em, Usuario.class).build(sql).execute().isEmpty();
     }
 
     // Range Query 1 for AssocOperator AssocOperator030
+	@Override
     public SQLExists assocOperator030Range1Query (Usuario instance) throws SystemException {
         try {
             // The path starts with a role
@@ -1570,6 +1665,7 @@ public class UsuarioJpaRepositoryImpl extends AbstractRepository implements Usua
     }
 
     // AssocOperator: AssocOperator031
+	@Override
     public Boolean assocOperator031(Solicitud usuarioTCREARptpagrSolicitud) throws SystemException {
         try {
             // EXIST (ptpagrSolicitud.Aesolicitudes.ProductoT.Dominios) WHERE (ptpagrSolicitud.Aesolicitudes.ProductoT.Dominios.PlanT = ptpagrSolicitud.Aesolicitudes.PlanT AND ptpagrSolicitud.Aesolicitudes.ProductoT.Dominios.AcepBBGestante = true)
@@ -1582,12 +1678,14 @@ public class UsuarioJpaRepositoryImpl extends AbstractRepository implements Usua
     }
 
     // Range 1 for AssocOperator AssocOperator031
+	@Override
     public Boolean assocOperator031Range1 (Solicitud usuarioTCREARptpagrSolicitud) throws SystemException {
         SQLExists sql = assocOperator031Range1Query(usuarioTCREARptpagrSolicitud, null);
         return !new TypedQueryBuilder<Usuario>(em, Usuario.class).build(sql).execute().isEmpty();
     }
 
     // Range Query 1 for AssocOperator AssocOperator031
+	@Override
     public SQLExists assocOperator031Range1Query (Solicitud usuarioTCREARptpagrSolicitud, SQLSelect superQuery) throws SystemException {
         try {
             SQLExists sql;
@@ -1644,6 +1742,7 @@ public class UsuarioJpaRepositoryImpl extends AbstractRepository implements Usua
     }
 
     // AssocOperator: AssocOperator032
+	@Override
     public Boolean assocOperator032(Solicitud usuarioTCREARptpagrSolicitud) throws SystemException {
         try {
             // EXIST (ptpagrSolicitud.Aesolicitudes.ProductoT.Dominios) WHERE (ptpagrSolicitud.Aesolicitudes.ProductoT.Dominios.PlanT = ptpagrSolicitud.Aesolicitudes.PlanT AND ptpagrSolicitud.Aesolicitudes.ProductoT.Dominios.ProrrateoUsuExistente = true)
@@ -1656,12 +1755,14 @@ public class UsuarioJpaRepositoryImpl extends AbstractRepository implements Usua
     }
 
     // Range 1 for AssocOperator AssocOperator032
+	@Override
     public Boolean assocOperator032Range1 (Solicitud usuarioTCREARptpagrSolicitud) throws SystemException {
         SQLExists sql = assocOperator032Range1Query(usuarioTCREARptpagrSolicitud, null);
         return !new TypedQueryBuilder<Usuario>(em, Usuario.class).build(sql).execute().isEmpty();
     }
 
     // Range Query 1 for AssocOperator AssocOperator032
+	@Override
     public SQLExists assocOperator032Range1Query (Solicitud usuarioTCREARptpagrSolicitud, SQLSelect superQuery) throws SystemException {
         try {
             SQLExists sql;
@@ -1718,6 +1819,7 @@ public class UsuarioJpaRepositoryImpl extends AbstractRepository implements Usua
     }
 
     // AssocOperator: AssocOperator038
+	@Override
     public Boolean assocOperator038(Usuario instance) throws SystemException {
         try {
             // EXIST (Solicitud.Aesolicitudes.ProductoT.Dominios) WHERE (Solicitud.Aesolicitudes.ProductoT.Dominios.PlanT = Solicitud.Aesolicitudes.PlanT AND Solicitud.Aesolicitudes.ProductoT.Dominios.IgnorarPreexistencias = false)
@@ -1730,12 +1832,14 @@ public class UsuarioJpaRepositoryImpl extends AbstractRepository implements Usua
     }
 
     // Range 1 for AssocOperator AssocOperator038
+	@Override
     public Boolean assocOperator038Range1 (Usuario instance) throws SystemException {
         SQLExists sql = assocOperator038Range1Query(instance);
         return !new TypedQueryBuilder<Usuario>(em, Usuario.class).build(sql).execute().isEmpty();
     }
 
     // Range Query 1 for AssocOperator AssocOperator038
+	@Override
     public SQLExists assocOperator038Range1Query (Usuario instance) throws SystemException {
         try {
             // The path starts with a role
@@ -1787,6 +1891,7 @@ public class UsuarioJpaRepositoryImpl extends AbstractRepository implements Usua
     }
 
     // AssocOperator: AssocOperator039
+	@Override
     public Boolean assocOperator039(Usuario instance) throws SystemException {
         try {
             // EXIST (UsuarioPersona.DocumentosG) WHERE (UsuarioPersona.DocumentosG.Tipo = 1)
@@ -1799,12 +1904,14 @@ public class UsuarioJpaRepositoryImpl extends AbstractRepository implements Usua
     }
 
     // Range 1 for AssocOperator AssocOperator039
+	@Override
     public Boolean assocOperator039Range1 (Usuario instance) throws SystemException {
         SQLExists sql = assocOperator039Range1Query(instance);
         return !new TypedQueryBuilder<Usuario>(em, Usuario.class).build(sql).execute().isEmpty();
     }
 
     // Range Query 1 for AssocOperator AssocOperator039
+	@Override
     public SQLExists assocOperator039Range1Query (Usuario instance) throws SystemException {
         try {
             // The path starts with a role
@@ -1834,6 +1941,7 @@ public class UsuarioJpaRepositoryImpl extends AbstractRepository implements Usua
     }
 
     // AssocOperator: AssocOperator042
+	@Override
     public Boolean assocOperator042(Usuario instance) throws SystemException {
         try {
             // EXIST (Solicitud.Aesolicitudes.ProductoT.Dominios) WHERE (Solicitud.Aesolicitudes.ProductoT.Dominios.PlanT = Solicitud.Aesolicitudes.PlanT AND Solicitud.Aesolicitudes.ProductoT.Dominios.IgnorarPreexistencias = false)
@@ -1846,12 +1954,14 @@ public class UsuarioJpaRepositoryImpl extends AbstractRepository implements Usua
     }
 
     // Range 1 for AssocOperator AssocOperator042
+	@Override
     public Boolean assocOperator042Range1 (Usuario instance) throws SystemException {
         SQLExists sql = assocOperator042Range1Query(instance);
         return !new TypedQueryBuilder<Usuario>(em, Usuario.class).build(sql).execute().isEmpty();
     }
 
     // Range Query 1 for AssocOperator AssocOperator042
+	@Override
     public SQLExists assocOperator042Range1Query (Usuario instance) throws SystemException {
         try {
             // The path starts with a role
@@ -1903,6 +2013,7 @@ public class UsuarioJpaRepositoryImpl extends AbstractRepository implements Usua
     }
 
     // AssocOperator: AssocOperator043
+	@Override
     public Boolean assocOperator043(Usuario instance) throws SystemException {
         try {
             // EXIST (Parentesco)
@@ -1915,12 +2026,14 @@ public class UsuarioJpaRepositoryImpl extends AbstractRepository implements Usua
     }
 
     // Range 1 for AssocOperator AssocOperator043
+	@Override
     public Boolean assocOperator043Range1 (Usuario instance) throws SystemException {
         SQLExists sql = assocOperator043Range1Query(instance);
         return !new TypedQueryBuilder<Usuario>(em, Usuario.class).build(sql).execute().isEmpty();
     }
 
     // Range Query 1 for AssocOperator AssocOperator043
+	@Override
     public SQLExists assocOperator043Range1Query (Usuario instance) throws SystemException {
         try {
             // The path starts with a role
@@ -1933,6 +2046,7 @@ public class UsuarioJpaRepositoryImpl extends AbstractRepository implements Usua
     }
 
     // AssocOperator: AssocOperator069
+	@Override
     public Collection<Preexistencia> assocOperator069(Usuario instance) throws SystemException {
         try {
             // FOR ALL Preexistencias DO Preexistencias.eliminar(Preexistencias)
@@ -1945,6 +2059,7 @@ public class UsuarioJpaRepositoryImpl extends AbstractRepository implements Usua
     }
 
     // Range 1 for AssocOperator AssocOperator069
+	@Override
     public Collection<Preexistencia> assocOperator069Range1 (Usuario instance) throws SystemException {
 
         SQLSelect sql = assocOperator069Range1Query(instance);
@@ -1952,6 +2067,7 @@ public class UsuarioJpaRepositoryImpl extends AbstractRepository implements Usua
     }
 
     // Range Query 1 for AssocOperator AssocOperator069
+	@Override
     public SQLPopulation assocOperator069Range1Query (Usuario instance) throws SystemException {
         try {
             return new SQLPopulation(UsuarioConstants.CLASS_NAME, PreexistenciaConstants.CLASS_NAME, instance.getOid(), UsuarioConstants.ROLE_NAME_PREEXISTENCIAS);
@@ -1963,6 +2079,7 @@ public class UsuarioJpaRepositoryImpl extends AbstractRepository implements Usua
     }
 
     // AssocOperator: AssocOperator070
+	@Override
     public Collection<PreexistenciaC> assocOperator070(Usuario usuarioTACTDESDECOREpthisUsuario, BeneficiarioC usuarioTACTDESDECOREpBeneficiarioC) throws SystemException {
         try {
             // FOR ALL pBeneficiarioC.PersonaC.PreexistenciasC DO Preexistencias.crear(this, pBeneficiarioC.PersonaC.PreexistenciasC.Descripcion, pBeneficiarioC.PersonaC.PreexistenciasC.FecInicio, pBeneficiarioC.PersonaC.PreexistenciasC.FecFin, pBeneficiarioC.PersonaC.PreexistenciasC.Observacion)
@@ -1975,6 +2092,7 @@ public class UsuarioJpaRepositoryImpl extends AbstractRepository implements Usua
     }
 
     // Range 1 for AssocOperator AssocOperator070
+	@Override
     public Collection<PreexistenciaC> assocOperator070Range1 (BeneficiarioC usuarioTACTDESDECOREpBeneficiarioC) throws SystemException {
 
         SQLSelect sql = assocOperator070Range1Query(usuarioTACTDESDECOREpBeneficiarioC);
@@ -1982,6 +2100,7 @@ public class UsuarioJpaRepositoryImpl extends AbstractRepository implements Usua
     }
 
     // Range Query 1 for AssocOperator AssocOperator070
+	@Override
     public SQLPopulation assocOperator070Range1Query (BeneficiarioC usuarioTACTDESDECOREpBeneficiarioC) throws SystemException {
         try {
             return new SQLPopulation(UsuarioConstants.CLASS_NAME, PreexistenciaCConstants.CLASS_NAME, UsuarioConstants.ARG_NAME_TACTDESDECORE_USUARIOTACTDESDECOREPBENEFICIARIOC + "." + BeneficiarioCConstants.ROLE_NAME_PERSONAC + "." + PersonaCConstants.ROLE_NAME_PREEXISTENCIASC, usuarioTACTDESDECOREpBeneficiarioC.getOid(), UsuarioConstants.ARG_NAME_TACTDESDECORE_USUARIOTACTDESDECOREPBENEFICIARIOC);
@@ -1993,6 +2112,7 @@ public class UsuarioJpaRepositoryImpl extends AbstractRepository implements Usua
     }
 
     // AssocOperator: AssocOperator073
+	@Override
     public Boolean assocOperator073(BeneficiarioC usuarioTACTDESDECOREpBeneficiarioC) throws SystemException {
         try {
             // EXIST (pBeneficiarioC.EstadoBeneficiarioC)
@@ -2005,12 +2125,14 @@ public class UsuarioJpaRepositoryImpl extends AbstractRepository implements Usua
     }
 
     // Range 1 for AssocOperator AssocOperator073
+	@Override
     public Boolean assocOperator073Range1 (BeneficiarioC usuarioTACTDESDECOREpBeneficiarioC) throws SystemException {
         SQLExists sql = assocOperator073Range1Query(usuarioTACTDESDECOREpBeneficiarioC, null);
         return !new TypedQueryBuilder<Usuario>(em, Usuario.class).build(sql).execute().isEmpty();
     }
 
     // Range Query 1 for AssocOperator AssocOperator073
+	@Override
     public SQLExists assocOperator073Range1Query (BeneficiarioC usuarioTACTDESDECOREpBeneficiarioC, SQLSelect superQuery) throws SystemException {
         try {
             SQLExists sql;
@@ -2029,6 +2151,7 @@ public class UsuarioJpaRepositoryImpl extends AbstractRepository implements Usua
     }
 
     // AssocOperator: AssocOperator074
+	@Override
     public Boolean assocOperator074(Usuario instance) throws SystemException {
         try {
             // EXIST (EstadoBeneficiario)
@@ -2041,12 +2164,14 @@ public class UsuarioJpaRepositoryImpl extends AbstractRepository implements Usua
     }
 
     // Range 1 for AssocOperator AssocOperator074
+	@Override
     public Boolean assocOperator074Range1 (Usuario instance) throws SystemException {
         SQLExists sql = assocOperator074Range1Query(instance);
         return !new TypedQueryBuilder<Usuario>(em, Usuario.class).build(sql).execute().isEmpty();
     }
 
     // Range Query 1 for AssocOperator AssocOperator074
+	@Override
     public SQLExists assocOperator074Range1Query (Usuario instance) throws SystemException {
         try {
             // The path starts with a role
@@ -2059,6 +2184,7 @@ public class UsuarioJpaRepositoryImpl extends AbstractRepository implements Usua
     }
 
     // AssocOperator: AssocOperator078
+	@Override
     public Collection<Preexistencia> assocOperator078(Usuario instance) throws SystemException {
         try {
             // FOR ALL Preexistencias DO Preexistencias.eliminar(Preexistencias)
@@ -2071,6 +2197,7 @@ public class UsuarioJpaRepositoryImpl extends AbstractRepository implements Usua
     }
 
     // Range 1 for AssocOperator AssocOperator078
+	@Override
     public Collection<Preexistencia> assocOperator078Range1 (Usuario instance) throws SystemException {
 
         SQLSelect sql = assocOperator078Range1Query(instance);
@@ -2078,6 +2205,7 @@ public class UsuarioJpaRepositoryImpl extends AbstractRepository implements Usua
     }
 
     // Range Query 1 for AssocOperator AssocOperator078
+	@Override
     public SQLPopulation assocOperator078Range1Query (Usuario instance) throws SystemException {
         try {
             return new SQLPopulation(UsuarioConstants.CLASS_NAME, PreexistenciaConstants.CLASS_NAME, instance.getOid(), UsuarioConstants.ROLE_NAME_PREEXISTENCIAS);
@@ -2089,6 +2217,7 @@ public class UsuarioJpaRepositoryImpl extends AbstractRepository implements Usua
     }
 
     // AssocOperator: AssocOperator079
+	@Override
     public Boolean assocOperator079(Usuario instance) throws SystemException {
         try {
             // EXIST (CuestionarioP)
@@ -2101,12 +2230,14 @@ public class UsuarioJpaRepositoryImpl extends AbstractRepository implements Usua
     }
 
     // Range 1 for AssocOperator AssocOperator079
+	@Override
     public Boolean assocOperator079Range1 (Usuario instance) throws SystemException {
         SQLExists sql = assocOperator079Range1Query(instance);
         return !new TypedQueryBuilder<Usuario>(em, Usuario.class).build(sql).execute().isEmpty();
     }
 
     // Range Query 1 for AssocOperator AssocOperator079
+	@Override
     public SQLExists assocOperator079Range1Query (Usuario instance) throws SystemException {
         try {
             // The path starts with a role
@@ -2119,6 +2250,7 @@ public class UsuarioJpaRepositoryImpl extends AbstractRepository implements Usua
     }
 
     // AssocOperator: AssocOperator080
+	@Override
     public Boolean assocOperator080(Usuario instance) throws SystemException {
         try {
             // EXIST (AnexoMat)
@@ -2131,12 +2263,14 @@ public class UsuarioJpaRepositoryImpl extends AbstractRepository implements Usua
     }
 
     // Range 1 for AssocOperator AssocOperator080
+	@Override
     public Boolean assocOperator080Range1 (Usuario instance) throws SystemException {
         SQLExists sql = assocOperator080Range1Query(instance);
         return !new TypedQueryBuilder<Usuario>(em, Usuario.class).build(sql).execute().isEmpty();
     }
 
     // Range Query 1 for AssocOperator AssocOperator080
+	@Override
     public SQLExists assocOperator080Range1Query (Usuario instance) throws SystemException {
         try {
             // The path starts with a role
@@ -2149,6 +2283,7 @@ public class UsuarioJpaRepositoryImpl extends AbstractRepository implements Usua
     }
 
     // AssocOperator: AssocOperator081
+	@Override
     public Boolean assocOperator081(Usuario instance) throws SystemException {
         try {
             // EXIST (AnexoNeo)
@@ -2161,12 +2296,14 @@ public class UsuarioJpaRepositoryImpl extends AbstractRepository implements Usua
     }
 
     // Range 1 for AssocOperator AssocOperator081
+	@Override
     public Boolean assocOperator081Range1 (Usuario instance) throws SystemException {
         SQLExists sql = assocOperator081Range1Query(instance);
         return !new TypedQueryBuilder<Usuario>(em, Usuario.class).build(sql).execute().isEmpty();
     }
 
     // Range Query 1 for AssocOperator AssocOperator081
+	@Override
     public SQLExists assocOperator081Range1Query (Usuario instance) throws SystemException {
         try {
             // The path starts with a role
@@ -2179,6 +2316,7 @@ public class UsuarioJpaRepositoryImpl extends AbstractRepository implements Usua
     }
 
     // AssocOperator: AssocOperator083
+	@Override
     public Boolean assocOperator083(Usuario instance) throws SystemException {
         try {
             // EXIST (CuestionarioP)
@@ -2191,12 +2329,14 @@ public class UsuarioJpaRepositoryImpl extends AbstractRepository implements Usua
     }
 
     // Range 1 for AssocOperator AssocOperator083
+	@Override
     public Boolean assocOperator083Range1 (Usuario instance) throws SystemException {
         SQLExists sql = assocOperator083Range1Query(instance);
         return !new TypedQueryBuilder<Usuario>(em, Usuario.class).build(sql).execute().isEmpty();
     }
 
     // Range Query 1 for AssocOperator AssocOperator083
+	@Override
     public SQLExists assocOperator083Range1Query (Usuario instance) throws SystemException {
         try {
             // The path starts with a role
@@ -2209,6 +2349,7 @@ public class UsuarioJpaRepositoryImpl extends AbstractRepository implements Usua
     }
 
     // AssocOperator: AssocOperator084
+	@Override
     public Collection<Preexistencia> assocOperator084(Usuario instance) throws SystemException {
         try {
             // FOR ALL Preexistencias DO Preexistencias.eliminar(Preexistencias)
@@ -2221,6 +2362,7 @@ public class UsuarioJpaRepositoryImpl extends AbstractRepository implements Usua
     }
 
     // Range 1 for AssocOperator AssocOperator084
+	@Override
     public Collection<Preexistencia> assocOperator084Range1 (Usuario instance) throws SystemException {
 
         SQLSelect sql = assocOperator084Range1Query(instance);
@@ -2228,6 +2370,7 @@ public class UsuarioJpaRepositoryImpl extends AbstractRepository implements Usua
     }
 
     // Range Query 1 for AssocOperator AssocOperator084
+	@Override
     public SQLPopulation assocOperator084Range1Query (Usuario instance) throws SystemException {
         try {
             return new SQLPopulation(UsuarioConstants.CLASS_NAME, PreexistenciaConstants.CLASS_NAME, instance.getOid(), UsuarioConstants.ROLE_NAME_PREEXISTENCIAS);
@@ -2238,6 +2381,7 @@ public class UsuarioJpaRepositoryImpl extends AbstractRepository implements Usua
         }
     }
 
+    @Override
     public void refreshEntity(Object object) {
         super.refreshEntity(object);
     }

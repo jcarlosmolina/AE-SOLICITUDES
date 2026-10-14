@@ -34,15 +34,18 @@ public class TipoNovedadJpaRepositoryImpl extends AbstractRepository implements 
     private TypedQueryBuilder<TipoNovedad> getQueryBuilder() {
         return new TypedQueryBuilder<>(em, TipoNovedad.class);
     }
-    
+
+    @Override	
     public List<TipoNovedad> solveQuery(SQLSelect select) {
         return solveQuery(select, 0, 0);
     }
 
+    @Override
     public List<TipoNovedad> solveQuery(SQLSelect select, int pageSize, int pageNumber) {
         return getQueryBuilder().build(select, pageSize, pageNumber).execute();
     }
 
+    @Override
     public void refreshEntity(Object object) {
         super.refreshEntity(object);
     }

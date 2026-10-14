@@ -49,16 +49,19 @@ public class FormaPagoJpaRepositoryImpl extends AbstractRepository implements Fo
     private TypedQueryBuilder<FormaPago> getQueryBuilder() {
         return new TypedQueryBuilder<>(em, FormaPago.class);
     }
-    
+
+    @Override	
     public List<FormaPago> solveQuery(SQLSelect select) {
         return solveQuery(select, 0, 0);
     }
 
+    @Override
     public List<FormaPago> solveQuery(SQLSelect select, int pageSize, int pageNumber) {
         return getQueryBuilder().build(select, pageSize, pageNumber).execute();
     }
 
     // AssocOperator: AssocOperator000
+	@Override
     public Boolean assocOperator000(Dominio dominioInsFormaPagopthisDominio) throws SystemException {
         try {
             // EXIST (Dominios) WHERE (Dominios = pthisDominio)
@@ -71,12 +74,14 @@ public class FormaPagoJpaRepositoryImpl extends AbstractRepository implements Fo
     }
 
     // Range 0 for AssocOperator AssocOperator000
+	@Override
     public Boolean assocOperator000Range1 (Dominio dominioInsFormaPagopthisDominio) throws SystemException {
         SQLExists sql = assocOperator000Range1Query(dominioInsFormaPagopthisDominio, null);
         return !new TypedQueryBuilder<FormaPago>(em, FormaPago.class).build(sql).execute().isEmpty();
     }
 
     // Range Query 0 for AssocOperator AssocOperator000
+	@Override
     public SQLExists assocOperator000Range1Query (Dominio dominioInsFormaPagopthisDominio, SQLSelect superQuery) throws SystemException {
         try {
             // The path starts with a role
@@ -107,6 +112,7 @@ public class FormaPagoJpaRepositoryImpl extends AbstractRepository implements Fo
     }
 
     // AssocOperator: AssocOperator001
+	@Override
     public Boolean assocOperator001(Dominio dominioDelFormaPagopthisDominio) throws SystemException {
         try {
             // EXIST (Dominios) WHERE (Dominios = pthisDominio)
@@ -119,12 +125,14 @@ public class FormaPagoJpaRepositoryImpl extends AbstractRepository implements Fo
     }
 
     // Range 0 for AssocOperator AssocOperator001
+	@Override
     public Boolean assocOperator001Range1 (Dominio dominioDelFormaPagopthisDominio) throws SystemException {
         SQLExists sql = assocOperator001Range1Query(dominioDelFormaPagopthisDominio, null);
         return !new TypedQueryBuilder<FormaPago>(em, FormaPago.class).build(sql).execute().isEmpty();
     }
 
     // Range Query 0 for AssocOperator AssocOperator001
+	@Override
     public SQLExists assocOperator001Range1Query (Dominio dominioDelFormaPagopthisDominio, SQLSelect superQuery) throws SystemException {
         try {
             // The path starts with a role
@@ -155,6 +163,7 @@ public class FormaPagoJpaRepositoryImpl extends AbstractRepository implements Fo
     }
 
     // AssocOperator: AssocOperator002
+	@Override
     public Boolean assocOperator002(Solicitud solicitudTMODIFICARINFOPAGOpthisSolicitud) throws SystemException {
         try {
             // EXIST (Dominios) WHERE (Dominios.ProductoT = pthisSolicitud.Aesolicitudes.ProductoT AND Dominios.PlanT = pthisSolicitud.Aesolicitudes.PlanT)
@@ -167,12 +176,14 @@ public class FormaPagoJpaRepositoryImpl extends AbstractRepository implements Fo
     }
 
     // Range 0 for AssocOperator AssocOperator002
+	@Override
     public Boolean assocOperator002Range1 (Solicitud solicitudTMODIFICARINFOPAGOpthisSolicitud) throws SystemException {
         SQLExists sql = assocOperator002Range1Query(solicitudTMODIFICARINFOPAGOpthisSolicitud, null);
         return !new TypedQueryBuilder<FormaPago>(em, FormaPago.class).build(sql).execute().isEmpty();
     }
 
     // Range Query 0 for AssocOperator AssocOperator002
+	@Override
     public SQLExists assocOperator002Range1Query (Solicitud solicitudTMODIFICARINFOPAGOpthisSolicitud, SQLSelect superQuery) throws SystemException {
         try {
             // The path starts with a role
@@ -224,6 +235,7 @@ public class FormaPagoJpaRepositoryImpl extends AbstractRepository implements Fo
         }
     }
 
+    @Override
     public void refreshEntity(Object object) {
         super.refreshEntity(object);
     }

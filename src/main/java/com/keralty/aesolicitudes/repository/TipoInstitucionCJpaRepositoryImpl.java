@@ -34,15 +34,18 @@ public class TipoInstitucionCJpaRepositoryImpl extends AbstractRepository implem
     private TypedQueryBuilder<TipoInstitucionC> getQueryBuilder() {
         return new TypedQueryBuilder<>(em, TipoInstitucionC.class);
     }
-    
+
+    @Override	
     public List<TipoInstitucionC> solveQuery(SQLSelect select) {
         return solveQuery(select, 0, 0);
     }
 
+    @Override
     public List<TipoInstitucionC> solveQuery(SQLSelect select, int pageSize, int pageNumber) {
         return getQueryBuilder().build(select, pageSize, pageNumber).execute();
     }
 
+    @Override
     public void refreshEntity(Object object) {
         super.refreshEntity(object);
     }

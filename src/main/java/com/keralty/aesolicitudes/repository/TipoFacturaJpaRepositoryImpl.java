@@ -34,15 +34,18 @@ public class TipoFacturaJpaRepositoryImpl extends AbstractRepository implements 
     private TypedQueryBuilder<TipoFactura> getQueryBuilder() {
         return new TypedQueryBuilder<>(em, TipoFactura.class);
     }
-    
+
+    @Override	
     public List<TipoFactura> solveQuery(SQLSelect select) {
         return solveQuery(select, 0, 0);
     }
 
+    @Override
     public List<TipoFactura> solveQuery(SQLSelect select, int pageSize, int pageNumber) {
         return getQueryBuilder().build(select, pageSize, pageNumber).execute();
     }
 
+    @Override
     public void refreshEntity(Object object) {
         super.refreshEntity(object);
     }

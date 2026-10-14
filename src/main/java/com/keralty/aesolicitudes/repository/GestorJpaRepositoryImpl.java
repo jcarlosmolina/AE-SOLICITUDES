@@ -38,15 +38,18 @@ public class GestorJpaRepositoryImpl extends AbstractRepository implements Gesto
     private TypedQueryBuilder<Gestor> getQueryBuilder() {
         return new TypedQueryBuilder<>(em, Gestor.class);
     }
-    
+
+    @Override	
     public List<Gestor> solveQuery(SQLSelect select) {
         return solveQuery(select, 0, 0);
     }
 
+    @Override
     public List<Gestor> solveQuery(SQLSelect select, int pageSize, int pageNumber) {
         return getQueryBuilder().build(select, pageSize, pageNumber).execute();
     }
 
+    @Override
     public Funcionario findParent(Long oid) {
         return em.find(Funcionario.class, oid);
     }
@@ -61,6 +64,7 @@ public class GestorJpaRepositoryImpl extends AbstractRepository implements Gesto
         join.getWheres().add(myAlias + "." + GestorConstants.FLD_FUNCIONARIOID + " = " + parentAlias + "." + FuncionarioConstants.ATTR_FIELD_FUNCIONARIOID);
     }
 
+    @Override
     public void refreshEntity(Object object) {
         super.refreshEntity(object);
     }

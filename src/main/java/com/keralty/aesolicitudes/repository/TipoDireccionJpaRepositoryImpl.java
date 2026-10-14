@@ -34,15 +34,18 @@ public class TipoDireccionJpaRepositoryImpl extends AbstractRepository implement
     private TypedQueryBuilder<TipoDireccion> getQueryBuilder() {
         return new TypedQueryBuilder<>(em, TipoDireccion.class);
     }
-    
+
+    @Override	
     public List<TipoDireccion> solveQuery(SQLSelect select) {
         return solveQuery(select, 0, 0);
     }
 
+    @Override
     public List<TipoDireccion> solveQuery(SQLSelect select, int pageSize, int pageNumber) {
         return getQueryBuilder().build(select, pageSize, pageNumber).execute();
     }
 
+    @Override
     public void refreshEntity(Object object) {
         super.refreshEntity(object);
     }

@@ -42,11 +42,13 @@ public class PreexistenciaCJpaRepositoryImpl extends AbstractRepository implemen
     private TypedQueryBuilder<PreexistenciaC> getQueryBuilder() {
         return new TypedQueryBuilder<>(em, PreexistenciaC.class);
     }
-    
+
+    @Override	
     public List<PreexistenciaC> solveQuery(SQLSelect select) {
         return solveQuery(select, 0, 0);
     }
 
+    @Override
     public List<PreexistenciaC> solveQuery(SQLSelect select, int pageSize, int pageNumber) {
         return getQueryBuilder().build(select, pageSize, pageNumber).execute();
     }
@@ -72,6 +74,7 @@ public class PreexistenciaCJpaRepositoryImpl extends AbstractRepository implemen
         }
     }
 
+    @Override
     public void refreshEntity(Object object) {
         super.refreshEntity(object);
     }

@@ -37,16 +37,19 @@ public class ConfiguracionANSJpaRepositoryImpl extends AbstractRepository implem
     private TypedQueryBuilder<ConfiguracionANS> getQueryBuilder() {
         return new TypedQueryBuilder<>(em, ConfiguracionANS.class);
     }
-    
+
+    @Override	
     public List<ConfiguracionANS> solveQuery(SQLSelect select) {
         return solveQuery(select, 0, 0);
     }
 
+    @Override
     public List<ConfiguracionANS> solveQuery(SQLSelect select, int pageSize, int pageNumber) {
         return getQueryBuilder().build(select, pageSize, pageNumber).execute();
     }
 
     // AssocOperator: AssocOperator000
+	@Override
     public Boolean assocOperator000(ConfiguracionANS instance) throws SystemException {
         try {
             // EXIST (Causal)
@@ -59,12 +62,14 @@ public class ConfiguracionANSJpaRepositoryImpl extends AbstractRepository implem
     }
 
     // Range 1 for AssocOperator AssocOperator000
+	@Override
     public Boolean assocOperator000Range1 (ConfiguracionANS instance) throws SystemException {
         SQLExists sql = assocOperator000Range1Query(instance);
         return !new TypedQueryBuilder<ConfiguracionANS>(em, ConfiguracionANS.class).build(sql).execute().isEmpty();
     }
 
     // Range Query 1 for AssocOperator AssocOperator000
+	@Override
     public SQLExists assocOperator000Range1Query (ConfiguracionANS instance) throws SystemException {
         try {
             // The path starts with a role
@@ -76,6 +81,7 @@ public class ConfiguracionANSJpaRepositoryImpl extends AbstractRepository implem
         }
     }
 
+    @Override
     public void refreshEntity(Object object) {
         super.refreshEntity(object);
     }

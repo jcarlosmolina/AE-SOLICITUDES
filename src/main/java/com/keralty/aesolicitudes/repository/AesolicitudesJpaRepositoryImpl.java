@@ -34,15 +34,18 @@ public class AesolicitudesJpaRepositoryImpl extends AbstractRepository implement
     private TypedQueryBuilder<Aesolicitudes> getQueryBuilder() {
         return new TypedQueryBuilder<>(em, Aesolicitudes.class);
     }
-    
+
+    @Override	
     public List<Aesolicitudes> solveQuery(SQLSelect select) {
         return solveQuery(select, 0, 0);
     }
 
+    @Override
     public List<Aesolicitudes> solveQuery(SQLSelect select, int pageSize, int pageNumber) {
         return getQueryBuilder().build(select, pageSize, pageNumber).execute();
     }
 
+    @Override
     public void refreshEntity(Object object) {
         super.refreshEntity(object);
     }

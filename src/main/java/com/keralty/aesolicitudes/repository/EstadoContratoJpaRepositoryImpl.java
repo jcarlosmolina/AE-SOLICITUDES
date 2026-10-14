@@ -34,15 +34,18 @@ public class EstadoContratoJpaRepositoryImpl extends AbstractRepository implemen
     private TypedQueryBuilder<EstadoContrato> getQueryBuilder() {
         return new TypedQueryBuilder<>(em, EstadoContrato.class);
     }
-    
+
+    @Override	
     public List<EstadoContrato> solveQuery(SQLSelect select) {
         return solveQuery(select, 0, 0);
     }
 
+    @Override
     public List<EstadoContrato> solveQuery(SQLSelect select, int pageSize, int pageNumber) {
         return getQueryBuilder().build(select, pageSize, pageNumber).execute();
     }
 
+    @Override
     public void refreshEntity(Object object) {
         super.refreshEntity(object);
     }

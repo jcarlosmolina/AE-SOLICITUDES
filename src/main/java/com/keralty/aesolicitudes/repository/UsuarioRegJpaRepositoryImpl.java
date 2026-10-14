@@ -43,11 +43,13 @@ public class UsuarioRegJpaRepositoryImpl extends AbstractRepository implements U
     private TypedQueryBuilder<UsuarioReg> getQueryBuilder() {
         return new TypedQueryBuilder<>(em, UsuarioReg.class);
     }
-    
+
+    @Override	
     public List<UsuarioReg> solveQuery(SQLSelect select) {
         return solveQuery(select, 0, 0);
     }
 
+    @Override
     public List<UsuarioReg> solveQuery(SQLSelect select, int pageSize, int pageNumber) {
         return getQueryBuilder().build(select, pageSize, pageNumber).execute();
     }
@@ -73,6 +75,7 @@ public class UsuarioRegJpaRepositoryImpl extends AbstractRepository implements U
         }
     }
 
+    @Override
     public void refreshEntity(Object object) {
         super.refreshEntity(object);
     }

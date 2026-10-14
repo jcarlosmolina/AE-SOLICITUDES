@@ -34,15 +34,18 @@ public class DepartamentoJpaRepositoryImpl extends AbstractRepository implements
     private TypedQueryBuilder<Departamento> getQueryBuilder() {
         return new TypedQueryBuilder<>(em, Departamento.class);
     }
-    
+
+    @Override	
     public List<Departamento> solveQuery(SQLSelect select) {
         return solveQuery(select, 0, 0);
     }
 
+    @Override
     public List<Departamento> solveQuery(SQLSelect select, int pageSize, int pageNumber) {
         return getQueryBuilder().build(select, pageSize, pageNumber).execute();
     }
 
+    @Override
     public void refreshEntity(Object object) {
         super.refreshEntity(object);
     }

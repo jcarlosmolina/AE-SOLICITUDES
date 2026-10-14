@@ -38,15 +38,18 @@ public class AsesorJpaRepositoryImpl extends AbstractRepository implements Aseso
     private TypedQueryBuilder<Asesor> getQueryBuilder() {
         return new TypedQueryBuilder<>(em, Asesor.class);
     }
-    
+
+    @Override	
     public List<Asesor> solveQuery(SQLSelect select) {
         return solveQuery(select, 0, 0);
     }
 
+    @Override
     public List<Asesor> solveQuery(SQLSelect select, int pageSize, int pageNumber) {
         return getQueryBuilder().build(select, pageSize, pageNumber).execute();
     }
 
+    @Override
     public Funcionario findParent(Long oid) {
         return em.find(Funcionario.class, oid);
     }
@@ -61,6 +64,7 @@ public class AsesorJpaRepositoryImpl extends AbstractRepository implements Aseso
         join.getWheres().add(myAlias + "." + AsesorConstants.FLD_FUNCIONARIOID + " = " + parentAlias + "." + FuncionarioConstants.ATTR_FIELD_FUNCIONARIOID);
     }
 
+    @Override
     public void refreshEntity(Object object) {
         super.refreshEntity(object);
     }

@@ -42,11 +42,13 @@ public class ObsEstadoJpaRepositoryImpl extends AbstractRepository implements Ob
     private TypedQueryBuilder<ObsEstado> getQueryBuilder() {
         return new TypedQueryBuilder<>(em, ObsEstado.class);
     }
-    
+
+    @Override	
     public List<ObsEstado> solveQuery(SQLSelect select) {
         return solveQuery(select, 0, 0);
     }
 
+    @Override
     public List<ObsEstado> solveQuery(SQLSelect select, int pageSize, int pageNumber) {
         return getQueryBuilder().build(select, pageSize, pageNumber).execute();
     }
@@ -72,6 +74,7 @@ public class ObsEstadoJpaRepositoryImpl extends AbstractRepository implements Ob
         }
     }
 
+    @Override
     public void refreshEntity(Object object) {
         super.refreshEntity(object);
     }

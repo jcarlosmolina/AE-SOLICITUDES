@@ -38,15 +38,18 @@ public class AfiliacionesJpaRepositoryImpl extends AbstractRepository implements
     private TypedQueryBuilder<Afiliaciones> getQueryBuilder() {
         return new TypedQueryBuilder<>(em, Afiliaciones.class);
     }
-    
+
+    @Override	
     public List<Afiliaciones> solveQuery(SQLSelect select) {
         return solveQuery(select, 0, 0);
     }
 
+    @Override
     public List<Afiliaciones> solveQuery(SQLSelect select, int pageSize, int pageNumber) {
         return getQueryBuilder().build(select, pageSize, pageNumber).execute();
     }
 
+    @Override
     public Funcionario findParent(Long oid) {
         return em.find(Funcionario.class, oid);
     }
@@ -61,6 +64,7 @@ public class AfiliacionesJpaRepositoryImpl extends AbstractRepository implements
         join.getWheres().add(myAlias + "." + AfiliacionesConstants.FLD_FUNCIONARIOID + " = " + parentAlias + "." + FuncionarioConstants.ATTR_FIELD_FUNCIONARIOID);
     }
 
+    @Override
     public void refreshEntity(Object object) {
         super.refreshEntity(object);
     }

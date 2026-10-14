@@ -34,15 +34,18 @@ public class MotDevAreaMedicaJpaRepositoryImpl extends AbstractRepository implem
     private TypedQueryBuilder<MotDevAreaMedica> getQueryBuilder() {
         return new TypedQueryBuilder<>(em, MotDevAreaMedica.class);
     }
-    
+
+    @Override	
     public List<MotDevAreaMedica> solveQuery(SQLSelect select) {
         return solveQuery(select, 0, 0);
     }
 
+    @Override
     public List<MotDevAreaMedica> solveQuery(SQLSelect select, int pageSize, int pageNumber) {
         return getQueryBuilder().build(select, pageSize, pageNumber).execute();
     }
 
+    @Override
     public void refreshEntity(Object object) {
         super.refreshEntity(object);
     }

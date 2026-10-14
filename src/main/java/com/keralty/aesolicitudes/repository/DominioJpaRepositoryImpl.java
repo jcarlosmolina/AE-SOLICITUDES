@@ -34,15 +34,18 @@ public class DominioJpaRepositoryImpl extends AbstractRepository implements Domi
     private TypedQueryBuilder<Dominio> getQueryBuilder() {
         return new TypedQueryBuilder<>(em, Dominio.class);
     }
-    
+
+    @Override	
     public List<Dominio> solveQuery(SQLSelect select) {
         return solveQuery(select, 0, 0);
     }
 
+    @Override
     public List<Dominio> solveQuery(SQLSelect select, int pageSize, int pageNumber) {
         return getQueryBuilder().build(select, pageSize, pageNumber).execute();
     }
 
+    @Override
     public void refreshEntity(Object object) {
         super.refreshEntity(object);
     }

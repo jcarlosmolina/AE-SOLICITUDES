@@ -56,16 +56,19 @@ public class PlanesJpaRepositoryImpl extends AbstractRepository implements Plane
     private TypedQueryBuilder<Planes> getQueryBuilder() {
         return new TypedQueryBuilder<>(em, Planes.class);
     }
-    
+
+    @Override	
     public List<Planes> solveQuery(SQLSelect select) {
         return solveQuery(select, 0, 0);
     }
 
+    @Override
     public List<Planes> solveQuery(SQLSelect select, int pageSize, int pageNumber) {
         return getQueryBuilder().build(select, pageSize, pageNumber).execute();
     }
 
     // AssocOperator: AssocOperator000
+	@Override
     public Long assocOperator000(Afiliaciones afiliacionesInsPlanpthisAfiliaciones) throws SystemException {
         try {
             // COUNT (pthisAfiliaciones.Planes) WHERE (pthisAfiliaciones.Planes.Plan = Plan)
@@ -78,12 +81,14 @@ public class PlanesJpaRepositoryImpl extends AbstractRepository implements Plane
     }
 
     // Range 1 for AssocOperator AssocOperator000
+	@Override
     public Long assocOperator000Range1 (Afiliaciones afiliacionesInsPlanpthisAfiliaciones) throws SystemException {
         SQLCount sql = assocOperator000Range1Query(afiliacionesInsPlanpthisAfiliaciones, null);
         return Long.valueOf(solveCountQuery(sql));
     }
 
     // Range Query 1 for AssocOperator AssocOperator000
+	@Override
     public SQLCount assocOperator000Range1Query (Afiliaciones afiliacionesInsPlanpthisAfiliaciones, SQLSelect superQuery) throws SystemException {
         try {
             SQLCount sql;
@@ -119,6 +124,7 @@ public class PlanesJpaRepositoryImpl extends AbstractRepository implements Plane
     }
 
     // AssocOperator: AssocOperator001
+	@Override
     public Long assocOperator001(Afiliaciones afiliacionesDelPlanpthisAfiliaciones) throws SystemException {
         try {
             // COUNT (pthisAfiliaciones.Planes) WHERE (pthisAfiliaciones.Planes.Plan = Plan)
@@ -131,12 +137,14 @@ public class PlanesJpaRepositoryImpl extends AbstractRepository implements Plane
     }
 
     // Range 1 for AssocOperator AssocOperator001
+	@Override
     public Long assocOperator001Range1 (Afiliaciones afiliacionesDelPlanpthisAfiliaciones) throws SystemException {
         SQLCount sql = assocOperator001Range1Query(afiliacionesDelPlanpthisAfiliaciones, null);
         return Long.valueOf(solveCountQuery(sql));
     }
 
     // Range Query 1 for AssocOperator AssocOperator001
+	@Override
     public SQLCount assocOperator001Range1Query (Afiliaciones afiliacionesDelPlanpthisAfiliaciones, SQLSelect superQuery) throws SystemException {
         try {
             SQLCount sql;
@@ -172,6 +180,7 @@ public class PlanesJpaRepositoryImpl extends AbstractRepository implements Plane
     }
 
     // AssocOperator: AssocOperator006
+	@Override
     public Boolean assocOperator006(Productos aesolicitudesTNUEVAAFILIACIONptpagrProducto) throws SystemException {
         try {
             // EXIST (Dominios) WHERE (Dominios.ProductoT = ptpagrProducto AND Dominios.NuevaAfiliacion = true)
@@ -184,12 +193,14 @@ public class PlanesJpaRepositoryImpl extends AbstractRepository implements Plane
     }
 
     // Range 0 for AssocOperator AssocOperator006
+	@Override
     public Boolean assocOperator006Range1 (Productos aesolicitudesTNUEVAAFILIACIONptpagrProducto) throws SystemException {
         SQLExists sql = assocOperator006Range1Query(aesolicitudesTNUEVAAFILIACIONptpagrProducto, null);
         return !new TypedQueryBuilder<Planes>(em, Planes.class).build(sql).execute().isEmpty();
     }
 
     // Range Query 0 for AssocOperator AssocOperator006
+	@Override
     public SQLExists assocOperator006Range1Query (Productos aesolicitudesTNUEVAAFILIACIONptpagrProducto, SQLSelect superQuery) throws SystemException {
         try {
             // The path starts with a role
@@ -234,6 +245,7 @@ public class PlanesJpaRepositoryImpl extends AbstractRepository implements Plane
     }
 
     // AssocOperator: AssocOperator007
+	@Override
     public Long assocOperator007(Productos aesolicitudesTNUEVAAFILIACIONptpagrProducto) throws SystemException {
         try {
             // COUNT (AGENTAsesor.AgentexProducto) WHERE (AGENTAsesor.AgentexProducto.ProductoT = ptpagrProducto AND AGENTAsesor.AgentexProducto.TodosDominios = true)
@@ -246,12 +258,14 @@ public class PlanesJpaRepositoryImpl extends AbstractRepository implements Plane
     }
 
     // Range 1 for AssocOperator AssocOperator007
+	@Override
     public Long assocOperator007Range1 (Productos aesolicitudesTNUEVAAFILIACIONptpagrProducto) throws SystemException {
         SQLCount sql = assocOperator007Range1Query(aesolicitudesTNUEVAAFILIACIONptpagrProducto, null);
         return Long.valueOf(solveCountQuery(sql));
     }
 
     // Range Query 1 for AssocOperator AssocOperator007
+	@Override
     public SQLCount assocOperator007Range1Query (Productos aesolicitudesTNUEVAAFILIACIONptpagrProducto, SQLSelect superQuery) throws SystemException {
         try {
             SQLCount sql;
@@ -301,6 +315,7 @@ public class PlanesJpaRepositoryImpl extends AbstractRepository implements Plane
     }
 
     // AssocOperator: AssocOperator008
+	@Override
     public Long assocOperator008(Productos aesolicitudesTNUEVAAFILIACIONptpagrProducto) throws SystemException {
         try {
             // COUNT (Dominios.AgentexProducto) WHERE (Dominios.AgentexProducto.ProductoT = ptpagrProducto AND Dominios.AgentexProducto.Asesor = AGENTAsesor)
@@ -313,12 +328,14 @@ public class PlanesJpaRepositoryImpl extends AbstractRepository implements Plane
     }
 
     // Range 0 for AssocOperator AssocOperator008
+	@Override
     public Long assocOperator008Range1 (Productos aesolicitudesTNUEVAAFILIACIONptpagrProducto) throws SystemException {
         SQLCount sql = assocOperator008Range1Query(aesolicitudesTNUEVAAFILIACIONptpagrProducto, null);
         return Long.valueOf(solveCountQuery(sql));
     }
 
     // Range Query 0 for AssocOperator AssocOperator008
+	@Override
     public SQLCount assocOperator008Range1Query (Productos aesolicitudesTNUEVAAFILIACIONptpagrProducto, SQLSelect superQuery) throws SystemException {
         try {
             // The path starts with a role
@@ -364,6 +381,7 @@ public class PlanesJpaRepositoryImpl extends AbstractRepository implements Plane
     }
 
     // AssocOperator: AssocOperator009
+	@Override
     public Boolean assocOperator009(Productos aesolicitudesTINCLUSIONSCptpagrProducto) throws SystemException {
         try {
             // EXIST (Dominios) WHERE (Dominios.ProductoT = ptpagrProducto AND Dominios.Inclusion = true)
@@ -376,12 +394,14 @@ public class PlanesJpaRepositoryImpl extends AbstractRepository implements Plane
     }
 
     // Range 0 for AssocOperator AssocOperator009
+	@Override
     public Boolean assocOperator009Range1 (Productos aesolicitudesTINCLUSIONSCptpagrProducto) throws SystemException {
         SQLExists sql = assocOperator009Range1Query(aesolicitudesTINCLUSIONSCptpagrProducto, null);
         return !new TypedQueryBuilder<Planes>(em, Planes.class).build(sql).execute().isEmpty();
     }
 
     // Range Query 0 for AssocOperator AssocOperator009
+	@Override
     public SQLExists assocOperator009Range1Query (Productos aesolicitudesTINCLUSIONSCptpagrProducto, SQLSelect superQuery) throws SystemException {
         try {
             // The path starts with a role
@@ -426,6 +446,7 @@ public class PlanesJpaRepositoryImpl extends AbstractRepository implements Plane
     }
 
     // AssocOperator: AssocOperator010
+	@Override
     public Long assocOperator010(Productos aesolicitudesTINCLUSIONSCptpagrProducto) throws SystemException {
         try {
             // COUNT (AGENTAsesor.AgentexProducto) WHERE (AGENTAsesor.AgentexProducto.ProductoT = ptpagrProducto AND AGENTAsesor.AgentexProducto.TodosDominios = true)
@@ -438,12 +459,14 @@ public class PlanesJpaRepositoryImpl extends AbstractRepository implements Plane
     }
 
     // Range 1 for AssocOperator AssocOperator010
+	@Override
     public Long assocOperator010Range1 (Productos aesolicitudesTINCLUSIONSCptpagrProducto) throws SystemException {
         SQLCount sql = assocOperator010Range1Query(aesolicitudesTINCLUSIONSCptpagrProducto, null);
         return Long.valueOf(solveCountQuery(sql));
     }
 
     // Range Query 1 for AssocOperator AssocOperator010
+	@Override
     public SQLCount assocOperator010Range1Query (Productos aesolicitudesTINCLUSIONSCptpagrProducto, SQLSelect superQuery) throws SystemException {
         try {
             SQLCount sql;
@@ -493,6 +516,7 @@ public class PlanesJpaRepositoryImpl extends AbstractRepository implements Plane
     }
 
     // AssocOperator: AssocOperator011
+	@Override
     public Long assocOperator011(Productos aesolicitudesTINCLUSIONSCptpagrProducto) throws SystemException {
         try {
             // COUNT (Dominios.AgentexProducto) WHERE (Dominios.AgentexProducto.ProductoT = ptpagrProducto AND Dominios.AgentexProducto.Asesor = AGENTAsesor)
@@ -505,12 +529,14 @@ public class PlanesJpaRepositoryImpl extends AbstractRepository implements Plane
     }
 
     // Range 0 for AssocOperator AssocOperator011
+	@Override
     public Long assocOperator011Range1 (Productos aesolicitudesTINCLUSIONSCptpagrProducto) throws SystemException {
         SQLCount sql = assocOperator011Range1Query(aesolicitudesTINCLUSIONSCptpagrProducto, null);
         return Long.valueOf(solveCountQuery(sql));
     }
 
     // Range Query 0 for AssocOperator AssocOperator011
+	@Override
     public SQLCount assocOperator011Range1Query (Productos aesolicitudesTINCLUSIONSCptpagrProducto, SQLSelect superQuery) throws SystemException {
         try {
             // The path starts with a role
@@ -556,6 +582,7 @@ public class PlanesJpaRepositoryImpl extends AbstractRepository implements Plane
     }
 
     // AssocOperator: AssocOperator012
+	@Override
     public Boolean assocOperator012(Productos solicitudNovedadTCREARptProducto) throws SystemException {
         try {
             // EXIST (Dominios) WHERE (Dominios.ProductoT = ptProducto)
@@ -568,12 +595,14 @@ public class PlanesJpaRepositoryImpl extends AbstractRepository implements Plane
     }
 
     // Range 0 for AssocOperator AssocOperator012
+	@Override
     public Boolean assocOperator012Range1 (Productos solicitudNovedadTCREARptProducto) throws SystemException {
         SQLExists sql = assocOperator012Range1Query(solicitudNovedadTCREARptProducto, null);
         return !new TypedQueryBuilder<Planes>(em, Planes.class).build(sql).execute().isEmpty();
     }
 
     // Range Query 0 for AssocOperator AssocOperator012
+	@Override
     public SQLExists assocOperator012Range1Query (Productos solicitudNovedadTCREARptProducto, SQLSelect superQuery) throws SystemException {
         try {
             // The path starts with a role
@@ -604,6 +633,7 @@ public class PlanesJpaRepositoryImpl extends AbstractRepository implements Plane
     }
 
     // AssocOperator: AssocOperator013
+	@Override
     public Long assocOperator013(Productos solicitudNovedadTCREARptProducto) throws SystemException {
         try {
             // COUNT (AGENTAsesor.AgentexProducto) WHERE (AGENTAsesor.AgentexProducto.ProductoT = ptProducto AND AGENTAsesor.AgentexProducto.TodosDominios = true)
@@ -616,12 +646,14 @@ public class PlanesJpaRepositoryImpl extends AbstractRepository implements Plane
     }
 
     // Range 1 for AssocOperator AssocOperator013
+	@Override
     public Long assocOperator013Range1 (Productos solicitudNovedadTCREARptProducto) throws SystemException {
         SQLCount sql = assocOperator013Range1Query(solicitudNovedadTCREARptProducto, null);
         return Long.valueOf(solveCountQuery(sql));
     }
 
     // Range Query 1 for AssocOperator AssocOperator013
+	@Override
     public SQLCount assocOperator013Range1Query (Productos solicitudNovedadTCREARptProducto, SQLSelect superQuery) throws SystemException {
         try {
             SQLCount sql;
@@ -671,6 +703,7 @@ public class PlanesJpaRepositoryImpl extends AbstractRepository implements Plane
     }
 
     // AssocOperator: AssocOperator014
+	@Override
     public Long assocOperator014(Productos solicitudNovedadTCREARptProducto) throws SystemException {
         try {
             // COUNT (Dominios.AgentexProducto) WHERE (Dominios.AgentexProducto.ProductoT = ptProducto AND Dominios.AgentexProducto.Asesor = AGENTAsesor)
@@ -683,12 +716,14 @@ public class PlanesJpaRepositoryImpl extends AbstractRepository implements Plane
     }
 
     // Range 0 for AssocOperator AssocOperator014
+	@Override
     public Long assocOperator014Range1 (Productos solicitudNovedadTCREARptProducto) throws SystemException {
         SQLCount sql = assocOperator014Range1Query(solicitudNovedadTCREARptProducto, null);
         return Long.valueOf(solveCountQuery(sql));
     }
 
     // Range Query 0 for AssocOperator AssocOperator014
+	@Override
     public SQLCount assocOperator014Range1Query (Productos solicitudNovedadTCREARptProducto, SQLSelect superQuery) throws SystemException {
         try {
             // The path starts with a role
@@ -734,6 +769,7 @@ public class PlanesJpaRepositoryImpl extends AbstractRepository implements Plane
     }
 
     // AssocOperator: AssocOperator015
+	@Override
     public Boolean assocOperator015(Productos solicitudNovedadTCREAREXCEPCIONptProducto) throws SystemException {
         try {
             // EXIST (Dominios) WHERE (Dominios.ProductoT = ptProducto)
@@ -746,12 +782,14 @@ public class PlanesJpaRepositoryImpl extends AbstractRepository implements Plane
     }
 
     // Range 0 for AssocOperator AssocOperator015
+	@Override
     public Boolean assocOperator015Range1 (Productos solicitudNovedadTCREAREXCEPCIONptProducto) throws SystemException {
         SQLExists sql = assocOperator015Range1Query(solicitudNovedadTCREAREXCEPCIONptProducto, null);
         return !new TypedQueryBuilder<Planes>(em, Planes.class).build(sql).execute().isEmpty();
     }
 
     // Range Query 0 for AssocOperator AssocOperator015
+	@Override
     public SQLExists assocOperator015Range1Query (Productos solicitudNovedadTCREAREXCEPCIONptProducto, SQLSelect superQuery) throws SystemException {
         try {
             // The path starts with a role
@@ -781,6 +819,7 @@ public class PlanesJpaRepositoryImpl extends AbstractRepository implements Plane
         }
     }
 
+    @Override
     public void refreshEntity(Object object) {
         super.refreshEntity(object);
     }

@@ -34,15 +34,18 @@ public class LogEstadoJpaRepositoryImpl extends AbstractRepository implements Lo
     private TypedQueryBuilder<LogEstado> getQueryBuilder() {
         return new TypedQueryBuilder<>(em, LogEstado.class);
     }
-    
+
+    @Override	
     public List<LogEstado> solveQuery(SQLSelect select) {
         return solveQuery(select, 0, 0);
     }
 
+    @Override
     public List<LogEstado> solveQuery(SQLSelect select, int pageSize, int pageNumber) {
         return getQueryBuilder().build(select, pageSize, pageNumber).execute();
     }
 
+    @Override
     public void refreshEntity(Object object) {
         super.refreshEntity(object);
     }

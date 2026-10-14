@@ -34,15 +34,18 @@ public class GrupoAsociadoJpaRepositoryImpl extends AbstractRepository implement
     private TypedQueryBuilder<GrupoAsociado> getQueryBuilder() {
         return new TypedQueryBuilder<>(em, GrupoAsociado.class);
     }
-    
+
+    @Override	
     public List<GrupoAsociado> solveQuery(SQLSelect select) {
         return solveQuery(select, 0, 0);
     }
 
+    @Override
     public List<GrupoAsociado> solveQuery(SQLSelect select, int pageSize, int pageNumber) {
         return getQueryBuilder().build(select, pageSize, pageNumber).execute();
     }
 
+    @Override
     public void refreshEntity(Object object) {
         super.refreshEntity(object);
     }

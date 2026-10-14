@@ -34,15 +34,18 @@ public class ErrorWSJpaRepositoryImpl extends AbstractRepository implements Erro
     private TypedQueryBuilder<ErrorWS> getQueryBuilder() {
         return new TypedQueryBuilder<>(em, ErrorWS.class);
     }
-    
+
+    @Override	
     public List<ErrorWS> solveQuery(SQLSelect select) {
         return solveQuery(select, 0, 0);
     }
 
+    @Override
     public List<ErrorWS> solveQuery(SQLSelect select, int pageSize, int pageNumber) {
         return getQueryBuilder().build(select, pageSize, pageNumber).execute();
     }
 
+    @Override
     public void refreshEntity(Object object) {
         super.refreshEntity(object);
     }

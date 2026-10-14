@@ -38,15 +38,18 @@ public class SuperAdminJpaRepositoryImpl extends AbstractRepository implements S
     private TypedQueryBuilder<SuperAdmin> getQueryBuilder() {
         return new TypedQueryBuilder<>(em, SuperAdmin.class);
     }
-    
+
+    @Override	
     public List<SuperAdmin> solveQuery(SQLSelect select) {
         return solveQuery(select, 0, 0);
     }
 
+    @Override
     public List<SuperAdmin> solveQuery(SQLSelect select, int pageSize, int pageNumber) {
         return getQueryBuilder().build(select, pageSize, pageNumber).execute();
     }
 
+    @Override
     public Funcionario findParent(Long oid) {
         return em.find(Funcionario.class, oid);
     }
@@ -61,6 +64,7 @@ public class SuperAdminJpaRepositoryImpl extends AbstractRepository implements S
         join.getWheres().add(myAlias + "." + SuperAdminConstants.FLD_FUNCIONARIOID + " = " + parentAlias + "." + FuncionarioConstants.ATTR_FIELD_FUNCIONARIOID);
     }
 
+    @Override
     public void refreshEntity(Object object) {
         super.refreshEntity(object);
     }

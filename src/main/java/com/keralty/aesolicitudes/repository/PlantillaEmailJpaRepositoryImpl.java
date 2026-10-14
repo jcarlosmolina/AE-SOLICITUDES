@@ -34,15 +34,18 @@ public class PlantillaEmailJpaRepositoryImpl extends AbstractRepository implemen
     private TypedQueryBuilder<PlantillaEmail> getQueryBuilder() {
         return new TypedQueryBuilder<>(em, PlantillaEmail.class);
     }
-    
+
+    @Override	
     public List<PlantillaEmail> solveQuery(SQLSelect select) {
         return solveQuery(select, 0, 0);
     }
 
+    @Override
     public List<PlantillaEmail> solveQuery(SQLSelect select, int pageSize, int pageNumber) {
         return getQueryBuilder().build(select, pageSize, pageNumber).execute();
     }
 
+    @Override
     public void refreshEntity(Object object) {
         super.refreshEntity(object);
     }

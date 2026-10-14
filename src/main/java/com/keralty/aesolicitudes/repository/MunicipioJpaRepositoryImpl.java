@@ -39,16 +39,19 @@ public class MunicipioJpaRepositoryImpl extends AbstractRepository implements Mu
     private TypedQueryBuilder<Municipio> getQueryBuilder() {
         return new TypedQueryBuilder<>(em, Municipio.class);
     }
-    
+
+    @Override	
     public List<Municipio> solveQuery(SQLSelect select) {
         return solveQuery(select, 0, 0);
     }
 
+    @Override
     public List<Municipio> solveQuery(SQLSelect select, int pageSize, int pageNumber) {
         return getQueryBuilder().build(select, pageSize, pageNumber).execute();
     }
 
     // AssocOperator: AssocOperator005
+	@Override
     public Boolean assocOperator005(Usuario usuarioTMODUSUARIOpthisUsuario) throws SystemException {
         try {
             // EXIST (pthisUsuario.UsuarioPersona)
@@ -61,12 +64,14 @@ public class MunicipioJpaRepositoryImpl extends AbstractRepository implements Mu
     }
 
     // Range 1 for AssocOperator AssocOperator005
+	@Override
     public Boolean assocOperator005Range1 (Usuario usuarioTMODUSUARIOpthisUsuario) throws SystemException {
         SQLExists sql = assocOperator005Range1Query(usuarioTMODUSUARIOpthisUsuario, null);
         return !new TypedQueryBuilder<Municipio>(em, Municipio.class).build(sql).execute().isEmpty();
     }
 
     // Range Query 1 for AssocOperator AssocOperator005
+	@Override
     public SQLExists assocOperator005Range1Query (Usuario usuarioTMODUSUARIOpthisUsuario, SQLSelect superQuery) throws SystemException {
         try {
             SQLExists sql;
@@ -84,6 +89,7 @@ public class MunicipioJpaRepositoryImpl extends AbstractRepository implements Mu
         }
     }
 
+    @Override
     public void refreshEntity(Object object) {
         super.refreshEntity(object);
     }

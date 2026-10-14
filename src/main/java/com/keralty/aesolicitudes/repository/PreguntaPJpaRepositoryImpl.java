@@ -34,15 +34,18 @@ public class PreguntaPJpaRepositoryImpl extends AbstractRepository implements Pr
     private TypedQueryBuilder<PreguntaP> getQueryBuilder() {
         return new TypedQueryBuilder<>(em, PreguntaP.class);
     }
-    
+
+    @Override	
     public List<PreguntaP> solveQuery(SQLSelect select) {
         return solveQuery(select, 0, 0);
     }
 
+    @Override
     public List<PreguntaP> solveQuery(SQLSelect select, int pageSize, int pageNumber) {
         return getQueryBuilder().build(select, pageSize, pageNumber).execute();
     }
 
+    @Override
     public void refreshEntity(Object object) {
         super.refreshEntity(object);
     }

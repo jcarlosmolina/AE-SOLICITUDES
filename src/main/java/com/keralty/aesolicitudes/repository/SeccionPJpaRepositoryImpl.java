@@ -43,16 +43,19 @@ public class SeccionPJpaRepositoryImpl extends AbstractRepository implements Sec
     private TypedQueryBuilder<SeccionP> getQueryBuilder() {
         return new TypedQueryBuilder<>(em, SeccionP.class);
     }
-    
+
+    @Override	
     public List<SeccionP> solveQuery(SQLSelect select) {
         return solveQuery(select, 0, 0);
     }
 
+    @Override
     public List<SeccionP> solveQuery(SQLSelect select, int pageSize, int pageNumber) {
         return getQueryBuilder().build(select, pageSize, pageNumber).execute();
     }
 
     // AssocOperator: AssocOperator000
+	@Override
     public Collection<Pregunta> assocOperator000(Seccion seccionPTCREARYPREGUNTASptSeccion) throws SystemException {
         try {
             // FOR ALL ptSeccion.Preguntas ORDER BY ((ptSeccion.Preguntas.NumOrden "A")) DO TCREARPREGUNTASITOCA(this, ptSeccion.Preguntas)
@@ -65,6 +68,7 @@ public class SeccionPJpaRepositoryImpl extends AbstractRepository implements Sec
     }
 
     // Range 1 for AssocOperator AssocOperator000
+	@Override
     public Collection<Pregunta> assocOperator000Range1 (Seccion seccionPTCREARYPREGUNTASptSeccion) throws SystemException {
 
         SQLSelect sql = assocOperator000Range1Query(seccionPTCREARYPREGUNTASptSeccion);
@@ -72,6 +76,7 @@ public class SeccionPJpaRepositoryImpl extends AbstractRepository implements Sec
     }
 
     // Range Query 1 for AssocOperator AssocOperator000
+	@Override
     public SQLPopulation assocOperator000Range1Query (Seccion seccionPTCREARYPREGUNTASptSeccion) throws SystemException {
         try {
             SQLPopulation sql = new SQLPopulation(SeccionPConstants.CLASS_NAME, PreguntaConstants.CLASS_NAME, SeccionPConstants.ARG_NAME_TCREARYPREGUNTAS_SECCIONPTCREARYPREGUNTASPTSECCION + "." + SeccionConstants.ROLE_NAME_PREGUNTAS, seccionPTCREARYPREGUNTASptSeccion.getOid(), SeccionPConstants.ARG_NAME_TCREARYPREGUNTAS_SECCIONPTCREARYPREGUNTASPTSECCION);
@@ -90,6 +95,7 @@ public class SeccionPJpaRepositoryImpl extends AbstractRepository implements Sec
     }
 
     // AssocOperator: AssocOperator001
+	@Override
     public Collection<PreguntaP> assocOperator001(SeccionP instance) throws SystemException {
         try {
             // FOR ALL Preguntas DO Preguntas.TELIMINAR(Preguntas)
@@ -102,6 +108,7 @@ public class SeccionPJpaRepositoryImpl extends AbstractRepository implements Sec
     }
 
     // Range 1 for AssocOperator AssocOperator001
+	@Override
     public Collection<PreguntaP> assocOperator001Range1 (SeccionP instance) throws SystemException {
 
         SQLSelect sql = assocOperator001Range1Query(instance);
@@ -109,6 +116,7 @@ public class SeccionPJpaRepositoryImpl extends AbstractRepository implements Sec
     }
 
     // Range Query 1 for AssocOperator AssocOperator001
+	@Override
     public SQLPopulation assocOperator001Range1Query (SeccionP instance) throws SystemException {
         try {
             return new SQLPopulation(SeccionPConstants.CLASS_NAME, PreguntaPConstants.CLASS_NAME, instance.getOid(), SeccionPConstants.ROLE_NAME_PREGUNTAS);
@@ -119,6 +127,7 @@ public class SeccionPJpaRepositoryImpl extends AbstractRepository implements Sec
         }
     }
 
+    @Override
     public void refreshEntity(Object object) {
         super.refreshEntity(object);
     }

@@ -34,15 +34,18 @@ public class CuestionarioMedJpaRepositoryImpl extends AbstractRepository impleme
     private TypedQueryBuilder<CuestionarioMed> getQueryBuilder() {
         return new TypedQueryBuilder<>(em, CuestionarioMed.class);
     }
-    
+
+    @Override	
     public List<CuestionarioMed> solveQuery(SQLSelect select) {
         return solveQuery(select, 0, 0);
     }
 
+    @Override
     public List<CuestionarioMed> solveQuery(SQLSelect select, int pageSize, int pageNumber) {
         return getQueryBuilder().build(select, pageSize, pageNumber).execute();
     }
 
+    @Override
     public void refreshEntity(Object object) {
         super.refreshEntity(object);
     }

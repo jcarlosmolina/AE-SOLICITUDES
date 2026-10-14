@@ -42,11 +42,13 @@ public class ParentescoDomJpaRepositoryImpl extends AbstractRepository implement
     private TypedQueryBuilder<ParentescoDom> getQueryBuilder() {
         return new TypedQueryBuilder<>(em, ParentescoDom.class);
     }
-    
+
+    @Override	
     public List<ParentescoDom> solveQuery(SQLSelect select) {
         return solveQuery(select, 0, 0);
     }
 
+    @Override
     public List<ParentescoDom> solveQuery(SQLSelect select, int pageSize, int pageNumber) {
         return getQueryBuilder().build(select, pageSize, pageNumber).execute();
     }
@@ -72,6 +74,7 @@ public class ParentescoDomJpaRepositoryImpl extends AbstractRepository implement
         }
     }
 
+    @Override
     public void refreshEntity(Object object) {
         super.refreshEntity(object);
     }

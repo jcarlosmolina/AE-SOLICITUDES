@@ -34,15 +34,18 @@ public class CausaExclusionJpaRepositoryImpl extends AbstractRepository implemen
     private TypedQueryBuilder<CausaExclusion> getQueryBuilder() {
         return new TypedQueryBuilder<>(em, CausaExclusion.class);
     }
-    
+
+    @Override	
     public List<CausaExclusion> solveQuery(SQLSelect select) {
         return solveQuery(select, 0, 0);
     }
 
+    @Override
     public List<CausaExclusion> solveQuery(SQLSelect select, int pageSize, int pageNumber) {
         return getQueryBuilder().build(select, pageSize, pageNumber).execute();
     }
 
+    @Override
     public void refreshEntity(Object object) {
         super.refreshEntity(object);
     }

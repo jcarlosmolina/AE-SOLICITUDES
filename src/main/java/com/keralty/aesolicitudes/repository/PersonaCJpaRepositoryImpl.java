@@ -74,16 +74,19 @@ public class PersonaCJpaRepositoryImpl extends AbstractRepository implements Per
     private TypedQueryBuilder<PersonaC> getQueryBuilder() {
         return new TypedQueryBuilder<>(em, PersonaC.class);
     }
-    
+
+    @Override	
     public List<PersonaC> solveQuery(SQLSelect select) {
         return solveQuery(select, 0, 0);
     }
 
+    @Override
     public List<PersonaC> solveQuery(SQLSelect select, int pageSize, int pageNumber) {
         return getQueryBuilder().build(select, pageSize, pageNumber).execute();
     }
 
     // AssocOperator: AssocOperator000
+	@Override
     public Boolean assocOperator000(PersonaC instance) throws SystemException {
         try {
             // EXIST (DireccionesC) WHERE (DireccionesC.TipoDireccionC.Descripcion LIKE "CORR%")
@@ -96,12 +99,14 @@ public class PersonaCJpaRepositoryImpl extends AbstractRepository implements Per
     }
 
     // Range 1 for AssocOperator AssocOperator000
+	@Override
     public Boolean assocOperator000Range1 (PersonaC instance) throws SystemException {
         SQLExists sql = assocOperator000Range1Query(instance);
         return !new TypedQueryBuilder<PersonaC>(em, PersonaC.class).build(sql).execute().isEmpty();
     }
 
     // Range Query 1 for AssocOperator AssocOperator000
+	@Override
     public SQLExists assocOperator000Range1Query (PersonaC instance) throws SystemException {
         try {
             // The path starts with a role
@@ -131,6 +136,7 @@ public class PersonaCJpaRepositoryImpl extends AbstractRepository implements Per
     }
 
     // AssocOperator: AssocOperator001
+	@Override
     public String assocOperator001(PersonaC instance) throws SystemException {
         try {
             // GETONE (DireccionesC.DireccionCompleta) WHERE (DireccionesC.TipoDireccionC.Descripcion LIKE "CORR%")
@@ -143,6 +149,7 @@ public class PersonaCJpaRepositoryImpl extends AbstractRepository implements Per
     }
 
     // Range 1 for AssocOperator AssocOperator001
+	@Override
     public String assocOperator001Range1 (PersonaC instance) throws SystemException {
         SQLGetOne sql = assocOperator001Range1Query(instance);
         List<String> results = new TypedQueryBuilder<String>(em, String.class).build(sql).execute();
@@ -150,6 +157,7 @@ public class PersonaCJpaRepositoryImpl extends AbstractRepository implements Per
     }
 
     // Range Query 1 for AssocOperator AssocOperator001
+	@Override
     public SQLGetOne assocOperator001Range1Query (PersonaC instance) throws SystemException {
         try {
             // The path starts with a role
@@ -179,6 +187,7 @@ public class PersonaCJpaRepositoryImpl extends AbstractRepository implements Per
     }
 
     // AssocOperator: AssocOperator002
+	@Override
     public Boolean assocOperator002(PersonaC instance) throws SystemException {
         try {
             // EXIST (DirSucursalesC) WHERE (DirSucursalesC.EsPrincipal = true)
@@ -191,12 +200,14 @@ public class PersonaCJpaRepositoryImpl extends AbstractRepository implements Per
     }
 
     // Range 1 for AssocOperator AssocOperator002
+	@Override
     public Boolean assocOperator002Range1 (PersonaC instance) throws SystemException {
         SQLExists sql = assocOperator002Range1Query(instance);
         return !new TypedQueryBuilder<PersonaC>(em, PersonaC.class).build(sql).execute().isEmpty();
     }
 
     // Range Query 1 for AssocOperator AssocOperator002
+	@Override
     public SQLExists assocOperator002Range1Query (PersonaC instance) throws SystemException {
         try {
             // The path starts with a role
@@ -226,6 +237,7 @@ public class PersonaCJpaRepositoryImpl extends AbstractRepository implements Per
     }
 
     // AssocOperator: AssocOperator003
+	@Override
     public String assocOperator003(PersonaC instance) throws SystemException {
         try {
             // GETONE (DirSucursalesC.Direccion) WHERE (DirSucursalesC.EsPrincipal = true)
@@ -238,6 +250,7 @@ public class PersonaCJpaRepositoryImpl extends AbstractRepository implements Per
     }
 
     // Range 1 for AssocOperator AssocOperator003
+	@Override
     public String assocOperator003Range1 (PersonaC instance) throws SystemException {
         SQLGetOne sql = assocOperator003Range1Query(instance);
         List<String> results = new TypedQueryBuilder<String>(em, String.class).build(sql).execute();
@@ -245,6 +258,7 @@ public class PersonaCJpaRepositoryImpl extends AbstractRepository implements Per
     }
 
     // Range Query 1 for AssocOperator AssocOperator003
+	@Override
     public SQLGetOne assocOperator003Range1Query (PersonaC instance) throws SystemException {
         try {
             // The path starts with a role
@@ -274,6 +288,7 @@ public class PersonaCJpaRepositoryImpl extends AbstractRepository implements Per
     }
 
     // AssocOperator: AssocOperator004
+	@Override
     public Boolean assocOperator004(PersonaC instance) throws SystemException {
         try {
             // EXIST (DireccionesC) WHERE (DireccionesC.TipoDireccionC.Descripcion LIKE "CORR%")
@@ -286,12 +301,14 @@ public class PersonaCJpaRepositoryImpl extends AbstractRepository implements Per
     }
 
     // Range 1 for AssocOperator AssocOperator004
+	@Override
     public Boolean assocOperator004Range1 (PersonaC instance) throws SystemException {
         SQLExists sql = assocOperator004Range1Query(instance);
         return !new TypedQueryBuilder<PersonaC>(em, PersonaC.class).build(sql).execute().isEmpty();
     }
 
     // Range Query 1 for AssocOperator AssocOperator004
+	@Override
     public SQLExists assocOperator004Range1Query (PersonaC instance) throws SystemException {
         try {
             // The path starts with a role
@@ -321,6 +338,7 @@ public class PersonaCJpaRepositoryImpl extends AbstractRepository implements Per
     }
 
     // AssocOperator: AssocOperator005
+	@Override
     public String assocOperator005(PersonaC instance) throws SystemException {
         try {
             // GETONE (DireccionesC.drvCiudad) WHERE (DireccionesC.TipoDireccionC.Descripcion LIKE "CORR%")
@@ -338,6 +356,7 @@ public class PersonaCJpaRepositoryImpl extends AbstractRepository implements Per
     }
 
     // Range 1 for AssocOperator AssocOperator005
+	@Override
     public Collection<DireccionC> assocOperator005Range1 (PersonaC instance) throws SystemException {
 
         SQLSelect sql = assocOperator005Range1Query(instance);
@@ -345,6 +364,7 @@ public class PersonaCJpaRepositoryImpl extends AbstractRepository implements Per
     }
 
     // Range Query 1 for AssocOperator AssocOperator005
+	@Override
     public SQLPopulation assocOperator005Range1Query (PersonaC instance) throws SystemException {
         try {
             SQLPopulation sql = new SQLPopulation(PersonaCConstants.CLASS_NAME, DireccionCConstants.CLASS_NAME, instance.getOid(), PersonaCConstants.ROLE_NAME_DIRECCIONESC);
@@ -373,6 +393,7 @@ public class PersonaCJpaRepositoryImpl extends AbstractRepository implements Per
     }
 
     // AssocOperator: AssocOperator006
+	@Override
     public Boolean assocOperator006(PersonaC instance) throws SystemException {
         try {
             // EXIST (DirSucursalesC) WHERE (DirSucursalesC.EsPrincipal = true)
@@ -385,12 +406,14 @@ public class PersonaCJpaRepositoryImpl extends AbstractRepository implements Per
     }
 
     // Range 1 for AssocOperator AssocOperator006
+	@Override
     public Boolean assocOperator006Range1 (PersonaC instance) throws SystemException {
         SQLExists sql = assocOperator006Range1Query(instance);
         return !new TypedQueryBuilder<PersonaC>(em, PersonaC.class).build(sql).execute().isEmpty();
     }
 
     // Range Query 1 for AssocOperator AssocOperator006
+	@Override
     public SQLExists assocOperator006Range1Query (PersonaC instance) throws SystemException {
         try {
             // The path starts with a role
@@ -420,6 +443,7 @@ public class PersonaCJpaRepositoryImpl extends AbstractRepository implements Per
     }
 
     // AssocOperator: AssocOperator007
+	@Override
     public String assocOperator007(PersonaC instance) throws SystemException {
         try {
             // GETONE (DirSucursalesC.drvCiudad) WHERE (DirSucursalesC.EsPrincipal = true)
@@ -437,6 +461,7 @@ public class PersonaCJpaRepositoryImpl extends AbstractRepository implements Per
     }
 
     // Range 1 for AssocOperator AssocOperator007
+	@Override
     public Collection<DirSucursalC> assocOperator007Range1 (PersonaC instance) throws SystemException {
 
         SQLSelect sql = assocOperator007Range1Query(instance);
@@ -444,6 +469,7 @@ public class PersonaCJpaRepositoryImpl extends AbstractRepository implements Per
     }
 
     // Range Query 1 for AssocOperator AssocOperator007
+	@Override
     public SQLPopulation assocOperator007Range1Query (PersonaC instance) throws SystemException {
         try {
             SQLPopulation sql = new SQLPopulation(PersonaCConstants.CLASS_NAME, DirSucursalCConstants.CLASS_NAME, instance.getOid(), PersonaCConstants.ROLE_NAME_DIRSUCURSALESC);
@@ -472,6 +498,7 @@ public class PersonaCJpaRepositoryImpl extends AbstractRepository implements Per
     }
 
     // AssocOperator: AssocOperator008
+	@Override
     public Boolean assocOperator008(PersonaC instance) throws SystemException {
         try {
             // EXIST (PreexistenciasC)
@@ -484,12 +511,14 @@ public class PersonaCJpaRepositoryImpl extends AbstractRepository implements Per
     }
 
     // Range 1 for AssocOperator AssocOperator008
+	@Override
     public Boolean assocOperator008Range1 (PersonaC instance) throws SystemException {
         SQLExists sql = assocOperator008Range1Query(instance);
         return !new TypedQueryBuilder<PersonaC>(em, PersonaC.class).build(sql).execute().isEmpty();
     }
 
     // Range Query 1 for AssocOperator AssocOperator008
+	@Override
     public SQLExists assocOperator008Range1Query (PersonaC instance) throws SystemException {
         try {
             // The path starts with a role
@@ -502,6 +531,7 @@ public class PersonaCJpaRepositoryImpl extends AbstractRepository implements Per
     }
 
     // AssocOperator: AssocOperator009
+	@Override
     public Boolean assocOperator009(PersonaC instance) throws SystemException {
         try {
             // EXIST (ContratosC)
@@ -514,12 +544,14 @@ public class PersonaCJpaRepositoryImpl extends AbstractRepository implements Per
     }
 
     // Range 1 for AssocOperator AssocOperator009
+	@Override
     public Boolean assocOperator009Range1 (PersonaC instance) throws SystemException {
         SQLExists sql = assocOperator009Range1Query(instance);
         return !new TypedQueryBuilder<PersonaC>(em, PersonaC.class).build(sql).execute().isEmpty();
     }
 
     // Range Query 1 for AssocOperator AssocOperator009
+	@Override
     public SQLExists assocOperator009Range1Query (PersonaC instance) throws SystemException {
         try {
             // The path starts with a role
@@ -532,6 +564,7 @@ public class PersonaCJpaRepositoryImpl extends AbstractRepository implements Per
     }
 
     // AssocOperator: AssocOperator010
+	@Override
     public Boolean assocOperator010(PersonaC instance) throws SystemException {
         try {
             // EXIST (FamiliasC)
@@ -544,12 +577,14 @@ public class PersonaCJpaRepositoryImpl extends AbstractRepository implements Per
     }
 
     // Range 1 for AssocOperator AssocOperator010
+	@Override
     public Boolean assocOperator010Range1 (PersonaC instance) throws SystemException {
         SQLExists sql = assocOperator010Range1Query(instance);
         return !new TypedQueryBuilder<PersonaC>(em, PersonaC.class).build(sql).execute().isEmpty();
     }
 
     // Range Query 1 for AssocOperator AssocOperator010
+	@Override
     public SQLExists assocOperator010Range1Query (PersonaC instance) throws SystemException {
         try {
             // The path starts with a role
@@ -562,6 +597,7 @@ public class PersonaCJpaRepositoryImpl extends AbstractRepository implements Per
     }
 
     // AssocOperator: AssocOperator011
+	@Override
     public Boolean assocOperator011(PersonaC instance) throws SystemException {
         try {
             // EXIST (BeneficiariosC)
@@ -574,12 +610,14 @@ public class PersonaCJpaRepositoryImpl extends AbstractRepository implements Per
     }
 
     // Range 1 for AssocOperator AssocOperator011
+	@Override
     public Boolean assocOperator011Range1 (PersonaC instance) throws SystemException {
         SQLExists sql = assocOperator011Range1Query(instance);
         return !new TypedQueryBuilder<PersonaC>(em, PersonaC.class).build(sql).execute().isEmpty();
     }
 
     // Range Query 1 for AssocOperator AssocOperator011
+	@Override
     public SQLExists assocOperator011Range1Query (PersonaC instance) throws SystemException {
         try {
             // The path starts with a role
@@ -592,6 +630,7 @@ public class PersonaCJpaRepositoryImpl extends AbstractRepository implements Per
     }
 
     // AssocOperator: AssocOperator013
+	@Override
     public Collection<PregCuesMedC> assocOperator013(PersonaC instance) throws SystemException {
         try {
             // FOR ALL PregsCuesMedC DO PregsCuesMedC.eliminar(PregsCuesMedC)
@@ -604,6 +643,7 @@ public class PersonaCJpaRepositoryImpl extends AbstractRepository implements Per
     }
 
     // Range 1 for AssocOperator AssocOperator013
+	@Override
     public Collection<PregCuesMedC> assocOperator013Range1 (PersonaC instance) throws SystemException {
 
         SQLSelect sql = assocOperator013Range1Query(instance);
@@ -611,6 +651,7 @@ public class PersonaCJpaRepositoryImpl extends AbstractRepository implements Per
     }
 
     // Range Query 1 for AssocOperator AssocOperator013
+	@Override
     public SQLPopulation assocOperator013Range1Query (PersonaC instance) throws SystemException {
         try {
             return new SQLPopulation(PersonaCConstants.CLASS_NAME, PregCuesMedCConstants.CLASS_NAME, instance.getOid(), PersonaCConstants.ROLE_NAME_PREGSCUESMEDC);
@@ -622,6 +663,7 @@ public class PersonaCJpaRepositoryImpl extends AbstractRepository implements Per
     }
 
     // AssocOperator: AssocOperator014
+	@Override
     public Collection<PreguntaP> assocOperator014(PersonaC personaCTCREAROCUESDEAEpthisPersonaC, CuestionarioP personaCTCREAROCUESDEAEpCuestionarioP) throws SystemException {
         try {
             // FOR ALL pCuestionarioP.Secciones.Preguntas DO PregsCuesMedC.crear(this, pCuestionarioP.Secciones.Preguntas.Numero, pCuestionarioP.Secciones.Preguntas.RespuestaSiNo, pCuestionarioP.Secciones.Preguntas.drvRespuesta)
@@ -634,6 +676,7 @@ public class PersonaCJpaRepositoryImpl extends AbstractRepository implements Per
     }
 
     // Range 1 for AssocOperator AssocOperator014
+	@Override
     public Collection<PreguntaP> assocOperator014Range1 (CuestionarioP personaCTCREAROCUESDEAEpCuestionarioP) throws SystemException {
 
         SQLSelect sql = assocOperator014Range1Query(personaCTCREAROCUESDEAEpCuestionarioP);
@@ -641,6 +684,7 @@ public class PersonaCJpaRepositoryImpl extends AbstractRepository implements Per
     }
 
     // Range Query 1 for AssocOperator AssocOperator014
+	@Override
     public SQLPopulation assocOperator014Range1Query (CuestionarioP personaCTCREAROCUESDEAEpCuestionarioP) throws SystemException {
         try {
             return new SQLPopulation(PersonaCConstants.CLASS_NAME, PreguntaPConstants.CLASS_NAME, PersonaCConstants.ARG_NAME_TCREAROCUESDEAE_PERSONACTCREAROCUESDEAEPCUESTIONARIOP + "." + CuestionarioPConstants.ROLE_NAME_SECCIONES + "." + SeccionPConstants.ROLE_NAME_PREGUNTAS, personaCTCREAROCUESDEAEpCuestionarioP.getOid(), PersonaCConstants.ARG_NAME_TCREAROCUESDEAE_PERSONACTCREAROCUESDEAEPCUESTIONARIOP);
@@ -652,6 +696,7 @@ public class PersonaCJpaRepositoryImpl extends AbstractRepository implements Per
     }
 
     // AssocOperator: AssocOperator015
+	@Override
     public Boolean assocOperator015(PersonaC instance) throws SystemException {
         try {
             // EXIST (PregsCuesMedC)
@@ -664,12 +709,14 @@ public class PersonaCJpaRepositoryImpl extends AbstractRepository implements Per
     }
 
     // Range 1 for AssocOperator AssocOperator015
+	@Override
     public Boolean assocOperator015Range1 (PersonaC instance) throws SystemException {
         SQLExists sql = assocOperator015Range1Query(instance);
         return !new TypedQueryBuilder<PersonaC>(em, PersonaC.class).build(sql).execute().isEmpty();
     }
 
     // Range Query 1 for AssocOperator AssocOperator015
+	@Override
     public SQLExists assocOperator015Range1Query (PersonaC instance) throws SystemException {
         try {
             // The path starts with a role
@@ -682,6 +729,7 @@ public class PersonaCJpaRepositoryImpl extends AbstractRepository implements Per
     }
 
     // AssocOperator: AssocOperator016
+	@Override
     public Collection<PregCuesMedC> assocOperator016(PersonaC instance) throws SystemException {
         try {
             // FOR ALL PregsCuesMedC DO PregsCuesMedC.eliminar(PregsCuesMedC)
@@ -694,6 +742,7 @@ public class PersonaCJpaRepositoryImpl extends AbstractRepository implements Per
     }
 
     // Range 1 for AssocOperator AssocOperator016
+	@Override
     public Collection<PregCuesMedC> assocOperator016Range1 (PersonaC instance) throws SystemException {
 
         SQLSelect sql = assocOperator016Range1Query(instance);
@@ -701,6 +750,7 @@ public class PersonaCJpaRepositoryImpl extends AbstractRepository implements Per
     }
 
     // Range Query 1 for AssocOperator AssocOperator016
+	@Override
     public SQLPopulation assocOperator016Range1Query (PersonaC instance) throws SystemException {
         try {
             return new SQLPopulation(PersonaCConstants.CLASS_NAME, PregCuesMedCConstants.CLASS_NAME, instance.getOid(), PersonaCConstants.ROLE_NAME_PREGSCUESMEDC);
@@ -712,6 +762,7 @@ public class PersonaCJpaRepositoryImpl extends AbstractRepository implements Per
     }
 
     // AssocOperator: AssocOperator017
+	@Override
     public Collection<DireccionC> assocOperator017(PersonaC instance) throws SystemException {
         try {
             // FOR ALL DireccionesC DO DireccionesC.TELIMINAR(DireccionesC)
@@ -724,6 +775,7 @@ public class PersonaCJpaRepositoryImpl extends AbstractRepository implements Per
     }
 
     // Range 1 for AssocOperator AssocOperator017
+	@Override
     public Collection<DireccionC> assocOperator017Range1 (PersonaC instance) throws SystemException {
 
         SQLSelect sql = assocOperator017Range1Query(instance);
@@ -731,6 +783,7 @@ public class PersonaCJpaRepositoryImpl extends AbstractRepository implements Per
     }
 
     // Range Query 1 for AssocOperator AssocOperator017
+	@Override
     public SQLPopulation assocOperator017Range1Query (PersonaC instance) throws SystemException {
         try {
             return new SQLPopulation(PersonaCConstants.CLASS_NAME, DireccionCConstants.CLASS_NAME, instance.getOid(), PersonaCConstants.ROLE_NAME_DIRECCIONESC);
@@ -742,6 +795,7 @@ public class PersonaCJpaRepositoryImpl extends AbstractRepository implements Per
     }
 
     // AssocOperator: AssocOperator018
+	@Override
     public Collection<DirSucursalC> assocOperator018(PersonaC instance) throws SystemException {
         try {
             // FOR ALL DirSucursalesC DO DirSucursalesC.TELIMINAR(DirSucursalesC)
@@ -754,6 +808,7 @@ public class PersonaCJpaRepositoryImpl extends AbstractRepository implements Per
     }
 
     // Range 1 for AssocOperator AssocOperator018
+	@Override
     public Collection<DirSucursalC> assocOperator018Range1 (PersonaC instance) throws SystemException {
 
         SQLSelect sql = assocOperator018Range1Query(instance);
@@ -761,6 +816,7 @@ public class PersonaCJpaRepositoryImpl extends AbstractRepository implements Per
     }
 
     // Range Query 1 for AssocOperator AssocOperator018
+	@Override
     public SQLPopulation assocOperator018Range1Query (PersonaC instance) throws SystemException {
         try {
             return new SQLPopulation(PersonaCConstants.CLASS_NAME, DirSucursalCConstants.CLASS_NAME, instance.getOid(), PersonaCConstants.ROLE_NAME_DIRSUCURSALESC);
@@ -772,6 +828,7 @@ public class PersonaCJpaRepositoryImpl extends AbstractRepository implements Per
     }
 
     // AssocOperator: AssocOperator019
+	@Override
     public Collection<ProteccionDatosC> assocOperator019(PersonaC instance) throws SystemException {
         try {
             // FOR ALL ProteccionesDatosC DO ProteccionesDatosC.eliminar(ProteccionesDatosC)
@@ -784,6 +841,7 @@ public class PersonaCJpaRepositoryImpl extends AbstractRepository implements Per
     }
 
     // Range 1 for AssocOperator AssocOperator019
+	@Override
     public Collection<ProteccionDatosC> assocOperator019Range1 (PersonaC instance) throws SystemException {
 
         SQLSelect sql = assocOperator019Range1Query(instance);
@@ -791,6 +849,7 @@ public class PersonaCJpaRepositoryImpl extends AbstractRepository implements Per
     }
 
     // Range Query 1 for AssocOperator AssocOperator019
+	@Override
     public SQLPopulation assocOperator019Range1Query (PersonaC instance) throws SystemException {
         try {
             return new SQLPopulation(PersonaCConstants.CLASS_NAME, ProteccionDatosCConstants.CLASS_NAME, instance.getOid(), PersonaCConstants.ROLE_NAME_PROTECCIONESDATOSC);
@@ -802,6 +861,7 @@ public class PersonaCJpaRepositoryImpl extends AbstractRepository implements Per
     }
 
     // AssocOperator: AssocOperator020
+	@Override
     public Collection<MarcaMedicaC> assocOperator020(PersonaC instance) throws SystemException {
         try {
             // FOR ALL MarcasMedicasC DO MarcasMedicasC.eliminar(MarcasMedicasC)
@@ -814,6 +874,7 @@ public class PersonaCJpaRepositoryImpl extends AbstractRepository implements Per
     }
 
     // Range 1 for AssocOperator AssocOperator020
+	@Override
     public Collection<MarcaMedicaC> assocOperator020Range1 (PersonaC instance) throws SystemException {
 
         SQLSelect sql = assocOperator020Range1Query(instance);
@@ -821,6 +882,7 @@ public class PersonaCJpaRepositoryImpl extends AbstractRepository implements Per
     }
 
     // Range Query 1 for AssocOperator AssocOperator020
+	@Override
     public SQLPopulation assocOperator020Range1Query (PersonaC instance) throws SystemException {
         try {
             return new SQLPopulation(PersonaCConstants.CLASS_NAME, MarcaMedicaCConstants.CLASS_NAME, instance.getOid(), PersonaCConstants.ROLE_NAME_MARCASMEDICASC);
@@ -832,6 +894,7 @@ public class PersonaCJpaRepositoryImpl extends AbstractRepository implements Per
     }
 
     // AssocOperator: AssocOperator021
+	@Override
     public Collection<PreexistenciaC> assocOperator021(PersonaC instance) throws SystemException {
         try {
             // FOR ALL PreexistenciasC DO PreexistenciasC.eliminar(PreexistenciasC)
@@ -844,6 +907,7 @@ public class PersonaCJpaRepositoryImpl extends AbstractRepository implements Per
     }
 
     // Range 1 for AssocOperator AssocOperator021
+	@Override
     public Collection<PreexistenciaC> assocOperator021Range1 (PersonaC instance) throws SystemException {
 
         SQLSelect sql = assocOperator021Range1Query(instance);
@@ -851,6 +915,7 @@ public class PersonaCJpaRepositoryImpl extends AbstractRepository implements Per
     }
 
     // Range Query 1 for AssocOperator AssocOperator021
+	@Override
     public SQLPopulation assocOperator021Range1Query (PersonaC instance) throws SystemException {
         try {
             return new SQLPopulation(PersonaCConstants.CLASS_NAME, PreexistenciaCConstants.CLASS_NAME, instance.getOid(), PersonaCConstants.ROLE_NAME_PREEXISTENCIASC);
@@ -862,6 +927,7 @@ public class PersonaCJpaRepositoryImpl extends AbstractRepository implements Per
     }
 
     // AssocOperator: AssocOperator022
+	@Override
     public Collection<Direccion> assocOperator022(Solicitud personaCTNEWCONTRADESDEAEptSolicitud) throws SystemException {
         try {
             // FOR ALL ptSolicitud.ContratantePersona.Direcciones DO DireccionesC.TCREAR(ptSolicitud.ContratantePersona.Direcciones.Departamento, ptSolicitud.ContratantePersona.Direcciones.Municipio, ptSolicitud.ContratantePersona.Direcciones.TipoDireccion, ptSolicitud.ContratantePersona.Direcciones.Pais, this, ptSolicitud.ContratantePersona.Direcciones.DireccionCompleta, NULL, ptSolicitud.ContratantePersona.TelefonoFijo, ptSolicitud.ContratantePersona.TelefonoCelular, NULL)
@@ -874,6 +940,7 @@ public class PersonaCJpaRepositoryImpl extends AbstractRepository implements Per
     }
 
     // Range 1 for AssocOperator AssocOperator022
+	@Override
     public Collection<Direccion> assocOperator022Range1 (Solicitud personaCTNEWCONTRADESDEAEptSolicitud) throws SystemException {
 
         SQLSelect sql = assocOperator022Range1Query(personaCTNEWCONTRADESDEAEptSolicitud);
@@ -881,6 +948,7 @@ public class PersonaCJpaRepositoryImpl extends AbstractRepository implements Per
     }
 
     // Range Query 1 for AssocOperator AssocOperator022
+	@Override
     public SQLPopulation assocOperator022Range1Query (Solicitud personaCTNEWCONTRADESDEAEptSolicitud) throws SystemException {
         try {
             return new SQLPopulation(PersonaCConstants.CLASS_NAME, DireccionConstants.CLASS_NAME, PersonaCConstants.ARG_NAME_TNEWCONTRADESDEAE_PERSONACTNEWCONTRADESDEAEPTSOLICITUD + "." + SolicitudConstants.ROLE_NAME_CONTRATANTEPERSONA + "." + PersonaConstants.ROLE_NAME_DIRECCIONES, personaCTNEWCONTRADESDEAEptSolicitud.getOid(), PersonaCConstants.ARG_NAME_TNEWCONTRADESDEAE_PERSONACTNEWCONTRADESDEAEPTSOLICITUD);
@@ -892,6 +960,7 @@ public class PersonaCJpaRepositoryImpl extends AbstractRepository implements Per
     }
 
     // AssocOperator: AssocOperator023
+	@Override
     public Collection<Direccion> assocOperator023(Solicitud personaCTNEWCONTRADESDEAEptSolicitud) throws SystemException {
         try {
             // FOR ALL ptSolicitud.ContratantePersona.Direcciones DO DirSucursalesC.TCREAR(ptSolicitud.ContratantePersona.Direcciones.Municipio, ptSolicitud.ContratantePersona.Direcciones.Departamento, ptSolicitud.ContratantePersona.Direcciones.Pais, this, NULL, "1", ptSolicitud.ContratantePersona.RazonSocial, true, true, ptSolicitud.ContratantePersona.Direcciones.DireccionCompleta, ptSolicitud.ContratantePersona.CorreoElectronico, ptSolicitud.ContratantePersona.TelefonoFijo, ptSolicitud.ContratantePersona.TelefonoCelular)
@@ -904,6 +973,7 @@ public class PersonaCJpaRepositoryImpl extends AbstractRepository implements Per
     }
 
     // AssocOperator: AssocOperator025
+	@Override
     public Collection<Usuario> assocOperator025(Solicitud personaCTNEWCONTRADESDEAEptSolicitud) throws SystemException {
         try {
             // FOR ALL ptSolicitud.Usuarios WHERE (ptSolicitud.Usuarios.UsuarioPersona = ptSolicitud.ContratantePersona AND EXIST (ptSolicitud.Usuarios.CuestionarioP) = true) DO TCREAROCUESDEAE(this, ptSolicitud.Usuarios.CuestionarioP)
@@ -916,6 +986,7 @@ public class PersonaCJpaRepositoryImpl extends AbstractRepository implements Per
     }
 
     // Range 1 for AssocOperator AssocOperator025
+	@Override
     public Collection<Usuario> assocOperator025Range1 (Solicitud personaCTNEWCONTRADESDEAEptSolicitud) throws SystemException {
 
         SQLSelect sql = assocOperator025Range1Query(personaCTNEWCONTRADESDEAEptSolicitud);
@@ -923,6 +994,7 @@ public class PersonaCJpaRepositoryImpl extends AbstractRepository implements Per
     }
 
     // Range Query 1 for AssocOperator AssocOperator025
+	@Override
     public SQLPopulation assocOperator025Range1Query (Solicitud personaCTNEWCONTRADESDEAEptSolicitud) throws SystemException {
         try {
             SQLPopulation sql = new SQLPopulation(PersonaCConstants.CLASS_NAME, UsuarioConstants.CLASS_NAME, PersonaCConstants.ARG_NAME_TNEWCONTRADESDEAE_PERSONACTNEWCONTRADESDEAEPTSOLICITUD + "." + SolicitudConstants.ROLE_NAME_USUARIOS, personaCTNEWCONTRADESDEAEptSolicitud.getOid(), PersonaCConstants.ARG_NAME_TNEWCONTRADESDEAE_PERSONACTNEWCONTRADESDEAEPTSOLICITUD);
@@ -965,6 +1037,7 @@ public class PersonaCJpaRepositoryImpl extends AbstractRepository implements Per
     }
 
     // AssocOperator: AssocOperator026
+	@Override
     public Boolean assocOperator026(Solicitud personaCTNEWCONTRADESDEAEptSolicitud) throws SystemException {
         try {
             // EXIST (ptSolicitud.Usuarios.CuestionarioP)
@@ -977,12 +1050,14 @@ public class PersonaCJpaRepositoryImpl extends AbstractRepository implements Per
     }
 
     // Range 1 for AssocOperator AssocOperator026
+	@Override
     public Boolean assocOperator026Range1 (Solicitud personaCTNEWCONTRADESDEAEptSolicitud) throws SystemException {
         SQLExists sql = assocOperator026Range1Query(personaCTNEWCONTRADESDEAEptSolicitud, null);
         return !new TypedQueryBuilder<PersonaC>(em, PersonaC.class).build(sql).execute().isEmpty();
     }
 
     // Range Query 1 for AssocOperator AssocOperator026
+	@Override
     public SQLExists assocOperator026Range1Query (Solicitud personaCTNEWCONTRADESDEAEptSolicitud, SQLSelect superQuery) throws SystemException {
         try {
             // Path starts with an OV in the subquery
@@ -995,6 +1070,7 @@ public class PersonaCJpaRepositoryImpl extends AbstractRepository implements Per
     }
 
     // AssocOperator: AssocOperator027
+	@Override
     public Collection<Usuario> assocOperator027(Solicitud personaCTNEWCONTRADESDEAEptSolicitud) throws SystemException {
         try {
             // FOR ALL ptSolicitud.Usuarios WHERE (ptSolicitud.Usuarios.UsuarioPersona = ptSolicitud.ContratantePersona) DO TCOPIARPREEXDEUSU(this, ptSolicitud.Usuarios)
@@ -1007,6 +1083,7 @@ public class PersonaCJpaRepositoryImpl extends AbstractRepository implements Per
     }
 
     // Range 1 for AssocOperator AssocOperator027
+	@Override
     public Collection<Usuario> assocOperator027Range1 (Solicitud personaCTNEWCONTRADESDEAEptSolicitud) throws SystemException {
 
         SQLSelect sql = assocOperator027Range1Query(personaCTNEWCONTRADESDEAEptSolicitud);
@@ -1014,6 +1091,7 @@ public class PersonaCJpaRepositoryImpl extends AbstractRepository implements Per
     }
 
     // Range Query 1 for AssocOperator AssocOperator027
+	@Override
     public SQLPopulation assocOperator027Range1Query (Solicitud personaCTNEWCONTRADESDEAEptSolicitud) throws SystemException {
         try {
             SQLPopulation sql = new SQLPopulation(PersonaCConstants.CLASS_NAME, UsuarioConstants.CLASS_NAME, PersonaCConstants.ARG_NAME_TNEWCONTRADESDEAE_PERSONACTNEWCONTRADESDEAEPTSOLICITUD + "." + SolicitudConstants.ROLE_NAME_USUARIOS, personaCTNEWCONTRADESDEAEptSolicitud.getOid(), PersonaCConstants.ARG_NAME_TNEWCONTRADESDEAE_PERSONACTNEWCONTRADESDEAEPTSOLICITUD);
@@ -1050,6 +1128,7 @@ public class PersonaCJpaRepositoryImpl extends AbstractRepository implements Per
     }
 
     // AssocOperator: AssocOperator028
+	@Override
     public Boolean assocOperator028(Solicitud personaCTNEWCONTRADESDEAEptSolicitud) throws SystemException {
         try {
             // EXIST (ptSolicitud.ProteccionDatos)
@@ -1062,12 +1141,14 @@ public class PersonaCJpaRepositoryImpl extends AbstractRepository implements Per
     }
 
     // Range 1 for AssocOperator AssocOperator028
+	@Override
     public Boolean assocOperator028Range1 (Solicitud personaCTNEWCONTRADESDEAEptSolicitud) throws SystemException {
         SQLExists sql = assocOperator028Range1Query(personaCTNEWCONTRADESDEAEptSolicitud, null);
         return !new TypedQueryBuilder<PersonaC>(em, PersonaC.class).build(sql).execute().isEmpty();
     }
 
     // Range Query 1 for AssocOperator AssocOperator028
+	@Override
     public SQLExists assocOperator028Range1Query (Solicitud personaCTNEWCONTRADESDEAEptSolicitud, SQLSelect superQuery) throws SystemException {
         try {
             SQLExists sql;
@@ -1086,6 +1167,7 @@ public class PersonaCJpaRepositoryImpl extends AbstractRepository implements Per
     }
 
     // AssocOperator: AssocOperator029
+	@Override
     public Collection<Direccion> assocOperator029(Solicitud personaCTNEWTITULARDESDEAEptSolicitud) throws SystemException {
         try {
             // FOR ALL ptSolicitud.TitularPersona.Direcciones DO DireccionesC.TCREAR(ptSolicitud.TitularPersona.Direcciones.Departamento, ptSolicitud.TitularPersona.Direcciones.Municipio, ptSolicitud.TitularPersona.Direcciones.TipoDireccion, ptSolicitud.TitularPersona.Direcciones.Pais, this, ptSolicitud.TitularPersona.Direcciones.DireccionCompleta, NULL, ptSolicitud.TitularPersona.TelefonoFijo, ptSolicitud.TitularPersona.TelefonoCelular, NULL)
@@ -1098,6 +1180,7 @@ public class PersonaCJpaRepositoryImpl extends AbstractRepository implements Per
     }
 
     // Range 1 for AssocOperator AssocOperator029
+	@Override
     public Collection<Direccion> assocOperator029Range1 (Solicitud personaCTNEWTITULARDESDEAEptSolicitud) throws SystemException {
 
         SQLSelect sql = assocOperator029Range1Query(personaCTNEWTITULARDESDEAEptSolicitud);
@@ -1105,6 +1188,7 @@ public class PersonaCJpaRepositoryImpl extends AbstractRepository implements Per
     }
 
     // Range Query 1 for AssocOperator AssocOperator029
+	@Override
     public SQLPopulation assocOperator029Range1Query (Solicitud personaCTNEWTITULARDESDEAEptSolicitud) throws SystemException {
         try {
             return new SQLPopulation(PersonaCConstants.CLASS_NAME, DireccionConstants.CLASS_NAME, PersonaCConstants.ARG_NAME_TNEWTITULARDESDEAE_PERSONACTNEWTITULARDESDEAEPTSOLICITUD + "." + SolicitudConstants.ROLE_NAME_TITULARPERSONA + "." + PersonaConstants.ROLE_NAME_DIRECCIONES, personaCTNEWTITULARDESDEAEptSolicitud.getOid(), PersonaCConstants.ARG_NAME_TNEWTITULARDESDEAE_PERSONACTNEWTITULARDESDEAEPTSOLICITUD);
@@ -1116,6 +1200,7 @@ public class PersonaCJpaRepositoryImpl extends AbstractRepository implements Per
     }
 
     // AssocOperator: AssocOperator030
+	@Override
     public Collection<Direccion> assocOperator030(Solicitud personaCTNEWTITULARDESDEAEptSolicitud) throws SystemException {
         try {
             // FOR ALL ptSolicitud.TitularPersona.Direcciones DO DirSucursalesC.TCREAR(ptSolicitud.TitularPersona.Direcciones.Municipio, ptSolicitud.TitularPersona.Direcciones.Departamento, ptSolicitud.TitularPersona.Direcciones.Pais, this, NULL, "1", ptSolicitud.TitularPersona.RazonSocial, true, true, ptSolicitud.TitularPersona.Direcciones.DireccionCompleta, ptSolicitud.TitularPersona.CorreoElectronico, ptSolicitud.TitularPersona.TelefonoFijo, ptSolicitud.TitularPersona.TelefonoCelular)
@@ -1128,6 +1213,7 @@ public class PersonaCJpaRepositoryImpl extends AbstractRepository implements Per
     }
 
     // AssocOperator: AssocOperator032
+	@Override
     public Collection<Usuario> assocOperator032(Solicitud personaCTNEWTITULARDESDEAEptSolicitud) throws SystemException {
         try {
             // FOR ALL ptSolicitud.Usuarios WHERE (ptSolicitud.Usuarios.UsuarioPersona = ptSolicitud.TitularPersona AND EXIST (ptSolicitud.Usuarios.CuestionarioP) = true) DO TCREAROCUESDEAE(this, ptSolicitud.Usuarios.CuestionarioP)
@@ -1140,6 +1226,7 @@ public class PersonaCJpaRepositoryImpl extends AbstractRepository implements Per
     }
 
     // Range 1 for AssocOperator AssocOperator032
+	@Override
     public Collection<Usuario> assocOperator032Range1 (Solicitud personaCTNEWTITULARDESDEAEptSolicitud) throws SystemException {
 
         SQLSelect sql = assocOperator032Range1Query(personaCTNEWTITULARDESDEAEptSolicitud);
@@ -1147,6 +1234,7 @@ public class PersonaCJpaRepositoryImpl extends AbstractRepository implements Per
     }
 
     // Range Query 1 for AssocOperator AssocOperator032
+	@Override
     public SQLPopulation assocOperator032Range1Query (Solicitud personaCTNEWTITULARDESDEAEptSolicitud) throws SystemException {
         try {
             SQLPopulation sql = new SQLPopulation(PersonaCConstants.CLASS_NAME, UsuarioConstants.CLASS_NAME, PersonaCConstants.ARG_NAME_TNEWTITULARDESDEAE_PERSONACTNEWTITULARDESDEAEPTSOLICITUD + "." + SolicitudConstants.ROLE_NAME_USUARIOS, personaCTNEWTITULARDESDEAEptSolicitud.getOid(), PersonaCConstants.ARG_NAME_TNEWTITULARDESDEAE_PERSONACTNEWTITULARDESDEAEPTSOLICITUD);
@@ -1189,6 +1277,7 @@ public class PersonaCJpaRepositoryImpl extends AbstractRepository implements Per
     }
 
     // AssocOperator: AssocOperator033
+	@Override
     public Boolean assocOperator033(Solicitud personaCTNEWTITULARDESDEAEptSolicitud) throws SystemException {
         try {
             // EXIST (ptSolicitud.Usuarios.CuestionarioP)
@@ -1201,12 +1290,14 @@ public class PersonaCJpaRepositoryImpl extends AbstractRepository implements Per
     }
 
     // Range 1 for AssocOperator AssocOperator033
+	@Override
     public Boolean assocOperator033Range1 (Solicitud personaCTNEWTITULARDESDEAEptSolicitud) throws SystemException {
         SQLExists sql = assocOperator033Range1Query(personaCTNEWTITULARDESDEAEptSolicitud, null);
         return !new TypedQueryBuilder<PersonaC>(em, PersonaC.class).build(sql).execute().isEmpty();
     }
 
     // Range Query 1 for AssocOperator AssocOperator033
+	@Override
     public SQLExists assocOperator033Range1Query (Solicitud personaCTNEWTITULARDESDEAEptSolicitud, SQLSelect superQuery) throws SystemException {
         try {
             // Path starts with an OV in the subquery
@@ -1219,6 +1310,7 @@ public class PersonaCJpaRepositoryImpl extends AbstractRepository implements Per
     }
 
     // AssocOperator: AssocOperator034
+	@Override
     public Collection<Usuario> assocOperator034(Solicitud personaCTNEWTITULARDESDEAEptSolicitud) throws SystemException {
         try {
             // FOR ALL ptSolicitud.Usuarios WHERE (ptSolicitud.Usuarios.UsuarioPersona = ptSolicitud.TitularPersona) DO TCOPIARPREEXDEUSU(this, ptSolicitud.Usuarios)
@@ -1231,6 +1323,7 @@ public class PersonaCJpaRepositoryImpl extends AbstractRepository implements Per
     }
 
     // Range 1 for AssocOperator AssocOperator034
+	@Override
     public Collection<Usuario> assocOperator034Range1 (Solicitud personaCTNEWTITULARDESDEAEptSolicitud) throws SystemException {
 
         SQLSelect sql = assocOperator034Range1Query(personaCTNEWTITULARDESDEAEptSolicitud);
@@ -1238,6 +1331,7 @@ public class PersonaCJpaRepositoryImpl extends AbstractRepository implements Per
     }
 
     // Range Query 1 for AssocOperator AssocOperator034
+	@Override
     public SQLPopulation assocOperator034Range1Query (Solicitud personaCTNEWTITULARDESDEAEptSolicitud) throws SystemException {
         try {
             SQLPopulation sql = new SQLPopulation(PersonaCConstants.CLASS_NAME, UsuarioConstants.CLASS_NAME, PersonaCConstants.ARG_NAME_TNEWTITULARDESDEAE_PERSONACTNEWTITULARDESDEAEPTSOLICITUD + "." + SolicitudConstants.ROLE_NAME_USUARIOS, personaCTNEWTITULARDESDEAEptSolicitud.getOid(), PersonaCConstants.ARG_NAME_TNEWTITULARDESDEAE_PERSONACTNEWTITULARDESDEAEPTSOLICITUD);
@@ -1274,6 +1368,7 @@ public class PersonaCJpaRepositoryImpl extends AbstractRepository implements Per
     }
 
     // AssocOperator: AssocOperator035
+	@Override
     public Boolean assocOperator035(Solicitud personaCTNEWTITULARDESDEAEptSolicitud) throws SystemException {
         try {
             // EXIST (ptSolicitud.ProteccionDatos)
@@ -1286,12 +1381,14 @@ public class PersonaCJpaRepositoryImpl extends AbstractRepository implements Per
     }
 
     // Range 1 for AssocOperator AssocOperator035
+	@Override
     public Boolean assocOperator035Range1 (Solicitud personaCTNEWTITULARDESDEAEptSolicitud) throws SystemException {
         SQLExists sql = assocOperator035Range1Query(personaCTNEWTITULARDESDEAEptSolicitud, null);
         return !new TypedQueryBuilder<PersonaC>(em, PersonaC.class).build(sql).execute().isEmpty();
     }
 
     // Range Query 1 for AssocOperator AssocOperator035
+	@Override
     public SQLExists assocOperator035Range1Query (Solicitud personaCTNEWTITULARDESDEAEptSolicitud, SQLSelect superQuery) throws SystemException {
         try {
             SQLExists sql;
@@ -1310,6 +1407,7 @@ public class PersonaCJpaRepositoryImpl extends AbstractRepository implements Per
     }
 
     // AssocOperator: AssocOperator036
+	@Override
     public Collection<Direccion> assocOperator036(Usuario personaCTNEWBENEFDESDEAEptUsuario) throws SystemException {
         try {
             // FOR ALL ptUsuario.UsuarioPersona.Direcciones DO DireccionesC.TCREAR(ptUsuario.UsuarioPersona.Direcciones.Departamento, ptUsuario.UsuarioPersona.Direcciones.Municipio, ptUsuario.UsuarioPersona.Direcciones.TipoDireccion, ptUsuario.UsuarioPersona.Direcciones.Pais, this, ptUsuario.UsuarioPersona.Direcciones.DireccionCompleta, NULL, ptUsuario.UsuarioPersona.TelefonoFijo, ptUsuario.UsuarioPersona.TelefonoCelular, NULL)
@@ -1322,6 +1420,7 @@ public class PersonaCJpaRepositoryImpl extends AbstractRepository implements Per
     }
 
     // Range 1 for AssocOperator AssocOperator036
+	@Override
     public Collection<Direccion> assocOperator036Range1 (Usuario personaCTNEWBENEFDESDEAEptUsuario) throws SystemException {
 
         SQLSelect sql = assocOperator036Range1Query(personaCTNEWBENEFDESDEAEptUsuario);
@@ -1329,6 +1428,7 @@ public class PersonaCJpaRepositoryImpl extends AbstractRepository implements Per
     }
 
     // Range Query 1 for AssocOperator AssocOperator036
+	@Override
     public SQLPopulation assocOperator036Range1Query (Usuario personaCTNEWBENEFDESDEAEptUsuario) throws SystemException {
         try {
             return new SQLPopulation(PersonaCConstants.CLASS_NAME, DireccionConstants.CLASS_NAME, PersonaCConstants.ARG_NAME_TNEWBENEFDESDEAE_PERSONACTNEWBENEFDESDEAEPTUSUARIO + "." + UsuarioConstants.ROLE_NAME_USUARIOPERSONA + "." + PersonaConstants.ROLE_NAME_DIRECCIONES, personaCTNEWBENEFDESDEAEptUsuario.getOid(), PersonaCConstants.ARG_NAME_TNEWBENEFDESDEAE_PERSONACTNEWBENEFDESDEAEPTUSUARIO);
@@ -1340,6 +1440,7 @@ public class PersonaCJpaRepositoryImpl extends AbstractRepository implements Per
     }
 
     // AssocOperator: AssocOperator038
+	@Override
     public Collection<CuestionarioP> assocOperator038(Usuario personaCTNEWBENEFDESDEAEptUsuario) throws SystemException {
         try {
             // FOR ALL ptUsuario.CuestionarioP DO TCREAROCUESDEAE(this, ptUsuario.CuestionarioP)
@@ -1352,6 +1453,7 @@ public class PersonaCJpaRepositoryImpl extends AbstractRepository implements Per
     }
 
     // Range 1 for AssocOperator AssocOperator038
+	@Override
     public Collection<CuestionarioP> assocOperator038Range1 (Usuario personaCTNEWBENEFDESDEAEptUsuario) throws SystemException {
 
         SQLSelect sql = assocOperator038Range1Query(personaCTNEWBENEFDESDEAEptUsuario);
@@ -1359,6 +1461,7 @@ public class PersonaCJpaRepositoryImpl extends AbstractRepository implements Per
     }
 
     // Range Query 1 for AssocOperator AssocOperator038
+	@Override
     public SQLPopulation assocOperator038Range1Query (Usuario personaCTNEWBENEFDESDEAEptUsuario) throws SystemException {
         try {
             return new SQLPopulation(PersonaCConstants.CLASS_NAME, CuestionarioPConstants.CLASS_NAME, PersonaCConstants.ARG_NAME_TNEWBENEFDESDEAE_PERSONACTNEWBENEFDESDEAEPTUSUARIO + "." + UsuarioConstants.ROLE_NAME_CUESTIONARIOP, personaCTNEWBENEFDESDEAEptUsuario.getOid(), PersonaCConstants.ARG_NAME_TNEWBENEFDESDEAE_PERSONACTNEWBENEFDESDEAEPTUSUARIO);
@@ -1370,6 +1473,7 @@ public class PersonaCJpaRepositoryImpl extends AbstractRepository implements Per
     }
 
     // AssocOperator: AssocOperator039
+	@Override
     public Boolean assocOperator039(Usuario personaCTNEWBENEFDESDEAEptUsuario) throws SystemException {
         try {
             // EXIST (ptUsuario.Solicitud.ProteccionDatos)
@@ -1382,12 +1486,14 @@ public class PersonaCJpaRepositoryImpl extends AbstractRepository implements Per
     }
 
     // Range 1 for AssocOperator AssocOperator039
+	@Override
     public Boolean assocOperator039Range1 (Usuario personaCTNEWBENEFDESDEAEptUsuario) throws SystemException {
         SQLExists sql = assocOperator039Range1Query(personaCTNEWBENEFDESDEAEptUsuario, null);
         return !new TypedQueryBuilder<PersonaC>(em, PersonaC.class).build(sql).execute().isEmpty();
     }
 
     // Range Query 1 for AssocOperator AssocOperator039
+	@Override
     public SQLExists assocOperator039Range1Query (Usuario personaCTNEWBENEFDESDEAEptUsuario, SQLSelect superQuery) throws SystemException {
         try {
             SQLExists sql;
@@ -1406,6 +1512,7 @@ public class PersonaCJpaRepositoryImpl extends AbstractRepository implements Per
     }
 
     // AssocOperator: AssocOperator040
+	@Override
     public Collection<Preexistencia> assocOperator040(PersonaC personaCTCOPIARPREEXDEUSUpthisPersonaC, Usuario personaCTCOPIARPREEXDEUSUpUsuario) throws SystemException {
         try {
             // FOR ALL pUsuario.Preexistencias DO PreexistenciasC.crear(this, pUsuario.Preexistencias.Descripcion, pUsuario.Preexistencias.FecInicio, pUsuario.Preexistencias.FecFin, pUsuario.Preexistencias.Observacion)
@@ -1418,6 +1525,7 @@ public class PersonaCJpaRepositoryImpl extends AbstractRepository implements Per
     }
 
     // Range 1 for AssocOperator AssocOperator040
+	@Override
     public Collection<Preexistencia> assocOperator040Range1 (Usuario personaCTCOPIARPREEXDEUSUpUsuario) throws SystemException {
 
         SQLSelect sql = assocOperator040Range1Query(personaCTCOPIARPREEXDEUSUpUsuario);
@@ -1425,6 +1533,7 @@ public class PersonaCJpaRepositoryImpl extends AbstractRepository implements Per
     }
 
     // Range Query 1 for AssocOperator AssocOperator040
+	@Override
     public SQLPopulation assocOperator040Range1Query (Usuario personaCTCOPIARPREEXDEUSUpUsuario) throws SystemException {
         try {
             return new SQLPopulation(PersonaCConstants.CLASS_NAME, PreexistenciaConstants.CLASS_NAME, PersonaCConstants.ARG_NAME_TCOPIARPREEXDEUSU_PERSONACTCOPIARPREEXDEUSUPUSUARIO + "." + UsuarioConstants.ROLE_NAME_PREEXISTENCIAS, personaCTCOPIARPREEXDEUSUpUsuario.getOid(), PersonaCConstants.ARG_NAME_TCOPIARPREEXDEUSU_PERSONACTCOPIARPREEXDEUSUPUSUARIO);
@@ -1435,6 +1544,7 @@ public class PersonaCJpaRepositoryImpl extends AbstractRepository implements Per
         }
     }
 
+    @Override
     public void refreshEntity(Object object) {
         super.refreshEntity(object);
     }

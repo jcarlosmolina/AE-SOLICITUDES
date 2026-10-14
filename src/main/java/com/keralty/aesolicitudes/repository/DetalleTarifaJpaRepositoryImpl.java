@@ -34,15 +34,18 @@ public class DetalleTarifaJpaRepositoryImpl extends AbstractRepository implement
     private TypedQueryBuilder<DetalleTarifa> getQueryBuilder() {
         return new TypedQueryBuilder<>(em, DetalleTarifa.class);
     }
-    
+
+    @Override	
     public List<DetalleTarifa> solveQuery(SQLSelect select) {
         return solveQuery(select, 0, 0);
     }
 
+    @Override
     public List<DetalleTarifa> solveQuery(SQLSelect select, int pageSize, int pageNumber) {
         return getQueryBuilder().build(select, pageSize, pageNumber).execute();
     }
 
+    @Override
     public void refreshEntity(Object object) {
         super.refreshEntity(object);
     }

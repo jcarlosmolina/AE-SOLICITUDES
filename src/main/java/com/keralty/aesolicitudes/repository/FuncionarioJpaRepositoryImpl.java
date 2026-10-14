@@ -63,11 +63,13 @@ public class FuncionarioJpaRepositoryImpl extends AbstractRepository implements 
     private TypedQueryBuilder<Funcionario> getQueryBuilder() {
         return new TypedQueryBuilder<>(em, Funcionario.class);
     }
-    
+
+    @Override	
     public List<Funcionario> solveQuery(SQLSelect select) {
         return solveQuery(select, 0, 0);
     }
 
+    @Override
     public List<Funcionario> solveQuery(SQLSelect select, int pageSize, int pageNumber) {
         return getQueryBuilder().build(select, pageSize, pageNumber).execute();
     }
@@ -193,6 +195,7 @@ public class FuncionarioJpaRepositoryImpl extends AbstractRepository implements 
 
 
     // AssocOperator: AssocOperator000
+	@Override
     public Long assocOperator000(Funcionario instance) throws SystemException {
         try {
             // COUNT (Rol) WHERE (Rol.Nombre = "AFILIACIONES")
@@ -205,12 +208,14 @@ public class FuncionarioJpaRepositoryImpl extends AbstractRepository implements 
     }
 
     // Range 1 for AssocOperator AssocOperator000
+	@Override
     public Long assocOperator000Range1 (Funcionario instance) throws SystemException {
         SQLCount sql = assocOperator000Range1Query(instance);
         return Long.valueOf(solveCountQuery(sql));
     }
 
     // Range Query 1 for AssocOperator AssocOperator000
+	@Override
     public SQLCount assocOperator000Range1Query (Funcionario instance) throws SystemException {
         try {
             // The path starts with a role
@@ -239,6 +244,7 @@ public class FuncionarioJpaRepositoryImpl extends AbstractRepository implements 
     }
 
     // AssocOperator: AssocOperator002
+	@Override
     public Boolean assocOperator002(GrupoAsignacion grupoAsignacionTADDUSUARIOpthisGrupoAsignacion) throws SystemException {
         try {
             // EXIST (GrupoAsignacion) WHERE (GrupoAsignacion = pthisGrupoAsignacion)
@@ -251,12 +257,14 @@ public class FuncionarioJpaRepositoryImpl extends AbstractRepository implements 
     }
 
     // Range 0 for AssocOperator AssocOperator002
+	@Override
     public Boolean assocOperator002Range1 (GrupoAsignacion grupoAsignacionTADDUSUARIOpthisGrupoAsignacion) throws SystemException {
         SQLExists sql = assocOperator002Range1Query(grupoAsignacionTADDUSUARIOpthisGrupoAsignacion, null);
         return !new TypedQueryBuilder<Funcionario>(em, Funcionario.class).build(sql).execute().isEmpty();
     }
 
     // Range Query 0 for AssocOperator AssocOperator002
+	@Override
     public SQLExists assocOperator002Range1Query (GrupoAsignacion grupoAsignacionTADDUSUARIOpthisGrupoAsignacion, SQLSelect superQuery) throws SystemException {
         try {
             // The path starts with a role
@@ -287,6 +295,7 @@ public class FuncionarioJpaRepositoryImpl extends AbstractRepository implements 
     }
 
     // AssocOperator: AssocOperator003
+	@Override
     public Boolean assocOperator003(GrupoAsignacion grupoAsignacionTDELUSUARIOpthisGrupoAsignacion) throws SystemException {
         try {
             // EXIST (GrupoAsignacion) WHERE (GrupoAsignacion = pthisGrupoAsignacion)
@@ -299,12 +308,14 @@ public class FuncionarioJpaRepositoryImpl extends AbstractRepository implements 
     }
 
     // Range 0 for AssocOperator AssocOperator003
+	@Override
     public Boolean assocOperator003Range1 (GrupoAsignacion grupoAsignacionTDELUSUARIOpthisGrupoAsignacion) throws SystemException {
         SQLExists sql = assocOperator003Range1Query(grupoAsignacionTDELUSUARIOpthisGrupoAsignacion, null);
         return !new TypedQueryBuilder<Funcionario>(em, Funcionario.class).build(sql).execute().isEmpty();
     }
 
     // Range Query 0 for AssocOperator AssocOperator003
+	@Override
     public SQLExists assocOperator003Range1Query (GrupoAsignacion grupoAsignacionTDELUSUARIOpthisGrupoAsignacion, SQLSelect superQuery) throws SystemException {
         try {
             // The path starts with a role
@@ -334,6 +345,7 @@ public class FuncionarioJpaRepositoryImpl extends AbstractRepository implements 
         }
     }
 
+    @Override
     public void refreshEntity(Object object) {
         super.refreshEntity(object);
     }

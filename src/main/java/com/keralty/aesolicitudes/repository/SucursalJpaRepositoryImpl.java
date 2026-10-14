@@ -34,15 +34,18 @@ public class SucursalJpaRepositoryImpl extends AbstractRepository implements Suc
     private TypedQueryBuilder<Sucursal> getQueryBuilder() {
         return new TypedQueryBuilder<>(em, Sucursal.class);
     }
-    
+
+    @Override	
     public List<Sucursal> solveQuery(SQLSelect select) {
         return solveQuery(select, 0, 0);
     }
 
+    @Override
     public List<Sucursal> solveQuery(SQLSelect select, int pageSize, int pageNumber) {
         return getQueryBuilder().build(select, pageSize, pageNumber).execute();
     }
 
+    @Override
     public void refreshEntity(Object object) {
         super.refreshEntity(object);
     }

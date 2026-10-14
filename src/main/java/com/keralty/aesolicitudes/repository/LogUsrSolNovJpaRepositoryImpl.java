@@ -34,15 +34,18 @@ public class LogUsrSolNovJpaRepositoryImpl extends AbstractRepository implements
     private TypedQueryBuilder<LogUsrSolNov> getQueryBuilder() {
         return new TypedQueryBuilder<>(em, LogUsrSolNov.class);
     }
-    
+
+    @Override	
     public List<LogUsrSolNov> solveQuery(SQLSelect select) {
         return solveQuery(select, 0, 0);
     }
 
+    @Override
     public List<LogUsrSolNov> solveQuery(SQLSelect select, int pageSize, int pageNumber) {
         return getQueryBuilder().build(select, pageSize, pageNumber).execute();
     }
 
+    @Override
     public void refreshEntity(Object object) {
         super.refreshEntity(object);
     }

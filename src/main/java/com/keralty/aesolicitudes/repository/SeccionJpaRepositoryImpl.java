@@ -34,15 +34,18 @@ public class SeccionJpaRepositoryImpl extends AbstractRepository implements Secc
     private TypedQueryBuilder<Seccion> getQueryBuilder() {
         return new TypedQueryBuilder<>(em, Seccion.class);
     }
-    
+
+    @Override	
     public List<Seccion> solveQuery(SQLSelect select) {
         return solveQuery(select, 0, 0);
     }
 
+    @Override
     public List<Seccion> solveQuery(SQLSelect select, int pageSize, int pageNumber) {
         return getQueryBuilder().build(select, pageSize, pageNumber).execute();
     }
 
+    @Override
     public void refreshEntity(Object object) {
         super.refreshEntity(object);
     }

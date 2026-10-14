@@ -37,16 +37,19 @@ public class FirmaJpaRepositoryImpl extends AbstractRepository implements FirmaJ
     private TypedQueryBuilder<Firma> getQueryBuilder() {
         return new TypedQueryBuilder<>(em, Firma.class);
     }
-    
+
+    @Override	
     public List<Firma> solveQuery(SQLSelect select) {
         return solveQuery(select, 0, 0);
     }
 
+    @Override
     public List<Firma> solveQuery(SQLSelect select, int pageSize, int pageNumber) {
         return getQueryBuilder().build(select, pageSize, pageNumber).execute();
     }
 
     // AssocOperator: AssocOperator000
+	@Override
     public Boolean assocOperator000() throws SystemException {
         try {
             // EXIST (RespRegional)
@@ -59,12 +62,14 @@ public class FirmaJpaRepositoryImpl extends AbstractRepository implements FirmaJ
     }
 
     // Range 0 for AssocOperator AssocOperator000
+	@Override
     public Boolean assocOperator000Range1 () throws SystemException {
         SQLExists sql = assocOperator000Range1Query(null);
         return !new TypedQueryBuilder<Firma>(em, Firma.class).build(sql).execute().isEmpty();
     }
 
     // Range Query 0 for AssocOperator AssocOperator000
+	@Override
     public SQLExists assocOperator000Range1Query (SQLSelect superQuery) throws SystemException {
         try {
             // The path starts with a role
@@ -76,6 +81,7 @@ public class FirmaJpaRepositoryImpl extends AbstractRepository implements FirmaJ
         }
     }
 
+    @Override
     public void refreshEntity(Object object) {
         super.refreshEntity(object);
     }

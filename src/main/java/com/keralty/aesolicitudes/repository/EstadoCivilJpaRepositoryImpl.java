@@ -34,15 +34,18 @@ public class EstadoCivilJpaRepositoryImpl extends AbstractRepository implements 
     private TypedQueryBuilder<EstadoCivil> getQueryBuilder() {
         return new TypedQueryBuilder<>(em, EstadoCivil.class);
     }
-    
+
+    @Override	
     public List<EstadoCivil> solveQuery(SQLSelect select) {
         return solveQuery(select, 0, 0);
     }
 
+    @Override
     public List<EstadoCivil> solveQuery(SQLSelect select, int pageSize, int pageNumber) {
         return getQueryBuilder().build(select, pageSize, pageNumber).execute();
     }
 
+    @Override
     public void refreshEntity(Object object) {
         super.refreshEntity(object);
     }
