@@ -1557,7 +1557,7 @@ public class SolicitudJpaRepositoryImpl extends AbstractRepository implements So
     public Double assocOperator026(Solicitud instance) throws SystemException {
         try {
             // SUM (Usuarios.drvTotalAnexos)
-            Double result = 0.0;
+            double result = 0.0;
             for(Usuario item : assocOperator026Range1(instance)){
                 result += item.getUsuariodrvTotalAnexos();
             }
@@ -2497,7 +2497,7 @@ public class SolicitudJpaRepositoryImpl extends AbstractRepository implements So
     public Long assocOperator045(Solicitud instance) throws SystemException {
         try {
             // MAX (UsuariosRegistrados.drvEdad) WHERE (UsuariosRegistrados.Parentesco.EsTitular = true)
-            Long result = Long.MIN_VALUE;
+            long result = Long.MIN_VALUE;
             for(UsuarioReg item : assocOperator045Range1(instance)){
                 if(result < item.getUsuarioRegdrvEdad())
                     result = item.getUsuarioRegdrvEdad();
@@ -2549,7 +2549,7 @@ public class SolicitudJpaRepositoryImpl extends AbstractRepository implements So
     public Long assocOperator046(Solicitud instance) throws SystemException {
         try {
             // MAX (Usuarios.drvEdad) WHERE (Usuarios.drvEsElTitular = true)
-            Long result = Long.MIN_VALUE;
+            long result = Long.MIN_VALUE;
             for(Usuario item : assocOperator046Range1(instance)){
                 // Usuarios.drvEsElTitular = true
                 boolean conditionsMet = item.getUsuariodrvEsElTitular().equals(true);
@@ -3107,7 +3107,7 @@ public class SolicitudJpaRepositoryImpl extends AbstractRepository implements So
     public Double assocOperator057(Solicitud instance) throws SystemException {
         try {
             // SUM (Usuarios.drvImpTarifaPlanVol)
-            Double result = 0.0;
+            double result = 0.0;
             for(Usuario item : assocOperator057Range1(instance)){
                 result += item.getUsuariodrvImpTarifaPlanVol();
             }

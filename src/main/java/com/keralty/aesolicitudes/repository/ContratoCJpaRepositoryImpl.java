@@ -78,7 +78,7 @@ public class ContratoCJpaRepositoryImpl extends AbstractRepository implements Co
     public Double assocOperator000(ContratoC instance) throws SystemException {
         try {
             // SUM (BeneficiariosC.drvValorCuotaAfiliacion)
-            Double result = 0.0;
+            double result = 0.0;
             for(BeneficiarioC item : assocOperator000Range1(instance)){
                 result += item.getBeneficiarioCdrvValorCuotaAfiliacion();
             }
@@ -112,7 +112,7 @@ public class ContratoCJpaRepositoryImpl extends AbstractRepository implements Co
     public Double assocOperator001(ContratoC instance) throws SystemException {
         try {
             // SUM (BeneficiariosC.drvValorInicialContrato) WHERE (BeneficiariosC.PersonaC.TipoIdentificacionC.NombreCorto = "MS")
-            Double result = 0.0;
+            double result = 0.0;
             for(BeneficiarioC item : assocOperator001Range1(instance)){
                 result += item.getBeneficiarioCdrvValorInicialContrato();
             }
@@ -163,7 +163,7 @@ public class ContratoCJpaRepositoryImpl extends AbstractRepository implements Co
     public Double assocOperator002(ContratoC instance) throws SystemException {
         try {
             // SUM (BeneficiariosC.drvValorCuotaBruta)
-            Double result = 0.0;
+            double result = 0.0;
             for(BeneficiarioC item : assocOperator002Range1(instance)){
                 result += item.getBeneficiarioCdrvValorCuotaBruta();
             }
@@ -416,7 +416,7 @@ public class ContratoCJpaRepositoryImpl extends AbstractRepository implements Co
     public Double assocOperator007(ContratoC instance) throws SystemException {
         try {
             // SUM (BeneficiariosC.drvDescuentoComercial)
-            Double result = 0.0;
+            double result = 0.0;
             for(BeneficiarioC item : assocOperator007Range1(instance)){
                 result += item.getBeneficiarioCdrvDescuentoComercial();
             }
@@ -450,7 +450,7 @@ public class ContratoCJpaRepositoryImpl extends AbstractRepository implements Co
     public Double assocOperator008(ContratoC instance) throws SystemException {
         try {
             // SUM (BeneficiariosC.drvDescuentoFinanciero)
-            Double result = 0.0;
+            double result = 0.0;
             for(BeneficiarioC item : assocOperator008Range1(instance)){
                 result += item.getBeneficiarioCdrvDescuentoFinanciero();
             }

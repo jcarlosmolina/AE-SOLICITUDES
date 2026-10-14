@@ -675,7 +675,7 @@ public class FamiliaNovedadJpaRepositoryImpl extends AbstractRepository implemen
     public Long assocOperator018(FamiliaNovedad instance) throws SystemException {
         try {
             // SUM (UsuarioNovedad.drvEdad) WHERE (UsuarioNovedad.drvEsTitular = true)
-            Long result = 0L;
+            long result = 0L;
             for(UsuarioNovedad item : assocOperator018Range1(instance)){
                 // UsuarioNovedad.drvEsTitular = true
                 if(item.getUsuarioNovedaddrvEsTitular().equals(true))
