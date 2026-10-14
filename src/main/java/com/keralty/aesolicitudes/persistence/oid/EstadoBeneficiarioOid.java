@@ -45,6 +45,7 @@ public class EstadoBeneficiarioOid implements IOid {
      * 
      * @return true if this OID is null. False otherwise.
      */
+	@Override
     public boolean isNull() {
         boolean nullValue;
         if (estadoBeneficiarioCodigo == null)
@@ -78,6 +79,7 @@ public class EstadoBeneficiarioOid implements IOid {
      * 
      * @return hashcode representing this instance.
      */
+	@Override
     public int hashCode() {
         try {
             return estadoBeneficiarioCodigo.hashCode();
@@ -93,6 +95,7 @@ public class EstadoBeneficiarioOid implements IOid {
      * @param obj object to compare this instance with.
      * @return true if the objects are the same object.
      */
+	@Override
     public boolean equals(Object obj) {
         boolean returnValue;
         if (obj == null) {
@@ -115,6 +118,7 @@ public class EstadoBeneficiarioOid implements IOid {
      * 
      * @return String representing the object
      */
+	@Override
     public String toString() {
         return "[estadoBeneficiarioCodigo=" + estadoBeneficiarioCodigo + "]";
     }
@@ -126,6 +130,7 @@ public class EstadoBeneficiarioOid implements IOid {
      * 
      * @return an array with the values of the OID fields.
      */
+	@Override
     public Object[] getValue() {
         Object[] values = new Object[1];
         values[0] = estadoBeneficiarioCodigo;
@@ -137,6 +142,7 @@ public class EstadoBeneficiarioOid implements IOid {
      * 
      * @return an array with the names of the OID fields.
      */
+	@Override
     public String[] getKeys() {
         String[] values = new String[1];
         values[0] = EstadoBeneficiarioConstants.ATTR_NAME_ESTADOBENEFICIARIOCODIGO;
@@ -148,6 +154,7 @@ public class EstadoBeneficiarioOid implements IOid {
      * 
      * @return an array with the types of the OID fields.
      */
+	@Override
     public String[] getDataTypes() {
         String[] dataTypes = new String[1];
         dataTypes[0] = Constants.Type.INT.getTypeName();
@@ -159,6 +166,7 @@ public class EstadoBeneficiarioOid implements IOid {
      * 
      * @return Name of the definition class of this OID.
      */
+	@Override
     public String getDefinitionClass() {
         return EstadoBeneficiarioConstants.CLASS_NAME;
     }
@@ -200,6 +208,7 @@ public class EstadoBeneficiarioOid implements IOid {
         return this;
     }
 
+    @Override
     public String toJson() {
         ObjectMapper mapper = new ObjectMapper();
         String json;

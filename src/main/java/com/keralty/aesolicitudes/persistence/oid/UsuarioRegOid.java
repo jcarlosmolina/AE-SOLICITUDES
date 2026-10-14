@@ -68,6 +68,7 @@ public class UsuarioRegOid implements IOid {
      * 
      * @return true if this OID is null. False otherwise.
      */
+	@Override
     public boolean isNull() {
         boolean nullValue;
         if (aesolicitudesidsolicitud == null || usuarioRegIdentificador == null)
@@ -119,6 +120,7 @@ public class UsuarioRegOid implements IOid {
      * 
      * @return hashcode representing this instance.
      */
+	@Override
     public int hashCode() {
         try {
             return aesolicitudesidsolicitud.hashCode() + usuarioRegIdentificador.hashCode();
@@ -134,6 +136,7 @@ public class UsuarioRegOid implements IOid {
      * @param obj object to compare this instance with.
      * @return true if the objects are the same object.
      */
+	@Override
     public boolean equals(Object obj) {
         boolean returnValue;
         if (obj == null) {
@@ -156,6 +159,7 @@ public class UsuarioRegOid implements IOid {
      * 
      * @return String representing the object
      */
+	@Override
     public String toString() {
         return "[aesolicitudesidsolicitud=" + aesolicitudesidsolicitud + ", usuarioRegIdentificador=" + usuarioRegIdentificador + "]";
     }
@@ -167,6 +171,7 @@ public class UsuarioRegOid implements IOid {
      * 
      * @return an array with the values of the OID fields.
      */
+	@Override
     public Object[] getValue() {
         Object[] values = new Object[2];
         values[0] = aesolicitudesidsolicitud;
@@ -179,6 +184,7 @@ public class UsuarioRegOid implements IOid {
      * 
      * @return an array with the names of the OID fields.
      */
+	@Override
     public String[] getKeys() {
         String[] values = new String[2];
         values[0] = UsuarioRegConstants.ATTR_NAME_SOLICITUD_AE_SOLICITUDES_AESOLICITUDESIDSOLICITUD;
@@ -191,6 +197,7 @@ public class UsuarioRegOid implements IOid {
      * 
      * @return an array with the types of the OID fields.
      */
+	@Override
     public String[] getDataTypes() {
         String[] dataTypes = new String[2];
         dataTypes[0] = Constants.Type.AUTONUMERIC.getTypeName();
@@ -203,6 +210,7 @@ public class UsuarioRegOid implements IOid {
      * 
      * @return Name of the definition class of this OID.
      */
+	@Override
     public String getDefinitionClass() {
         return UsuarioRegConstants.CLASS_NAME;
     }
@@ -245,6 +253,7 @@ public class UsuarioRegOid implements IOid {
         return this;
     }
 
+    @Override
     public String toJson() {
         ObjectMapper mapper = new ObjectMapper();
         String json;

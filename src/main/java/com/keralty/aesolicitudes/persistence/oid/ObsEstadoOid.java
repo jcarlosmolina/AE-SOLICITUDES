@@ -68,6 +68,7 @@ public class ObsEstadoOid implements IOid {
      * 
      * @return true if this OID is null. False otherwise.
      */
+	@Override
     public boolean isNull() {
         boolean nullValue;
         if (documentoGIdentificador == null || obsEstadoId == null)
@@ -119,6 +120,7 @@ public class ObsEstadoOid implements IOid {
      * 
      * @return hashcode representing this instance.
      */
+	@Override
     public int hashCode() {
         try {
             return documentoGIdentificador.hashCode() + obsEstadoId.hashCode();
@@ -134,6 +136,7 @@ public class ObsEstadoOid implements IOid {
      * @param obj object to compare this instance with.
      * @return true if the objects are the same object.
      */
+	@Override
     public boolean equals(Object obj) {
         boolean returnValue;
         if (obj == null) {
@@ -156,6 +159,7 @@ public class ObsEstadoOid implements IOid {
      * 
      * @return String representing the object
      */
+	@Override
     public String toString() {
         return "[documentoGIdentificador=" + documentoGIdentificador + ", obsEstadoId=" + obsEstadoId + "]";
     }
@@ -167,6 +171,7 @@ public class ObsEstadoOid implements IOid {
      * 
      * @return an array with the values of the OID fields.
      */
+	@Override
     public Object[] getValue() {
         Object[] values = new Object[2];
         values[0] = documentoGIdentificador;
@@ -179,6 +184,7 @@ public class ObsEstadoOid implements IOid {
      * 
      * @return an array with the names of the OID fields.
      */
+	@Override
     public String[] getKeys() {
         String[] values = new String[2];
         values[0] = ObsEstadoConstants.ATTR_NAME_DOCUMENTOG_DOCUMENTOGIDENTIFICADOR;
@@ -191,6 +197,7 @@ public class ObsEstadoOid implements IOid {
      * 
      * @return an array with the types of the OID fields.
      */
+	@Override
     public String[] getDataTypes() {
         String[] dataTypes = new String[2];
         dataTypes[0] = Constants.Type.AUTONUMERIC.getTypeName();
@@ -203,6 +210,7 @@ public class ObsEstadoOid implements IOid {
      * 
      * @return Name of the definition class of this OID.
      */
+	@Override
     public String getDefinitionClass() {
         return ObsEstadoConstants.CLASS_NAME;
     }
@@ -245,6 +253,7 @@ public class ObsEstadoOid implements IOid {
         return this;
     }
 
+    @Override
     public String toJson() {
         ObjectMapper mapper = new ObjectMapper();
         String json;
