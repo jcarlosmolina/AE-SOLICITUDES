@@ -360,8 +360,8 @@ public final class STDFunctions {
 			Long lDayOfWeekArg = dayOfWeekArg;
 
 			Long numTotal = daysDifferenceFromDateFun(iniDateArg, endDateArg);
-			Long numDays = numTotal / 7;
-			Long diffDays = numTotal % 7;
+			long numDays = numTotal / 7;
+			long diffDays = numTotal % 7;
 
 			Long iniDay = getDayOfWeekFun(iniDateArg);
 			Long endDay = getDayOfWeekFun(endDateArg);
@@ -374,7 +374,7 @@ public final class STDFunctions {
 				lDayOfWeekArg += 7;
 			}
 
-			Long iniRest = endDay - diffDays;
+			long iniRest = endDay - diffDays;
 			if ((lDayOfWeekArg >= iniRest) && (lDayOfWeekArg <= endDay)) {
 				numDays++;
 			}
@@ -1794,7 +1794,7 @@ public final class STDFunctions {
 		if (value1 == null || value2 == null) {
 			returnValue = null;
 		} else {
-			returnValue = Long.valueOf(value1.intValue() * value2.intValue() / gcdFun(value1, value2).intValue());
+			returnValue = value1 * value2 / gcdFun(value1, value2).intValue();
 		}
 		return returnValue;
 	}
@@ -1814,8 +1814,8 @@ public final class STDFunctions {
 		if (value == null) {
 			returnValue = null;
 		} else {
-			Double ceiling = Math.ceil(value.doubleValue());
-			returnValue = ceiling.longValue();
+			double ceiling = Math.ceil(value.doubleValue());
+			returnValue = (long) ceiling;
 		}
 		return returnValue;
 	}
@@ -1832,8 +1832,8 @@ public final class STDFunctions {
 		if (value == null) {
 			returnValue = null;
 		} else {
-			Double floor = Math.floor(value.doubleValue());
-			returnValue = floor.longValue();
+			double floor = Math.floor(value.doubleValue());
+			returnValue = (long) floor;
 		}
 		return returnValue;
 	}
@@ -1869,8 +1869,8 @@ public final class STDFunctions {
 		if (value == null) {
 			returnValue = null;
 		} else {
-			Double round = (value.doubleValue() + 0.5D);
-			returnValue = round.longValue();
+			double round = (value.doubleValue() + 0.5D);
+			returnValue = (long) round;
 		}
 		return returnValue;
 	}

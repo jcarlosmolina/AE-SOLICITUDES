@@ -4895,10 +4895,10 @@ public final class Constants {
     	StringBuilder result = new StringBuilder();
     	String currentClass = initialClass;
         // Path items names
-        Integer itemsCount = 0;
+        int itemsCount = 0;
     	for(String roleName : pathItems) {
     		itemsCount++;
-            if (ignoreFirstItem && itemsCount.equals(1)){
+            if (ignoreFirstItem && itemsCount == 1){
                 result.append(roleName);
             } else {
             	String roleNameConstant = ROLENAMEPREFIX + roleName.toUpperCase();
