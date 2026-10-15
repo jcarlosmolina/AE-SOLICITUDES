@@ -82,7 +82,7 @@ public class SQLWhereOperandPathAttribute extends SQLWhereOperand {
      * 
      */
     private void processOperandAttribute() {
-        Integer pointIndex = -1;
+        int pointIndex = -1;
         String targetClass = "";
         String originClass = getSql().getSourceEntityName();
         String processingPath = "";

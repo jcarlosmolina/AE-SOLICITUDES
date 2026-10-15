@@ -51,8 +51,7 @@ public class SQLOrderBy {
      * @param isAscending Ascending
      */
     private void processItem(String itemName, Boolean isAscending) {
-
-        Integer pointIndex = -1;
+        int pointIndex = -1;
         String targetClass = "";
         String originClass = select.getSourceEntityName();
         String processingPath = "";

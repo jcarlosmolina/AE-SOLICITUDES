@@ -3756,7 +3756,7 @@ public final class Constants {
         if (!noSuchFieldError && targetField != null) {
             try {
                 String targetFacets = (String) targetField.get(null);
-                if (targetFacets.length() == 0) {
+                if (targetFacets.length() != 0) {
                     for (String facet : targetFacets.split(REGEXP_DOT_SEPARATOR)) {
                         result.add(facet.trim());
                     }

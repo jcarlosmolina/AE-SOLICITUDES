@@ -1126,8 +1126,8 @@ public final class Utilities {
 	public static Integer divint(Double arg1, Double arg2){
 		Integer lReturn = null;
 		if (arg1 != null && arg2 != null){
-			Double result = (arg1 / arg2);
-			lReturn = result.intValue();
+			double result = arg1 / arg2;
+			lReturn = (int) result;
 		}
 		return lReturn;
 	}
@@ -1140,8 +1140,8 @@ public final class Utilities {
 	public static Integer divint(Integer arg1, Double arg2){
 		Integer lReturn = null;
 		if (arg1 != null && arg2 != null){
-			Double result = (arg1 / arg2);
-			lReturn = result.intValue();
+			double result = arg1 / arg2;
+			lReturn = (int) result;
 		}
 		return lReturn;
 	}
@@ -1154,8 +1154,8 @@ public final class Utilities {
 	public static Integer divint(Double arg1, Integer arg2){
 		Integer lReturn = null;
 		if (arg1 != null && arg2 != null){
-			Double result = (arg1 / arg2);
-			lReturn = result.intValue();
+			double result = arg1 / arg2;
+			lReturn = (int) result;
 		}
 		return lReturn;
 	}

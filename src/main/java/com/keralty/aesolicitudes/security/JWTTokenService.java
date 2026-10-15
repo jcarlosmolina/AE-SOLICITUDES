@@ -20,7 +20,7 @@ public class JWTTokenService implements TokenService {
     
     @Override
     public String issue(User user) {
-        Long tokenExpiratiLong = tokenExpirationInSeconds != null && !tokenExpirationInSeconds.isEmpty()
+        long tokenExpiratiLong = tokenExpirationInSeconds != null && !tokenExpirationInSeconds.isEmpty()
                                 ? Long.parseLong(tokenExpirationInSeconds)
                                 : 0;
         String token = Jwt.issuer("https://example.com/issuer")

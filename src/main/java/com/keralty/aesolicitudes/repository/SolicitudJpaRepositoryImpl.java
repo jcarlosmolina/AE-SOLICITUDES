@@ -1713,7 +1713,7 @@ public class SolicitudJpaRepositoryImpl extends AbstractRepository implements So
     public Long assocOperator028(Solicitud instance) throws SystemException {
         try {
             // COUNT (Usuarios) WHERE (Usuarios.Parentesco.EsTitular = true AND Usuarios.drvEstaActivo = true)
-            Long count = 0L;
+            long count = 0L;
             for(Usuario item : assocOperator028Range1(instance)){
                 // Usuarios.drvEstaActivo = true
                 if(item.getUsuariodrvEstaActivo().equals(true))
@@ -1833,7 +1833,7 @@ public class SolicitudJpaRepositoryImpl extends AbstractRepository implements So
     public Long assocOperator030(Solicitud instance) throws SystemException {
         try {
             // COUNT (Aesolicitudes.ProductoT.Dominios.ReportesDominio) WHERE (Aesolicitudes.ProductoT.Dominios.ReportesDominio.Dominio.PlanT = Aesolicitudes.PlanT AND Aesolicitudes.ProductoT.Dominios.ReportesDominio.PlantillaReporte.FechaVigencia <= Aesolicitudes.Fesolici AND Aesolicitudes.ProductoT.Dominios.ReportesDominio.drvFechaHasta > Aesolicitudes.Fesolici)
-            Long count = 0L;
+            long count = 0L;
             for(ReportesDominio item : assocOperator030Range1(instance)){
                 // Aesolicitudes.ProductoT.Dominios.ReportesDominio.drvFechaHasta > Aesolicitudes.Fesolici
                 if(STDFunctions.dateAfterFun(item.getReportesDominiodrvFechaHasta(),instance.getAesolicitudes().getAesolicitudesFesolici()))
@@ -2034,7 +2034,7 @@ public class SolicitudJpaRepositoryImpl extends AbstractRepository implements So
     public Long assocOperator034(Solicitud instance) throws SystemException {
         try {
             // COUNT (Usuarios) WHERE (Usuarios.drvTieneDocumentos = false)
-            Long count = 0L;
+            long count = 0L;
             for(Usuario item : assocOperator034Range1(instance)){
                 // Usuarios.drvTieneDocumentos = false
                 if(item.getUsuariodrvTieneDocumentos().equals(false))
@@ -2073,7 +2073,7 @@ public class SolicitudJpaRepositoryImpl extends AbstractRepository implements So
     public Long assocOperator035(Solicitud instance) throws SystemException {
         try {
             // COUNT (Usuarios) WHERE (Usuarios.drvTieneParentesco = false)
-            Long count = 0L;
+            long count = 0L;
             for(Usuario item : assocOperator035Range1(instance)){
                 // Usuarios.drvTieneParentesco = false
                 if(item.getUsuariodrvTieneParentesco().equals(false))
@@ -3729,7 +3729,7 @@ public class SolicitudJpaRepositoryImpl extends AbstractRepository implements So
     public Long assocOperator064(Solicitud instance) throws SystemException {
         try {
             // COUNT (Usuarios) WHERE (Usuarios.IMC <> NULL AND Usuarios.drvEdad >= StrToReal(fugetValorParametroConf("EDADIMC")) AND Usuarios.IMC > StrToReal(fugetValorParametroConf("MAXIMC")))
-            Long count = 0L;
+            long count = 0L;
             for(Usuario item : assocOperator064Range1(instance)){
                 // Usuarios.drvEdad >= StrToReal(fugetValorParametroConf("EDADIMC"))
                 if(Utilities.convertToDouble(Utilities.convertToDouble(item.getUsuariodrvEdad())) >= STDFunctions.strToRealFun(userFunctionsSrv.fugetValorParametroConfFun("EDADIMC")))
@@ -6334,7 +6334,7 @@ public class SolicitudJpaRepositoryImpl extends AbstractRepository implements So
     public Long assocOperator117(Solicitud instance) throws SystemException {
         try {
             // COUNT (Usuarios) WHERE (Usuarios.Parentesco.EsTitular = true AND Usuarios.drvEstaActivo = true)
-            Long count = 0L;
+            long count = 0L;
             for(Usuario item : assocOperator117Range1(instance)){
                 // Usuarios.drvEstaActivo = true
                 if(item.getUsuariodrvEstaActivo().equals(true))
@@ -7054,7 +7054,7 @@ public class SolicitudJpaRepositoryImpl extends AbstractRepository implements So
     public Long assocOperator130(Solicitud instance) throws SystemException {
         try {
             // COUNT (Usuarios) WHERE (Usuarios.Parentesco.EsConyuge = true AND Usuarios.drvEstaActivo = true)
-            Long count = 0L;
+            long count = 0L;
             for(Usuario item : assocOperator130Range1(instance)){
                 // Usuarios.drvEstaActivo = true
                 if(item.getUsuariodrvEstaActivo().equals(true))
@@ -7640,7 +7640,7 @@ public class SolicitudJpaRepositoryImpl extends AbstractRepository implements So
     public Long assocOperator141(Solicitud instance, Solicitud solicitudvalidarAtributosUsuariopthisSolicitud) throws SystemException {
         try {
             // COUNT (Usuarios) WHERE (Usuarios.BebeGestante = true AND Usuarios.UsuarioPersona.drvVieneDeCORE = false AND (Usuarios.TipoIdentificacion.NombreCorto = "MS" OR Usuarios.TipoIdentificacion.NombreCorto = "RC") AND Usuarios.FechaAntiguedadBeneficiario = NULL AND Usuarios.UsuarioPersona.FechaNacimiento <> pthisSolicitud.Aesolicitudes.Fechaasignacion)
-            Long count = 0L;
+            long count = 0L;
             for(Usuario item : assocOperator141Range1(instance, solicitudvalidarAtributosUsuariopthisSolicitud)){
                 // Usuarios.UsuarioPersona.drvVieneDeCORE = false
                 if(item.getUsuarioPersona().getPersonadrvVieneDeCORE().equals(false))
@@ -8021,7 +8021,7 @@ public class SolicitudJpaRepositoryImpl extends AbstractRepository implements So
     public Long assocOperator149(Solicitud instance, Long solicitudTGETPLANTILLAREPORTEptTipo) throws SystemException {
         try {
             // COUNT (Aesolicitudes.ProductoT.Dominios.ReportesDominio) WHERE (Aesolicitudes.ProductoT.Dominios.ReportesDominio.Dominio.PlanT = Aesolicitudes.PlanT AND Aesolicitudes.ProductoT.Dominios.ReportesDominio.PlantillaReporte.Tipo = ptTipo AND Aesolicitudes.ProductoT.Dominios.ReportesDominio.PlantillaReporte.FechaVigencia <= Aesolicitudes.Fesolici AND Aesolicitudes.ProductoT.Dominios.ReportesDominio.drvFechaHasta > Aesolicitudes.Fesolici)
-            Long count = 0L;
+            long count = 0L;
             for(ReportesDominio item : assocOperator149Range1(instance, solicitudTGETPLANTILLAREPORTEptTipo)){
                 // Aesolicitudes.ProductoT.Dominios.ReportesDominio.drvFechaHasta > Aesolicitudes.Fesolici
                 if(STDFunctions.dateAfterFun(item.getReportesDominiodrvFechaHasta(),instance.getAesolicitudes().getAesolicitudesFesolici()))

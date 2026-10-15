@@ -463,7 +463,7 @@ public class UsuarioNovedadJpaRepositoryImpl extends AbstractRepository implemen
     public Long assocOperator008(UsuarioNovedad instance) throws SystemException {
         try {
             // COUNT (FamiliaNovedad.UsuarioNovedad) WHERE (FamiliaNovedad.UsuarioNovedad.idUsuarioNovedad <> idUsuarioNovedad AND FamiliaNovedad.UsuarioNovedad.drvEsConyuge = true AND FamiliaNovedad.UsuarioNovedad.drvEstaActivo = true AND FamiliaNovedad.UsuarioNovedad.FechaIniVigencia >= FamiliaNovedad.Solicitud.CtrFInicioContrato)
-            Long count = 0L;
+            long count = 0L;
             for(UsuarioNovedad item : assocOperator008Range1(instance)){
                 // FamiliaNovedad.UsuarioNovedad.drvEsConyuge = true
                 boolean conditionsMet = (item.getUsuarioNovedaddrvEsConyuge().equals(true));

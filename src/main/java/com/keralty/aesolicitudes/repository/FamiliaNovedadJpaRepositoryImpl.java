@@ -149,7 +149,7 @@ public class FamiliaNovedadJpaRepositoryImpl extends AbstractRepository implemen
     public Long assocOperator002(FamiliaNovedad instance) throws SystemException {
         try {
             // COUNT (UsuarioNovedad) WHERE (UsuarioNovedad.drvEsTitular = true AND UsuarioNovedad.EstadoBeneficiario.EsActivo = true AND (EXIST (UsuarioNovedad.TipoIdentificacionCD) = false AND UsuarioNovedad.TipoIdentificacion.Codigo <> NovedadCT.TipoIdentificacion.Codigo AND UsuarioNovedad.NumIdentificacion <> NovedadCT.TitNumidentificacion) OR (EXIST (UsuarioNovedad.TipoIdentificacionCD) = true AND UsuarioNovedad.TipoIdentificacionCD.Codigo <> NovedadCT.TipoIdentificacion.Codigo AND UsuarioNovedad.NumIdentificacionCD <> NovedadCT.TitNumidentificacion))
-            Long count = 0L;
+            long count = 0L;
             for(UsuarioNovedad item : assocOperator002Range1(instance)){
                 // UsuarioNovedad.drvEsTitular = true AND UsuarioNovedad.EstadoBeneficiario.EsActivo = true AND (EXIST (UsuarioNovedad.TipoIdentificacionCD) = false AND UsuarioNovedad.TipoIdentificacion.Codigo <> NovedadCT.TipoIdentificacion.Codigo AND UsuarioNovedad.NumIdentificacion <> NovedadCT.TitNumidentificacion) OR (EXIST (UsuarioNovedad.TipoIdentificacionCD) = true AND UsuarioNovedad.TipoIdentificacionCD.Codigo <> NovedadCT.TipoIdentificacion.Codigo AND UsuarioNovedad.NumIdentificacionCD <> NovedadCT.TitNumidentificacion)
                 if(item.getUsuarioNovedaddrvEsTitular().equals(true) && item.getEstadoBeneficiario().getEstadoBeneficiarioEsActivo().equals(true) && (assocOperator003(instance).equals(false) && !STDFunctions.areEqual(item.getTipoIdentificacion().getTipoIdentificacionCodigo(),instance.getNovedadCT().getTipoIdentificacion().getTipoIdentificacionCodigo()) && !STDFunctions.areEqual(item.getUsuarioNovedadNumIdentificacion(),instance.getNovedadCT().getNovedadCTTitNumidentificacion())) || (assocOperator004(instance).equals(true) && !STDFunctions.areEqual(item.getTipoIdentificacionCD().getTipoIdentificacionCodigo(),instance.getNovedadCT().getTipoIdentificacion().getTipoIdentificacionCodigo()) && !STDFunctions.areEqual(item.getUsuarioNovedadNumIdentificacionCD(),instance.getNovedadCT().getNovedadCTTitNumidentificacion())))
@@ -254,7 +254,7 @@ public class FamiliaNovedadJpaRepositoryImpl extends AbstractRepository implemen
     public Long assocOperator005(FamiliaNovedad instance) throws SystemException {
         try {
             // COUNT (UsuarioNovedad) WHERE (UsuarioNovedad.drvEsTitular = true AND UsuarioNovedad.EstadoBeneficiario.EsActivo = true AND (EXIST (UsuarioNovedad.TipoIdentificacionCD) = false AND UsuarioNovedad.TipoIdentificacion.Codigo <> TipoIdentificacion.Codigo AND UsuarioNovedad.NumIdentificacion <> TitNumidentificacion) OR (EXIST (UsuarioNovedad.TipoIdentificacionCD) = true AND UsuarioNovedad.TipoIdentificacionCD.Codigo <> TipoIdentificacion.Codigo AND UsuarioNovedad.NumIdentificacionCD <> TitNumidentificacion))
-            Long count = 0L;
+            long count = 0L;
             for(UsuarioNovedad item : assocOperator005Range1(instance)){
                 // UsuarioNovedad.drvEsTitular = true AND UsuarioNovedad.EstadoBeneficiario.EsActivo = true AND (EXIST (UsuarioNovedad.TipoIdentificacionCD) = false AND UsuarioNovedad.TipoIdentificacion.Codigo <> TipoIdentificacion.Codigo AND UsuarioNovedad.NumIdentificacion <> TitNumidentificacion) OR (EXIST (UsuarioNovedad.TipoIdentificacionCD) = true AND UsuarioNovedad.TipoIdentificacionCD.Codigo <> TipoIdentificacion.Codigo AND UsuarioNovedad.NumIdentificacionCD <> TitNumidentificacion)
                 if(item.getUsuarioNovedaddrvEsTitular().equals(true) && item.getEstadoBeneficiario().getEstadoBeneficiarioEsActivo().equals(true) && (assocOperator006(instance).equals(false) && !STDFunctions.areEqual(item.getTipoIdentificacion().getTipoIdentificacionCodigo(),instance.getTipoIdentificacion().getTipoIdentificacionCodigo()) && !(item.getUsuarioNovedadNumIdentificacion()).equals(instance.getFamiliaNovedadTitNumidentificacion())) || (assocOperator007(instance).equals(true) && !STDFunctions.areEqual(item.getTipoIdentificacionCD().getTipoIdentificacionCodigo(),instance.getTipoIdentificacion().getTipoIdentificacionCodigo()) && !(item.getUsuarioNovedadNumIdentificacionCD()).equals(instance.getFamiliaNovedadTitNumidentificacion())))
@@ -623,7 +623,7 @@ public class FamiliaNovedadJpaRepositoryImpl extends AbstractRepository implemen
     public Long assocOperator016(FamiliaNovedad instance) throws SystemException {
         try {
             // COUNT (UsuarioNovedad) WHERE (UsuarioNovedad.Parentesco.EsTitular = true AND UsuarioNovedad.drvEstaActivo = true)
-            Long count = 0L;
+            long count = 0L;
             for(UsuarioNovedad item : assocOperator016Range1(instance)){
                 // UsuarioNovedad.drvEstaActivo = true
                 if(item.getUsuarioNovedaddrvEstaActivo().equals(true))
