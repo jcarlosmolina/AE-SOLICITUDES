@@ -243,7 +243,7 @@ public class MunicipioService extends AbstractService {
                 Arrays.asList(new FilterVariableRequest(Constants.FILTER_BY_RELATED_FVAR_PATH, relatedInstancePath),
                         new FilterVariableRequest(Constants.FILTER_BY_RELATED_FVAR_OID, relatedInstanceJsonOid))));
         return new PopulationResponseViewModel(solveMunicipioTypedQuery(queryRequest).stream()
-                .map(instance -> buildDynamicObject(instance, queryRequest.getDisplaySetItems()))
+                .map(instance -> buildDynamicObject(instance, displaySetItems))
                 .collect(Collectors.toList()));
     }
 
