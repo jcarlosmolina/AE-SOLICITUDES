@@ -786,7 +786,7 @@ public class SQLSelect {
         // Search valid alias string (unique in the SQL statement)
         int count = 1;
         while (existsAliasName(aliasString)) {
-            aliasString = proposedAlias + count.toString();
+            aliasString = proposedAlias + count;
             count++;
         }
 

@@ -457,7 +457,7 @@ public class SQLScalar extends SQLSelect {
         String attrAlias = this.attributeAlias.getAlias();
         String attributeText = attrAlias + "." + getTargetTableFieldName();
         String fieldText = "";
-        bool addAttributeText = true;
+        boolean addAttributeText = true;
         String attributeTextWithCast = attributeText;
 
         Collection<String> oidFields = Constants.getOIDFields(attributeDefinitionClass);
