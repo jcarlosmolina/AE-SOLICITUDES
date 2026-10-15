@@ -285,7 +285,7 @@ public class CompanyiaService extends AbstractService {
         if (instance == null || instance.isNull()) return "";
         if (CompanyiaConstants.DSICCOMPANYIA.equals(dsName))
             return instance.buildICCompanyia();
-        return instance != null && dsName.isEmpty() ? instance.getOid().toJson() : "";
+        return dsName.isEmpty() ? instance.getOid().toJson() : "";
     }
 
     public static PreloadViewModel buildPreloadViewModel(Companyia instance, String dsName) {

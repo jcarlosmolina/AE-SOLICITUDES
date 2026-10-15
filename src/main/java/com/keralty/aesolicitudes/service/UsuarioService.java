@@ -452,7 +452,7 @@ public class UsuarioService extends AbstractService {
         if (instance == null || instance.isNull()) return "";
         if (UsuarioConstants.DSICUSUARIO.equals(dsName))
             return instance.buildICUsuario();
-        return instance != null && dsName.isEmpty() ? instance.getOid().toJson() : "";
+        return dsName.isEmpty() ? instance.getOid().toJson() : "";
     }
 
     public static PreloadViewModel buildPreloadViewModel(Usuario instance, String dsName) {

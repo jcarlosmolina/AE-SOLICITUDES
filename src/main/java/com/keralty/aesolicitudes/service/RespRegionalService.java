@@ -357,7 +357,7 @@ public class RespRegionalService extends AbstractService {
         if (instance == null || instance.isNull()) return "";
         if (RespRegionalConstants.DSICRESPREGIONALNOMAPE.equals(dsName))
             return instance.buildICRespRegionalNomApe();
-        return instance != null && dsName.isEmpty() ? instance.getOid().toJson() : "";
+        return dsName.isEmpty() ? instance.getOid().toJson() : "";
     }
 
     public static PreloadViewModel buildPreloadViewModel(RespRegional instance, String dsName) {

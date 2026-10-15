@@ -289,7 +289,7 @@ public class DocumentoGService extends AbstractService {
 
     private String getSuppInfo(DocumentoG instance, String dsName) {
         if (instance == null || instance.isNull()) return "";
-        return instance != null && dsName.isEmpty() ? instance.getOid().toJson() : "";
+        return dsName.isEmpty() ? instance.getOid().toJson() : "";
     }
 
 

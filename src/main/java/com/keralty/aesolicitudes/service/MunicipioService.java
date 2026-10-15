@@ -374,7 +374,7 @@ public class MunicipioService extends AbstractService {
         if (instance == null || instance.isNull()) return "";
         if (MunicipioConstants.DSICMUNICIPIO.equals(dsName))
             return instance.buildICMunicipio();
-        return instance != null && dsName.isEmpty() ? instance.getOid().toJson() : "";
+        return dsName.isEmpty() ? instance.getOid().toJson() : "";
     }
 
     public static PreloadViewModel buildPreloadViewModel(Municipio instance, String dsName) {

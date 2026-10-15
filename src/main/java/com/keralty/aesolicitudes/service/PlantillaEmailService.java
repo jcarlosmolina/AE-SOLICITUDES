@@ -285,7 +285,7 @@ public class PlantillaEmailService extends AbstractService {
         if (instance == null || instance.isNull()) return "";
         if (PlantillaEmailConstants.DSICPLANTILLAEMAIL.equals(dsName))
             return instance.buildICPlantillaEmail();
-        return instance != null && dsName.isEmpty() ? instance.getOid().toJson() : "";
+        return dsName.isEmpty() ? instance.getOid().toJson() : "";
     }
 
     public static PreloadViewModel buildPreloadViewModel(PlantillaEmail instance, String dsName) {

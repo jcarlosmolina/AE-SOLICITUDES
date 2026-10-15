@@ -648,7 +648,7 @@ public class SolicitudService extends AbstractService {
             return instance.buildICSolicitud();
         if (SolicitudConstants.DSDSSOLICITUDIIUDIFLIQ.equals(dsName))
             return instance.buildDSSolicitudIIUDifLiq();
-        return instance != null && dsName.isEmpty() ? instance.getOid().toJson() : "";
+        return dsName.isEmpty() ? instance.getOid().toJson() : "";
     }
 
     public static PreloadViewModel buildPreloadViewModel(Solicitud instance, String dsName) {

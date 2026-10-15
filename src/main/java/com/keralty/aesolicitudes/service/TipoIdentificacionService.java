@@ -343,7 +343,7 @@ public class TipoIdentificacionService extends AbstractService {
         if (instance == null || instance.isNull()) return "";
         if (TipoIdentificacionConstants.DSICTIPOIDENTIFICACION.equals(dsName))
             return instance.buildICTipoIdentificacion();
-        return instance != null && dsName.isEmpty() ? instance.getOid().toJson() : "";
+        return dsName.isEmpty() ? instance.getOid().toJson() : "";
     }
 
     public static PreloadViewModel buildPreloadViewModel(TipoIdentificacion instance, String dsName) {

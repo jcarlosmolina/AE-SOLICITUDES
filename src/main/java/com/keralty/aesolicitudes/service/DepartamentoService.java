@@ -327,7 +327,7 @@ public class DepartamentoService extends AbstractService {
         if (instance == null || instance.isNull()) return "";
         if (DepartamentoConstants.DSICDEPARTAMENTO.equals(dsName))
             return instance.buildICDepartamento();
-        return instance != null && dsName.isEmpty() ? instance.getOid().toJson() : "";
+        return dsName.isEmpty() ? instance.getOid().toJson() : "";
     }
 
     public static PreloadViewModel buildPreloadViewModel(Departamento instance, String dsName) {

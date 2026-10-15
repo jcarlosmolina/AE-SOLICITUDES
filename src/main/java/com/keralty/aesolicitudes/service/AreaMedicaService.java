@@ -352,7 +352,7 @@ public class AreaMedicaService extends AbstractService {
         if (instance == null || instance.isNull()) return "";
         if (AreaMedicaConstants.DSSIAREAMEDICA.equals(dsName))
             return instance.buildSIAreaMedica();
-        return instance != null && dsName.isEmpty() ? instance.getOid().toJson() : "";
+        return dsName.isEmpty() ? instance.getOid().toJson() : "";
     }
 
     public static PreloadViewModel buildPreloadViewModel(AreaMedica instance, String dsName) {

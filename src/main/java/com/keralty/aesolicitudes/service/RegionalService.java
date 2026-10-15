@@ -286,7 +286,7 @@ public class RegionalService extends AbstractService {
         if (instance == null || instance.isNull()) return "";
         if (RegionalConstants.DSICREGIONAL.equals(dsName))
             return instance.buildICRegional();
-        return instance != null && dsName.isEmpty() ? instance.getOid().toJson() : "";
+        return dsName.isEmpty() ? instance.getOid().toJson() : "";
     }
 
     public static PreloadViewModel buildPreloadViewModel(Regional instance, String dsName) {

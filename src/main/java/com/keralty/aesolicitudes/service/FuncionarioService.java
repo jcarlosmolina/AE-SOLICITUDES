@@ -420,7 +420,7 @@ public class FuncionarioService extends AbstractService {
             return instance.buildICAgente();
         if (FuncionarioConstants.DSICUSUARIOLDAP.equals(dsName))
             return instance.buildICUsuarioLDAP();
-        return instance != null && dsName.isEmpty() ? instance.getOid().toJson() : "";
+        return dsName.isEmpty() ? instance.getOid().toJson() : "";
     }
 
     public static PreloadViewModel buildPreloadViewModel(Funcionario instance, String dsName) {

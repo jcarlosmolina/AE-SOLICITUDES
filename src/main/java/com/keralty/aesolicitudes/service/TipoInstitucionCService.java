@@ -278,7 +278,7 @@ public class TipoInstitucionCService extends AbstractService {
         if (instance == null || instance.isNull()) return "";
         if (TipoInstitucionCConstants.DSICTIPOINSTITUCION.equals(dsName))
             return instance.buildICTipoInstitucion();
-        return instance != null && dsName.isEmpty() ? instance.getOid().toJson() : "";
+        return dsName.isEmpty() ? instance.getOid().toJson() : "";
     }
 
     public static PreloadViewModel buildPreloadViewModel(TipoInstitucionC instance, String dsName) {

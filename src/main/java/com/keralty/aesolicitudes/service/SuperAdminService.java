@@ -322,7 +322,7 @@ public class SuperAdminService extends AbstractService {
         if (instance == null || instance.isNull()) return "";
         if (SuperAdminConstants.DSICSUPERADMIN.equals(dsName))
             return instance.buildICSuperAdmin();
-        return instance != null && dsName.isEmpty() ? instance.getOid().toJson() : "";
+        return dsName.isEmpty() ? instance.getOid().toJson() : "";
     }
 
 

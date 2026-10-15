@@ -261,7 +261,7 @@ public class ErrorWSService extends AbstractService {
 
     private String getSuppInfo(ErrorWS instance, String dsName) {
         if (instance == null || instance.isNull()) return "";
-        return instance != null && dsName.isEmpty() ? instance.getOid().toJson() : "";
+        return dsName.isEmpty() ? instance.getOid().toJson() : "";
     }
 
 

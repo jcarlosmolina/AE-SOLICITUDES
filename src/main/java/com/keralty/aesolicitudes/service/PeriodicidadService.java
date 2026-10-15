@@ -320,7 +320,7 @@ public class PeriodicidadService extends AbstractService {
         if (instance == null || instance.isNull()) return "";
         if (PeriodicidadConstants.DSICPERIODICIDAD.equals(dsName))
             return instance.buildICPeriodicidad();
-        return instance != null && dsName.isEmpty() ? instance.getOid().toJson() : "";
+        return dsName.isEmpty() ? instance.getOid().toJson() : "";
     }
 
     public static PreloadViewModel buildPreloadViewModel(Periodicidad instance, String dsName) {

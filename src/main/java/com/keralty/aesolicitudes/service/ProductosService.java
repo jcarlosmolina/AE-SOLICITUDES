@@ -393,7 +393,7 @@ public class ProductosService extends AbstractService {
         if (instance == null || instance.isNull()) return "";
         if (ProductosConstants.DSICPRODUCTO.equals(dsName))
             return instance.buildICProducto();
-        return instance != null && dsName.isEmpty() ? instance.getOid().toJson() : "";
+        return dsName.isEmpty() ? instance.getOid().toJson() : "";
     }
 
     public static PreloadViewModel buildPreloadViewModel(Productos instance, String dsName) {

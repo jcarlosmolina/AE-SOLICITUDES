@@ -297,7 +297,7 @@ public class EstadoBeneficiarioService extends AbstractService {
         if (instance == null || instance.isNull()) return "";
         if (EstadoBeneficiarioConstants.DSICESTADOBENEFICIARIO.equals(dsName))
             return instance.buildICEstadoBeneficiario();
-        return instance != null && dsName.isEmpty() ? instance.getOid().toJson() : "";
+        return dsName.isEmpty() ? instance.getOid().toJson() : "";
     }
 
     public static PreloadViewModel buildPreloadViewModel(EstadoBeneficiario instance, String dsName) {

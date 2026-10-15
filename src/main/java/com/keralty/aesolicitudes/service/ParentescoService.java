@@ -306,7 +306,7 @@ public class ParentescoService extends AbstractService {
         if (instance == null || instance.isNull()) return "";
         if (ParentescoConstants.DSICPARENTESCO.equals(dsName))
             return instance.buildICParentesco();
-        return instance != null && dsName.isEmpty() ? instance.getOid().toJson() : "";
+        return dsName.isEmpty() ? instance.getOid().toJson() : "";
     }
 
     public static PreloadViewModel buildPreloadViewModel(Parentesco instance, String dsName) {

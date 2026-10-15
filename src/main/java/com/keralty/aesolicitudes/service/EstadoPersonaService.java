@@ -285,7 +285,7 @@ public class EstadoPersonaService extends AbstractService {
         if (instance == null || instance.isNull()) return "";
         if (EstadoPersonaConstants.DSICESTADOPERSONA.equals(dsName))
             return instance.buildICEstadoPersona();
-        return instance != null && dsName.isEmpty() ? instance.getOid().toJson() : "";
+        return dsName.isEmpty() ? instance.getOid().toJson() : "";
     }
 
     public static PreloadViewModel buildPreloadViewModel(EstadoPersona instance, String dsName) {

@@ -255,7 +255,7 @@ public class LogAsignacionesService extends AbstractService {
 
     private String getSuppInfo(LogAsignaciones instance, String dsName) {
         if (instance == null || instance.isNull()) return "";
-        return instance != null && dsName.isEmpty() ? instance.getOid().toJson() : "";
+        return dsName.isEmpty() ? instance.getOid().toJson() : "";
     }
 
 

@@ -298,7 +298,7 @@ public class FormaPagoService extends AbstractService {
         if (instance == null || instance.isNull()) return "";
         if (FormaPagoConstants.DSICFORMAPAGO.equals(dsName))
             return instance.buildICFormaPago();
-        return instance != null && dsName.isEmpty() ? instance.getOid().toJson() : "";
+        return dsName.isEmpty() ? instance.getOid().toJson() : "";
     }
 
     public static PreloadViewModel buildPreloadViewModel(FormaPago instance, String dsName) {

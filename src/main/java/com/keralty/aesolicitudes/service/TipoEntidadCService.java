@@ -278,7 +278,7 @@ public class TipoEntidadCService extends AbstractService {
         if (instance == null || instance.isNull()) return "";
         if (TipoEntidadCConstants.DSICTIPOENTIDAD.equals(dsName))
             return instance.buildICTipoEntidad();
-        return instance != null && dsName.isEmpty() ? instance.getOid().toJson() : "";
+        return dsName.isEmpty() ? instance.getOid().toJson() : "";
     }
 
     public static PreloadViewModel buildPreloadViewModel(TipoEntidadC instance, String dsName) {

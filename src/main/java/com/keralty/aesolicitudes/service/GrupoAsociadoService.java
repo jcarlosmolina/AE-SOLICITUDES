@@ -317,7 +317,7 @@ public class GrupoAsociadoService extends AbstractService {
         if (instance == null || instance.isNull()) return "";
         if (GrupoAsociadoConstants.DSICGRUPOASOCIADO.equals(dsName))
             return instance.buildICGrupoAsociado();
-        return instance != null && dsName.isEmpty() ? instance.getOid().toJson() : "";
+        return dsName.isEmpty() ? instance.getOid().toJson() : "";
     }
 
     public static PreloadViewModel buildPreloadViewModel(GrupoAsociado instance, String dsName) {

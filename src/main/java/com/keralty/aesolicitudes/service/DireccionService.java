@@ -330,7 +330,7 @@ public class DireccionService extends AbstractService {
         if (instance == null || instance.isNull()) return "";
         if (DireccionConstants.DSICDIRECCION.equals(dsName))
             return instance.buildICDireccion();
-        return instance != null && dsName.isEmpty() ? instance.getOid().toJson() : "";
+        return dsName.isEmpty() ? instance.getOid().toJson() : "";
     }
 
     public static PreloadViewModel buildPreloadViewModel(Direccion instance, String dsName) {

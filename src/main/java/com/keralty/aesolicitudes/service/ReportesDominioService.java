@@ -360,7 +360,7 @@ public class ReportesDominioService extends AbstractService {
         if (instance == null || instance.isNull()) return "";
         if (ReportesDominioConstants.DSICREPORTESDOMINIO.equals(dsName))
             return instance.buildICReportesDominio();
-        return instance != null && dsName.isEmpty() ? instance.getOid().toJson() : "";
+        return dsName.isEmpty() ? instance.getOid().toJson() : "";
     }
 
     public static PreloadViewModel buildPreloadViewModel(ReportesDominio instance, String dsName) {

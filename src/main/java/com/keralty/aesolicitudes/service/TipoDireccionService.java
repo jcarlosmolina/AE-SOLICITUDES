@@ -285,7 +285,7 @@ public class TipoDireccionService extends AbstractService {
         if (instance == null || instance.isNull()) return "";
         if (TipoDireccionConstants.DSICTIPODIRECCION.equals(dsName))
             return instance.buildICTipoDireccion();
-        return instance != null && dsName.isEmpty() ? instance.getOid().toJson() : "";
+        return dsName.isEmpty() ? instance.getOid().toJson() : "";
     }
 
     public static PreloadViewModel buildPreloadViewModel(TipoDireccion instance, String dsName) {

@@ -372,7 +372,7 @@ public class PersonaService extends AbstractService {
             return instance.buildICPersona();
         if (PersonaConstants.DSICPERSONANOMBRESAPELLIDOS.equals(dsName))
             return instance.buildICPersonaNombresApellidos();
-        return instance != null && dsName.isEmpty() ? instance.getOid().toJson() : "";
+        return dsName.isEmpty() ? instance.getOid().toJson() : "";
     }
 
     public static PreloadViewModel buildPreloadViewModel(Persona instance, String dsName) {

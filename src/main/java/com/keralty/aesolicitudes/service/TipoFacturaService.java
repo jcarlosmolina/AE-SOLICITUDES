@@ -281,7 +281,7 @@ public class TipoFacturaService extends AbstractService {
         if (instance == null || instance.isNull()) return "";
         if (TipoFacturaConstants.DSICTIPOFACTURA.equals(dsName))
             return instance.buildICTipoFactura();
-        return instance != null && dsName.isEmpty() ? instance.getOid().toJson() : "";
+        return dsName.isEmpty() ? instance.getOid().toJson() : "";
     }
 
     public static PreloadViewModel buildPreloadViewModel(TipoFactura instance, String dsName) {

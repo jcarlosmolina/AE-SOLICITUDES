@@ -353,7 +353,7 @@ public class PlanesService extends AbstractService {
         if (instance == null || instance.isNull()) return "";
         if (PlanesConstants.DSICPLAN.equals(dsName))
             return instance.buildICPlan();
-        return instance != null && dsName.isEmpty() ? instance.getOid().toJson() : "";
+        return dsName.isEmpty() ? instance.getOid().toJson() : "";
     }
 
     public static PreloadViewModel buildPreloadViewModel(Planes instance, String dsName) {
