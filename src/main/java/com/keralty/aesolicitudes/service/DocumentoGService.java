@@ -1334,7 +1334,7 @@ public class DocumentoGService extends AbstractService {
         obsEstadoSrv.crearImplementation(step1Request);
 
         /* Action 2: IF (Solicitud.Agente.Email <> NULL AND Solicitud.Agente.Email <> "") */
-        boolean ifCondition2 = documentoGTDEVOLVERpthisDocumentoG.getSolicitud().getAgente().getFuncionarioEmail() != null && !(documentoGTDEVOLVERpthisDocumentoG.getSolicitud().getAgente().getFuncionarioEmail()).equals("");
+        boolean ifCondition2 = documentoGTDEVOLVERpthisDocumentoG.getSolicitud().getAgente().getFuncionarioEmail() != null && (documentoGTDEVOLVERpthisDocumentoG.getSolicitud().getAgente().getFuncionarioEmail()).length() != 0;
         if (ifCondition2) {
             com.keralty.aesolicitudes.viewmodel.solicitud.siu.TGETPLANTILLACORREORequest step20Request = new com.keralty.aesolicitudes.viewmodel.solicitud.siu.TGETPLANTILLACORREORequest();
             step20Request.setSolicitudTGETPLANTILLACORREOpthisSolicitudInstance(documentoGTDEVOLVERpthisDocumentoG.getSolicitud());

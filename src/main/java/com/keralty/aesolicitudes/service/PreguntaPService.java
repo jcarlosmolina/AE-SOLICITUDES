@@ -479,7 +479,7 @@ public class PreguntaPService extends AbstractService {
 
         request.checkArguments();
         PreguntaP instance = preguntaPmarcarRespuestapthisPreguntaP;
-        if ((preguntaPmarcarRespuestapRespuestaObs != null && !(preguntaPmarcarRespuestapRespuestaObs).equals("")) || (preguntaPmarcarRespuestapeValoresRespuestas != null && !(preguntaPmarcarRespuestapeValoresRespuestas).equals(""))) {
+        if ((preguntaPmarcarRespuestapRespuestaObs != null && (preguntaPmarcarRespuestapRespuestaObs).length() != 0) || (preguntaPmarcarRespuestapeValoresRespuestas != null && (preguntaPmarcarRespuestapeValoresRespuestas).length() != 0)) {
             instance.setPreguntaPRespuestaSiNo(Boolean.TRUE);
         } else {
             instance.setPreguntaPRespuestaSiNo(preguntaPmarcarRespuestapRespuestaSiNo);
@@ -546,7 +546,7 @@ public class PreguntaPService extends AbstractService {
         request.checkArguments();
         PreguntaP instance = preguntaPmarcarDatosCOREpthisPreguntaP;
         instance.setPreguntaPRespuestaSiNo(preguntaPmarcarDatosCOREpRespuestaSiNo);
-        if (preguntaPmarcarDatosCOREpthisPreguntaP.getPregunta().getPreguntaEsNumero().equals(false) && (preguntaPmarcarDatosCOREpthisPreguntaP.getPregunta().getPreguntadrvValoresPosibles()).equals("")) {
+        if (preguntaPmarcarDatosCOREpthisPreguntaP.getPregunta().getPreguntaEsNumero().equals(false) && (preguntaPmarcarDatosCOREpthisPreguntaP.getPregunta().getPreguntadrvValoresPosibles()).length() == 0) {
             instance.setPreguntaPRespuestaObs(preguntaPmarcarDatosCOREpRespuestaObs);
         } else {
             instance.setPreguntaPRespuestaObs(null);
@@ -558,7 +558,7 @@ public class PreguntaPService extends AbstractService {
         }
         if (preguntaPmarcarDatosCOREpthisPreguntaP.getPregunta().getPreguntaEsNumero().equals(true)) {
             instance.setPreguntaPValoresRespuestas(preguntaPmarcarDatosCOREpRespuestaObs);
-        } else if (!(preguntaPmarcarDatosCOREpthisPreguntaP.getPregunta().getPreguntadrvValoresPosibles()).equals("")) {
+        } else if ((preguntaPmarcarDatosCOREpthisPreguntaP.getPregunta().getPreguntadrvValoresPosibles()).length() != 0) {
             instance.setPreguntaPValoresRespuestas(preguntaPmarcarDatosCOREpRespuestaObs);
         } else {
             instance.setPreguntaPValoresRespuestas(preguntaPmarcarDatosCOREpthisPreguntaP.getPreguntaPValoresRespuestas());

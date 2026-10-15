@@ -719,7 +719,7 @@ Utilizaremos el ; como separador para los distintos valores<br>
         if (preguntaPdrvRespuesta != null) return;
         // CONDITION: ValoresRespuestas <> NULL AND ValoresRespuestas <> \"\" AND RespuestaObs <> NULL AND RespuestaObs <> \"\"
         // EFFECT   : fuconcatenarConNulos(  ValoresRespuestas, RespuestaObs  )
-        boolean preguntaPdrvRespuestaCond = this.getPreguntaPValoresRespuestas() != null && !(this.getPreguntaPValoresRespuestas()).equals("") && this.getPreguntaPRespuestaObs() != null && !(this.getPreguntaPRespuestaObs()).equals("");
+        boolean preguntaPdrvRespuestaCond = this.getPreguntaPValoresRespuestas() != null && (this.getPreguntaPValoresRespuestas()).length() != 0 && this.getPreguntaPRespuestaObs() != null && (this.getPreguntaPRespuestaObs()).length() != 0;
         if (preguntaPdrvRespuestaCond) {
             preguntaPdrvRespuesta = userFunctionsSrv.fuconcatenarConNulosFun(this.getPreguntaPValoresRespuestas(), this.getPreguntaPRespuestaObs());
         }
@@ -729,7 +729,7 @@ Utilizaremos el ; como separador para los distintos valores<br>
         if (preguntaPdrvRespuesta != null) return;
         // CONDITION: ValoresRespuestas <> NULL AND ValoresRespuestas <> \"\" 
         // EFFECT   : ValoresRespuestas
-        boolean preguntaPdrvRespuestaCond = this.getPreguntaPValoresRespuestas() != null && !(this.getPreguntaPValoresRespuestas()).equals("");
+        boolean preguntaPdrvRespuestaCond = this.getPreguntaPValoresRespuestas() != null && (this.getPreguntaPValoresRespuestas()).length() != 0;
         if (preguntaPdrvRespuestaCond) {
             preguntaPdrvRespuesta = this.getPreguntaPValoresRespuestas();
         }
@@ -739,7 +739,7 @@ Utilizaremos el ; como separador para los distintos valores<br>
         if (preguntaPdrvRespuesta != null) return;
         // CONDITION: RespuestaObs <> NULL AND RespuestaObs <> \"\"
         // EFFECT   : RespuestaObs
-        boolean preguntaPdrvRespuestaCond = this.getPreguntaPRespuestaObs() != null && !(this.getPreguntaPRespuestaObs()).equals("");
+        boolean preguntaPdrvRespuestaCond = this.getPreguntaPRespuestaObs() != null && (this.getPreguntaPRespuestaObs()).length() != 0;
         if (preguntaPdrvRespuestaCond) {
             preguntaPdrvRespuesta = this.getPreguntaPRespuestaObs();
         }
@@ -784,7 +784,7 @@ Utilizaremos el ; como separador para los distintos valores<br>
         // EFFECT   : RespuestaObs <> NULL AND RespuestaObs <> \"\"
         boolean preguntaPdrvRespuestaSiNoCond = this.getPregunta().getPreguntaEsNumero().equals(true);
         if (preguntaPdrvRespuestaSiNoCond) {
-            preguntaPdrvRespuestaSiNo = this.getPreguntaPRespuestaObs() != null && !(this.getPreguntaPRespuestaObs()).equals("");
+            preguntaPdrvRespuestaSiNo = this.getPreguntaPRespuestaObs() != null && (this.getPreguntaPRespuestaObs()).length() != 0;
         }
     }
 
@@ -792,7 +792,7 @@ Utilizaremos el ; como separador para los distintos valores<br>
         if (preguntaPdrvRespuestaSiNo != null) return;
         // Default derivation
         // EFFECT   : ValoresRespuestas <> NULL AND ValoresRespuestas <> \"\"
-        preguntaPdrvRespuestaSiNo = this.getPreguntaPValoresRespuestas() != null && !(this.getPreguntaPValoresRespuestas()).equals("");
+        preguntaPdrvRespuestaSiNo = this.getPreguntaPValoresRespuestas() != null && (this.getPreguntaPValoresRespuestas()).length() != 0;
     }
     /**
      * This method initializes the properties of the entity and its relations.

@@ -4552,7 +4552,7 @@ public class PersonaService extends AbstractService {
         Persona instance = personaTCREARDOCIDENTIFICACIONpthisPersona;
 
         /* Action 1: IF (ptDatosDocumento <> NULL AND ptDatosDocumento <> "") */
-        boolean ifCondition1 = personaTCREARDOCIDENTIFICACIONptDatosDocumento != null && !(personaTCREARDOCIDENTIFICACIONptDatosDocumento).equals("");
+        boolean ifCondition1 = personaTCREARDOCIDENTIFICACIONptDatosDocumento != null && (personaTCREARDOCIDENTIFICACIONptDatosDocumento).length() != 0;
         if (ifCondition1) {
             com.keralty.aesolicitudes.viewmodel.documentog.siu.TCREARRequest step10Request = new com.keralty.aesolicitudes.viewmodel.documentog.siu.TCREARRequest();
             step10Request.setDocumentoGTCREARptpagrSolicitudInstance(personaTCREARDOCIDENTIFICACIONptSolicitud);

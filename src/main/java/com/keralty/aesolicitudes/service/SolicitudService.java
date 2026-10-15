@@ -7229,7 +7229,7 @@ public class SolicitudService extends AbstractService {
         // drvValidarDatosContratante = false OR Aesolicitudes.PlanT.EsVoluntario = true OR (ContratantePersona.CorreoElectronico <> NULL AND ContratantePersona.CorreoElectronico <> "")
 
         Solicitud solicitudvalidarAtributosUsuariopthisSolicitud = request.getSolicitudvalidarAtributosUsuariopthisSolicitudInstance();
-        boolean preconditionHolds = solicitudvalidarAtributosUsuariopthisSolicitud.getSolicituddrvValidarDatosContratante().equals(false) || solicitudvalidarAtributosUsuariopthisSolicitud.getAesolicitudes().getPlanT().getPlanesEsVoluntario().equals(true) || (solicitudvalidarAtributosUsuariopthisSolicitud.getContratantePersona().getPersonaCorreoElectronico() != null && !(solicitudvalidarAtributosUsuariopthisSolicitud.getContratantePersona().getPersonaCorreoElectronico()).equals(""));
+        boolean preconditionHolds = solicitudvalidarAtributosUsuariopthisSolicitud.getSolicituddrvValidarDatosContratante().equals(false) || solicitudvalidarAtributosUsuariopthisSolicitud.getAesolicitudes().getPlanT().getPlanesEsVoluntario().equals(true) || (solicitudvalidarAtributosUsuariopthisSolicitud.getContratantePersona().getPersonaCorreoElectronico() != null && (solicitudvalidarAtributosUsuariopthisSolicitud.getContratantePersona().getPersonaCorreoElectronico()).length() != 0);
         if (!preconditionHolds) throw new PreconditionException("Debe indicarse el correo electrónico del contratante");
     }
 
@@ -7239,7 +7239,7 @@ public class SolicitudService extends AbstractService {
         // drvValidarDatosContratante = false OR Aesolicitudes.PlanT.EsVoluntario = true OR (Contratante.DireccionRes <> NULL AND Contratante.DireccionRes <> "")
 
         Solicitud solicitudvalidarAtributosUsuariopthisSolicitud = request.getSolicitudvalidarAtributosUsuariopthisSolicitudInstance();
-        boolean preconditionHolds = solicitudvalidarAtributosUsuariopthisSolicitud.getSolicituddrvValidarDatosContratante().equals(false) || solicitudvalidarAtributosUsuariopthisSolicitud.getAesolicitudes().getPlanT().getPlanesEsVoluntario().equals(true) || (solicitudvalidarAtributosUsuariopthisSolicitud.getContratante().getContratanteDireccionRes() != null && !(solicitudvalidarAtributosUsuariopthisSolicitud.getContratante().getContratanteDireccionRes()).equals(""));
+        boolean preconditionHolds = solicitudvalidarAtributosUsuariopthisSolicitud.getSolicituddrvValidarDatosContratante().equals(false) || solicitudvalidarAtributosUsuariopthisSolicitud.getAesolicitudes().getPlanT().getPlanesEsVoluntario().equals(true) || (solicitudvalidarAtributosUsuariopthisSolicitud.getContratante().getContratanteDireccionRes() != null && (solicitudvalidarAtributosUsuariopthisSolicitud.getContratante().getContratanteDireccionRes()).length() != 0);
         if (!preconditionHolds) throw new PreconditionException("Debe indicar la dirección de residencia del contratante");
     }
 
@@ -7297,7 +7297,7 @@ public class SolicitudService extends AbstractService {
         // drvValidarDatosContratante = false OR Aesolicitudes.PlanT.EsVoluntario = false OR Tramite <> 1 OR (ContratantePersona.CorreoElectronico <> NULL AND ContratantePersona.CorreoElectronico <> "")
 
         Solicitud solicitudvalidarAtributosUsuariopthisSolicitud = request.getSolicitudvalidarAtributosUsuariopthisSolicitudInstance();
-        boolean preconditionHolds = solicitudvalidarAtributosUsuariopthisSolicitud.getSolicituddrvValidarDatosContratante().equals(false) || solicitudvalidarAtributosUsuariopthisSolicitud.getAesolicitudes().getPlanT().getPlanesEsVoluntario().equals(false) || !(solicitudvalidarAtributosUsuariopthisSolicitud.getSolicitudTramite()).equals(Long.valueOf(1)) || (solicitudvalidarAtributosUsuariopthisSolicitud.getContratantePersona().getPersonaCorreoElectronico() != null && !(solicitudvalidarAtributosUsuariopthisSolicitud.getContratantePersona().getPersonaCorreoElectronico()).equals(""));
+        boolean preconditionHolds = solicitudvalidarAtributosUsuariopthisSolicitud.getSolicituddrvValidarDatosContratante().equals(false) || solicitudvalidarAtributosUsuariopthisSolicitud.getAesolicitudes().getPlanT().getPlanesEsVoluntario().equals(false) || !(solicitudvalidarAtributosUsuariopthisSolicitud.getSolicitudTramite()).equals(Long.valueOf(1)) || (solicitudvalidarAtributosUsuariopthisSolicitud.getContratantePersona().getPersonaCorreoElectronico() != null && (solicitudvalidarAtributosUsuariopthisSolicitud.getContratantePersona().getPersonaCorreoElectronico()).length() != 0);
         if (!preconditionHolds) throw new PreconditionException("Debe indicarse el correo electrónico del contratante");
     }
 
@@ -7307,7 +7307,7 @@ public class SolicitudService extends AbstractService {
         // drvValidarDatosContratante = false OR Aesolicitudes.PlanT.EsVoluntario = false OR Tramite <> 1 OR (ContratantePersona.TelefonoCelular <> NULL AND ContratantePersona.TelefonoCelular <> "")
 
         Solicitud solicitudvalidarAtributosUsuariopthisSolicitud = request.getSolicitudvalidarAtributosUsuariopthisSolicitudInstance();
-        boolean preconditionHolds = solicitudvalidarAtributosUsuariopthisSolicitud.getSolicituddrvValidarDatosContratante().equals(false) || solicitudvalidarAtributosUsuariopthisSolicitud.getAesolicitudes().getPlanT().getPlanesEsVoluntario().equals(false) || !(solicitudvalidarAtributosUsuariopthisSolicitud.getSolicitudTramite()).equals(Long.valueOf(1)) || (solicitudvalidarAtributosUsuariopthisSolicitud.getContratantePersona().getPersonaTelefonoCelular() != null && !(solicitudvalidarAtributosUsuariopthisSolicitud.getContratantePersona().getPersonaTelefonoCelular()).equals(""));
+        boolean preconditionHolds = solicitudvalidarAtributosUsuariopthisSolicitud.getSolicituddrvValidarDatosContratante().equals(false) || solicitudvalidarAtributosUsuariopthisSolicitud.getAesolicitudes().getPlanT().getPlanesEsVoluntario().equals(false) || !(solicitudvalidarAtributosUsuariopthisSolicitud.getSolicitudTramite()).equals(Long.valueOf(1)) || (solicitudvalidarAtributosUsuariopthisSolicitud.getContratantePersona().getPersonaTelefonoCelular() != null && (solicitudvalidarAtributosUsuariopthisSolicitud.getContratantePersona().getPersonaTelefonoCelular()).length() != 0);
         if (!preconditionHolds) throw new PreconditionException("Debe indicarse el teléfono celular del contratante");
     }
 
@@ -9267,7 +9267,7 @@ public class SolicitudService extends AbstractService {
 
         request.checkArguments();
         Solicitud instance = solicitudenviarSMSInfoPagopthisSolicitud;
-        if (solicitudenviarSMSInfoPagopthisSolicitud.getSolicitudResultSMSInfoPago() != null && !(solicitudenviarSMSInfoPagopthisSolicitud.getSolicitudResultSMSInfoPago()).equals("")) {
+        if (solicitudenviarSMSInfoPagopthisSolicitud.getSolicitudResultSMSInfoPago() != null && (solicitudenviarSMSInfoPagopthisSolicitud.getSolicitudResultSMSInfoPago()).length() != 0) {
             instance.setSolicitudResultSMSInfoPago(solicitudenviarSMSInfoPagopthisSolicitud.getSolicitudResultSMSInfoPago());
         } else if (repository.assocOperator070(solicitudenviarSMSInfoPagopthisSolicitud).equals(false) || solicitudenviarSMSInfoPagopthisSolicitud.getTitularPersona().getPersonaTelefonoCelular() == null) {
             instance.setSolicitudResultSMSInfoPago("Celular del titular no diligenciado");
@@ -13823,7 +13823,7 @@ public class SolicitudService extends AbstractService {
 
         Boolean solicitudTCHGTITBENEFCONTptTitularConBeneficios = request.getSolicitudTCHGTITBENEFCONTptTitularConBeneficios();
         Solicitud solicitudTCHGTITBENEFCONTpthisSolicitud = request.getSolicitudTCHGTITBENEFCONTpthisSolicitudInstance();
-        boolean preconditionHolds = solicitudTCHGTITBENEFCONTptTitularConBeneficios.equals(false) || solicitudTCHGTITBENEFCONTpthisSolicitud.getContratantePersona().getPersonaRechazadoAfiliacion() == null || (solicitudTCHGTITBENEFCONTpthisSolicitud.getContratantePersona().getPersonaRechazadoAfiliacion()).equals("");
+        boolean preconditionHolds = solicitudTCHGTITBENEFCONTptTitularConBeneficios.equals(false) || solicitudTCHGTITBENEFCONTpthisSolicitud.getContratantePersona().getPersonaRechazadoAfiliacion() == null || (solicitudTCHGTITBENEFCONTpthisSolicitud.getContratantePersona().getPersonaRechazadoAfiliacion()).length() == 0;
         if (!preconditionHolds) throw new PreconditionException("El contratante está rechazado en afiliación, no puede añadirse como usuario");
     }
 
