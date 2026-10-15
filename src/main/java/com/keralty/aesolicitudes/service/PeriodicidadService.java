@@ -317,6 +317,7 @@ public class PeriodicidadService extends AbstractService {
     }
 
     private String getSuppInfo(Periodicidad instance, String dsName) {
+        if (instance == null || instance.isNull()) return "";
         if (PeriodicidadConstants.DSICPERIODICIDAD.equals(dsName))
             return instance.buildICPeriodicidad();
         return instance != null && dsName.isEmpty() ? instance.getOid().toJson() : "";

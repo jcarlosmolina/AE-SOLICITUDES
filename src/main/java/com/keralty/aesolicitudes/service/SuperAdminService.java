@@ -319,6 +319,7 @@ public class SuperAdminService extends AbstractService {
     }
 
     private String getSuppInfo(SuperAdmin instance, String dsName) {
+        if (instance == null || instance.isNull()) return "";
         if (SuperAdminConstants.DSICSUPERADMIN.equals(dsName))
             return instance.buildICSuperAdmin();
         return instance != null && dsName.isEmpty() ? instance.getOid().toJson() : "";

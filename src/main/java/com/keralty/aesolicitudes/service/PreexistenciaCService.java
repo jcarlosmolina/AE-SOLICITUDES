@@ -255,6 +255,7 @@ public class PreexistenciaCService extends AbstractService {
     }
 
     private String getSuppInfo(PreexistenciaC instance, String dsName) {
+        if (instance == null || instance.isNull()) return "";
         return instance != null && dsName.isEmpty() ? instance.getOid().toJson() : "";
     }
 

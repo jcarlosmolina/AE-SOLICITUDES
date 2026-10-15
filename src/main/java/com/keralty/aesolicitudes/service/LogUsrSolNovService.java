@@ -254,6 +254,7 @@ public class LogUsrSolNovService extends AbstractService {
     }
 
     private String getSuppInfo(LogUsrSolNov instance, String dsName) {
+        if (instance == null || instance.isNull()) return "";
         return instance != null && dsName.isEmpty() ? instance.getOid().toJson() : "";
     }
 

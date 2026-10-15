@@ -284,6 +284,7 @@ public class EpsService extends AbstractService {
     }
 
     private String getSuppInfo(Eps instance, String dsName) {
+        if (instance == null || instance.isNull()) return "";
         if (EpsConstants.DSICEPS.equals(dsName))
             return instance.buildICEPS();
         return instance != null && dsName.isEmpty() ? instance.getOid().toJson() : "";

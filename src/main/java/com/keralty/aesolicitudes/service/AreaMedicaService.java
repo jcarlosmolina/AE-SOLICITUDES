@@ -349,6 +349,7 @@ public class AreaMedicaService extends AbstractService {
     }
 
     private String getSuppInfo(AreaMedica instance, String dsName) {
+        if (instance == null || instance.isNull()) return "";
         if (AreaMedicaConstants.DSSIAREAMEDICA.equals(dsName))
             return instance.buildSIAreaMedica();
         return instance != null && dsName.isEmpty() ? instance.getOid().toJson() : "";

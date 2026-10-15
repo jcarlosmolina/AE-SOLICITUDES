@@ -371,6 +371,7 @@ public class MunicipioService extends AbstractService {
     }
 
     private String getSuppInfo(Municipio instance, String dsName) {
+        if (instance == null || instance.isNull()) return "";
         if (MunicipioConstants.DSICMUNICIPIO.equals(dsName))
             return instance.buildICMunicipio();
         return instance != null && dsName.isEmpty() ? instance.getOid().toJson() : "";

@@ -276,6 +276,7 @@ public class UsuarioRegService extends AbstractService {
     }
 
     private String getSuppInfo(UsuarioReg instance, String dsName) {
+        if (instance == null || instance.isNull()) return "";
         return instance != null && dsName.isEmpty() ? instance.getOid().toJson() : "";
     }
 

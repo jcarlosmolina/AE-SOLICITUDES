@@ -191,6 +191,7 @@ public class LogLlamadasBHService extends AbstractService {
     }
 
     private String getSuppInfo(LogLlamadasBH instance, String dsName) {
+        if (instance == null || instance.isNull()) return "";
         return instance != null && dsName.isEmpty() ? instance.getOid().toJson() : "";
     }
 

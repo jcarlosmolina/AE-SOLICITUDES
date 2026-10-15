@@ -267,6 +267,7 @@ public class ObsEstadoService extends AbstractService {
     }
 
     private String getSuppInfo(ObsEstado instance, String dsName) {
+        if (instance == null || instance.isNull()) return "";
         return instance != null && dsName.isEmpty() ? instance.getOid().toJson() : "";
     }
 

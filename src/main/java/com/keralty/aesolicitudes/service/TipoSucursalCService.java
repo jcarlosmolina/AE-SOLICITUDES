@@ -251,6 +251,7 @@ public class TipoSucursalCService extends AbstractService {
     }
 
     private String getSuppInfo(TipoSucursalC instance, String dsName) {
+        if (instance == null || instance.isNull()) return "";
         return instance != null && dsName.isEmpty() ? instance.getOid().toJson() : "";
     }
 

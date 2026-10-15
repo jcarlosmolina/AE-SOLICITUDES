@@ -390,6 +390,7 @@ public class ProductosService extends AbstractService {
     }
 
     private String getSuppInfo(Productos instance, String dsName) {
+        if (instance == null || instance.isNull()) return "";
         if (ProductosConstants.DSICPRODUCTO.equals(dsName))
             return instance.buildICProducto();
         return instance != null && dsName.isEmpty() ? instance.getOid().toJson() : "";

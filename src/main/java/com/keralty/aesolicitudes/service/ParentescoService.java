@@ -303,6 +303,7 @@ public class ParentescoService extends AbstractService {
     }
 
     private String getSuppInfo(Parentesco instance, String dsName) {
+        if (instance == null || instance.isNull()) return "";
         if (ParentescoConstants.DSICPARENTESCO.equals(dsName))
             return instance.buildICParentesco();
         return instance != null && dsName.isEmpty() ? instance.getOid().toJson() : "";

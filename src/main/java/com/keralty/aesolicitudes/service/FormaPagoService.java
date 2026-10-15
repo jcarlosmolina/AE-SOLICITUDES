@@ -295,6 +295,7 @@ public class FormaPagoService extends AbstractService {
     }
 
     private String getSuppInfo(FormaPago instance, String dsName) {
+        if (instance == null || instance.isNull()) return "";
         if (FormaPagoConstants.DSICFORMAPAGO.equals(dsName))
             return instance.buildICFormaPago();
         return instance != null && dsName.isEmpty() ? instance.getOid().toJson() : "";

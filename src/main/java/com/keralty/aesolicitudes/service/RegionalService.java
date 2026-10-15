@@ -283,6 +283,7 @@ public class RegionalService extends AbstractService {
     }
 
     private String getSuppInfo(Regional instance, String dsName) {
+        if (instance == null || instance.isNull()) return "";
         if (RegionalConstants.DSICREGIONAL.equals(dsName))
             return instance.buildICRegional();
         return instance != null && dsName.isEmpty() ? instance.getOid().toJson() : "";

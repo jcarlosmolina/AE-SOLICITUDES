@@ -340,6 +340,7 @@ public class TipoIdentificacionService extends AbstractService {
     }
 
     private String getSuppInfo(TipoIdentificacion instance, String dsName) {
+        if (instance == null || instance.isNull()) return "";
         if (TipoIdentificacionConstants.DSICTIPOIDENTIFICACION.equals(dsName))
             return instance.buildICTipoIdentificacion();
         return instance != null && dsName.isEmpty() ? instance.getOid().toJson() : "";

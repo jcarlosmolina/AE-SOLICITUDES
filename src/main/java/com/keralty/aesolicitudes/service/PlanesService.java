@@ -350,6 +350,7 @@ public class PlanesService extends AbstractService {
     }
 
     private String getSuppInfo(Planes instance, String dsName) {
+        if (instance == null || instance.isNull()) return "";
         if (PlanesConstants.DSICPLAN.equals(dsName))
             return instance.buildICPlan();
         return instance != null && dsName.isEmpty() ? instance.getOid().toJson() : "";

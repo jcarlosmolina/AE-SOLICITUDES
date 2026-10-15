@@ -282,6 +282,7 @@ public class CompanyiaService extends AbstractService {
     }
 
     private String getSuppInfo(Companyia instance, String dsName) {
+        if (instance == null || instance.isNull()) return "";
         if (CompanyiaConstants.DSICCOMPANYIA.equals(dsName))
             return instance.buildICCompanyia();
         return instance != null && dsName.isEmpty() ? instance.getOid().toJson() : "";

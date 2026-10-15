@@ -391,6 +391,7 @@ public class SolicitudNovedadService extends AbstractService {
     }
 
     private String getSuppInfo(SolicitudNovedad instance, String dsName) {
+        if (instance == null || instance.isNull()) return "";
         if (SolicitudNovedadConstants.DSICSOLICITUDNOVEDAD.equals(dsName))
             return instance.buildICSolicitudNovedad();
         return instance != null && dsName.isEmpty() ? instance.getOid().toJson() : "";

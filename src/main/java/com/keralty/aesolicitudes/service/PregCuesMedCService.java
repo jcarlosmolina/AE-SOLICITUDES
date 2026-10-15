@@ -254,6 +254,7 @@ public class PregCuesMedCService extends AbstractService {
     }
 
     private String getSuppInfo(PregCuesMedC instance, String dsName) {
+        if (instance == null || instance.isNull()) return "";
         return instance != null && dsName.isEmpty() ? instance.getOid().toJson() : "";
     }
 

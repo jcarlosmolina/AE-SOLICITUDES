@@ -321,6 +321,7 @@ public class MesaDeApoyoService extends AbstractService {
     }
 
     private String getSuppInfo(MesaDeApoyo instance, String dsName) {
+        if (instance == null || instance.isNull()) return "";
         return instance != null && dsName.isEmpty() ? instance.getOid().toJson() : "";
     }
 

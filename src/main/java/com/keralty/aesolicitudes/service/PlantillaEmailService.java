@@ -282,6 +282,7 @@ public class PlantillaEmailService extends AbstractService {
     }
 
     private String getSuppInfo(PlantillaEmail instance, String dsName) {
+        if (instance == null || instance.isNull()) return "";
         if (PlantillaEmailConstants.DSICPLANTILLAEMAIL.equals(dsName))
             return instance.buildICPlantillaEmail();
         return instance != null && dsName.isEmpty() ? instance.getOid().toJson() : "";

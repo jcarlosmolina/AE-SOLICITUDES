@@ -324,6 +324,7 @@ public class DepartamentoService extends AbstractService {
     }
 
     private String getSuppInfo(Departamento instance, String dsName) {
+        if (instance == null || instance.isNull()) return "";
         if (DepartamentoConstants.DSICDEPARTAMENTO.equals(dsName))
             return instance.buildICDepartamento();
         return instance != null && dsName.isEmpty() ? instance.getOid().toJson() : "";

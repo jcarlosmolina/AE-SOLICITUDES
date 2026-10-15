@@ -273,6 +273,7 @@ public class ContratanteService extends AbstractService {
     }
 
     private String getSuppInfo(Contratante instance, String dsName) {
+        if (instance == null || instance.isNull()) return "";
         return instance != null && dsName.isEmpty() ? instance.getOid().toJson() : "";
     }
 

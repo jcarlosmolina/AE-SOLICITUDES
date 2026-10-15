@@ -280,6 +280,7 @@ public class CuestionarioPService extends AbstractService {
     }
 
     private String getSuppInfo(CuestionarioP instance, String dsName) {
+        if (instance == null || instance.isNull()) return "";
         return instance != null && dsName.isEmpty() ? instance.getOid().toJson() : "";
     }
 

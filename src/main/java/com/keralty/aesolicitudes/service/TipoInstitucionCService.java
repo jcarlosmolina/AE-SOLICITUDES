@@ -275,6 +275,7 @@ public class TipoInstitucionCService extends AbstractService {
     }
 
     private String getSuppInfo(TipoInstitucionC instance, String dsName) {
+        if (instance == null || instance.isNull()) return "";
         if (TipoInstitucionCConstants.DSICTIPOINSTITUCION.equals(dsName))
             return instance.buildICTipoInstitucion();
         return instance != null && dsName.isEmpty() ? instance.getOid().toJson() : "";

@@ -367,6 +367,7 @@ public class PersonaService extends AbstractService {
     }
 
     private String getSuppInfo(Persona instance, String dsName) {
+        if (instance == null || instance.isNull()) return "";
         if (PersonaConstants.DSICPERSONA.equals(dsName))
             return instance.buildICPersona();
         if (PersonaConstants.DSICPERSONANOMBRESAPELLIDOS.equals(dsName))

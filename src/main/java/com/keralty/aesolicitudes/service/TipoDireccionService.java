@@ -282,6 +282,7 @@ public class TipoDireccionService extends AbstractService {
     }
 
     private String getSuppInfo(TipoDireccion instance, String dsName) {
+        if (instance == null || instance.isNull()) return "";
         if (TipoDireccionConstants.DSICTIPODIRECCION.equals(dsName))
             return instance.buildICTipoDireccion();
         return instance != null && dsName.isEmpty() ? instance.getOid().toJson() : "";

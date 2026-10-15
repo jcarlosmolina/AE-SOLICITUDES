@@ -294,6 +294,7 @@ public class PaisService extends AbstractService {
     }
 
     private String getSuppInfo(Pais instance, String dsName) {
+        if (instance == null || instance.isNull()) return "";
         if (PaisConstants.DSICPAIS.equals(dsName))
             return instance.buildICPais();
         return instance != null && dsName.isEmpty() ? instance.getOid().toJson() : "";

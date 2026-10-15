@@ -332,6 +332,7 @@ public class FirmaService extends AbstractService {
     }
 
     private String getSuppInfo(Firma instance, String dsName) {
+        if (instance == null || instance.isNull()) return "";
         return instance != null && dsName.isEmpty() ? instance.getOid().toJson() : "";
     }
 

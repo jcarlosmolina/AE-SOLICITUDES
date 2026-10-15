@@ -407,6 +407,7 @@ public class PersonaCService extends AbstractService {
     }
 
     private String getSuppInfo(PersonaC instance, String dsName) {
+        if (instance == null || instance.isNull()) return "";
         return instance != null && dsName.isEmpty() ? instance.getOid().toJson() : "";
     }
 

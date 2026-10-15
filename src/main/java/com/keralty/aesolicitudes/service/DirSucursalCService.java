@@ -289,6 +289,7 @@ public class DirSucursalCService extends AbstractService {
     }
 
     private String getSuppInfo(DirSucursalC instance, String dsName) {
+        if (instance == null || instance.isNull()) return "";
         return instance != null && dsName.isEmpty() ? instance.getOid().toJson() : "";
     }
 

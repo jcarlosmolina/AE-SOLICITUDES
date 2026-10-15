@@ -282,6 +282,7 @@ public class EstadoCivilService extends AbstractService {
     }
 
     private String getSuppInfo(EstadoCivil instance, String dsName) {
+        if (instance == null || instance.isNull()) return "";
         if (EstadoCivilConstants.DSICESTADOCIVIL.equals(dsName))
             return instance.buildICEstadoCivil();
         return instance != null && dsName.isEmpty() ? instance.getOid().toJson() : "";

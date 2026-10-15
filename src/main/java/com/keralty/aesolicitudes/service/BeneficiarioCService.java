@@ -358,6 +358,7 @@ public class BeneficiarioCService extends AbstractService {
     }
 
     private String getSuppInfo(BeneficiarioC instance, String dsName) {
+        if (instance == null || instance.isNull()) return "";
         return instance != null && dsName.isEmpty() ? instance.getOid().toJson() : "";
     }
 

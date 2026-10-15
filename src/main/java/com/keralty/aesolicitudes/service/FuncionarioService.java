@@ -415,6 +415,7 @@ public class FuncionarioService extends AbstractService {
     }
 
     private String getSuppInfo(Funcionario instance, String dsName) {
+        if (instance == null || instance.isNull()) return "";
         if (FuncionarioConstants.DSICAGENTE.equals(dsName))
             return instance.buildICAgente();
         if (FuncionarioConstants.DSICUSUARIOLDAP.equals(dsName))

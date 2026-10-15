@@ -327,6 +327,7 @@ public class DireccionService extends AbstractService {
     }
 
     private String getSuppInfo(Direccion instance, String dsName) {
+        if (instance == null || instance.isNull()) return "";
         if (DireccionConstants.DSICDIRECCION.equals(dsName))
             return instance.buildICDireccion();
         return instance != null && dsName.isEmpty() ? instance.getOid().toJson() : "";

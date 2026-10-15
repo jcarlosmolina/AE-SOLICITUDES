@@ -264,6 +264,7 @@ public class AnexoCService extends AbstractService {
     }
 
     private String getSuppInfo(AnexoC instance, String dsName) {
+        if (instance == null || instance.isNull()) return "";
         return instance != null && dsName.isEmpty() ? instance.getOid().toJson() : "";
     }
 

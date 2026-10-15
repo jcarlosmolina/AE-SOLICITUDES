@@ -319,6 +319,7 @@ public class AdminService extends AbstractService {
     }
 
     private String getSuppInfo(Admin instance, String dsName) {
+        if (instance == null || instance.isNull()) return "";
         if (AdminConstants.DSICADMIN.equals(dsName))
             return instance.buildICAdmin();
         return instance != null && dsName.isEmpty() ? instance.getOid().toJson() : "";

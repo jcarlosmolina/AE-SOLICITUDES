@@ -278,6 +278,7 @@ public class TipoFacturaService extends AbstractService {
     }
 
     private String getSuppInfo(TipoFactura instance, String dsName) {
+        if (instance == null || instance.isNull()) return "";
         if (TipoFacturaConstants.DSICTIPOFACTURA.equals(dsName))
             return instance.buildICTipoFactura();
         return instance != null && dsName.isEmpty() ? instance.getOid().toJson() : "";

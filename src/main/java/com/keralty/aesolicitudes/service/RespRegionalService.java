@@ -354,6 +354,7 @@ public class RespRegionalService extends AbstractService {
     }
 
     private String getSuppInfo(RespRegional instance, String dsName) {
+        if (instance == null || instance.isNull()) return "";
         if (RespRegionalConstants.DSICRESPREGIONALNOMAPE.equals(dsName))
             return instance.buildICRespRegionalNomApe();
         return instance != null && dsName.isEmpty() ? instance.getOid().toJson() : "";

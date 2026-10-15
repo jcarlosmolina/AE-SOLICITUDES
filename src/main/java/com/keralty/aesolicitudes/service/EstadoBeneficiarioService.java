@@ -294,6 +294,7 @@ public class EstadoBeneficiarioService extends AbstractService {
     }
 
     private String getSuppInfo(EstadoBeneficiario instance, String dsName) {
+        if (instance == null || instance.isNull()) return "";
         if (EstadoBeneficiarioConstants.DSICESTADOBENEFICIARIO.equals(dsName))
             return instance.buildICEstadoBeneficiario();
         return instance != null && dsName.isEmpty() ? instance.getOid().toJson() : "";

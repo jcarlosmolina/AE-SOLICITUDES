@@ -288,6 +288,7 @@ public class EstadoContratoService extends AbstractService {
     }
 
     private String getSuppInfo(EstadoContrato instance, String dsName) {
+        if (instance == null || instance.isNull()) return "";
         if (EstadoContratoConstants.DSICESTADOCONTRATO.equals(dsName))
             return instance.buildICEstadoContrato();
         return instance != null && dsName.isEmpty() ? instance.getOid().toJson() : "";

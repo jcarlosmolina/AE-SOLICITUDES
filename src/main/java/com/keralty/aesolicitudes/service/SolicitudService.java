@@ -643,6 +643,7 @@ public class SolicitudService extends AbstractService {
     }
 
     private String getSuppInfo(Solicitud instance, String dsName) {
+        if (instance == null || instance.isNull()) return "";
         if (SolicitudConstants.DSICSOLICITUD.equals(dsName))
             return instance.buildICSolicitud();
         if (SolicitudConstants.DSDSSOLICITUDIIUDIFLIQ.equals(dsName))

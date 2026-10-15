@@ -366,6 +366,7 @@ public class AsesorService extends AbstractService {
     }
 
     private String getSuppInfo(Asesor instance, String dsName) {
+        if (instance == null || instance.isNull()) return "";
         if (AsesorConstants.DSICASESOR.equals(dsName))
             return instance.buildICAsesor();
         return instance != null && dsName.isEmpty() ? instance.getOid().toJson() : "";

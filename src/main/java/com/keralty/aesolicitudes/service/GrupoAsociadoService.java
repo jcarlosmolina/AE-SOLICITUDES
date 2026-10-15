@@ -314,6 +314,7 @@ public class GrupoAsociadoService extends AbstractService {
     }
 
     private String getSuppInfo(GrupoAsociado instance, String dsName) {
+        if (instance == null || instance.isNull()) return "";
         if (GrupoAsociadoConstants.DSICGRUPOASOCIADO.equals(dsName))
             return instance.buildICGrupoAsociado();
         return instance != null && dsName.isEmpty() ? instance.getOid().toJson() : "";

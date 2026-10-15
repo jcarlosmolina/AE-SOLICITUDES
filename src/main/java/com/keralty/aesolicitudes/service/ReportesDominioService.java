@@ -357,6 +357,7 @@ public class ReportesDominioService extends AbstractService {
     }
 
     private String getSuppInfo(ReportesDominio instance, String dsName) {
+        if (instance == null || instance.isNull()) return "";
         if (ReportesDominioConstants.DSICREPORTESDOMINIO.equals(dsName))
             return instance.buildICReportesDominio();
         return instance != null && dsName.isEmpty() ? instance.getOid().toJson() : "";

@@ -256,6 +256,7 @@ public class LogEstadoService extends AbstractService {
     }
 
     private String getSuppInfo(LogEstado instance, String dsName) {
+        if (instance == null || instance.isNull()) return "";
         return instance != null && dsName.isEmpty() ? instance.getOid().toJson() : "";
     }
 

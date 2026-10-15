@@ -313,6 +313,7 @@ public class AesolicitudesService extends AbstractService {
     }
 
     private String getSuppInfo(Aesolicitudes instance, String dsName) {
+        if (instance == null || instance.isNull()) return "";
         return instance != null && dsName.isEmpty() ? instance.getOid().toJson() : "";
     }
 

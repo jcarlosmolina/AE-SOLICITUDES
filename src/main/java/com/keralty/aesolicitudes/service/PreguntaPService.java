@@ -258,6 +258,7 @@ public class PreguntaPService extends AbstractService {
     }
 
     private String getSuppInfo(PreguntaP instance, String dsName) {
+        if (instance == null || instance.isNull()) return "";
         return instance != null && dsName.isEmpty() ? instance.getOid().toJson() : "";
     }
 

@@ -264,6 +264,7 @@ public class AnexoNeoService extends AbstractService {
     }
 
     private String getSuppInfo(AnexoNeo instance, String dsName) {
+        if (instance == null || instance.isNull()) return "";
         return instance != null && dsName.isEmpty() ? instance.getOid().toJson() : "";
     }
 

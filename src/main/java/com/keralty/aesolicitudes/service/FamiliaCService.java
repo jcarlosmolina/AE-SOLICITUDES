@@ -329,6 +329,7 @@ public class FamiliaCService extends AbstractService {
     }
 
     private String getSuppInfo(FamiliaC instance, String dsName) {
+        if (instance == null || instance.isNull()) return "";
         return instance != null && dsName.isEmpty() ? instance.getOid().toJson() : "";
     }
 

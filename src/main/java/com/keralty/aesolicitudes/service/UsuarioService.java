@@ -449,6 +449,7 @@ public class UsuarioService extends AbstractService {
     }
 
     private String getSuppInfo(Usuario instance, String dsName) {
+        if (instance == null || instance.isNull()) return "";
         if (UsuarioConstants.DSICUSUARIO.equals(dsName))
             return instance.buildICUsuario();
         return instance != null && dsName.isEmpty() ? instance.getOid().toJson() : "";
