@@ -264,7 +264,7 @@ public class SQLPopulation extends SQLSelect {
 
         if (!getClassNameInGlobalService().equalsIgnoreCase("")) {
             originalPath += getClassNameInGlobalService();
-            if (!super.getOriginalPath().equals(""))
+            if (super.getOriginalPath().length() != 0)
                 originalPath += "." + super.getOriginalPath();
         } else {
             originalPath += super.getOriginalPath();

@@ -234,7 +234,7 @@ public class Types implements Serializable {
 		lReturn += toString((Date) obj);
 		lReturn += toString((Boolean) obj);
 
-		if (obj != null && lReturn.equals(""))
+		if (obj != null && lReturn.length() == 0)
 			lReturn = obj.toString();
 
 		return lReturn;

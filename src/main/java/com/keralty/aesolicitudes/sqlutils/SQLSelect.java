@@ -195,7 +195,7 @@ public class SQLSelect {
      */
     public String getSQLSentence() {
         String sqlToReturn = "";
-        if (!this.sqlSentence.equals("")) {
+        if (this.sqlSentence.length() != 0) {
             sqlToReturn = this.sqlSentence;
         } else {
             String localSentence = "";

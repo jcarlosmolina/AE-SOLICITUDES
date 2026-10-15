@@ -3756,7 +3756,7 @@ public final class Constants {
         if (!noSuchFieldError && targetField != null) {
             try {
                 String targetFacets = (String) targetField.get(null);
-                if (!targetFacets.equals("")) {
+                if (!targetFacets.length() == 0) {
                     for (String facet : targetFacets.split(REGEXP_DOT_SEPARATOR)) {
                         result.add(facet.trim());
                     }
@@ -3810,7 +3810,7 @@ public final class Constants {
         if (targetField != null) {
             try {
                 String targetFacets = (String) targetField.get(null);
-                if (!targetFacets.equals("")) {
+                if (!targetFacets.length() == 0) {
                     for (String facet : targetFacets.split(REGEXP_DOT_SEPARATOR)) {
                         result.add(facet.trim());
                     }
@@ -4047,7 +4047,7 @@ public final class Constants {
     public static String pathTargetClass(String className, String rolesPath, boolean ignoreFirstItem) {
         String result = "";
         try {
-            if (rolesPath.equals("")) {
+            if (rolesPath.length() == 0) {
                 // If there is no roles path then the final class is the same as the departure
                 // class.
                 result = className;
@@ -4099,7 +4099,7 @@ public final class Constants {
                     // Get the target class of this role and set it as the temporal reached class to
                     // continue the iteration from this class.
                     // create the inverse role.
-                    if (inverseRole.toString().equals("")) {
+                    if (inverseRole.toString().length() == 0) {
                         inverseRole.append(getInverseSingleRole(currentClass, role));
                     } else {
                         inverseRole.insert(0, ".");
@@ -4517,14 +4517,14 @@ public final class Constants {
      */
     public static String getServiceName(String className, String serviceName) {
         String returnValue = "";
-        if (serviceName.equals(""))
+        if (serviceName.length() == 0)
             returnValue = "";
         try {
             Class<?> constantClass = getConstantClass(className);
 
             if (constantClass != null) {
                 Field targetField = null;
-                if (className.equals(""))
+                if (className.length() == 0)
                     targetField = constantClass.getField("G_SERV_NAME_" + serviceName.toUpperCase());
                 else if (className.equalsIgnoreCase("Function"))
                     targetField = constantClass.getField("UF_NAME_" + serviceName.toUpperCase());
@@ -4551,10 +4551,10 @@ public final class Constants {
      */
     public static String getArgumentName(String className, String serviceName, String argumentName, String navFilterClassName) {
         String returnValue = "";
-        if (argumentName.equals(""))
+        if (argumentName.length() == 0)
             returnValue = "";
         try {
-            if (serviceName.equals("")) {
+            if (serviceName.length() == 0) {
                 Class<?> filterNavClass = Class
                         .forName("com.keralty.aesolicitudes.query.impl.filter.navigational." + className
                                 + navFilterClassName + "NavigationalFilter");
@@ -4588,7 +4588,7 @@ public final class Constants {
      */
     public static String getFilterName(String className, String filterName) {
         String returnValue = "";
-        if (className.equals("") || filterName.equals(""))
+        if (className.length() == 0 || filterName.length() == 0)
             returnValue = "";
         if (filterName.equalsIgnoreCase("LMD") || filterName.equalsIgnoreCase("FUM"))
             returnValue = "LMD";
@@ -4616,7 +4616,7 @@ public final class Constants {
      */
     public static String getVariableName(String className, String filterName, String variableName) {
         String returnValue = "";
-        if (className.equals("") || filterName.equals("") || variableName.equals(""))
+        if (className.length() == 0 || filterName.length() == 0 || variableName.length() == 0)
             returnValue = "";
         if (filterName.equalsIgnoreCase("LMD") || filterName.equalsIgnoreCase("FUM"))
             returnValue = "LMD";

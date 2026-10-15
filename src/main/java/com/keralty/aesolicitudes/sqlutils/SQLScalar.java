@@ -101,7 +101,7 @@ public class SQLScalar extends SQLSelect {
             if (this.getAliases().get(0).getFacet().equalsIgnoreCase(getSourceEntityName())) {
                 instancePathAlias = getAliases().get(0);
             } else {
-                if (inversePath.equals(""))
+                if (inversePath.length() == 0)
                     instancePathAlias = getAlias(getTargetPathToAttribute(), getSourceEntityName());
                 else
                     instancePathAlias = getAlias(getTargetPathToAttribute() + "." + inversePath, getSourceEntityName());
@@ -195,7 +195,7 @@ public class SQLScalar extends SQLSelect {
             if (this.getAliases().get(0).getFacet().equalsIgnoreCase(parameterClassName)) {
                 instancePathAlias = getAliases().get(0);
             } else {
-                if (inversePath.equals(""))
+                if (inversePath.length() == 0)
                     instancePathAlias = getAlias(getTargetPathToAttribute(), getSourceEntityName());
                 else
                     instancePathAlias = getAlias(getTargetPathToAttribute() + "." + inversePath, getSourceEntityName());
@@ -509,11 +509,11 @@ public class SQLScalar extends SQLSelect {
     public void setTargetPathToAttribute(String targetPathToAttribute) {
     	String startingClass = this.getSourceEntityName();
     	boolean ignoreFirstItem = false;
-    	if (!getClassNameInGlobalService().equals("")) {
+    	if (getClassNameInGlobalService().length() != 0) {
             startingClass = getClassNameInGlobalService();
             ignoreFirstItem = true;
     	}
-    	if (this.parameterClassName != null && !this.parameterClassName.equals("")) {
+    	if (this.parameterClassName != null && this.parameterClassName.length() != 0) {
             startingClass = parameterClassName;
     	}
     	this.targetPathToAttribute = Constants.normalizePath(startingClass, targetPathToAttribute, ignoreFirstItem);

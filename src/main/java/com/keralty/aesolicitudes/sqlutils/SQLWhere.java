@@ -80,14 +80,14 @@ public class SQLWhere {
         for (SQLWhereOperand element : elements) {
             elementText = element.getText();
             if (!elementText.equalsIgnoreCase("")) {
-                if (!elementsText.toString().equals("")) {
+                if (elementsText.toString().length() != 0) {
                     elementsText.append(" AND ");
                 }
                 elementsText.append(elementText);
             }
         }
 
-        if (!elementsText.toString().equals("")) {
+        if (elementsText.toString().length() != 0) {
             elementsText.insert(0, " WHERE ");
         }
         return elementsText.toString();

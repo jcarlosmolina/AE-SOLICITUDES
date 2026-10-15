@@ -214,7 +214,7 @@ public abstract class AbstractAppEntity implements IEntity {
     public boolean isVisible(String expression) {
         boolean returnValue = false;
         
-        if (expression.equals("")) {
+        if (expression.length() == 0) {
             returnValue = true;
         }
 

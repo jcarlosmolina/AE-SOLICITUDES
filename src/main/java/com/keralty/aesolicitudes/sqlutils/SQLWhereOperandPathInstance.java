@@ -244,7 +244,7 @@ public class SQLWhereOperandPathInstance extends SQLWhereOperand {
     public SQLAlias addJoins(String processingPath, String targetClass, SQLAlias aliasOriginal, String originClass,
             String initialPath) {
         aliasObject = null;
-        if (!getSql().getOriginalPath().equals("") && processingPath.startsWith(getSql().getOriginalPath() + ".")) {
+        if (getSql().getOriginalPath().length() != 0 && processingPath.startsWith(getSql().getOriginalPath() + ".")) {
             String processingPathAux = processingPath.replace(getSql().getOriginalPath() + ".", "");
             aliasObject = getSql().getAlias(getSql().getOriginalPath(),
                     Constants.pathTargetClass(targetClass, getSql().getOriginalPath()));
