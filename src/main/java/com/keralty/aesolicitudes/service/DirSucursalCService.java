@@ -113,7 +113,6 @@ public class DirSucursalCService extends AbstractService {
         repository.findAll().forEach(results::add);
         return results;
     }
-
     /*
      * Returns the population of class DirSucursalC that matches certain search criteria
      *

@@ -76,7 +76,6 @@ public class PregCuesMedCService extends AbstractService {
         repository.findAll().forEach(results::add);
         return results;
     }
-
     /*
      * Returns the population of class PregCuesMedC that matches certain search criteria
      *

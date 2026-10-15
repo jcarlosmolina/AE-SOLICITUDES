@@ -77,7 +77,6 @@ public class PreexistenciaCService extends AbstractService {
         repository.findAll().forEach(results::add);
         return results;
     }
-
     /*
      * Returns the population of class PreexistenciaC that matches certain search criteria
      *

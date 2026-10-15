@@ -177,47 +177,6 @@ public class ReportesDominioService extends AbstractService {
         }
         return results;
     }
-
-    /*
-     * Gets the properties of DisplaySet DSReportesDominio for a given instance
-     *
-     * @param instanceOid Instance OID in JSON format. Related instance OID in JSON
-     * format if relatedInstancePath is provided
-     *
-     * @param relatedInstancePath Inverse navigation path to a related instance
-     *
-     * @param relatedInstanceDomain Domain of the related instance
-     *
-     * @return Properties of DisplaySet DSReportesDominio for a given instance
-     */
-    @Transactional(Transactional.TxType.SUPPORTS)
-    public com.keralty.aesolicitudes.viewmodel.reportesdominio.ds.DSReportesDominio getDSReportesDominio(String instanceOid, String relatedInstancePath, String relatedInstanceDomain) {
-        ReportesDominio instance = (relatedInstancePath.isEmpty() ? 
-                getByJsonOid(instanceOid):
-                getByRelated(buildRelatedInstance(instanceOid, relatedInstancePath), relatedInstancePath).get(0));
-        return new com.keralty.aesolicitudes.viewmodel.reportesdominio.ds.DSReportesDominio(instance);
-    }
-
-    /*
-     * Gets the properties of DisplaySet ICReportesDominio for a given instance
-     *
-     * @param instanceOid Instance OID in JSON format. Related instance OID in JSON
-     * format if relatedInstancePath is provided
-     *
-     * @param relatedInstancePath Inverse navigation path to a related instance
-     *
-     * @param relatedInstanceDomain Domain of the related instance
-     *
-     * @return Properties of DisplaySet ICReportesDominio for a given instance
-     */
-    @Transactional(Transactional.TxType.SUPPORTS)
-    public com.keralty.aesolicitudes.viewmodel.reportesdominio.ds.ICReportesDominio getICReportesDominio(String instanceOid, String relatedInstancePath, String relatedInstanceDomain) {
-        ReportesDominio instance = (relatedInstancePath.isEmpty() ? 
-                getByJsonOid(instanceOid):
-                getByRelated(buildRelatedInstance(instanceOid, relatedInstancePath), relatedInstancePath).get(0));
-        return new com.keralty.aesolicitudes.viewmodel.reportesdominio.ds.ICReportesDominio(instance);
-    }
-
     /*
      * Returns the population of class ReportesDominio that matches certain search criteria
      *

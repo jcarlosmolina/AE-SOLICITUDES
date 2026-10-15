@@ -136,67 +136,6 @@ public class GrupoAsociadoService extends AbstractService {
         }
         return results;
     }
-
-    /*
-     * Gets the properties of DisplaySet ICGrupoAsociado for a given instance
-     *
-     * @param instanceOid Instance OID in JSON format. Related instance OID in JSON
-     * format if relatedInstancePath is provided
-     *
-     * @param relatedInstancePath Inverse navigation path to a related instance
-     *
-     * @param relatedInstanceDomain Domain of the related instance
-     *
-     * @return Properties of DisplaySet ICGrupoAsociado for a given instance
-     */
-    @Transactional(Transactional.TxType.SUPPORTS)
-    public com.keralty.aesolicitudes.viewmodel.grupoasociado.ds.ICGrupoAsociado getICGrupoAsociado(String instanceOid, String relatedInstancePath, String relatedInstanceDomain) {
-        GrupoAsociado instance = (relatedInstancePath.isEmpty() ? 
-                getByJsonOid(instanceOid):
-                getByRelated(buildRelatedInstance(instanceOid, relatedInstancePath), relatedInstancePath).get(0));
-        return new com.keralty.aesolicitudes.viewmodel.grupoasociado.ds.ICGrupoAsociado(instance);
-    }
-
-    /*
-     * Gets the properties of DisplaySet DSGrupoAsociadoPIU for a given instance
-     *
-     * @param instanceOid Instance OID in JSON format. Related instance OID in JSON
-     * format if relatedInstancePath is provided
-     *
-     * @param relatedInstancePath Inverse navigation path to a related instance
-     *
-     * @param relatedInstanceDomain Domain of the related instance
-     *
-     * @return Properties of DisplaySet DSGrupoAsociadoPIU for a given instance
-     */
-    @Transactional(Transactional.TxType.SUPPORTS)
-    public com.keralty.aesolicitudes.viewmodel.grupoasociado.ds.DSGrupoAsociadoPIU getDSGrupoAsociadoPIU(String instanceOid, String relatedInstancePath, String relatedInstanceDomain) {
-        GrupoAsociado instance = (relatedInstancePath.isEmpty() ? 
-                getByJsonOid(instanceOid):
-                getByRelated(buildRelatedInstance(instanceOid, relatedInstancePath), relatedInstancePath).get(0));
-        return new com.keralty.aesolicitudes.viewmodel.grupoasociado.ds.DSGrupoAsociadoPIU(instance);
-    }
-
-    /*
-     * Gets the properties of DisplaySet DSGrupoAsociadoPIUBusqueda for a given instance
-     *
-     * @param instanceOid Instance OID in JSON format. Related instance OID in JSON
-     * format if relatedInstancePath is provided
-     *
-     * @param relatedInstancePath Inverse navigation path to a related instance
-     *
-     * @param relatedInstanceDomain Domain of the related instance
-     *
-     * @return Properties of DisplaySet DSGrupoAsociadoPIUBusqueda for a given instance
-     */
-    @Transactional(Transactional.TxType.SUPPORTS)
-    public com.keralty.aesolicitudes.viewmodel.grupoasociado.ds.DSGrupoAsociadoPIUBusqueda getDSGrupoAsociadoPIUBusqueda(String instanceOid, String relatedInstancePath, String relatedInstanceDomain) {
-        GrupoAsociado instance = (relatedInstancePath.isEmpty() ? 
-                getByJsonOid(instanceOid):
-                getByRelated(buildRelatedInstance(instanceOid, relatedInstancePath), relatedInstancePath).get(0));
-        return new com.keralty.aesolicitudes.viewmodel.grupoasociado.ds.DSGrupoAsociadoPIUBusqueda(instance);
-    }
-
     /*
      * Returns the population of class GrupoAsociado that matches certain search criteria
      *

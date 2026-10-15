@@ -156,47 +156,6 @@ public class FirmaService extends AbstractService {
         repository.findAll().forEach(results::add);
         return results;
     }
-
-    /*
-     * Gets the properties of DisplaySet DSFirmaPIUResponsable for a given instance
-     *
-     * @param instanceOid Instance OID in JSON format. Related instance OID in JSON
-     * format if relatedInstancePath is provided
-     *
-     * @param relatedInstancePath Inverse navigation path to a related instance
-     *
-     * @param relatedInstanceDomain Domain of the related instance
-     *
-     * @return Properties of DisplaySet DSFirmaPIUResponsable for a given instance
-     */
-    @Transactional(Transactional.TxType.SUPPORTS)
-    public com.keralty.aesolicitudes.viewmodel.firma.ds.DSFirmaPIUResponsable getDSFirmaPIUResponsable(String instanceOid, String relatedInstancePath, String relatedInstanceDomain) {
-        Firma instance = (relatedInstancePath.isEmpty() ? 
-                getByJsonOid(instanceOid):
-                getByRelated(buildRelatedInstance(instanceOid, relatedInstancePath), relatedInstancePath).get(0));
-        return new com.keralty.aesolicitudes.viewmodel.firma.ds.DSFirmaPIUResponsable(instance);
-    }
-
-    /*
-     * Gets the properties of DisplaySet DSFirmaNull for a given instance
-     *
-     * @param instanceOid Instance OID in JSON format. Related instance OID in JSON
-     * format if relatedInstancePath is provided
-     *
-     * @param relatedInstancePath Inverse navigation path to a related instance
-     *
-     * @param relatedInstanceDomain Domain of the related instance
-     *
-     * @return Properties of DisplaySet DSFirmaNull for a given instance
-     */
-    @Transactional(Transactional.TxType.SUPPORTS)
-    public com.keralty.aesolicitudes.viewmodel.firma.ds.DSFirmaNull getDSFirmaNull(String instanceOid, String relatedInstancePath, String relatedInstanceDomain) {
-        Firma instance = (relatedInstancePath.isEmpty() ? 
-                getByJsonOid(instanceOid):
-                getByRelated(buildRelatedInstance(instanceOid, relatedInstancePath), relatedInstancePath).get(0));
-        return new com.keralty.aesolicitudes.viewmodel.firma.ds.DSFirmaNull(instance);
-    }
-
     /*
      * Returns the population of class Firma that matches certain search criteria
      *

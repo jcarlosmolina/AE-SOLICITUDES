@@ -76,7 +76,6 @@ public class ObservacionesCService extends AbstractService {
         repository.findAll().forEach(results::add);
         return results;
     }
-
     /*
      * Returns the population of class ObservacionesC that matches certain search criteria
      *

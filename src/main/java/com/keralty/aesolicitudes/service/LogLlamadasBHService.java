@@ -69,43 +69,6 @@ public class LogLlamadasBHService extends AbstractService {
         repository.findAll().forEach(results::add);
         return results;
     }
-
-    /*
-     * Gets the properties of DisplaySet DSLogLlamadasBH for a given instance
-     *
-     * @param instanceOid Instance OID in JSON format. Related instance OID in JSON
-     * format if relatedInstancePath is provided
-     *
-     * @param relatedInstancePath Inverse navigation path to a related instance
-     *
-     * @param relatedInstanceDomain Domain of the related instance
-     *
-     * @return Properties of DisplaySet DSLogLlamadasBH for a given instance
-     */
-    @Transactional(Transactional.TxType.SUPPORTS)
-    public com.keralty.aesolicitudes.viewmodel.logllamadasbh.ds.DSLogLlamadasBH getDSLogLlamadasBH(String instanceOid, String relatedInstancePath, String relatedInstanceDomain) {
-        LogLlamadasBH instance = getByJsonOid(instanceOid);
-        return new com.keralty.aesolicitudes.viewmodel.logllamadasbh.ds.DSLogLlamadasBH(instance);
-    }
-
-    /*
-     * Gets the properties of DisplaySet DSLogLlamadasBHIIU for a given instance
-     *
-     * @param instanceOid Instance OID in JSON format. Related instance OID in JSON
-     * format if relatedInstancePath is provided
-     *
-     * @param relatedInstancePath Inverse navigation path to a related instance
-     *
-     * @param relatedInstanceDomain Domain of the related instance
-     *
-     * @return Properties of DisplaySet DSLogLlamadasBHIIU for a given instance
-     */
-    @Transactional(Transactional.TxType.SUPPORTS)
-    public com.keralty.aesolicitudes.viewmodel.logllamadasbh.ds.DSLogLlamadasBHIIU getDSLogLlamadasBHIIU(String instanceOid, String relatedInstancePath, String relatedInstanceDomain) {
-        LogLlamadasBH instance = getByJsonOid(instanceOid);
-        return new com.keralty.aesolicitudes.viewmodel.logllamadasbh.ds.DSLogLlamadasBHIIU(instance);
-    }
-
     /*
      * Returns the population of class LogLlamadasBH that matches certain search criteria
      *

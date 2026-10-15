@@ -171,67 +171,6 @@ public class AreaMedicaService extends AbstractService {
         }
         return results;
     }
-
-    /*
-     * Gets the properties of DisplaySet SIAreaMedica for a given instance
-     *
-     * @param instanceOid Instance OID in JSON format. Related instance OID in JSON
-     * format if relatedInstancePath is provided
-     *
-     * @param relatedInstancePath Inverse navigation path to a related instance
-     *
-     * @param relatedInstanceDomain Domain of the related instance
-     *
-     * @return Properties of DisplaySet SIAreaMedica for a given instance
-     */
-    @Transactional(Transactional.TxType.SUPPORTS)
-    public com.keralty.aesolicitudes.viewmodel.areamedica.ds.SIAreaMedica getSIAreaMedica(String instanceOid, String relatedInstancePath, String relatedInstanceDomain) {
-        AreaMedica instance = (relatedInstancePath.isEmpty() ? 
-                getByJsonOid(instanceOid):
-                getByRelated(buildRelatedInstance(instanceOid, relatedInstancePath), relatedInstancePath).get(0));
-        return new com.keralty.aesolicitudes.viewmodel.areamedica.ds.SIAreaMedica(instance);
-    }
-
-    /*
-     * Gets the properties of DisplaySet DSAreaMedicaNull for a given instance
-     *
-     * @param instanceOid Instance OID in JSON format. Related instance OID in JSON
-     * format if relatedInstancePath is provided
-     *
-     * @param relatedInstancePath Inverse navigation path to a related instance
-     *
-     * @param relatedInstanceDomain Domain of the related instance
-     *
-     * @return Properties of DisplaySet DSAreaMedicaNull for a given instance
-     */
-    @Transactional(Transactional.TxType.SUPPORTS)
-    public com.keralty.aesolicitudes.viewmodel.areamedica.ds.DSAreaMedicaNull getDSAreaMedicaNull(String instanceOid, String relatedInstancePath, String relatedInstanceDomain) {
-        AreaMedica instance = (relatedInstancePath.isEmpty() ? 
-                getByJsonOid(instanceOid):
-                getByRelated(buildRelatedInstance(instanceOid, relatedInstancePath), relatedInstancePath).get(0));
-        return new com.keralty.aesolicitudes.viewmodel.areamedica.ds.DSAreaMedicaNull(instance);
-    }
-
-    /*
-     * Gets the properties of DisplaySet DSAreaMedica for a given instance
-     *
-     * @param instanceOid Instance OID in JSON format. Related instance OID in JSON
-     * format if relatedInstancePath is provided
-     *
-     * @param relatedInstancePath Inverse navigation path to a related instance
-     *
-     * @param relatedInstanceDomain Domain of the related instance
-     *
-     * @return Properties of DisplaySet DSAreaMedica for a given instance
-     */
-    @Transactional(Transactional.TxType.SUPPORTS)
-    public com.keralty.aesolicitudes.viewmodel.areamedica.ds.DSAreaMedica getDSAreaMedica(String instanceOid, String relatedInstancePath, String relatedInstanceDomain) {
-        AreaMedica instance = (relatedInstancePath.isEmpty() ? 
-                getByJsonOid(instanceOid):
-                getByRelated(buildRelatedInstance(instanceOid, relatedInstancePath), relatedInstancePath).get(0));
-        return new com.keralty.aesolicitudes.viewmodel.areamedica.ds.DSAreaMedica(instance);
-    }
-
     /*
      * Returns the population of class AreaMedica that matches certain search criteria
      *

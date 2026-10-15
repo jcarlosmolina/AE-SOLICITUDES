@@ -80,27 +80,6 @@ public class LogEstadoService extends AbstractService {
         repository.findAll().forEach(results::add);
         return results;
     }
-
-    /*
-     * Gets the properties of DisplaySet DSLogEstado for a given instance
-     *
-     * @param instanceOid Instance OID in JSON format. Related instance OID in JSON
-     * format if relatedInstancePath is provided
-     *
-     * @param relatedInstancePath Inverse navigation path to a related instance
-     *
-     * @param relatedInstanceDomain Domain of the related instance
-     *
-     * @return Properties of DisplaySet DSLogEstado for a given instance
-     */
-    @Transactional(Transactional.TxType.SUPPORTS)
-    public com.keralty.aesolicitudes.viewmodel.logestado.ds.DSLogEstado getDSLogEstado(String instanceOid, String relatedInstancePath, String relatedInstanceDomain) {
-        LogEstado instance = (relatedInstancePath.isEmpty() ? 
-                getByJsonOid(instanceOid):
-                getByRelated(buildRelatedInstance(instanceOid, relatedInstancePath), relatedInstancePath).get(0));
-        return new com.keralty.aesolicitudes.viewmodel.logestado.ds.DSLogEstado(instance);
-    }
-
     /*
      * Returns the population of class LogEstado that matches certain search criteria
      *

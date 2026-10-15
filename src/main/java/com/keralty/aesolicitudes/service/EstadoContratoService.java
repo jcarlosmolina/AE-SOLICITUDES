@@ -110,47 +110,6 @@ public class EstadoContratoService extends AbstractService {
         }
         return results;
     }
-
-    /*
-     * Gets the properties of DisplaySet ICEstadoContrato for a given instance
-     *
-     * @param instanceOid Instance OID in JSON format. Related instance OID in JSON
-     * format if relatedInstancePath is provided
-     *
-     * @param relatedInstancePath Inverse navigation path to a related instance
-     *
-     * @param relatedInstanceDomain Domain of the related instance
-     *
-     * @return Properties of DisplaySet ICEstadoContrato for a given instance
-     */
-    @Transactional(Transactional.TxType.SUPPORTS)
-    public com.keralty.aesolicitudes.viewmodel.estadocontrato.ds.ICEstadoContrato getICEstadoContrato(String instanceOid, String relatedInstancePath, String relatedInstanceDomain) {
-        EstadoContrato instance = (relatedInstancePath.isEmpty() ? 
-                getByJsonOid(instanceOid):
-                getByRelated(buildRelatedInstance(instanceOid, relatedInstancePath), relatedInstancePath).get(0));
-        return new com.keralty.aesolicitudes.viewmodel.estadocontrato.ds.ICEstadoContrato(instance);
-    }
-
-    /*
-     * Gets the properties of DisplaySet AutoDS for a given instance
-     *
-     * @param instanceOid Instance OID in JSON format. Related instance OID in JSON
-     * format if relatedInstancePath is provided
-     *
-     * @param relatedInstancePath Inverse navigation path to a related instance
-     *
-     * @param relatedInstanceDomain Domain of the related instance
-     *
-     * @return Properties of DisplaySet AutoDS for a given instance
-     */
-    @Transactional(Transactional.TxType.SUPPORTS)
-    public com.keralty.aesolicitudes.viewmodel.estadocontrato.ds.AutoDS getAutoDS(String instanceOid, String relatedInstancePath, String relatedInstanceDomain) {
-        EstadoContrato instance = (relatedInstancePath.isEmpty() ? 
-                getByJsonOid(instanceOid):
-                getByRelated(buildRelatedInstance(instanceOid, relatedInstancePath), relatedInstancePath).get(0));
-        return new com.keralty.aesolicitudes.viewmodel.estadocontrato.ds.AutoDS(instance);
-    }
-
     /*
      * Returns the population of class EstadoContrato that matches certain search criteria
      *

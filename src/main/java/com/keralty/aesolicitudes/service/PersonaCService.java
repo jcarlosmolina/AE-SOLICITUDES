@@ -231,7 +231,6 @@ public class PersonaCService extends AbstractService {
         repository.findAll().forEach(results::add);
         return results;
     }
-
     /*
      * Returns the population of class PersonaC that matches certain search criteria
      *

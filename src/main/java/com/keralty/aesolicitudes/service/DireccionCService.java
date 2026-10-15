@@ -113,7 +113,6 @@ public class DireccionCService extends AbstractService {
         repository.findAll().forEach(results::add);
         return results;
     }
-
     /*
      * Returns the population of class DireccionC that matches certain search criteria
      *

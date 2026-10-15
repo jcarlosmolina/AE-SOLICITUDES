@@ -202,7 +202,6 @@ public class ContratoCService extends AbstractService {
         repository.findAll().forEach(results::add);
         return results;
     }
-
     /*
      * Returns the population of class ContratoC that matches certain search criteria
      *

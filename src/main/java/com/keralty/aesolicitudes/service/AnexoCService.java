@@ -88,7 +88,6 @@ public class AnexoCService extends AbstractService {
         repository.findAll().forEach(results::add);
         return results;
     }
-
     /*
      * Returns the population of class AnexoC that matches certain search criteria
      *

@@ -75,7 +75,6 @@ public class ConceptoCService extends AbstractService {
         repository.findAll().forEach(results::add);
         return results;
     }
-
     /*
      * Returns the population of class ConceptoC that matches certain search criteria
      *

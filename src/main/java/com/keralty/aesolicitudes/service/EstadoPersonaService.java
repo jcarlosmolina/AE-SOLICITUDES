@@ -104,47 +104,6 @@ public class EstadoPersonaService extends AbstractService {
         }
         return results;
     }
-
-    /*
-     * Gets the properties of DisplaySet ICEstadoPersona for a given instance
-     *
-     * @param instanceOid Instance OID in JSON format. Related instance OID in JSON
-     * format if relatedInstancePath is provided
-     *
-     * @param relatedInstancePath Inverse navigation path to a related instance
-     *
-     * @param relatedInstanceDomain Domain of the related instance
-     *
-     * @return Properties of DisplaySet ICEstadoPersona for a given instance
-     */
-    @Transactional(Transactional.TxType.SUPPORTS)
-    public com.keralty.aesolicitudes.viewmodel.estadopersona.ds.ICEstadoPersona getICEstadoPersona(String instanceOid, String relatedInstancePath, String relatedInstanceDomain) {
-        EstadoPersona instance = (relatedInstancePath.isEmpty() ? 
-                getByJsonOid(instanceOid):
-                getByRelated(buildRelatedInstance(instanceOid, relatedInstancePath), relatedInstancePath).get(0));
-        return new com.keralty.aesolicitudes.viewmodel.estadopersona.ds.ICEstadoPersona(instance);
-    }
-
-    /*
-     * Gets the properties of DisplaySet AutoDS for a given instance
-     *
-     * @param instanceOid Instance OID in JSON format. Related instance OID in JSON
-     * format if relatedInstancePath is provided
-     *
-     * @param relatedInstancePath Inverse navigation path to a related instance
-     *
-     * @param relatedInstanceDomain Domain of the related instance
-     *
-     * @return Properties of DisplaySet AutoDS for a given instance
-     */
-    @Transactional(Transactional.TxType.SUPPORTS)
-    public com.keralty.aesolicitudes.viewmodel.estadopersona.ds.AutoDS getAutoDS(String instanceOid, String relatedInstancePath, String relatedInstanceDomain) {
-        EstadoPersona instance = (relatedInstancePath.isEmpty() ? 
-                getByJsonOid(instanceOid):
-                getByRelated(buildRelatedInstance(instanceOid, relatedInstancePath), relatedInstancePath).get(0));
-        return new com.keralty.aesolicitudes.viewmodel.estadopersona.ds.AutoDS(instance);
-    }
-
     /*
      * Returns the population of class EstadoPersona that matches certain search criteria
      *

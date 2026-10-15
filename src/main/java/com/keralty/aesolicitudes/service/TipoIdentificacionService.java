@@ -162,67 +162,6 @@ public class TipoIdentificacionService extends AbstractService {
         }
         return results;
     }
-
-    /*
-     * Gets the properties of DisplaySet ICTipoIdentificacion for a given instance
-     *
-     * @param instanceOid Instance OID in JSON format. Related instance OID in JSON
-     * format if relatedInstancePath is provided
-     *
-     * @param relatedInstancePath Inverse navigation path to a related instance
-     *
-     * @param relatedInstanceDomain Domain of the related instance
-     *
-     * @return Properties of DisplaySet ICTipoIdentificacion for a given instance
-     */
-    @Transactional(Transactional.TxType.SUPPORTS)
-    public com.keralty.aesolicitudes.viewmodel.tipoidentificacion.ds.ICTipoIdentificacion getICTipoIdentificacion(String instanceOid, String relatedInstancePath, String relatedInstanceDomain) {
-        TipoIdentificacion instance = (relatedInstancePath.isEmpty() ? 
-                getByJsonOid(instanceOid):
-                getByRelated(buildRelatedInstance(instanceOid, relatedInstancePath), relatedInstancePath).get(0));
-        return new com.keralty.aesolicitudes.viewmodel.tipoidentificacion.ds.ICTipoIdentificacion(instance);
-    }
-
-    /*
-     * Gets the properties of DisplaySet AutoDS for a given instance
-     *
-     * @param instanceOid Instance OID in JSON format. Related instance OID in JSON
-     * format if relatedInstancePath is provided
-     *
-     * @param relatedInstancePath Inverse navigation path to a related instance
-     *
-     * @param relatedInstanceDomain Domain of the related instance
-     *
-     * @return Properties of DisplaySet AutoDS for a given instance
-     */
-    @Transactional(Transactional.TxType.SUPPORTS)
-    public com.keralty.aesolicitudes.viewmodel.tipoidentificacion.ds.AutoDS getAutoDS(String instanceOid, String relatedInstancePath, String relatedInstanceDomain) {
-        TipoIdentificacion instance = (relatedInstancePath.isEmpty() ? 
-                getByJsonOid(instanceOid):
-                getByRelated(buildRelatedInstance(instanceOid, relatedInstancePath), relatedInstancePath).get(0));
-        return new com.keralty.aesolicitudes.viewmodel.tipoidentificacion.ds.AutoDS(instance);
-    }
-
-    /*
-     * Gets the properties of DisplaySet DSTipoIdentificacionNull for a given instance
-     *
-     * @param instanceOid Instance OID in JSON format. Related instance OID in JSON
-     * format if relatedInstancePath is provided
-     *
-     * @param relatedInstancePath Inverse navigation path to a related instance
-     *
-     * @param relatedInstanceDomain Domain of the related instance
-     *
-     * @return Properties of DisplaySet DSTipoIdentificacionNull for a given instance
-     */
-    @Transactional(Transactional.TxType.SUPPORTS)
-    public com.keralty.aesolicitudes.viewmodel.tipoidentificacion.ds.DSTipoIdentificacionNull getDSTipoIdentificacionNull(String instanceOid, String relatedInstancePath, String relatedInstanceDomain) {
-        TipoIdentificacion instance = (relatedInstancePath.isEmpty() ? 
-                getByJsonOid(instanceOid):
-                getByRelated(buildRelatedInstance(instanceOid, relatedInstancePath), relatedInstancePath).get(0));
-        return new com.keralty.aesolicitudes.viewmodel.tipoidentificacion.ds.DSTipoIdentificacionNull(instance);
-    }
-
     /*
      * Returns the population of class TipoIdentificacion that matches certain search criteria
      *

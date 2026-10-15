@@ -151,7 +151,6 @@ public class FamiliaCService extends AbstractService {
         repository.findAll().forEach(results::add);
         return results;
     }
-
     /*
      * Returns the population of class FamiliaC that matches certain search criteria
      *

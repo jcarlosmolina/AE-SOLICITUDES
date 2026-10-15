@@ -116,27 +116,6 @@ public class TitularService extends AbstractService {
         repository.findAll().forEach(results::add);
         return results;
     }
-
-    /*
-     * Gets the properties of DisplaySet DSTitularNull for a given instance
-     *
-     * @param instanceOid Instance OID in JSON format. Related instance OID in JSON
-     * format if relatedInstancePath is provided
-     *
-     * @param relatedInstancePath Inverse navigation path to a related instance
-     *
-     * @param relatedInstanceDomain Domain of the related instance
-     *
-     * @return Properties of DisplaySet DSTitularNull for a given instance
-     */
-    @Transactional(Transactional.TxType.SUPPORTS)
-    public com.keralty.aesolicitudes.viewmodel.titular.ds.DSTitularNull getDSTitularNull(String instanceOid, String relatedInstancePath, String relatedInstanceDomain) {
-        Titular instance = (relatedInstancePath.isEmpty() ? 
-                getByJsonOid(instanceOid):
-                getByRelated(buildRelatedInstance(instanceOid, relatedInstancePath), relatedInstancePath).get(0));
-        return new com.keralty.aesolicitudes.viewmodel.titular.ds.DSTitularNull(instance);
-    }
-
     /*
      * Returns the population of class Titular that matches certain search criteria
      *

@@ -104,67 +104,6 @@ public class PlantillaEmailService extends AbstractService {
         }
         return results;
     }
-
-    /*
-     * Gets the properties of DisplaySet ICPlantillaEmail for a given instance
-     *
-     * @param instanceOid Instance OID in JSON format. Related instance OID in JSON
-     * format if relatedInstancePath is provided
-     *
-     * @param relatedInstancePath Inverse navigation path to a related instance
-     *
-     * @param relatedInstanceDomain Domain of the related instance
-     *
-     * @return Properties of DisplaySet ICPlantillaEmail for a given instance
-     */
-    @Transactional(Transactional.TxType.SUPPORTS)
-    public com.keralty.aesolicitudes.viewmodel.plantillaemail.ds.ICPlantillaEmail getICPlantillaEmail(String instanceOid, String relatedInstancePath, String relatedInstanceDomain) {
-        PlantillaEmail instance = (relatedInstancePath.isEmpty() ? 
-                getByJsonOid(instanceOid):
-                getByRelated(buildRelatedInstance(instanceOid, relatedInstancePath), relatedInstancePath).get(0));
-        return new com.keralty.aesolicitudes.viewmodel.plantillaemail.ds.ICPlantillaEmail(instance);
-    }
-
-    /*
-     * Gets the properties of DisplaySet DSPlantillasDominio for a given instance
-     *
-     * @param instanceOid Instance OID in JSON format. Related instance OID in JSON
-     * format if relatedInstancePath is provided
-     *
-     * @param relatedInstancePath Inverse navigation path to a related instance
-     *
-     * @param relatedInstanceDomain Domain of the related instance
-     *
-     * @return Properties of DisplaySet DSPlantillasDominio for a given instance
-     */
-    @Transactional(Transactional.TxType.SUPPORTS)
-    public com.keralty.aesolicitudes.viewmodel.plantillaemail.ds.DSPlantillasDominio getDSPlantillasDominio(String instanceOid, String relatedInstancePath, String relatedInstanceDomain) {
-        PlantillaEmail instance = (relatedInstancePath.isEmpty() ? 
-                getByJsonOid(instanceOid):
-                getByRelated(buildRelatedInstance(instanceOid, relatedInstancePath), relatedInstancePath).get(0));
-        return new com.keralty.aesolicitudes.viewmodel.plantillaemail.ds.DSPlantillasDominio(instance);
-    }
-
-    /*
-     * Gets the properties of DisplaySet DSPlantillaEmail for a given instance
-     *
-     * @param instanceOid Instance OID in JSON format. Related instance OID in JSON
-     * format if relatedInstancePath is provided
-     *
-     * @param relatedInstancePath Inverse navigation path to a related instance
-     *
-     * @param relatedInstanceDomain Domain of the related instance
-     *
-     * @return Properties of DisplaySet DSPlantillaEmail for a given instance
-     */
-    @Transactional(Transactional.TxType.SUPPORTS)
-    public com.keralty.aesolicitudes.viewmodel.plantillaemail.ds.DSPlantillaEmail getDSPlantillaEmail(String instanceOid, String relatedInstancePath, String relatedInstanceDomain) {
-        PlantillaEmail instance = (relatedInstancePath.isEmpty() ? 
-                getByJsonOid(instanceOid):
-                getByRelated(buildRelatedInstance(instanceOid, relatedInstancePath), relatedInstancePath).get(0));
-        return new com.keralty.aesolicitudes.viewmodel.plantillaemail.ds.DSPlantillaEmail(instance);
-    }
-
     /*
      * Returns the population of class PlantillaEmail that matches certain search criteria
      *

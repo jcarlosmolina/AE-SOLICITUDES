@@ -112,47 +112,6 @@ public class DocumentoGService extends AbstractService {
         repository.findAll().forEach(results::add);
         return results;
     }
-
-    /*
-     * Gets the properties of DisplaySet DSDocumentoGPIU for a given instance
-     *
-     * @param instanceOid Instance OID in JSON format. Related instance OID in JSON
-     * format if relatedInstancePath is provided
-     *
-     * @param relatedInstancePath Inverse navigation path to a related instance
-     *
-     * @param relatedInstanceDomain Domain of the related instance
-     *
-     * @return Properties of DisplaySet DSDocumentoGPIU for a given instance
-     */
-    @Transactional(Transactional.TxType.SUPPORTS)
-    public com.keralty.aesolicitudes.viewmodel.documentog.ds.DSDocumentoGPIU getDSDocumentoGPIU(String instanceOid, String relatedInstancePath, String relatedInstanceDomain) {
-        DocumentoG instance = (relatedInstancePath.isEmpty() ? 
-                getByJsonOid(instanceOid):
-                getByRelated(buildRelatedInstance(instanceOid, relatedInstancePath), relatedInstancePath).get(0));
-        return new com.keralty.aesolicitudes.viewmodel.documentog.ds.DSDocumentoGPIU(instance);
-    }
-
-    /*
-     * Gets the properties of DisplaySet DSDocumentoGIIU for a given instance
-     *
-     * @param instanceOid Instance OID in JSON format. Related instance OID in JSON
-     * format if relatedInstancePath is provided
-     *
-     * @param relatedInstancePath Inverse navigation path to a related instance
-     *
-     * @param relatedInstanceDomain Domain of the related instance
-     *
-     * @return Properties of DisplaySet DSDocumentoGIIU for a given instance
-     */
-    @Transactional(Transactional.TxType.SUPPORTS)
-    public com.keralty.aesolicitudes.viewmodel.documentog.ds.DSDocumentoGIIU getDSDocumentoGIIU(String instanceOid, String relatedInstancePath, String relatedInstanceDomain) {
-        DocumentoG instance = (relatedInstancePath.isEmpty() ? 
-                getByJsonOid(instanceOid):
-                getByRelated(buildRelatedInstance(instanceOid, relatedInstancePath), relatedInstancePath).get(0));
-        return new com.keralty.aesolicitudes.viewmodel.documentog.ds.DSDocumentoGIIU(instance);
-    }
-
     /*
      * Returns the population of class DocumentoG that matches certain search criteria
      *

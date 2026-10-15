@@ -88,27 +88,6 @@ public class AnexoNeoService extends AbstractService {
         repository.findAll().forEach(results::add);
         return results;
     }
-
-    /*
-     * Gets the properties of DisplaySet DSAnexoNeoNull for a given instance
-     *
-     * @param instanceOid Instance OID in JSON format. Related instance OID in JSON
-     * format if relatedInstancePath is provided
-     *
-     * @param relatedInstancePath Inverse navigation path to a related instance
-     *
-     * @param relatedInstanceDomain Domain of the related instance
-     *
-     * @return Properties of DisplaySet DSAnexoNeoNull for a given instance
-     */
-    @Transactional(Transactional.TxType.SUPPORTS)
-    public com.keralty.aesolicitudes.viewmodel.anexoneo.ds.DSAnexoNeoNull getDSAnexoNeoNull(String instanceOid, String relatedInstancePath, String relatedInstanceDomain) {
-        AnexoNeo instance = (relatedInstancePath.isEmpty() ? 
-                getByJsonOid(instanceOid):
-                getByRelated(buildRelatedInstance(instanceOid, relatedInstancePath), relatedInstancePath).get(0));
-        return new com.keralty.aesolicitudes.viewmodel.anexoneo.ds.DSAnexoNeoNull(instance);
-    }
-
     /*
      * Returns the population of class AnexoNeo that matches certain search criteria
      *

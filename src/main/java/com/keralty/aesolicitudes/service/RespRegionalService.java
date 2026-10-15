@@ -176,67 +176,6 @@ public class RespRegionalService extends AbstractService {
         }
         return results;
     }
-
-    /*
-     * Gets the properties of DisplaySet DSRespRegionalPIU for a given instance
-     *
-     * @param instanceOid Instance OID in JSON format. Related instance OID in JSON
-     * format if relatedInstancePath is provided
-     *
-     * @param relatedInstancePath Inverse navigation path to a related instance
-     *
-     * @param relatedInstanceDomain Domain of the related instance
-     *
-     * @return Properties of DisplaySet DSRespRegionalPIU for a given instance
-     */
-    @Transactional(Transactional.TxType.SUPPORTS)
-    public com.keralty.aesolicitudes.viewmodel.respregional.ds.DSRespRegionalPIU getDSRespRegionalPIU(String instanceOid, String relatedInstancePath, String relatedInstanceDomain) {
-        RespRegional instance = (relatedInstancePath.isEmpty() ? 
-                getByJsonOid(instanceOid):
-                getByRelated(buildRelatedInstance(instanceOid, relatedInstancePath), relatedInstancePath).get(0));
-        return new com.keralty.aesolicitudes.viewmodel.respregional.ds.DSRespRegionalPIU(instance);
-    }
-
-    /*
-     * Gets the properties of DisplaySet ICRespRegionalNomApe for a given instance
-     *
-     * @param instanceOid Instance OID in JSON format. Related instance OID in JSON
-     * format if relatedInstancePath is provided
-     *
-     * @param relatedInstancePath Inverse navigation path to a related instance
-     *
-     * @param relatedInstanceDomain Domain of the related instance
-     *
-     * @return Properties of DisplaySet ICRespRegionalNomApe for a given instance
-     */
-    @Transactional(Transactional.TxType.SUPPORTS)
-    public com.keralty.aesolicitudes.viewmodel.respregional.ds.ICRespRegionalNomApe getICRespRegionalNomApe(String instanceOid, String relatedInstancePath, String relatedInstanceDomain) {
-        RespRegional instance = (relatedInstancePath.isEmpty() ? 
-                getByJsonOid(instanceOid):
-                getByRelated(buildRelatedInstance(instanceOid, relatedInstancePath), relatedInstancePath).get(0));
-        return new com.keralty.aesolicitudes.viewmodel.respregional.ds.ICRespRegionalNomApe(instance);
-    }
-
-    /*
-     * Gets the properties of DisplaySet DSRespRegionalFirma for a given instance
-     *
-     * @param instanceOid Instance OID in JSON format. Related instance OID in JSON
-     * format if relatedInstancePath is provided
-     *
-     * @param relatedInstancePath Inverse navigation path to a related instance
-     *
-     * @param relatedInstanceDomain Domain of the related instance
-     *
-     * @return Properties of DisplaySet DSRespRegionalFirma for a given instance
-     */
-    @Transactional(Transactional.TxType.SUPPORTS)
-    public com.keralty.aesolicitudes.viewmodel.respregional.ds.DSRespRegionalFirma getDSRespRegionalFirma(String instanceOid, String relatedInstancePath, String relatedInstanceDomain) {
-        RespRegional instance = (relatedInstancePath.isEmpty() ? 
-                getByJsonOid(instanceOid):
-                getByRelated(buildRelatedInstance(instanceOid, relatedInstancePath), relatedInstancePath).get(0));
-        return new com.keralty.aesolicitudes.viewmodel.respregional.ds.DSRespRegionalFirma(instance);
-    }
-
     /*
      * Returns the population of class RespRegional that matches certain search criteria
      *
