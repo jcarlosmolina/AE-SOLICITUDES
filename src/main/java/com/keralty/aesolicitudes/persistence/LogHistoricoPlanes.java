@@ -567,7 +567,7 @@ public class LogHistoricoPlanes extends AbstractAppEntity {
 
     private static AbstractAppEntity buildRelatedInstance(String relatedInstanceJsonOid, String relatedInstancePathFirstItem, String remainingPath) {
         AbstractAppEntity relatedInstance = null;
-        if (relatedInstancePathFirstItem.isEmpty()) {
+        if (relatedInstancePathFirstItem.isEmpty() && remainingPath.isEmpty()) {
             relatedInstance = buildLogHistoricoPlanesRelatedInstance(relatedInstanceJsonOid);
         }
         if (LogHistoricoPlanesConstants.ROLE_NAME_ASESOR.equalsIgnoreCase(relatedInstancePathFirstItem)) {

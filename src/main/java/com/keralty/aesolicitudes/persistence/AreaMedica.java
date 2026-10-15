@@ -1888,7 +1888,7 @@ RADIO=1;
 
     private static AbstractAppEntity buildRelatedInstance(String relatedInstanceJsonOid, String relatedInstancePathFirstItem, String remainingPath) {
         AbstractAppEntity relatedInstance = null;
-        if (relatedInstancePathFirstItem.isEmpty()) {
+        if (relatedInstancePathFirstItem.isEmpty() && remainingPath.isEmpty()) {
             relatedInstance = buildAreaMedicaRelatedInstance(relatedInstanceJsonOid);
         }
         if (AreaMedicaConstants.ROLE_NAME_SOLICITUDESARME.equalsIgnoreCase(relatedInstancePathFirstItem) || FuncionarioConstants.ROLE_NAME_SOLICITUDES.equalsIgnoreCase(relatedInstancePathFirstItem) || FuncionarioConstants.ROLE_NAME_SOLICITUDESAFILIACION.equalsIgnoreCase(relatedInstancePathFirstItem)) {

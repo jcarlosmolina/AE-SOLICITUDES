@@ -362,7 +362,7 @@ public class PriorizacionSolicitudes extends AbstractAppEntity {
 
     private static AbstractAppEntity buildRelatedInstance(String relatedInstanceJsonOid, String relatedInstancePathFirstItem, String remainingPath) {
         AbstractAppEntity relatedInstance = null;
-        if (relatedInstancePathFirstItem.isEmpty()) {
+        if (relatedInstancePathFirstItem.isEmpty() && remainingPath.isEmpty()) {
             relatedInstance = buildPriorizacionSolicitudesRelatedInstance(relatedInstanceJsonOid);
         }
         if (PriorizacionSolicitudesConstants.ROLE_NAME_LOGPRIORIZACIONSOL.equalsIgnoreCase(relatedInstancePathFirstItem)) {

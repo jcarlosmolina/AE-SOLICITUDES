@@ -1083,7 +1083,7 @@ RADIO=1;
 
     private static AbstractAppEntity buildRelatedInstance(String relatedInstanceJsonOid, String relatedInstancePathFirstItem, String remainingPath) {
         AbstractAppEntity relatedInstance = null;
-        if (relatedInstancePathFirstItem.isEmpty()) {
+        if (relatedInstancePathFirstItem.isEmpty() && remainingPath.isEmpty()) {
             relatedInstance = buildConfiguracionANSRelatedInstance(relatedInstanceJsonOid);
         }
         if (ConfiguracionANSConstants.ROLE_NAME_LOGCONFIGURACIONANS.equalsIgnoreCase(relatedInstancePathFirstItem)) {

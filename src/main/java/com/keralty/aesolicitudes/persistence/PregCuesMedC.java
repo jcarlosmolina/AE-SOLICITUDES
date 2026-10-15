@@ -450,7 +450,7 @@ public class PregCuesMedC extends AbstractAppEntity {
 
     private static AbstractAppEntity buildRelatedInstance(String relatedInstanceJsonOid, String relatedInstancePathFirstItem, String remainingPath) {
         AbstractAppEntity relatedInstance = null;
-        if (relatedInstancePathFirstItem.isEmpty()) {
+        if (relatedInstancePathFirstItem.isEmpty() && remainingPath.isEmpty()) {
             relatedInstance = buildPregCuesMedCRelatedInstance(relatedInstanceJsonOid);
         }
         if (PregCuesMedCConstants.ROLE_NAME_PERSONAC.equalsIgnoreCase(relatedInstancePathFirstItem)) {

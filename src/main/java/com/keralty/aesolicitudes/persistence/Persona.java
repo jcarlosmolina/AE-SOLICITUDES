@@ -2296,7 +2296,7 @@ Condiciones:
 
     private static AbstractAppEntity buildRelatedInstance(String relatedInstanceJsonOid, String relatedInstancePathFirstItem, String remainingPath) {
         AbstractAppEntity relatedInstance = null;
-        if (relatedInstancePathFirstItem.isEmpty()) {
+        if (relatedInstancePathFirstItem.isEmpty() && remainingPath.isEmpty()) {
             relatedInstance = buildPersonaRelatedInstance(relatedInstanceJsonOid);
         }
         if (PersonaConstants.ROLE_NAME_SOLICITUDESCONTRATANTE.equalsIgnoreCase(relatedInstancePathFirstItem) || PersonaConstants.ROLE_NAME_SOLICITUDESTITULAR.equalsIgnoreCase(relatedInstancePathFirstItem)) {

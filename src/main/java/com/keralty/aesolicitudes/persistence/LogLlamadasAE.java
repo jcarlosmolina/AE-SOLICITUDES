@@ -740,7 +740,7 @@ NUMCOLS=2;
 
     private static AbstractAppEntity buildRelatedInstance(String relatedInstanceJsonOid, String relatedInstancePathFirstItem, String remainingPath) {
         AbstractAppEntity relatedInstance = null;
-        if (relatedInstancePathFirstItem.isEmpty()) {
+        if (relatedInstancePathFirstItem.isEmpty() && remainingPath.isEmpty()) {
             relatedInstance = buildLogLlamadasAERelatedInstance(relatedInstanceJsonOid);
         }
         return relatedInstance;

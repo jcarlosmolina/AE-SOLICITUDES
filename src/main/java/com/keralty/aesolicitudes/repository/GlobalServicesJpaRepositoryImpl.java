@@ -403,6 +403,7 @@ public class GlobalServicesJpaRepositoryImpl extends AbstractRepository implemen
         }
     }
 
+    @Override
     public void refreshEntity(Object object) {
         super.refreshEntity(object);
     }

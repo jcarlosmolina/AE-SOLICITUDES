@@ -567,7 +567,7 @@ public class LogEstadoDocNov extends AbstractAppEntity {
 
     private static AbstractAppEntity buildRelatedInstance(String relatedInstanceJsonOid, String relatedInstancePathFirstItem, String remainingPath) {
         AbstractAppEntity relatedInstance = null;
-        if (relatedInstancePathFirstItem.isEmpty()) {
+        if (relatedInstancePathFirstItem.isEmpty() && remainingPath.isEmpty()) {
             relatedInstance = buildLogEstadoDocNovRelatedInstance(relatedInstanceJsonOid);
         }
         if (LogEstadoDocNovConstants.ROLE_NAME_DOCUMENTONOVEDAD.equalsIgnoreCase(relatedInstancePathFirstItem)) {

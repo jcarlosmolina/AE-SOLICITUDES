@@ -1024,7 +1024,7 @@ Si se selecciona “No condicionada”, no será obligatorio diligenciar el dato
 
     private static AbstractAppEntity buildRelatedInstance(String relatedInstanceJsonOid, String relatedInstancePathFirstItem, String remainingPath) {
         AbstractAppEntity relatedInstance = null;
-        if (relatedInstancePathFirstItem.isEmpty()) {
+        if (relatedInstancePathFirstItem.isEmpty() && remainingPath.isEmpty()) {
             relatedInstance = buildPreguntaRelatedInstance(relatedInstanceJsonOid);
         }
         if (PreguntaConstants.ROLE_NAME_VALORES.equalsIgnoreCase(relatedInstancePathFirstItem)) {

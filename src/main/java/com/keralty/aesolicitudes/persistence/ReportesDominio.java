@@ -570,7 +570,7 @@ Si en el Dominio de mi tipo y fecha posterior a la mia no hay ninguno  entonces 
 
     private static AbstractAppEntity buildRelatedInstance(String relatedInstanceJsonOid, String relatedInstancePathFirstItem, String remainingPath) {
         AbstractAppEntity relatedInstance = null;
-        if (relatedInstancePathFirstItem.isEmpty()) {
+        if (relatedInstancePathFirstItem.isEmpty() && remainingPath.isEmpty()) {
             relatedInstance = buildReportesDominioRelatedInstance(relatedInstanceJsonOid);
         }
         if (ReportesDominioConstants.ROLE_NAME_DOMINIO.equalsIgnoreCase(relatedInstancePathFirstItem)) {

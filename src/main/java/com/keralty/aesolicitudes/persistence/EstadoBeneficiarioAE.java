@@ -346,7 +346,7 @@ public class EstadoBeneficiarioAE extends AbstractAppEntity {
 
     private static AbstractAppEntity buildRelatedInstance(String relatedInstanceJsonOid, String relatedInstancePathFirstItem, String remainingPath) {
         AbstractAppEntity relatedInstance = null;
-        if (relatedInstancePathFirstItem.isEmpty()) {
+        if (relatedInstancePathFirstItem.isEmpty() && remainingPath.isEmpty()) {
             relatedInstance = buildEstadoBeneficiarioAERelatedInstance(relatedInstanceJsonOid);
         }
         if (EstadoBeneficiarioAEConstants.ROLE_NAME_ESTADOBENEFICIARIOCORE.equalsIgnoreCase(relatedInstancePathFirstItem)) {

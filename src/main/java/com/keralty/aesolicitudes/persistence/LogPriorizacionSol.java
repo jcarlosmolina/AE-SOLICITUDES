@@ -573,7 +573,7 @@ public class LogPriorizacionSol extends AbstractAppEntity {
 
     private static AbstractAppEntity buildRelatedInstance(String relatedInstanceJsonOid, String relatedInstancePathFirstItem, String remainingPath) {
         AbstractAppEntity relatedInstance = null;
-        if (relatedInstancePathFirstItem.isEmpty()) {
+        if (relatedInstancePathFirstItem.isEmpty() && remainingPath.isEmpty()) {
             relatedInstance = buildLogPriorizacionSolRelatedInstance(relatedInstanceJsonOid);
         }
         if (LogPriorizacionSolConstants.ROLE_NAME_PRISOLICITUD.equalsIgnoreCase(relatedInstancePathFirstItem)) {

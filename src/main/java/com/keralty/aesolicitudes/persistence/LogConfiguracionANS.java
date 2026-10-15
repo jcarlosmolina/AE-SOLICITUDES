@@ -897,7 +897,7 @@ public class LogConfiguracionANS extends AbstractAppEntity {
 
     private static AbstractAppEntity buildRelatedInstance(String relatedInstanceJsonOid, String relatedInstancePathFirstItem, String remainingPath) {
         AbstractAppEntity relatedInstance = null;
-        if (relatedInstancePathFirstItem.isEmpty()) {
+        if (relatedInstancePathFirstItem.isEmpty() && remainingPath.isEmpty()) {
             relatedInstance = buildLogConfiguracionANSRelatedInstance(relatedInstanceJsonOid);
         }
         if (LogConfiguracionANSConstants.ROLE_NAME_CONFIGURACIONANS.equalsIgnoreCase(relatedInstancePathFirstItem)) {

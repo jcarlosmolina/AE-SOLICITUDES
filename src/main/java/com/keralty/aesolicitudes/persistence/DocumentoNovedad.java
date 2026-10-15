@@ -955,7 +955,7 @@ En el caso de novedad solo será documento de identificación. Lo mantenemos com
 
     private static AbstractAppEntity buildRelatedInstance(String relatedInstanceJsonOid, String relatedInstancePathFirstItem, String remainingPath) {
         AbstractAppEntity relatedInstance = null;
-        if (relatedInstancePathFirstItem.isEmpty()) {
+        if (relatedInstancePathFirstItem.isEmpty() && remainingPath.isEmpty()) {
             relatedInstance = buildDocumentoNovedadRelatedInstance(relatedInstanceJsonOid);
         }
         if (DocumentoNovedadConstants.ROLE_NAME_LOGESTADODOCNOV.equalsIgnoreCase(relatedInstancePathFirstItem)) {

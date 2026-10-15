@@ -2665,7 +2665,7 @@ RADIO=1;
 
     private static AbstractAppEntity buildRelatedInstance(String relatedInstanceJsonOid, String relatedInstancePathFirstItem, String remainingPath) {
         AbstractAppEntity relatedInstance = null;
-        if (relatedInstancePathFirstItem.isEmpty()) {
+        if (relatedInstancePathFirstItem.isEmpty() && remainingPath.isEmpty()) {
             relatedInstance = buildDominioRelatedInstance(relatedInstanceJsonOid);
         }
         if (DominioConstants.ROLE_NAME_DOMINIOSCONINCOMPATIBILIDAD.equalsIgnoreCase(relatedInstancePathFirstItem) || DominioConstants.ROLE_NAME_DOMINIOSINCOMPATIBLES.equalsIgnoreCase(relatedInstancePathFirstItem)) {
