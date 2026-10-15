@@ -65,6 +65,7 @@ public abstract class AbstractAppEntity implements IEntity {
      * 
      * @param serCtx The context
      */
+	@Override
     public void setServiceContext(QueryContext serCtx) {
         this.serCtx = serCtx;
     }
@@ -99,6 +100,7 @@ public abstract class AbstractAppEntity implements IEntity {
      * @return boolean
      */
     @JsonIgnore
+	@Override
     public boolean isNull() {
         return getOid() == null || getOid().isNull();
     }
@@ -208,6 +210,7 @@ public abstract class AbstractAppEntity implements IEntity {
      * @param expression element over the visibility is checked
      * @return TRUE if the element is visible, FALSE otherwise.
      */
+	@Override
     public boolean isVisible(String expression) {
         boolean returnValue = false;
         
@@ -252,15 +255,15 @@ public abstract class AbstractAppEntity implements IEntity {
     }
 
     protected boolean isRelatedItemVerticallyVisible(String item) {
-    	// To be overridden/implemented in specific classes
+        // To be overridden/implemented in specific classes
         return !item.isEmpty();
     }
     
     private boolean isRelatedItemHorizontallyVisible(String item, String pendingExpression) {
-    	AbstractAppEntity relatedInstance = getRelatedInstance(item);
-    	return relatedInstance != null
-    		&& relatedInstance.checkHorizontalVisibility(getAgent().getAgentInstance())
-    		&& relatedInstance.isVisible(pendingExpression);
+        AbstractAppEntity relatedInstance = getRelatedInstance(item);
+        return relatedInstance != null
+            && relatedInstance.checkHorizontalVisibility(getAgent().getAgentInstance())
+            && relatedInstance.isVisible(pendingExpression);
     }
     
     /**
@@ -269,58 +272,60 @@ public abstract class AbstractAppEntity implements IEntity {
      * @param attribute the attribute name whose getter method must be returned
      * @return the getter Method for the given attribute or null if the attribute getter does not exist
      */
-     public Method getMethod(String attribute) {
-         Method methodToReturn = null;
-         String methodToLookFor = "get" + attribute;
-         String alternateMethodToLookFor = "get" + this.getOid().getDefinitionClass() + attribute;
-         for (Method method : getMethods()) {
-             if (methodToLookFor.equalsIgnoreCase(method.getName())
-                 || alternateMethodToLookFor.equalsIgnoreCase(method.getName())) {
-                 methodToReturn = method;
-             }
-         }
+	@Override
+    public Method getMethod(String attribute) {
+        Method methodToReturn = null;
+        String methodToLookFor = "get" + attribute;
+        String alternateMethodToLookFor = "get" + this.getOid().getDefinitionClass() + attribute;
+        for (Method method : getMethods()) {
+            if (methodToLookFor.equalsIgnoreCase(method.getName())
+                || alternateMethodToLookFor.equalsIgnoreCase(method.getName())) {
+                methodToReturn = method;
+            }
+        }
          
-         return methodToReturn;
-     }
+        return methodToReturn;
+    }
      
-     @JsonIgnore
-     protected Method[] getMethods() {
-     	return new Method[0];
-     }
+    @JsonIgnore
+    protected Method[] getMethods() {
+        return new Method[0];
+    }
      
-     /**
-      * Returns the data type of the <code>attribute</code>.
-      * @param attribute the attribute name whose data type name is to be returned.
-      * @return the data type name of the given attribute or null if the attribute does not exist.
-      */
-     public String getAttributeType(String attribute) {
-    	 String returnedType = "";
-    	 if (attribute.contains(PATH_SEPARATOR)) {
-    		 String role = attribute.substring(0, attribute.indexOf(PATH_SEPARATOR));
-    		 String remainingattribute = attribute.substring(attribute.indexOf(PATH_SEPARATOR) + 1);
-    		 returnedType = getAttributeTypeRelated(role, remainingattribute);
-    	 } else {
-    		 returnedType = getClassAttributeType(attribute);
-    		 // If the attribute does not exist, return "String" as the default type
-    		 if (returnedType == null || returnedType.isEmpty())
-    			 returnedType = Constants.Type.STRING.getTypeName();
-    	 }
-    	 return returnedType; 
-     }
+    /**
+     * Returns the data type of the <code>attribute</code>.
+     * @param attribute the attribute name whose data type name is to be returned.
+     * @return the data type name of the given attribute or null if the attribute does not exist.
+     */
+	@Override
+    public String getAttributeType(String attribute) {
+   	    String returnedType = "";
+   	    if (attribute.contains(PATH_SEPARATOR)) {
+            String role = attribute.substring(0, attribute.indexOf(PATH_SEPARATOR));
+            String remainingattribute = attribute.substring(attribute.indexOf(PATH_SEPARATOR) + 1);
+            returnedType = getAttributeTypeRelated(role, remainingattribute);
+   	    } else {
+            returnedType = getClassAttributeType(attribute);
+            // If the attribute does not exist, return "String" as the default type
+            if (returnedType == null || returnedType.isEmpty())
+                returnedType = Constants.Type.STRING.getTypeName();
+   	    }
+   	    return returnedType; 
+    }
 
-     /**
-      * Returns the data type of the <code>attribute</code> defined in <code>role</code>.
-      * @param role the owner class of the attribute.
-      * @param attribute the attribute name whose data type name is to be returned.
-      * @return the data type name of the given attribute or null if the attribute does not exist.
-      */
-     public String getAttributeTypeRelated(String role, String attribute) {
-    	 // To be overridden/implemented in specific classes
-    	 return role + attribute;
-     }
+    /**
+     * Returns the data type of the <code>attribute</code> defined in <code>role</code>.
+     * @param role the owner class of the attribute.
+     * @param attribute the attribute name whose data type name is to be returned.
+     * @return the data type name of the given attribute or null if the attribute does not exist.
+     */
+    public String getAttributeTypeRelated(String role, String attribute) {
+        // To be overridden/implemented in specific classes
+        return role + attribute;
+    }
 
-     protected String getClassAttributeType(String attribute) {
-    	 // To be overridden/implemented in specific classes
-    	 return attribute;
-     }
+    protected String getClassAttributeType(String attribute) {
+        // To be overridden/implemented in specific classes
+        return attribute;
+    }
 }

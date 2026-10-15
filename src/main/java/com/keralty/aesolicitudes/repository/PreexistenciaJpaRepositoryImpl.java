@@ -55,6 +55,7 @@ public class PreexistenciaJpaRepositoryImpl extends AbstractRepository implement
         return getQueryBuilder().build(select, pageSize, pageNumber).execute();
     }
 
+    @Override
     public Long nextPreexistenciaIdentificador(Long aesolicitudesidsolicitud, Long usuarioUsuarioIdentificador) {
         try {
             SQLMax sql = new SQLMax(null, PreexistenciaConstants.CLASS_NAME, PreexistenciaConstants.CLASS_NAME + "." + PreexistenciaConstants.ATTR_FIELD_PREEXISTENCIAIDENTIFICADOR);

@@ -53,6 +53,7 @@ public class ProrrateoJpaRepositoryImpl extends AbstractRepository implements Pr
         return getQueryBuilder().build(select, pageSize, pageNumber).execute();
     }
 
+    @Override
     public Long nextProrrateoidProrrateo(Long dominioNumero) {
         try {
             SQLMax sql = new SQLMax(null, ProrrateoConstants.CLASS_NAME, ProrrateoConstants.CLASS_NAME + "." + ProrrateoConstants.ATTR_FIELD_PRORRATEOIDPRORRATEO);

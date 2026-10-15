@@ -93,6 +93,7 @@ public class UsuarioJpaRepositoryImpl extends AbstractRepository implements Usua
         return getQueryBuilder().build(select, pageSize, pageNumber).execute();
     }
 
+    @Override
     public Long nextUsuarioIdentificador(Long aesolicitudesidsolicitud) {
         try {
             SQLMax sql = new SQLMax(null, UsuarioConstants.CLASS_NAME, UsuarioConstants.CLASS_NAME + "." + UsuarioConstants.ATTR_FIELD_USUARIOIDENTIFICADOR);

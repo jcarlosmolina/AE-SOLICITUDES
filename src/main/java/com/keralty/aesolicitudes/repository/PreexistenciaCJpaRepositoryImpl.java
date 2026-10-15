@@ -53,6 +53,7 @@ public class PreexistenciaCJpaRepositoryImpl extends AbstractRepository implemen
         return getQueryBuilder().build(select, pageSize, pageNumber).execute();
     }
 
+    @Override
     public Long nextPreexistenciaCIdentificador(Long personaCID) {
         try {
             SQLMax sql = new SQLMax(null, PreexistenciaCConstants.CLASS_NAME, PreexistenciaCConstants.CLASS_NAME + "." + PreexistenciaCConstants.ATTR_FIELD_PREEXISTENCIACIDENTIFICADOR);

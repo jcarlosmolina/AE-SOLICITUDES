@@ -53,6 +53,7 @@ public class ObsEstadoJpaRepositoryImpl extends AbstractRepository implements Ob
         return getQueryBuilder().build(select, pageSize, pageNumber).execute();
     }
 
+    @Override
     public Long nextObsEstadoId(Long documentoGIdentificador) {
         try {
             SQLMax sql = new SQLMax(null, ObsEstadoConstants.CLASS_NAME, ObsEstadoConstants.CLASS_NAME + "." + ObsEstadoConstants.ATTR_FIELD_OBSESTADOID);

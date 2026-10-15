@@ -72,6 +72,7 @@ public class BeneficiarioCJpaRepositoryImpl extends AbstractRepository implement
         return getQueryBuilder().build(select, pageSize, pageNumber).execute();
     }
 
+    @Override
     public Long nextBeneficiarioCID(Long contratoCContratoCID) {
         try {
             SQLMax sql = new SQLMax(null, BeneficiarioCConstants.CLASS_NAME, BeneficiarioCConstants.CLASS_NAME + "." + BeneficiarioCConstants.ATTR_FIELD_BENEFICIARIOCID);

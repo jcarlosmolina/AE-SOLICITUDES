@@ -53,6 +53,7 @@ public class AgentexProductoJpaRepositoryImpl extends AbstractRepository impleme
         return getQueryBuilder().build(select, pageSize, pageNumber).execute();
     }
 
+    @Override
     public Long nextAgentexProductoId(Long funcionarioAsesorId) {
         try {
             SQLMax sql = new SQLMax(null, AgentexProductoConstants.CLASS_NAME, AgentexProductoConstants.CLASS_NAME + "." + AgentexProductoConstants.ATTR_FIELD_AGENTEXPRODUCTOID);

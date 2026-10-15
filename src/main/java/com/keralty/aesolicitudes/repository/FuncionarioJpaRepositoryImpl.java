@@ -74,34 +74,42 @@ public class FuncionarioJpaRepositoryImpl extends AbstractRepository implements 
         return getQueryBuilder().build(select, pageSize, pageNumber).execute();
     }
 
+    @Override
     public Admin findChildAdmin(Long oid) {
         return em.find(Admin.class, oid);
     }
 
+    @Override
     public SuperAdmin findChildSuperAdmin(Long oid) {
         return em.find(SuperAdmin.class, oid);
     }
 
+    @Override
     public Asesor findChildAsesor(Long oid) {
         return em.find(Asesor.class, oid);
     }
 
+    @Override
     public AreaMedica findChildAreaMedica(Long oid) {
         return em.find(AreaMedica.class, oid);
     }
 
+    @Override
     public Afiliaciones findChildAfiliaciones(Long oid) {
         return em.find(Afiliaciones.class, oid);
     }
 
+    @Override
     public RespRegional findChildRespRegional(Long oid) {
         return em.find(RespRegional.class, oid);
     }
 
+    @Override
     public Gestor findChildGestor(Long oid) {
         return em.find(Gestor.class, oid);
     }
 
+    @Override
     public MesaDeApoyo findChildMesaDeApoyo(Long oid) {
         return em.find(MesaDeApoyo.class, oid);
     }

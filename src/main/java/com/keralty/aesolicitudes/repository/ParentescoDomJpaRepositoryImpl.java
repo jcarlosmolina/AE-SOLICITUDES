@@ -53,6 +53,7 @@ public class ParentescoDomJpaRepositoryImpl extends AbstractRepository implement
         return getQueryBuilder().build(select, pageSize, pageNumber).execute();
     }
 
+    @Override
     public Long nextParentescoDomIdentificador(Long dominioNumero) {
         try {
             SQLMax sql = new SQLMax(null, ParentescoDomConstants.CLASS_NAME, ParentescoDomConstants.CLASS_NAME + "." + ParentescoDomConstants.ATTR_FIELD_PARENTESCODOMIDENTIFICADOR);

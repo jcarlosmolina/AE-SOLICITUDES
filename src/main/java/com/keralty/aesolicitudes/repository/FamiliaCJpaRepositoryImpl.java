@@ -68,6 +68,7 @@ public class FamiliaCJpaRepositoryImpl extends AbstractRepository implements Fam
         return getQueryBuilder().build(select, pageSize, pageNumber).execute();
     }
 
+    @Override
     public Long nextFamiliaCID(Long contratoCContratoCID) {
         try {
             SQLMax sql = new SQLMax(null, FamiliaCConstants.CLASS_NAME, FamiliaCConstants.CLASS_NAME + "." + FamiliaCConstants.ATTR_FIELD_FAMILIACID);
