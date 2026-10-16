@@ -27,7 +27,6 @@ public class ServiceContext extends QueryContext {
      * the passed agent object as connected agent.
      * @param agent Connected agent info.
      * @param isOperation True if operation
-     * @param dao Data Access Object
      * @throws SystemException in case of any error
      */
     public ServiceContext(Agent agent, boolean isOperation) throws SystemException {

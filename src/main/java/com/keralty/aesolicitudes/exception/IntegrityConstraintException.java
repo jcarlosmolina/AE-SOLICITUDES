@@ -16,9 +16,9 @@ public class IntegrityConstraintException extends ModelException {
     /**
      * Class constructor.
      *
-     * @param idConstraint      Identification constraint.
-     * @param constraintMessage Constraint error message
-     * @param parameters        LinkedHashMap with the error message parameters.
+     * @param idConstraint           Identification constraint.
+     * @param constraintMessage      Constraint error message
+     * @param exceptionMessageParts  List with the error message parameters.
      */
     public IntegrityConstraintException(String idConstraint, String constraintMessage,
             List<String> exceptionMessageParts) {

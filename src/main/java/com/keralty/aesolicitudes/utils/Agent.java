@@ -215,7 +215,7 @@ public class Agent implements UserCrudService {
     /**
      * Sets the identifier of the connected agent.
      * 
-     * @param agentOID the agent identifier.
+     * @param agentOid the agent identifier.
      */
     public void setAgentOID(IOid agentOid) {
         this.agentOid = agentOid;

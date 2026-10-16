@@ -3827,7 +3827,7 @@ public final class Constants {
      * This method looks for the owner facet of the attribute or role received in
      * the other argument
      * 
-     * @param departureclass the class of the inheritance net where the attribute or
+     * @param departureClass the class of the inheritance net where the attribute or
      *                       role is defined
      * @param element        is the name of an attribute or role of the own
      *                       inheritance net
@@ -3847,7 +3847,7 @@ public final class Constants {
      * This method looks for the owner facet of the attribute or role received in
      * the other argument
      * 
-     * @param departureclass the class of the inheritance net where the attribute or
+     * @param departureClass the class of the inheritance net where the attribute or
      *                       role is defined
      * @param element        is the name of an attribute or role of the own
      *                       inheritance net

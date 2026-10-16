@@ -936,14 +936,14 @@ public class SQLSelect {
      * @param initialAlias SQLAlias initial alias
      * @param sourceClass  the initial class of the path to evaluate
      * @param path         Path to be reached
-     * @param jointype     Join Type (Left or inner join)
+     * @param joinType     Join Type (Left or inner join)
      * @return {@link SQLAlias}
      * @throws SystemException if any system error raised during the execution of
      *                         the method.
      */
-    protected SQLAlias addAggregationJoins(SQLAlias initialAlias, String sourceClass, String path, String jointype)
+    protected SQLAlias addAggregationJoins(SQLAlias initialAlias, String sourceClass, String path, String joinType)
             throws SystemException {
-        return this.addAggregationJoins(initialAlias, sourceClass, path, jointype, "");
+        return this.addAggregationJoins(initialAlias, sourceClass, path, joinType, "");
     }
 
     /**
@@ -952,15 +952,15 @@ public class SQLSelect {
      * @param initialAlias SQLAlias initial alias
      * @param sourceClass  the initial class of the path to evaluate
      * @param path         Path to be reached
-     * @param jointype     Join Type (Left or inner join)
+     * @param joinType     Join Type (Left or inner join)
      * @param initialPath  Initial path
      * @return {@link SQLAlias} Alias of the last class in the Path
      */
-    protected SQLAlias addAggregationJoins(SQLAlias initialAlias, String sourceClass, String path, String jointype,
+    protected SQLAlias addAggregationJoins(SQLAlias initialAlias, String sourceClass, String path, String joinType,
             String initialPath) {
 
         List<SQLJoin> joinList = new ArrayList<>();
-        SQLAlias alias = addAggregationJoins(initialAlias, sourceClass, path, jointype, initialPath, joinList);
+        SQLAlias alias = addAggregationJoins(initialAlias, sourceClass, path, joinType, initialPath, joinList);
 
         alias.getSqlFrom().getJoins().addAll(joinList);
 
@@ -973,7 +973,7 @@ public class SQLSelect {
      * @param initialAlias SQLAlias initial alias
      * @param sourceClass  the initial class of the path to evaluate
      * @param path         Path to be reached
-     * @param jointype     Join Type (Left or inner join)
+     * @param joinType     Join Type (Left or inner join)
      * @param initialPath  Initial path
      * @param joinList     List of joins
      * @return {@link SQLAlias} Alias of the last class in the Path

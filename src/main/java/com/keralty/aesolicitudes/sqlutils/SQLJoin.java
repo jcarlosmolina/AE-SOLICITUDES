@@ -131,7 +131,7 @@ public class SQLJoin {
 
     /**
      * Indicates if the left side of the join is multi-valued.
-     * @param leftSideMultivalued true if the left side of the join is multi-valued, false in other case
+     * @param leftSideMultivaluated true if the left side of the join is multi-valued, false in other case
      */
     public void setLeftSideMultivaluated(Boolean leftSideMultivaluated) {
         this.leftSideMultivaluated = leftSideMultivaluated;
@@ -147,7 +147,7 @@ public class SQLJoin {
 
     /**
      * Indicates if the right side of the join is multi-valued.
-     * @param rightSidemulti-valued true if the right side of the join is multi-valued, false in other case
+     * @param rightSideMultivaluated true if the right side of the join is multi-valued, false in other case
      */
     public void setRightSideMultivaluated(Boolean rightSideMultivaluated) {
         this.rightSideMultivaluated = rightSideMultivaluated;

@@ -56,7 +56,7 @@ public class ProrrateoOid implements IOid {
     /**
      * Constructor that initializes the attributes values from the identifiers of the related instances.
      * @param dominioOID the OID of <code>Dominio</code>
-     * @param id_Prorrateo value of the <code>id_Prorrateo</code> attribute
+     * @param idProrrateo value of the <code>id_Prorrateo</code> attribute
      */
     public ProrrateoOid(DominioOid dominioOID, java.lang.Long idProrrateo) {
         this.dominioNumero = dominioOID.getDominioNumero();

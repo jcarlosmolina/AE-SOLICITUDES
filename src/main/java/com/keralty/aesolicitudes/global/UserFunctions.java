@@ -666,7 +666,7 @@ public class UserFunctions extends AbstractService {
     /** 
      * Method that solves the fuSustituirParamsEnURL user function.
      *
-    * @param Valor sacado del fichero de propiedades
+     * @param pfuURL Valor sacado del fichero de propiedades
      *
      * @param pfuSolicitud This parameter represents the pfuSolicitud inbound argument.
      *
@@ -699,12 +699,12 @@ public class UserFunctions extends AbstractService {
      *
      * @param pfuCuerpo This parameter represents the pfuCuerpo inbound argument.
      *
-    * @param Si se manda un adjunto, el nombre del adjunto
+     * @param pfuNombreAdjunto Si se manda un adjunto, el nombre del adjunto
      *
-    * @param Si hay adjunto, el adjunto
+     * @param pfuAdjunto Si hay adjunto, el adjunto
      *
-    * @param El número de la solicitud en el marco de la cual se envía el email (si es en el marco de una solicitud).
-    * GdC37, para el log
+     * @param pfuNumSolicitud El número de la solicitud en el marco de la cual se envía el email (si es en el marco de una solicitud).
+     * GdC37, para el log
      *
      * @return Return String value of the User Function
      */
@@ -774,7 +774,7 @@ public class UserFunctions extends AbstractService {
     /** 
      * Method that solves the fugetDepartamentoCL user function.
      *
-    * @param Código legal del departamento
+     * @param pfuCodigoLegal Código legal del departamento
      *
      * @return Return Departamento value of the User Function
      */
@@ -833,7 +833,7 @@ public class UserFunctions extends AbstractService {
      *
      * @param pfuNumIdentificacion This parameter represents the pfuNumIdentificacion inbound argument.
      *
-    * @param GdC37: Nº de solicitud en el marco de la cual se realiza la búsqueda. Para log.
+     * @param pfuNumSolicitud GdC37: Nº de solicitud en el marco de la cual se realiza la búsqueda. Para log.
      *
      * @return Return String value of the User Function
      */
@@ -984,7 +984,7 @@ public class UserFunctions extends AbstractService {
     /** 
      * Method that solves the fuGetTextoAvisoFirma user function.
      *
-    * @param Indica si es el texto para la primera (1) o la segunda (2) firma
+     * @param pfFirma Indica si es el texto para la primera (1) o la segunda (2) firma
      *
      * @return Return String value of the User Function
      */
@@ -1054,7 +1054,7 @@ public class UserFunctions extends AbstractService {
      *
      * @param pfProtDatos This parameter represents the pfProtDatos inbound argument.
      *
-    * @param GdC 37: El número de solicitud en el marco de la cual llamamos a esta fu, para hacer log.
+     * @param pfNumSolicitud GdC 37: El número de solicitud en el marco de la cual llamamos a esta fu, para hacer log.
      *
      * @return Return String value of the User Function
      */
@@ -1214,7 +1214,7 @@ public class UserFunctions extends AbstractService {
      *
      * @param numId This parameter represents the numId inbound argument.
      *
-    * @param GdC 37: El número de solicitud en el marco de la cual se llama a esta fu. Para hacer log.
+     * @param numSolicitud GdC 37: El número de solicitud en el marco de la cual se llama a esta fu. Para hacer log.
      *
      * @return Return java.lang.Long value of the User Function
      */
@@ -1238,7 +1238,7 @@ public class UserFunctions extends AbstractService {
      *
      * @param pfNumIdentificacion This parameter represents the pfNumIdentificacion inbound argument.
      *
-    * @param GcD-37 Log llamadas a BH con el Num solicitud
+     * @param pfNumSolicitud GcD-37 Log llamadas a BH con el Num solicitud
      *
      * @return Return java.sql.Date value of the User Function
      */
@@ -1335,7 +1335,7 @@ public class UserFunctions extends AbstractService {
      *
      * @param ptObservaciones This parameter represents the ptObservaciones inbound argument.
      *
-    * @param GdC 37, si el email se envía en el marco de una solicitud, el número de la misma
+     * @param pfNumSolicitud GdC 37, si el email se envía en el marco de una solicitud, el número de la misma
      *
      * @return Return String value of the User Function
      */

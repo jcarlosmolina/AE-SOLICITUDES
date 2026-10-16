@@ -96,7 +96,7 @@ public class QueryContext implements Serializable {
 
     /**
      * Sets the frontier OID.
-     * @param frontierOID the frontier OID.
+     * @param frontierOid the frontier OID.
      */
     public void setFrontierOID(IOid frontierOid) {
         this.frontierOid = frontierOid;
