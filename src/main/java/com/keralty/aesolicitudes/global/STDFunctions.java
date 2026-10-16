@@ -2971,45 +2971,7 @@ public final class STDFunctions {
     
 	// EQUALITY
 	// -------------------------------------------
-	public static boolean areEqual(String val1, String val2) {
-		if (val1 != null) return val1.equals(val2);
-		if (val2 != null) return val2.equals(val1);
-		return true;
-	}
-	
-	public static boolean areEqual(Date val1, Date val2) {
-		if (val1 != null) return val1.equals(val2);
-		if (val2 != null) return val2.equals(val1);
-		return true;
-	}
-	
-	public static boolean areEqual(Timestamp val1, Timestamp val2) {
-		if (val1 != null) return val1.equals(val2);
-		if (val2 != null) return val2.equals(val1);
-		return true;
-	}
-	
-	public static boolean areEqual(Time val1, Time val2) {
-		if (val1 != null) return val1.equals(val2);
-		if (val2 != null) return val2.equals(val1);
-		return true;
-	}
-	
-	public static boolean areEqual(Long val1, Long val2) {
-		if (val1 != null) return val1.equals(val2);
-		if (val2 != null) return val2.equals(val1);
-		return true;
-	}
-	
-	public static boolean areEqual(Double val1, Double val2) {
-		if (val1 != null) return val1.equals(val2);
-		if (val2 != null) return val2.equals(val1);
-		return true;
-	}
-	
-	public static boolean areEqual(Boolean val1, Boolean val2) {
-		if (val1 != null) return val1.equals(val2);
-		if (val2 != null) return val2.equals(val1);
-		return true;
+	public static boolean areEqual(Object val1, Object val2) {
+		return java.util.Objects.equals(val1, val2);
 	}
 }
