@@ -126,7 +126,7 @@ public class ProductosService extends AbstractService {
     private List<Productos> solveProductosTypedQuery(QueryRequest request) {
         boolean hasInMemoryFilters = hasInMemoryFilters(request);
         int requestedPageSize = request.getPageSize();
-        int pageSize = requestedPageSize > 0
+        int pageSize = requestedPageSize >= 0
                 && requestedPageSize <= Constants.MAX_BLOCKSIZE
                 ? requestedPageSize
                 : Constants.DEFAULT_BLOCKSIZE;

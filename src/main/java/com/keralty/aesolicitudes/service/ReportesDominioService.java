@@ -94,7 +94,7 @@ public class ReportesDominioService extends AbstractService {
     private List<ReportesDominio> solveReportesDominioTypedQuery(QueryRequest request) {
         boolean hasInMemoryFilters = hasInMemoryFilters(request);
         int requestedPageSize = request.getPageSize();
-        int pageSize = requestedPageSize > 0
+        int pageSize = requestedPageSize >= 0
                 && requestedPageSize <= Constants.MAX_BLOCKSIZE
                 ? requestedPageSize
                 : Constants.DEFAULT_BLOCKSIZE;

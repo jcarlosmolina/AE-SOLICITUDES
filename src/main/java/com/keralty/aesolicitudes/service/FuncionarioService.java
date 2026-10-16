@@ -142,7 +142,7 @@ public class FuncionarioService extends AbstractService {
     private List<Funcionario> solveFuncionarioTypedQuery(QueryRequest request) {
         boolean hasInMemoryFilters = hasInMemoryFilters(request);
         int requestedPageSize = request.getPageSize();
-        int pageSize = requestedPageSize > 0
+        int pageSize = requestedPageSize >= 0
                 && requestedPageSize <= Constants.MAX_BLOCKSIZE
                 ? requestedPageSize
                 : Constants.DEFAULT_BLOCKSIZE;

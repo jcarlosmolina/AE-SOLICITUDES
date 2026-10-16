@@ -180,7 +180,7 @@ public class UsuarioService extends AbstractService {
     private List<Usuario> solveUsuarioTypedQuery(QueryRequest request) {
         boolean hasInMemoryFilters = hasInMemoryFilters(request);
         int requestedPageSize = request.getPageSize();
-        int pageSize = requestedPageSize > 0
+        int pageSize = requestedPageSize >= 0
                 && requestedPageSize <= Constants.MAX_BLOCKSIZE
                 ? requestedPageSize
                 : Constants.DEFAULT_BLOCKSIZE;
