@@ -27,6 +27,8 @@ public final class STDFunctions {
 	public static final String FULLDATEFORMAT;
 	/** DateTime format */
 	public static final String DATETIMETOSTRFORMAT;
+	
+	private SecureRandom random = new SecureRandom();
 
 	private STDFunctions() {
 
@@ -2011,7 +2013,7 @@ public final class STDFunctions {
 	 * @return Random number
 	 */
 	public static Double rndFun() {
-		return new SecureRandom().nextDouble();
+		return random.nextDouble();
 	}
 
 	/**
@@ -2026,7 +2028,7 @@ public final class STDFunctions {
 		if (upperBound == null) {
 			returnValue = null;
 		} else {
-			returnValue = new SecureRandom().nextLong();
+			returnValue = random.nextLong();
 		}
 		return returnValue;
 	}
@@ -2043,7 +2045,7 @@ public final class STDFunctions {
 		if (upperBound == null) {
 			returnValue = null;
 		} else {
-			returnValue = Double.valueOf(new SecureRandom().nextDouble() * upperBound.doubleValue());
+			returnValue = Double.valueOf(random.nextDouble() * upperBound.doubleValue());
 		}
 		return returnValue;
 	}
@@ -2063,7 +2065,7 @@ public final class STDFunctions {
 		} else {
 			Long lowerBound = pLowerBound;
 			Long upperBound = pUpperBound;
-			returnValue = (new SecureRandom().nextLong() * (upperBound - lowerBound)) + lowerBound;
+			returnValue = (random.nextLong() * (upperBound - lowerBound)) + lowerBound;
 		}
 		return returnValue;
 	}
@@ -2083,7 +2085,7 @@ public final class STDFunctions {
 		} else {
 			double lowerBound = pLowerBound.doubleValue();
 			double upperBound = pUpperBound.doubleValue();
-			returnValue = Double.valueOf(new SecureRandom().nextDouble() * (upperBound - lowerBound) + lowerBound);
+			returnValue = Double.valueOf(random.nextDouble() * (upperBound - lowerBound) + lowerBound);
 		}
 		return returnValue;
 	}
