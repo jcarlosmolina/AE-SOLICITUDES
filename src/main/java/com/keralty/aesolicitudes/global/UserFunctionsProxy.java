@@ -115,6 +115,7 @@ public interface UserFunctionsProxy {
 
     /** 
      * Method that solves the fuformarListaValoresPregunta user function.
+     *
      * @param request Payload to invoke the REST API of the User Function
      *
      * @return Return String value of the User Function
@@ -126,6 +127,7 @@ public interface UserFunctionsProxy {
 
     /** 
      * Method that solves the fuconcatenarConNulos user function.
+     *
      * @param request Payload to invoke the REST API of the User Function
      *
      * @return Return String value of the User Function
@@ -137,7 +139,6 @@ public interface UserFunctionsProxy {
 
     /** 
      * Method that solves the fugetTipoDirResidencial user function.
-     * @param request Payload to invoke the REST API of the User Function
      *
      * @return Return TipoDireccion value of the User Function
      */
@@ -147,7 +148,6 @@ public interface UserFunctionsProxy {
 
     /** 
      * Method that solves the fugetTipoDirCorrespondencia user function.
-     * @param request Payload to invoke the REST API of the User Function
      *
      * @return Return TipoDireccion value of the User Function
      */
@@ -157,6 +157,7 @@ public interface UserFunctionsProxy {
 
     /** 
      * Method that solves the fuValidarEmail user function.
+     *
      * @param request Payload to invoke the REST API of the User Function
      *
      * @return Return java.lang.Boolean value of the User Function
@@ -167,6 +168,7 @@ public interface UserFunctionsProxy {
 
     /** 
      * Method that solves the fuValidarNombre user function.
+     *
      * @param request Payload to invoke the REST API of the User Function
      *
      * @return Return java.lang.Boolean value of the User Function
@@ -177,6 +179,7 @@ public interface UserFunctionsProxy {
 
     /** 
      * Method that solves the fuSoloNumeros user function.
+     *
      * @param request Payload to invoke the REST API of the User Function
      *
      * @return Return java.lang.Boolean value of the User Function
@@ -187,6 +190,7 @@ public interface UserFunctionsProxy {
 
     /** 
      * Method that solves the fuContieneCharEspecial user function.
+     *
      * @param request Payload to invoke the REST API of the User Function
      *
      * @return Return java.lang.Boolean value of the User Function
@@ -197,6 +201,7 @@ public interface UserFunctionsProxy {
 
     /** 
      * Method that solves the fugetTipoIdentificacion user function.
+     *
      * @param request Payload to invoke the REST API of the User Function
      *
      * @return Return TipoIdentificacion value of the User Function
@@ -207,6 +212,7 @@ public interface UserFunctionsProxy {
 
     /** 
      * Method that solves the fugetEstadoCivil user function.
+     *
      * @param request Payload to invoke the REST API of the User Function
      *
      * @return Return EstadoCivil value of the User Function
@@ -217,6 +223,7 @@ public interface UserFunctionsProxy {
 
     /** 
      * Method that solves the fugetEstadoPersona user function.
+     *
      * @param request Payload to invoke the REST API of the User Function
      *
      * @return Return EstadoPersona value of the User Function
@@ -227,6 +234,7 @@ public interface UserFunctionsProxy {
 
     /** 
      * Method that solves the fugetPais user function.
+     *
      * @param request Payload to invoke the REST API of the User Function
      *
      * @return Return Pais value of the User Function
@@ -237,6 +245,7 @@ public interface UserFunctionsProxy {
 
     /** 
      * Method that solves the fuValidarTelefonoFijo user function.
+     *
      * @param request Payload to invoke the REST API of the User Function
      *
      * @return Return java.lang.Boolean value of the User Function
@@ -247,6 +256,7 @@ public interface UserFunctionsProxy {
 
     /** 
      * Method that solves the fuValidarTelefonoCelular user function.
+     *
      * @param request Payload to invoke the REST API of the User Function
      *
      * @return Return java.lang.Boolean value of the User Function
@@ -257,6 +267,7 @@ public interface UserFunctionsProxy {
 
     /** 
      * Method that solves the fuStrONull user function.
+     *
      * @param request Payload to invoke the REST API of the User Function
      *
      * @return Return String value of the User Function
@@ -268,7 +279,6 @@ public interface UserFunctionsProxy {
 
     /** 
      * Method that solves the fugetEPSSanitas user function.
-     * @param request Payload to invoke the REST API of the User Function
      *
      * @return Return Eps value of the User Function
      */
@@ -278,7 +288,6 @@ public interface UserFunctionsProxy {
 
     /** 
      * Method that solves the fugetParentescoTitular user function.
-     * @param request Payload to invoke the REST API of the User Function
      *
      * @return Return Parentesco value of the User Function
      */
@@ -288,7 +297,6 @@ public interface UserFunctionsProxy {
 
     /** 
      * Method that solves the fugetCuestionarioMedico user function.
-     * @param request Payload to invoke the REST API of the User Function
      *
      * @return Return CuestionarioMed value of the User Function
      */
@@ -298,6 +306,7 @@ public interface UserFunctionsProxy {
 
     /** 
      * Method that solves the fugetValorParametroConf user function.
+     *
      * @param request Payload to invoke the REST API of the User Function
      *
      * @return Return String value of the User Function
@@ -309,6 +318,7 @@ public interface UserFunctionsProxy {
 
     /** 
      * Method that solves the fugetRol user function.
+     *
      * @param request Payload to invoke the REST API of the User Function
      *
      * @return Return Rol value of the User Function
@@ -319,6 +329,7 @@ public interface UserFunctionsProxy {
 
     /** 
      * Method that solves the fusubstringText user function.
+     *
      * @param request Payload to invoke the REST API of the User Function
      *
      * @return Return String value of the User Function
@@ -330,6 +341,7 @@ public interface UserFunctionsProxy {
 
     /** 
      * Method that solves the fugetValorTarifaSegunEdad user function.
+     *
      * @param request Payload to invoke the REST API of the User Function
      *
      * @return Return java.lang.Double value of the User Function
@@ -340,6 +352,7 @@ public interface UserFunctionsProxy {
 
     /** 
      * Method that solves the fugetGrupoAsoc user function.
+     *
      * @param request Payload to invoke the REST API of the User Function
      *
      * @return Return GrupoAsociado value of the User Function
@@ -350,6 +363,7 @@ public interface UserFunctionsProxy {
 
     /** 
      * Method that solves the fugetEstadoBeneficiarioCORE user function.
+     *
      * @param request Payload to invoke the REST API of the User Function
      *
      * @return Return EstadoBeneficiario value of the User Function
@@ -360,6 +374,7 @@ public interface UserFunctionsProxy {
 
     /** 
      * Method that solves the fuObtenerDocumento user function.
+     *
      * @param request Payload to invoke the REST API of the User Function
      *
      * @return Return byte[] value of the User Function
@@ -370,7 +385,6 @@ public interface UserFunctionsProxy {
 
     /** 
      * Method that solves the fugetPeriodicidadMensual user function.
-     * @param request Payload to invoke the REST API of the User Function
      *
      * @return Return Periodicidad value of the User Function
      */
@@ -380,6 +394,7 @@ public interface UserFunctionsProxy {
 
     /** 
      * Method that solves the fugetPlantillaEmail user function.
+     *
      * @param request Payload to invoke the REST API of the User Function
      *
      * @return Return PlantillaEmail value of the User Function
@@ -390,6 +405,7 @@ public interface UserFunctionsProxy {
 
     /** 
      * Method that solves the fuSustituirParamsEnURL user function.
+     *
      * @param request Payload to invoke the REST API of the User Function
      *
      * @return Return String value of the User Function
@@ -401,6 +417,7 @@ public interface UserFunctionsProxy {
 
     /** 
      * Method that solves the fuEnviarEmail user function.
+     *
      * @param request Payload to invoke the REST API of the User Function
      *
      * @return Return String value of the User Function
@@ -412,6 +429,7 @@ public interface UserFunctionsProxy {
 
     /** 
      * Method that solves the fuAnadirTexto user function.
+     *
      * @param request Payload to invoke the REST API of the User Function
      *
      * @return Return String value of the User Function
@@ -423,6 +441,7 @@ public interface UserFunctionsProxy {
 
     /** 
      * Method that solves the fugetEstadoContrato user function.
+     *
      * @param request Payload to invoke the REST API of the User Function
      *
      * @return Return EstadoContrato value of the User Function
@@ -433,6 +452,7 @@ public interface UserFunctionsProxy {
 
     /** 
      * Method that solves the fugetDepartamentoCL user function.
+     *
      * @param request Payload to invoke the REST API of the User Function
      *
      * @return Return Departamento value of the User Function
@@ -443,6 +463,7 @@ public interface UserFunctionsProxy {
 
     /** 
      * Method that solves the fugetSolicitudByNumero user function.
+     *
      * @param request Payload to invoke the REST API of the User Function
      *
      * @return Return Solicitud value of the User Function
@@ -453,6 +474,7 @@ public interface UserFunctionsProxy {
 
     /** 
      * Method that solves the fugetAgente user function.
+     *
      * @param request Payload to invoke the REST API of the User Function
      *
      * @return Return Funcionario value of the User Function
@@ -463,6 +485,7 @@ public interface UserFunctionsProxy {
 
     /** 
      * Method that solves the fuBuscarDocGestorNumId user function.
+     *
      * @param request Payload to invoke the REST API of the User Function
      *
      * @return Return String value of the User Function
@@ -474,6 +497,7 @@ public interface UserFunctionsProxy {
 
     /** 
      * Method that solves the fuBuscarDocGestorSolicitud user function.
+     *
      * @param request Payload to invoke the REST API of the User Function
      *
      * @return Return String value of the User Function
@@ -485,6 +509,7 @@ public interface UserFunctionsProxy {
 
     /** 
      * Method that solves the fuSoloLetras user function.
+     *
      * @param request Payload to invoke the REST API of the User Function
      *
      * @return Return java.lang.Boolean value of the User Function
@@ -495,7 +520,6 @@ public interface UserFunctionsProxy {
 
     /** 
      * Method that solves the fuGetTextoProteccionDatos user function.
-     * @param request Payload to invoke the REST API of the User Function
      *
      * @return Return String value of the User Function
      */
@@ -506,6 +530,7 @@ public interface UserFunctionsProxy {
 
     /** 
      * Method that solves the fugetAsesor user function.
+     *
      * @param request Payload to invoke the REST API of the User Function
      *
      * @return Return Asesor value of the User Function
@@ -516,6 +541,7 @@ public interface UserFunctionsProxy {
 
     /** 
      * Method that solves the fugetMunicipioCL user function.
+     *
      * @param request Payload to invoke the REST API of the User Function
      *
      * @return Return Municipio value of the User Function
@@ -526,6 +552,7 @@ public interface UserFunctionsProxy {
 
     /** 
      * Method that solves the fuGetDirResidenciaPersona user function.
+     *
      * @param request Payload to invoke the REST API of the User Function
      *
      * @return Return Direccion value of the User Function
@@ -536,6 +563,7 @@ public interface UserFunctionsProxy {
 
     /** 
      * Method that solves the fuGetTextoAvisoFirma user function.
+     *
      * @param request Payload to invoke the REST API of the User Function
      *
      * @return Return String value of the User Function
@@ -547,6 +575,7 @@ public interface UserFunctionsProxy {
 
     /** 
      * Method that solves the fugetListaErrores user function.
+     *
      * @param request Payload to invoke the REST API of the User Function
      *
      * @return Return String value of the User Function
@@ -558,6 +587,7 @@ public interface UserFunctionsProxy {
 
     /** 
      * Method that solves the fuCrearPersonaCORE user function.
+     *
      * @param request Payload to invoke the REST API of the User Function
      *
      * @return Return String value of the User Function
@@ -569,6 +599,7 @@ public interface UserFunctionsProxy {
 
     /** 
      * Method that solves the fuActualizarPersonaCORE user function.
+     *
      * @param request Payload to invoke the REST API of the User Function
      *
      * @return Return String value of the User Function
@@ -580,6 +611,7 @@ public interface UserFunctionsProxy {
 
     /** 
      * Method that solves the fuCrearZipDocumentacionAuto user function.
+     *
      * @param request Payload to invoke the REST API of the User Function
      *
      * @return Return String value of the User Function
@@ -591,6 +623,7 @@ public interface UserFunctionsProxy {
 
     /** 
      * Method that solves the fuGetCodTarifaProdPlanAnyo user function.
+     *
      * @param request Payload to invoke the REST API of the User Function
      *
      * @return Return String value of the User Function
@@ -602,6 +635,7 @@ public interface UserFunctionsProxy {
 
     /** 
      * Method that solves the fugetProductoPorCL user function.
+     *
      * @param request Payload to invoke the REST API of the User Function
      *
      * @return Return Productos value of the User Function
@@ -612,6 +646,7 @@ public interface UserFunctionsProxy {
 
     /** 
      * Method that solves the fugetPlanPorCL user function.
+     *
      * @param request Payload to invoke the REST API of the User Function
      *
      * @return Return Planes value of the User Function
@@ -622,6 +657,7 @@ public interface UserFunctionsProxy {
 
     /** 
      * Method that solves the fugetFuncionarioPorLDAP user function.
+     *
      * @param request Payload to invoke the REST API of the User Function
      *
      * @return Return Funcionario value of the User Function
@@ -632,6 +668,7 @@ public interface UserFunctionsProxy {
 
     /** 
      * Method that solves the fuFormarTextoObservaciones user function.
+     *
      * @param request Payload to invoke the REST API of the User Function
      *
      * @return Return String value of the User Function
@@ -643,6 +680,7 @@ public interface UserFunctionsProxy {
 
     /** 
      * Method that solves the fuGetCodigoPersonaCORE user function.
+     *
      * @param request Payload to invoke the REST API of the User Function
      *
      * @return Return java.lang.Long value of the User Function
@@ -653,6 +691,7 @@ public interface UserFunctionsProxy {
 
     /** 
      * Method that solves the fuGetFechaFinVigenciaUsuario user function.
+     *
      * @param request Payload to invoke the REST API of the User Function
      *
      * @return Return java.sql.Date value of the User Function
@@ -663,6 +702,7 @@ public interface UserFunctionsProxy {
 
     /** 
      * Method that solves the fuGetNombreAsesor user function.
+     *
      * @param request Payload to invoke the REST API of the User Function
      *
      * @return Return String value of the User Function
@@ -674,6 +714,7 @@ public interface UserFunctionsProxy {
 
     /** 
      * Method that solves the fuGetNombreFuncionario user function.
+     *
      * @param request Payload to invoke the REST API of the User Function
      *
      * @return Return String value of the User Function
@@ -685,6 +726,7 @@ public interface UserFunctionsProxy {
 
     /** 
      * Method that solves the fuformarMsgErrorUsrSinDocs user function.
+     *
      * @param request Payload to invoke the REST API of the User Function
      *
      * @return Return String value of the User Function
@@ -696,6 +738,7 @@ public interface UserFunctionsProxy {
 
     /** 
      * Method that solves the fuEnviarEmailDevDoc user function.
+     *
      * @param request Payload to invoke the REST API of the User Function
      *
      * @return Return String value of the User Function
@@ -707,6 +750,7 @@ public interface UserFunctionsProxy {
 
     /** 
      * Method that solves the fuContratoExentoDocSol user function.
+     *
      * @param request Payload to invoke the REST API of the User Function
      *
      * @return Return java.lang.Boolean value of the User Function
@@ -717,6 +761,7 @@ public interface UserFunctionsProxy {
 
     /** 
      * Method that solves the fuEstadoSolicitud user function.
+     *
      * @param request Payload to invoke the REST API of the User Function
      *
      * @return Return String value of the User Function
@@ -728,6 +773,7 @@ public interface UserFunctionsProxy {
 
     /** 
      * Method that solves the fuGenerarReporteOracle user function.
+     *
      * @param request Payload to invoke the REST API of the User Function
      *
      * @return Return byte[] value of the User Function
@@ -738,6 +784,7 @@ public interface UserFunctionsProxy {
 
     /** 
      * Method that solves the fuCalcularIMC user function.
+     *
      * @param request Payload to invoke the REST API of the User Function
      *
      * @return Return java.lang.Double value of the User Function
@@ -748,7 +795,6 @@ public interface UserFunctionsProxy {
 
     /** 
      * Method that solves the fuGetEstadoPersonaError user function.
-     * @param request Payload to invoke the REST API of the User Function
      *
      * @return Return EstadoBeneficiario value of the User Function
      */
@@ -758,6 +804,7 @@ public interface UserFunctionsProxy {
 
     /** 
      * Method that solves the fuCalcularIMCUsuario user function.
+     *
      * @param request Payload to invoke the REST API of the User Function
      *
      * @return Return java.lang.Double value of the User Function
@@ -768,6 +815,7 @@ public interface UserFunctionsProxy {
 
     /** 
      * Method that solves the fuEnviarSMS user function.
+     *
      * @param request Payload to invoke the REST API of the User Function
      *
      * @return Return String value of the User Function
@@ -779,6 +827,7 @@ public interface UserFunctionsProxy {
 
     /** 
      * Method that solves the fugetFuncionarioPorId user function.
+     *
      * @param request Payload to invoke the REST API of the User Function
      *
      * @return Return Funcionario value of the User Function
@@ -789,6 +838,7 @@ public interface UserFunctionsProxy {
 
     /** 
      * Method that solves the fuCallSPgetusugrabador user function.
+     *
      * @param request Payload to invoke the REST API of the User Function
      *
      * @return Return java.lang.Long value of the User Function
@@ -799,6 +849,7 @@ public interface UserFunctionsProxy {
 
     /** 
      * Method that solves the fuCallSPgetusugrabadornov user function.
+     *
      * @param request Payload to invoke the REST API of the User Function
      *
      * @return Return java.lang.Long value of the User Function
@@ -809,6 +860,7 @@ public interface UserFunctionsProxy {
 
     /** 
      * Method that solves the fuCallSPgetusuareamed user function.
+     *
      * @param request Payload to invoke the REST API of the User Function
      *
      * @return Return java.lang.Long value of the User Function
@@ -819,6 +871,7 @@ public interface UserFunctionsProxy {
 
     /** 
      * Method that solves the fugetAreaMedicaPorId user function.
+     *
      * @param request Payload to invoke the REST API of the User Function
      *
      * @return Return AreaMedica value of the User Function
@@ -829,6 +882,7 @@ public interface UserFunctionsProxy {
 
     /** 
      * Method that solves the fugetPrioridad user function.
+     *
      * @param request Payload to invoke the REST API of the User Function
      *
      * @return Return java.lang.Long value of the User Function
@@ -839,6 +893,7 @@ public interface UserFunctionsProxy {
 
     /** 
      * Method that solves the fuCallSPgetsemaforograbador user function.
+     *
      * @param request Payload to invoke the REST API of the User Function
      *
      * @return Return java.lang.Double value of the User Function
@@ -849,6 +904,7 @@ public interface UserFunctionsProxy {
 
     /** 
      * Method that solves the fuCallSPgetsemaforograbadornov user function.
+     *
      * @param request Payload to invoke the REST API of the User Function
      *
      * @return Return java.lang.Double value of the User Function
@@ -859,6 +915,7 @@ public interface UserFunctionsProxy {
 
     /** 
      * Method that solves the fuCallSPgetsemaforoareamed user function.
+     *
      * @param request Payload to invoke the REST API of the User Function
      *
      * @return Return java.lang.Double value of the User Function
@@ -869,6 +926,7 @@ public interface UserFunctionsProxy {
 
     /** 
      * Method that solves the fugetSolicitudNovedadByNumRadicado user function.
+     *
      * @param request Payload to invoke the REST API of the User Function
      *
      * @return Return SolicitudNovedad value of the User Function
@@ -879,7 +937,6 @@ public interface UserFunctionsProxy {
 
     /** 
      * Method that solves the fuGetFechaDesdeVarFiltro user function.
-     * @param request Payload to invoke the REST API of the User Function
      *
      * @return Return java.sql.Date value of the User Function
      */
@@ -889,6 +946,7 @@ public interface UserFunctionsProxy {
 
     /** 
      * Method that solves the fuCheckRegimenSubsidiado user function.
+     *
      * @param request Payload to invoke the REST API of the User Function
      *
      * @return Return java.lang.Long value of the User Function
@@ -899,6 +957,7 @@ public interface UserFunctionsProxy {
 
     /** 
      * Method that solves the fuGetFInicioPlanVol user function.
+     *
      * @param request Payload to invoke the REST API of the User Function
      *
      * @return Return java.sql.Date value of the User Function
@@ -909,6 +968,7 @@ public interface UserFunctionsProxy {
 
     /** 
      * Method that solves the fuValidarDominioIncompatibles user function.
+     *
      * @param request Payload to invoke the REST API of the User Function
      *
      * @return Return java.lang.Boolean value of the User Function
@@ -919,6 +979,7 @@ public interface UserFunctionsProxy {
 
     /** 
      * Method that solves the fuExisteContratoExentoFIngreso user function.
+     *
      * @param request Payload to invoke the REST API of the User Function
      *
      * @return Return java.lang.Boolean value of the User Function
@@ -929,7 +990,6 @@ public interface UserFunctionsProxy {
 
     /** 
      * Method that solves the fuGetFechaLimiteDescargaDoc user function.
-     * @param request Payload to invoke the REST API of the User Function
      *
      * @return Return java.sql.Date value of the User Function
      */
@@ -939,7 +999,6 @@ public interface UserFunctionsProxy {
 
     /** 
      * Method that solves the fuGetTkn user function.
-     * @param request Payload to invoke the REST API of the User Function
      *
      * @return Return String value of the User Function
      */
@@ -950,6 +1009,7 @@ public interface UserFunctionsProxy {
 
     /** 
      * Method that solves the fuGetReporteSolicitud user function.
+     *
      * @param request Payload to invoke the REST API of the User Function
      *
      * @return Return byte[] value of the User Function
@@ -960,6 +1020,7 @@ public interface UserFunctionsProxy {
 
     /** 
      * Method that solves the fugetEstadoBeneficiarioCOREPorNombre user function.
+     *
      * @param request Payload to invoke the REST API of the User Function
      *
      * @return Return EstadoBeneficiario value of the User Function
@@ -970,6 +1031,7 @@ public interface UserFunctionsProxy {
 
     /** 
      * Method that solves the fugetEstadoContratoPorNombre user function.
+     *
      * @param request Payload to invoke the REST API of the User Function
      *
      * @return Return EstadoContrato value of the User Function
@@ -980,6 +1042,7 @@ public interface UserFunctionsProxy {
 
     /** 
      * Method that solves the fuGetIdDocIdentidadEnGestor user function.
+     *
      * @param request Payload to invoke the REST API of the User Function
      *
      * @return Return String value of the User Function
@@ -991,7 +1054,6 @@ public interface UserFunctionsProxy {
 
     /** 
      * Method that solves the fuGetIURLDescargaATOMIC user function.
-     * @param request Payload to invoke the REST API of the User Function
      *
      * @return Return String value of the User Function
      */
