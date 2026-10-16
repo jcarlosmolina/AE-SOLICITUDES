@@ -807,7 +807,7 @@ public class Firma extends AbstractAppEntity {
             RespRegional = agent
             */
             try {
-                if ((this.getRespRegional() != null && this.getRespRegional().equalsObject(agentInstance))) {
+                if (this.getRespRegional().equalsObject(agentInstance)) {
                     returnValue = true;
                 }
             } catch (Exception e) {

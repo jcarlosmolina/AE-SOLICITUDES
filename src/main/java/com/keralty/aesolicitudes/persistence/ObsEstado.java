@@ -613,7 +613,7 @@ public class ObsEstado extends AbstractAppEntity {
             DocumentoG.Solicitud.Agente = agent OR DocumentoG.Solicitud.Agente.CodJefe = Agent.Usuario
             */
             try {
-                if ((this.getDocumentoG().getSolicitud().getAgente() != null && this.getDocumentoG().getSolicitud().getAgente().equalsObject(agentInstance)) || (this.getDocumentoG().getSolicitud().getAgente().getFuncionarioCodJefe()).equals(agentInstance.getFuncionarioUsuario())) {
+                if (this.getDocumentoG().getSolicitud().getAgente().equalsObject(agentInstance) || (this.getDocumentoG().getSolicitud().getAgente().getFuncionarioCodJefe()).equals(agentInstance.getFuncionarioUsuario())) {
                     returnValue = true;
                 }
             } catch (Exception e) {

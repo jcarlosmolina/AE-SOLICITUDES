@@ -2251,7 +2251,7 @@ public class ContratoCService extends AbstractService {
         contratoCSrv.modificarImplementation(step1Request);
 
         /* Action 2: IF (PeriodicidadC <> ptpevcPeriodicidadC) */
-        boolean ifCondition2 = !(contratoCTMODIFICARpthisContratoC.getPeriodicidadC() != null && contratoCTMODIFICARpthisContratoC.getPeriodicidadC().equalsObject(contratoCTMODIFICARptpevcPeriodicidadC));
+        boolean ifCondition2 = !(contratoCTMODIFICARpthisContratoC.getPeriodicidadC().equalsObject(contratoCTMODIFICARptpevcPeriodicidadC));
         if (ifCondition2) {
             /* Action 20: IF (EXIST (PeriodicidadC) = true) */
             boolean ifCondition20 = repository.assocOperator011(contratoCTMODIFICARpthisContratoC).equals(true);
@@ -2272,7 +2272,7 @@ public class ContratoCService extends AbstractService {
         }
 
         /* Action 3: IF (FormaPagoC <> ptpevcFormaPagoC) */
-        boolean ifCondition3 = !(contratoCTMODIFICARpthisContratoC.getFormaPagoC() != null && contratoCTMODIFICARpthisContratoC.getFormaPagoC().equalsObject(contratoCTMODIFICARptpevcFormaPagoC));
+        boolean ifCondition3 = !(contratoCTMODIFICARpthisContratoC.getFormaPagoC().equalsObject(contratoCTMODIFICARptpevcFormaPagoC));
         if (ifCondition3) {
             /* Action 30: IF (EXIST (FormaPagoC) = true) */
             boolean ifCondition30 = repository.assocOperator012(contratoCTMODIFICARpthisContratoC).equals(true);
@@ -2369,7 +2369,7 @@ public class ContratoCService extends AbstractService {
         }
 
         /* Action 3: IF (EXIST (EstadoContratoC) = true AND ptpevcEstadoContratoC <> NULL AND EstadoContratoC <> ptpevcEstadoContratoC) */
-        boolean ifCondition3 = repository.assocOperator016(contratoCTMODIFICARESTADOpthisContratoC).equals(true) && (contratoCTMODIFICARESTADOptpevcEstadoContratoC != null && !contratoCTMODIFICARESTADOptpevcEstadoContratoC.isNull()) && !(contratoCTMODIFICARESTADOpthisContratoC.getEstadoContratoC() != null && contratoCTMODIFICARESTADOpthisContratoC.getEstadoContratoC().equalsObject(contratoCTMODIFICARESTADOptpevcEstadoContratoC));
+        boolean ifCondition3 = repository.assocOperator016(contratoCTMODIFICARESTADOpthisContratoC).equals(true) && (contratoCTMODIFICARESTADOptpevcEstadoContratoC != null && !contratoCTMODIFICARESTADOptpevcEstadoContratoC.isNull()) && !(contratoCTMODIFICARESTADOpthisContratoC.getEstadoContratoC().equalsObject(contratoCTMODIFICARESTADOptpevcEstadoContratoC));
         if (ifCondition3) {
             com.keralty.aesolicitudes.viewmodel.contratoc.siu.DelEstadoContratoCRequest step30Request = new com.keralty.aesolicitudes.viewmodel.contratoc.siu.DelEstadoContratoCRequest();
             step30Request.setContratoCDelEstadoContratoCpthisContratoCInstance(contratoCTMODIFICARESTADOpthisContratoC);
@@ -2878,7 +2878,7 @@ public class ContratoCService extends AbstractService {
         }
 
         /* Action 3: IF (MunicipioC <> ptMunicipioDireccion) */
-        boolean ifCondition3 = !(contratoCTPOSTNOTICREARpthisContratoC.getMunicipioC() != null && contratoCTPOSTNOTICREARpthisContratoC.getMunicipioC().equalsObject(contratoCTPOSTNOTICREARptMunicipioDireccion));
+        boolean ifCondition3 = !(contratoCTPOSTNOTICREARpthisContratoC.getMunicipioC().equalsObject(contratoCTPOSTNOTICREARptMunicipioDireccion));
         if (ifCondition3) {
             /* Action 30: IF (ptMunicipioDireccion <> NULL) */
             boolean ifCondition30 = (contratoCTPOSTNOTICREARptMunicipioDireccion != null && !contratoCTPOSTNOTICREARptMunicipioDireccion.isNull());
@@ -2899,7 +2899,7 @@ public class ContratoCService extends AbstractService {
         }
 
         /* Action 4: IF (AsesorC <> ptAsesorSolicitud) */
-        boolean ifCondition4 = !(contratoCTPOSTNOTICREARpthisContratoC.getAsesorC() != null && contratoCTPOSTNOTICREARpthisContratoC.getAsesorC().equalsObject(contratoCTPOSTNOTICREARptAsesorSolicitud));
+        boolean ifCondition4 = !(contratoCTPOSTNOTICREARpthisContratoC.getAsesorC().equalsObject(contratoCTPOSTNOTICREARptAsesorSolicitud));
         if (ifCondition4) {
             /* Action 40: IF (ptAsesorSolicitud <> NULL) */
             boolean ifCondition40 = (contratoCTPOSTNOTICREARptAsesorSolicitud != null && !contratoCTPOSTNOTICREARptAsesorSolicitud.isNull());
@@ -2920,7 +2920,7 @@ public class ContratoCService extends AbstractService {
         }
 
         /* Action 5: IF (PeriodicidadC <> ptPeriodicidad) */
-        boolean ifCondition5 = !(contratoCTPOSTNOTICREARpthisContratoC.getPeriodicidadC() != null && contratoCTPOSTNOTICREARpthisContratoC.getPeriodicidadC().equalsObject(contratoCTPOSTNOTICREARptPeriodicidad));
+        boolean ifCondition5 = !(contratoCTPOSTNOTICREARpthisContratoC.getPeriodicidadC().equalsObject(contratoCTPOSTNOTICREARptPeriodicidad));
         if (ifCondition5) {
             /* Action 50: IF (ptPeriodicidad <> NULL) */
             boolean ifCondition50 = (contratoCTPOSTNOTICREARptPeriodicidad != null && !contratoCTPOSTNOTICREARptPeriodicidad.isNull());
@@ -2941,7 +2941,7 @@ public class ContratoCService extends AbstractService {
         }
 
         /* Action 6: IF (ProductoC <> ptProducto) */
-        boolean ifCondition6 = !(contratoCTPOSTNOTICREARpthisContratoC.getProductoC() != null && contratoCTPOSTNOTICREARpthisContratoC.getProductoC().equalsObject(contratoCTPOSTNOTICREARptProducto));
+        boolean ifCondition6 = !(contratoCTPOSTNOTICREARpthisContratoC.getProductoC().equalsObject(contratoCTPOSTNOTICREARptProducto));
         if (ifCondition6) {
             com.keralty.aesolicitudes.viewmodel.contratoc.siu.ChgProductoCRequest step60Request = new com.keralty.aesolicitudes.viewmodel.contratoc.siu.ChgProductoCRequest();
             step60Request.setContratoCchgProductoCpthisContratoCInstance(contratoCTPOSTNOTICREARpthisContratoC);
@@ -2950,7 +2950,7 @@ public class ContratoCService extends AbstractService {
         }
 
         /* Action 7: IF (PlanC <> ptPlan) */
-        boolean ifCondition7 = !(contratoCTPOSTNOTICREARpthisContratoC.getPlanC() != null && contratoCTPOSTNOTICREARpthisContratoC.getPlanC().equalsObject(contratoCTPOSTNOTICREARptPlan));
+        boolean ifCondition7 = !(contratoCTPOSTNOTICREARpthisContratoC.getPlanC().equalsObject(contratoCTPOSTNOTICREARptPlan));
         if (ifCondition7) {
             com.keralty.aesolicitudes.viewmodel.contratoc.siu.ChgPlanCRequest step70Request = new com.keralty.aesolicitudes.viewmodel.contratoc.siu.ChgPlanCRequest();
             step70Request.setContratoCchgPlanCpthisContratoCInstance(contratoCTPOSTNOTICREARpthisContratoC);

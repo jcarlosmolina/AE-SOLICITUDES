@@ -1442,7 +1442,7 @@ public class BeneficiarioCService extends AbstractService {
         }
 
         /* Action 3: IF (EXIST (PersonaC) = true AND FamiliasC.ContratoC.PersonaCContratante <> PersonaC AND FamiliasC.PersonaCTitular <> PersonaC) */
-        boolean ifCondition3 = repository.assocOperator013(beneficiarioCTELIMINARpthisBeneficiarioC).equals(true) && !(beneficiarioCTELIMINARpthisBeneficiarioC.getFamiliasC().getContratoC().getPersonaCContratante() != null && beneficiarioCTELIMINARpthisBeneficiarioC.getFamiliasC().getContratoC().getPersonaCContratante().equalsObject(beneficiarioCTELIMINARpthisBeneficiarioC.getPersonaC())) && !(beneficiarioCTELIMINARpthisBeneficiarioC.getFamiliasC().getPersonaCTitular() != null && beneficiarioCTELIMINARpthisBeneficiarioC.getFamiliasC().getPersonaCTitular().equalsObject(beneficiarioCTELIMINARpthisBeneficiarioC.getPersonaC()));
+        boolean ifCondition3 = repository.assocOperator013(beneficiarioCTELIMINARpthisBeneficiarioC).equals(true) && !(beneficiarioCTELIMINARpthisBeneficiarioC.getFamiliasC().getContratoC().getPersonaCContratante().equalsObject(beneficiarioCTELIMINARpthisBeneficiarioC.getPersonaC())) && !(beneficiarioCTELIMINARpthisBeneficiarioC.getFamiliasC().getPersonaCTitular().equalsObject(beneficiarioCTELIMINARpthisBeneficiarioC.getPersonaC()));
         if (ifCondition3) {
             com.keralty.aesolicitudes.viewmodel.personac.siu.TELIMINARRequest step30Request = new com.keralty.aesolicitudes.viewmodel.personac.siu.TELIMINARRequest();
             step30Request.setPersonaCTELIMINARpthisPersonaCInstance(beneficiarioCTELIMINARpthisBeneficiarioC.getPersonaC());
@@ -1542,7 +1542,7 @@ public class BeneficiarioCService extends AbstractService {
         }
 
         /* Action 3: IF (EXIST (EstadoBeneficiarioC) = true AND ptpevcEstadoBeneficiarioC <> NULL AND EstadoBeneficiarioC <> ptpevcEstadoBeneficiarioC) */
-        boolean ifCondition3 = repository.assocOperator017(beneficiarioCTMODIFICARpthisBeneficiarioC).equals(true) && (beneficiarioCTMODIFICARptpevcEstadoBeneficiarioC != null && !beneficiarioCTMODIFICARptpevcEstadoBeneficiarioC.isNull()) && !(beneficiarioCTMODIFICARpthisBeneficiarioC.getEstadoBeneficiarioC() != null && beneficiarioCTMODIFICARpthisBeneficiarioC.getEstadoBeneficiarioC().equalsObject(beneficiarioCTMODIFICARptpevcEstadoBeneficiarioC));
+        boolean ifCondition3 = repository.assocOperator017(beneficiarioCTMODIFICARpthisBeneficiarioC).equals(true) && (beneficiarioCTMODIFICARptpevcEstadoBeneficiarioC != null && !beneficiarioCTMODIFICARptpevcEstadoBeneficiarioC.isNull()) && !(beneficiarioCTMODIFICARpthisBeneficiarioC.getEstadoBeneficiarioC().equalsObject(beneficiarioCTMODIFICARptpevcEstadoBeneficiarioC));
         if (ifCondition3) {
             com.keralty.aesolicitudes.viewmodel.beneficiarioc.siu.DelEstadoBeneficiarioCRequest step30Request = new com.keralty.aesolicitudes.viewmodel.beneficiarioc.siu.DelEstadoBeneficiarioCRequest();
             step30Request.setBeneficiarioCDelEstadoBeneficiarioCpthisBeneficiarioCInstance(beneficiarioCTMODIFICARpthisBeneficiarioC);
@@ -1643,7 +1643,7 @@ public class BeneficiarioCService extends AbstractService {
         beneficiarioCSrv.modificarTrasCOREImplementation(step1Request);
 
         /* Action 2: IF (EstadoBeneficiarioC <> ptEstadoBeneficiarioC) */
-        boolean ifCondition2 = !(beneficiarioCTACTTRASCOREpthisBeneficiarioC.getEstadoBeneficiarioC() != null && beneficiarioCTACTTRASCOREpthisBeneficiarioC.getEstadoBeneficiarioC().equalsObject(beneficiarioCTACTTRASCOREptEstadoBeneficiarioC));
+        boolean ifCondition2 = !(beneficiarioCTACTTRASCOREpthisBeneficiarioC.getEstadoBeneficiarioC().equalsObject(beneficiarioCTACTTRASCOREptEstadoBeneficiarioC));
         if (ifCondition2) {
             /* Action 20: IF (ptEstadoBeneficiarioC <> NULL) */
             boolean ifCondition20 = (beneficiarioCTACTTRASCOREptEstadoBeneficiarioC != null && !beneficiarioCTACTTRASCOREptEstadoBeneficiarioC.isNull());
@@ -1748,7 +1748,7 @@ public class BeneficiarioCService extends AbstractService {
         instance = (BeneficiarioC) beneficiarioCSrv.crearImplementation(step1Request).getInstance();
 
         /* Action 2: IF (ptSolicitud.ContratantePersona = ptUsuario.UsuarioPersona) */
-        boolean ifCondition2 = (beneficiarioCTNEWDESDEAEptSolicitud.getContratantePersona() != null && beneficiarioCTNEWDESDEAEptSolicitud.getContratantePersona().equalsObject(beneficiarioCTNEWDESDEAEptUsuario.getUsuarioPersona()));
+        boolean ifCondition2 = beneficiarioCTNEWDESDEAEptSolicitud.getContratantePersona().equalsObject(beneficiarioCTNEWDESDEAEptUsuario.getUsuarioPersona());
         if (ifCondition2) {
             com.keralty.aesolicitudes.viewmodel.beneficiarioc.siu.InsBeneficiariosCRequest step20Request = new com.keralty.aesolicitudes.viewmodel.beneficiarioc.siu.InsBeneficiariosCRequest();
             step20Request.setBeneficiarioCInsBeneficiariosCpthisBeneficiarioCInstance(instance);
@@ -1756,7 +1756,7 @@ public class BeneficiarioCService extends AbstractService {
             beneficiarioCSrv.insBeneficiariosCImplementation(step20Request, true);
         } else {
             /* Action 21: IF (ptSolicitud.TitularPersona = ptUsuario.UsuarioPersona) */
-            boolean ifCondition21 = (beneficiarioCTNEWDESDEAEptSolicitud.getTitularPersona() != null && beneficiarioCTNEWDESDEAEptSolicitud.getTitularPersona().equalsObject(beneficiarioCTNEWDESDEAEptUsuario.getUsuarioPersona()));
+            boolean ifCondition21 = beneficiarioCTNEWDESDEAEptSolicitud.getTitularPersona().equalsObject(beneficiarioCTNEWDESDEAEptUsuario.getUsuarioPersona());
             if (ifCondition21) {
                 com.keralty.aesolicitudes.viewmodel.beneficiarioc.siu.InsBeneficiariosCRequest step210Request = new com.keralty.aesolicitudes.viewmodel.beneficiarioc.siu.InsBeneficiariosCRequest();
                 step210Request.setBeneficiarioCInsBeneficiariosCpthisBeneficiarioCInstance(instance);
@@ -1905,7 +1905,7 @@ public class BeneficiarioCService extends AbstractService {
         beneficiarioCSrv.evalPostNotiCrearImplementation(step3Request);
 
         /* Action 4: IF (EstadoBeneficiarioC <> ptEstadoBeneficiario) */
-        boolean ifCondition4 = !(beneficiarioCTPOSTNOTIFICARpthisBeneficiarioC.getEstadoBeneficiarioC() != null && beneficiarioCTPOSTNOTIFICARpthisBeneficiarioC.getEstadoBeneficiarioC().equalsObject(beneficiarioCTPOSTNOTIFICARptEstadoBeneficiario));
+        boolean ifCondition4 = !(beneficiarioCTPOSTNOTIFICARpthisBeneficiarioC.getEstadoBeneficiarioC().equalsObject(beneficiarioCTPOSTNOTIFICARptEstadoBeneficiario));
         if (ifCondition4) {
             /* Action 40: IF (ptEstadoBeneficiario <> NULL) */
             boolean ifCondition40 = (beneficiarioCTPOSTNOTIFICARptEstadoBeneficiario != null && !beneficiarioCTPOSTNOTIFICARptEstadoBeneficiario.isNull());
@@ -1926,7 +1926,7 @@ public class BeneficiarioCService extends AbstractService {
         }
 
         /* Action 5: IF (ParentescoC <> ptpagrParentescoC) */
-        boolean ifCondition5 = !(beneficiarioCTPOSTNOTIFICARpthisBeneficiarioC.getParentescoC() != null && beneficiarioCTPOSTNOTIFICARpthisBeneficiarioC.getParentescoC().equalsObject(beneficiarioCTPOSTNOTIFICARptpagrParentescoC));
+        boolean ifCondition5 = !(beneficiarioCTPOSTNOTIFICARpthisBeneficiarioC.getParentescoC().equalsObject(beneficiarioCTPOSTNOTIFICARptpagrParentescoC));
         if (ifCondition5) {
             com.keralty.aesolicitudes.viewmodel.beneficiarioc.siu.ChgParentescoCRequest step50Request = new com.keralty.aesolicitudes.viewmodel.beneficiarioc.siu.ChgParentescoCRequest();
             step50Request.setBeneficiarioCchgParentescoCpthisBeneficiarioCInstance(beneficiarioCTPOSTNOTIFICARpthisBeneficiarioC);
@@ -1935,7 +1935,7 @@ public class BeneficiarioCService extends AbstractService {
         }
 
         /* Action 6: IF (EPSC <> ptpagrEPSC) */
-        boolean ifCondition6 = !(beneficiarioCTPOSTNOTIFICARpthisBeneficiarioC.getEPSC() != null && beneficiarioCTPOSTNOTIFICARpthisBeneficiarioC.getEPSC().equalsObject(beneficiarioCTPOSTNOTIFICARptpagrEPSC));
+        boolean ifCondition6 = !(beneficiarioCTPOSTNOTIFICARpthisBeneficiarioC.getEPSC().equalsObject(beneficiarioCTPOSTNOTIFICARptpagrEPSC));
         if (ifCondition6) {
             /* Action 60: IF (ptpagrEPSC <> NULL) */
             boolean ifCondition60 = (beneficiarioCTPOSTNOTIFICARptpagrEPSC != null && !beneficiarioCTPOSTNOTIFICARptpagrEPSC.isNull());
@@ -1956,7 +1956,7 @@ public class BeneficiarioCService extends AbstractService {
         }
 
         /* Action 7: IF (CompanyiaMPC <> ptpagrCompanyiaMPC) */
-        boolean ifCondition7 = !(beneficiarioCTPOSTNOTIFICARpthisBeneficiarioC.getCompanyiaMPC() != null && beneficiarioCTPOSTNOTIFICARpthisBeneficiarioC.getCompanyiaMPC().equalsObject(beneficiarioCTPOSTNOTIFICARptpagrCompanyiaMPC));
+        boolean ifCondition7 = !(beneficiarioCTPOSTNOTIFICARpthisBeneficiarioC.getCompanyiaMPC().equalsObject(beneficiarioCTPOSTNOTIFICARptpagrCompanyiaMPC));
         if (ifCondition7) {
             /* Action 70: IF (ptpagrCompanyiaMPC <> NULL) */
             boolean ifCondition70 = (beneficiarioCTPOSTNOTIFICARptpagrCompanyiaMPC != null && !beneficiarioCTPOSTNOTIFICARptpagrCompanyiaMPC.isNull());
@@ -2080,7 +2080,7 @@ public class BeneficiarioCService extends AbstractService {
         instance = (BeneficiarioC) beneficiarioCSrv.crearImplementation(step1Request).getInstance();
 
         /* Action 2: IF (ContratoC.PersonaCContratante.TipoIdentificacionC = ptTipoId AND ContratoC.PersonaCContratante.NumIdentificacion = ptNumIdentificacion) */
-        boolean ifCondition2 = (instance.getContratoC().getPersonaCContratante().getTipoIdentificacionC() != null && instance.getContratoC().getPersonaCContratante().getTipoIdentificacionC().equalsObject(beneficiarioCTNEWDESDECOREptTipoId)) && (instance.getContratoC().getPersonaCContratante().getPersonaCNumIdentificacion()).equals(beneficiarioCTNEWDESDECOREptNumIdentificacion);
+        boolean ifCondition2 = instance.getContratoC().getPersonaCContratante().getTipoIdentificacionC().equalsObject(beneficiarioCTNEWDESDECOREptTipoId) && (instance.getContratoC().getPersonaCContratante().getPersonaCNumIdentificacion()).equals(beneficiarioCTNEWDESDECOREptNumIdentificacion);
         if (ifCondition2) {
             com.keralty.aesolicitudes.viewmodel.beneficiarioc.siu.InsBeneficiariosCRequest step20Request = new com.keralty.aesolicitudes.viewmodel.beneficiarioc.siu.InsBeneficiariosCRequest();
             step20Request.setBeneficiarioCInsBeneficiariosCpthisBeneficiarioCInstance(instance);
@@ -2088,7 +2088,7 @@ public class BeneficiarioCService extends AbstractService {
             beneficiarioCSrv.insBeneficiariosCImplementation(step20Request, true);
         } else {
             /* Action 21: IF (FamiliasC.PersonaCTitular.TipoIdentificacionC = ptTipoId AND FamiliasC.PersonaCTitular.NumIdentificacion = ptNumIdentificacion) */
-            boolean ifCondition21 = (instance.getFamiliasC().getPersonaCTitular().getTipoIdentificacionC() != null && instance.getFamiliasC().getPersonaCTitular().getTipoIdentificacionC().equalsObject(beneficiarioCTNEWDESDECOREptTipoId)) && (instance.getFamiliasC().getPersonaCTitular().getPersonaCNumIdentificacion()).equals(beneficiarioCTNEWDESDECOREptNumIdentificacion);
+            boolean ifCondition21 = instance.getFamiliasC().getPersonaCTitular().getTipoIdentificacionC().equalsObject(beneficiarioCTNEWDESDECOREptTipoId) && (instance.getFamiliasC().getPersonaCTitular().getPersonaCNumIdentificacion()).equals(beneficiarioCTNEWDESDECOREptNumIdentificacion);
             if (ifCondition21) {
                 com.keralty.aesolicitudes.viewmodel.beneficiarioc.siu.InsBeneficiariosCRequest step210Request = new com.keralty.aesolicitudes.viewmodel.beneficiarioc.siu.InsBeneficiariosCRequest();
                 step210Request.setBeneficiarioCInsBeneficiariosCpthisBeneficiarioCInstance(instance);

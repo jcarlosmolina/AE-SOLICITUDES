@@ -945,7 +945,7 @@ public class FamiliaCService extends AbstractService {
         }
 
         /* Action 2: IF (EXIST (PersonaCTitular) = true AND ContratoC.PersonaCContratante <> PersonaCTitular) */
-        boolean ifCondition2 = repository.assocOperator002(familiaCTELIMINARpthisFamiliaC).equals(true) && !(familiaCTELIMINARpthisFamiliaC.getContratoC().getPersonaCContratante() != null && familiaCTELIMINARpthisFamiliaC.getContratoC().getPersonaCContratante().equalsObject(familiaCTELIMINARpthisFamiliaC.getPersonaCTitular()));
+        boolean ifCondition2 = repository.assocOperator002(familiaCTELIMINARpthisFamiliaC).equals(true) && !(familiaCTELIMINARpthisFamiliaC.getContratoC().getPersonaCContratante().equalsObject(familiaCTELIMINARpthisFamiliaC.getPersonaCTitular()));
         if (ifCondition2) {
             com.keralty.aesolicitudes.viewmodel.personac.siu.TELIMINARRequest step20Request = new com.keralty.aesolicitudes.viewmodel.personac.siu.TELIMINARRequest();
             step20Request.setPersonaCTELIMINARpthisPersonaCInstance(familiaCTELIMINARpthisFamiliaC.getPersonaCTitular());
@@ -1044,7 +1044,7 @@ public class FamiliaCService extends AbstractService {
         }
 
         /* Action 2: IF (ptSolicitud.ContratantePersona = ptSolicitud.TitularPersona) */
-        boolean ifCondition2 = (familiaCTNEWDESDEAEptSolicitud.getContratantePersona() != null && familiaCTNEWDESDEAEptSolicitud.getContratantePersona().equalsObject(familiaCTNEWDESDEAEptSolicitud.getTitularPersona()));
+        boolean ifCondition2 = familiaCTNEWDESDEAEptSolicitud.getContratantePersona().equalsObject(familiaCTNEWDESDEAEptSolicitud.getTitularPersona());
         if (ifCondition2) {
             com.keralty.aesolicitudes.viewmodel.familiac.siu.InsPersonaCTitularRequest step20Request = new com.keralty.aesolicitudes.viewmodel.familiac.siu.InsPersonaCTitularRequest();
             step20Request.setFamiliaCInsPersonaCTitularpthisFamiliaCInstance(instance);
@@ -1266,7 +1266,7 @@ public class FamiliaCService extends AbstractService {
         familiaCSrv.evalPostNotiCrearImplementation(step1Request);
 
         /* Action 2: IF (MunicipioC <> ptMunicipioDireccion) */
-        boolean ifCondition2 = !(familiaCTPOSTNOTICREARpthisFamiliaC.getMunicipioC() != null && familiaCTPOSTNOTICREARpthisFamiliaC.getMunicipioC().equalsObject(familiaCTPOSTNOTICREARptMunicipioDireccion));
+        boolean ifCondition2 = !(familiaCTPOSTNOTICREARpthisFamiliaC.getMunicipioC().equalsObject(familiaCTPOSTNOTICREARptMunicipioDireccion));
         if (ifCondition2) {
             /* Action 20: IF (ptMunicipioDireccion <> NULL) */
             boolean ifCondition20 = (familiaCTPOSTNOTICREARptMunicipioDireccion != null && !familiaCTPOSTNOTICREARptMunicipioDireccion.isNull());
@@ -1320,7 +1320,7 @@ public class FamiliaCService extends AbstractService {
                 personaCSrv.tNEWImplementation(step300Request);
             } else {
                 /* Action 301: IF (ContratoC.PersonaCContratante = PersonaCTitular AND (ContratoC.PersonaCContratante.TipoIdentificacionC <> ptTipoIdentTitular OR ContratoC.PersonaCContratante.NumIdentificacion <> ptNumIdentTitular)) */
-                boolean ifCondition301 = (familiaCTPOSTNOTICREARpthisFamiliaC.getContratoC().getPersonaCContratante() != null && familiaCTPOSTNOTICREARpthisFamiliaC.getContratoC().getPersonaCContratante().equalsObject(familiaCTPOSTNOTICREARpthisFamiliaC.getPersonaCTitular())) && (!(familiaCTPOSTNOTICREARpthisFamiliaC.getContratoC().getPersonaCContratante().getTipoIdentificacionC() != null && familiaCTPOSTNOTICREARpthisFamiliaC.getContratoC().getPersonaCContratante().getTipoIdentificacionC().equalsObject(familiaCTPOSTNOTICREARptTipoIdentTitular)) || !STDFunctions.areEqual(familiaCTPOSTNOTICREARpthisFamiliaC.getContratoC().getPersonaCContratante().getPersonaCNumIdentificacion(),familiaCTPOSTNOTICREARptNumIdentTitular));
+                boolean ifCondition301 = familiaCTPOSTNOTICREARpthisFamiliaC.getContratoC().getPersonaCContratante().equalsObject(familiaCTPOSTNOTICREARpthisFamiliaC.getPersonaCTitular()) && (!(familiaCTPOSTNOTICREARpthisFamiliaC.getContratoC().getPersonaCContratante().getTipoIdentificacionC().equalsObject(familiaCTPOSTNOTICREARptTipoIdentTitular)) || !STDFunctions.areEqual(familiaCTPOSTNOTICREARpthisFamiliaC.getContratoC().getPersonaCContratante().getPersonaCNumIdentificacion(),familiaCTPOSTNOTICREARptNumIdentTitular));
                 if (ifCondition301) {
                     com.keralty.aesolicitudes.viewmodel.familiac.siu.DelPersonaCTitularRequest step3010Request = new com.keralty.aesolicitudes.viewmodel.familiac.siu.DelPersonaCTitularRequest();
                     step3010Request.setFamiliaCDelPersonaCTitularpthisFamiliaCInstance(familiaCTPOSTNOTICREARpthisFamiliaC);

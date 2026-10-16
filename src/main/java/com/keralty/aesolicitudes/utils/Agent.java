@@ -139,34 +139,74 @@ public class Agent implements UserCrudService {
     	setClassName(getAgentRoles().get(0));
         IEntity lAgent = null;
         if (Constants.FUNCIONARIO.equalsIgnoreCase(className)) {
-            lAgent = funcionarioService.getByOID(new FuncionarioOid(Long.valueOf(getAgentName())));
+            try {
+                lAgent = funcionarioService.getByOID(new FuncionarioOid(Long.valueOf(getAgentName())));
+            } catch(Exception e) {
+                lAgent = null;
+            }
         }
         if (Constants.ADMIN.equalsIgnoreCase(className)) {
-            lAgent = adminService.getByOID(new AdminOid(Long.valueOf(getAgentName())));
+            try {
+                lAgent = adminService.getByOID(new AdminOid(Long.valueOf(getAgentName())));
+            } catch(Exception e) {
+                lAgent = null;
+            }
         }
         if (Constants.SUPERADMIN.equalsIgnoreCase(className)) {
-            lAgent = superAdminService.getByOID(new SuperAdminOid(Long.valueOf(getAgentName())));
+            try {
+                lAgent = superAdminService.getByOID(new SuperAdminOid(Long.valueOf(getAgentName())));
+            } catch(Exception e) {
+                lAgent = null;
+            }
         }
         if (Constants.ASESOR.equalsIgnoreCase(className)) {
-            lAgent = asesorService.getByOID(new AsesorOid(Long.valueOf(getAgentName())));
+            try {
+                lAgent = asesorService.getByOID(new AsesorOid(Long.valueOf(getAgentName())));
+            } catch(Exception e) {
+                lAgent = null;
+            }
         }
         if (Constants.AREAMEDICA.equalsIgnoreCase(className)) {
-            lAgent = areaMedicaService.getByOID(new AreaMedicaOid(Long.valueOf(getAgentName())));
+            try {
+                lAgent = areaMedicaService.getByOID(new AreaMedicaOid(Long.valueOf(getAgentName())));
+            } catch(Exception e) {
+                lAgent = null;
+            }
         }
         if (Constants.AFILIACIONES.equalsIgnoreCase(className)) {
-            lAgent = afiliacionesService.getByOID(new AfiliacionesOid(Long.valueOf(getAgentName())));
+            try {
+                lAgent = afiliacionesService.getByOID(new AfiliacionesOid(Long.valueOf(getAgentName())));
+            } catch(Exception e) {
+                lAgent = null;
+            }
         }
         if (Constants.RESPREGIONAL.equalsIgnoreCase(className)) {
-            lAgent = respRegionalService.getByOID(new RespRegionalOid(Long.valueOf(getAgentName())));
+            try {
+                lAgent = respRegionalService.getByOID(new RespRegionalOid(Long.valueOf(getAgentName())));
+            } catch(Exception e) {
+                lAgent = null;
+            }
         }
         if (Constants.GESTOR.equalsIgnoreCase(className)) {
-            lAgent = gestorService.getByOID(new GestorOid(Long.valueOf(getAgentName())));
+            try {
+                lAgent = gestorService.getByOID(new GestorOid(Long.valueOf(getAgentName())));
+            } catch(Exception e) {
+                lAgent = null;
+            }
         }
         if (Constants.MESADEAPOYO.equalsIgnoreCase(className)) {
-            lAgent = mesaDeApoyoService.getByOID(new MesaDeApoyoOid(Long.valueOf(getAgentName())));
+            try {
+                lAgent = mesaDeApoyoService.getByOID(new MesaDeApoyoOid(Long.valueOf(getAgentName())));
+            } catch(Exception e) {
+                lAgent = null;
+            }
         }
         if (Constants.USUARIOSISTEMAEXTERNO.equalsIgnoreCase(className)) {
-            lAgent = usuarioSistemaExternoService.getByOID(new UsuarioSistemaExternoOid(getAgentName()));
+            try {
+                lAgent = usuarioSistemaExternoService.getByOID(new UsuarioSistemaExternoOid(getAgentName()));
+            } catch(Exception e) {
+                lAgent = null;
+            }
         }
         return lAgent;
     }

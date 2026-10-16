@@ -152,63 +152,103 @@ public class AbstractService {
 
 
     protected Funcionario getAgentFuncionario() {
-        return !getAgentName().startsWith("{")
-                ? funcionarioSrv.getById(Long.valueOf(getAgentName()))
-                : funcionarioSrv.getByOID(new FuncionarioOid().fromJsonString(getAgentName()));
+        try {
+            return !getAgentName().startsWith("{")
+                    ? funcionarioSrv.getById(Long.valueOf(getAgentName()))
+                    : funcionarioSrv.getByOID(new FuncionarioOid().fromJsonString(getAgentName()));
+        } catch (Exception e) {
+            return null;
+        }
     }
 
     protected Admin getAgentAdmin() {
-        return !getAgentName().startsWith("{")
-                ? adminSrv.getById(Long.valueOf(getAgentName()))
-                : adminSrv.getByOID(new AdminOid().fromJsonString(getAgentName()));
+        try {
+            return !getAgentName().startsWith("{")
+                    ? adminSrv.getById(Long.valueOf(getAgentName()))
+                    : adminSrv.getByOID(new AdminOid().fromJsonString(getAgentName()));
+        } catch (Exception e) {
+            return null;
+        }
     }
 
     protected SuperAdmin getAgentSuperAdmin() {
-        return !getAgentName().startsWith("{")
-                ? superAdminSrv.getById(Long.valueOf(getAgentName()))
-                : superAdminSrv.getByOID(new SuperAdminOid().fromJsonString(getAgentName()));
+        try {
+            return !getAgentName().startsWith("{")
+                    ? superAdminSrv.getById(Long.valueOf(getAgentName()))
+                    : superAdminSrv.getByOID(new SuperAdminOid().fromJsonString(getAgentName()));
+        } catch (Exception e) {
+            return null;
+        }
     }
 
     protected Asesor getAgentAsesor() {
-        return !getAgentName().startsWith("{")
-                ? asesorSrv.getById(Long.valueOf(getAgentName()))
-                : asesorSrv.getByOID(new AsesorOid().fromJsonString(getAgentName()));
+        try {
+            return !getAgentName().startsWith("{")
+                    ? asesorSrv.getById(Long.valueOf(getAgentName()))
+                    : asesorSrv.getByOID(new AsesorOid().fromJsonString(getAgentName()));
+        } catch (Exception e) {
+            return null;
+        }
     }
 
     protected AreaMedica getAgentAreaMedica() {
-        return !getAgentName().startsWith("{")
-                ? areaMedicaSrv.getById(Long.valueOf(getAgentName()))
-                : areaMedicaSrv.getByOID(new AreaMedicaOid().fromJsonString(getAgentName()));
+        try {
+            return !getAgentName().startsWith("{")
+                    ? areaMedicaSrv.getById(Long.valueOf(getAgentName()))
+                    : areaMedicaSrv.getByOID(new AreaMedicaOid().fromJsonString(getAgentName()));
+        } catch (Exception e) {
+            return null;
+        }
     }
 
     protected Afiliaciones getAgentAfiliaciones() {
-        return !getAgentName().startsWith("{")
-                ? afiliacionesSrv.getById(Long.valueOf(getAgentName()))
-                : afiliacionesSrv.getByOID(new AfiliacionesOid().fromJsonString(getAgentName()));
+        try {
+            return !getAgentName().startsWith("{")
+                    ? afiliacionesSrv.getById(Long.valueOf(getAgentName()))
+                    : afiliacionesSrv.getByOID(new AfiliacionesOid().fromJsonString(getAgentName()));
+        } catch (Exception e) {
+            return null;
+        }
     }
 
     protected RespRegional getAgentRespRegional() {
-        return !getAgentName().startsWith("{")
-                ? respRegionalSrv.getById(Long.valueOf(getAgentName()))
-                : respRegionalSrv.getByOID(new RespRegionalOid().fromJsonString(getAgentName()));
+        try {
+            return !getAgentName().startsWith("{")
+                    ? respRegionalSrv.getById(Long.valueOf(getAgentName()))
+                    : respRegionalSrv.getByOID(new RespRegionalOid().fromJsonString(getAgentName()));
+        } catch (Exception e) {
+            return null;
+        }
     }
 
     protected Gestor getAgentGestor() {
-        return !getAgentName().startsWith("{")
-                ? gestorSrv.getById(Long.valueOf(getAgentName()))
-                : gestorSrv.getByOID(new GestorOid().fromJsonString(getAgentName()));
+        try {
+            return !getAgentName().startsWith("{")
+                    ? gestorSrv.getById(Long.valueOf(getAgentName()))
+                    : gestorSrv.getByOID(new GestorOid().fromJsonString(getAgentName()));
+        } catch (Exception e) {
+            return null;
+        }
     }
 
     protected MesaDeApoyo getAgentMesaDeApoyo() {
-        return !getAgentName().startsWith("{")
-                ? mesaDeApoyoSrv.getById(Long.valueOf(getAgentName()))
-                : mesaDeApoyoSrv.getByOID(new MesaDeApoyoOid().fromJsonString(getAgentName()));
+        try {
+            return !getAgentName().startsWith("{")
+                    ? mesaDeApoyoSrv.getById(Long.valueOf(getAgentName()))
+                    : mesaDeApoyoSrv.getByOID(new MesaDeApoyoOid().fromJsonString(getAgentName()));
+        } catch (Exception e) {
+            return null;
+        }
     }
 
     protected UsuarioSistemaExterno getAgentUsuarioSistemaExterno() {
-        return !getAgentName().startsWith("{")
-                ? usuarioSistemaExternoSrv.getById(getAgentName())
-                : usuarioSistemaExternoSrv.getByOID(new UsuarioSistemaExternoOid().fromJsonString(getAgentName()));
+        try {
+            return !getAgentName().startsWith("{")
+                    ? usuarioSistemaExternoSrv.getById(getAgentName())
+                    : usuarioSistemaExternoSrv.getByOID(new UsuarioSistemaExternoOid().fromJsonString(getAgentName()));
+        } catch (Exception e) {
+            return null;
+        }
     }
 
     protected String getAgentName() {

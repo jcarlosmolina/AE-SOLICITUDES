@@ -1775,7 +1775,7 @@ public class SolicitudNovedadService extends AbstractService {
         SolicitudNovedad instance = solicitudNovedadTASGUSRAFILIpthisSolicitudNovedad;
 
         /* Action 1: IF (UsrAfiliacion <> ptFuncionario) */
-        boolean ifCondition1 = !(solicitudNovedadTASGUSRAFILIpthisSolicitudNovedad.getUsrAfiliacion() != null && solicitudNovedadTASGUSRAFILIpthisSolicitudNovedad.getUsrAfiliacion().equalsObject(solicitudNovedadTASGUSRAFILIptFuncionario));
+        boolean ifCondition1 = !(solicitudNovedadTASGUSRAFILIpthisSolicitudNovedad.getUsrAfiliacion().equalsObject(solicitudNovedadTASGUSRAFILIptFuncionario));
         if (ifCondition1) {
             /* Action 10: IF (EXIST (UsrAfiliacion) = true) */
             boolean ifCondition10 = repository.assocOperator041(solicitudNovedadTASGUSRAFILIpthisSolicitudNovedad).equals(true);
@@ -1869,7 +1869,7 @@ public class SolicitudNovedadService extends AbstractService {
         SolicitudNovedad instance = solicitudNovedadTREASIGNARUSUARIOSpthisSolicitudNovedad;
 
         /* Action 1: IF (ptUsrAfiliacion <> NULL AND UsrAfiliacion <> ptUsrAfiliacion) */
-        boolean ifCondition1 = (solicitudNovedadTREASIGNARUSUARIOSptUsrAfiliacion != null && !solicitudNovedadTREASIGNARUSUARIOSptUsrAfiliacion.isNull()) && !(solicitudNovedadTREASIGNARUSUARIOSpthisSolicitudNovedad.getUsrAfiliacion() != null && solicitudNovedadTREASIGNARUSUARIOSpthisSolicitudNovedad.getUsrAfiliacion().equalsObject(solicitudNovedadTREASIGNARUSUARIOSptUsrAfiliacion));
+        boolean ifCondition1 = (solicitudNovedadTREASIGNARUSUARIOSptUsrAfiliacion != null && !solicitudNovedadTREASIGNARUSUARIOSptUsrAfiliacion.isNull()) && !(solicitudNovedadTREASIGNARUSUARIOSpthisSolicitudNovedad.getUsrAfiliacion().equalsObject(solicitudNovedadTREASIGNARUSUARIOSptUsrAfiliacion));
         if (ifCondition1) {
             com.keralty.aesolicitudes.viewmodel.solicitudnovedad.siu.TASGUSRAFILIRequest step10Request = new com.keralty.aesolicitudes.viewmodel.solicitudnovedad.siu.TASGUSRAFILIRequest();
             step10Request.setSolicitudNovedadTASGUSRAFILIpthisSolicitudNovedadInstance(solicitudNovedadTREASIGNARUSUARIOSpthisSolicitudNovedad);

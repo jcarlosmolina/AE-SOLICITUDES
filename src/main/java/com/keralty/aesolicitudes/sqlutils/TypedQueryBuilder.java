@@ -35,15 +35,18 @@ public class TypedQueryBuilder<T> {
         query = em.createQuery(buildQuery(select), t);
         
         if (query == null) {
-        	return this;
+            return this;
         }
-        
+
         if (pageSize != 0) {
             query.setFirstResult((pageNumber - 1) * pageSize);
             query.setMaxResults(pageSize);
             ((org.hibernate.query.Query<T>)query).setFetchSize(pageSize);
         }
-        return query != null ? setParameters(select.getParameters()) : this;
+		
+		setParameters(select.getParameters());
+		
+        return this;
     }
 
     public TypedQueryBuilder<T> build4Count(SQLSelect select) {
