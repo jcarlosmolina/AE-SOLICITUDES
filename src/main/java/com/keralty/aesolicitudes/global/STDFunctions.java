@@ -28,7 +28,7 @@ public final class STDFunctions {
 	/** DateTime format */
 	public static final String DATETIMETOSTRFORMAT;
 	
-	private SecureRandom random = new SecureRandom();
+	private static SecureRandom random = new SecureRandom();
 
 	private STDFunctions() {
 
