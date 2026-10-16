@@ -1897,7 +1897,7 @@ RADIO=1;
             AGENT = THIS
             */
             try {
-                if (agentInstance.equalsObject(this)) {
+                if ((agentInstance != null && agentInstance.equalsObject(this))) {
                     returnValue = true;
                 }
             } catch (Exception e) {

@@ -6197,7 +6197,7 @@ Se requiere que el nuevo estado “Recibido” sea homologado en la pantalla de 
         if (solicituddrvContratanteEsTitular != null) return;
         // Default derivation
         // EFFECT   : drvYaTieneContratante = true AND drvYaTieneTitular = true AND ContratantePersona.TipoIdentificacion = TitularPersona.TipoIdentificacion AND ContratantePersona.NumIdentificacion = TitularPersona.NumIdentificacion
-        solicituddrvContratanteEsTitular = this.getSolicituddrvYaTieneContratante().equals(true) && this.getSolicituddrvYaTieneTitular().equals(true) && this.getContratantePersona().getTipoIdentificacion().equalsObject(this.getTitularPersona().getTipoIdentificacion()) && STDFunctions.areEqual(this.getContratantePersona().getPersonaNumIdentificacion(),this.getTitularPersona().getPersonaNumIdentificacion());
+        solicituddrvContratanteEsTitular = this.getSolicituddrvYaTieneContratante().equals(true) && this.getSolicituddrvYaTieneTitular().equals(true) && (this.getContratantePersona().getTipoIdentificacion() != null && this.getContratantePersona().getTipoIdentificacion().equalsObject(this.getTitularPersona().getTipoIdentificacion())) && STDFunctions.areEqual(this.getContratantePersona().getPersonaNumIdentificacion(),this.getTitularPersona().getPersonaNumIdentificacion());
     }
 
     /**
@@ -7849,7 +7849,7 @@ Se requiere que el nuevo estado “Recibido” sea homologado en la pantalla de 
             Agente = agent OR Agente.CodJefe = Agent.Usuario OR EXIST( UsrAfiliacion ) WHERE (UsrAfiliacion = agent) = true
             */
             try {
-                if (this.getAgente().equalsObject(agentInstance) || (this.getAgente().getFuncionarioCodJefe()).equals(agentInstance.getFuncionarioUsuario()) || getSolicitudRepository().assocOperator000().equals(true)) {
+                if ((this.getAgente() != null && this.getAgente().equalsObject(agentInstance)) || (this.getAgente().getFuncionarioCodJefe()).equals(agentInstance.getFuncionarioUsuario()) || getSolicitudRepository().assocOperator000().equals(true)) {
                     returnValue = true;
                 }
             } catch (Exception e) {
@@ -7865,7 +7865,7 @@ Se requiere que el nuevo estado “Recibido” sea homologado en la pantalla de 
             UsrAreaMedica = AGENT
             */
             try {
-                if (this.getUsrAreaMedica().equalsObject(agentInstance)) {
+                if ((this.getUsrAreaMedica() != null && this.getUsrAreaMedica().equalsObject(agentInstance))) {
                     returnValue = true;
                 }
             } catch (Exception e) {
@@ -7881,7 +7881,7 @@ Se requiere que el nuevo estado “Recibido” sea homologado en la pantalla de 
             UsrAfiliacion = agent AND COUNT( Aesolicitudes.PlanT.Afiliaciones ) WHERE (Aesolicitudes.PlanT.Afiliaciones = agent) > 0
             */
             try {
-                if (this.getUsrAfiliacion().equalsObject(agentInstance) && getSolicitudRepository().assocOperator001() > Long.valueOf(0)) {
+                if ((this.getUsrAfiliacion() != null && this.getUsrAfiliacion().equalsObject(agentInstance)) && getSolicitudRepository().assocOperator001() > Long.valueOf(0)) {
                     returnValue = true;
                 }
             } catch (Exception e) {

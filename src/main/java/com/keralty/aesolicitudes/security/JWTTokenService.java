@@ -20,9 +20,14 @@ public class JWTTokenService implements TokenService {
     
     @Override
     public String issue(User user) {
-        long tokenExpiratiLong = tokenExpirationInSeconds != null && !tokenExpirationInSeconds.isEmpty()
-                                ? Long.parseLong(tokenExpirationInSeconds)
-                                : 0;
+    	long tokenExpiratiLong;
+    	try {
+    		tokenExpiratiLong = tokenExpirationInSeconds != null && !tokenExpirationInSeconds.isEmpty()
+    				? Long.parseLong(tokenExpirationInSeconds)
+    						: 0;    		
+    	} catch (NumberFormatException e) {
+    		tokenExpiratiLong = 0;
+    	}
         String token = Jwt.issuer("https://example.com/issuer")
         .upn(user.getUsername())
         .groups(new HashSet<>(user.getRoles()))

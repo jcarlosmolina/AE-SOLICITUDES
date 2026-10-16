@@ -1138,7 +1138,7 @@ public class DireccionCService extends AbstractService {
         }
 
         /* Action 4: IF (EXIST (DepartamentoC) = true AND ptpevcDepartamentoC <> NULL AND DepartamentoC <> ptpevcDepartamentoC) */
-        boolean ifCondition4 = repository.assocOperator014(direccionCTMODIFICARpthisDireccionC).equals(true) && (direccionCTMODIFICARptpevcDepartamentoC != null && !direccionCTMODIFICARptpevcDepartamentoC.isNull()) && !(direccionCTMODIFICARpthisDireccionC.getDepartamentoC().equalsObject(direccionCTMODIFICARptpevcDepartamentoC));
+        boolean ifCondition4 = repository.assocOperator014(direccionCTMODIFICARpthisDireccionC).equals(true) && (direccionCTMODIFICARptpevcDepartamentoC != null && !direccionCTMODIFICARptpevcDepartamentoC.isNull()) && !(direccionCTMODIFICARpthisDireccionC.getDepartamentoC() != null && direccionCTMODIFICARpthisDireccionC.getDepartamentoC().equalsObject(direccionCTMODIFICARptpevcDepartamentoC));
         if (ifCondition4) {
             com.keralty.aesolicitudes.viewmodel.direccionc.siu.DelDepartamentoCRequest step40Request = new com.keralty.aesolicitudes.viewmodel.direccionc.siu.DelDepartamentoCRequest();
             step40Request.setDireccionCDelDepartamentoCpthisDireccionCInstance(direccionCTMODIFICARpthisDireccionC);
@@ -1169,7 +1169,7 @@ public class DireccionCService extends AbstractService {
         }
 
         /* Action 7: IF (EXIST (MunicipioC) = true AND ptpevcMunicipioC <> NULL AND MunicipioC <> ptpevcMunicipioC) */
-        boolean ifCondition7 = repository.assocOperator015(direccionCTMODIFICARpthisDireccionC).equals(true) && (direccionCTMODIFICARptpevcMunicipioC != null && !direccionCTMODIFICARptpevcMunicipioC.isNull()) && !(direccionCTMODIFICARpthisDireccionC.getMunicipioC().equalsObject(direccionCTMODIFICARptpevcMunicipioC));
+        boolean ifCondition7 = repository.assocOperator015(direccionCTMODIFICARpthisDireccionC).equals(true) && (direccionCTMODIFICARptpevcMunicipioC != null && !direccionCTMODIFICARptpevcMunicipioC.isNull()) && !(direccionCTMODIFICARpthisDireccionC.getMunicipioC() != null && direccionCTMODIFICARpthisDireccionC.getMunicipioC().equalsObject(direccionCTMODIFICARptpevcMunicipioC));
         if (ifCondition7) {
             com.keralty.aesolicitudes.viewmodel.direccionc.siu.DelMunicipioCRequest step70Request = new com.keralty.aesolicitudes.viewmodel.direccionc.siu.DelMunicipioCRequest();
             step70Request.setDireccionCDelMunicipioCpthisDireccionCInstance(direccionCTMODIFICARpthisDireccionC);
@@ -1200,7 +1200,7 @@ public class DireccionCService extends AbstractService {
         }
 
         /* Action 10: IF (EXIST (PaisC) = true AND ptpevcPaisC <> NULL AND PaisC <> ptpevcPaisC) */
-        boolean ifCondition10 = repository.assocOperator016(direccionCTMODIFICARpthisDireccionC).equals(true) && (direccionCTMODIFICARptpevcPaisC != null && !direccionCTMODIFICARptpevcPaisC.isNull()) && !(direccionCTMODIFICARpthisDireccionC.getPaisC().equalsObject(direccionCTMODIFICARptpevcPaisC));
+        boolean ifCondition10 = repository.assocOperator016(direccionCTMODIFICARpthisDireccionC).equals(true) && (direccionCTMODIFICARptpevcPaisC != null && !direccionCTMODIFICARptpevcPaisC.isNull()) && !(direccionCTMODIFICARpthisDireccionC.getPaisC() != null && direccionCTMODIFICARpthisDireccionC.getPaisC().equalsObject(direccionCTMODIFICARptpevcPaisC));
         if (ifCondition10) {
             com.keralty.aesolicitudes.viewmodel.direccionc.siu.DelPaisCRequest step100Request = new com.keralty.aesolicitudes.viewmodel.direccionc.siu.DelPaisCRequest();
             step100Request.setDireccionCDelPaisCpthisDireccionCInstance(direccionCTMODIFICARpthisDireccionC);
@@ -1231,7 +1231,7 @@ public class DireccionCService extends AbstractService {
         }
 
         /* Action 13: IF (EXIST (TipoDireccionC) = true AND ptpevcTipoDireccionC <> NULL AND TipoDireccionC <> ptpevcTipoDireccionC) */
-        boolean ifCondition13 = repository.assocOperator017(direccionCTMODIFICARpthisDireccionC).equals(true) && (direccionCTMODIFICARptpevcTipoDireccionC != null && !direccionCTMODIFICARptpevcTipoDireccionC.isNull()) && !(direccionCTMODIFICARpthisDireccionC.getTipoDireccionC().equalsObject(direccionCTMODIFICARptpevcTipoDireccionC));
+        boolean ifCondition13 = repository.assocOperator017(direccionCTMODIFICARpthisDireccionC).equals(true) && (direccionCTMODIFICARptpevcTipoDireccionC != null && !direccionCTMODIFICARptpevcTipoDireccionC.isNull()) && !(direccionCTMODIFICARpthisDireccionC.getTipoDireccionC() != null && direccionCTMODIFICARpthisDireccionC.getTipoDireccionC().equalsObject(direccionCTMODIFICARptpevcTipoDireccionC));
         if (ifCondition13) {
             com.keralty.aesolicitudes.viewmodel.direccionc.siu.DelTipoDireccionCRequest step130Request = new com.keralty.aesolicitudes.viewmodel.direccionc.siu.DelTipoDireccionCRequest();
             step130Request.setDireccionCDelTipoDireccionCpthisDireccionCInstance(direccionCTMODIFICARpthisDireccionC);

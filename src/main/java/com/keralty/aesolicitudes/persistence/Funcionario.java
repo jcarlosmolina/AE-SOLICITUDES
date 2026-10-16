@@ -2872,7 +2872,7 @@ RADIO=1;
             agent = this OR Agent.Usuario = CodJefe
             */
             try {
-                if (agentInstance.equalsObject(this) || (agentInstance.getFuncionarioUsuario()).equals(this.getFuncionarioCodJefe())) {
+                if ((agentInstance != null && agentInstance.equalsObject(this)) || (agentInstance.getFuncionarioUsuario()).equals(this.getFuncionarioCodJefe())) {
                     returnValue = true;
                 }
             } catch (Exception e) {

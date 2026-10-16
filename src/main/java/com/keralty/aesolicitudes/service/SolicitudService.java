@@ -10747,7 +10747,7 @@ public class SolicitudService extends AbstractService {
         }
 
         /* Action 2: IF (EXIST (Periodicidad) = true AND ptpevcPeriodicidad <> Periodicidad) */
-        boolean ifCondition2 = repository.assocOperator165(solicitudTMODIFICARINFOPAGOpthisSolicitud).equals(true) && !(solicitudTMODIFICARINFOPAGOptpevcPeriodicidad.equalsObject(solicitudTMODIFICARINFOPAGOpthisSolicitud.getPeriodicidad()));
+        boolean ifCondition2 = repository.assocOperator165(solicitudTMODIFICARINFOPAGOpthisSolicitud).equals(true) && !(solicitudTMODIFICARINFOPAGOptpevcPeriodicidad != null && solicitudTMODIFICARINFOPAGOptpevcPeriodicidad.equalsObject(solicitudTMODIFICARINFOPAGOpthisSolicitud.getPeriodicidad()));
         if (ifCondition2) {
             com.keralty.aesolicitudes.viewmodel.solicitud.siu.DelPeriodicidadSolicitudRequest step20Request = new com.keralty.aesolicitudes.viewmodel.solicitud.siu.DelPeriodicidadSolicitudRequest();
             step20Request.setSolicitudDelPeriodicidadSolicitudpthisSolicitudInstance(solicitudTMODIFICARINFOPAGOpthisSolicitud);
@@ -10769,7 +10769,7 @@ public class SolicitudService extends AbstractService {
         }
 
         /* Action 4: IF (EXIST (FormaPago) = true AND ptpevcFormaPago <> FormaPago) */
-        boolean ifCondition4 = repository.assocOperator166(solicitudTMODIFICARINFOPAGOpthisSolicitud).equals(true) && !(solicitudTMODIFICARINFOPAGOptpevcFormaPago.equalsObject(solicitudTMODIFICARINFOPAGOpthisSolicitud.getFormaPago()));
+        boolean ifCondition4 = repository.assocOperator166(solicitudTMODIFICARINFOPAGOpthisSolicitud).equals(true) && !(solicitudTMODIFICARINFOPAGOptpevcFormaPago != null && solicitudTMODIFICARINFOPAGOptpevcFormaPago.equalsObject(solicitudTMODIFICARINFOPAGOpthisSolicitud.getFormaPago()));
         if (ifCondition4) {
             com.keralty.aesolicitudes.viewmodel.solicitud.siu.DelFormaPagoSolicitudRequest step40Request = new com.keralty.aesolicitudes.viewmodel.solicitud.siu.DelFormaPagoSolicitudRequest();
             step40Request.setSolicitudDelFormaPagoSolicitudpthisSolicitudInstance(solicitudTMODIFICARINFOPAGOpthisSolicitud);
@@ -12558,7 +12558,7 @@ public class SolicitudService extends AbstractService {
             solicitudSrv.insTitularSolicitudImplementation(step40Request, true);
         } else {
             /* Action 41: IF (ContratantePersona <> TitularPersona) */
-            boolean ifCondition41 = !(solicitudTINDICARCONTRATANTE2AUXpthisSolicitud.getContratantePersona().equalsObject(solicitudTINDICARCONTRATANTE2AUXpthisSolicitud.getTitularPersona()));
+            boolean ifCondition41 = !(solicitudTINDICARCONTRATANTE2AUXpthisSolicitud.getContratantePersona() != null && solicitudTINDICARCONTRATANTE2AUXpthisSolicitud.getContratantePersona().equalsObject(solicitudTINDICARCONTRATANTE2AUXpthisSolicitud.getTitularPersona()));
             if (ifCondition41) {
                 com.keralty.aesolicitudes.viewmodel.solicitud.siu.DelTitularSolicitudRequest step410Request = new com.keralty.aesolicitudes.viewmodel.solicitud.siu.DelTitularSolicitudRequest();
                 step410Request.setSolicitudDelTitularSolicitudpthisSolicitudInstance(solicitudTINDICARCONTRATANTE2AUXpthisSolicitud);
@@ -14790,7 +14790,7 @@ public class SolicitudService extends AbstractService {
         }
 
         /* Action 2: IF (EXIST (GrupoAsociado) = true AND GrupoAsociado <> ptGrupoAsociado) */
-        boolean ifCondition2 = repository.assocOperator234(solicitudTMODENCABEZADOpthisSolicitud).equals(true) && !(solicitudTMODENCABEZADOpthisSolicitud.getGrupoAsociado().equalsObject(solicitudTMODENCABEZADOptGrupoAsociado));
+        boolean ifCondition2 = repository.assocOperator234(solicitudTMODENCABEZADOpthisSolicitud).equals(true) && !(solicitudTMODENCABEZADOpthisSolicitud.getGrupoAsociado() != null && solicitudTMODENCABEZADOpthisSolicitud.getGrupoAsociado().equalsObject(solicitudTMODENCABEZADOptGrupoAsociado));
         if (ifCondition2) {
             com.keralty.aesolicitudes.viewmodel.solicitud.siu.DelGrupoAsociadoSolicitudRequest step20Request = new com.keralty.aesolicitudes.viewmodel.solicitud.siu.DelGrupoAsociadoSolicitudRequest();
             step20Request.setSolicitudDelGrupoAsociadoSolicitudpthisSolicitudInstance(solicitudTMODENCABEZADOpthisSolicitud);
@@ -14808,7 +14808,7 @@ public class SolicitudService extends AbstractService {
         }
 
         /* Action 4: IF (EXIST (TipoFactura) = true AND TipoFactura <> ptTipoFactura) */
-        boolean ifCondition4 = repository.assocOperator236(solicitudTMODENCABEZADOpthisSolicitud).equals(true) && !(solicitudTMODENCABEZADOpthisSolicitud.getTipoFactura().equalsObject(solicitudTMODENCABEZADOptTipoFactura));
+        boolean ifCondition4 = repository.assocOperator236(solicitudTMODENCABEZADOpthisSolicitud).equals(true) && !(solicitudTMODENCABEZADOpthisSolicitud.getTipoFactura() != null && solicitudTMODENCABEZADOpthisSolicitud.getTipoFactura().equalsObject(solicitudTMODENCABEZADOptTipoFactura));
         if (ifCondition4) {
             com.keralty.aesolicitudes.viewmodel.solicitud.siu.DelTipoFacturaRequest step40Request = new com.keralty.aesolicitudes.viewmodel.solicitud.siu.DelTipoFacturaRequest();
             step40Request.setSolicitudDelTipoFacturapthisSolicitudInstance(solicitudTMODENCABEZADOpthisSolicitud);
@@ -15814,7 +15814,7 @@ public class SolicitudService extends AbstractService {
         }
 
         /* Action 3: IF (EXIST (GrupoAsociado) = true AND GrupoAsociado <> ptGrupoAsociado) */
-        boolean ifCondition3 = repository.assocOperator250(solicitudTMODENCABEZADOINCLpthisSolicitud).equals(true) && !(solicitudTMODENCABEZADOINCLpthisSolicitud.getGrupoAsociado().equalsObject(solicitudTMODENCABEZADOINCLptGrupoAsociado));
+        boolean ifCondition3 = repository.assocOperator250(solicitudTMODENCABEZADOINCLpthisSolicitud).equals(true) && !(solicitudTMODENCABEZADOINCLpthisSolicitud.getGrupoAsociado() != null && solicitudTMODENCABEZADOINCLpthisSolicitud.getGrupoAsociado().equalsObject(solicitudTMODENCABEZADOINCLptGrupoAsociado));
         if (ifCondition3) {
             com.keralty.aesolicitudes.viewmodel.solicitud.siu.DelGrupoAsociadoSolicitudRequest step30Request = new com.keralty.aesolicitudes.viewmodel.solicitud.siu.DelGrupoAsociadoSolicitudRequest();
             step30Request.setSolicitudDelGrupoAsociadoSolicitudpthisSolicitudInstance(solicitudTMODENCABEZADOINCLpthisSolicitud);
@@ -16389,7 +16389,7 @@ public class SolicitudService extends AbstractService {
             solicitudSrv.insTitularSolicitudImplementation(step10Request, true);
         } else {
             /* Action 11: IF (TitularPersona <> ptPersona) */
-            boolean ifCondition11 = !(solicitudTADDTITULARUSUARIOpthisSolicitud.getTitularPersona().equalsObject(solicitudTADDTITULARUSUARIOptPersona));
+            boolean ifCondition11 = !(solicitudTADDTITULARUSUARIOpthisSolicitud.getTitularPersona() != null && solicitudTADDTITULARUSUARIOpthisSolicitud.getTitularPersona().equalsObject(solicitudTADDTITULARUSUARIOptPersona));
             if (ifCondition11) {
                 com.keralty.aesolicitudes.viewmodel.solicitud.siu.DelTitularSolicitudRequest step110Request = new com.keralty.aesolicitudes.viewmodel.solicitud.siu.DelTitularSolicitudRequest();
                 step110Request.setSolicitudDelTitularSolicitudpthisSolicitudInstance(solicitudTADDTITULARUSUARIOpthisSolicitud);
@@ -16864,7 +16864,7 @@ public class SolicitudService extends AbstractService {
         Solicitud instance = solicitudTREASIGNARUSUARIOSpthisSolicitud;
 
         /* Action 1: IF (ptUsrAfiliacion <> NULL AND UsrAfiliacion <> ptUsrAfiliacion) */
-        boolean ifCondition1 = (solicitudTREASIGNARUSUARIOSptUsrAfiliacion != null && !solicitudTREASIGNARUSUARIOSptUsrAfiliacion.isNull()) && !(solicitudTREASIGNARUSUARIOSpthisSolicitud.getUsrAfiliacion().equalsObject(solicitudTREASIGNARUSUARIOSptUsrAfiliacion));
+        boolean ifCondition1 = (solicitudTREASIGNARUSUARIOSptUsrAfiliacion != null && !solicitudTREASIGNARUSUARIOSptUsrAfiliacion.isNull()) && !(solicitudTREASIGNARUSUARIOSpthisSolicitud.getUsrAfiliacion() != null && solicitudTREASIGNARUSUARIOSpthisSolicitud.getUsrAfiliacion().equalsObject(solicitudTREASIGNARUSUARIOSptUsrAfiliacion));
         if (ifCondition1) {
             /* Action 10: IF (EXIST (UsrAfiliacion) = true) */
             boolean ifCondition10 = repository.assocOperator268(solicitudTREASIGNARUSUARIOSpthisSolicitud).equals(true);
@@ -16880,7 +16880,7 @@ public class SolicitudService extends AbstractService {
         }
 
         /* Action 2: IF (ptUsrAreaMedica <> NULL AND UsrAreaMedica <> ptUsrAreaMedica) */
-        boolean ifCondition2 = (solicitudTREASIGNARUSUARIOSptUsrAreaMedica != null && !solicitudTREASIGNARUSUARIOSptUsrAreaMedica.isNull()) && !(solicitudTREASIGNARUSUARIOSpthisSolicitud.getUsrAreaMedica().equalsObject(solicitudTREASIGNARUSUARIOSptUsrAreaMedica));
+        boolean ifCondition2 = (solicitudTREASIGNARUSUARIOSptUsrAreaMedica != null && !solicitudTREASIGNARUSUARIOSptUsrAreaMedica.isNull()) && !(solicitudTREASIGNARUSUARIOSpthisSolicitud.getUsrAreaMedica() != null && solicitudTREASIGNARUSUARIOSpthisSolicitud.getUsrAreaMedica().equalsObject(solicitudTREASIGNARUSUARIOSptUsrAreaMedica));
         if (ifCondition2) {
             /* Action 20: IF (EXIST (UsrAreaMedica) = true) */
             boolean ifCondition20 = repository.assocOperator269(solicitudTREASIGNARUSUARIOSpthisSolicitud).equals(true);

@@ -2821,7 +2821,7 @@ public class PersonaCService extends AbstractService {
         personaCSrv.evalPostNotificarImplementation(step1Request);
 
         /* Action 2: IF (TipoIdentificacionC <> ptpevcTipoIdentificacion) */
-        boolean ifCondition2 = !(personaCTMODIFICARpthisPersonaC.getTipoIdentificacionC().equalsObject(personaCTMODIFICARptpevcTipoIdentificacion));
+        boolean ifCondition2 = !(personaCTMODIFICARpthisPersonaC.getTipoIdentificacionC() != null && personaCTMODIFICARpthisPersonaC.getTipoIdentificacionC().equalsObject(personaCTMODIFICARptpevcTipoIdentificacion));
         if (ifCondition2) {
             com.keralty.aesolicitudes.viewmodel.personac.siu.CambTipoIdentificacionCRequest step20Request = new com.keralty.aesolicitudes.viewmodel.personac.siu.CambTipoIdentificacionCRequest();
             step20Request.setPersonaCCambTipoIdentificacionCpthisPersonaCInstance(personaCTMODIFICARpthisPersonaC);

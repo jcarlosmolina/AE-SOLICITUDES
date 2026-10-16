@@ -33,6 +33,11 @@ public class TypedQueryBuilder<T> {
     
     public TypedQueryBuilder<T> build(SQLSelect select, int pageSize, int pageNumber) {
         query = em.createQuery(buildQuery(select), t);
+        
+        if (query == null) {
+        	return this;
+        }
+        
         if (pageSize != 0) {
             query.setFirstResult((pageNumber - 1) * pageSize);
             query.setMaxResults(pageSize);
