@@ -232,11 +232,11 @@ public class SQLWhereOperand {
             Object[] oidValues = oid.getValue();
             String[] oidDataTypes = oid.getDataTypes();
             for (int i = 0; i < oidValues.length; i++) {
-                conjunction.getParameters().add(new SQLParam("", oidValues[i], oidDataTypes[i]));
+                conjunction.addParameter(new SQLParam("", oidValues[i], oidDataTypes[i]));
             }
         } else {
             for (int i = 0; i < oidFields.size(); i++) {
-                conjunction.getParameters().add(new SQLParam("", null, ""));
+                conjunction.addParameter(new SQLParam("", null, ""));
             }
         }
         sql.addConjunction(conjunction);
@@ -260,7 +260,22 @@ public class SQLWhereOperand {
     public List<SQLParam> getParameters() {
         return parameters;
     }
+    
+    /**
+     * Adds a new parameter
+     * @param parameter Parameter to add
+     */
+    public void addParameter(SQLParam parameter) {
+    	parameters.add(parameter);
+    }
 
+    /**
+     * Clears the list of parameters
+     */
+    public void clearParameters() {
+    	parameters.clear();
+    }
+    
     /**
      * Gather parameters.
      * 

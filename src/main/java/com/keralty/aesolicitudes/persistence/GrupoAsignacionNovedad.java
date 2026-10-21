@@ -154,10 +154,10 @@ public class GrupoAsignacionNovedad extends AbstractAppEntity {
         return dominio;
     }
 
-   /**
-    * Adds an instance of <code>Dominio</code> related through the <code>Dominio</code> role.
-    * @param dominio The instance to add to the <code>Dominio</code> role.
-    */
+    /**
+     * Adds an instance of <code>Dominio</code> related through the <code>Dominio</code> role.
+     * @param dominio The instance to add to the <code>Dominio</code> role.
+     */
     public void add2Dominio(Dominio dominio) {
         if (dominio == null || dominio.isNull()) {
             this.modifiedDominio = true;
@@ -189,10 +189,10 @@ public class GrupoAsignacionNovedad extends AbstractAppEntity {
         return causal;
     }
 
-   /**
-    * Adds an instance of <code>Causal</code> related through the <code>Causal</code> role.
-    * @param causal The instance to add to the <code>Causal</code> role.
-    */
+    /**
+     * Adds an instance of <code>Causal</code> related through the <code>Causal</code> role.
+     * @param causal The instance to add to the <code>Causal</code> role.
+     */
     public void add2Causal(Causal causal) {
         if (causal == null || causal.isNull()) {
             this.modifiedCausal = true;
@@ -224,10 +224,10 @@ public class GrupoAsignacionNovedad extends AbstractAppEntity {
         return grupoUsuarios;
     }
 
-   /**
-    * Adds an instance of <code>GrupoAsignacion</code> related through the <code>GrupoUsuarios</code> role.
-    * @param grupoUsuarios The instance to add to the <code>GrupoUsuarios</code> role.
-    */
+    /**
+     * Adds an instance of <code>GrupoAsignacion</code> related through the <code>GrupoUsuarios</code> role.
+     * @param grupoUsuarios The instance to add to the <code>GrupoUsuarios</code> role.
+     */
     public void add2GrupoUsuarios(GrupoAsignacion grupoUsuarios) {
         if (grupoUsuarios == null || grupoUsuarios.isNull()) {
             this.modifiedGrupoUsuarios = true;

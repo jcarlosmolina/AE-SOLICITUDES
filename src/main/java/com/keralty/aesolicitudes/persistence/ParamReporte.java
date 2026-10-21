@@ -328,10 +328,10 @@ public class ParamReporte extends AbstractAppEntity {
         return reporte;
     }
 
-   /**
-    * Adds an instance of <code>ReportesProcAlm</code> related through the <code>Reporte</code> role.
-    * @param reporte The instance to add to the <code>Reporte</code> role.
-    */
+    /**
+     * Adds an instance of <code>ReportesProcAlm</code> related through the <code>Reporte</code> role.
+     * @param reporte The instance to add to the <code>Reporte</code> role.
+     */
     public void add2Reporte(ReportesProcAlm reporte) {
         if (reporte == null || reporte.isNull()) {
             this.modifiedReporte = true;

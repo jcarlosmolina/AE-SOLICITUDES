@@ -61,7 +61,7 @@ public class AdminJpaRepositoryImpl extends AbstractRepository implements AdminJ
      * @param parentAlias Alias of the parent entity.
      */
     public void addFacetWhereparentfuncionario (String myAlias, SQLJoin join, String parentAlias) {
-        join.getWheres().add(myAlias + "." + AdminConstants.FLD_FUNCIONARIOID + " = " + parentAlias + "." + FuncionarioConstants.ATTR_FIELD_FUNCIONARIOID);
+        join.addWhere(myAlias + "." + AdminConstants.FLD_FUNCIONARIOID + " = " + parentAlias + "." + FuncionarioConstants.ATTR_FIELD_FUNCIONARIOID);
     }
 
     @Override

@@ -480,12 +480,19 @@ public class Parentesco extends AbstractAppEntity {
         return getUsuarioRepository().findByParentesco(this);
     }
 
-   /**
-    * Adds an instance of <code>Usuario</code> related through the <code>AtributosUsuario</code> role.
-    * @param atributosUsuario The instance to add to the <code>AtributosUsuario</code> role.
-    */
+    /**
+     * Adds an instance of <code>Usuario</code> related through the <code>AtributosUsuario</code> role.
+     * @param atributosUsuario The instance to add to the <code>AtributosUsuario</code> role.
+     */
     public void add2AtributosUsuario(Usuario atributosUsuario) {
-        this.getAtributosUsuario().add(atributosUsuario);
+        this.atributosUsuario.add(atributosUsuario);
+    }
+    /**
+     * Removes an instance of <code>Usuario</code> related through the <code>AtributosUsuario</code> role.
+     * @param atributosUsuario The instance to be removed
+     */
+    public void removeFromAtributosUsuario(Usuario atributosUsuario) {
+    	this.atributosUsuario.remove(atributosUsuario);
     }
     /**
      * Sets instances of <code>Usuario</code> related through the <code>AtributosUsuario</code> role.
@@ -516,12 +523,19 @@ public class Parentesco extends AbstractAppEntity {
         return getBeneficiarioCRepository().findByParentescoC(this);
     }
 
-   /**
-    * Adds an instance of <code>BeneficiarioC</code> related through the <code>BeneficiariosC</code> role.
-    * @param beneficiariosC The instance to add to the <code>BeneficiariosC</code> role.
-    */
+    /**
+     * Adds an instance of <code>BeneficiarioC</code> related through the <code>BeneficiariosC</code> role.
+     * @param beneficiariosC The instance to add to the <code>BeneficiariosC</code> role.
+     */
     public void add2BeneficiariosC(BeneficiarioC beneficiariosC) {
-        this.getBeneficiariosC().add(beneficiariosC);
+        this.beneficiariosC.add(beneficiariosC);
+    }
+    /**
+     * Removes an instance of <code>BeneficiarioC</code> related through the <code>BeneficiariosC</code> role.
+     * @param beneficiariosC The instance to be removed
+     */
+    public void removeFromBeneficiariosC(BeneficiarioC beneficiariosC) {
+    	this.beneficiariosC.remove(beneficiariosC);
     }
     /**
      * Sets instances of <code>BeneficiarioC</code> related through the <code>BeneficiariosC</code> role.
@@ -552,12 +566,19 @@ public class Parentesco extends AbstractAppEntity {
         return getUsuarioRegRepository().findByParentesco(this);
     }
 
-   /**
-    * Adds an instance of <code>UsuarioReg</code> related through the <code>UsuariosReg</code> role.
-    * @param usuariosReg The instance to add to the <code>UsuariosReg</code> role.
-    */
+    /**
+     * Adds an instance of <code>UsuarioReg</code> related through the <code>UsuariosReg</code> role.
+     * @param usuariosReg The instance to add to the <code>UsuariosReg</code> role.
+     */
     public void add2UsuariosReg(UsuarioReg usuariosReg) {
-        this.getUsuariosReg().add(usuariosReg);
+        this.usuariosReg.add(usuariosReg);
+    }
+    /**
+     * Removes an instance of <code>UsuarioReg</code> related through the <code>UsuariosReg</code> role.
+     * @param usuariosReg The instance to be removed
+     */
+    public void removeFromUsuariosReg(UsuarioReg usuariosReg) {
+    	this.usuariosReg.remove(usuariosReg);
     }
     /**
      * Sets instances of <code>UsuarioReg</code> related through the <code>UsuariosReg</code> role.
@@ -588,12 +609,19 @@ public class Parentesco extends AbstractAppEntity {
         return parentescosDom;
     }
 
-   /**
-    * Adds an instance of <code>ParentescoDom</code> related through the <code>ParentescosDom</code> role.
-    * @param parentescosDom The instance to add to the <code>ParentescosDom</code> role.
-    */
+    /**
+     * Adds an instance of <code>ParentescoDom</code> related through the <code>ParentescosDom</code> role.
+     * @param parentescosDom The instance to add to the <code>ParentescosDom</code> role.
+     */
     public void add2ParentescosDom(ParentescoDom parentescosDom) {
-        this.getParentescosDom().add(parentescosDom);
+        this.parentescosDom.add(parentescosDom);
+    }
+    /**
+     * Removes an instance of <code>ParentescoDom</code> related through the <code>ParentescosDom</code> role.
+     * @param parentescosDom The instance to be removed
+     */
+    public void removeFromParentescosDom(ParentescoDom parentescosDom) {
+    	this.parentescosDom.remove(parentescosDom);
     }
     /**
      * Sets instances of <code>ParentescoDom</code> related through the <code>ParentescosDom</code> role.
@@ -624,12 +652,19 @@ public class Parentesco extends AbstractAppEntity {
         return usuariosNovedad;
     }
 
-   /**
-    * Adds an instance of <code>UsuarioNovedad</code> related through the <code>UsuariosNovedad</code> role.
-    * @param usuariosNovedad The instance to add to the <code>UsuariosNovedad</code> role.
-    */
+    /**
+     * Adds an instance of <code>UsuarioNovedad</code> related through the <code>UsuariosNovedad</code> role.
+     * @param usuariosNovedad The instance to add to the <code>UsuariosNovedad</code> role.
+     */
     public void add2UsuariosNovedad(UsuarioNovedad usuariosNovedad) {
-        this.getUsuariosNovedad().add(usuariosNovedad);
+        this.usuariosNovedad.add(usuariosNovedad);
+    }
+    /**
+     * Removes an instance of <code>UsuarioNovedad</code> related through the <code>UsuariosNovedad</code> role.
+     * @param usuariosNovedad The instance to be removed
+     */
+    public void removeFromUsuariosNovedad(UsuarioNovedad usuariosNovedad) {
+    	this.usuariosNovedad.remove(usuariosNovedad);
     }
     /**
      * Sets instances of <code>UsuarioNovedad</code> related through the <code>UsuariosNovedad</code> role.
@@ -660,12 +695,19 @@ public class Parentesco extends AbstractAppEntity {
         return usuarioNovedad;
     }
 
-   /**
-    * Adds an instance of <code>UsuarioNovedad</code> related through the <code>UsuarioNovedad</code> role.
-    * @param usuarioNovedad The instance to add to the <code>UsuarioNovedad</code> role.
-    */
+    /**
+     * Adds an instance of <code>UsuarioNovedad</code> related through the <code>UsuarioNovedad</code> role.
+     * @param usuarioNovedad The instance to add to the <code>UsuarioNovedad</code> role.
+     */
     public void add2UsuarioNovedad(UsuarioNovedad usuarioNovedad) {
-        this.getUsuarioNovedad().add(usuarioNovedad);
+        this.usuarioNovedad.add(usuarioNovedad);
+    }
+    /**
+     * Removes an instance of <code>UsuarioNovedad</code> related through the <code>UsuarioNovedad</code> role.
+     * @param usuarioNovedad The instance to be removed
+     */
+    public void removeFromUsuarioNovedad(UsuarioNovedad usuarioNovedad) {
+    	this.usuarioNovedad.remove(usuarioNovedad);
     }
     /**
      * Sets instances of <code>UsuarioNovedad</code> related through the <code>UsuarioNovedad</code> role.

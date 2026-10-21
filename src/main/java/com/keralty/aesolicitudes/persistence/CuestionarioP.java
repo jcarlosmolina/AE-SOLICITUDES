@@ -249,12 +249,19 @@ public class CuestionarioP extends AbstractAppEntity {
         return getSeccionPRepository().findByCuestionario(this);
     }
 
-   /**
-    * Adds an instance of <code>SeccionP</code> related through the <code>Secciones</code> role.
-    * @param secciones The instance to add to the <code>Secciones</code> role.
-    */
+    /**
+     * Adds an instance of <code>SeccionP</code> related through the <code>Secciones</code> role.
+     * @param secciones The instance to add to the <code>Secciones</code> role.
+     */
     public void add2Secciones(SeccionP secciones) {
-        this.getSecciones().add(secciones);
+        this.secciones.add(secciones);
+    }
+    /**
+     * Removes an instance of <code>SeccionP</code> related through the <code>Secciones</code> role.
+     * @param secciones The instance to be removed
+     */
+    public void removeFromSecciones(SeccionP secciones) {
+    	this.secciones.remove(secciones);
     }
     /**
      * Sets instances of <code>SeccionP</code> related through the <code>Secciones</code> role.
@@ -299,10 +306,10 @@ public class CuestionarioP extends AbstractAppEntity {
         return (usuario == null ? new Usuario(null) : usuario);
     }
 
-   /**
-    * Adds an instance of <code>Usuario</code> related through the <code>Usuario</code> role.
-    * @param usuario The instance to add to the <code>Usuario</code> role.
-    */
+    /**
+     * Adds an instance of <code>Usuario</code> related through the <code>Usuario</code> role.
+     * @param usuario The instance to add to the <code>Usuario</code> role.
+     */
     public void add2Usuario(Usuario usuario) {
         if (usuario == null || usuario.isNull()) {
             this.modifiedUsuario = true;

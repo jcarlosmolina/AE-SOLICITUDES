@@ -63,6 +63,10 @@ public class VisibleIUPermissions {
     public void setVisibleAttributes(List<String> visibleAttributes) {
         this.visibleAttributes = visibleAttributes;
     }
+    
+    public void addVisibleAttribute(String visibleAttribute) {
+    	this.visibleAttributes.add(visibleAttribute);
+    }
 
     public List<String> getVisibleActions() {
         return visibleActions;
@@ -71,6 +75,10 @@ public class VisibleIUPermissions {
     public void setVisibleActions(List<String> visibleActions) {
         this.visibleActions = visibleActions;
     }
+    
+    public void addVisibleAction(String visibleAction) {
+    	this.visibleActions.add(visibleAction);
+    }
 
     public List<String> getVisibleNavigations() {
         return visibleNavigations;
@@ -78,6 +86,10 @@ public class VisibleIUPermissions {
 
     public void setVisibleNavigations(List<String> visibleNavigations) {
         this.visibleNavigations = visibleNavigations;
+    }
+    
+    public void addVisibleNavigation(String visibleNavigation) {
+    	this.visibleNavigations.add(visibleNavigation);
     }
 
     public List<String> getVisibleDetails() {
@@ -88,4 +100,7 @@ public class VisibleIUPermissions {
         this.visibleDetails = visibleDetails;
     }
 
+    public void addVisibleDetail(String visibleDetail) {
+    	this.visibleDetails.add(visibleDetail);
+    }
 }

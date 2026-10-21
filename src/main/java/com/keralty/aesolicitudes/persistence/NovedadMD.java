@@ -440,10 +440,10 @@ Si la dirección es rural<br>
         return familiaNovedad;
     }
 
-   /**
-    * Adds an instance of <code>FamiliaNovedad</code> related through the <code>FamiliaNovedad</code> role.
-    * @param familiaNovedad The instance to add to the <code>FamiliaNovedad</code> role.
-    */
+    /**
+     * Adds an instance of <code>FamiliaNovedad</code> related through the <code>FamiliaNovedad</code> role.
+     * @param familiaNovedad The instance to add to the <code>FamiliaNovedad</code> role.
+     */
     public void add2FamiliaNovedad(FamiliaNovedad familiaNovedad) {
         if (familiaNovedad == null || familiaNovedad.isNull()) {
             this.modifiedFamiliaNovedad = true;
@@ -475,10 +475,10 @@ Si la dirección es rural<br>
         return pais;
     }
 
-   /**
-    * Adds an instance of <code>Pais</code> related through the <code>Pais</code> role.
-    * @param pais The instance to add to the <code>Pais</code> role.
-    */
+    /**
+     * Adds an instance of <code>Pais</code> related through the <code>Pais</code> role.
+     * @param pais The instance to add to the <code>Pais</code> role.
+     */
     public void add2Pais(Pais pais) {
         if (pais == null || pais.isNull()) {
             this.modifiedPais = true;
@@ -510,10 +510,10 @@ Si la dirección es rural<br>
         return departamento;
     }
 
-   /**
-    * Adds an instance of <code>Departamento</code> related through the <code>Departamento</code> role.
-    * @param departamento The instance to add to the <code>Departamento</code> role.
-    */
+    /**
+     * Adds an instance of <code>Departamento</code> related through the <code>Departamento</code> role.
+     * @param departamento The instance to add to the <code>Departamento</code> role.
+     */
     public void add2Departamento(Departamento departamento) {
         if (departamento == null || departamento.isNull()) {
             this.modifiedDepartamento = true;
@@ -545,10 +545,10 @@ Si la dirección es rural<br>
         return municipio;
     }
 
-   /**
-    * Adds an instance of <code>Municipio</code> related through the <code>Municipio</code> role.
-    * @param municipio The instance to add to the <code>Municipio</code> role.
-    */
+    /**
+     * Adds an instance of <code>Municipio</code> related through the <code>Municipio</code> role.
+     * @param municipio The instance to add to the <code>Municipio</code> role.
+     */
     public void add2Municipio(Municipio municipio) {
         if (municipio == null || municipio.isNull()) {
             this.modifiedMunicipio = true;

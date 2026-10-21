@@ -172,10 +172,10 @@ public class EstadoBeneficiarioAE extends AbstractAppEntity {
         return estadoBeneficiarioCORE;
     }
 
-   /**
-    * Adds an instance of <code>EstadoBeneficiario</code> related through the <code>EstadoBeneficiarioCORE</code> role.
-    * @param estadoBeneficiarioCORE The instance to add to the <code>EstadoBeneficiarioCORE</code> role.
-    */
+    /**
+     * Adds an instance of <code>EstadoBeneficiario</code> related through the <code>EstadoBeneficiarioCORE</code> role.
+     * @param estadoBeneficiarioCORE The instance to add to the <code>EstadoBeneficiarioCORE</code> role.
+     */
     public void add2EstadoBeneficiarioCORE(EstadoBeneficiario estadoBeneficiarioCORE) {
         if (estadoBeneficiarioCORE == null || estadoBeneficiarioCORE.isNull()) {
             this.modifiedEstadoBeneficiarioCORE = true;

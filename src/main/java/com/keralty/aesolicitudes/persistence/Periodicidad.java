@@ -330,12 +330,19 @@ public class Periodicidad extends AbstractAppEntity {
         return dominios;
     }
 
-   /**
-    * Adds an instance of <code>Dominio</code> related through the <code>Dominios</code> role.
-    * @param dominios The instance to add to the <code>Dominios</code> role.
-    */
+    /**
+     * Adds an instance of <code>Dominio</code> related through the <code>Dominios</code> role.
+     * @param dominios The instance to add to the <code>Dominios</code> role.
+     */
     public void add2Dominios(Dominio dominios) {
-        this.getDominios().add(dominios);
+        this.dominios.add(dominios);
+    }
+    /**
+     * Removes an instance of <code>Dominio</code> related through the <code>Dominios</code> role.
+     * @param dominios The instance to be removed
+     */
+    public void removeFromDominios(Dominio dominios) {
+    	this.dominios.remove(dominios);
     }
     /**
      * Sets instances of <code>Dominio</code> related through the <code>Dominios</code> role.
@@ -366,12 +373,19 @@ public class Periodicidad extends AbstractAppEntity {
         return getSolicitudRepository().findByPeriodicidad(this);
     }
 
-   /**
-    * Adds an instance of <code>Solicitud</code> related through the <code>Solicitudes</code> role.
-    * @param solicitudes The instance to add to the <code>Solicitudes</code> role.
-    */
+    /**
+     * Adds an instance of <code>Solicitud</code> related through the <code>Solicitudes</code> role.
+     * @param solicitudes The instance to add to the <code>Solicitudes</code> role.
+     */
     public void add2Solicitudes(Solicitud solicitudes) {
-        this.getSolicitudes().add(solicitudes);
+        this.solicitudes.add(solicitudes);
+    }
+    /**
+     * Removes an instance of <code>Solicitud</code> related through the <code>Solicitudes</code> role.
+     * @param solicitudes The instance to be removed
+     */
+    public void removeFromSolicitudes(Solicitud solicitudes) {
+    	this.solicitudes.remove(solicitudes);
     }
     /**
      * Sets instances of <code>Solicitud</code> related through the <code>Solicitudes</code> role.
@@ -402,12 +416,19 @@ public class Periodicidad extends AbstractAppEntity {
         return getAnexoMatRepository().findByPeriodicidad(this);
     }
 
-   /**
-    * Adds an instance of <code>AnexoMat</code> related through the <code>AnexosMat</code> role.
-    * @param anexosMat The instance to add to the <code>AnexosMat</code> role.
-    */
+    /**
+     * Adds an instance of <code>AnexoMat</code> related through the <code>AnexosMat</code> role.
+     * @param anexosMat The instance to add to the <code>AnexosMat</code> role.
+     */
     public void add2AnexosMat(AnexoMat anexosMat) {
-        this.getAnexosMat().add(anexosMat);
+        this.anexosMat.add(anexosMat);
+    }
+    /**
+     * Removes an instance of <code>AnexoMat</code> related through the <code>AnexosMat</code> role.
+     * @param anexosMat The instance to be removed
+     */
+    public void removeFromAnexosMat(AnexoMat anexosMat) {
+    	this.anexosMat.remove(anexosMat);
     }
     /**
      * Sets instances of <code>AnexoMat</code> related through the <code>AnexosMat</code> role.
@@ -438,12 +459,19 @@ public class Periodicidad extends AbstractAppEntity {
         return getAnexoNeoRepository().findByPeriodicidad(this);
     }
 
-   /**
-    * Adds an instance of <code>AnexoNeo</code> related through the <code>AnexosNeo</code> role.
-    * @param anexosNeo The instance to add to the <code>AnexosNeo</code> role.
-    */
+    /**
+     * Adds an instance of <code>AnexoNeo</code> related through the <code>AnexosNeo</code> role.
+     * @param anexosNeo The instance to add to the <code>AnexosNeo</code> role.
+     */
     public void add2AnexosNeo(AnexoNeo anexosNeo) {
-        this.getAnexosNeo().add(anexosNeo);
+        this.anexosNeo.add(anexosNeo);
+    }
+    /**
+     * Removes an instance of <code>AnexoNeo</code> related through the <code>AnexosNeo</code> role.
+     * @param anexosNeo The instance to be removed
+     */
+    public void removeFromAnexosNeo(AnexoNeo anexosNeo) {
+    	this.anexosNeo.remove(anexosNeo);
     }
     /**
      * Sets instances of <code>AnexoNeo</code> related through the <code>AnexosNeo</code> role.
@@ -474,12 +502,19 @@ public class Periodicidad extends AbstractAppEntity {
         return getContratoCRepository().findByPeriodicidadC(this);
     }
 
-   /**
-    * Adds an instance of <code>ContratoC</code> related through the <code>ContratosC</code> role.
-    * @param contratosC The instance to add to the <code>ContratosC</code> role.
-    */
+    /**
+     * Adds an instance of <code>ContratoC</code> related through the <code>ContratosC</code> role.
+     * @param contratosC The instance to add to the <code>ContratosC</code> role.
+     */
     public void add2ContratosC(ContratoC contratosC) {
-        this.getContratosC().add(contratosC);
+        this.contratosC.add(contratosC);
+    }
+    /**
+     * Removes an instance of <code>ContratoC</code> related through the <code>ContratosC</code> role.
+     * @param contratosC The instance to be removed
+     */
+    public void removeFromContratosC(ContratoC contratosC) {
+    	this.contratosC.remove(contratosC);
     }
     /**
      * Sets instances of <code>ContratoC</code> related through the <code>ContratosC</code> role.
@@ -510,12 +545,19 @@ public class Periodicidad extends AbstractAppEntity {
         return getAnexoCRepository().findByPeriodicidadC(this);
     }
 
-   /**
-    * Adds an instance of <code>AnexoC</code> related through the <code>AnexosC</code> role.
-    * @param anexosC The instance to add to the <code>AnexosC</code> role.
-    */
+    /**
+     * Adds an instance of <code>AnexoC</code> related through the <code>AnexosC</code> role.
+     * @param anexosC The instance to add to the <code>AnexosC</code> role.
+     */
     public void add2AnexosC(AnexoC anexosC) {
-        this.getAnexosC().add(anexosC);
+        this.anexosC.add(anexosC);
+    }
+    /**
+     * Removes an instance of <code>AnexoC</code> related through the <code>AnexosC</code> role.
+     * @param anexosC The instance to be removed
+     */
+    public void removeFromAnexosC(AnexoC anexosC) {
+    	this.anexosC.remove(anexosC);
     }
     /**
      * Sets instances of <code>AnexoC</code> related through the <code>AnexosC</code> role.
@@ -546,12 +588,19 @@ public class Periodicidad extends AbstractAppEntity {
         return getSolicitudNovedadRepository().findByPeriodicidad(this);
     }
 
-   /**
-    * Adds an instance of <code>SolicitudNovedad</code> related through the <code>SolicitudesNovedad</code> role.
-    * @param solicitudesNovedad The instance to add to the <code>SolicitudesNovedad</code> role.
-    */
+    /**
+     * Adds an instance of <code>SolicitudNovedad</code> related through the <code>SolicitudesNovedad</code> role.
+     * @param solicitudesNovedad The instance to add to the <code>SolicitudesNovedad</code> role.
+     */
     public void add2SolicitudesNovedad(SolicitudNovedad solicitudesNovedad) {
-        this.getSolicitudesNovedad().add(solicitudesNovedad);
+        this.solicitudesNovedad.add(solicitudesNovedad);
+    }
+    /**
+     * Removes an instance of <code>SolicitudNovedad</code> related through the <code>SolicitudesNovedad</code> role.
+     * @param solicitudesNovedad The instance to be removed
+     */
+    public void removeFromSolicitudesNovedad(SolicitudNovedad solicitudesNovedad) {
+    	this.solicitudesNovedad.remove(solicitudesNovedad);
     }
     /**
      * Sets instances of <code>SolicitudNovedad</code> related through the <code>SolicitudesNovedad</code> role.
@@ -582,12 +631,19 @@ public class Periodicidad extends AbstractAppEntity {
         return getSolicitudNovedadRepository().findByPeriodicidadNueva(this);
     }
 
-   /**
-    * Adds an instance of <code>SolicitudNovedad</code> related through the <code>SolicitudesNovedadNueva</code> role.
-    * @param solicitudesNovedadNueva The instance to add to the <code>SolicitudesNovedadNueva</code> role.
-    */
+    /**
+     * Adds an instance of <code>SolicitudNovedad</code> related through the <code>SolicitudesNovedadNueva</code> role.
+     * @param solicitudesNovedadNueva The instance to add to the <code>SolicitudesNovedadNueva</code> role.
+     */
     public void add2SolicitudesNovedadNueva(SolicitudNovedad solicitudesNovedadNueva) {
-        this.getSolicitudesNovedadNueva().add(solicitudesNovedadNueva);
+        this.solicitudesNovedadNueva.add(solicitudesNovedadNueva);
+    }
+    /**
+     * Removes an instance of <code>SolicitudNovedad</code> related through the <code>SolicitudesNovedadNueva</code> role.
+     * @param solicitudesNovedadNueva The instance to be removed
+     */
+    public void removeFromSolicitudesNovedadNueva(SolicitudNovedad solicitudesNovedadNueva) {
+    	this.solicitudesNovedadNueva.remove(solicitudesNovedadNueva);
     }
     /**
      * Sets instances of <code>SolicitudNovedad</code> related through the <code>SolicitudesNovedadNueva</code> role.

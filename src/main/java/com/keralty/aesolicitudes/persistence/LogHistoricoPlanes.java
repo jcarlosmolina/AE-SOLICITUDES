@@ -381,10 +381,10 @@ public class LogHistoricoPlanes extends AbstractAppEntity {
         return asesor;
     }
 
-   /**
-    * Adds an instance of <code>Asesor</code> related through the <code>Asesor</code> role.
-    * @param asesor The instance to add to the <code>Asesor</code> role.
-    */
+    /**
+     * Adds an instance of <code>Asesor</code> related through the <code>Asesor</code> role.
+     * @param asesor The instance to add to the <code>Asesor</code> role.
+     */
     public void add2Asesor(Asesor asesor) {
         if (asesor == null || asesor.isNull()) {
             this.modifiedAsesor = true;

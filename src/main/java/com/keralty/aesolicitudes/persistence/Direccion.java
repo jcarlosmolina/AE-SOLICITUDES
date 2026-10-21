@@ -422,10 +422,10 @@ public class Direccion extends AbstractAppEntity {
         return (persona == null ? new Persona(null) : persona);
     }
 
-   /**
-    * Adds an instance of <code>Persona</code> related through the <code>Persona</code> role.
-    * @param persona The instance to add to the <code>Persona</code> role.
-    */
+    /**
+     * Adds an instance of <code>Persona</code> related through the <code>Persona</code> role.
+     * @param persona The instance to add to the <code>Persona</code> role.
+     */
     public void add2Persona(Persona persona) {
         if (persona == null || persona.isNull()) {
             this.modifiedPersona = true;
@@ -471,10 +471,10 @@ public class Direccion extends AbstractAppEntity {
         return (tipoDireccion == null ? new TipoDireccion(null) : tipoDireccion);
     }
 
-   /**
-    * Adds an instance of <code>TipoDireccion</code> related through the <code>TipoDireccion</code> role.
-    * @param tipoDireccion The instance to add to the <code>TipoDireccion</code> role.
-    */
+    /**
+     * Adds an instance of <code>TipoDireccion</code> related through the <code>TipoDireccion</code> role.
+     * @param tipoDireccion The instance to add to the <code>TipoDireccion</code> role.
+     */
     public void add2TipoDireccion(TipoDireccion tipoDireccion) {
         if (tipoDireccion == null || tipoDireccion.isNull()) {
             this.modifiedTipoDireccion = true;
@@ -520,10 +520,10 @@ public class Direccion extends AbstractAppEntity {
         return (municipio == null ? new Municipio(null) : municipio);
     }
 
-   /**
-    * Adds an instance of <code>Municipio</code> related through the <code>Municipio</code> role.
-    * @param municipio The instance to add to the <code>Municipio</code> role.
-    */
+    /**
+     * Adds an instance of <code>Municipio</code> related through the <code>Municipio</code> role.
+     * @param municipio The instance to add to the <code>Municipio</code> role.
+     */
     public void add2Municipio(Municipio municipio) {
         if (municipio == null || municipio.isNull()) {
             this.modifiedMunicipio = true;
@@ -569,10 +569,10 @@ public class Direccion extends AbstractAppEntity {
         return (departamento == null ? new Departamento(null) : departamento);
     }
 
-   /**
-    * Adds an instance of <code>Departamento</code> related through the <code>Departamento</code> role.
-    * @param departamento The instance to add to the <code>Departamento</code> role.
-    */
+    /**
+     * Adds an instance of <code>Departamento</code> related through the <code>Departamento</code> role.
+     * @param departamento The instance to add to the <code>Departamento</code> role.
+     */
     public void add2Departamento(Departamento departamento) {
         if (departamento == null || departamento.isNull()) {
             this.modifiedDepartamento = true;
@@ -618,10 +618,10 @@ public class Direccion extends AbstractAppEntity {
         return (pais == null ? new Pais(null) : pais);
     }
 
-   /**
-    * Adds an instance of <code>Pais</code> related through the <code>Pais</code> role.
-    * @param pais The instance to add to the <code>Pais</code> role.
-    */
+    /**
+     * Adds an instance of <code>Pais</code> related through the <code>Pais</code> role.
+     * @param pais The instance to add to the <code>Pais</code> role.
+     */
     public void add2Pais(Pais pais) {
         if (pais == null || pais.isNull()) {
             this.modifiedPais = true;
@@ -667,10 +667,10 @@ public class Direccion extends AbstractAppEntity {
         return (contrato == null ? new Solicitud(null) : contrato);
     }
 
-   /**
-    * Adds an instance of <code>Solicitud</code> related through the <code>Contrato</code> role.
-    * @param contrato The instance to add to the <code>Contrato</code> role.
-    */
+    /**
+     * Adds an instance of <code>Solicitud</code> related through the <code>Contrato</code> role.
+     * @param contrato The instance to add to the <code>Contrato</code> role.
+     */
     public void add2Contrato(Solicitud contrato) {
         if (contrato == null || contrato.isNull()) {
             this.modifiedContrato = true;
@@ -716,10 +716,10 @@ public class Direccion extends AbstractAppEntity {
         return (titular == null ? new Titular(null) : titular);
     }
 
-   /**
-    * Adds an instance of <code>Titular</code> related through the <code>Titular</code> role.
-    * @param titular The instance to add to the <code>Titular</code> role.
-    */
+    /**
+     * Adds an instance of <code>Titular</code> related through the <code>Titular</code> role.
+     * @param titular The instance to add to the <code>Titular</code> role.
+     */
     public void add2Titular(Titular titular) {
         if (titular == null || titular.isNull()) {
             this.modifiedTitular = true;

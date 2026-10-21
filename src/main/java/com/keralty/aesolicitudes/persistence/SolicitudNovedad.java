@@ -2812,12 +2812,19 @@ Este derivado sirve para:
         return familias;
     }
 
-   /**
-    * Adds an instance of <code>FamiliaNovedad</code> related through the <code>Familias</code> role.
-    * @param familias The instance to add to the <code>Familias</code> role.
-    */
+    /**
+     * Adds an instance of <code>FamiliaNovedad</code> related through the <code>Familias</code> role.
+     * @param familias The instance to add to the <code>Familias</code> role.
+     */
     public void add2Familias(FamiliaNovedad familias) {
-        this.getFamilias().add(familias);
+        this.familias.add(familias);
+    }
+    /**
+     * Removes an instance of <code>FamiliaNovedad</code> related through the <code>Familias</code> role.
+     * @param familias The instance to be removed
+     */
+    public void removeFromFamilias(FamiliaNovedad familias) {
+    	this.familias.remove(familias);
     }
     /**
      * Sets instances of <code>FamiliaNovedad</code> related through the <code>Familias</code> role.
@@ -2848,12 +2855,19 @@ Este derivado sirve para:
         return documentos;
     }
 
-   /**
-    * Adds an instance of <code>DocumentoNovedad</code> related through the <code>Documentos</code> role.
-    * @param documentos The instance to add to the <code>Documentos</code> role.
-    */
+    /**
+     * Adds an instance of <code>DocumentoNovedad</code> related through the <code>Documentos</code> role.
+     * @param documentos The instance to add to the <code>Documentos</code> role.
+     */
     public void add2Documentos(DocumentoNovedad documentos) {
-        this.getDocumentos().add(documentos);
+        this.documentos.add(documentos);
+    }
+    /**
+     * Removes an instance of <code>DocumentoNovedad</code> related through the <code>Documentos</code> role.
+     * @param documentos The instance to be removed
+     */
+    public void removeFromDocumentos(DocumentoNovedad documentos) {
+    	this.documentos.remove(documentos);
     }
     /**
      * Sets instances of <code>DocumentoNovedad</code> related through the <code>Documentos</code> role.
@@ -2884,12 +2898,19 @@ Este derivado sirve para:
         return logEstados;
     }
 
-   /**
-    * Adds an instance of <code>LogEstadoSN</code> related through the <code>LogEstados</code> role.
-    * @param logEstados The instance to add to the <code>LogEstados</code> role.
-    */
+    /**
+     * Adds an instance of <code>LogEstadoSN</code> related through the <code>LogEstados</code> role.
+     * @param logEstados The instance to add to the <code>LogEstados</code> role.
+     */
     public void add2LogEstados(LogEstadoSN logEstados) {
-        this.getLogEstados().add(logEstados);
+        this.logEstados.add(logEstados);
+    }
+    /**
+     * Removes an instance of <code>LogEstadoSN</code> related through the <code>LogEstados</code> role.
+     * @param logEstados The instance to be removed
+     */
+    public void removeFromLogEstados(LogEstadoSN logEstados) {
+    	this.logEstados.remove(logEstados);
     }
     /**
      * Sets instances of <code>LogEstadoSN</code> related through the <code>LogEstados</code> role.
@@ -2920,12 +2941,19 @@ Este derivado sirve para:
         return getLogUsrSolNovRepository().findBySolicitudNovedad(this);
     }
 
-   /**
-    * Adds an instance of <code>LogUsrSolNov</code> related through the <code>LogUsrSolNov</code> role.
-    * @param logUsrSolNov The instance to add to the <code>LogUsrSolNov</code> role.
-    */
+    /**
+     * Adds an instance of <code>LogUsrSolNov</code> related through the <code>LogUsrSolNov</code> role.
+     * @param logUsrSolNov The instance to add to the <code>LogUsrSolNov</code> role.
+     */
     public void add2LogUsrSolNov(LogUsrSolNov logUsrSolNov) {
-        this.getLogUsrSolNov().add(logUsrSolNov);
+        this.logUsrSolNov.add(logUsrSolNov);
+    }
+    /**
+     * Removes an instance of <code>LogUsrSolNov</code> related through the <code>LogUsrSolNov</code> role.
+     * @param logUsrSolNov The instance to be removed
+     */
+    public void removeFromLogUsrSolNov(LogUsrSolNov logUsrSolNov) {
+    	this.logUsrSolNov.remove(logUsrSolNov);
     }
     /**
      * Sets instances of <code>LogUsrSolNov</code> related through the <code>LogUsrSolNov</code> role.
@@ -2970,10 +2998,10 @@ Este derivado sirve para:
         return (planT == null ? new Planes(null) : planT);
     }
 
-   /**
-    * Adds an instance of <code>Planes</code> related through the <code>PlanT</code> role.
-    * @param planT The instance to add to the <code>PlanT</code> role.
-    */
+    /**
+     * Adds an instance of <code>Planes</code> related through the <code>PlanT</code> role.
+     * @param planT The instance to add to the <code>PlanT</code> role.
+     */
     public void add2PlanT(Planes planT) {
         if (planT == null || planT.isNull()) {
             this.modifiedPlanT = true;
@@ -3005,10 +3033,10 @@ Este derivado sirve para:
         return novedad;
     }
 
-   /**
-    * Adds an instance of <code>Novedad</code> related through the <code>Novedad</code> role.
-    * @param novedad The instance to add to the <code>Novedad</code> role.
-    */
+    /**
+     * Adds an instance of <code>Novedad</code> related through the <code>Novedad</code> role.
+     * @param novedad The instance to add to the <code>Novedad</code> role.
+     */
     public void add2Novedad(Novedad novedad) {
         if (novedad == null || novedad.isNull()) {
             this.modifiedNovedad = true;
@@ -3040,10 +3068,10 @@ Este derivado sirve para:
         return causal;
     }
 
-   /**
-    * Adds an instance of <code>Causal</code> related through the <code>Causal</code> role.
-    * @param causal The instance to add to the <code>Causal</code> role.
-    */
+    /**
+     * Adds an instance of <code>Causal</code> related through the <code>Causal</code> role.
+     * @param causal The instance to add to the <code>Causal</code> role.
+     */
     public void add2Causal(Causal causal) {
         if (causal == null || causal.isNull()) {
             this.modifiedCausal = true;
@@ -3089,10 +3117,10 @@ Este derivado sirve para:
         return (proteccionDatos == null ? new ProteccionDatos(null) : proteccionDatos);
     }
 
-   /**
-    * Adds an instance of <code>ProteccionDatos</code> related through the <code>ProteccionDatos</code> role.
-    * @param proteccionDatos The instance to add to the <code>ProteccionDatos</code> role.
-    */
+    /**
+     * Adds an instance of <code>ProteccionDatos</code> related through the <code>ProteccionDatos</code> role.
+     * @param proteccionDatos The instance to add to the <code>ProteccionDatos</code> role.
+     */
     public void add2ProteccionDatos(ProteccionDatos proteccionDatos) {
         if (proteccionDatos == null || proteccionDatos.isNull()) {
             this.modifiedProteccionDatos = true;
@@ -3138,10 +3166,10 @@ Este derivado sirve para:
         return (tipoIdentContratante == null ? new TipoIdentificacion(null) : tipoIdentContratante);
     }
 
-   /**
-    * Adds an instance of <code>TipoIdentificacion</code> related through the <code>TipoIdentContratante</code> role.
-    * @param tipoIdentContratante The instance to add to the <code>TipoIdentContratante</code> role.
-    */
+    /**
+     * Adds an instance of <code>TipoIdentificacion</code> related through the <code>TipoIdentContratante</code> role.
+     * @param tipoIdentContratante The instance to add to the <code>TipoIdentContratante</code> role.
+     */
     public void add2TipoIdentContratante(TipoIdentificacion tipoIdentContratante) {
         if (tipoIdentContratante == null || tipoIdentContratante.isNull()) {
             this.modifiedTipoIdentContratante = true;
@@ -3187,10 +3215,10 @@ Este derivado sirve para:
         return (estadoContrato == null ? new EstadoContrato(null) : estadoContrato);
     }
 
-   /**
-    * Adds an instance of <code>EstadoContrato</code> related through the <code>EstadoContrato</code> role.
-    * @param estadoContrato The instance to add to the <code>EstadoContrato</code> role.
-    */
+    /**
+     * Adds an instance of <code>EstadoContrato</code> related through the <code>EstadoContrato</code> role.
+     * @param estadoContrato The instance to add to the <code>EstadoContrato</code> role.
+     */
     public void add2EstadoContrato(EstadoContrato estadoContrato) {
         if (estadoContrato == null || estadoContrato.isNull()) {
             this.modifiedEstadoContrato = true;
@@ -3236,10 +3264,10 @@ Este derivado sirve para:
         return (grupoAsociado == null ? new GrupoAsociado(null) : grupoAsociado);
     }
 
-   /**
-    * Adds an instance of <code>GrupoAsociado</code> related through the <code>GrupoAsociado</code> role.
-    * @param grupoAsociado The instance to add to the <code>GrupoAsociado</code> role.
-    */
+    /**
+     * Adds an instance of <code>GrupoAsociado</code> related through the <code>GrupoAsociado</code> role.
+     * @param grupoAsociado The instance to add to the <code>GrupoAsociado</code> role.
+     */
     public void add2GrupoAsociado(GrupoAsociado grupoAsociado) {
         if (grupoAsociado == null || grupoAsociado.isNull()) {
             this.modifiedGrupoAsociado = true;
@@ -3285,10 +3313,10 @@ Este derivado sirve para:
         return (periodicidad == null ? new Periodicidad(null) : periodicidad);
     }
 
-   /**
-    * Adds an instance of <code>Periodicidad</code> related through the <code>Periodicidad</code> role.
-    * @param periodicidad The instance to add to the <code>Periodicidad</code> role.
-    */
+    /**
+     * Adds an instance of <code>Periodicidad</code> related through the <code>Periodicidad</code> role.
+     * @param periodicidad The instance to add to the <code>Periodicidad</code> role.
+     */
     public void add2Periodicidad(Periodicidad periodicidad) {
         if (periodicidad == null || periodicidad.isNull()) {
             this.modifiedPeriodicidad = true;
@@ -3334,10 +3362,10 @@ Este derivado sirve para:
         return (agente == null ? new Funcionario(null) : agente);
     }
 
-   /**
-    * Adds an instance of <code>Funcionario</code> related through the <code>Agente</code> role.
-    * @param agente The instance to add to the <code>Agente</code> role.
-    */
+    /**
+     * Adds an instance of <code>Funcionario</code> related through the <code>Agente</code> role.
+     * @param agente The instance to add to the <code>Agente</code> role.
+     */
     public void add2Agente(Funcionario agente) {
         if (agente == null || agente.isNull()) {
             this.modifiedAgente = true;
@@ -3383,10 +3411,10 @@ Este derivado sirve para:
         return (periodicidadNueva == null ? new Periodicidad(null) : periodicidadNueva);
     }
 
-   /**
-    * Adds an instance of <code>Periodicidad</code> related through the <code>PeriodicidadNueva</code> role.
-    * @param periodicidadNueva The instance to add to the <code>PeriodicidadNueva</code> role.
-    */
+    /**
+     * Adds an instance of <code>Periodicidad</code> related through the <code>PeriodicidadNueva</code> role.
+     * @param periodicidadNueva The instance to add to the <code>PeriodicidadNueva</code> role.
+     */
     public void add2PeriodicidadNueva(Periodicidad periodicidadNueva) {
         if (periodicidadNueva == null || periodicidadNueva.isNull()) {
             this.modifiedPeriodicidadNueva = true;
@@ -3418,10 +3446,10 @@ Este derivado sirve para:
         return motivoExcepcion;
     }
 
-   /**
-    * Adds an instance of <code>MotivoExcepcionSolNov</code> related through the <code>MotivoExcepcion</code> role.
-    * @param motivoExcepcion The instance to add to the <code>MotivoExcepcion</code> role.
-    */
+    /**
+     * Adds an instance of <code>MotivoExcepcionSolNov</code> related through the <code>MotivoExcepcion</code> role.
+     * @param motivoExcepcion The instance to add to the <code>MotivoExcepcion</code> role.
+     */
     public void add2MotivoExcepcion(MotivoExcepcionSolNov motivoExcepcion) {
         if (motivoExcepcion == null || motivoExcepcion.isNull()) {
             this.modifiedMotivoExcepcion = true;
@@ -3467,10 +3495,10 @@ Este derivado sirve para:
         return (usrAfiliacion == null ? new Funcionario(null) : usrAfiliacion);
     }
 
-   /**
-    * Adds an instance of <code>Funcionario</code> related through the <code>UsrAfiliacion</code> role.
-    * @param usrAfiliacion The instance to add to the <code>UsrAfiliacion</code> role.
-    */
+    /**
+     * Adds an instance of <code>Funcionario</code> related through the <code>UsrAfiliacion</code> role.
+     * @param usrAfiliacion The instance to add to the <code>UsrAfiliacion</code> role.
+     */
     public void add2UsrAfiliacion(Funcionario usrAfiliacion) {
         if (usrAfiliacion == null || usrAfiliacion.isNull()) {
             this.modifiedUsrAfiliacion = true;
@@ -3516,10 +3544,10 @@ Este derivado sirve para:
         return (firma == null ? new Firma(null) : firma);
     }
 
-   /**
-    * Adds an instance of <code>Firma</code> related through the <code>Firma</code> role.
-    * @param firma The instance to add to the <code>Firma</code> role.
-    */
+    /**
+     * Adds an instance of <code>Firma</code> related through the <code>Firma</code> role.
+     * @param firma The instance to add to the <code>Firma</code> role.
+     */
     public void add2Firma(Firma firma) {
         if (firma == null || firma.isNull()) {
             this.modifiedFirma = true;

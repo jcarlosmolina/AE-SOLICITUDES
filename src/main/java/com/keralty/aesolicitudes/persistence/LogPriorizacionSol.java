@@ -385,10 +385,10 @@ public class LogPriorizacionSol extends AbstractAppEntity {
         return priSolicitud;
     }
 
-   /**
-    * Adds an instance of <code>PriorizacionSolicitudes</code> related through the <code>PriSolicitud</code> role.
-    * @param priSolicitud The instance to add to the <code>PriSolicitud</code> role.
-    */
+    /**
+     * Adds an instance of <code>PriorizacionSolicitudes</code> related through the <code>PriSolicitud</code> role.
+     * @param priSolicitud The instance to add to the <code>PriSolicitud</code> role.
+     */
     public void add2PriSolicitud(PriorizacionSolicitudes priSolicitud) {
         if (priSolicitud == null || priSolicitud.isNull()) {
             this.modifiedPriSolicitud = true;

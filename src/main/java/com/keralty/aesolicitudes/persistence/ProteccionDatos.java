@@ -585,10 +585,10 @@ public class ProteccionDatos extends AbstractAppEntity {
         return (solicitudNovedad == null ? new SolicitudNovedad(null) : solicitudNovedad);
     }
 
-   /**
-    * Adds an instance of <code>SolicitudNovedad</code> related through the <code>SolicitudNovedad</code> role.
-    * @param solicitudNovedad The instance to add to the <code>SolicitudNovedad</code> role.
-    */
+    /**
+     * Adds an instance of <code>SolicitudNovedad</code> related through the <code>SolicitudNovedad</code> role.
+     * @param solicitudNovedad The instance to add to the <code>SolicitudNovedad</code> role.
+     */
     public void add2SolicitudNovedad(SolicitudNovedad solicitudNovedad) {
         this.solicitudNovedad = (solicitudNovedad == null  || solicitudNovedad.isNull() ? null : solicitudNovedad);
     }
@@ -628,10 +628,10 @@ public class ProteccionDatos extends AbstractAppEntity {
         return (productoT == null ? new Productos(null) : productoT);
     }
 
-   /**
-    * Adds an instance of <code>Productos</code> related through the <code>ProductoT</code> role.
-    * @param productoT The instance to add to the <code>ProductoT</code> role.
-    */
+    /**
+     * Adds an instance of <code>Productos</code> related through the <code>ProductoT</code> role.
+     * @param productoT The instance to add to the <code>ProductoT</code> role.
+     */
     public void add2ProductoT(Productos productoT) {
         if (productoT == null || productoT.isNull()) {
             this.modifiedProductoT = true;
@@ -677,10 +677,10 @@ public class ProteccionDatos extends AbstractAppEntity {
         return (solicitud == null ? new Solicitud(null) : solicitud);
     }
 
-   /**
-    * Adds an instance of <code>Solicitud</code> related through the <code>Solicitud</code> role.
-    * @param solicitud The instance to add to the <code>Solicitud</code> role.
-    */
+    /**
+     * Adds an instance of <code>Solicitud</code> related through the <code>Solicitud</code> role.
+     * @param solicitud The instance to add to the <code>Solicitud</code> role.
+     */
     public void add2Solicitud(Solicitud solicitud) {
         if (solicitud == null || solicitud.isNull()) {
             this.modifiedSolicitud = true;

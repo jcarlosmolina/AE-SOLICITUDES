@@ -21,6 +21,7 @@ public class ServiceContext extends QueryContext {
      */
     private String stateOfEntityUponCreation;
 
+    private boolean isOperation;
 
     /**
      * Creates a ServiceContext with an empty array of entities and triggers and
@@ -33,6 +34,7 @@ public class ServiceContext extends QueryContext {
     	super();
     	this.setAgent(agent);
         stateOfEntityUponCreation = "";
+		this.isOperation = isOperation;
         initialize();
 		if (this.getAgent() != null)
             this.getAgent().calculateActiveFacets();
@@ -62,6 +64,14 @@ public class ServiceContext extends QueryContext {
      */
     public void setStateOfEntityUponCreation(String stateOfEntityUponCreation) {
         this.stateOfEntityUponCreation = stateOfEntityUponCreation;
+    }
+
+    /**
+     * Returns whether this service is an operation
+     * @return Whether this service is an operation
+     */
+    public boolean getIsOperation() {
+        return this.isOperation;
     }
 
     /**

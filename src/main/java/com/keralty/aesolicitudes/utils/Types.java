@@ -19,7 +19,7 @@ public class Types implements Serializable {
 	private SimpleDateFormat timeFormat; 
 	private SimpleDateFormat datetimeFormat;
 	private NumberFormat numberFormatter = NumberFormat.getNumberInstance();
-	private String trueFormat; 
+	private String trueFormat;
 	private String falseFormat;
 
 	/**
@@ -182,7 +182,13 @@ public class Types implements Serializable {
 	 * @return Boolean
 	 */
 	public Boolean parseBoolean(String sbool) {
-		return sbool.equalsIgnoreCase("true") || sbool.equalsIgnoreCase(trueFormat);
+		if (sbool.equalsIgnoreCase("true") || sbool.equalsIgnoreCase(trueFormat)) {
+			return true;
+		}
+		if (sbool.equalsIgnoreCase("false") || sbool.equalsIgnoreCase(falseFormat)) {
+			return false;
+		}
+		return false;
 	}
 
 

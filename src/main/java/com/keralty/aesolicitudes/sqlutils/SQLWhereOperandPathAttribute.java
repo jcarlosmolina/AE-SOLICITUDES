@@ -168,7 +168,7 @@ public class SQLWhereOperandPathAttribute extends SQLWhereOperand {
             this.setOperandText(getOperandText() + " is null");
         } else {
             this.setOperandText(getOperandText() + " " + operator + " ?");
-            getParameters().add(new SQLParam("", null, ""));
+            addParameter(new SQLParam("", null, ""));
         }
         super.setComparisonWithNull(operator);
     }

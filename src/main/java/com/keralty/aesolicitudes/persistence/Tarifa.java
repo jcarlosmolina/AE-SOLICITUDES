@@ -253,12 +253,19 @@ public class Tarifa extends AbstractAppEntity {
         return contratosC;
     }
 
-   /**
-    * Adds an instance of <code>ContratoC</code> related through the <code>ContratosC</code> role.
-    * @param contratosC The instance to add to the <code>ContratosC</code> role.
-    */
+    /**
+     * Adds an instance of <code>ContratoC</code> related through the <code>ContratosC</code> role.
+     * @param contratosC The instance to add to the <code>ContratosC</code> role.
+     */
     public void add2ContratosC(ContratoC contratosC) {
-        this.getContratosC().add(contratosC);
+        this.contratosC.add(contratosC);
+    }
+    /**
+     * Removes an instance of <code>ContratoC</code> related through the <code>ContratosC</code> role.
+     * @param contratosC The instance to be removed
+     */
+    public void removeFromContratosC(ContratoC contratosC) {
+    	this.contratosC.remove(contratosC);
     }
     /**
      * Sets instances of <code>ContratoC</code> related through the <code>ContratosC</code> role.
@@ -289,12 +296,19 @@ public class Tarifa extends AbstractAppEntity {
         return detallesTarifa;
     }
 
-   /**
-    * Adds an instance of <code>DetalleTarifa</code> related through the <code>DetallesTarifa</code> role.
-    * @param detallesTarifa The instance to add to the <code>DetallesTarifa</code> role.
-    */
+    /**
+     * Adds an instance of <code>DetalleTarifa</code> related through the <code>DetallesTarifa</code> role.
+     * @param detallesTarifa The instance to add to the <code>DetallesTarifa</code> role.
+     */
     public void add2DetallesTarifa(DetalleTarifa detallesTarifa) {
-        this.getDetallesTarifa().add(detallesTarifa);
+        this.detallesTarifa.add(detallesTarifa);
+    }
+    /**
+     * Removes an instance of <code>DetalleTarifa</code> related through the <code>DetallesTarifa</code> role.
+     * @param detallesTarifa The instance to be removed
+     */
+    public void removeFromDetallesTarifa(DetalleTarifa detallesTarifa) {
+    	this.detallesTarifa.remove(detallesTarifa);
     }
     /**
      * Sets instances of <code>DetalleTarifa</code> related through the <code>DetallesTarifa</code> role.
@@ -325,12 +339,19 @@ public class Tarifa extends AbstractAppEntity {
         return institucionMatNeo;
     }
 
-   /**
-    * Adds an instance of <code>InstitucionMatNeo</code> related through the <code>InstitucionMatNeo</code> role.
-    * @param institucionMatNeo The instance to add to the <code>InstitucionMatNeo</code> role.
-    */
+    /**
+     * Adds an instance of <code>InstitucionMatNeo</code> related through the <code>InstitucionMatNeo</code> role.
+     * @param institucionMatNeo The instance to add to the <code>InstitucionMatNeo</code> role.
+     */
     public void add2InstitucionMatNeo(InstitucionMatNeo institucionMatNeo) {
-        this.getInstitucionMatNeo().add(institucionMatNeo);
+        this.institucionMatNeo.add(institucionMatNeo);
+    }
+    /**
+     * Removes an instance of <code>InstitucionMatNeo</code> related through the <code>InstitucionMatNeo</code> role.
+     * @param institucionMatNeo The instance to be removed
+     */
+    public void removeFromInstitucionMatNeo(InstitucionMatNeo institucionMatNeo) {
+    	this.institucionMatNeo.remove(institucionMatNeo);
     }
     /**
      * Sets instances of <code>InstitucionMatNeo</code> related through the <code>InstitucionMatNeo</code> role.
@@ -361,10 +382,10 @@ public class Tarifa extends AbstractAppEntity {
         return productoT;
     }
 
-   /**
-    * Adds an instance of <code>Productos</code> related through the <code>ProductoT</code> role.
-    * @param productoT The instance to add to the <code>ProductoT</code> role.
-    */
+    /**
+     * Adds an instance of <code>Productos</code> related through the <code>ProductoT</code> role.
+     * @param productoT The instance to add to the <code>ProductoT</code> role.
+     */
     public void add2ProductoT(Productos productoT) {
         if (productoT == null || productoT.isNull()) {
             this.modifiedProductoT = true;
@@ -396,10 +417,10 @@ public class Tarifa extends AbstractAppEntity {
         return planT;
     }
 
-   /**
-    * Adds an instance of <code>Planes</code> related through the <code>PlanT</code> role.
-    * @param planT The instance to add to the <code>PlanT</code> role.
-    */
+    /**
+     * Adds an instance of <code>Planes</code> related through the <code>PlanT</code> role.
+     * @param planT The instance to add to the <code>PlanT</code> role.
+     */
     public void add2PlanT(Planes planT) {
         if (planT == null || planT.isNull()) {
             this.modifiedPlanT = true;

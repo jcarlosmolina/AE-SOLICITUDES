@@ -646,12 +646,19 @@ RADIO=1;
         return dominios;
     }
 
-   /**
-    * Adds an instance of <code>Dominio</code> related through the <code>Dominios</code> role.
-    * @param dominios The instance to add to the <code>Dominios</code> role.
-    */
+    /**
+     * Adds an instance of <code>Dominio</code> related through the <code>Dominios</code> role.
+     * @param dominios The instance to add to the <code>Dominios</code> role.
+     */
     public void add2Dominios(Dominio dominios) {
-        this.getDominios().add(dominios);
+        this.dominios.add(dominios);
+    }
+    /**
+     * Removes an instance of <code>Dominio</code> related through the <code>Dominios</code> role.
+     * @param dominios The instance to be removed
+     */
+    public void removeFromDominios(Dominio dominios) {
+    	this.dominios.remove(dominios);
     }
     /**
      * Sets instances of <code>Dominio</code> related through the <code>Dominios</code> role.
@@ -682,12 +689,19 @@ RADIO=1;
         return causales;
     }
 
-   /**
-    * Adds an instance of <code>Causal</code> related through the <code>Causales</code> role.
-    * @param causales The instance to add to the <code>Causales</code> role.
-    */
+    /**
+     * Adds an instance of <code>Causal</code> related through the <code>Causales</code> role.
+     * @param causales The instance to add to the <code>Causales</code> role.
+     */
     public void add2Causales(Causal causales) {
-        this.getCausales().add(causales);
+        this.causales.add(causales);
+    }
+    /**
+     * Removes an instance of <code>Causal</code> related through the <code>Causales</code> role.
+     * @param causales The instance to be removed
+     */
+    public void removeFromCausales(Causal causales) {
+    	this.causales.remove(causales);
     }
     /**
      * Sets instances of <code>Causal</code> related through the <code>Causales</code> role.
@@ -718,12 +732,19 @@ RADIO=1;
         return solicitudes;
     }
 
-   /**
-    * Adds an instance of <code>SolicitudNovedad</code> related through the <code>Solicitudes</code> role.
-    * @param solicitudes The instance to add to the <code>Solicitudes</code> role.
-    */
+    /**
+     * Adds an instance of <code>SolicitudNovedad</code> related through the <code>Solicitudes</code> role.
+     * @param solicitudes The instance to add to the <code>Solicitudes</code> role.
+     */
     public void add2Solicitudes(SolicitudNovedad solicitudes) {
-        this.getSolicitudes().add(solicitudes);
+        this.solicitudes.add(solicitudes);
+    }
+    /**
+     * Removes an instance of <code>SolicitudNovedad</code> related through the <code>Solicitudes</code> role.
+     * @param solicitudes The instance to be removed
+     */
+    public void removeFromSolicitudes(SolicitudNovedad solicitudes) {
+    	this.solicitudes.remove(solicitudes);
     }
     /**
      * Sets instances of <code>SolicitudNovedad</code> related through the <code>Solicitudes</code> role.
@@ -754,12 +775,19 @@ RADIO=1;
         return causasExclusion;
     }
 
-   /**
-    * Adds an instance of <code>CausaExclusion</code> related through the <code>CausasExclusion</code> role.
-    * @param causasExclusion The instance to add to the <code>CausasExclusion</code> role.
-    */
+    /**
+     * Adds an instance of <code>CausaExclusion</code> related through the <code>CausasExclusion</code> role.
+     * @param causasExclusion The instance to add to the <code>CausasExclusion</code> role.
+     */
     public void add2CausasExclusion(CausaExclusion causasExclusion) {
-        this.getCausasExclusion().add(causasExclusion);
+        this.causasExclusion.add(causasExclusion);
+    }
+    /**
+     * Removes an instance of <code>CausaExclusion</code> related through the <code>CausasExclusion</code> role.
+     * @param causasExclusion The instance to be removed
+     */
+    public void removeFromCausasExclusion(CausaExclusion causasExclusion) {
+    	this.causasExclusion.remove(causasExclusion);
     }
     /**
      * Sets instances of <code>CausaExclusion</code> related through the <code>CausasExclusion</code> role.
@@ -790,12 +818,19 @@ RADIO=1;
         return configuracionesANS;
     }
 
-   /**
-    * Adds an instance of <code>ConfiguracionANS</code> related through the <code>ConfiguracionesANS</code> role.
-    * @param configuracionesANS The instance to add to the <code>ConfiguracionesANS</code> role.
-    */
+    /**
+     * Adds an instance of <code>ConfiguracionANS</code> related through the <code>ConfiguracionesANS</code> role.
+     * @param configuracionesANS The instance to add to the <code>ConfiguracionesANS</code> role.
+     */
     public void add2ConfiguracionesANS(ConfiguracionANS configuracionesANS) {
-        this.getConfiguracionesANS().add(configuracionesANS);
+        this.configuracionesANS.add(configuracionesANS);
+    }
+    /**
+     * Removes an instance of <code>ConfiguracionANS</code> related through the <code>ConfiguracionesANS</code> role.
+     * @param configuracionesANS The instance to be removed
+     */
+    public void removeFromConfiguracionesANS(ConfiguracionANS configuracionesANS) {
+    	this.configuracionesANS.remove(configuracionesANS);
     }
     /**
      * Sets instances of <code>ConfiguracionANS</code> related through the <code>ConfiguracionesANS</code> role.
@@ -826,10 +861,10 @@ RADIO=1;
         return tipoNovedad;
     }
 
-   /**
-    * Adds an instance of <code>TipoNovedad</code> related through the <code>TipoNovedad</code> role.
-    * @param tipoNovedad The instance to add to the <code>TipoNovedad</code> role.
-    */
+    /**
+     * Adds an instance of <code>TipoNovedad</code> related through the <code>TipoNovedad</code> role.
+     * @param tipoNovedad The instance to add to the <code>TipoNovedad</code> role.
+     */
     public void add2TipoNovedad(TipoNovedad tipoNovedad) {
         if (tipoNovedad == null || tipoNovedad.isNull()) {
             this.modifiedTipoNovedad = true;

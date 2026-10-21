@@ -318,12 +318,19 @@ public class SeccionP extends AbstractAppEntity {
         return getPreguntaPRepository().findBySeccion(this);
     }
 
-   /**
-    * Adds an instance of <code>PreguntaP</code> related through the <code>Preguntas</code> role.
-    * @param preguntas The instance to add to the <code>Preguntas</code> role.
-    */
+    /**
+     * Adds an instance of <code>PreguntaP</code> related through the <code>Preguntas</code> role.
+     * @param preguntas The instance to add to the <code>Preguntas</code> role.
+     */
     public void add2Preguntas(PreguntaP preguntas) {
-        this.getPreguntas().add(preguntas);
+        this.preguntas.add(preguntas);
+    }
+    /**
+     * Removes an instance of <code>PreguntaP</code> related through the <code>Preguntas</code> role.
+     * @param preguntas The instance to be removed
+     */
+    public void removeFromPreguntas(PreguntaP preguntas) {
+    	this.preguntas.remove(preguntas);
     }
     /**
      * Sets instances of <code>PreguntaP</code> related through the <code>Preguntas</code> role.
@@ -368,10 +375,10 @@ public class SeccionP extends AbstractAppEntity {
         return (cuestionario == null ? new CuestionarioP(null) : cuestionario);
     }
 
-   /**
-    * Adds an instance of <code>CuestionarioP</code> related through the <code>Cuestionario</code> role.
-    * @param cuestionario The instance to add to the <code>Cuestionario</code> role.
-    */
+    /**
+     * Adds an instance of <code>CuestionarioP</code> related through the <code>Cuestionario</code> role.
+     * @param cuestionario The instance to add to the <code>Cuestionario</code> role.
+     */
     public void add2Cuestionario(CuestionarioP cuestionario) {
         if (cuestionario == null || cuestionario.isNull()) {
             this.modifiedCuestionario = true;

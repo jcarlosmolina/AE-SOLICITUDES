@@ -71,6 +71,14 @@ public class SQLFrom {
     public Collection<SQLJoin> getJoins() {
         return joins;
     }
+    
+    /**
+     * Adds all joins to the current list
+     * @param joinsToAdd Joins to add
+     */
+    public void addAllJoins(Collection<SQLJoin> joinsToAdd) {
+    	joins.addAll(joinsToAdd);
+    }
 }
 
 

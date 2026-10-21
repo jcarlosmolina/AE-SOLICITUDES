@@ -816,12 +816,19 @@ public class DocumentoG extends AbstractAppEntity {
         return getObsEstadoRepository().findByDocumentoG(this);
     }
 
-   /**
-    * Adds an instance of <code>ObsEstado</code> related through the <code>ObsEstado</code> role.
-    * @param obsEstado The instance to add to the <code>ObsEstado</code> role.
-    */
+    /**
+     * Adds an instance of <code>ObsEstado</code> related through the <code>ObsEstado</code> role.
+     * @param obsEstado The instance to add to the <code>ObsEstado</code> role.
+     */
     public void add2ObsEstado(ObsEstado obsEstado) {
-        this.getObsEstado().add(obsEstado);
+        this.obsEstado.add(obsEstado);
+    }
+    /**
+     * Removes an instance of <code>ObsEstado</code> related through the <code>ObsEstado</code> role.
+     * @param obsEstado The instance to be removed
+     */
+    public void removeFromObsEstado(ObsEstado obsEstado) {
+    	this.obsEstado.remove(obsEstado);
     }
     /**
      * Sets instances of <code>ObsEstado</code> related through the <code>ObsEstado</code> role.
@@ -866,10 +873,10 @@ public class DocumentoG extends AbstractAppEntity {
         return (solicitud == null ? new Solicitud(null) : solicitud);
     }
 
-   /**
-    * Adds an instance of <code>Solicitud</code> related through the <code>Solicitud</code> role.
-    * @param solicitud The instance to add to the <code>Solicitud</code> role.
-    */
+    /**
+     * Adds an instance of <code>Solicitud</code> related through the <code>Solicitud</code> role.
+     * @param solicitud The instance to add to the <code>Solicitud</code> role.
+     */
     public void add2Solicitud(Solicitud solicitud) {
         if (solicitud == null || solicitud.isNull()) {
             this.modifiedSolicitud = true;
@@ -915,10 +922,10 @@ public class DocumentoG extends AbstractAppEntity {
         return (persona == null ? new Persona(null) : persona);
     }
 
-   /**
-    * Adds an instance of <code>Persona</code> related through the <code>Persona</code> role.
-    * @param persona The instance to add to the <code>Persona</code> role.
-    */
+    /**
+     * Adds an instance of <code>Persona</code> related through the <code>Persona</code> role.
+     * @param persona The instance to add to the <code>Persona</code> role.
+     */
     public void add2Persona(Persona persona) {
         if (persona == null || persona.isNull()) {
             this.modifiedPersona = true;

@@ -277,10 +277,10 @@ public class LogFuncionario extends AbstractAppEntity {
         return funcionario;
     }
 
-   /**
-    * Adds an instance of <code>Funcionario</code> related through the <code>Funcionario</code> role.
-    * @param funcionario The instance to add to the <code>Funcionario</code> role.
-    */
+    /**
+     * Adds an instance of <code>Funcionario</code> related through the <code>Funcionario</code> role.
+     * @param funcionario The instance to add to the <code>Funcionario</code> role.
+     */
     public void add2Funcionario(Funcionario funcionario) {
         if (funcionario == null || funcionario.isNull()) {
             this.modifiedFuncionario = true;

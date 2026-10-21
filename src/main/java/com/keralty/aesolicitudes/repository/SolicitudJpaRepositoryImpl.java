@@ -8722,7 +8722,7 @@ public class SolicitudJpaRepositoryImpl extends AbstractRepository implements So
 
     // AssocOperator: AssocOperator175
 	@Override
-    public Collection<BeneficiarioC> assocOperator175(Solicitud instance, Solicitud solicitudTNOTIFICARCREARpthisSolicitud) throws SystemException {
+    public Collection<BeneficiarioC> assocOperator175(Solicitud instance) throws SystemException {
         try {
             // FOR ALL ContratoC.BeneficiariosC DO TUPDATEBENEFICIARIO(this, ContratoC.BeneficiariosC)
         return assocOperator175Range1(instance);
@@ -9040,7 +9040,7 @@ public class SolicitudJpaRepositoryImpl extends AbstractRepository implements So
 
     // AssocOperator: AssocOperator185
 	@Override
-    public Collection<BeneficiarioC> assocOperator185(Solicitud instance, Solicitud solicitudTNOTIFICARINCLUSIONpthisSolicitud) throws SystemException {
+    public Collection<BeneficiarioC> assocOperator185(Solicitud instance) throws SystemException {
         try {
             // FOR ALL ContratoC.BeneficiariosC DO TUPDATEBENEFICIARIO(this, ContratoC.BeneficiariosC)
         return assocOperator185Range1(instance);

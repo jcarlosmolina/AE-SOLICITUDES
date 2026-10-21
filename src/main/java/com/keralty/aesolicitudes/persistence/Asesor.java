@@ -1431,12 +1431,19 @@ Indica el número de solicitudes no terminadas que tiene asignadas el usuario. S
         return getContratoCRepository().findByAsesorC(this);
     }
 
-   /**
-    * Adds an instance of <code>ContratoC</code> related through the <code>ContratosC</code> role.
-    * @param contratosC The instance to add to the <code>ContratosC</code> role.
-    */
+    /**
+     * Adds an instance of <code>ContratoC</code> related through the <code>ContratosC</code> role.
+     * @param contratosC The instance to add to the <code>ContratosC</code> role.
+     */
     public void add2ContratosC(ContratoC contratosC) {
-        this.getContratosC().add(contratosC);
+        this.contratosC.add(contratosC);
+    }
+    /**
+     * Removes an instance of <code>ContratoC</code> related through the <code>ContratosC</code> role.
+     * @param contratosC The instance to be removed
+     */
+    public void removeFromContratosC(ContratoC contratosC) {
+    	this.contratosC.remove(contratosC);
     }
     /**
      * Sets instances of <code>ContratoC</code> related through the <code>ContratosC</code> role.
@@ -1467,12 +1474,19 @@ Indica el número de solicitudes no terminadas que tiene asignadas el usuario. S
         return agentexProducto;
     }
 
-   /**
-    * Adds an instance of <code>AgentexProducto</code> related through the <code>AgentexProducto</code> role.
-    * @param agentexProducto The instance to add to the <code>AgentexProducto</code> role.
-    */
+    /**
+     * Adds an instance of <code>AgentexProducto</code> related through the <code>AgentexProducto</code> role.
+     * @param agentexProducto The instance to add to the <code>AgentexProducto</code> role.
+     */
     public void add2AgentexProducto(AgentexProducto agentexProducto) {
-        this.getAgentexProducto().add(agentexProducto);
+        this.agentexProducto.add(agentexProducto);
+    }
+    /**
+     * Removes an instance of <code>AgentexProducto</code> related through the <code>AgentexProducto</code> role.
+     * @param agentexProducto The instance to be removed
+     */
+    public void removeFromAgentexProducto(AgentexProducto agentexProducto) {
+    	this.agentexProducto.remove(agentexProducto);
     }
     /**
      * Sets instances of <code>AgentexProducto</code> related through the <code>AgentexProducto</code> role.
@@ -1503,12 +1517,19 @@ Indica el número de solicitudes no terminadas que tiene asignadas el usuario. S
         return logInformacionAsesor;
     }
 
-   /**
-    * Adds an instance of <code>LogInformacionAsesor</code> related through the <code>LogInformacionAsesor</code> role.
-    * @param logInformacionAsesor The instance to add to the <code>LogInformacionAsesor</code> role.
-    */
+    /**
+     * Adds an instance of <code>LogInformacionAsesor</code> related through the <code>LogInformacionAsesor</code> role.
+     * @param logInformacionAsesor The instance to add to the <code>LogInformacionAsesor</code> role.
+     */
     public void add2LogInformacionAsesor(LogInformacionAsesor logInformacionAsesor) {
-        this.getLogInformacionAsesor().add(logInformacionAsesor);
+        this.logInformacionAsesor.add(logInformacionAsesor);
+    }
+    /**
+     * Removes an instance of <code>LogInformacionAsesor</code> related through the <code>LogInformacionAsesor</code> role.
+     * @param logInformacionAsesor The instance to be removed
+     */
+    public void removeFromLogInformacionAsesor(LogInformacionAsesor logInformacionAsesor) {
+    	this.logInformacionAsesor.remove(logInformacionAsesor);
     }
     /**
      * Sets instances of <code>LogInformacionAsesor</code> related through the <code>LogInformacionAsesor</code> role.
@@ -1539,12 +1560,19 @@ Indica el número de solicitudes no terminadas que tiene asignadas el usuario. S
         return logHistoricoPlanes;
     }
 
-   /**
-    * Adds an instance of <code>LogHistoricoPlanes</code> related through the <code>LogHistoricoPlanes</code> role.
-    * @param logHistoricoPlanes The instance to add to the <code>LogHistoricoPlanes</code> role.
-    */
+    /**
+     * Adds an instance of <code>LogHistoricoPlanes</code> related through the <code>LogHistoricoPlanes</code> role.
+     * @param logHistoricoPlanes The instance to add to the <code>LogHistoricoPlanes</code> role.
+     */
     public void add2LogHistoricoPlanes(LogHistoricoPlanes logHistoricoPlanes) {
-        this.getLogHistoricoPlanes().add(logHistoricoPlanes);
+        this.logHistoricoPlanes.add(logHistoricoPlanes);
+    }
+    /**
+     * Removes an instance of <code>LogHistoricoPlanes</code> related through the <code>LogHistoricoPlanes</code> role.
+     * @param logHistoricoPlanes The instance to be removed
+     */
+    public void removeFromLogHistoricoPlanes(LogHistoricoPlanes logHistoricoPlanes) {
+    	this.logHistoricoPlanes.remove(logHistoricoPlanes);
     }
     /**
      * Sets instances of <code>LogHistoricoPlanes</code> related through the <code>LogHistoricoPlanes</code> role.
@@ -1719,10 +1747,10 @@ Indica el número de solicitudes no terminadas que tiene asignadas el usuario. S
         return (tipoIdentificacion == null ? new TipoIdentificacion(null) : tipoIdentificacion);
     }
 
-   /**
-    * Adds an instance of <code>TipoIdentificacion</code> related through the <code>TipoIdentificacion</code> role.
-    * @param tipoIdentificacion The instance to add to the <code>TipoIdentificacion</code> role.
-    */
+    /**
+     * Adds an instance of <code>TipoIdentificacion</code> related through the <code>TipoIdentificacion</code> role.
+     * @param tipoIdentificacion The instance to add to the <code>TipoIdentificacion</code> role.
+     */
     public void add2TipoIdentificacion(TipoIdentificacion tipoIdentificacion) {
         if (tipoIdentificacion == null || tipoIdentificacion.isNull()) {
             this.modifiedTipoIdentificacion = true;

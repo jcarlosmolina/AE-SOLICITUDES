@@ -164,12 +164,19 @@ public class Rol extends AbstractAppEntity {
         return agentes;
     }
 
-   /**
-    * Adds an instance of <code>Funcionario</code> related through the <code>Agentes</code> role.
-    * @param agentes The instance to add to the <code>Agentes</code> role.
-    */
+    /**
+     * Adds an instance of <code>Funcionario</code> related through the <code>Agentes</code> role.
+     * @param agentes The instance to add to the <code>Agentes</code> role.
+     */
     public void add2Agentes(Funcionario agentes) {
-        this.getAgentes().add(agentes);
+        this.agentes.add(agentes);
+    }
+    /**
+     * Removes an instance of <code>Funcionario</code> related through the <code>Agentes</code> role.
+     * @param agentes The instance to be removed
+     */
+    public void removeFromAgentes(Funcionario agentes) {
+    	this.agentes.remove(agentes);
     }
     /**
      * Sets instances of <code>Funcionario</code> related through the <code>Agentes</code> role.
@@ -200,12 +207,19 @@ public class Rol extends AbstractAppEntity {
         return dominios;
     }
 
-   /**
-    * Adds an instance of <code>Dominio</code> related through the <code>Dominios</code> role.
-    * @param dominios The instance to add to the <code>Dominios</code> role.
-    */
+    /**
+     * Adds an instance of <code>Dominio</code> related through the <code>Dominios</code> role.
+     * @param dominios The instance to add to the <code>Dominios</code> role.
+     */
     public void add2Dominios(Dominio dominios) {
-        this.getDominios().add(dominios);
+        this.dominios.add(dominios);
+    }
+    /**
+     * Removes an instance of <code>Dominio</code> related through the <code>Dominios</code> role.
+     * @param dominios The instance to be removed
+     */
+    public void removeFromDominios(Dominio dominios) {
+    	this.dominios.remove(dominios);
     }
     /**
      * Sets instances of <code>Dominio</code> related through the <code>Dominios</code> role.

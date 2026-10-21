@@ -1106,10 +1106,10 @@ Cambiado el 26/8/2016 a petición de JC Quinche<br>
         return (personaC == null ? new PersonaC(null) : personaC);
     }
 
-   /**
-    * Adds an instance of <code>PersonaC</code> related through the <code>PersonaC</code> role.
-    * @param personaC The instance to add to the <code>PersonaC</code> role.
-    */
+    /**
+     * Adds an instance of <code>PersonaC</code> related through the <code>PersonaC</code> role.
+     * @param personaC The instance to add to the <code>PersonaC</code> role.
+     */
     public void add2PersonaC(PersonaC personaC) {
         this.personaC = (personaC == null  || personaC.isNull() ? null : personaC);
     }
@@ -1135,12 +1135,19 @@ Cambiado el 26/8/2016 a petición de JC Quinche<br>
         return getAnexoCRepository().findByBeneficiarioC(this);
     }
 
-   /**
-    * Adds an instance of <code>AnexoC</code> related through the <code>AnexosC</code> role.
-    * @param anexosC The instance to add to the <code>AnexosC</code> role.
-    */
+    /**
+     * Adds an instance of <code>AnexoC</code> related through the <code>AnexosC</code> role.
+     * @param anexosC The instance to add to the <code>AnexosC</code> role.
+     */
     public void add2AnexosC(AnexoC anexosC) {
-        this.getAnexosC().add(anexosC);
+        this.anexosC.add(anexosC);
+    }
+    /**
+     * Removes an instance of <code>AnexoC</code> related through the <code>AnexosC</code> role.
+     * @param anexosC The instance to be removed
+     */
+    public void removeFromAnexosC(AnexoC anexosC) {
+    	this.anexosC.remove(anexosC);
     }
     /**
      * Sets instances of <code>AnexoC</code> related through the <code>AnexosC</code> role.
@@ -1171,12 +1178,19 @@ Cambiado el 26/8/2016 a petición de JC Quinche<br>
         return getConceptoCRepository().findByBeneficiarioC(this);
     }
 
-   /**
-    * Adds an instance of <code>ConceptoC</code> related through the <code>ConceptosC</code> role.
-    * @param conceptosC The instance to add to the <code>ConceptosC</code> role.
-    */
+    /**
+     * Adds an instance of <code>ConceptoC</code> related through the <code>ConceptosC</code> role.
+     * @param conceptosC The instance to add to the <code>ConceptosC</code> role.
+     */
     public void add2ConceptosC(ConceptoC conceptosC) {
-        this.getConceptosC().add(conceptosC);
+        this.conceptosC.add(conceptosC);
+    }
+    /**
+     * Removes an instance of <code>ConceptoC</code> related through the <code>ConceptosC</code> role.
+     * @param conceptosC The instance to be removed
+     */
+    public void removeFromConceptosC(ConceptoC conceptosC) {
+    	this.conceptosC.remove(conceptosC);
     }
     /**
      * Sets instances of <code>ConceptoC</code> related through the <code>ConceptosC</code> role.
@@ -1221,10 +1235,10 @@ Cambiado el 26/8/2016 a petición de JC Quinche<br>
         return (contratoC == null ? new ContratoC(null) : contratoC);
     }
 
-   /**
-    * Adds an instance of <code>ContratoC</code> related through the <code>ContratoC</code> role.
-    * @param contratoC The instance to add to the <code>ContratoC</code> role.
-    */
+    /**
+     * Adds an instance of <code>ContratoC</code> related through the <code>ContratoC</code> role.
+     * @param contratoC The instance to add to the <code>ContratoC</code> role.
+     */
     public void add2ContratoC(ContratoC contratoC) {
         if (contratoC == null || contratoC.isNull()) {
             this.modifiedContratoC = true;
@@ -1270,10 +1284,10 @@ Cambiado el 26/8/2016 a petición de JC Quinche<br>
         return (familiasC == null ? new FamiliaC(null) : familiasC);
     }
 
-   /**
-    * Adds an instance of <code>FamiliaC</code> related through the <code>FamiliasC</code> role.
-    * @param familiasC The instance to add to the <code>FamiliasC</code> role.
-    */
+    /**
+     * Adds an instance of <code>FamiliaC</code> related through the <code>FamiliasC</code> role.
+     * @param familiasC The instance to add to the <code>FamiliasC</code> role.
+     */
     public void add2FamiliasC(FamiliaC familiasC) {
         if (familiasC == null || familiasC.isNull()) {
             this.modifiedFamiliasC = true;
@@ -1321,10 +1335,10 @@ Cambiado el 26/8/2016 a petición de JC Quinche<br>
         return (ePSC == null ? new Eps(null) : ePSC);
     }
 
-   /**
-    * Adds an instance of <code>Eps</code> related through the <code>EPSC</code> role.
-    * @param ePSC The instance to add to the <code>EPSC</code> role.
-    */
+    /**
+     * Adds an instance of <code>Eps</code> related through the <code>EPSC</code> role.
+     * @param ePSC The instance to add to the <code>EPSC</code> role.
+     */
     public void add2EPSC(Eps ePSC) {
         if (ePSC == null || ePSC.isNull()) {
             this.modifiedEPSC = true;
@@ -1370,10 +1384,10 @@ Cambiado el 26/8/2016 a petición de JC Quinche<br>
         return (companyiaMPC == null ? new Companyia(null) : companyiaMPC);
     }
 
-   /**
-    * Adds an instance of <code>Companyia</code> related through the <code>CompanyiaMPC</code> role.
-    * @param companyiaMPC The instance to add to the <code>CompanyiaMPC</code> role.
-    */
+    /**
+     * Adds an instance of <code>Companyia</code> related through the <code>CompanyiaMPC</code> role.
+     * @param companyiaMPC The instance to add to the <code>CompanyiaMPC</code> role.
+     */
     public void add2CompanyiaMPC(Companyia companyiaMPC) {
         if (companyiaMPC == null || companyiaMPC.isNull()) {
             this.modifiedCompanyiaMPC = true;
@@ -1419,10 +1433,10 @@ Cambiado el 26/8/2016 a petición de JC Quinche<br>
         return (parentescoC == null ? new Parentesco(null) : parentescoC);
     }
 
-   /**
-    * Adds an instance of <code>Parentesco</code> related through the <code>ParentescoC</code> role.
-    * @param parentescoC The instance to add to the <code>ParentescoC</code> role.
-    */
+    /**
+     * Adds an instance of <code>Parentesco</code> related through the <code>ParentescoC</code> role.
+     * @param parentescoC The instance to add to the <code>ParentescoC</code> role.
+     */
     public void add2ParentescoC(Parentesco parentescoC) {
         if (parentescoC == null || parentescoC.isNull()) {
             this.modifiedParentescoC = true;
@@ -1468,10 +1482,10 @@ Cambiado el 26/8/2016 a petición de JC Quinche<br>
         return (estadoBeneficiarioC == null ? new EstadoBeneficiario(null) : estadoBeneficiarioC);
     }
 
-   /**
-    * Adds an instance of <code>EstadoBeneficiario</code> related through the <code>EstadoBeneficiarioC</code> role.
-    * @param estadoBeneficiarioC The instance to add to the <code>EstadoBeneficiarioC</code> role.
-    */
+    /**
+     * Adds an instance of <code>EstadoBeneficiario</code> related through the <code>EstadoBeneficiarioC</code> role.
+     * @param estadoBeneficiarioC The instance to add to the <code>EstadoBeneficiarioC</code> role.
+     */
     public void add2EstadoBeneficiarioC(EstadoBeneficiario estadoBeneficiarioC) {
         if (estadoBeneficiarioC == null || estadoBeneficiarioC.isNull()) {
             this.modifiedEstadoBeneficiarioC = true;

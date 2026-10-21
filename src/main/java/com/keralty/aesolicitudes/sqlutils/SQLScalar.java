@@ -250,7 +250,7 @@ public class SQLScalar extends SQLSelect {
                 this.createFrom(currentAlias.getFacet(), currentAlias);
 
                 if (!this.getAliases().contains(currentAlias)) {
-                    this.getAliases().add(currentAlias);
+                    this.addAlias(currentAlias);
                 }
             }
         }
@@ -329,7 +329,7 @@ public class SQLScalar extends SQLSelect {
         // create an alias for the domain of the argument with its name as the path
         // and add it to the FROM clause
         if (currentAlias == null && !getObjectValuedParameterName().isEmpty()) {
-            currentAlias = this.createAlias(parameterClassName, getObjectValuedParameterName().replace('$', '.'),
+            currentAlias = this.createAlias(getObjectValuedParameterName().replace('$', '.'),
                     parameterClassName, getObjectValuedParameterName(), false, null);
             currentAlias.setAssignedParameterName(getObjectValuedParameterName());
             this.createFrom(this.parameterClassName, currentAlias);
@@ -342,7 +342,7 @@ public class SQLScalar extends SQLSelect {
         // create and alias for the source entity with empty path
         // and add it to the FROM clause
         if (currentAlias == null && !getSourceEntityName().isEmpty()) {
-            currentAlias = this.createAlias(getSourceEntityName(), "", getSourceEntityName(), getSourceEntityName(),
+            currentAlias = this.createAlias("", getSourceEntityName(), getSourceEntityName(),
                     false, null);
             this.createFrom(getSourceEntityName(), currentAlias);
         }
@@ -352,7 +352,7 @@ public class SQLScalar extends SQLSelect {
         // If no currentAlias but in a global context (the path starts with class name,
         // and we remove it)
         if (currentAlias == null && !getClassNameInGlobalService().isEmpty()) {
-            currentAlias = this.createAlias(getClassNameInGlobalService(), "", getClassNameInGlobalService(),
+            currentAlias = this.createAlias("", getClassNameInGlobalService(),
                     getClassNameInGlobalService(), false, null);
             this.createFrom(getClassNameInGlobalService(), currentAlias);
             if (effectivePath.equalsIgnoreCase(getClassNameInGlobalService())) {
@@ -393,7 +393,7 @@ public class SQLScalar extends SQLSelect {
             // ... for a FROM or for a JOIN
             if (this.getFromPart().isEmpty()) {
                 // First item in the path --> Create FROM entry
-                nextAlias = this.createAlias(nextAliasTableExpr, pathInProgress.toString(), nextTable, nextTable, false,
+                nextAlias = this.createAlias(pathInProgress.toString(), nextTable, nextTable, false,
                         null);
                 this.createFrom(nextAliasTableExpr, nextAlias);
             } else {
@@ -466,15 +466,15 @@ public class SQLScalar extends SQLSelect {
             fieldText = attrAlias + "." + field;
             if (fieldText.equalsIgnoreCase(attributeText)) {
                 addAttributeText = false;
-                getSelectPart().add(attributeTextWithCast);
+                addToSelectPart(attributeTextWithCast);
             } else {
-                getSelectPart().add(fieldText);
+                addToSelectPart(fieldText);
             }
         }
 
         // Add the field
         if (addAttributeText && !this.getTargetAttributeName().equalsIgnoreCase("")) {
-            getSelectPart().add(attributeTextWithCast);
+            addToSelectPart(attributeTextWithCast);
         }
     }
 

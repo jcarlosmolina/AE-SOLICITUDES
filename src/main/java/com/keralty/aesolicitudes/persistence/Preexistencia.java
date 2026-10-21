@@ -394,10 +394,10 @@ public class Preexistencia extends AbstractAppEntity {
         return (usuario == null ? new Usuario(null) : usuario);
     }
 
-   /**
-    * Adds an instance of <code>Usuario</code> related through the <code>Usuario</code> role.
-    * @param usuario The instance to add to the <code>Usuario</code> role.
-    */
+    /**
+     * Adds an instance of <code>Usuario</code> related through the <code>Usuario</code> role.
+     * @param usuario The instance to add to the <code>Usuario</code> role.
+     */
     public void add2Usuario(Usuario usuario) {
         if (usuario == null || usuario.isNull()) {
             this.modifiedUsuario = true;

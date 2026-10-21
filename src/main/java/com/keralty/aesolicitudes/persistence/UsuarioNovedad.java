@@ -1280,12 +1280,19 @@ Si existe un conyuge no activo su vigencia no puede estar traslapada con el nuev
         return documentos;
     }
 
-   /**
-    * Adds an instance of <code>DocumentoNovedad</code> related through the <code>Documentos</code> role.
-    * @param documentos The instance to add to the <code>Documentos</code> role.
-    */
+    /**
+     * Adds an instance of <code>DocumentoNovedad</code> related through the <code>Documentos</code> role.
+     * @param documentos The instance to add to the <code>Documentos</code> role.
+     */
     public void add2Documentos(DocumentoNovedad documentos) {
-        this.getDocumentos().add(documentos);
+        this.documentos.add(documentos);
+    }
+    /**
+     * Removes an instance of <code>DocumentoNovedad</code> related through the <code>Documentos</code> role.
+     * @param documentos The instance to be removed
+     */
+    public void removeFromDocumentos(DocumentoNovedad documentos) {
+    	this.documentos.remove(documentos);
     }
     /**
      * Sets instances of <code>DocumentoNovedad</code> related through the <code>Documentos</code> role.
@@ -1316,10 +1323,10 @@ Si existe un conyuge no activo su vigencia no puede estar traslapada con el nuev
         return familiaNovedad;
     }
 
-   /**
-    * Adds an instance of <code>FamiliaNovedad</code> related through the <code>FamiliaNovedad</code> role.
-    * @param familiaNovedad The instance to add to the <code>FamiliaNovedad</code> role.
-    */
+    /**
+     * Adds an instance of <code>FamiliaNovedad</code> related through the <code>FamiliaNovedad</code> role.
+     * @param familiaNovedad The instance to add to the <code>FamiliaNovedad</code> role.
+     */
     public void add2FamiliaNovedad(FamiliaNovedad familiaNovedad) {
         if (familiaNovedad == null || familiaNovedad.isNull()) {
             this.modifiedFamiliaNovedad = true;
@@ -1351,10 +1358,10 @@ Si existe un conyuge no activo su vigencia no puede estar traslapada con el nuev
         return tipoIdentificacion;
     }
 
-   /**
-    * Adds an instance of <code>TipoIdentificacion</code> related through the <code>TipoIdentificacion</code> role.
-    * @param tipoIdentificacion The instance to add to the <code>TipoIdentificacion</code> role.
-    */
+    /**
+     * Adds an instance of <code>TipoIdentificacion</code> related through the <code>TipoIdentificacion</code> role.
+     * @param tipoIdentificacion The instance to add to the <code>TipoIdentificacion</code> role.
+     */
     public void add2TipoIdentificacion(TipoIdentificacion tipoIdentificacion) {
         if (tipoIdentificacion == null || tipoIdentificacion.isNull()) {
             this.modifiedTipoIdentificacion = true;
@@ -1386,10 +1393,10 @@ Si existe un conyuge no activo su vigencia no puede estar traslapada con el nuev
         return parentesco;
     }
 
-   /**
-    * Adds an instance of <code>Parentesco</code> related through the <code>Parentesco</code> role.
-    * @param parentesco The instance to add to the <code>Parentesco</code> role.
-    */
+    /**
+     * Adds an instance of <code>Parentesco</code> related through the <code>Parentesco</code> role.
+     * @param parentesco The instance to add to the <code>Parentesco</code> role.
+     */
     public void add2Parentesco(Parentesco parentesco) {
         if (parentesco == null || parentesco.isNull()) {
             this.modifiedParentesco = true;
@@ -1421,10 +1428,10 @@ Si existe un conyuge no activo su vigencia no puede estar traslapada con el nuev
         return estadoBeneficiario;
     }
 
-   /**
-    * Adds an instance of <code>EstadoBeneficiario</code> related through the <code>EstadoBeneficiario</code> role.
-    * @param estadoBeneficiario The instance to add to the <code>EstadoBeneficiario</code> role.
-    */
+    /**
+     * Adds an instance of <code>EstadoBeneficiario</code> related through the <code>EstadoBeneficiario</code> role.
+     * @param estadoBeneficiario The instance to add to the <code>EstadoBeneficiario</code> role.
+     */
     public void add2EstadoBeneficiario(EstadoBeneficiario estadoBeneficiario) {
         if (estadoBeneficiario == null || estadoBeneficiario.isNull()) {
             this.modifiedEstadoBeneficiario = true;
@@ -1456,10 +1463,10 @@ Si existe un conyuge no activo su vigencia no puede estar traslapada con el nuev
         return parentescoNuevo;
     }
 
-   /**
-    * Adds an instance of <code>Parentesco</code> related through the <code>ParentescoNuevo</code> role.
-    * @param parentescoNuevo The instance to add to the <code>ParentescoNuevo</code> role.
-    */
+    /**
+     * Adds an instance of <code>Parentesco</code> related through the <code>ParentescoNuevo</code> role.
+     * @param parentescoNuevo The instance to add to the <code>ParentescoNuevo</code> role.
+     */
     public void add2ParentescoNuevo(Parentesco parentescoNuevo) {
         if (parentescoNuevo == null || parentescoNuevo.isNull()) {
             this.modifiedParentescoNuevo = true;
@@ -1491,10 +1498,10 @@ Si existe un conyuge no activo su vigencia no puede estar traslapada con el nuev
         return tipoIdentificacionCD;
     }
 
-   /**
-    * Adds an instance of <code>TipoIdentificacion</code> related through the <code>TipoIdentificacionCD</code> role.
-    * @param tipoIdentificacionCD The instance to add to the <code>TipoIdentificacionCD</code> role.
-    */
+    /**
+     * Adds an instance of <code>TipoIdentificacion</code> related through the <code>TipoIdentificacionCD</code> role.
+     * @param tipoIdentificacionCD The instance to add to the <code>TipoIdentificacionCD</code> role.
+     */
     public void add2TipoIdentificacionCD(TipoIdentificacion tipoIdentificacionCD) {
         if (tipoIdentificacionCD == null || tipoIdentificacionCD.isNull()) {
             this.modifiedTipoIdentificacionCD = true;

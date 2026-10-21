@@ -554,10 +554,10 @@ public class AnexoC extends AbstractAppEntity {
         return (beneficiarioC == null ? new BeneficiarioC(null) : beneficiarioC);
     }
 
-   /**
-    * Adds an instance of <code>BeneficiarioC</code> related through the <code>BeneficiarioC</code> role.
-    * @param beneficiarioC The instance to add to the <code>BeneficiarioC</code> role.
-    */
+    /**
+     * Adds an instance of <code>BeneficiarioC</code> related through the <code>BeneficiarioC</code> role.
+     * @param beneficiarioC The instance to add to the <code>BeneficiarioC</code> role.
+     */
     public void add2BeneficiarioC(BeneficiarioC beneficiarioC) {
         if (beneficiarioC == null || beneficiarioC.isNull()) {
             this.modifiedBeneficiarioC = true;
@@ -605,10 +605,10 @@ public class AnexoC extends AbstractAppEntity {
         return (periodicidadC == null ? new Periodicidad(null) : periodicidadC);
     }
 
-   /**
-    * Adds an instance of <code>Periodicidad</code> related through the <code>PeriodicidadC</code> role.
-    * @param periodicidadC The instance to add to the <code>PeriodicidadC</code> role.
-    */
+    /**
+     * Adds an instance of <code>Periodicidad</code> related through the <code>PeriodicidadC</code> role.
+     * @param periodicidadC The instance to add to the <code>PeriodicidadC</code> role.
+     */
     public void add2PeriodicidadC(Periodicidad periodicidadC) {
         if (periodicidadC == null || periodicidadC.isNull()) {
             this.modifiedPeriodicidadC = true;
@@ -654,10 +654,10 @@ public class AnexoC extends AbstractAppEntity {
         return (tipoIdentificacionC == null ? new TipoIdentificacion(null) : tipoIdentificacionC);
     }
 
-   /**
-    * Adds an instance of <code>TipoIdentificacion</code> related through the <code>TipoIdentificacionC</code> role.
-    * @param tipoIdentificacionC The instance to add to the <code>TipoIdentificacionC</code> role.
-    */
+    /**
+     * Adds an instance of <code>TipoIdentificacion</code> related through the <code>TipoIdentificacionC</code> role.
+     * @param tipoIdentificacionC The instance to add to the <code>TipoIdentificacionC</code> role.
+     */
     public void add2TipoIdentificacionC(TipoIdentificacion tipoIdentificacionC) {
         if (tipoIdentificacionC == null || tipoIdentificacionC.isNull()) {
             this.modifiedTipoIdentificacionC = true;

@@ -1333,10 +1333,10 @@ RADIO=1;
         return (direccion == null ? new Direccion(null) : direccion);
     }
 
-   /**
-    * Adds an instance of <code>Direccion</code> related through the <code>Direccion</code> role.
-    * @param direccion The instance to add to the <code>Direccion</code> role.
-    */
+    /**
+     * Adds an instance of <code>Direccion</code> related through the <code>Direccion</code> role.
+     * @param direccion The instance to add to the <code>Direccion</code> role.
+     */
     public void add2Direccion(Direccion direccion) {
         this.direccion = (direccion == null  || direccion.isNull() ? null : direccion);
     }
@@ -1376,10 +1376,10 @@ RADIO=1;
         return (solicitud == null ? new Solicitud(null) : solicitud);
     }
 
-   /**
-    * Adds an instance of <code>Solicitud</code> related through the <code>Solicitud</code> role.
-    * @param solicitud The instance to add to the <code>Solicitud</code> role.
-    */
+    /**
+     * Adds an instance of <code>Solicitud</code> related through the <code>Solicitud</code> role.
+     * @param solicitud The instance to add to the <code>Solicitud</code> role.
+     */
     public void add2Solicitud(Solicitud solicitud) {
         if (solicitud == null || solicitud.isNull()) {
             this.modifiedSolicitud = true;
@@ -1424,10 +1424,10 @@ RADIO=1;
         return (tipoIdentificacion == null ? new TipoIdentificacion(null) : tipoIdentificacion);
     }
 
-   /**
-    * Adds an instance of <code>TipoIdentificacion</code> related through the <code>TipoIdentificacion</code> role.
-    * @param tipoIdentificacion The instance to add to the <code>TipoIdentificacion</code> role.
-    */
+    /**
+     * Adds an instance of <code>TipoIdentificacion</code> related through the <code>TipoIdentificacion</code> role.
+     * @param tipoIdentificacion The instance to add to the <code>TipoIdentificacion</code> role.
+     */
     public void add2TipoIdentificacion(TipoIdentificacion tipoIdentificacion) {
         if (tipoIdentificacion == null || tipoIdentificacion.isNull()) {
             this.modifiedTipoIdentificacion = true;
@@ -1473,10 +1473,10 @@ RADIO=1;
         return (departamentoNac == null ? new Departamento(null) : departamentoNac);
     }
 
-   /**
-    * Adds an instance of <code>Departamento</code> related through the <code>DepartamentoNac</code> role.
-    * @param departamentoNac The instance to add to the <code>DepartamentoNac</code> role.
-    */
+    /**
+     * Adds an instance of <code>Departamento</code> related through the <code>DepartamentoNac</code> role.
+     * @param departamentoNac The instance to add to the <code>DepartamentoNac</code> role.
+     */
     public void add2DepartamentoNac(Departamento departamentoNac) {
         if (departamentoNac == null || departamentoNac.isNull()) {
             this.modifiedDepartamentoNac = true;
@@ -1522,10 +1522,10 @@ RADIO=1;
         return (municipioNac == null ? new Municipio(null) : municipioNac);
     }
 
-   /**
-    * Adds an instance of <code>Municipio</code> related through the <code>MunicipioNac</code> role.
-    * @param municipioNac The instance to add to the <code>MunicipioNac</code> role.
-    */
+    /**
+     * Adds an instance of <code>Municipio</code> related through the <code>MunicipioNac</code> role.
+     * @param municipioNac The instance to add to the <code>MunicipioNac</code> role.
+     */
     public void add2MunicipioNac(Municipio municipioNac) {
         if (municipioNac == null || municipioNac.isNull()) {
             this.modifiedMunicipioNac = true;

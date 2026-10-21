@@ -381,10 +381,10 @@ public class LogEstadoDocNov extends AbstractAppEntity {
         return documentoNovedad;
     }
 
-   /**
-    * Adds an instance of <code>DocumentoNovedad</code> related through the <code>DocumentoNovedad</code> role.
-    * @param documentoNovedad The instance to add to the <code>DocumentoNovedad</code> role.
-    */
+    /**
+     * Adds an instance of <code>DocumentoNovedad</code> related through the <code>DocumentoNovedad</code> role.
+     * @param documentoNovedad The instance to add to the <code>DocumentoNovedad</code> role.
+     */
     public void add2DocumentoNovedad(DocumentoNovedad documentoNovedad) {
         if (documentoNovedad == null || documentoNovedad.isNull()) {
             this.modifiedDocumentoNovedad = true;

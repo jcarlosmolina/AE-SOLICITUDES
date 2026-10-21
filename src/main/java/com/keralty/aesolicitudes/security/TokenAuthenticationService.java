@@ -46,6 +46,9 @@ public class TokenAuthenticationService implements UserAuthenticationService {
 
     @Override
     public void logout(User user) {
+        if (user != null) {
+            throw new IllegalArgumentException("User must not be null");
+        }
         // No additional logic
     }
 

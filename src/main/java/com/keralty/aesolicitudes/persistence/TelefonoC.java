@@ -420,10 +420,10 @@ public class TelefonoC extends AbstractAppEntity {
         return (dirSucursalC == null ? new DirSucursalC(null) : dirSucursalC);
     }
 
-   /**
-    * Adds an instance of <code>DirSucursalC</code> related through the <code>DirSucursalC</code> role.
-    * @param dirSucursalC The instance to add to the <code>DirSucursalC</code> role.
-    */
+    /**
+     * Adds an instance of <code>DirSucursalC</code> related through the <code>DirSucursalC</code> role.
+     * @param dirSucursalC The instance to add to the <code>DirSucursalC</code> role.
+     */
     public void add2DirSucursalC(DirSucursalC dirSucursalC) {
         if (dirSucursalC == null || dirSucursalC.isNull()) {
             this.modifiedDirSucursalC = true;
@@ -469,10 +469,10 @@ public class TelefonoC extends AbstractAppEntity {
         return (direccionC == null ? new DireccionC(null) : direccionC);
     }
 
-   /**
-    * Adds an instance of <code>DireccionC</code> related through the <code>DireccionC</code> role.
-    * @param direccionC The instance to add to the <code>DireccionC</code> role.
-    */
+    /**
+     * Adds an instance of <code>DireccionC</code> related through the <code>DireccionC</code> role.
+     * @param direccionC The instance to add to the <code>DireccionC</code> role.
+     */
     public void add2DireccionC(DireccionC direccionC) {
         if (direccionC == null || direccionC.isNull()) {
             this.modifiedDireccionC = true;

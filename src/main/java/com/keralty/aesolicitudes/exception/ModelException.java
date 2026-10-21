@@ -77,4 +77,8 @@ public class ModelException extends RuntimeException {
     public List<String> getExceptionMessageParts() {
         return exceptionMessageParts;
     }
+	
+    public void addExceptionMessagePart(String exceptionMessagePart) {
+    	exceptionMessageParts.add(exceptionMessagePart);
+    }
 }

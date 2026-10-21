@@ -22,9 +22,15 @@ public final class PreferencesUtils {
 
     public static void update(GridPreferences gridPreferences) {
         // TODO: IMPLEMENT!
+        if (gridPreferences == null) {
+            throw new IllegalArgumentException("Can't update empty preferences");
+        }
     }
 
     public static void delete(GridPreferences gridPreferences) {
         // TODO: IMPLEMENT!
+        if (gridPreferences == null) {
+            throw new IllegalArgumentException("Can't delete empty preferences");
+        }
     }
 }

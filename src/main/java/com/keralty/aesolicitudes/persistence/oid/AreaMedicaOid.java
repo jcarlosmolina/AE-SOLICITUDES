@@ -37,7 +37,11 @@ public class AreaMedicaOid implements IOid {
      * @param col is an ArrayList with the attribute values.
      */
     public AreaMedicaOid(List<Object> col) {
-        this.funcionarioId = Long.parseLong(col.get(0).toString());
+        try {
+            this.funcionarioId = Long.parseLong(col.get(0).toString());
+        } catch (Exception e) {
+            this.funcionarioId = null;
+        }
     }
 
     /**

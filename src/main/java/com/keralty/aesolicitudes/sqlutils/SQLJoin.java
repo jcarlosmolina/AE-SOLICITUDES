@@ -89,6 +89,14 @@ public class SQLJoin {
     public void setJoinType(String jointype) {
         this.jointype = jointype;
     }
+    
+    /**
+     * Adds a new where condition to the list of where clause 
+     * @param where Condition to add
+     */
+    public void addWhere(String where) {
+    	wheres.add(where);
+    }
 
     /**
      * This method returns the list of where conjunctions of the join (conditions in the ON clause).

@@ -19,7 +19,11 @@ public class SQLWhereOperandLiteral extends SQLWhereOperand {
     public SQLWhereOperandLiteral(Object literal, String dataType) {
         super(dataType);
         if (dataType.equalsIgnoreCase(Constants.Type.REAL.getTypeName()))
-            this.literal = Double.valueOf(literal.toString());
+			try {
+                this.literal = Double.valueOf(literal.toString());
+			} catch (Exception e) {
+				this.literal = null;
+			}
         else
             this.literal = literal;
     }
@@ -54,7 +58,7 @@ public class SQLWhereOperandLiteral extends SQLWhereOperand {
         // Obtain the parameter related to the literal
         SQLParam param = new SQLParam("", literal, this.getType());
         // Add the parameter to the parameter list
-        getParameters().add(param);
+        addParameter(param);
 
         this.setOperandText("?");
     }
@@ -75,7 +79,7 @@ public class SQLWhereOperandLiteral extends SQLWhereOperand {
             this.setOperandText(getOperandText() + " is null");
         } else {
             this.setOperandText(getOperandText() + " " + operator + " ?");
-            getParameters().add(new SQLParam("", null, ""));
+            addParameter(new SQLParam("", null, ""));
         }
 
         super.setComparisonWithNull(operator);
@@ -92,11 +96,11 @@ public class SQLWhereOperandLiteral extends SQLWhereOperand {
             return;
         }
 
-        getParameters().clear();
+        clearParameters();
         // Add the special character to the parameter value
         SQLParam param = new SQLParam("", literal + "%", this.getType());
         // Add the parameter to the parameter list
-        getParameters().add(param);
+        addParameter(param);
 
         super.processForLikeOperator();
     }
@@ -112,11 +116,11 @@ public class SQLWhereOperandLiteral extends SQLWhereOperand {
             return;
         }
 
-        getParameters().clear();
+        clearParameters();
         // Add the special character to the parameter value
         SQLParam param = new SQLParam("", "%" + literal + "%", this.getType());
         // Add the parameter to the parameter list
-        getParameters().add(param);
+        addParameter(param);
 
         super.processForContainsOperator();
     }

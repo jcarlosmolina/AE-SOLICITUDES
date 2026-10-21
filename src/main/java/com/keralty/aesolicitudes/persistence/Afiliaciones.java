@@ -1436,12 +1436,19 @@ RADIO=1;
         return planes;
     }
 
-   /**
-    * Adds an instance of <code>Planes</code> related through the <code>Planes</code> role.
-    * @param planes The instance to add to the <code>Planes</code> role.
-    */
+    /**
+     * Adds an instance of <code>Planes</code> related through the <code>Planes</code> role.
+     * @param planes The instance to add to the <code>Planes</code> role.
+     */
     public void add2Planes(Planes planes) {
-        this.getPlanes().add(planes);
+        this.planes.add(planes);
+    }
+    /**
+     * Removes an instance of <code>Planes</code> related through the <code>Planes</code> role.
+     * @param planes The instance to be removed
+     */
+    public void removeFromPlanes(Planes planes) {
+    	this.planes.remove(planes);
     }
     /**
      * Sets instances of <code>Planes</code> related through the <code>Planes</code> role.

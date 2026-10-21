@@ -121,7 +121,7 @@ public class FuncionarioJpaRepositoryImpl extends AbstractRepository implements 
      * @param childAlias Alias of the child entity.
      */
     public void addFacetWhereadmin (String myAlias, SQLJoin join, String childAlias) {
-        join.getWheres().add(myAlias + "." + FuncionarioConstants.ATTR_FIELD_FUNCIONARIOID + " = " + childAlias + "." + AdminConstants.FLD_FUNCIONARIOID);
+        join.addWhere(myAlias + "." + FuncionarioConstants.ATTR_FIELD_FUNCIONARIOID + " = " + childAlias + "." + AdminConstants.FLD_FUNCIONARIOID);
     }
 
 
@@ -132,7 +132,7 @@ public class FuncionarioJpaRepositoryImpl extends AbstractRepository implements 
      * @param childAlias Alias of the child entity.
      */
     public void addFacetWheresuperadmin (String myAlias, SQLJoin join, String childAlias) {
-        join.getWheres().add(myAlias + "." + FuncionarioConstants.ATTR_FIELD_FUNCIONARIOID + " = " + childAlias + "." + SuperAdminConstants.FLD_FUNCIONARIOID);
+        join.addWhere(myAlias + "." + FuncionarioConstants.ATTR_FIELD_FUNCIONARIOID + " = " + childAlias + "." + SuperAdminConstants.FLD_FUNCIONARIOID);
     }
 
 
@@ -143,7 +143,7 @@ public class FuncionarioJpaRepositoryImpl extends AbstractRepository implements 
      * @param childAlias Alias of the child entity.
      */
     public void addFacetWhereasesor (String myAlias, SQLJoin join, String childAlias) {
-        join.getWheres().add(myAlias + "." + FuncionarioConstants.ATTR_FIELD_FUNCIONARIOID + " = " + childAlias + "." + AsesorConstants.FLD_FUNCIONARIOID);
+        join.addWhere(myAlias + "." + FuncionarioConstants.ATTR_FIELD_FUNCIONARIOID + " = " + childAlias + "." + AsesorConstants.FLD_FUNCIONARIOID);
     }
 
 
@@ -154,7 +154,7 @@ public class FuncionarioJpaRepositoryImpl extends AbstractRepository implements 
      * @param childAlias Alias of the child entity.
      */
     public void addFacetWhereareamedica (String myAlias, SQLJoin join, String childAlias) {
-        join.getWheres().add(myAlias + "." + FuncionarioConstants.ATTR_FIELD_FUNCIONARIOID + " = " + childAlias + "." + AreaMedicaConstants.FLD_FUNCIONARIOID);
+        join.addWhere(myAlias + "." + FuncionarioConstants.ATTR_FIELD_FUNCIONARIOID + " = " + childAlias + "." + AreaMedicaConstants.FLD_FUNCIONARIOID);
     }
 
 
@@ -165,7 +165,7 @@ public class FuncionarioJpaRepositoryImpl extends AbstractRepository implements 
      * @param childAlias Alias of the child entity.
      */
     public void addFacetWhereafiliaciones (String myAlias, SQLJoin join, String childAlias) {
-        join.getWheres().add(myAlias + "." + FuncionarioConstants.ATTR_FIELD_FUNCIONARIOID + " = " + childAlias + "." + AfiliacionesConstants.FLD_FUNCIONARIOID);
+        join.addWhere(myAlias + "." + FuncionarioConstants.ATTR_FIELD_FUNCIONARIOID + " = " + childAlias + "." + AfiliacionesConstants.FLD_FUNCIONARIOID);
     }
 
 
@@ -176,7 +176,7 @@ public class FuncionarioJpaRepositoryImpl extends AbstractRepository implements 
      * @param childAlias Alias of the child entity.
      */
     public void addFacetWhererespregional (String myAlias, SQLJoin join, String childAlias) {
-        join.getWheres().add(myAlias + "." + FuncionarioConstants.ATTR_FIELD_FUNCIONARIOID + " = " + childAlias + "." + RespRegionalConstants.FLD_FUNCIONARIOID);
+        join.addWhere(myAlias + "." + FuncionarioConstants.ATTR_FIELD_FUNCIONARIOID + " = " + childAlias + "." + RespRegionalConstants.FLD_FUNCIONARIOID);
     }
 
 
@@ -187,7 +187,7 @@ public class FuncionarioJpaRepositoryImpl extends AbstractRepository implements 
      * @param childAlias Alias of the child entity.
      */
     public void addFacetWheregestor (String myAlias, SQLJoin join, String childAlias) {
-        join.getWheres().add(myAlias + "." + FuncionarioConstants.ATTR_FIELD_FUNCIONARIOID + " = " + childAlias + "." + GestorConstants.FLD_FUNCIONARIOID);
+        join.addWhere(myAlias + "." + FuncionarioConstants.ATTR_FIELD_FUNCIONARIOID + " = " + childAlias + "." + GestorConstants.FLD_FUNCIONARIOID);
     }
 
 
@@ -198,7 +198,7 @@ public class FuncionarioJpaRepositoryImpl extends AbstractRepository implements 
      * @param childAlias Alias of the child entity.
      */
     public void addFacetWheremesadeapoyo (String myAlias, SQLJoin join, String childAlias) {
-        join.getWheres().add(myAlias + "." + FuncionarioConstants.ATTR_FIELD_FUNCIONARIOID + " = " + childAlias + "." + MesaDeApoyoConstants.FLD_FUNCIONARIOID);
+        join.addWhere(myAlias + "." + FuncionarioConstants.ATTR_FIELD_FUNCIONARIOID + " = " + childAlias + "." + MesaDeApoyoConstants.FLD_FUNCIONARIOID);
     }
 
 

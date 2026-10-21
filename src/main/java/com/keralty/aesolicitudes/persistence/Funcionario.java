@@ -1574,12 +1574,19 @@ RADIO=1;
         return getSolicitudRepository().findByAgente(this);
     }
 
-   /**
-    * Adds an instance of <code>Solicitud</code> related through the <code>Solicitudes</code> role.
-    * @param solicitudes The instance to add to the <code>Solicitudes</code> role.
-    */
+    /**
+     * Adds an instance of <code>Solicitud</code> related through the <code>Solicitudes</code> role.
+     * @param solicitudes The instance to add to the <code>Solicitudes</code> role.
+     */
     public void add2Solicitudes(Solicitud solicitudes) {
-        this.getSolicitudes().add(solicitudes);
+        this.solicitudes.add(solicitudes);
+    }
+    /**
+     * Removes an instance of <code>Solicitud</code> related through the <code>Solicitudes</code> role.
+     * @param solicitudes The instance to be removed
+     */
+    public void removeFromSolicitudes(Solicitud solicitudes) {
+    	this.solicitudes.remove(solicitudes);
     }
     /**
      * Sets instances of <code>Solicitud</code> related through the <code>Solicitudes</code> role.
@@ -1610,12 +1617,19 @@ RADIO=1;
         return getSolicitudRepository().findByUsrAfiliacion(this);
     }
 
-   /**
-    * Adds an instance of <code>Solicitud</code> related through the <code>SolicitudesAfiliacion</code> role.
-    * @param solicitudesAfiliacion The instance to add to the <code>SolicitudesAfiliacion</code> role.
-    */
+    /**
+     * Adds an instance of <code>Solicitud</code> related through the <code>SolicitudesAfiliacion</code> role.
+     * @param solicitudesAfiliacion The instance to add to the <code>SolicitudesAfiliacion</code> role.
+     */
     public void add2SolicitudesAfiliacion(Solicitud solicitudesAfiliacion) {
-        this.getSolicitudesAfiliacion().add(solicitudesAfiliacion);
+        this.solicitudesAfiliacion.add(solicitudesAfiliacion);
+    }
+    /**
+     * Removes an instance of <code>Solicitud</code> related through the <code>SolicitudesAfiliacion</code> role.
+     * @param solicitudesAfiliacion The instance to be removed
+     */
+    public void removeFromSolicitudesAfiliacion(Solicitud solicitudesAfiliacion) {
+    	this.solicitudesAfiliacion.remove(solicitudesAfiliacion);
     }
     /**
      * Sets instances of <code>Solicitud</code> related through the <code>SolicitudesAfiliacion</code> role.
@@ -1646,12 +1660,19 @@ RADIO=1;
         return getObsEstadoRepository().findByAgente(this);
     }
 
-   /**
-    * Adds an instance of <code>ObsEstado</code> related through the <code>ObsEstado</code> role.
-    * @param obsEstado The instance to add to the <code>ObsEstado</code> role.
-    */
+    /**
+     * Adds an instance of <code>ObsEstado</code> related through the <code>ObsEstado</code> role.
+     * @param obsEstado The instance to add to the <code>ObsEstado</code> role.
+     */
     public void add2ObsEstado(ObsEstado obsEstado) {
-        this.getObsEstado().add(obsEstado);
+        this.obsEstado.add(obsEstado);
+    }
+    /**
+     * Removes an instance of <code>ObsEstado</code> related through the <code>ObsEstado</code> role.
+     * @param obsEstado The instance to be removed
+     */
+    public void removeFromObsEstado(ObsEstado obsEstado) {
+    	this.obsEstado.remove(obsEstado);
     }
     /**
      * Sets instances of <code>ObsEstado</code> related through the <code>ObsEstado</code> role.
@@ -1682,12 +1703,19 @@ RADIO=1;
         return reportes;
     }
 
-   /**
-    * Adds an instance of <code>ReportesProcAlm</code> related through the <code>Reportes</code> role.
-    * @param reportes The instance to add to the <code>Reportes</code> role.
-    */
+    /**
+     * Adds an instance of <code>ReportesProcAlm</code> related through the <code>Reportes</code> role.
+     * @param reportes The instance to add to the <code>Reportes</code> role.
+     */
     public void add2Reportes(ReportesProcAlm reportes) {
-        this.getReportes().add(reportes);
+        this.reportes.add(reportes);
+    }
+    /**
+     * Removes an instance of <code>ReportesProcAlm</code> related through the <code>Reportes</code> role.
+     * @param reportes The instance to be removed
+     */
+    public void removeFromReportes(ReportesProcAlm reportes) {
+    	this.reportes.remove(reportes);
     }
     /**
      * Sets instances of <code>ReportesProcAlm</code> related through the <code>Reportes</code> role.
@@ -1718,12 +1746,19 @@ RADIO=1;
         return getSolicitudNovedadRepository().findByAgente(this);
     }
 
-   /**
-    * Adds an instance of <code>SolicitudNovedad</code> related through the <code>SolicitudesNovedad</code> role.
-    * @param solicitudesNovedad The instance to add to the <code>SolicitudesNovedad</code> role.
-    */
+    /**
+     * Adds an instance of <code>SolicitudNovedad</code> related through the <code>SolicitudesNovedad</code> role.
+     * @param solicitudesNovedad The instance to add to the <code>SolicitudesNovedad</code> role.
+     */
     public void add2SolicitudesNovedad(SolicitudNovedad solicitudesNovedad) {
-        this.getSolicitudesNovedad().add(solicitudesNovedad);
+        this.solicitudesNovedad.add(solicitudesNovedad);
+    }
+    /**
+     * Removes an instance of <code>SolicitudNovedad</code> related through the <code>SolicitudesNovedad</code> role.
+     * @param solicitudesNovedad The instance to be removed
+     */
+    public void removeFromSolicitudesNovedad(SolicitudNovedad solicitudesNovedad) {
+    	this.solicitudesNovedad.remove(solicitudesNovedad);
     }
     /**
      * Sets instances of <code>SolicitudNovedad</code> related through the <code>SolicitudesNovedad</code> role.
@@ -1754,12 +1789,19 @@ RADIO=1;
         return getSolicitudNovedadRepository().findByUsrAfiliacion(this);
     }
 
-   /**
-    * Adds an instance of <code>SolicitudNovedad</code> related through the <code>SolNovAifliaciones</code> role.
-    * @param solNovAifliaciones The instance to add to the <code>SolNovAifliaciones</code> role.
-    */
+    /**
+     * Adds an instance of <code>SolicitudNovedad</code> related through the <code>SolNovAifliaciones</code> role.
+     * @param solNovAifliaciones The instance to add to the <code>SolNovAifliaciones</code> role.
+     */
     public void add2SolNovAifliaciones(SolicitudNovedad solNovAifliaciones) {
-        this.getSolNovAifliaciones().add(solNovAifliaciones);
+        this.solNovAifliaciones.add(solNovAifliaciones);
+    }
+    /**
+     * Removes an instance of <code>SolicitudNovedad</code> related through the <code>SolNovAifliaciones</code> role.
+     * @param solNovAifliaciones The instance to be removed
+     */
+    public void removeFromSolNovAifliaciones(SolicitudNovedad solNovAifliaciones) {
+    	this.solNovAifliaciones.remove(solNovAifliaciones);
     }
     /**
      * Sets instances of <code>SolicitudNovedad</code> related through the <code>SolNovAifliaciones</code> role.
@@ -1790,12 +1832,19 @@ RADIO=1;
         return grupoAsignacion;
     }
 
-   /**
-    * Adds an instance of <code>GrupoAsignacion</code> related through the <code>GrupoAsignacion</code> role.
-    * @param grupoAsignacion The instance to add to the <code>GrupoAsignacion</code> role.
-    */
+    /**
+     * Adds an instance of <code>GrupoAsignacion</code> related through the <code>GrupoAsignacion</code> role.
+     * @param grupoAsignacion The instance to add to the <code>GrupoAsignacion</code> role.
+     */
     public void add2GrupoAsignacion(GrupoAsignacion grupoAsignacion) {
-        this.getGrupoAsignacion().add(grupoAsignacion);
+        this.grupoAsignacion.add(grupoAsignacion);
+    }
+    /**
+     * Removes an instance of <code>GrupoAsignacion</code> related through the <code>GrupoAsignacion</code> role.
+     * @param grupoAsignacion The instance to be removed
+     */
+    public void removeFromGrupoAsignacion(GrupoAsignacion grupoAsignacion) {
+    	this.grupoAsignacion.remove(grupoAsignacion);
     }
     /**
      * Sets instances of <code>GrupoAsignacion</code> related through the <code>GrupoAsignacion</code> role.
@@ -1826,12 +1875,19 @@ RADIO=1;
         return logFuncionario;
     }
 
-   /**
-    * Adds an instance of <code>LogFuncionario</code> related through the <code>LogFuncionario</code> role.
-    * @param logFuncionario The instance to add to the <code>LogFuncionario</code> role.
-    */
+    /**
+     * Adds an instance of <code>LogFuncionario</code> related through the <code>LogFuncionario</code> role.
+     * @param logFuncionario The instance to add to the <code>LogFuncionario</code> role.
+     */
     public void add2LogFuncionario(LogFuncionario logFuncionario) {
-        this.getLogFuncionario().add(logFuncionario);
+        this.logFuncionario.add(logFuncionario);
+    }
+    /**
+     * Removes an instance of <code>LogFuncionario</code> related through the <code>LogFuncionario</code> role.
+     * @param logFuncionario The instance to be removed
+     */
+    public void removeFromLogFuncionario(LogFuncionario logFuncionario) {
+    	this.logFuncionario.remove(logFuncionario);
     }
     /**
      * Sets instances of <code>LogFuncionario</code> related through the <code>LogFuncionario</code> role.
@@ -1940,10 +1996,10 @@ RADIO=1;
         return rol;
     }
 
-   /**
-    * Adds an instance of <code>Rol</code> related through the <code>Rol</code> role.
-    * @param rol The instance to add to the <code>Rol</code> role.
-    */
+    /**
+     * Adds an instance of <code>Rol</code> related through the <code>Rol</code> role.
+     * @param rol The instance to add to the <code>Rol</code> role.
+     */
     public void add2Rol(Rol rol) {
         if (rol == null || rol.isNull()) {
             this.modifiedRol = true;
@@ -1975,10 +2031,10 @@ RADIO=1;
         return sucursal;
     }
 
-   /**
-    * Adds an instance of <code>Sucursal</code> related through the <code>Sucursal</code> role.
-    * @param sucursal The instance to add to the <code>Sucursal</code> role.
-    */
+    /**
+     * Adds an instance of <code>Sucursal</code> related through the <code>Sucursal</code> role.
+     * @param sucursal The instance to add to the <code>Sucursal</code> role.
+     */
     public void add2Sucursal(Sucursal sucursal) {
         if (sucursal == null || sucursal.isNull()) {
             this.modifiedSucursal = true;

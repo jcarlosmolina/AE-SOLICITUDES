@@ -53,7 +53,7 @@ public class SQLWhereOperandThis extends SQLWhereOperandPathInstance {
 
         // Add the OID field to the comparison list
         for (String oidField : oidFields) {
-            getOidExpressions().add(alias + "." + oidField);
+            addOidExpression(alias + "." + oidField);
         }
     }
 }

@@ -1021,7 +1021,7 @@ public interface SolicitudJpaRepositoryCustom {
     
     SQLExists assocOperator171Range1Query(Solicitud instance) throws SystemException;
 
-    Collection<BeneficiarioC> assocOperator175(Solicitud instance, Solicitud solicitudTNOTIFICARCREARpthisSolicitud) throws SystemException;
+    Collection<BeneficiarioC> assocOperator175(Solicitud instance) throws SystemException;
 
     Collection<BeneficiarioC> assocOperator175Range1(Solicitud instance) throws SystemException;
     
@@ -1063,7 +1063,7 @@ public interface SolicitudJpaRepositoryCustom {
     
     SQLExists assocOperator182Range1Query(BeneficiarioC solicitudTUPDATEBENEFICIARIOpBeneficiarioC, SQLSelect superQuery) throws SystemException;
 
-    Collection<BeneficiarioC> assocOperator185(Solicitud instance, Solicitud solicitudTNOTIFICARINCLUSIONpthisSolicitud) throws SystemException;
+    Collection<BeneficiarioC> assocOperator185(Solicitud instance) throws SystemException;
 
     Collection<BeneficiarioC> assocOperator185Range1(Solicitud instance) throws SystemException;
     

@@ -289,12 +289,19 @@ public class ReportesProcAlm extends AbstractAppEntity {
         return parametros;
     }
 
-   /**
-    * Adds an instance of <code>ParamReporte</code> related through the <code>Parametros</code> role.
-    * @param parametros The instance to add to the <code>Parametros</code> role.
-    */
+    /**
+     * Adds an instance of <code>ParamReporte</code> related through the <code>Parametros</code> role.
+     * @param parametros The instance to add to the <code>Parametros</code> role.
+     */
     public void add2Parametros(ParamReporte parametros) {
-        this.getParametros().add(parametros);
+        this.parametros.add(parametros);
+    }
+    /**
+     * Removes an instance of <code>ParamReporte</code> related through the <code>Parametros</code> role.
+     * @param parametros The instance to be removed
+     */
+    public void removeFromParametros(ParamReporte parametros) {
+    	this.parametros.remove(parametros);
     }
     /**
      * Sets instances of <code>ParamReporte</code> related through the <code>Parametros</code> role.
@@ -325,12 +332,19 @@ public class ReportesProcAlm extends AbstractAppEntity {
         return funcionarios;
     }
 
-   /**
-    * Adds an instance of <code>Funcionario</code> related through the <code>Funcionarios</code> role.
-    * @param funcionarios The instance to add to the <code>Funcionarios</code> role.
-    */
+    /**
+     * Adds an instance of <code>Funcionario</code> related through the <code>Funcionarios</code> role.
+     * @param funcionarios The instance to add to the <code>Funcionarios</code> role.
+     */
     public void add2Funcionarios(Funcionario funcionarios) {
-        this.getFuncionarios().add(funcionarios);
+        this.funcionarios.add(funcionarios);
+    }
+    /**
+     * Removes an instance of <code>Funcionario</code> related through the <code>Funcionarios</code> role.
+     * @param funcionarios The instance to be removed
+     */
+    public void removeFromFuncionarios(Funcionario funcionarios) {
+    	this.funcionarios.remove(funcionarios);
     }
     /**
      * Sets instances of <code>Funcionario</code> related through the <code>Funcionarios</code> role.

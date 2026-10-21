@@ -582,12 +582,19 @@ public class DirSucursalC extends AbstractAppEntity {
         return getTelefonoCRepository().findByDirSucursalC(this);
     }
 
-   /**
-    * Adds an instance of <code>TelefonoC</code> related through the <code>TelefonosC</code> role.
-    * @param telefonosC The instance to add to the <code>TelefonosC</code> role.
-    */
+    /**
+     * Adds an instance of <code>TelefonoC</code> related through the <code>TelefonosC</code> role.
+     * @param telefonosC The instance to add to the <code>TelefonosC</code> role.
+     */
     public void add2TelefonosC(TelefonoC telefonosC) {
-        this.getTelefonosC().add(telefonosC);
+        this.telefonosC.add(telefonosC);
+    }
+    /**
+     * Removes an instance of <code>TelefonoC</code> related through the <code>TelefonosC</code> role.
+     * @param telefonosC The instance to be removed
+     */
+    public void removeFromTelefonosC(TelefonoC telefonosC) {
+    	this.telefonosC.remove(telefonosC);
     }
     /**
      * Sets instances of <code>TelefonoC</code> related through the <code>TelefonosC</code> role.
@@ -632,10 +639,10 @@ public class DirSucursalC extends AbstractAppEntity {
         return (personaC == null ? new PersonaC(null) : personaC);
     }
 
-   /**
-    * Adds an instance of <code>PersonaC</code> related through the <code>PersonaC</code> role.
-    * @param personaC The instance to add to the <code>PersonaC</code> role.
-    */
+    /**
+     * Adds an instance of <code>PersonaC</code> related through the <code>PersonaC</code> role.
+     * @param personaC The instance to add to the <code>PersonaC</code> role.
+     */
     public void add2PersonaC(PersonaC personaC) {
         if (personaC == null || personaC.isNull()) {
             this.modifiedPersonaC = true;
@@ -667,12 +674,19 @@ public class DirSucursalC extends AbstractAppEntity {
         return tiposSucursalC;
     }
 
-   /**
-    * Adds an instance of <code>TipoSucursalC</code> related through the <code>TiposSucursalC</code> role.
-    * @param tiposSucursalC The instance to add to the <code>TiposSucursalC</code> role.
-    */
+    /**
+     * Adds an instance of <code>TipoSucursalC</code> related through the <code>TiposSucursalC</code> role.
+     * @param tiposSucursalC The instance to add to the <code>TiposSucursalC</code> role.
+     */
     public void add2TiposSucursalC(TipoSucursalC tiposSucursalC) {
-        this.getTiposSucursalC().add(tiposSucursalC);
+        this.tiposSucursalC.add(tiposSucursalC);
+    }
+    /**
+     * Removes an instance of <code>TipoSucursalC</code> related through the <code>TiposSucursalC</code> role.
+     * @param tiposSucursalC The instance to be removed
+     */
+    public void removeFromTiposSucursalC(TipoSucursalC tiposSucursalC) {
+    	this.tiposSucursalC.remove(tiposSucursalC);
     }
     /**
      * Sets instances of <code>TipoSucursalC</code> related through the <code>TiposSucursalC</code> role.
@@ -717,10 +731,10 @@ public class DirSucursalC extends AbstractAppEntity {
         return (municipioC == null ? new Municipio(null) : municipioC);
     }
 
-   /**
-    * Adds an instance of <code>Municipio</code> related through the <code>MunicipioC</code> role.
-    * @param municipioC The instance to add to the <code>MunicipioC</code> role.
-    */
+    /**
+     * Adds an instance of <code>Municipio</code> related through the <code>MunicipioC</code> role.
+     * @param municipioC The instance to add to the <code>MunicipioC</code> role.
+     */
     public void add2MunicipioC(Municipio municipioC) {
         if (municipioC == null || municipioC.isNull()) {
             this.modifiedMunicipioC = true;
@@ -766,10 +780,10 @@ public class DirSucursalC extends AbstractAppEntity {
         return (departamentoC == null ? new Departamento(null) : departamentoC);
     }
 
-   /**
-    * Adds an instance of <code>Departamento</code> related through the <code>DepartamentoC</code> role.
-    * @param departamentoC The instance to add to the <code>DepartamentoC</code> role.
-    */
+    /**
+     * Adds an instance of <code>Departamento</code> related through the <code>DepartamentoC</code> role.
+     * @param departamentoC The instance to add to the <code>DepartamentoC</code> role.
+     */
     public void add2DepartamentoC(Departamento departamentoC) {
         if (departamentoC == null || departamentoC.isNull()) {
             this.modifiedDepartamentoC = true;
@@ -815,10 +829,10 @@ public class DirSucursalC extends AbstractAppEntity {
         return (paisC == null ? new Pais(null) : paisC);
     }
 
-   /**
-    * Adds an instance of <code>Pais</code> related through the <code>PaisC</code> role.
-    * @param paisC The instance to add to the <code>PaisC</code> role.
-    */
+    /**
+     * Adds an instance of <code>Pais</code> related through the <code>PaisC</code> role.
+     * @param paisC The instance to add to the <code>PaisC</code> role.
+     */
     public void add2PaisC(Pais paisC) {
         if (paisC == null || paisC.isNull()) {
             this.modifiedPaisC = true;
@@ -864,10 +878,10 @@ public class DirSucursalC extends AbstractAppEntity {
         return (regionalC == null ? new Regional(null) : regionalC);
     }
 
-   /**
-    * Adds an instance of <code>Regional</code> related through the <code>RegionalC</code> role.
-    * @param regionalC The instance to add to the <code>RegionalC</code> role.
-    */
+    /**
+     * Adds an instance of <code>Regional</code> related through the <code>RegionalC</code> role.
+     * @param regionalC The instance to add to the <code>RegionalC</code> role.
+     */
     public void add2RegionalC(Regional regionalC) {
         if (regionalC == null || regionalC.isNull()) {
             this.modifiedRegionalC = true;

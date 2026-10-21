@@ -319,12 +319,19 @@ public class TipoFactura extends AbstractAppEntity {
         return getSolicitudRepository().findByTipoFactura(this);
     }
 
-   /**
-    * Adds an instance of <code>Solicitud</code> related through the <code>Solicitudes</code> role.
-    * @param solicitudes The instance to add to the <code>Solicitudes</code> role.
-    */
+    /**
+     * Adds an instance of <code>Solicitud</code> related through the <code>Solicitudes</code> role.
+     * @param solicitudes The instance to add to the <code>Solicitudes</code> role.
+     */
     public void add2Solicitudes(Solicitud solicitudes) {
-        this.getSolicitudes().add(solicitudes);
+        this.solicitudes.add(solicitudes);
+    }
+    /**
+     * Removes an instance of <code>Solicitud</code> related through the <code>Solicitudes</code> role.
+     * @param solicitudes The instance to be removed
+     */
+    public void removeFromSolicitudes(Solicitud solicitudes) {
+    	this.solicitudes.remove(solicitudes);
     }
     /**
      * Sets instances of <code>Solicitud</code> related through the <code>Solicitudes</code> role.

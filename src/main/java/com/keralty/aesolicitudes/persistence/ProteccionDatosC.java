@@ -670,10 +670,10 @@ public class ProteccionDatosC extends AbstractAppEntity {
         return (personaC == null ? new PersonaC(null) : personaC);
     }
 
-   /**
-    * Adds an instance of <code>PersonaC</code> related through the <code>PersonaC</code> role.
-    * @param personaC The instance to add to the <code>PersonaC</code> role.
-    */
+    /**
+     * Adds an instance of <code>PersonaC</code> related through the <code>PersonaC</code> role.
+     * @param personaC The instance to add to the <code>PersonaC</code> role.
+     */
     public void add2PersonaC(PersonaC personaC) {
         if (personaC == null || personaC.isNull()) {
             this.modifiedPersonaC = true;
@@ -719,10 +719,10 @@ public class ProteccionDatosC extends AbstractAppEntity {
         return (productoC == null ? new Productos(null) : productoC);
     }
 
-   /**
-    * Adds an instance of <code>Productos</code> related through the <code>ProductoC</code> role.
-    * @param productoC The instance to add to the <code>ProductoC</code> role.
-    */
+    /**
+     * Adds an instance of <code>Productos</code> related through the <code>ProductoC</code> role.
+     * @param productoC The instance to add to the <code>ProductoC</code> role.
+     */
     public void add2ProductoC(Productos productoC) {
         if (productoC == null || productoC.isNull()) {
             this.modifiedProductoC = true;

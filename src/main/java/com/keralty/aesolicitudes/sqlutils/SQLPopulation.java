@@ -187,7 +187,7 @@ public class SQLPopulation extends SQLSelect {
         Object[] displaySetArray = processDisplaySet();
 
         String sourcetable = Constants.nameTable(getTargetEntityName());
-        SQLAlias localAlias = createAlias(sourcetable, aliasPath, getTargetEntityName(), false);
+        SQLAlias localAlias = createAlias(aliasPath, getTargetEntityName(), false);
         setStartingClassAlias(localAlias);
         createFrom(sourcetable, localAlias);
         for (Object displaySetMemberobject : displaySetArray) {
@@ -210,9 +210,9 @@ public class SQLPopulation extends SQLSelect {
                 if (tempOwnerClass.compareToIgnoreCase(targetClass) != 0) {
                     nextalias = this.addInheritanceJoins(nextalias, tempOwnerClass, targetClass);
                 }
-                getSelectPart().add(nextalias.getAlias() + "." + displaySetMember.trim());
+                addToSelectPart(nextalias.getAlias() + "." + displaySetMember.trim());
             } else {
-                getSelectPart().add(localAlias.getAlias() + "." + displaySetMember.trim());
+                addToSelectPart(localAlias.getAlias() + "." + displaySetMember.trim());
             }
         }
 

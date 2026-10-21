@@ -548,12 +548,19 @@ public class Productos extends AbstractAppEntity {
         return getPlanesRepository().findByProductoT(this);
     }
 
-   /**
-    * Adds an instance of <code>Planes</code> related through the <code>Planes</code> role.
-    * @param planes The instance to add to the <code>Planes</code> role.
-    */
+    /**
+     * Adds an instance of <code>Planes</code> related through the <code>Planes</code> role.
+     * @param planes The instance to add to the <code>Planes</code> role.
+     */
     public void add2Planes(Planes planes) {
-        this.getPlanes().add(planes);
+        this.planes.add(planes);
+    }
+    /**
+     * Removes an instance of <code>Planes</code> related through the <code>Planes</code> role.
+     * @param planes The instance to be removed
+     */
+    public void removeFromPlanes(Planes planes) {
+    	this.planes.remove(planes);
     }
     /**
      * Sets instances of <code>Planes</code> related through the <code>Planes</code> role.
@@ -584,12 +591,19 @@ public class Productos extends AbstractAppEntity {
         return dominios;
     }
 
-   /**
-    * Adds an instance of <code>Dominio</code> related through the <code>Dominios</code> role.
-    * @param dominios The instance to add to the <code>Dominios</code> role.
-    */
+    /**
+     * Adds an instance of <code>Dominio</code> related through the <code>Dominios</code> role.
+     * @param dominios The instance to add to the <code>Dominios</code> role.
+     */
     public void add2Dominios(Dominio dominios) {
-        this.getDominios().add(dominios);
+        this.dominios.add(dominios);
+    }
+    /**
+     * Removes an instance of <code>Dominio</code> related through the <code>Dominios</code> role.
+     * @param dominios The instance to be removed
+     */
+    public void removeFromDominios(Dominio dominios) {
+    	this.dominios.remove(dominios);
     }
     /**
      * Sets instances of <code>Dominio</code> related through the <code>Dominios</code> role.
@@ -620,12 +634,19 @@ public class Productos extends AbstractAppEntity {
         return tarifas;
     }
 
-   /**
-    * Adds an instance of <code>Tarifa</code> related through the <code>Tarifas</code> role.
-    * @param tarifas The instance to add to the <code>Tarifas</code> role.
-    */
+    /**
+     * Adds an instance of <code>Tarifa</code> related through the <code>Tarifas</code> role.
+     * @param tarifas The instance to add to the <code>Tarifas</code> role.
+     */
     public void add2Tarifas(Tarifa tarifas) {
-        this.getTarifas().add(tarifas);
+        this.tarifas.add(tarifas);
+    }
+    /**
+     * Removes an instance of <code>Tarifa</code> related through the <code>Tarifas</code> role.
+     * @param tarifas The instance to be removed
+     */
+    public void removeFromTarifas(Tarifa tarifas) {
+    	this.tarifas.remove(tarifas);
     }
     /**
      * Sets instances of <code>Tarifa</code> related through the <code>Tarifas</code> role.
@@ -656,12 +677,19 @@ public class Productos extends AbstractAppEntity {
         return getGrupoAsociadoRepository().findByProductoT(this);
     }
 
-   /**
-    * Adds an instance of <code>GrupoAsociado</code> related through the <code>GruposAsociados</code> role.
-    * @param gruposAsociados The instance to add to the <code>GruposAsociados</code> role.
-    */
+    /**
+     * Adds an instance of <code>GrupoAsociado</code> related through the <code>GruposAsociados</code> role.
+     * @param gruposAsociados The instance to add to the <code>GruposAsociados</code> role.
+     */
     public void add2GruposAsociados(GrupoAsociado gruposAsociados) {
-        this.getGruposAsociados().add(gruposAsociados);
+        this.gruposAsociados.add(gruposAsociados);
+    }
+    /**
+     * Removes an instance of <code>GrupoAsociado</code> related through the <code>GruposAsociados</code> role.
+     * @param gruposAsociados The instance to be removed
+     */
+    public void removeFromGruposAsociados(GrupoAsociado gruposAsociados) {
+    	this.gruposAsociados.remove(gruposAsociados);
     }
     /**
      * Sets instances of <code>GrupoAsociado</code> related through the <code>GruposAsociados</code> role.
@@ -692,12 +720,19 @@ public class Productos extends AbstractAppEntity {
         return tiposIVA;
     }
 
-   /**
-    * Adds an instance of <code>TipoIVA</code> related through the <code>TiposIVA</code> role.
-    * @param tiposIVA The instance to add to the <code>TiposIVA</code> role.
-    */
+    /**
+     * Adds an instance of <code>TipoIVA</code> related through the <code>TiposIVA</code> role.
+     * @param tiposIVA The instance to add to the <code>TiposIVA</code> role.
+     */
     public void add2TiposIVA(TipoIVA tiposIVA) {
-        this.getTiposIVA().add(tiposIVA);
+        this.tiposIVA.add(tiposIVA);
+    }
+    /**
+     * Removes an instance of <code>TipoIVA</code> related through the <code>TiposIVA</code> role.
+     * @param tiposIVA The instance to be removed
+     */
+    public void removeFromTiposIVA(TipoIVA tiposIVA) {
+    	this.tiposIVA.remove(tiposIVA);
     }
     /**
      * Sets instances of <code>TipoIVA</code> related through the <code>TiposIVA</code> role.
@@ -728,12 +763,19 @@ public class Productos extends AbstractAppEntity {
         return getAesolicitudesRepository().findByProductoT(this);
     }
 
-   /**
-    * Adds an instance of <code>Aesolicitudes</code> related through the <code>AESOLICITUDES</code> role.
-    * @param aESOLICITUDES The instance to add to the <code>AESOLICITUDES</code> role.
-    */
+    /**
+     * Adds an instance of <code>Aesolicitudes</code> related through the <code>AESOLICITUDES</code> role.
+     * @param aESOLICITUDES The instance to add to the <code>AESOLICITUDES</code> role.
+     */
     public void add2AESOLICITUDES(Aesolicitudes aESOLICITUDES) {
-        this.getAESOLICITUDES().add(aESOLICITUDES);
+        this.aESOLICITUDES.add(aESOLICITUDES);
+    }
+    /**
+     * Removes an instance of <code>Aesolicitudes</code> related through the <code>AESOLICITUDES</code> role.
+     * @param aESOLICITUDES The instance to be removed
+     */
+    public void removeFromAESOLICITUDES(Aesolicitudes aESOLICITUDES) {
+    	this.aESOLICITUDES.remove(aESOLICITUDES);
     }
     /**
      * Sets instances of <code>Aesolicitudes</code> related through the <code>AESOLICITUDES</code> role.
@@ -764,12 +806,19 @@ public class Productos extends AbstractAppEntity {
         return getProteccionDatosCRepository().findByProductoC(this);
     }
 
-   /**
-    * Adds an instance of <code>ProteccionDatosC</code> related through the <code>ProteccionDatosC</code> role.
-    * @param proteccionDatosC The instance to add to the <code>ProteccionDatosC</code> role.
-    */
+    /**
+     * Adds an instance of <code>ProteccionDatosC</code> related through the <code>ProteccionDatosC</code> role.
+     * @param proteccionDatosC The instance to add to the <code>ProteccionDatosC</code> role.
+     */
     public void add2ProteccionDatosC(ProteccionDatosC proteccionDatosC) {
-        this.getProteccionDatosC().add(proteccionDatosC);
+        this.proteccionDatosC.add(proteccionDatosC);
+    }
+    /**
+     * Removes an instance of <code>ProteccionDatosC</code> related through the <code>ProteccionDatosC</code> role.
+     * @param proteccionDatosC The instance to be removed
+     */
+    public void removeFromProteccionDatosC(ProteccionDatosC proteccionDatosC) {
+    	this.proteccionDatosC.remove(proteccionDatosC);
     }
     /**
      * Sets instances of <code>ProteccionDatosC</code> related through the <code>ProteccionDatosC</code> role.
@@ -800,12 +849,19 @@ public class Productos extends AbstractAppEntity {
         return getProteccionDatosRepository().findByProductoT(this);
     }
 
-   /**
-    * Adds an instance of <code>ProteccionDatos</code> related through the <code>ProteccionesDatos</code> role.
-    * @param proteccionesDatos The instance to add to the <code>ProteccionesDatos</code> role.
-    */
+    /**
+     * Adds an instance of <code>ProteccionDatos</code> related through the <code>ProteccionesDatos</code> role.
+     * @param proteccionesDatos The instance to add to the <code>ProteccionesDatos</code> role.
+     */
     public void add2ProteccionesDatos(ProteccionDatos proteccionesDatos) {
-        this.getProteccionesDatos().add(proteccionesDatos);
+        this.proteccionesDatos.add(proteccionesDatos);
+    }
+    /**
+     * Removes an instance of <code>ProteccionDatos</code> related through the <code>ProteccionesDatos</code> role.
+     * @param proteccionesDatos The instance to be removed
+     */
+    public void removeFromProteccionesDatos(ProteccionDatos proteccionesDatos) {
+    	this.proteccionesDatos.remove(proteccionesDatos);
     }
     /**
      * Sets instances of <code>ProteccionDatos</code> related through the <code>ProteccionesDatos</code> role.
@@ -836,12 +892,19 @@ public class Productos extends AbstractAppEntity {
         return getContratoCRepository().findByProductoC(this);
     }
 
-   /**
-    * Adds an instance of <code>ContratoC</code> related through the <code>ContratosC</code> role.
-    * @param contratosC The instance to add to the <code>ContratosC</code> role.
-    */
+    /**
+     * Adds an instance of <code>ContratoC</code> related through the <code>ContratosC</code> role.
+     * @param contratosC The instance to add to the <code>ContratosC</code> role.
+     */
     public void add2ContratosC(ContratoC contratosC) {
-        this.getContratosC().add(contratosC);
+        this.contratosC.add(contratosC);
+    }
+    /**
+     * Removes an instance of <code>ContratoC</code> related through the <code>ContratosC</code> role.
+     * @param contratosC The instance to be removed
+     */
+    public void removeFromContratosC(ContratoC contratosC) {
+    	this.contratosC.remove(contratosC);
     }
     /**
      * Sets instances of <code>ContratoC</code> related through the <code>ContratosC</code> role.
@@ -872,12 +935,19 @@ public class Productos extends AbstractAppEntity {
         return getMarcaMedicaCRepository().findByProductoC(this);
     }
 
-   /**
-    * Adds an instance of <code>MarcaMedicaC</code> related through the <code>MarcaMedicaC</code> role.
-    * @param marcaMedicaC The instance to add to the <code>MarcaMedicaC</code> role.
-    */
+    /**
+     * Adds an instance of <code>MarcaMedicaC</code> related through the <code>MarcaMedicaC</code> role.
+     * @param marcaMedicaC The instance to add to the <code>MarcaMedicaC</code> role.
+     */
     public void add2MarcaMedicaC(MarcaMedicaC marcaMedicaC) {
-        this.getMarcaMedicaC().add(marcaMedicaC);
+        this.marcaMedicaC.add(marcaMedicaC);
+    }
+    /**
+     * Removes an instance of <code>MarcaMedicaC</code> related through the <code>MarcaMedicaC</code> role.
+     * @param marcaMedicaC The instance to be removed
+     */
+    public void removeFromMarcaMedicaC(MarcaMedicaC marcaMedicaC) {
+    	this.marcaMedicaC.remove(marcaMedicaC);
     }
     /**
      * Sets instances of <code>MarcaMedicaC</code> related through the <code>MarcaMedicaC</code> role.
@@ -908,12 +978,19 @@ public class Productos extends AbstractAppEntity {
         return agentexProducto;
     }
 
-   /**
-    * Adds an instance of <code>AgentexProducto</code> related through the <code>AgentexProducto</code> role.
-    * @param agentexProducto The instance to add to the <code>AgentexProducto</code> role.
-    */
+    /**
+     * Adds an instance of <code>AgentexProducto</code> related through the <code>AgentexProducto</code> role.
+     * @param agentexProducto The instance to add to the <code>AgentexProducto</code> role.
+     */
     public void add2AgentexProducto(AgentexProducto agentexProducto) {
-        this.getAgentexProducto().add(agentexProducto);
+        this.agentexProducto.add(agentexProducto);
+    }
+    /**
+     * Removes an instance of <code>AgentexProducto</code> related through the <code>AgentexProducto</code> role.
+     * @param agentexProducto The instance to be removed
+     */
+    public void removeFromAgentexProducto(AgentexProducto agentexProducto) {
+    	this.agentexProducto.remove(agentexProducto);
     }
     /**
      * Sets instances of <code>AgentexProducto</code> related through the <code>AgentexProducto</code> role.

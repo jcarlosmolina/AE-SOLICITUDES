@@ -49,7 +49,11 @@ public class AgentexProductoOid implements IOid {
      * @param col is an ArrayList with the attribute values.
      */
     public AgentexProductoOid(List<Object> col) {
-        this.funcionarioAsesorId = Long.parseLong(col.get(0).toString());
+        try {
+            this.funcionarioAsesorId = Long.parseLong(col.get(0).toString());
+        } catch (Exception e) {
+            this.funcionarioAsesorId = null;
+        }
         this.agentexProductoId = (Long) col.get(1);
     }
 

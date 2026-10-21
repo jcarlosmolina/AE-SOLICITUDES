@@ -229,12 +229,19 @@ public class EstadoCivil extends AbstractAppEntity {
         return getPersonaRepository().findByEstadoCivil(this);
     }
 
-   /**
-    * Adds an instance of <code>Persona</code> related through the <code>Personas</code> role.
-    * @param personas The instance to add to the <code>Personas</code> role.
-    */
+    /**
+     * Adds an instance of <code>Persona</code> related through the <code>Personas</code> role.
+     * @param personas The instance to add to the <code>Personas</code> role.
+     */
     public void add2Personas(Persona personas) {
-        this.getPersonas().add(personas);
+        this.personas.add(personas);
+    }
+    /**
+     * Removes an instance of <code>Persona</code> related through the <code>Personas</code> role.
+     * @param personas The instance to be removed
+     */
+    public void removeFromPersonas(Persona personas) {
+    	this.personas.remove(personas);
     }
     /**
      * Sets instances of <code>Persona</code> related through the <code>Personas</code> role.
@@ -265,12 +272,19 @@ public class EstadoCivil extends AbstractAppEntity {
         return getPersonaCRepository().findByEstadoCivilC(this);
     }
 
-   /**
-    * Adds an instance of <code>PersonaC</code> related through the <code>PersonasC</code> role.
-    * @param personasC The instance to add to the <code>PersonasC</code> role.
-    */
+    /**
+     * Adds an instance of <code>PersonaC</code> related through the <code>PersonasC</code> role.
+     * @param personasC The instance to add to the <code>PersonasC</code> role.
+     */
     public void add2PersonasC(PersonaC personasC) {
-        this.getPersonasC().add(personasC);
+        this.personasC.add(personasC);
+    }
+    /**
+     * Removes an instance of <code>PersonaC</code> related through the <code>PersonasC</code> role.
+     * @param personasC The instance to be removed
+     */
+    public void removeFromPersonasC(PersonaC personasC) {
+    	this.personasC.remove(personasC);
     }
     /**
      * Sets instances of <code>PersonaC</code> related through the <code>PersonasC</code> role.

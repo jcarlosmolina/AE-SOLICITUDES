@@ -830,12 +830,19 @@ public class TipoIdentificacion extends AbstractAppEntity {
         return getAsesorRepository().findByTipoIdentificacion(this);
     }
 
-   /**
-    * Adds an instance of <code>Asesor</code> related through the <code>Asesores</code> role.
-    * @param asesores The instance to add to the <code>Asesores</code> role.
-    */
+    /**
+     * Adds an instance of <code>Asesor</code> related through the <code>Asesores</code> role.
+     * @param asesores The instance to add to the <code>Asesores</code> role.
+     */
     public void add2Asesores(Asesor asesores) {
-        this.getAsesores().add(asesores);
+        this.asesores.add(asesores);
+    }
+    /**
+     * Removes an instance of <code>Asesor</code> related through the <code>Asesores</code> role.
+     * @param asesores The instance to be removed
+     */
+    public void removeFromAsesores(Asesor asesores) {
+    	this.asesores.remove(asesores);
     }
     /**
      * Sets instances of <code>Asesor</code> related through the <code>Asesores</code> role.
@@ -866,12 +873,19 @@ public class TipoIdentificacion extends AbstractAppEntity {
         return getPersonaRepository().findByTipoIdentificacion(this);
     }
 
-   /**
-    * Adds an instance of <code>Persona</code> related through the <code>Personas</code> role.
-    * @param personas The instance to add to the <code>Personas</code> role.
-    */
+    /**
+     * Adds an instance of <code>Persona</code> related through the <code>Personas</code> role.
+     * @param personas The instance to add to the <code>Personas</code> role.
+     */
     public void add2Personas(Persona personas) {
-        this.getPersonas().add(personas);
+        this.personas.add(personas);
+    }
+    /**
+     * Removes an instance of <code>Persona</code> related through the <code>Personas</code> role.
+     * @param personas The instance to be removed
+     */
+    public void removeFromPersonas(Persona personas) {
+    	this.personas.remove(personas);
     }
     /**
      * Sets instances of <code>Persona</code> related through the <code>Personas</code> role.
@@ -902,12 +916,19 @@ public class TipoIdentificacion extends AbstractAppEntity {
         return getPersonaCRepository().findByTipoIdentificacionC(this);
     }
 
-   /**
-    * Adds an instance of <code>PersonaC</code> related through the <code>PersonasC</code> role.
-    * @param personasC The instance to add to the <code>PersonasC</code> role.
-    */
+    /**
+     * Adds an instance of <code>PersonaC</code> related through the <code>PersonasC</code> role.
+     * @param personasC The instance to add to the <code>PersonasC</code> role.
+     */
     public void add2PersonasC(PersonaC personasC) {
-        this.getPersonasC().add(personasC);
+        this.personasC.add(personasC);
+    }
+    /**
+     * Removes an instance of <code>PersonaC</code> related through the <code>PersonasC</code> role.
+     * @param personasC The instance to be removed
+     */
+    public void removeFromPersonasC(PersonaC personasC) {
+    	this.personasC.remove(personasC);
     }
     /**
      * Sets instances of <code>PersonaC</code> related through the <code>PersonasC</code> role.
@@ -938,12 +959,19 @@ public class TipoIdentificacion extends AbstractAppEntity {
         return getUsuarioRepository().findByTipoIdentificacion(this);
     }
 
-   /**
-    * Adds an instance of <code>Usuario</code> related through the <code>UsuarioS</code> role.
-    * @param usuarioS The instance to add to the <code>UsuarioS</code> role.
-    */
+    /**
+     * Adds an instance of <code>Usuario</code> related through the <code>UsuarioS</code> role.
+     * @param usuarioS The instance to add to the <code>UsuarioS</code> role.
+     */
     public void add2UsuarioS(Usuario usuarioS) {
-        this.getUsuarioS().add(usuarioS);
+        this.usuarioS.add(usuarioS);
+    }
+    /**
+     * Removes an instance of <code>Usuario</code> related through the <code>UsuarioS</code> role.
+     * @param usuarioS The instance to be removed
+     */
+    public void removeFromUsuarioS(Usuario usuarioS) {
+    	this.usuarioS.remove(usuarioS);
     }
     /**
      * Sets instances of <code>Usuario</code> related through the <code>UsuarioS</code> role.
@@ -974,12 +1002,19 @@ public class TipoIdentificacion extends AbstractAppEntity {
         return getContratanteRepository().findByTipoIdentificacion(this);
     }
 
-   /**
-    * Adds an instance of <code>Contratante</code> related through the <code>Contratantes</code> role.
-    * @param contratantes The instance to add to the <code>Contratantes</code> role.
-    */
+    /**
+     * Adds an instance of <code>Contratante</code> related through the <code>Contratantes</code> role.
+     * @param contratantes The instance to add to the <code>Contratantes</code> role.
+     */
     public void add2Contratantes(Contratante contratantes) {
-        this.getContratantes().add(contratantes);
+        this.contratantes.add(contratantes);
+    }
+    /**
+     * Removes an instance of <code>Contratante</code> related through the <code>Contratantes</code> role.
+     * @param contratantes The instance to be removed
+     */
+    public void removeFromContratantes(Contratante contratantes) {
+    	this.contratantes.remove(contratantes);
     }
     /**
      * Sets instances of <code>Contratante</code> related through the <code>Contratantes</code> role.
@@ -1010,12 +1045,19 @@ public class TipoIdentificacion extends AbstractAppEntity {
         return getAnexoCRepository().findByTipoIdentificacionC(this);
     }
 
-   /**
-    * Adds an instance of <code>AnexoC</code> related through the <code>AnexosC</code> role.
-    * @param anexosC The instance to add to the <code>AnexosC</code> role.
-    */
+    /**
+     * Adds an instance of <code>AnexoC</code> related through the <code>AnexosC</code> role.
+     * @param anexosC The instance to add to the <code>AnexosC</code> role.
+     */
     public void add2AnexosC(AnexoC anexosC) {
-        this.getAnexosC().add(anexosC);
+        this.anexosC.add(anexosC);
+    }
+    /**
+     * Removes an instance of <code>AnexoC</code> related through the <code>AnexosC</code> role.
+     * @param anexosC The instance to be removed
+     */
+    public void removeFromAnexosC(AnexoC anexosC) {
+    	this.anexosC.remove(anexosC);
     }
     /**
      * Sets instances of <code>AnexoC</code> related through the <code>AnexosC</code> role.
@@ -1046,12 +1088,19 @@ public class TipoIdentificacion extends AbstractAppEntity {
         return getTitularRepository().findByTipoIdentificacion(this);
     }
 
-   /**
-    * Adds an instance of <code>Titular</code> related through the <code>Titulares</code> role.
-    * @param titulares The instance to add to the <code>Titulares</code> role.
-    */
+    /**
+     * Adds an instance of <code>Titular</code> related through the <code>Titulares</code> role.
+     * @param titulares The instance to add to the <code>Titulares</code> role.
+     */
     public void add2Titulares(Titular titulares) {
-        this.getTitulares().add(titulares);
+        this.titulares.add(titulares);
+    }
+    /**
+     * Removes an instance of <code>Titular</code> related through the <code>Titulares</code> role.
+     * @param titulares The instance to be removed
+     */
+    public void removeFromTitulares(Titular titulares) {
+    	this.titulares.remove(titulares);
     }
     /**
      * Sets instances of <code>Titular</code> related through the <code>Titulares</code> role.
@@ -1082,12 +1131,19 @@ public class TipoIdentificacion extends AbstractAppEntity {
         return institucionMatNeo;
     }
 
-   /**
-    * Adds an instance of <code>InstitucionMatNeo</code> related through the <code>InstitucionMatNeo</code> role.
-    * @param institucionMatNeo The instance to add to the <code>InstitucionMatNeo</code> role.
-    */
+    /**
+     * Adds an instance of <code>InstitucionMatNeo</code> related through the <code>InstitucionMatNeo</code> role.
+     * @param institucionMatNeo The instance to add to the <code>InstitucionMatNeo</code> role.
+     */
     public void add2InstitucionMatNeo(InstitucionMatNeo institucionMatNeo) {
-        this.getInstitucionMatNeo().add(institucionMatNeo);
+        this.institucionMatNeo.add(institucionMatNeo);
+    }
+    /**
+     * Removes an instance of <code>InstitucionMatNeo</code> related through the <code>InstitucionMatNeo</code> role.
+     * @param institucionMatNeo The instance to be removed
+     */
+    public void removeFromInstitucionMatNeo(InstitucionMatNeo institucionMatNeo) {
+    	this.institucionMatNeo.remove(institucionMatNeo);
     }
     /**
      * Sets instances of <code>InstitucionMatNeo</code> related through the <code>InstitucionMatNeo</code> role.
@@ -1118,12 +1174,19 @@ public class TipoIdentificacion extends AbstractAppEntity {
         return getSolicitudNovedadRepository().findByTipoIdentContratante(this);
     }
 
-   /**
-    * Adds an instance of <code>SolicitudNovedad</code> related through the <code>SolicitudesNovedad</code> role.
-    * @param solicitudesNovedad The instance to add to the <code>SolicitudesNovedad</code> role.
-    */
+    /**
+     * Adds an instance of <code>SolicitudNovedad</code> related through the <code>SolicitudesNovedad</code> role.
+     * @param solicitudesNovedad The instance to add to the <code>SolicitudesNovedad</code> role.
+     */
     public void add2SolicitudesNovedad(SolicitudNovedad solicitudesNovedad) {
-        this.getSolicitudesNovedad().add(solicitudesNovedad);
+        this.solicitudesNovedad.add(solicitudesNovedad);
+    }
+    /**
+     * Removes an instance of <code>SolicitudNovedad</code> related through the <code>SolicitudesNovedad</code> role.
+     * @param solicitudesNovedad The instance to be removed
+     */
+    public void removeFromSolicitudesNovedad(SolicitudNovedad solicitudesNovedad) {
+    	this.solicitudesNovedad.remove(solicitudesNovedad);
     }
     /**
      * Sets instances of <code>SolicitudNovedad</code> related through the <code>SolicitudesNovedad</code> role.
@@ -1154,12 +1217,19 @@ public class TipoIdentificacion extends AbstractAppEntity {
         return familiasNovedad;
     }
 
-   /**
-    * Adds an instance of <code>FamiliaNovedad</code> related through the <code>FamiliasNovedad</code> role.
-    * @param familiasNovedad The instance to add to the <code>FamiliasNovedad</code> role.
-    */
+    /**
+     * Adds an instance of <code>FamiliaNovedad</code> related through the <code>FamiliasNovedad</code> role.
+     * @param familiasNovedad The instance to add to the <code>FamiliasNovedad</code> role.
+     */
     public void add2FamiliasNovedad(FamiliaNovedad familiasNovedad) {
-        this.getFamiliasNovedad().add(familiasNovedad);
+        this.familiasNovedad.add(familiasNovedad);
+    }
+    /**
+     * Removes an instance of <code>FamiliaNovedad</code> related through the <code>FamiliasNovedad</code> role.
+     * @param familiasNovedad The instance to be removed
+     */
+    public void removeFromFamiliasNovedad(FamiliaNovedad familiasNovedad) {
+    	this.familiasNovedad.remove(familiasNovedad);
     }
     /**
      * Sets instances of <code>FamiliaNovedad</code> related through the <code>FamiliasNovedad</code> role.
@@ -1190,12 +1260,19 @@ public class TipoIdentificacion extends AbstractAppEntity {
         return usuariosNovedad;
     }
 
-   /**
-    * Adds an instance of <code>UsuarioNovedad</code> related through the <code>UsuariosNovedad</code> role.
-    * @param usuariosNovedad The instance to add to the <code>UsuariosNovedad</code> role.
-    */
+    /**
+     * Adds an instance of <code>UsuarioNovedad</code> related through the <code>UsuariosNovedad</code> role.
+     * @param usuariosNovedad The instance to add to the <code>UsuariosNovedad</code> role.
+     */
     public void add2UsuariosNovedad(UsuarioNovedad usuariosNovedad) {
-        this.getUsuariosNovedad().add(usuariosNovedad);
+        this.usuariosNovedad.add(usuariosNovedad);
+    }
+    /**
+     * Removes an instance of <code>UsuarioNovedad</code> related through the <code>UsuariosNovedad</code> role.
+     * @param usuariosNovedad The instance to be removed
+     */
+    public void removeFromUsuariosNovedad(UsuarioNovedad usuariosNovedad) {
+    	this.usuariosNovedad.remove(usuariosNovedad);
     }
     /**
      * Sets instances of <code>UsuarioNovedad</code> related through the <code>UsuariosNovedad</code> role.
@@ -1226,12 +1303,19 @@ public class TipoIdentificacion extends AbstractAppEntity {
         return usuarioNovedad;
     }
 
-   /**
-    * Adds an instance of <code>UsuarioNovedad</code> related through the <code>UsuarioNovedad</code> role.
-    * @param usuarioNovedad The instance to add to the <code>UsuarioNovedad</code> role.
-    */
+    /**
+     * Adds an instance of <code>UsuarioNovedad</code> related through the <code>UsuarioNovedad</code> role.
+     * @param usuarioNovedad The instance to add to the <code>UsuarioNovedad</code> role.
+     */
     public void add2UsuarioNovedad(UsuarioNovedad usuarioNovedad) {
-        this.getUsuarioNovedad().add(usuarioNovedad);
+        this.usuarioNovedad.add(usuarioNovedad);
+    }
+    /**
+     * Removes an instance of <code>UsuarioNovedad</code> related through the <code>UsuarioNovedad</code> role.
+     * @param usuarioNovedad The instance to be removed
+     */
+    public void removeFromUsuarioNovedad(UsuarioNovedad usuarioNovedad) {
+    	this.usuarioNovedad.remove(usuarioNovedad);
     }
     /**
      * Sets instances of <code>UsuarioNovedad</code> related through the <code>UsuarioNovedad</code> role.
@@ -1262,12 +1346,19 @@ public class TipoIdentificacion extends AbstractAppEntity {
         return novedadesCT;
     }
 
-   /**
-    * Adds an instance of <code>NovedadCT</code> related through the <code>NovedadesCT</code> role.
-    * @param novedadesCT The instance to add to the <code>NovedadesCT</code> role.
-    */
+    /**
+     * Adds an instance of <code>NovedadCT</code> related through the <code>NovedadesCT</code> role.
+     * @param novedadesCT The instance to add to the <code>NovedadesCT</code> role.
+     */
     public void add2NovedadesCT(NovedadCT novedadesCT) {
-        this.getNovedadesCT().add(novedadesCT);
+        this.novedadesCT.add(novedadesCT);
+    }
+    /**
+     * Removes an instance of <code>NovedadCT</code> related through the <code>NovedadesCT</code> role.
+     * @param novedadesCT The instance to be removed
+     */
+    public void removeFromNovedadesCT(NovedadCT novedadesCT) {
+    	this.novedadesCT.remove(novedadesCT);
     }
     /**
      * Sets instances of <code>NovedadCT</code> related through the <code>NovedadesCT</code> role.

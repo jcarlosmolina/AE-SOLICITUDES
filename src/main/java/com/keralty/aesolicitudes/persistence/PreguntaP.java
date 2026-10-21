@@ -631,10 +631,10 @@ Utilizaremos el ; como separador para los distintos valores<br>
         return (seccion == null ? new SeccionP(null) : seccion);
     }
 
-   /**
-    * Adds an instance of <code>SeccionP</code> related through the <code>Seccion</code> role.
-    * @param seccion The instance to add to the <code>Seccion</code> role.
-    */
+    /**
+     * Adds an instance of <code>SeccionP</code> related through the <code>Seccion</code> role.
+     * @param seccion The instance to add to the <code>Seccion</code> role.
+     */
     public void add2Seccion(SeccionP seccion) {
         if (seccion == null || seccion.isNull()) {
             this.modifiedSeccion = true;
@@ -666,10 +666,10 @@ Utilizaremos el ; como separador para los distintos valores<br>
         return pregunta;
     }
 
-   /**
-    * Adds an instance of <code>Pregunta</code> related through the <code>Pregunta</code> role.
-    * @param pregunta The instance to add to the <code>Pregunta</code> role.
-    */
+    /**
+     * Adds an instance of <code>Pregunta</code> related through the <code>Pregunta</code> role.
+     * @param pregunta The instance to add to the <code>Pregunta</code> role.
+     */
     public void add2Pregunta(Pregunta pregunta) {
         if (pregunta == null || pregunta.isNull()) {
             this.modifiedPregunta = true;

@@ -61,7 +61,7 @@ public class AreaMedicaJpaRepositoryImpl extends AbstractRepository implements A
      * @param parentAlias Alias of the parent entity.
      */
     public void addFacetWhereparentfuncionario (String myAlias, SQLJoin join, String parentAlias) {
-        join.getWheres().add(myAlias + "." + AreaMedicaConstants.FLD_FUNCIONARIOID + " = " + parentAlias + "." + FuncionarioConstants.ATTR_FIELD_FUNCIONARIOID);
+        join.addWhere(myAlias + "." + AreaMedicaConstants.FLD_FUNCIONARIOID + " = " + parentAlias + "." + FuncionarioConstants.ATTR_FIELD_FUNCIONARIOID);
     }
 
     @Override

@@ -693,10 +693,10 @@ public class LogConfiguracionANS extends AbstractAppEntity {
         return configuracionANS;
     }
 
-   /**
-    * Adds an instance of <code>ConfiguracionANS</code> related through the <code>ConfiguracionANS</code> role.
-    * @param configuracionANS The instance to add to the <code>ConfiguracionANS</code> role.
-    */
+    /**
+     * Adds an instance of <code>ConfiguracionANS</code> related through the <code>ConfiguracionANS</code> role.
+     * @param configuracionANS The instance to add to the <code>ConfiguracionANS</code> role.
+     */
     public void add2ConfiguracionANS(ConfiguracionANS configuracionANS) {
         if (configuracionANS == null || configuracionANS.isNull()) {
             this.modifiedConfiguracionANS = true;

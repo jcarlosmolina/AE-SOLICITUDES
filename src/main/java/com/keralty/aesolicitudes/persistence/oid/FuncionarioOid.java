@@ -37,7 +37,11 @@ public class FuncionarioOid implements IOid {
      * @param col is an ArrayList with the attribute values.
      */
     public FuncionarioOid(List<Object> col) {
-        this.funcionarioId = Long.parseLong(col.get(0).toString());
+        try {
+            this.funcionarioId = Long.parseLong(col.get(0).toString());
+        } catch (Exception e) {
+            this.funcionarioId = null;
+        }
     }
 
     /**

@@ -120,7 +120,7 @@ public class SQLOrderBy {
         // Add the Item to the list
         items.add(new SQLOrderByItem(attributeAliasText + "." + fieldName, isAscending));
         // Add the Item to the select part of the sentence
-        this.getSelect().getSelectPart().add(attributeAliasText + "." + fieldName);
+        this.getSelect().addToSelectPart(attributeAliasText + "." + fieldName);
     }
 
     /**
@@ -242,7 +242,7 @@ public class SQLOrderBy {
         // If Alias doesn't exist create a new one and add a new From to the SQL sentence
         if (parameterAlias == null) {
             String sourceTable = Constants.nameTable(parameterClass);
-            parameterAlias = select.createAlias(sourceTable, parameterName, parameterClass, parameterName, false,
+            parameterAlias = select.createAlias(parameterName, parameterClass, parameterName, false,
                     null);
             // Assign the parameter name to the Alias
             parameterAlias.setAssignedParameterName(parameterName);
@@ -257,7 +257,7 @@ public class SQLOrderBy {
         String fieldPath = attributeAlias.getAlias() + "." + fieldName;
         items.add(new SQLOrderByItem(fieldPath, isAscending));
         // Add the Item to the select part of the sentence
-        this.getSelect().getSelectPart().add(fieldPath);
+        this.getSelect().addToSelectPart(fieldPath);
 
     }
 
@@ -284,11 +284,11 @@ public class SQLOrderBy {
 			Object[] oidValues = oid.getValue();
 			String[] oidDataTypes = oid.getDataTypes();
 			for (int i=0;i<oidValues.length;i++) {
-				conjunction.getParameters().add(new SQLParam("", oidValues[i], oidDataTypes[i]));
+				conjunction.addParameter(new SQLParam("", oidValues[i], oidDataTypes[i]));
 			}
 		} else {
 			for (int i=0;i<oidFields.size();i++) {
-				conjunction.getParameters().add(new SQLParam("", null, ""));
+				conjunction.addParameter(new SQLParam("", null, ""));
 			}
 		}
 		select.addConjunction(conjunction);

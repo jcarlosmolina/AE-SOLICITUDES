@@ -179,12 +179,19 @@ public class Sucursal extends AbstractAppEntity {
         return agentes;
     }
 
-   /**
-    * Adds an instance of <code>Funcionario</code> related through the <code>Agentes</code> role.
-    * @param agentes The instance to add to the <code>Agentes</code> role.
-    */
+    /**
+     * Adds an instance of <code>Funcionario</code> related through the <code>Agentes</code> role.
+     * @param agentes The instance to add to the <code>Agentes</code> role.
+     */
     public void add2Agentes(Funcionario agentes) {
-        this.getAgentes().add(agentes);
+        this.agentes.add(agentes);
+    }
+    /**
+     * Removes an instance of <code>Funcionario</code> related through the <code>Agentes</code> role.
+     * @param agentes The instance to be removed
+     */
+    public void removeFromAgentes(Funcionario agentes) {
+    	this.agentes.remove(agentes);
     }
     /**
      * Sets instances of <code>Funcionario</code> related through the <code>Agentes</code> role.
@@ -215,12 +222,19 @@ public class Sucursal extends AbstractAppEntity {
         return contratosC;
     }
 
-   /**
-    * Adds an instance of <code>ContratoC</code> related through the <code>ContratosC</code> role.
-    * @param contratosC The instance to add to the <code>ContratosC</code> role.
-    */
+    /**
+     * Adds an instance of <code>ContratoC</code> related through the <code>ContratosC</code> role.
+     * @param contratosC The instance to add to the <code>ContratosC</code> role.
+     */
     public void add2ContratosC(ContratoC contratosC) {
-        this.getContratosC().add(contratosC);
+        this.contratosC.add(contratosC);
+    }
+    /**
+     * Removes an instance of <code>ContratoC</code> related through the <code>ContratosC</code> role.
+     * @param contratosC The instance to be removed
+     */
+    public void removeFromContratosC(ContratoC contratosC) {
+    	this.contratosC.remove(contratosC);
     }
     /**
      * Sets instances of <code>ContratoC</code> related through the <code>ContratosC</code> role.
@@ -251,10 +265,10 @@ public class Sucursal extends AbstractAppEntity {
         return regional;
     }
 
-   /**
-    * Adds an instance of <code>Regional</code> related through the <code>Regional</code> role.
-    * @param regional The instance to add to the <code>Regional</code> role.
-    */
+    /**
+     * Adds an instance of <code>Regional</code> related through the <code>Regional</code> role.
+     * @param regional The instance to add to the <code>Regional</code> role.
+     */
     public void add2Regional(Regional regional) {
         if (regional == null || regional.isNull()) {
             this.modifiedRegional = true;

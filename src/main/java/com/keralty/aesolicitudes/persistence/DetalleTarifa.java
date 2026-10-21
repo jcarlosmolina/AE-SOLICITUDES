@@ -288,10 +288,10 @@ public class DetalleTarifa extends AbstractAppEntity {
         return tarifa;
     }
 
-   /**
-    * Adds an instance of <code>Tarifa</code> related through the <code>Tarifa</code> role.
-    * @param tarifa The instance to add to the <code>Tarifa</code> role.
-    */
+    /**
+     * Adds an instance of <code>Tarifa</code> related through the <code>Tarifa</code> role.
+     * @param tarifa The instance to add to the <code>Tarifa</code> role.
+     */
     public void add2Tarifa(Tarifa tarifa) {
         if (tarifa == null || tarifa.isNull()) {
             this.modifiedTarifa = true;

@@ -372,10 +372,10 @@ public class AnexoNeo extends AbstractAppEntity {
         return (usuario == null ? new Usuario(null) : usuario);
     }
 
-   /**
-    * Adds an instance of <code>Usuario</code> related through the <code>Usuario</code> role.
-    * @param usuario The instance to add to the <code>Usuario</code> role.
-    */
+    /**
+     * Adds an instance of <code>Usuario</code> related through the <code>Usuario</code> role.
+     * @param usuario The instance to add to the <code>Usuario</code> role.
+     */
     public void add2Usuario(Usuario usuario) {
         if (usuario == null || usuario.isNull()) {
             this.modifiedUsuario = true;
@@ -423,10 +423,10 @@ public class AnexoNeo extends AbstractAppEntity {
         return (periodicidad == null ? new Periodicidad(null) : periodicidad);
     }
 
-   /**
-    * Adds an instance of <code>Periodicidad</code> related through the <code>Periodicidad</code> role.
-    * @param periodicidad The instance to add to the <code>Periodicidad</code> role.
-    */
+    /**
+     * Adds an instance of <code>Periodicidad</code> related through the <code>Periodicidad</code> role.
+     * @param periodicidad The instance to add to the <code>Periodicidad</code> role.
+     */
     public void add2Periodicidad(Periodicidad periodicidad) {
         if (periodicidad == null || periodicidad.isNull()) {
             this.modifiedPeriodicidad = true;
@@ -458,10 +458,10 @@ public class AnexoNeo extends AbstractAppEntity {
         return institucionNeonatal;
     }
 
-   /**
-    * Adds an instance of <code>InstitucionMatNeo</code> related through the <code>InstitucionNeonatal</code> role.
-    * @param institucionNeonatal The instance to add to the <code>InstitucionNeonatal</code> role.
-    */
+    /**
+     * Adds an instance of <code>InstitucionMatNeo</code> related through the <code>InstitucionNeonatal</code> role.
+     * @param institucionNeonatal The instance to add to the <code>InstitucionNeonatal</code> role.
+     */
     public void add2InstitucionNeonatal(InstitucionMatNeo institucionNeonatal) {
         if (institucionNeonatal == null || institucionNeonatal.isNull()) {
             this.modifiedInstitucionNeonatal = true;

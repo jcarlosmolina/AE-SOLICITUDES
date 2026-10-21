@@ -440,12 +440,19 @@ RADIO=1;
         return solicitudes;
     }
 
-   /**
-    * Adds an instance of <code>SolicitudNovedad</code> related through the <code>Solicitudes</code> role.
-    * @param solicitudes The instance to add to the <code>Solicitudes</code> role.
-    */
+    /**
+     * Adds an instance of <code>SolicitudNovedad</code> related through the <code>Solicitudes</code> role.
+     * @param solicitudes The instance to add to the <code>Solicitudes</code> role.
+     */
     public void add2Solicitudes(SolicitudNovedad solicitudes) {
-        this.getSolicitudes().add(solicitudes);
+        this.solicitudes.add(solicitudes);
+    }
+    /**
+     * Removes an instance of <code>SolicitudNovedad</code> related through the <code>Solicitudes</code> role.
+     * @param solicitudes The instance to be removed
+     */
+    public void removeFromSolicitudes(SolicitudNovedad solicitudes) {
+    	this.solicitudes.remove(solicitudes);
     }
     /**
      * Sets instances of <code>SolicitudNovedad</code> related through the <code>Solicitudes</code> role.
@@ -476,12 +483,19 @@ RADIO=1;
         return grupoAsignacionNovedad;
     }
 
-   /**
-    * Adds an instance of <code>GrupoAsignacionNovedad</code> related through the <code>GrupoAsignacionNovedad</code> role.
-    * @param grupoAsignacionNovedad The instance to add to the <code>GrupoAsignacionNovedad</code> role.
-    */
+    /**
+     * Adds an instance of <code>GrupoAsignacionNovedad</code> related through the <code>GrupoAsignacionNovedad</code> role.
+     * @param grupoAsignacionNovedad The instance to add to the <code>GrupoAsignacionNovedad</code> role.
+     */
     public void add2GrupoAsignacionNovedad(GrupoAsignacionNovedad grupoAsignacionNovedad) {
-        this.getGrupoAsignacionNovedad().add(grupoAsignacionNovedad);
+        this.grupoAsignacionNovedad.add(grupoAsignacionNovedad);
+    }
+    /**
+     * Removes an instance of <code>GrupoAsignacionNovedad</code> related through the <code>GrupoAsignacionNovedad</code> role.
+     * @param grupoAsignacionNovedad The instance to be removed
+     */
+    public void removeFromGrupoAsignacionNovedad(GrupoAsignacionNovedad grupoAsignacionNovedad) {
+    	this.grupoAsignacionNovedad.remove(grupoAsignacionNovedad);
     }
     /**
      * Sets instances of <code>GrupoAsignacionNovedad</code> related through the <code>GrupoAsignacionNovedad</code> role.
@@ -512,12 +526,19 @@ RADIO=1;
         return configuracionesANS;
     }
 
-   /**
-    * Adds an instance of <code>ConfiguracionANS</code> related through the <code>ConfiguracionesANS</code> role.
-    * @param configuracionesANS The instance to add to the <code>ConfiguracionesANS</code> role.
-    */
+    /**
+     * Adds an instance of <code>ConfiguracionANS</code> related through the <code>ConfiguracionesANS</code> role.
+     * @param configuracionesANS The instance to add to the <code>ConfiguracionesANS</code> role.
+     */
     public void add2ConfiguracionesANS(ConfiguracionANS configuracionesANS) {
-        this.getConfiguracionesANS().add(configuracionesANS);
+        this.configuracionesANS.add(configuracionesANS);
+    }
+    /**
+     * Removes an instance of <code>ConfiguracionANS</code> related through the <code>ConfiguracionesANS</code> role.
+     * @param configuracionesANS The instance to be removed
+     */
+    public void removeFromConfiguracionesANS(ConfiguracionANS configuracionesANS) {
+    	this.configuracionesANS.remove(configuracionesANS);
     }
     /**
      * Sets instances of <code>ConfiguracionANS</code> related through the <code>ConfiguracionesANS</code> role.
@@ -548,10 +569,10 @@ RADIO=1;
         return novedad;
     }
 
-   /**
-    * Adds an instance of <code>Novedad</code> related through the <code>Novedad</code> role.
-    * @param novedad The instance to add to the <code>Novedad</code> role.
-    */
+    /**
+     * Adds an instance of <code>Novedad</code> related through the <code>Novedad</code> role.
+     * @param novedad The instance to add to the <code>Novedad</code> role.
+     */
     public void add2Novedad(Novedad novedad) {
         if (novedad == null || novedad.isNull()) {
             this.modifiedNovedad = true;

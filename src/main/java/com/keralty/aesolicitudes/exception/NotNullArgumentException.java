@@ -8,15 +8,15 @@ public class NotNullArgumentException extends ModelException {
             String classAlias, String argumentAlias) {
         super(ErrorInfo.NULL_ARGUMENT, "Argument '" + argumentAlias + "' of service '" + serviceAlias + "' in class '"
                 + classAlias + "' cannot be null");
-        getExceptionMessageParts().add(serviceId);
-        getExceptionMessageParts().add(classId);
-        getExceptionMessageParts().add(argumentId);
+        addExceptionMessagePart(serviceId);
+        addExceptionMessagePart(classId);
+        addExceptionMessagePart(argumentId);
     }
 
     public NotNullArgumentException(String serviceId, String argumentId, String serviceAlias, String argumentAlias) {
         super(ErrorInfo.NULL_ARGUMENT,
                 "Argument '" + argumentAlias + "' of service '" + serviceAlias + "' cannot be null");
-        getExceptionMessageParts().add(serviceId);
-        getExceptionMessageParts().add(argumentId);
+        addExceptionMessagePart(serviceId);
+        addExceptionMessagePart(argumentId);
     }
 }

@@ -9954,22 +9954,22 @@ public class DynamicPermissionsUtils {
 
     private void addDSItem(VisibleIUPermissions iuPermissions, String dsItemId, List<String> modelElementRoles) {
         if (modelElementRolesIncludeAnyUserRole(modelElementRoles))
-            iuPermissions.getVisibleAttributes().add(dsItemId);
+            iuPermissions.addVisibleAttribute(dsItemId);
     }
 
     private void addActionItem(VisibleIUPermissions iuPermissions, String actionId, List<String> modelElementRoles) {
         if (modelElementRolesIncludeAnyUserRole(modelElementRoles))
-            iuPermissions.getVisibleActions().add(actionId);
+            iuPermissions.addVisibleAction(actionId);
     }
 
     private void addNavigationItem(VisibleIUPermissions iuPermissions, String navigationId, List<String> modelElementRoles) {
         if (modelElementRolesIncludeAnyUserRole(modelElementRoles))
-            iuPermissions.getVisibleNavigations().add(navigationId);
+            iuPermissions.addVisibleNavigation(navigationId);
     }
 
     private void addDetail(VisibleIUPermissions iuPermissions, String detailId, List<String> modelElementRoles) {
         if (modelElementRolesIncludeAnyUserRole(modelElementRoles))
-            iuPermissions.getVisibleDetails().add(detailId);
+            iuPermissions.addVisibleDetail(detailId);
     }
 
     private boolean modelElementRolesIncludeAnyUserRole(List<String> modelElementRoles) {

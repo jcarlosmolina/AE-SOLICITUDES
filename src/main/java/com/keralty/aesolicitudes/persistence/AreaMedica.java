@@ -1247,12 +1247,19 @@ RADIO=1;
         return getSolicitudRepository().findByUsrAreaMedica(this);
     }
 
-   /**
-    * Adds an instance of <code>Solicitud</code> related through the <code>SolicitudesArMe</code> role.
-    * @param solicitudesArMe The instance to add to the <code>SolicitudesArMe</code> role.
-    */
+    /**
+     * Adds an instance of <code>Solicitud</code> related through the <code>SolicitudesArMe</code> role.
+     * @param solicitudesArMe The instance to add to the <code>SolicitudesArMe</code> role.
+     */
     public void add2SolicitudesArMe(Solicitud solicitudesArMe) {
-        this.getSolicitudesArMe().add(solicitudesArMe);
+        this.solicitudesArMe.add(solicitudesArMe);
+    }
+    /**
+     * Removes an instance of <code>Solicitud</code> related through the <code>SolicitudesArMe</code> role.
+     * @param solicitudesArMe The instance to be removed
+     */
+    public void removeFromSolicitudesArMe(Solicitud solicitudesArMe) {
+    	this.solicitudesArMe.remove(solicitudesArMe);
     }
     /**
      * Sets instances of <code>Solicitud</code> related through the <code>SolicitudesArMe</code> role.

@@ -2099,10 +2099,10 @@ Se solicita cambiar el nombre de 'Póliza internacional' por 'Respaldo global'.<
         return (cuestionarioP == null ? new CuestionarioP(null) : cuestionarioP);
     }
 
-   /**
-    * Adds an instance of <code>CuestionarioP</code> related through the <code>CuestionarioP</code> role.
-    * @param cuestionarioP The instance to add to the <code>CuestionarioP</code> role.
-    */
+    /**
+     * Adds an instance of <code>CuestionarioP</code> related through the <code>CuestionarioP</code> role.
+     * @param cuestionarioP The instance to add to the <code>CuestionarioP</code> role.
+     */
     public void add2CuestionarioP(CuestionarioP cuestionarioP) {
         this.cuestionarioP = (cuestionarioP == null  || cuestionarioP.isNull() ? null : cuestionarioP);
     }
@@ -2136,10 +2136,10 @@ Se solicita cambiar el nombre de 'Póliza internacional' por 'Respaldo global'.<
         return (anexoMat == null ? new AnexoMat(null) : anexoMat);
     }
 
-   /**
-    * Adds an instance of <code>AnexoMat</code> related through the <code>AnexoMat</code> role.
-    * @param anexoMat The instance to add to the <code>AnexoMat</code> role.
-    */
+    /**
+     * Adds an instance of <code>AnexoMat</code> related through the <code>AnexoMat</code> role.
+     * @param anexoMat The instance to add to the <code>AnexoMat</code> role.
+     */
     public void add2AnexoMat(AnexoMat anexoMat) {
         this.anexoMat = (anexoMat == null  || anexoMat.isNull() ? null : anexoMat);
     }
@@ -2173,10 +2173,10 @@ Se solicita cambiar el nombre de 'Póliza internacional' por 'Respaldo global'.<
         return (anexoNeo == null ? new AnexoNeo(null) : anexoNeo);
     }
 
-   /**
-    * Adds an instance of <code>AnexoNeo</code> related through the <code>AnexoNeo</code> role.
-    * @param anexoNeo The instance to add to the <code>AnexoNeo</code> role.
-    */
+    /**
+     * Adds an instance of <code>AnexoNeo</code> related through the <code>AnexoNeo</code> role.
+     * @param anexoNeo The instance to add to the <code>AnexoNeo</code> role.
+     */
     public void add2AnexoNeo(AnexoNeo anexoNeo) {
         this.anexoNeo = (anexoNeo == null  || anexoNeo.isNull() ? null : anexoNeo);
     }
@@ -2202,12 +2202,19 @@ Se solicita cambiar el nombre de 'Póliza internacional' por 'Respaldo global'.<
         return getPreexistenciaRepository().findByUsuario(this);
     }
 
-   /**
-    * Adds an instance of <code>Preexistencia</code> related through the <code>Preexistencias</code> role.
-    * @param preexistencias The instance to add to the <code>Preexistencias</code> role.
-    */
+    /**
+     * Adds an instance of <code>Preexistencia</code> related through the <code>Preexistencias</code> role.
+     * @param preexistencias The instance to add to the <code>Preexistencias</code> role.
+     */
     public void add2Preexistencias(Preexistencia preexistencias) {
-        this.getPreexistencias().add(preexistencias);
+        this.preexistencias.add(preexistencias);
+    }
+    /**
+     * Removes an instance of <code>Preexistencia</code> related through the <code>Preexistencias</code> role.
+     * @param preexistencias The instance to be removed
+     */
+    public void removeFromPreexistencias(Preexistencia preexistencias) {
+    	this.preexistencias.remove(preexistencias);
     }
     /**
      * Sets instances of <code>Preexistencia</code> related through the <code>Preexistencias</code> role.
@@ -2252,10 +2259,10 @@ Se solicita cambiar el nombre de 'Póliza internacional' por 'Respaldo global'.<
         return (solicitud == null ? new Solicitud(null) : solicitud);
     }
 
-   /**
-    * Adds an instance of <code>Solicitud</code> related through the <code>Solicitud</code> role.
-    * @param solicitud The instance to add to the <code>Solicitud</code> role.
-    */
+    /**
+     * Adds an instance of <code>Solicitud</code> related through the <code>Solicitud</code> role.
+     * @param solicitud The instance to add to the <code>Solicitud</code> role.
+     */
     public void add2Solicitud(Solicitud solicitud) {
         if (solicitud == null || solicitud.isNull()) {
             this.modifiedSolicitud = true;
@@ -2301,10 +2308,10 @@ Se solicita cambiar el nombre de 'Póliza internacional' por 'Respaldo global'.<
         return (usuarioPersona == null ? new Persona(null) : usuarioPersona);
     }
 
-   /**
-    * Adds an instance of <code>Persona</code> related through the <code>UsuarioPersona</code> role.
-    * @param usuarioPersona The instance to add to the <code>UsuarioPersona</code> role.
-    */
+    /**
+     * Adds an instance of <code>Persona</code> related through the <code>UsuarioPersona</code> role.
+     * @param usuarioPersona The instance to add to the <code>UsuarioPersona</code> role.
+     */
     public void add2UsuarioPersona(Persona usuarioPersona) {
         if (usuarioPersona == null || usuarioPersona.isNull()) {
             this.modifiedUsuarioPersona = true;
@@ -2350,10 +2357,10 @@ Se solicita cambiar el nombre de 'Póliza internacional' por 'Respaldo global'.<
         return (eps == null ? new Eps(null) : eps);
     }
 
-   /**
-    * Adds an instance of <code>Eps</code> related through the <code>Eps</code> role.
-    * @param eps The instance to add to the <code>Eps</code> role.
-    */
+    /**
+     * Adds an instance of <code>Eps</code> related through the <code>Eps</code> role.
+     * @param eps The instance to add to the <code>Eps</code> role.
+     */
     public void add2Eps(Eps eps) {
         if (eps == null || eps.isNull()) {
             this.modifiedEps = true;
@@ -2399,10 +2406,10 @@ Se solicita cambiar el nombre de 'Póliza internacional' por 'Respaldo global'.<
         return (parentesco == null ? new Parentesco(null) : parentesco);
     }
 
-   /**
-    * Adds an instance of <code>Parentesco</code> related through the <code>Parentesco</code> role.
-    * @param parentesco The instance to add to the <code>Parentesco</code> role.
-    */
+    /**
+     * Adds an instance of <code>Parentesco</code> related through the <code>Parentesco</code> role.
+     * @param parentesco The instance to add to the <code>Parentesco</code> role.
+     */
     public void add2Parentesco(Parentesco parentesco) {
         if (parentesco == null || parentesco.isNull()) {
             this.modifiedParentesco = true;
@@ -2448,10 +2455,10 @@ Se solicita cambiar el nombre de 'Póliza internacional' por 'Respaldo global'.<
         return (companyia == null ? new Companyia(null) : companyia);
     }
 
-   /**
-    * Adds an instance of <code>Companyia</code> related through the <code>Companyia</code> role.
-    * @param companyia The instance to add to the <code>Companyia</code> role.
-    */
+    /**
+     * Adds an instance of <code>Companyia</code> related through the <code>Companyia</code> role.
+     * @param companyia The instance to add to the <code>Companyia</code> role.
+     */
     public void add2Companyia(Companyia companyia) {
         if (companyia == null || companyia.isNull()) {
             this.modifiedCompanyia = true;
@@ -2497,10 +2504,10 @@ Se solicita cambiar el nombre de 'Póliza internacional' por 'Respaldo global'.<
         return (tipoIdentificacion == null ? new TipoIdentificacion(null) : tipoIdentificacion);
     }
 
-   /**
-    * Adds an instance of <code>TipoIdentificacion</code> related through the <code>TipoIdentificacion</code> role.
-    * @param tipoIdentificacion The instance to add to the <code>TipoIdentificacion</code> role.
-    */
+    /**
+     * Adds an instance of <code>TipoIdentificacion</code> related through the <code>TipoIdentificacion</code> role.
+     * @param tipoIdentificacion The instance to add to the <code>TipoIdentificacion</code> role.
+     */
     public void add2TipoIdentificacion(TipoIdentificacion tipoIdentificacion) {
         if (tipoIdentificacion == null || tipoIdentificacion.isNull()) {
             this.modifiedTipoIdentificacion = true;
@@ -2546,10 +2553,10 @@ Se solicita cambiar el nombre de 'Póliza internacional' por 'Respaldo global'.<
         return (estadoBeneficiario == null ? new EstadoBeneficiario(null) : estadoBeneficiario);
     }
 
-   /**
-    * Adds an instance of <code>EstadoBeneficiario</code> related through the <code>EstadoBeneficiario</code> role.
-    * @param estadoBeneficiario The instance to add to the <code>EstadoBeneficiario</code> role.
-    */
+    /**
+     * Adds an instance of <code>EstadoBeneficiario</code> related through the <code>EstadoBeneficiario</code> role.
+     * @param estadoBeneficiario The instance to add to the <code>EstadoBeneficiario</code> role.
+     */
     public void add2EstadoBeneficiario(EstadoBeneficiario estadoBeneficiario) {
         if (estadoBeneficiario == null || estadoBeneficiario.isNull()) {
             this.modifiedEstadoBeneficiario = true;

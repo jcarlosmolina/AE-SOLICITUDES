@@ -351,10 +351,10 @@ public class ConceptoC extends AbstractAppEntity {
         return (beneficiarioC == null ? new BeneficiarioC(null) : beneficiarioC);
     }
 
-   /**
-    * Adds an instance of <code>BeneficiarioC</code> related through the <code>BeneficiarioC</code> role.
-    * @param beneficiarioC The instance to add to the <code>BeneficiarioC</code> role.
-    */
+    /**
+     * Adds an instance of <code>BeneficiarioC</code> related through the <code>BeneficiarioC</code> role.
+     * @param beneficiarioC The instance to add to the <code>BeneficiarioC</code> role.
+     */
     public void add2BeneficiarioC(BeneficiarioC beneficiarioC) {
         if (beneficiarioC == null || beneficiarioC.isNull()) {
             this.modifiedBeneficiarioC = true;

@@ -381,10 +381,10 @@ public class LogParam extends AbstractAppEntity {
         return paramConfig;
     }
 
-   /**
-    * Adds an instance of <code>ParamConfig</code> related through the <code>ParamConfig</code> role.
-    * @param paramConfig The instance to add to the <code>ParamConfig</code> role.
-    */
+    /**
+     * Adds an instance of <code>ParamConfig</code> related through the <code>ParamConfig</code> role.
+     * @param paramConfig The instance to add to the <code>ParamConfig</code> role.
+     */
     public void add2ParamConfig(ParamConfig paramConfig) {
         if (paramConfig == null || paramConfig.isNull()) {
             this.modifiedParamConfig = true;

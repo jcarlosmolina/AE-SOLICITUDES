@@ -852,10 +852,10 @@ public class UsuarioReg extends AbstractAppEntity {
         return (solicitud == null ? new Solicitud(null) : solicitud);
     }
 
-   /**
-    * Adds an instance of <code>Solicitud</code> related through the <code>Solicitud</code> role.
-    * @param solicitud The instance to add to the <code>Solicitud</code> role.
-    */
+    /**
+     * Adds an instance of <code>Solicitud</code> related through the <code>Solicitud</code> role.
+     * @param solicitud The instance to add to the <code>Solicitud</code> role.
+     */
     public void add2Solicitud(Solicitud solicitud) {
         if (solicitud == null || solicitud.isNull()) {
             this.modifiedSolicitud = true;
@@ -901,10 +901,10 @@ public class UsuarioReg extends AbstractAppEntity {
         return (estadoBeneficiario == null ? new EstadoBeneficiario(null) : estadoBeneficiario);
     }
 
-   /**
-    * Adds an instance of <code>EstadoBeneficiario</code> related through the <code>EstadoBeneficiario</code> role.
-    * @param estadoBeneficiario The instance to add to the <code>EstadoBeneficiario</code> role.
-    */
+    /**
+     * Adds an instance of <code>EstadoBeneficiario</code> related through the <code>EstadoBeneficiario</code> role.
+     * @param estadoBeneficiario The instance to add to the <code>EstadoBeneficiario</code> role.
+     */
     public void add2EstadoBeneficiario(EstadoBeneficiario estadoBeneficiario) {
         if (estadoBeneficiario == null || estadoBeneficiario.isNull()) {
             this.modifiedEstadoBeneficiario = true;
@@ -950,10 +950,10 @@ public class UsuarioReg extends AbstractAppEntity {
         return (parentesco == null ? new Parentesco(null) : parentesco);
     }
 
-   /**
-    * Adds an instance of <code>Parentesco</code> related through the <code>Parentesco</code> role.
-    * @param parentesco The instance to add to the <code>Parentesco</code> role.
-    */
+    /**
+     * Adds an instance of <code>Parentesco</code> related through the <code>Parentesco</code> role.
+     * @param parentesco The instance to add to the <code>Parentesco</code> role.
+     */
     public void add2Parentesco(Parentesco parentesco) {
         if (parentesco == null || parentesco.isNull()) {
             this.modifiedParentesco = true;

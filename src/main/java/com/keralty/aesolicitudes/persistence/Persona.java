@@ -1345,12 +1345,19 @@ Condiciones:
         return getSolicitudRepository().findByContratantePersona(this);
     }
 
-   /**
-    * Adds an instance of <code>Solicitud</code> related through the <code>SolicitudesContratante</code> role.
-    * @param solicitudesContratante The instance to add to the <code>SolicitudesContratante</code> role.
-    */
+    /**
+     * Adds an instance of <code>Solicitud</code> related through the <code>SolicitudesContratante</code> role.
+     * @param solicitudesContratante The instance to add to the <code>SolicitudesContratante</code> role.
+     */
     public void add2SolicitudesContratante(Solicitud solicitudesContratante) {
-        this.getSolicitudesContratante().add(solicitudesContratante);
+        this.solicitudesContratante.add(solicitudesContratante);
+    }
+    /**
+     * Removes an instance of <code>Solicitud</code> related through the <code>SolicitudesContratante</code> role.
+     * @param solicitudesContratante The instance to be removed
+     */
+    public void removeFromSolicitudesContratante(Solicitud solicitudesContratante) {
+    	this.solicitudesContratante.remove(solicitudesContratante);
     }
     /**
      * Sets instances of <code>Solicitud</code> related through the <code>SolicitudesContratante</code> role.
@@ -1381,12 +1388,19 @@ Condiciones:
         return getSolicitudRepository().findByTitularPersona(this);
     }
 
-   /**
-    * Adds an instance of <code>Solicitud</code> related through the <code>SolicitudesTitular</code> role.
-    * @param solicitudesTitular The instance to add to the <code>SolicitudesTitular</code> role.
-    */
+    /**
+     * Adds an instance of <code>Solicitud</code> related through the <code>SolicitudesTitular</code> role.
+     * @param solicitudesTitular The instance to add to the <code>SolicitudesTitular</code> role.
+     */
     public void add2SolicitudesTitular(Solicitud solicitudesTitular) {
-        this.getSolicitudesTitular().add(solicitudesTitular);
+        this.solicitudesTitular.add(solicitudesTitular);
+    }
+    /**
+     * Removes an instance of <code>Solicitud</code> related through the <code>SolicitudesTitular</code> role.
+     * @param solicitudesTitular The instance to be removed
+     */
+    public void removeFromSolicitudesTitular(Solicitud solicitudesTitular) {
+    	this.solicitudesTitular.remove(solicitudesTitular);
     }
     /**
      * Sets instances of <code>Solicitud</code> related through the <code>SolicitudesTitular</code> role.
@@ -1417,12 +1431,19 @@ Condiciones:
         return getDireccionRepository().findByPersona(this);
     }
 
-   /**
-    * Adds an instance of <code>Direccion</code> related through the <code>Direcciones</code> role.
-    * @param direcciones The instance to add to the <code>Direcciones</code> role.
-    */
+    /**
+     * Adds an instance of <code>Direccion</code> related through the <code>Direcciones</code> role.
+     * @param direcciones The instance to add to the <code>Direcciones</code> role.
+     */
     public void add2Direcciones(Direccion direcciones) {
-        this.getDirecciones().add(direcciones);
+        this.direcciones.add(direcciones);
+    }
+    /**
+     * Removes an instance of <code>Direccion</code> related through the <code>Direcciones</code> role.
+     * @param direcciones The instance to be removed
+     */
+    public void removeFromDirecciones(Direccion direcciones) {
+    	this.direcciones.remove(direcciones);
     }
     /**
      * Sets instances of <code>Direccion</code> related through the <code>Direcciones</code> role.
@@ -1461,10 +1482,10 @@ Condiciones:
         return (usuarios == null ? new Usuario(null) : usuarios);
     }
 
-   /**
-    * Adds an instance of <code>Usuario</code> related through the <code>Usuarios</code> role.
-    * @param usuarios The instance to add to the <code>Usuarios</code> role.
-    */
+    /**
+     * Adds an instance of <code>Usuario</code> related through the <code>Usuarios</code> role.
+     * @param usuarios The instance to add to the <code>Usuarios</code> role.
+     */
     public void add2Usuarios(Usuario usuarios) {
         this.usuarios = (usuarios == null  || usuarios.isNull() ? null : usuarios);
     }
@@ -1490,12 +1511,19 @@ Condiciones:
         return getDocumentoGRepository().findByPersona(this);
     }
 
-   /**
-    * Adds an instance of <code>DocumentoG</code> related through the <code>DocumentosG</code> role.
-    * @param documentosG The instance to add to the <code>DocumentosG</code> role.
-    */
+    /**
+     * Adds an instance of <code>DocumentoG</code> related through the <code>DocumentosG</code> role.
+     * @param documentosG The instance to add to the <code>DocumentosG</code> role.
+     */
     public void add2DocumentosG(DocumentoG documentosG) {
-        this.getDocumentosG().add(documentosG);
+        this.documentosG.add(documentosG);
+    }
+    /**
+     * Removes an instance of <code>DocumentoG</code> related through the <code>DocumentosG</code> role.
+     * @param documentosG The instance to be removed
+     */
+    public void removeFromDocumentosG(DocumentoG documentosG) {
+    	this.documentosG.remove(documentosG);
     }
     /**
      * Sets instances of <code>DocumentoG</code> related through the <code>DocumentosG</code> role.
@@ -1540,10 +1568,10 @@ Condiciones:
         return (tipoIdentificacion == null ? new TipoIdentificacion(null) : tipoIdentificacion);
     }
 
-   /**
-    * Adds an instance of <code>TipoIdentificacion</code> related through the <code>TipoIdentificacion</code> role.
-    * @param tipoIdentificacion The instance to add to the <code>TipoIdentificacion</code> role.
-    */
+    /**
+     * Adds an instance of <code>TipoIdentificacion</code> related through the <code>TipoIdentificacion</code> role.
+     * @param tipoIdentificacion The instance to add to the <code>TipoIdentificacion</code> role.
+     */
     public void add2TipoIdentificacion(TipoIdentificacion tipoIdentificacion) {
         if (tipoIdentificacion == null || tipoIdentificacion.isNull()) {
             this.modifiedTipoIdentificacion = true;
@@ -1589,10 +1617,10 @@ Condiciones:
         return (departamentoNacimiento == null ? new Departamento(null) : departamentoNacimiento);
     }
 
-   /**
-    * Adds an instance of <code>Departamento</code> related through the <code>DepartamentoNacimiento</code> role.
-    * @param departamentoNacimiento The instance to add to the <code>DepartamentoNacimiento</code> role.
-    */
+    /**
+     * Adds an instance of <code>Departamento</code> related through the <code>DepartamentoNacimiento</code> role.
+     * @param departamentoNacimiento The instance to add to the <code>DepartamentoNacimiento</code> role.
+     */
     public void add2DepartamentoNacimiento(Departamento departamentoNacimiento) {
         if (departamentoNacimiento == null || departamentoNacimiento.isNull()) {
             this.modifiedDepartamentoNacimiento = true;
@@ -1638,10 +1666,10 @@ Condiciones:
         return (municipioNacimiento == null ? new Municipio(null) : municipioNacimiento);
     }
 
-   /**
-    * Adds an instance of <code>Municipio</code> related through the <code>MunicipioNacimiento</code> role.
-    * @param municipioNacimiento The instance to add to the <code>MunicipioNacimiento</code> role.
-    */
+    /**
+     * Adds an instance of <code>Municipio</code> related through the <code>MunicipioNacimiento</code> role.
+     * @param municipioNacimiento The instance to add to the <code>MunicipioNacimiento</code> role.
+     */
     public void add2MunicipioNacimiento(Municipio municipioNacimiento) {
         if (municipioNacimiento == null || municipioNacimiento.isNull()) {
             this.modifiedMunicipioNacimiento = true;
@@ -1687,10 +1715,10 @@ Condiciones:
         return (estadoCivil == null ? new EstadoCivil(null) : estadoCivil);
     }
 
-   /**
-    * Adds an instance of <code>EstadoCivil</code> related through the <code>EstadoCivil</code> role.
-    * @param estadoCivil The instance to add to the <code>EstadoCivil</code> role.
-    */
+    /**
+     * Adds an instance of <code>EstadoCivil</code> related through the <code>EstadoCivil</code> role.
+     * @param estadoCivil The instance to add to the <code>EstadoCivil</code> role.
+     */
     public void add2EstadoCivil(EstadoCivil estadoCivil) {
         if (estadoCivil == null || estadoCivil.isNull()) {
             this.modifiedEstadoCivil = true;
@@ -1736,10 +1764,10 @@ Condiciones:
         return (estadoPersona == null ? new EstadoPersona(null) : estadoPersona);
     }
 
-   /**
-    * Adds an instance of <code>EstadoPersona</code> related through the <code>EstadoPersona</code> role.
-    * @param estadoPersona The instance to add to the <code>EstadoPersona</code> role.
-    */
+    /**
+     * Adds an instance of <code>EstadoPersona</code> related through the <code>EstadoPersona</code> role.
+     * @param estadoPersona The instance to add to the <code>EstadoPersona</code> role.
+     */
     public void add2EstadoPersona(EstadoPersona estadoPersona) {
         if (estadoPersona == null || estadoPersona.isNull()) {
             this.modifiedEstadoPersona = true;

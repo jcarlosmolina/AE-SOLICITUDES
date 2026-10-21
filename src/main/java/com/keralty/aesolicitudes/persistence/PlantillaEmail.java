@@ -376,12 +376,19 @@ public class PlantillaEmail extends AbstractAppEntity {
         return dominios;
     }
 
-   /**
-    * Adds an instance of <code>Dominio</code> related through the <code>Dominios</code> role.
-    * @param dominios The instance to add to the <code>Dominios</code> role.
-    */
+    /**
+     * Adds an instance of <code>Dominio</code> related through the <code>Dominios</code> role.
+     * @param dominios The instance to add to the <code>Dominios</code> role.
+     */
     public void add2Dominios(Dominio dominios) {
-        this.getDominios().add(dominios);
+        this.dominios.add(dominios);
+    }
+    /**
+     * Removes an instance of <code>Dominio</code> related through the <code>Dominios</code> role.
+     * @param dominios The instance to be removed
+     */
+    public void removeFromDominios(Dominio dominios) {
+    	this.dominios.remove(dominios);
     }
     /**
      * Sets instances of <code>Dominio</code> related through the <code>Dominios</code> role.

@@ -579,7 +579,7 @@ public class DirSucursalCService extends AbstractService {
         request.checkArguments();
         DirSucursalC instance = dirSucursalCInsTiposSucursalCpthisDirSucursalC;
 
-        instance.getTiposSucursalC().add(dirSucursalCInsTiposSucursalCpevcTipoSucursalC);
+        instance.add2TiposSucursalC(dirSucursalCInsTiposSucursalCpevcTipoSucursalC);
         if (isEntryPoint) {
             com.keralty.aesolicitudes.viewmodel.tiposucursalc.siu.InsTiposSucursalCRequest relatedRequest = new com.keralty.aesolicitudes.viewmodel.tiposucursalc.siu.InsTiposSucursalCRequest();
             relatedRequest.setTipoSucursalCInsTiposSucursalCpthisTipoSucursalCInstance(dirSucursalCInsTiposSucursalCpevcTipoSucursalC);
@@ -646,8 +646,8 @@ public class DirSucursalCService extends AbstractService {
         request.checkArguments();
         DirSucursalC instance = dirSucursalCDelTiposSucursalCpthisDirSucursalC;
 
-        instance.getTiposSucursalC().remove(dirSucursalCDelTiposSucursalCpevcTipoSucursalC);
-        dirSucursalCDelTiposSucursalCpevcTipoSucursalC.getDirSucursalesC().remove(instance);
+        instance.removeFromTiposSucursalC(dirSucursalCDelTiposSucursalCpevcTipoSucursalC);
+        dirSucursalCDelTiposSucursalCpevcTipoSucursalC.removeFromDirSucursalesC(instance);
         if (isEntryPoint) {
             com.keralty.aesolicitudes.viewmodel.tiposucursalc.siu.DelTiposSucursalCRequest relatedRequest = new com.keralty.aesolicitudes.viewmodel.tiposucursalc.siu.DelTiposSucursalCRequest();
             relatedRequest.setTipoSucursalCDelTiposSucursalCpthisTipoSucursalCInstance(dirSucursalCDelTiposSucursalCpevcTipoSucursalC);

@@ -381,10 +381,10 @@ public class LogGruposUsuarios extends AbstractAppEntity {
         return dominio;
     }
 
-   /**
-    * Adds an instance of <code>Dominio</code> related through the <code>Dominio</code> role.
-    * @param dominio The instance to add to the <code>Dominio</code> role.
-    */
+    /**
+     * Adds an instance of <code>Dominio</code> related through the <code>Dominio</code> role.
+     * @param dominio The instance to add to the <code>Dominio</code> role.
+     */
     public void add2Dominio(Dominio dominio) {
         if (dominio == null || dominio.isNull()) {
             this.modifiedDominio = true;

@@ -174,12 +174,19 @@ public class Valor extends AbstractAppEntity {
         return preguntas;
     }
 
-   /**
-    * Adds an instance of <code>Pregunta</code> related through the <code>Preguntas</code> role.
-    * @param preguntas The instance to add to the <code>Preguntas</code> role.
-    */
+    /**
+     * Adds an instance of <code>Pregunta</code> related through the <code>Preguntas</code> role.
+     * @param preguntas The instance to add to the <code>Preguntas</code> role.
+     */
     public void add2Preguntas(Pregunta preguntas) {
-        this.getPreguntas().add(preguntas);
+        this.preguntas.add(preguntas);
+    }
+    /**
+     * Removes an instance of <code>Pregunta</code> related through the <code>Preguntas</code> role.
+     * @param preguntas The instance to be removed
+     */
+    public void removeFromPreguntas(Pregunta preguntas) {
+    	this.preguntas.remove(preguntas);
     }
     /**
      * Sets instances of <code>Pregunta</code> related through the <code>Preguntas</code> role.

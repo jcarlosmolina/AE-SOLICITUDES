@@ -93,6 +93,14 @@ public class SQLWhereOperandPathInstance extends SQLWhereOperand {
     }
 
     /**
+     * Adds am oid expression to the list
+     * @param oidExpression Oid expression to be added
+     */
+    public void addOidExpression(String oidExpression) {
+    	oidExpressions.add(oidExpression);
+    }
+    
+    /**
      * Processes operand.
      * 
      * @param sql SQL sentence
@@ -288,7 +296,7 @@ public class SQLWhereOperandPathInstance extends SQLWhereOperand {
                 expression += " is null";
             } else {
                 expression += " " + operator + " ?";
-                getParameters().add(new SQLParam("", null, ""));
+                addParameter(new SQLParam("", null, ""));
             }
 
             newList.add(expression);

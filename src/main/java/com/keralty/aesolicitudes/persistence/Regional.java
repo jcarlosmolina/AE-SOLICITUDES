@@ -197,10 +197,10 @@ public class Regional extends AbstractAppEntity {
         return (respRegional == null ? new RespRegional(null) : respRegional);
     }
 
-   /**
-    * Adds an instance of <code>RespRegional</code> related through the <code>RespRegional</code> role.
-    * @param respRegional The instance to add to the <code>RespRegional</code> role.
-    */
+    /**
+     * Adds an instance of <code>RespRegional</code> related through the <code>RespRegional</code> role.
+     * @param respRegional The instance to add to the <code>RespRegional</code> role.
+     */
     public void add2RespRegional(RespRegional respRegional) {
         this.respRegional = (respRegional == null  || respRegional.isNull() ? null : respRegional);
     }
@@ -226,12 +226,19 @@ public class Regional extends AbstractAppEntity {
         return sucursales;
     }
 
-   /**
-    * Adds an instance of <code>Sucursal</code> related through the <code>Sucursales</code> role.
-    * @param sucursales The instance to add to the <code>Sucursales</code> role.
-    */
+    /**
+     * Adds an instance of <code>Sucursal</code> related through the <code>Sucursales</code> role.
+     * @param sucursales The instance to add to the <code>Sucursales</code> role.
+     */
     public void add2Sucursales(Sucursal sucursales) {
-        this.getSucursales().add(sucursales);
+        this.sucursales.add(sucursales);
+    }
+    /**
+     * Removes an instance of <code>Sucursal</code> related through the <code>Sucursales</code> role.
+     * @param sucursales The instance to be removed
+     */
+    public void removeFromSucursales(Sucursal sucursales) {
+    	this.sucursales.remove(sucursales);
     }
     /**
      * Sets instances of <code>Sucursal</code> related through the <code>Sucursales</code> role.
@@ -262,12 +269,19 @@ public class Regional extends AbstractAppEntity {
         return getDirSucursalCRepository().findByRegionalC(this);
     }
 
-   /**
-    * Adds an instance of <code>DirSucursalC</code> related through the <code>DirSucursalC</code> role.
-    * @param dirSucursalC The instance to add to the <code>DirSucursalC</code> role.
-    */
+    /**
+     * Adds an instance of <code>DirSucursalC</code> related through the <code>DirSucursalC</code> role.
+     * @param dirSucursalC The instance to add to the <code>DirSucursalC</code> role.
+     */
     public void add2DirSucursalC(DirSucursalC dirSucursalC) {
-        this.getDirSucursalC().add(dirSucursalC);
+        this.dirSucursalC.add(dirSucursalC);
+    }
+    /**
+     * Removes an instance of <code>DirSucursalC</code> related through the <code>DirSucursalC</code> role.
+     * @param dirSucursalC The instance to be removed
+     */
+    public void removeFromDirSucursalC(DirSucursalC dirSucursalC) {
+    	this.dirSucursalC.remove(dirSucursalC);
     }
     /**
      * Sets instances of <code>DirSucursalC</code> related through the <code>DirSucursalC</code> role.

@@ -96,7 +96,7 @@ public class SQLWhereOperandOVParameter extends SQLWhereOperandPathInstance {
         if (aliasObject == null) {
             try {
                 String sourceTable = Constants.nameTable(parameterClass);
-                aliasObject = getSql().createAlias(sourceTable, parameterName, parameterClass, parameterName, false,
+                aliasObject = getSql().createAlias(parameterName, parameterClass, parameterName, false,
                         null);
                 // Set the parameter name to the alias
                 aliasObject.setAssignedParameterName(parameterName);
@@ -161,7 +161,7 @@ public class SQLWhereOperandOVParameter extends SQLWhereOperandPathInstance {
         String expressionAlias = currentAlias.getAlias() + (pendingPath.isEmpty() ? "" : "." + pendingPath);
         for (String field : oidReachedClassFields) {
             String oidExpression = expressionAlias + "." + field;
-            getOidExpressions().add(oidExpression);
+            addOidExpression(oidExpression);
         }
     }
 
@@ -183,13 +183,13 @@ public class SQLWhereOperandOVParameter extends SQLWhereOperandPathInstance {
             Object[] oidValues = parameterValue.getValue();
             String[] oidDataTypes = parameterValue.getDataTypes();
             for (int i = 0; i < oidValues.length; i++) {
-                getParameters().add(new SQLParam("", oidValues[i], oidDataTypes[i]));
-                getOidExpressions().add("?");
+                addParameter(new SQLParam("", oidValues[i], oidDataTypes[i]));
+                addOidExpression("?");
             }
         } else {
             for (int i = 0; i < oidFields.size(); i++) {
-                getParameters().add(new SQLParam("", null, ""));
-                getOidExpressions().add("?");
+                addParameter(new SQLParam("", null, ""));
+                addOidExpression("?");
             }
         }
     }

@@ -296,10 +296,10 @@ public class LogUsrSolNov extends AbstractAppEntity {
         return (solicitudNovedad == null ? new SolicitudNovedad(null) : solicitudNovedad);
     }
 
-   /**
-    * Adds an instance of <code>SolicitudNovedad</code> related through the <code>SolicitudNovedad</code> role.
-    * @param solicitudNovedad The instance to add to the <code>SolicitudNovedad</code> role.
-    */
+    /**
+     * Adds an instance of <code>SolicitudNovedad</code> related through the <code>SolicitudNovedad</code> role.
+     * @param solicitudNovedad The instance to add to the <code>SolicitudNovedad</code> role.
+     */
     public void add2SolicitudNovedad(SolicitudNovedad solicitudNovedad) {
         if (solicitudNovedad == null || solicitudNovedad.isNull()) {
             this.modifiedSolicitudNovedad = true;

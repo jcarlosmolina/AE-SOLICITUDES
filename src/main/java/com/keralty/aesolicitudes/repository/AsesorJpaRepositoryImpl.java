@@ -61,7 +61,7 @@ public class AsesorJpaRepositoryImpl extends AbstractRepository implements Aseso
      * @param parentAlias Alias of the parent entity.
      */
     public void addFacetWhereparentfuncionario (String myAlias, SQLJoin join, String parentAlias) {
-        join.getWheres().add(myAlias + "." + AsesorConstants.FLD_FUNCIONARIOID + " = " + parentAlias + "." + FuncionarioConstants.ATTR_FIELD_FUNCIONARIOID);
+        join.addWhere(myAlias + "." + AsesorConstants.FLD_FUNCIONARIOID + " = " + parentAlias + "." + FuncionarioConstants.ATTR_FIELD_FUNCIONARIOID);
     }
 
     @Override

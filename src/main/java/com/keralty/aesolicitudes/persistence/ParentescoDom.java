@@ -325,10 +325,10 @@ public class ParentescoDom extends AbstractAppEntity {
         return dominio;
     }
 
-   /**
-    * Adds an instance of <code>Dominio</code> related through the <code>Dominio</code> role.
-    * @param dominio The instance to add to the <code>Dominio</code> role.
-    */
+    /**
+     * Adds an instance of <code>Dominio</code> related through the <code>Dominio</code> role.
+     * @param dominio The instance to add to the <code>Dominio</code> role.
+     */
     public void add2Dominio(Dominio dominio) {
         if (dominio == null || dominio.isNull()) {
             this.modifiedDominio = true;
@@ -360,10 +360,10 @@ public class ParentescoDom extends AbstractAppEntity {
         return parentesco;
     }
 
-   /**
-    * Adds an instance of <code>Parentesco</code> related through the <code>Parentesco</code> role.
-    * @param parentesco The instance to add to the <code>Parentesco</code> role.
-    */
+    /**
+     * Adds an instance of <code>Parentesco</code> related through the <code>Parentesco</code> role.
+     * @param parentesco The instance to add to the <code>Parentesco</code> role.
+     */
     public void add2Parentesco(Parentesco parentesco) {
         if (parentesco == null || parentesco.isNull()) {
             this.modifiedParentesco = true;

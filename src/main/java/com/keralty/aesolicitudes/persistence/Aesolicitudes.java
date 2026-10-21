@@ -659,10 +659,10 @@ public class Aesolicitudes extends AbstractAppEntity {
         return (solicitud == null ? new Solicitud(null) : solicitud);
     }
 
-   /**
-    * Adds an instance of <code>Solicitud</code> related through the <code>Solicitud</code> role.
-    * @param solicitud The instance to add to the <code>Solicitud</code> role.
-    */
+    /**
+     * Adds an instance of <code>Solicitud</code> related through the <code>Solicitud</code> role.
+     * @param solicitud The instance to add to the <code>Solicitud</code> role.
+     */
     public void add2Solicitud(Solicitud solicitud) {
         this.solicitud = (solicitud == null  || solicitud.isNull() ? null : solicitud);
     }
@@ -702,10 +702,10 @@ public class Aesolicitudes extends AbstractAppEntity {
         return (productoT == null ? new Productos(null) : productoT);
     }
 
-   /**
-    * Adds an instance of <code>Productos</code> related through the <code>ProductoT</code> role.
-    * @param productoT The instance to add to the <code>ProductoT</code> role.
-    */
+    /**
+     * Adds an instance of <code>Productos</code> related through the <code>ProductoT</code> role.
+     * @param productoT The instance to add to the <code>ProductoT</code> role.
+     */
     public void add2ProductoT(Productos productoT) {
         if (productoT == null || productoT.isNull()) {
             this.modifiedProductoT = true;
@@ -751,10 +751,10 @@ public class Aesolicitudes extends AbstractAppEntity {
         return (planT == null ? new Planes(null) : planT);
     }
 
-   /**
-    * Adds an instance of <code>Planes</code> related through the <code>PlanT</code> role.
-    * @param planT The instance to add to the <code>PlanT</code> role.
-    */
+    /**
+     * Adds an instance of <code>Planes</code> related through the <code>PlanT</code> role.
+     * @param planT The instance to add to the <code>PlanT</code> role.
+     */
     public void add2PlanT(Planes planT) {
         if (planT == null || planT.isNull()) {
             this.modifiedPlanT = true;
@@ -800,10 +800,10 @@ public class Aesolicitudes extends AbstractAppEntity {
         return (eSTADOSOLICITUD == null ? new EstadoContrato(null) : eSTADOSOLICITUD);
     }
 
-   /**
-    * Adds an instance of <code>EstadoContrato</code> related through the <code>ESTADOSOLICITUD</code> role.
-    * @param eSTADOSOLICITUD The instance to add to the <code>ESTADOSOLICITUD</code> role.
-    */
+    /**
+     * Adds an instance of <code>EstadoContrato</code> related through the <code>ESTADOSOLICITUD</code> role.
+     * @param eSTADOSOLICITUD The instance to add to the <code>ESTADOSOLICITUD</code> role.
+     */
     public void add2ESTADOSOLICITUD(EstadoContrato eSTADOSOLICITUD) {
         if (eSTADOSOLICITUD == null || eSTADOSOLICITUD.isNull()) {
             this.modifiedESTADOSOLICITUD = true;

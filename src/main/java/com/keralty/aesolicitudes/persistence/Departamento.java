@@ -351,12 +351,19 @@ public class Departamento extends AbstractAppEntity {
         return getPersonaRepository().findByDepartamentoNacimiento(this);
     }
 
-   /**
-    * Adds an instance of <code>Persona</code> related through the <code>Personas</code> role.
-    * @param personas The instance to add to the <code>Personas</code> role.
-    */
+    /**
+     * Adds an instance of <code>Persona</code> related through the <code>Personas</code> role.
+     * @param personas The instance to add to the <code>Personas</code> role.
+     */
     public void add2Personas(Persona personas) {
-        this.getPersonas().add(personas);
+        this.personas.add(personas);
+    }
+    /**
+     * Removes an instance of <code>Persona</code> related through the <code>Personas</code> role.
+     * @param personas The instance to be removed
+     */
+    public void removeFromPersonas(Persona personas) {
+    	this.personas.remove(personas);
     }
     /**
      * Sets instances of <code>Persona</code> related through the <code>Personas</code> role.
@@ -387,12 +394,19 @@ public class Departamento extends AbstractAppEntity {
         return getMunicipioRepository().findByDepartamento(this);
     }
 
-   /**
-    * Adds an instance of <code>Municipio</code> related through the <code>Municipios</code> role.
-    * @param municipios The instance to add to the <code>Municipios</code> role.
-    */
+    /**
+     * Adds an instance of <code>Municipio</code> related through the <code>Municipios</code> role.
+     * @param municipios The instance to add to the <code>Municipios</code> role.
+     */
     public void add2Municipios(Municipio municipios) {
-        this.getMunicipios().add(municipios);
+        this.municipios.add(municipios);
+    }
+    /**
+     * Removes an instance of <code>Municipio</code> related through the <code>Municipios</code> role.
+     * @param municipios The instance to be removed
+     */
+    public void removeFromMunicipios(Municipio municipios) {
+    	this.municipios.remove(municipios);
     }
     /**
      * Sets instances of <code>Municipio</code> related through the <code>Municipios</code> role.
@@ -423,12 +437,19 @@ public class Departamento extends AbstractAppEntity {
         return getPersonaCRepository().findByDepartamentoCNac(this);
     }
 
-   /**
-    * Adds an instance of <code>PersonaC</code> related through the <code>PersonasC</code> role.
-    * @param personasC The instance to add to the <code>PersonasC</code> role.
-    */
+    /**
+     * Adds an instance of <code>PersonaC</code> related through the <code>PersonasC</code> role.
+     * @param personasC The instance to add to the <code>PersonasC</code> role.
+     */
     public void add2PersonasC(PersonaC personasC) {
-        this.getPersonasC().add(personasC);
+        this.personasC.add(personasC);
+    }
+    /**
+     * Removes an instance of <code>PersonaC</code> related through the <code>PersonasC</code> role.
+     * @param personasC The instance to be removed
+     */
+    public void removeFromPersonasC(PersonaC personasC) {
+    	this.personasC.remove(personasC);
     }
     /**
      * Sets instances of <code>PersonaC</code> related through the <code>PersonasC</code> role.
@@ -459,12 +480,19 @@ public class Departamento extends AbstractAppEntity {
         return getDireccionCRepository().findByDepartamentoC(this);
     }
 
-   /**
-    * Adds an instance of <code>DireccionC</code> related through the <code>DireccionesC</code> role.
-    * @param direccionesC The instance to add to the <code>DireccionesC</code> role.
-    */
+    /**
+     * Adds an instance of <code>DireccionC</code> related through the <code>DireccionesC</code> role.
+     * @param direccionesC The instance to add to the <code>DireccionesC</code> role.
+     */
     public void add2DireccionesC(DireccionC direccionesC) {
-        this.getDireccionesC().add(direccionesC);
+        this.direccionesC.add(direccionesC);
+    }
+    /**
+     * Removes an instance of <code>DireccionC</code> related through the <code>DireccionesC</code> role.
+     * @param direccionesC The instance to be removed
+     */
+    public void removeFromDireccionesC(DireccionC direccionesC) {
+    	this.direccionesC.remove(direccionesC);
     }
     /**
      * Sets instances of <code>DireccionC</code> related through the <code>DireccionesC</code> role.
@@ -495,12 +523,19 @@ public class Departamento extends AbstractAppEntity {
         return getDireccionRepository().findByDepartamento(this);
     }
 
-   /**
-    * Adds an instance of <code>Direccion</code> related through the <code>Direcciones</code> role.
-    * @param direcciones The instance to add to the <code>Direcciones</code> role.
-    */
+    /**
+     * Adds an instance of <code>Direccion</code> related through the <code>Direcciones</code> role.
+     * @param direcciones The instance to add to the <code>Direcciones</code> role.
+     */
     public void add2Direcciones(Direccion direcciones) {
-        this.getDirecciones().add(direcciones);
+        this.direcciones.add(direcciones);
+    }
+    /**
+     * Removes an instance of <code>Direccion</code> related through the <code>Direcciones</code> role.
+     * @param direcciones The instance to be removed
+     */
+    public void removeFromDirecciones(Direccion direcciones) {
+    	this.direcciones.remove(direcciones);
     }
     /**
      * Sets instances of <code>Direccion</code> related through the <code>Direcciones</code> role.
@@ -531,12 +566,19 @@ public class Departamento extends AbstractAppEntity {
         return getContratanteRepository().findByDepartamentoNac(this);
     }
 
-   /**
-    * Adds an instance of <code>Contratante</code> related through the <code>Contratantes</code> role.
-    * @param contratantes The instance to add to the <code>Contratantes</code> role.
-    */
+    /**
+     * Adds an instance of <code>Contratante</code> related through the <code>Contratantes</code> role.
+     * @param contratantes The instance to add to the <code>Contratantes</code> role.
+     */
     public void add2Contratantes(Contratante contratantes) {
-        this.getContratantes().add(contratantes);
+        this.contratantes.add(contratantes);
+    }
+    /**
+     * Removes an instance of <code>Contratante</code> related through the <code>Contratantes</code> role.
+     * @param contratantes The instance to be removed
+     */
+    public void removeFromContratantes(Contratante contratantes) {
+    	this.contratantes.remove(contratantes);
     }
     /**
      * Sets instances of <code>Contratante</code> related through the <code>Contratantes</code> role.
@@ -567,12 +609,19 @@ public class Departamento extends AbstractAppEntity {
         return getContratanteRepository().findByDepartamentoRes(this);
     }
 
-   /**
-    * Adds an instance of <code>Contratante</code> related through the <code>ContratantesRes</code> role.
-    * @param contratantesRes The instance to add to the <code>ContratantesRes</code> role.
-    */
+    /**
+     * Adds an instance of <code>Contratante</code> related through the <code>ContratantesRes</code> role.
+     * @param contratantesRes The instance to add to the <code>ContratantesRes</code> role.
+     */
     public void add2ContratantesRes(Contratante contratantesRes) {
-        this.getContratantesRes().add(contratantesRes);
+        this.contratantesRes.add(contratantesRes);
+    }
+    /**
+     * Removes an instance of <code>Contratante</code> related through the <code>ContratantesRes</code> role.
+     * @param contratantesRes The instance to be removed
+     */
+    public void removeFromContratantesRes(Contratante contratantesRes) {
+    	this.contratantesRes.remove(contratantesRes);
     }
     /**
      * Sets instances of <code>Contratante</code> related through the <code>ContratantesRes</code> role.
@@ -603,12 +652,19 @@ public class Departamento extends AbstractAppEntity {
         return getDirSucursalCRepository().findByDepartamentoC(this);
     }
 
-   /**
-    * Adds an instance of <code>DirSucursalC</code> related through the <code>DirSucursalC</code> role.
-    * @param dirSucursalC The instance to add to the <code>DirSucursalC</code> role.
-    */
+    /**
+     * Adds an instance of <code>DirSucursalC</code> related through the <code>DirSucursalC</code> role.
+     * @param dirSucursalC The instance to add to the <code>DirSucursalC</code> role.
+     */
     public void add2DirSucursalC(DirSucursalC dirSucursalC) {
-        this.getDirSucursalC().add(dirSucursalC);
+        this.dirSucursalC.add(dirSucursalC);
+    }
+    /**
+     * Removes an instance of <code>DirSucursalC</code> related through the <code>DirSucursalC</code> role.
+     * @param dirSucursalC The instance to be removed
+     */
+    public void removeFromDirSucursalC(DirSucursalC dirSucursalC) {
+    	this.dirSucursalC.remove(dirSucursalC);
     }
     /**
      * Sets instances of <code>DirSucursalC</code> related through the <code>DirSucursalC</code> role.
@@ -639,12 +695,19 @@ public class Departamento extends AbstractAppEntity {
         return getTitularRepository().findByDepartamentoNac(this);
     }
 
-   /**
-    * Adds an instance of <code>Titular</code> related through the <code>Titulares</code> role.
-    * @param titulares The instance to add to the <code>Titulares</code> role.
-    */
+    /**
+     * Adds an instance of <code>Titular</code> related through the <code>Titulares</code> role.
+     * @param titulares The instance to add to the <code>Titulares</code> role.
+     */
     public void add2Titulares(Titular titulares) {
-        this.getTitulares().add(titulares);
+        this.titulares.add(titulares);
+    }
+    /**
+     * Removes an instance of <code>Titular</code> related through the <code>Titulares</code> role.
+     * @param titulares The instance to be removed
+     */
+    public void removeFromTitulares(Titular titulares) {
+    	this.titulares.remove(titulares);
     }
     /**
      * Sets instances of <code>Titular</code> related through the <code>Titulares</code> role.
@@ -675,12 +738,19 @@ public class Departamento extends AbstractAppEntity {
         return novedadCTNac;
     }
 
-   /**
-    * Adds an instance of <code>NovedadCT</code> related through the <code>NovedadCTNac</code> role.
-    * @param novedadCTNac The instance to add to the <code>NovedadCTNac</code> role.
-    */
+    /**
+     * Adds an instance of <code>NovedadCT</code> related through the <code>NovedadCTNac</code> role.
+     * @param novedadCTNac The instance to add to the <code>NovedadCTNac</code> role.
+     */
     public void add2NovedadCTNac(NovedadCT novedadCTNac) {
-        this.getNovedadCTNac().add(novedadCTNac);
+        this.novedadCTNac.add(novedadCTNac);
+    }
+    /**
+     * Removes an instance of <code>NovedadCT</code> related through the <code>NovedadCTNac</code> role.
+     * @param novedadCTNac The instance to be removed
+     */
+    public void removeFromNovedadCTNac(NovedadCT novedadCTNac) {
+    	this.novedadCTNac.remove(novedadCTNac);
     }
     /**
      * Sets instances of <code>NovedadCT</code> related through the <code>NovedadCTNac</code> role.
@@ -711,12 +781,19 @@ public class Departamento extends AbstractAppEntity {
         return novedadCTRes;
     }
 
-   /**
-    * Adds an instance of <code>NovedadCT</code> related through the <code>NovedadCTRes</code> role.
-    * @param novedadCTRes The instance to add to the <code>NovedadCTRes</code> role.
-    */
+    /**
+     * Adds an instance of <code>NovedadCT</code> related through the <code>NovedadCTRes</code> role.
+     * @param novedadCTRes The instance to add to the <code>NovedadCTRes</code> role.
+     */
     public void add2NovedadCTRes(NovedadCT novedadCTRes) {
-        this.getNovedadCTRes().add(novedadCTRes);
+        this.novedadCTRes.add(novedadCTRes);
+    }
+    /**
+     * Removes an instance of <code>NovedadCT</code> related through the <code>NovedadCTRes</code> role.
+     * @param novedadCTRes The instance to be removed
+     */
+    public void removeFromNovedadCTRes(NovedadCT novedadCTRes) {
+    	this.novedadCTRes.remove(novedadCTRes);
     }
     /**
      * Sets instances of <code>NovedadCT</code> related through the <code>NovedadCTRes</code> role.
@@ -747,12 +824,19 @@ public class Departamento extends AbstractAppEntity {
         return novedadesMD;
     }
 
-   /**
-    * Adds an instance of <code>NovedadMD</code> related through the <code>NovedadesMD</code> role.
-    * @param novedadesMD The instance to add to the <code>NovedadesMD</code> role.
-    */
+    /**
+     * Adds an instance of <code>NovedadMD</code> related through the <code>NovedadesMD</code> role.
+     * @param novedadesMD The instance to add to the <code>NovedadesMD</code> role.
+     */
     public void add2NovedadesMD(NovedadMD novedadesMD) {
-        this.getNovedadesMD().add(novedadesMD);
+        this.novedadesMD.add(novedadesMD);
+    }
+    /**
+     * Removes an instance of <code>NovedadMD</code> related through the <code>NovedadesMD</code> role.
+     * @param novedadesMD The instance to be removed
+     */
+    public void removeFromNovedadesMD(NovedadMD novedadesMD) {
+    	this.novedadesMD.remove(novedadesMD);
     }
     /**
      * Sets instances of <code>NovedadMD</code> related through the <code>NovedadesMD</code> role.

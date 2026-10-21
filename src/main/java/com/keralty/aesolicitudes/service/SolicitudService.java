@@ -11465,7 +11465,7 @@ public class SolicitudService extends AbstractService {
         step4Request.setSolicitudmodificarDatosCOREpvalorCuotaBrutaC(solicitudTNOTIFICARCREARpthisSolicitud.getContratoC().getContratoCdrvValorCuotaBruta());
         solicitudSrv.modificarDatosCOREImplementation(step4Request);
 
-        for(BeneficiarioC step5Entity : repository.assocOperator175(solicitudTNOTIFICARCREARpthisSolicitud, solicitudTNOTIFICARCREARpthisSolicitud)) {
+        for(BeneficiarioC step5Entity : repository.assocOperator175(solicitudTNOTIFICARCREARpthisSolicitud)) {
             com.keralty.aesolicitudes.viewmodel.solicitud.siu.TUPDATEBENEFICIARIORequest step5Request = new com.keralty.aesolicitudes.viewmodel.solicitud.siu.TUPDATEBENEFICIARIORequest();
             step5Request.setSolicitudTUPDATEBENEFICIARIOpthisSolicitudInstance(solicitudTNOTIFICARCREARpthisSolicitud);
             step5Request.setSolicitudTUPDATEBENEFICIARIOpBeneficiarioCInstance(step5Entity);
@@ -11681,7 +11681,7 @@ public class SolicitudService extends AbstractService {
         step5Request.setSolicitudmodificarDatosCOREpvalorCuotaBrutaC(solicitudTNOTIFICARINCLUSIONpthisSolicitud.getContratoC().getContratoCdrvValorCuotaBruta());
         solicitudSrv.modificarDatosCOREImplementation(step5Request);
 
-        for(BeneficiarioC step6Entity : repository.assocOperator185(solicitudTNOTIFICARINCLUSIONpthisSolicitud, solicitudTNOTIFICARINCLUSIONpthisSolicitud)) {
+        for(BeneficiarioC step6Entity : repository.assocOperator185(solicitudTNOTIFICARINCLUSIONpthisSolicitud)) {
             com.keralty.aesolicitudes.viewmodel.solicitud.siu.TUPDATEBENEFICIARIORequest step6Request = new com.keralty.aesolicitudes.viewmodel.solicitud.siu.TUPDATEBENEFICIARIORequest();
             step6Request.setSolicitudTUPDATEBENEFICIARIOpthisSolicitudInstance(solicitudTNOTIFICARINCLUSIONpthisSolicitud);
             step6Request.setSolicitudTUPDATEBENEFICIARIOpBeneficiarioCInstance(step6Entity);

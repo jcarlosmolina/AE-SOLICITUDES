@@ -113,10 +113,6 @@ public final class Utilities {
         return true;
     }
 	 
-	private static boolean likeDeprecated(String str, String pattern) {
-		return (str != null) && (pattern != null) && likeNotNull(str.toLowerCase(), pattern.toLowerCase());
-	}
-
 	private static boolean likeNotNull(String str, String pattern) {
 		return str.matches(pattern + ".*");
 	}

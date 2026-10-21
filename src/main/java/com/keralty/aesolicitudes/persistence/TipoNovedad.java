@@ -274,12 +274,19 @@ public class TipoNovedad extends AbstractAppEntity {
         return novedades;
     }
 
-   /**
-    * Adds an instance of <code>Novedad</code> related through the <code>Novedades</code> role.
-    * @param novedades The instance to add to the <code>Novedades</code> role.
-    */
+    /**
+     * Adds an instance of <code>Novedad</code> related through the <code>Novedades</code> role.
+     * @param novedades The instance to add to the <code>Novedades</code> role.
+     */
     public void add2Novedades(Novedad novedades) {
-        this.getNovedades().add(novedades);
+        this.novedades.add(novedades);
+    }
+    /**
+     * Removes an instance of <code>Novedad</code> related through the <code>Novedades</code> role.
+     * @param novedades The instance to be removed
+     */
+    public void removeFromNovedades(Novedad novedades) {
+    	this.novedades.remove(novedades);
     }
     /**
      * Sets instances of <code>Novedad</code> related through the <code>Novedades</code> role.

@@ -85,12 +85,20 @@ public class FilterVariableRequest {
     
     @JsonIgnore
     private Long getLongValue() {
-    	return Long.parseLong(value.toString());
+        try {
+            return Long.parseLong(value.toString());
+        } catch (NumberFormatException e) {
+            return null;
+        }
     }
     
     @JsonIgnore
     private Double getDoubleValue() {
-    	return Double.parseDouble(value.toString());
+        try {
+            return Double.parseDouble(value.toString());
+        } catch (NumberFormatException e) {
+            return null;
+        }
     }
     
     @JsonIgnore

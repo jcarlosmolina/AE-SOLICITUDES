@@ -329,10 +329,10 @@ public class LogGrupoAsignacion extends AbstractAppEntity {
         return grupoAsignacion;
     }
 
-   /**
-    * Adds an instance of <code>GrupoAsignacion</code> related through the <code>GrupoAsignacion</code> role.
-    * @param grupoAsignacion The instance to add to the <code>GrupoAsignacion</code> role.
-    */
+    /**
+     * Adds an instance of <code>GrupoAsignacion</code> related through the <code>GrupoAsignacion</code> role.
+     * @param grupoAsignacion The instance to add to the <code>GrupoAsignacion</code> role.
+     */
     public void add2GrupoAsignacion(GrupoAsignacion grupoAsignacion) {
         if (grupoAsignacion == null || grupoAsignacion.isNull()) {
             this.modifiedGrupoAsignacion = true;
