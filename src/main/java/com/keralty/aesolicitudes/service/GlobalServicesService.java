@@ -226,6 +226,11 @@ public class GlobalServicesService extends AbstractService {
             com.keralty.aesolicitudes.viewmodel.globalservices.siu.OGANULARSOLRequest request) throws ModelException, SystemException {
         ServiceResponse response = new ServiceResponse();
 
+        if (request == null) {
+            throw new IllegalArgumentException("Invalid request to oGANULARSOLImplementation");
+        }
+
+
         try {
             for(Dominio step1Entity : globalServicesRepository.assocOperator135()) {
                 try {

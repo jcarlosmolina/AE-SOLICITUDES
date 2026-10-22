@@ -14,6 +14,7 @@ import com.keralty.aesolicitudes.persistence.oid.FuncionarioOid;
 import com.keralty.aesolicitudes.persistence.oid.ObsEstadoOid;
 import com.keralty.aesolicitudes.repository.DocumentoGJpaRepository;
 import com.keralty.aesolicitudes.repository.FuncionarioJpaRepository;
+import com.keralty.aesolicitudes.utils.Utilities;
 import io.quarkus.arc.Arc;
 import jakarta.persistence.Column;
 import jakarta.persistence.EmbeddedId;
@@ -613,7 +614,7 @@ public class ObsEstado extends AbstractAppEntity {
             DocumentoG.Solicitud.Agente = agent OR DocumentoG.Solicitud.Agente.CodJefe = Agent.Usuario
             */
             try {
-                if (this.getDocumentoG().getSolicitud().getAgente().equalsObject(agentInstance) || (this.getDocumentoG().getSolicitud().getAgente().getFuncionarioCodJefe()).equals(agentInstance.getFuncionarioUsuario())) {
+                if (Utilities.isEqual(this.getDocumentoG().getSolicitud().getAgente(), agentInstance) || (this.getDocumentoG().getSolicitud().getAgente().getFuncionarioCodJefe()).equals(agentInstance.getFuncionarioUsuario())) {
                     returnValue = true;
                 }
             } catch (Exception e) {

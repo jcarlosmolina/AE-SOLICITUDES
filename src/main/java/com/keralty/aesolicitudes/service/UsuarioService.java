@@ -52,6 +52,7 @@ import com.keralty.aesolicitudes.sqlutils.SQLWhereOperandLiteral;
 import com.keralty.aesolicitudes.sqlutils.SQLWhereOperandOVParameter;
 import com.keralty.aesolicitudes.sqlutils.SQLWhereOperandPathAttribute;
 import com.keralty.aesolicitudes.sqlutils.SQLWhereOperandPathInstance;
+import com.keralty.aesolicitudes.utils.Utilities;
 import com.keralty.aesolicitudes.viewmodel.FilterRequest;
 import com.keralty.aesolicitudes.viewmodel.FilterVariableRequest;
 import com.keralty.aesolicitudes.viewmodel.InstanceResponseViewModel;
@@ -2073,7 +2074,7 @@ public class UsuarioService extends AbstractService {
         Usuario instance = usuarioTMODIFICARpthisUsuario;
 
         /* Action 1: IF (NumIdentificacion <> ptpNumIdentificacion OR TipoIdentificacion <> ptpevcTipoIdentificacion) */
-        boolean ifCondition1 = !(usuarioTMODIFICARpthisUsuario.getUsuarioNumIdentificacion()).equals(usuarioTMODIFICARptpNumIdentificacion) || !(usuarioTMODIFICARpthisUsuario.getTipoIdentificacion().equalsObject(usuarioTMODIFICARptpevcTipoIdentificacion));
+        boolean ifCondition1 = !(usuarioTMODIFICARpthisUsuario.getUsuarioNumIdentificacion()).equals(usuarioTMODIFICARptpNumIdentificacion) || !Utilities.isEqual(usuarioTMODIFICARpthisUsuario.getTipoIdentificacion(), usuarioTMODIFICARptpevcTipoIdentificacion);
         if (ifCondition1) {
             com.keralty.aesolicitudes.viewmodel.usuario.siu.ModificarRequest step10Request = new com.keralty.aesolicitudes.viewmodel.usuario.siu.ModificarRequest();
             step10Request.setUsuariomodificarpthisUsuarioInstance(usuarioTMODIFICARpthisUsuario);
@@ -2085,7 +2086,7 @@ public class UsuarioService extends AbstractService {
             step10Request.setUsuariomodificarpSegundoApellido(usuarioTMODIFICARptpSegundoApellido);
             usuarioSrv.modificarImplementation(step10Request);
             /* Action 11: IF (TipoIdentificacion <> ptpevcTipoIdentificacion) */
-            boolean ifCondition11 = !(usuarioTMODIFICARpthisUsuario.getTipoIdentificacion().equalsObject(usuarioTMODIFICARptpevcTipoIdentificacion));
+            boolean ifCondition11 = !Utilities.isEqual(usuarioTMODIFICARpthisUsuario.getTipoIdentificacion(), usuarioTMODIFICARptpevcTipoIdentificacion);
             if (ifCondition11) {
                 com.keralty.aesolicitudes.viewmodel.usuario.siu.CambTipoIdUsuarioRequest step110Request = new com.keralty.aesolicitudes.viewmodel.usuario.siu.CambTipoIdUsuarioRequest();
                 step110Request.setUsuarioCambTipoIdUsuariopthisUsuarioInstance(usuarioTMODIFICARpthisUsuario);
@@ -2110,7 +2111,7 @@ public class UsuarioService extends AbstractService {
             step13Request.setUsuariomodificarpSegundoApellido(usuarioTMODIFICARptpSegundoApellido);
             usuarioSrv.modificarImplementation(step13Request);
             /* Action 14: IF (TipoIdentificacion <> ptpevcTipoIdentificacion) */
-            boolean ifCondition14 = !(usuarioTMODIFICARpthisUsuario.getTipoIdentificacion().equalsObject(usuarioTMODIFICARptpevcTipoIdentificacion));
+            boolean ifCondition14 = !Utilities.isEqual(usuarioTMODIFICARpthisUsuario.getTipoIdentificacion(), usuarioTMODIFICARptpevcTipoIdentificacion);
             if (ifCondition14) {
                 com.keralty.aesolicitudes.viewmodel.usuario.siu.CambTipoIdUsuarioRequest step140Request = new com.keralty.aesolicitudes.viewmodel.usuario.siu.CambTipoIdUsuarioRequest();
                 step140Request.setUsuarioCambTipoIdUsuariopthisUsuarioInstance(usuarioTMODIFICARpthisUsuario);
@@ -2131,7 +2132,7 @@ public class UsuarioService extends AbstractService {
                 usuarioSrv.insParentescoUsuarioImplementation(step200Request, true);
             } else {
                 /* Action 201: IF (Parentesco <> fugetParentescoTitular()) */
-                boolean ifCondition201 = !(usuarioTMODIFICARpthisUsuario.getParentesco().equalsObject(userFunctionsSrv.fugetParentescoTitularFun()));
+                boolean ifCondition201 = !Utilities.isEqual(usuarioTMODIFICARpthisUsuario.getParentesco(), userFunctionsSrv.fugetParentescoTitularFun());
                 if (ifCondition201) {
                     com.keralty.aesolicitudes.viewmodel.usuario.siu.DelParentescorUsuarioRequest step2010Request = new com.keralty.aesolicitudes.viewmodel.usuario.siu.DelParentescorUsuarioRequest();
                     step2010Request.setUsuarioDelParentescorUsuariopthisAttrUsuarioInstance(usuarioTMODIFICARpthisUsuario);
@@ -2306,7 +2307,7 @@ public class UsuarioService extends AbstractService {
         boolean ifCondition3 = repository.assocOperator073(usuarioTACTDESDECOREpBeneficiarioC).equals(true);
         if (ifCondition3) {
             /* Action 30: IF (EstadoBeneficiario <> pBeneficiarioC.EstadoBeneficiarioC) */
-            boolean ifCondition30 = !(usuarioTACTDESDECOREpthisUsuario.getEstadoBeneficiario().equalsObject(usuarioTACTDESDECOREpBeneficiarioC.getEstadoBeneficiarioC()));
+            boolean ifCondition30 = !Utilities.isEqual(usuarioTACTDESDECOREpthisUsuario.getEstadoBeneficiario(), usuarioTACTDESDECOREpBeneficiarioC.getEstadoBeneficiarioC());
             if (ifCondition30) {
                 /* Action 300: IF (EXIST (EstadoBeneficiario) = true) */
                 boolean ifCondition300 = repository.assocOperator074(usuarioTACTDESDECOREpthisUsuario).equals(true);

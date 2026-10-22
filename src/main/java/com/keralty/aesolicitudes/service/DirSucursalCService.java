@@ -28,6 +28,7 @@ import com.keralty.aesolicitudes.sqlutils.SQLSelect;
 import com.keralty.aesolicitudes.sqlutils.SQLWhereComparison;
 import com.keralty.aesolicitudes.sqlutils.SQLWhereOperandLiteral;
 import com.keralty.aesolicitudes.sqlutils.SQLWhereOperandPathAttribute;
+import com.keralty.aesolicitudes.utils.Utilities;
 import com.keralty.aesolicitudes.viewmodel.FilterRequest;
 import com.keralty.aesolicitudes.viewmodel.FilterVariableRequest;
 import com.keralty.aesolicitudes.viewmodel.InstanceResponseViewModel;
@@ -1289,7 +1290,7 @@ public class DirSucursalCService extends AbstractService {
         }
 
         /* Action 4: IF (EXIST (DepartamentoC) = true AND ptpevcDepartamentoC <> NULL AND DepartamentoC <> ptpevcDepartamentoC) */
-        boolean ifCondition4 = repository.assocOperator009(dirSucursalCTMODIFICARpthisDirSucursalC).equals(true) && (dirSucursalCTMODIFICARptpevcDepartamentoC != null && !dirSucursalCTMODIFICARptpevcDepartamentoC.isNull()) && !(dirSucursalCTMODIFICARpthisDirSucursalC.getDepartamentoC().equalsObject(dirSucursalCTMODIFICARptpevcDepartamentoC));
+        boolean ifCondition4 = repository.assocOperator009(dirSucursalCTMODIFICARpthisDirSucursalC).equals(true) && (dirSucursalCTMODIFICARptpevcDepartamentoC != null && !dirSucursalCTMODIFICARptpevcDepartamentoC.isNull()) && !Utilities.isEqual(dirSucursalCTMODIFICARpthisDirSucursalC.getDepartamentoC(), dirSucursalCTMODIFICARptpevcDepartamentoC);
         if (ifCondition4) {
             com.keralty.aesolicitudes.viewmodel.dirsucursalc.siu.DelDepartamentoDirSucursalCRequest step40Request = new com.keralty.aesolicitudes.viewmodel.dirsucursalc.siu.DelDepartamentoDirSucursalCRequest();
             step40Request.setDirSucursalCDelDepartamentoDirSucursalCpthisDirSucursalCInstance(dirSucursalCTMODIFICARpthisDirSucursalC);
@@ -1320,7 +1321,7 @@ public class DirSucursalCService extends AbstractService {
         }
 
         /* Action 7: IF (EXIST (MunicipioC) = true AND ptpevcMunicipioC <> NULL AND MunicipioC <> ptpevcMunicipioC) */
-        boolean ifCondition7 = repository.assocOperator010(dirSucursalCTMODIFICARpthisDirSucursalC).equals(true) && (dirSucursalCTMODIFICARptpevcMunicipioC != null && !dirSucursalCTMODIFICARptpevcMunicipioC.isNull()) && !(dirSucursalCTMODIFICARpthisDirSucursalC.getMunicipioC().equalsObject(dirSucursalCTMODIFICARptpevcMunicipioC));
+        boolean ifCondition7 = repository.assocOperator010(dirSucursalCTMODIFICARpthisDirSucursalC).equals(true) && (dirSucursalCTMODIFICARptpevcMunicipioC != null && !dirSucursalCTMODIFICARptpevcMunicipioC.isNull()) && !Utilities.isEqual(dirSucursalCTMODIFICARpthisDirSucursalC.getMunicipioC(), dirSucursalCTMODIFICARptpevcMunicipioC);
         if (ifCondition7) {
             com.keralty.aesolicitudes.viewmodel.dirsucursalc.siu.DelMunicipioDirSucursalRequest step70Request = new com.keralty.aesolicitudes.viewmodel.dirsucursalc.siu.DelMunicipioDirSucursalRequest();
             step70Request.setDirSucursalCDelMunicipioDirSucursalpthisDirSucursalCInstance(dirSucursalCTMODIFICARpthisDirSucursalC);
@@ -1351,7 +1352,7 @@ public class DirSucursalCService extends AbstractService {
         }
 
         /* Action 10: IF (EXIST (PaisC) = true AND ptpevcPaisC <> NULL AND PaisC <> ptpevcPaisC) */
-        boolean ifCondition10 = repository.assocOperator011(dirSucursalCTMODIFICARpthisDirSucursalC).equals(true) && (dirSucursalCTMODIFICARptpevcPaisC != null && !dirSucursalCTMODIFICARptpevcPaisC.isNull()) && !(dirSucursalCTMODIFICARpthisDirSucursalC.getPaisC().equalsObject(dirSucursalCTMODIFICARptpevcPaisC));
+        boolean ifCondition10 = repository.assocOperator011(dirSucursalCTMODIFICARpthisDirSucursalC).equals(true) && (dirSucursalCTMODIFICARptpevcPaisC != null && !dirSucursalCTMODIFICARptpevcPaisC.isNull()) && !Utilities.isEqual(dirSucursalCTMODIFICARpthisDirSucursalC.getPaisC(), dirSucursalCTMODIFICARptpevcPaisC);
         if (ifCondition10) {
             com.keralty.aesolicitudes.viewmodel.dirsucursalc.siu.DelPaisDirSucursalCRequest step100Request = new com.keralty.aesolicitudes.viewmodel.dirsucursalc.siu.DelPaisDirSucursalCRequest();
             step100Request.setDirSucursalCDelPaisDirSucursalCpthisDirSucursalCInstance(dirSucursalCTMODIFICARpthisDirSucursalC);

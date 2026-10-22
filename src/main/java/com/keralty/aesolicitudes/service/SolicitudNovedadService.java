@@ -53,6 +53,7 @@ import com.keralty.aesolicitudes.sqlutils.SQLWhereOperandOVParameter;
 import com.keralty.aesolicitudes.sqlutils.SQLWhereOperandPathAttribute;
 import com.keralty.aesolicitudes.sqlutils.SQLWhereOperandPathInstance;
 import com.keralty.aesolicitudes.sqlutils.SQLWhereOperandSubQuery;
+import com.keralty.aesolicitudes.utils.Utilities;
 import com.keralty.aesolicitudes.viewmodel.FilterRequest;
 import com.keralty.aesolicitudes.viewmodel.FilterVariableRequest;
 import com.keralty.aesolicitudes.viewmodel.InstanceResponseViewModel;
@@ -1775,7 +1776,7 @@ public class SolicitudNovedadService extends AbstractService {
         SolicitudNovedad instance = solicitudNovedadTASGUSRAFILIpthisSolicitudNovedad;
 
         /* Action 1: IF (UsrAfiliacion <> ptFuncionario) */
-        boolean ifCondition1 = !(solicitudNovedadTASGUSRAFILIpthisSolicitudNovedad.getUsrAfiliacion().equalsObject(solicitudNovedadTASGUSRAFILIptFuncionario));
+        boolean ifCondition1 = !Utilities.isEqual(solicitudNovedadTASGUSRAFILIpthisSolicitudNovedad.getUsrAfiliacion(), solicitudNovedadTASGUSRAFILIptFuncionario);
         if (ifCondition1) {
             /* Action 10: IF (EXIST (UsrAfiliacion) = true) */
             boolean ifCondition10 = repository.assocOperator041(solicitudNovedadTASGUSRAFILIpthisSolicitudNovedad).equals(true);
@@ -1869,7 +1870,7 @@ public class SolicitudNovedadService extends AbstractService {
         SolicitudNovedad instance = solicitudNovedadTREASIGNARUSUARIOSpthisSolicitudNovedad;
 
         /* Action 1: IF (ptUsrAfiliacion <> NULL AND UsrAfiliacion <> ptUsrAfiliacion) */
-        boolean ifCondition1 = (solicitudNovedadTREASIGNARUSUARIOSptUsrAfiliacion != null && !solicitudNovedadTREASIGNARUSUARIOSptUsrAfiliacion.isNull()) && !(solicitudNovedadTREASIGNARUSUARIOSpthisSolicitudNovedad.getUsrAfiliacion().equalsObject(solicitudNovedadTREASIGNARUSUARIOSptUsrAfiliacion));
+        boolean ifCondition1 = (solicitudNovedadTREASIGNARUSUARIOSptUsrAfiliacion != null && !solicitudNovedadTREASIGNARUSUARIOSptUsrAfiliacion.isNull()) && !Utilities.isEqual(solicitudNovedadTREASIGNARUSUARIOSpthisSolicitudNovedad.getUsrAfiliacion(), solicitudNovedadTREASIGNARUSUARIOSptUsrAfiliacion);
         if (ifCondition1) {
             com.keralty.aesolicitudes.viewmodel.solicitudnovedad.siu.TASGUSRAFILIRequest step10Request = new com.keralty.aesolicitudes.viewmodel.solicitudnovedad.siu.TASGUSRAFILIRequest();
             step10Request.setSolicitudNovedadTASGUSRAFILIpthisSolicitudNovedadInstance(solicitudNovedadTREASIGNARUSUARIOSpthisSolicitudNovedad);

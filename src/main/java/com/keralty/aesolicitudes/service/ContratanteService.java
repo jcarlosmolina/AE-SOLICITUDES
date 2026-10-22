@@ -23,6 +23,7 @@ import com.keralty.aesolicitudes.sqlutils.SQLSelect;
 import com.keralty.aesolicitudes.sqlutils.SQLWhereComparison;
 import com.keralty.aesolicitudes.sqlutils.SQLWhereOperandLiteral;
 import com.keralty.aesolicitudes.sqlutils.SQLWhereOperandPathAttribute;
+import com.keralty.aesolicitudes.utils.Utilities;
 import com.keralty.aesolicitudes.viewmodel.FilterRequest;
 import com.keralty.aesolicitudes.viewmodel.FilterVariableRequest;
 import com.keralty.aesolicitudes.viewmodel.InstanceResponseViewModel;
@@ -1406,7 +1407,7 @@ public class ContratanteService extends AbstractService {
         step1Request.setContratantemodificarpTelefonoCelularRes(contratanteTMODIFICARptTelefonoCelularRes);
         contratanteSrv.modificarImplementation(step1Request);
 
-        boolean guard2 = !(contratanteTMODIFICARpthisContratante.getTipoIdentificacion().equalsObject(contratanteTMODIFICARptpevcTipoIdentificacion));
+        boolean guard2 = !Utilities.isEqual(contratanteTMODIFICARpthisContratante.getTipoIdentificacion(), contratanteTMODIFICARptpevcTipoIdentificacion);
 
         if (guard2) {
             com.keralty.aesolicitudes.viewmodel.contratante.siu.CambTipoIdContratanteRequest step2Request = new com.keralty.aesolicitudes.viewmodel.contratante.siu.CambTipoIdContratanteRequest();
@@ -1434,7 +1435,7 @@ public class ContratanteService extends AbstractService {
         }
 
         /* Action 5: IF (EXIST (DepartamentoNac) = true AND ptDepartamentoNac <> NULL AND DepartamentoNac <> ptDepartamentoNac) */
-        boolean ifCondition5 = repository.assocOperator006(contratanteTMODIFICARpthisContratante).equals(true) && (contratanteTMODIFICARptDepartamentoNac != null && !contratanteTMODIFICARptDepartamentoNac.isNull()) && !(contratanteTMODIFICARpthisContratante.getDepartamentoNac().equalsObject(contratanteTMODIFICARptDepartamentoNac));
+        boolean ifCondition5 = repository.assocOperator006(contratanteTMODIFICARpthisContratante).equals(true) && (contratanteTMODIFICARptDepartamentoNac != null && !contratanteTMODIFICARptDepartamentoNac.isNull()) && !Utilities.isEqual(contratanteTMODIFICARpthisContratante.getDepartamentoNac(), contratanteTMODIFICARptDepartamentoNac);
         if (ifCondition5) {
             com.keralty.aesolicitudes.viewmodel.contratante.siu.DelDepartamentoNacContratanteRequest step50Request = new com.keralty.aesolicitudes.viewmodel.contratante.siu.DelDepartamentoNacContratanteRequest();
             step50Request.setContratanteDelDepartamentoNacContratantepthisContratanteInstance(contratanteTMODIFICARpthisContratante);
@@ -1465,7 +1466,7 @@ public class ContratanteService extends AbstractService {
         }
 
         /* Action 8: IF (EXIST (MunicipioNac) = true AND ptMunicipioNac <> NULL AND MunicipioNac <> ptMunicipioNac) */
-        boolean ifCondition8 = repository.assocOperator007(contratanteTMODIFICARpthisContratante).equals(true) && (contratanteTMODIFICARptMunicipioNac != null && !contratanteTMODIFICARptMunicipioNac.isNull()) && !(contratanteTMODIFICARpthisContratante.getMunicipioNac().equalsObject(contratanteTMODIFICARptMunicipioNac));
+        boolean ifCondition8 = repository.assocOperator007(contratanteTMODIFICARpthisContratante).equals(true) && (contratanteTMODIFICARptMunicipioNac != null && !contratanteTMODIFICARptMunicipioNac.isNull()) && !Utilities.isEqual(contratanteTMODIFICARpthisContratante.getMunicipioNac(), contratanteTMODIFICARptMunicipioNac);
         if (ifCondition8) {
             com.keralty.aesolicitudes.viewmodel.contratante.siu.DelMunicipioNacContratanteRequest step80Request = new com.keralty.aesolicitudes.viewmodel.contratante.siu.DelMunicipioNacContratanteRequest();
             step80Request.setContratanteDelMunicipioNacContratantepthisContratanteInstance(contratanteTMODIFICARpthisContratante);
@@ -1558,7 +1559,7 @@ public class ContratanteService extends AbstractService {
             }
         } else {
             /* Action 21: IF (DepartamentoRes <> ptDepartamentoRes) */
-            boolean ifCondition21 = !(contratanteTSETDIRECCIONRESpthisContratante.getDepartamentoRes().equalsObject(contratanteTSETDIRECCIONRESptDepartamentoRes));
+            boolean ifCondition21 = !Utilities.isEqual(contratanteTSETDIRECCIONRESpthisContratante.getDepartamentoRes(), contratanteTSETDIRECCIONRESptDepartamentoRes);
             if (ifCondition21) {
                 com.keralty.aesolicitudes.viewmodel.contratante.siu.DelDepartamentoResRequest step210Request = new com.keralty.aesolicitudes.viewmodel.contratante.siu.DelDepartamentoResRequest();
                 step210Request.setContratanteDelDepartamentoRespthisContratanteInstance(contratanteTSETDIRECCIONRESpthisContratante);
@@ -1588,7 +1589,7 @@ public class ContratanteService extends AbstractService {
             }
         } else {
             /* Action 31: IF (MunicipioRes <> ptMunicipioRes) */
-            boolean ifCondition31 = !(contratanteTSETDIRECCIONRESpthisContratante.getMunicipioRes().equalsObject(contratanteTSETDIRECCIONRESptMunicipioRes));
+            boolean ifCondition31 = !Utilities.isEqual(contratanteTSETDIRECCIONRESpthisContratante.getMunicipioRes(), contratanteTSETDIRECCIONRESptMunicipioRes);
             if (ifCondition31) {
                 com.keralty.aesolicitudes.viewmodel.contratante.siu.DelMunicipioResRequest step310Request = new com.keralty.aesolicitudes.viewmodel.contratante.siu.DelMunicipioResRequest();
                 step310Request.setContratanteDelMunicipioRespthisContratanteInstance(contratanteTSETDIRECCIONRESpthisContratante);
