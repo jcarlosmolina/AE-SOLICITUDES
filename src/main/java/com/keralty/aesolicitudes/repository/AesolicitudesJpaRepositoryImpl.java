@@ -7,10 +7,30 @@ import com.keralty.aesolicitudes.sqlutils.SQLSelect;
 import com.keralty.aesolicitudes.sqlutils.TypedQueryBuilder;
 import com.keralty.aesolicitudes.utils.Agent;
 import jakarta.inject.Inject;
+import jakarta.persistence.Query;
 import java.util.Collection;
 import java.util.List;
 
 public class AesolicitudesJpaRepositoryImpl extends AbstractRepository implements AesolicitudesJpaRepositoryCustom {
+
+	@Override
+	public Long getSiguienteNumRadicado(boolean esVoluntario) {
+    	Long valorSec = 1L;
+    	String nombreSecuencia = "SolicitudNumRadicado_Sequence";
+
+    	if (esVoluntario) {
+    		nombreSecuencia = "PlanesVoluntarios_Sequence";
+    	}
+    	String sqlSentence = "select " + nombreSecuencia + ".nextVal from dual";
+    	Query query = em.createNativeQuery(sqlSentence);
+    	Object resultado = query.getSingleResult();
+    	
+    	if (resultado != null){
+    		valorSec = Long.valueOf(resultado.toString());
+    	}
+    	return valorSec;
+    }
+
 
     @Inject
     public AesolicitudesJpaRepositoryImpl(Agent agent, UserFunctions userFunctionsSrv) {

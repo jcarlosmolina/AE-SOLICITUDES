@@ -48,10 +48,10 @@ import com.keralty.aesolicitudes.viewmodel.solicitud.siu.CalcularURLPasarelaPago
 import com.keralty.aesolicitudes.viewmodel.solicitud.siu.DelContratoCASolicitudRequest;
 import com.keralty.aesolicitudes.viewmodel.solicitud.siu.DummyDevolverErroresWSRequest;
 import com.keralty.aesolicitudes.viewmodel.solicitud.siu.DummyDevolverErroresWSResponse;
-import com.keralty.aesolicitudes.viewmodel.solicitud.siu.DummyDiferenciasLiqRequest;
+
 import com.keralty.aesolicitudes.viewmodel.solicitud.siu.DummyEstatusSolicitudesRequest;
 import com.keralty.aesolicitudes.viewmodel.solicitud.siu.DummyGenerarSolicitudRequest;
-import com.keralty.aesolicitudes.viewmodel.solicitud.siu.DummyPreexistenciasRequest;
+
 import com.keralty.aesolicitudes.viewmodel.solicitud.siu.DummyRedirigirRequest;
 import com.keralty.aesolicitudes.viewmodel.solicitud.siu.EnviarEmailURLPagoRequest;
 import com.keralty.aesolicitudes.viewmodel.solicitud.siu.EnviarSMSInfoPagoRequest;
@@ -78,7 +78,7 @@ import com.keralty.aesolicitudes.viewmodel.solicitud.siu.TCREAROMODFIRMACONTINCR
 import com.keralty.aesolicitudes.viewmodel.solicitud.siu.TCREAROMODFIRMARequest;
 import com.keralty.aesolicitudes.viewmodel.solicitud.siu.TCREARSEGUNDAFIRMARequest;
 import com.keralty.aesolicitudes.viewmodel.solicitud.siu.TENVIARDOCAUTOAUXRequest;
-import com.keralty.aesolicitudes.viewmodel.solicitud.siu.TENVIARDOCRequest;
+
 import com.keralty.aesolicitudes.viewmodel.solicitud.siu.TENVIARDOCResponse;
 import com.keralty.aesolicitudes.viewmodel.solicitud.siu.TGETPLANTILLAREPORTERequest;
 import com.keralty.aesolicitudes.viewmodel.solicitud.siu.TGETPLANTILLAREPORTEResponse;
@@ -224,37 +224,9 @@ public class SolicitudApi {
         return service.anotarObservacionesCheckPreconditions(request);
     }
 
-    @POST
-    @Path(value = "/dummy_Preexistencias")
-    @RolesAllowed({"Admin","SuperAdmin","Asesor","AreaMedica","Afiliaciones","Gestor","MesaDeApoyo"})
-    public ServiceResponse solicitudDummyPreexistencias(DummyPreexistenciasRequest request) {
-        return service.dummyPreexistencias(request);
-    }
-    
 
-    @POST
-    @Path(value = "/dummyPreexistenciasCheckPreconditions")
-    @RolesAllowed({"Admin","SuperAdmin","Asesor","AreaMedica","Afiliaciones","Gestor","MesaDeApoyo"})
-    public ServiceResponse solicitudDummyPreexistenciasCheckPreconditions(DummyPreexistenciasRequest request) {
 
-        return service.dummyPreexistenciasCheckPreconditions(request);
-    }
 
-    @POST
-    @Path(value = "/dummy_DiferenciasLiq")
-    @RolesAllowed({"Admin","SuperAdmin","Asesor","AreaMedica","Afiliaciones","Gestor","MesaDeApoyo"})
-    public ServiceResponse solicitudDummyDiferenciasLiq(DummyDiferenciasLiqRequest request) {
-        return service.dummyDiferenciasLiq(request);
-    }
-    
-
-    @POST
-    @Path(value = "/dummyDiferenciasLiqCheckPreconditions")
-    @RolesAllowed({"Admin","SuperAdmin","Asesor","AreaMedica","Afiliaciones","Gestor","MesaDeApoyo"})
-    public ServiceResponse solicitudDummyDiferenciasLiqCheckPreconditions(DummyDiferenciasLiqRequest request) {
-
-        return service.dummyDiferenciasLiqCheckPreconditions(request);
-    }
 
     @POST
     @Path(value = "/dummy_Redirigir")
@@ -448,12 +420,7 @@ public class SolicitudApi {
         return service.tCREARSEGUNDAFIRMACheckPreconditions(request);
     }
 
-    @POST
-    @Path(value = "/TENVIARDOC")
-    @RolesAllowed({"Admin","SuperAdmin","Asesor","AreaMedica","Afiliaciones","Gestor","MesaDeApoyo"})
-    public TENVIARDOCResponse solicitudTENVIARDOC(TENVIARDOCRequest request) {
-        return service.tENVIARDOC(request);
-    }
+
     
 
     @POST

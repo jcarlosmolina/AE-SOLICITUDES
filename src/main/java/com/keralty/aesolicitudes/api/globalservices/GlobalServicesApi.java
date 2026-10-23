@@ -16,11 +16,17 @@ import jakarta.ws.rs.Path;
 import jakarta.ws.rs.POST;
 import org.eclipse.microprofile.jwt.JsonWebToken;
 
+import com.keralty.aesolicitudes.service.GlobalServicesItSelf;
+import org.eclipse.microprofile.rest.client.inject.RestClient;
+
 @Path("/api/GlobalServicesApi")
 @RequestScoped
 public class GlobalServicesApi {
 
     GlobalServicesService service;
+    
+    @RestClient
+    GlobalServicesItSelf globalServicesItSelf;
 
     public GlobalServicesApi(GlobalServicesService service, JsonWebToken jwt) {
         this.service = service;
@@ -45,7 +51,25 @@ public class GlobalServicesApi {
     @Path(value = "/OGANULARSOL")
     @RolesAllowed({"SuperAdmin","UsuarioSistemaExterno"})
     public ServiceResponse oGANULARSOL(OGANULARSOLRequest request) {
-        return service.oGANULARSOL(request);
+    	// Llama a un REST que es el mismo, pero sin esperar respuesta
+    	globalServicesItSelf.oGANULARSOL_Async(request);
+    	
+		// Devolvemos Ok 
+    	return new ServiceResponse();
+    	
+        //return service.oGANULARSOL(request);
+    }
+
+    @POST
+    @Path(value = "/OGANULARSOL_Async")
+    @RolesAllowed({"SuperAdmin","UsuarioSistemaExterno"})
+    public ServiceResponse OGANULARSOL_Async(OGANULARSOLRequest request) {
+    	
+    	org.slf4j.LoggerFactory.getLogger(this.getClass().getName()).info("\nINICIO PROCESO ANULACION SOLICITUDES");
+    	ServiceResponse retorno = service.oGANULARSOL(request);
+    	org.slf4j.LoggerFactory.getLogger(this.getClass().getName()).info("\nFIN PROCESO ANULACION SOLICITUDES");
+    	
+    	return retorno;    	
     }
 
     @POST

@@ -7,6 +7,8 @@ import java.util.List;
 
 public interface AesolicitudesJpaRepositoryCustom {
 
+    Long getSiguienteNumRadicado(boolean esVoluntario);
+
     List<Aesolicitudes> solveQuery(SQLSelect query);
     
     List<Aesolicitudes> solveQuery(SQLSelect query, int pageSize, int pageNumber);

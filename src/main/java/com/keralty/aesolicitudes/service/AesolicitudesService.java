@@ -940,6 +940,7 @@ public class AesolicitudesService extends AbstractService {
         request.checkArguments();
 
         tNUEVAAFILIACIONPreconditions(request);
+        Long numRadicado = this.repository.getSiguienteNumRadicado(aesolicitudesTNUEVAAFILIACIONptpagrPlan.getPlanesEsVoluntario());
         Aesolicitudes instance;
 
         com.keralty.aesolicitudes.viewmodel.aesolicitudes.siu.CrearRequest step1Request = new com.keralty.aesolicitudes.viewmodel.aesolicitudes.siu.CrearRequest();
@@ -948,7 +949,7 @@ public class AesolicitudesService extends AbstractService {
         step1Request.setAesolicitudescrearpagrPlanTInstance(aesolicitudesTNUEVAAFILIACIONptpagrPlan);
         step1Request.setAesolicitudescrearpatrLogin(((Funcionario) getAgentInstance(FuncionarioConstants.CLASS_NAME)).getFuncionarioUsuario());
         step1Request.setAesolicitudescrearpatrTiposolicitud("E");
-        step1Request.setAesolicitudescrearpatrNumerosolicitud("");
+        step1Request.setAesolicitudescrearpatrNumerosolicitud(numRadicado.toString());
         instance = (Aesolicitudes) aesolicitudesSrv.crearImplementation(step1Request).getInstance();
 
         /* Action 2: IF (ptProrrateo <> NULL) */
@@ -964,7 +965,7 @@ public class AesolicitudesService extends AbstractService {
             step20Request.setSolicitudTNUEVAAFILIACIONptPorcenProrrateo(aesolicitudesTNUEVAAFILIACIONptProrrateo.getProrrateoPorcentaje());
             step20Request.setSolicitudTNUEVAAFILIACIONptTipoFacturaInstance(aesolicitudesTNUEVAAFILIACIONptTipoFactura);
             step20Request.setSolicitudTNUEVAAFILIACIONptMarcaCarnet(aesolicitudesTNUEVAAFILIACIONptMarcaCarnet);
-            step20Request.setSolicitudTNUEVAAFILIACIONptNumRadicado(Long.valueOf(0));
+            step20Request.setSolicitudTNUEVAAFILIACIONptNumRadicado( numRadicado );
             com.keralty.aesolicitudes.viewmodel.solicitud.siu.TNUEVAAFILIACIONResponse step20Response = solicitudSrv.tNUEVAAFILIACIONImplementation(step20Request);
             response.setAesolicitudesTNUEVAAFILIACIONptpsSolicitudInstance(step20Response.getSolicitudTNUEVAAFILIACIONpsSolicitudInstance());
         } else {
@@ -978,7 +979,7 @@ public class AesolicitudesService extends AbstractService {
             step21Request.setSolicitudTNUEVAAFILIACIONptPorcenProrrateo(null);
             step21Request.setSolicitudTNUEVAAFILIACIONptTipoFacturaInstance(aesolicitudesTNUEVAAFILIACIONptTipoFactura);
             step21Request.setSolicitudTNUEVAAFILIACIONptMarcaCarnet(aesolicitudesTNUEVAAFILIACIONptMarcaCarnet);
-            step21Request.setSolicitudTNUEVAAFILIACIONptNumRadicado(Long.valueOf(0));
+            step21Request.setSolicitudTNUEVAAFILIACIONptNumRadicado(numRadicado);
             com.keralty.aesolicitudes.viewmodel.solicitud.siu.TNUEVAAFILIACIONResponse step21Response = solicitudSrv.tNUEVAAFILIACIONImplementation(step21Request);
             response.setAesolicitudesTNUEVAAFILIACIONptpsSolicitudInstance(step21Response.getSolicitudTNUEVAAFILIACIONpsSolicitudInstance());
         }
@@ -1198,6 +1199,7 @@ public class AesolicitudesService extends AbstractService {
         request.checkArguments();
 
         tINCLUSIONSCPreconditions(request);
+        Long numRadicado = this.repository.getSiguienteNumRadicado(aesolicitudesTINCLUSIONSCptpagrPlan.getPlanesEsVoluntario());
         Aesolicitudes instance;
 
         com.keralty.aesolicitudes.viewmodel.aesolicitudes.siu.CrearRequest step1Request = new com.keralty.aesolicitudes.viewmodel.aesolicitudes.siu.CrearRequest();
@@ -1206,7 +1208,7 @@ public class AesolicitudesService extends AbstractService {
         step1Request.setAesolicitudescrearpagrPlanTInstance(aesolicitudesTINCLUSIONSCptpagrPlan);
         step1Request.setAesolicitudescrearpatrLogin(((Funcionario) getAgentInstance(FuncionarioConstants.CLASS_NAME)).getFuncionarioUsuario());
         step1Request.setAesolicitudescrearpatrTiposolicitud("E");
-        step1Request.setAesolicitudescrearpatrNumerosolicitud("");
+        step1Request.setAesolicitudescrearpatrNumerosolicitud(numRadicado.toString());
         instance = (Aesolicitudes) aesolicitudesSrv.crearImplementation(step1Request).getInstance();
 
         com.keralty.aesolicitudes.viewmodel.solicitud.siu.TINCLUSIONSCRequest step2Request = new com.keralty.aesolicitudes.viewmodel.solicitud.siu.TINCLUSIONSCRequest();
@@ -1218,7 +1220,7 @@ public class AesolicitudesService extends AbstractService {
         step2Request.setSolicitudTINCLUSIONSCpCodDirector(aesolicitudesTINCLUSIONSCpDirector.getFuncionarioUsuario());
         step2Request.setSolicitudTINCLUSIONSCptPorcenProrrateo(null);
         step2Request.setSolicitudTINCLUSIONSCptMarcaCarnet(aesolicitudesTINCLUSIONSCptMarcaCarnet);
-        step2Request.setSolicitudTINCLUSIONSCptNumRadicado(Long.valueOf(0));
+        step2Request.setSolicitudTINCLUSIONSCptNumRadicado(numRadicado);
         com.keralty.aesolicitudes.viewmodel.solicitud.siu.TINCLUSIONSCResponse step2Response = solicitudSrv.tINCLUSIONSCImplementation(step2Request);
         response.setAesolicitudesTINCLUSIONSCptpsSolicitudInstance(step2Response.getSolicitudTINCLUSIONSCpsSolicitudInstance());
 

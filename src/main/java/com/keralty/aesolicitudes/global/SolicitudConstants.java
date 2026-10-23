@@ -15,6 +15,21 @@ public final class SolicitudConstants {
 
     }
 
+    public static final String MSG_ERR_SOLICITUDFISICALEER_CODLEGALPROD= "Debe indicar el código legal de producto";
+    public static final String MSG_ERR_SOLICITUDFISICALEER_ASESOR= "Debe indicar el asesor que hizo la solicitud";
+    public static final String MSG_ERR_SOLICITUDFISICALEER_NUMSOLICITUD= "Debe indicar el número de solicitud";
+    public static final String MSG_ERR_SOLICITUDFISICALEER_FECHAERROR= "Fecha en formato incorrecto";
+    public static final String MSG_ERR_SOLICITUDFISICALEER_PRODNOEXIST= "El producto indicado no existe";
+    public static final String MSG_ERR_SOLICITUDFISICALEER_ASESORNOEXIST= "El asesor indicado no existe";
+
+    public static final String MSG_ERR_SOLICITUDFISICALEER_SUM_EXITO= "Ejecución completada con éxito!";
+    public static final String MSG_ERR_SOLICITUDFISICALEER_SUM_ERROR= "Ejecución completada con errores";
+    public static final String MSG_ERR_SOLICITUDFISICALEER_SUM_TOTALES= 	"Registros totales:   ";
+    public static final String MSG_ERR_SOLICITUDFISICALEER_SUM_CORRECTOS= 	"Registros correctos: ";
+    public static final String MSG_ERR_SOLICITUDFISICALEER_SUM_ERRONEOS= 	"Registros erróneos:  ";
+    public static final String MSG_ERR_SOLICITUDFISICALEER_SUM_FININFORME= 	"Informe de errores";
+
+
     // Class
     /** <code>Solicitud</code> class id. */
     public static final String CLASS_ID = "Clas_1431957012480960_Alias";

@@ -19,6 +19,13 @@ public class TokenUtilities {
 		this.jwt = jwt;
 	}
 
+
+	public static String getToken4msenviodoc() {
+		if (TokenUtilities.getInstance().jwt != null)
+			return TokenUtilities.getInstance().jwt.getRawToken();
+		return "";
+	}
+
 	public static String getToken4aeapigateway() {
 		if (TokenUtilities.getInstance().jwt != null)
 			return TokenUtilities.getInstance().jwt.getRawToken();

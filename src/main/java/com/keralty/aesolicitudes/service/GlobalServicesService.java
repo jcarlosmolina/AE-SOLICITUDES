@@ -18,6 +18,16 @@ import jakarta.inject.Inject;
 import jakarta.transaction.Transactional;
 import java.sql.Date;
 
+import com.keralty.aesolicitudes.global.SolicitudConstants;
+import com.keralty.aesolicitudes.persistence.Asesor;
+import com.keralty.aesolicitudes.persistence.Funcionario;
+import java.io.BufferedReader;
+import java.io.ByteArrayInputStream;
+import java.io.InputStreamReader;
+import java.text.SimpleDateFormat;
+import java.util.HashMap;
+import org.hibernate.type.descriptor.jdbc.ObjectNullAsNullTypeJdbcType;
+
 @Transactional
 @ApplicationScoped
 public class GlobalServicesService extends AbstractService {
@@ -68,7 +78,179 @@ public class GlobalServicesService extends AbstractService {
             com.keralty.aesolicitudes.viewmodel.globalservices.siu.OGSOLICITUDFISICALEERRequest request) {
         com.keralty.aesolicitudes.viewmodel.globalservices.siu.OGSOLICITUDFISICALEERResponse response = new com.keralty.aesolicitudes.viewmodel.globalservices.siu.OGSOLICITUDFISICALEERResponse();
         try {
-            response = globalServicesSrv.oGSOLICITUDFISICALEERTxn(request);
+            byte[] oGSOLICITUDFISICALEERpArchivo = request.getOGSOLICITUDFISICALEERpArchivo();
+
+            request.checkArguments();
+
+            // Campos del registro 
+            // 1. Numero de producto 
+            // 2. Asesor
+            // 3. Numero de la solicitud
+            // 4. Indicador solicitud
+            // 5. Fecha del estado
+
+    		String ficheroResultado = "PRODUCTO^LOGIN^NUMSOLICITUD^INDICADOR^FECHAASIGNACION^MENSAJE\n";
+    		String oaTextoErrores = "";
+    		Long oaErrores = 0L;
+    		Long oaProcesados = 0L;
+    		try {
+
+
+    			ByteArrayInputStream inputStream = new ByteArrayInputStream(oGSOLICITUDFISICALEERpArchivo);
+    			BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream)); 
+
+    			String linea = "";
+    			String codProducto = "";
+    			String numRadicado = "";
+    			String numAsesor = "";
+    			String indicadorSolicitud = "";
+    			String fechaEstadoStr = "";
+    			Solicitud solicitud = null;
+    			Productos producto = null;
+    			Funcionario funcionario = null;
+    	        Date fechaEstado = null;
+    			// Cache para los usuarios
+        		HashMap < String, Object > cacheProductos = new HashMap < String, Object >();
+        		HashMap < String, Object > cacheFuncionarios = new HashMap < String, Object >();
+        		boolean primera = true;
+    			while((linea = reader.readLine()) != null){
+
+    				// Nos saltamos la primera linea al ser la de cabacera
+    				if (primera) {
+    					primera = false;
+    					continue;
+    				}
+    				
+    				if (linea == null || linea.isEmpty()) {
+    					continue;
+    				}
+    				
+    				oaProcesados++;
+    				
+    				String[] arrayDatos = linea.split("\\^");
+        			solicitud = null;
+        			codProducto = arrayDatos.length > 0 ? arrayDatos[0] : null;  
+        			numAsesor = arrayDatos.length > 1 ? arrayDatos[1] : null;  
+        			numRadicado = arrayDatos.length > 2 ? arrayDatos[2] : null;  
+        			indicadorSolicitud = arrayDatos.length > 3 ? arrayDatos[3] : null;  
+        			fechaEstadoStr = arrayDatos.length > 4 ? arrayDatos[4] : null;  
+
+        			// Datos obligatorios
+                    if (codProducto == null) {
+                    	oaTextoErrores += SolicitudConstants.MSG_ERR_SOLICITUDFISICALEER_CODLEGALPROD + "\n";
+                    	ficheroResultado += linea + "^".repeat(5 - arrayDatos.length + 1) + SolicitudConstants.MSG_ERR_SOLICITUDFISICALEER_CODLEGALPROD + "\n";
+                    	oaErrores++;
+                    	continue;
+                    }
+                    if (numAsesor == null) {
+                    	oaTextoErrores += SolicitudConstants.MSG_ERR_SOLICITUDFISICALEER_ASESOR + "\n";
+                    	ficheroResultado += linea + "^".repeat(5 - arrayDatos.length + 1) + SolicitudConstants.MSG_ERR_SOLICITUDFISICALEER_ASESOR + "\n";
+                    	oaErrores++;
+                    	continue;
+                    }
+                    if (numRadicado == null) {
+                    	oaTextoErrores += SolicitudConstants.MSG_ERR_SOLICITUDFISICALEER_NUMSOLICITUD + "\n";
+                    	ficheroResultado += linea + "^".repeat(5 - arrayDatos.length + 1) + SolicitudConstants.MSG_ERR_SOLICITUDFISICALEER_NUMSOLICITUD + "\n";
+                    	oaErrores++;
+                    	continue;
+                    }
+
+                    // Campo fecha. Debe seguir el formato dd/MM/yyyy
+    				if (fechaEstadoStr != null) {
+    					
+    	                try {
+    	                    SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+    	                    fechaEstado = new Date( sdf.parse(fechaEstadoStr).getTime());
+    	                } catch (Exception e) {
+    	                	oaTextoErrores += SolicitudConstants.MSG_ERR_SOLICITUDFISICALEER_FECHAERROR + "\n";
+    	                	ficheroResultado += linea + "^".repeat(5 - arrayDatos.length + 1) + SolicitudConstants.MSG_ERR_SOLICITUDFISICALEER_FECHAERROR + "\n";
+    	                	oaErrores++;
+        					continue;
+    	                }
+    				} else {
+    					fechaEstado = null;
+    				}
+
+                    
+                    // Comprobacion de existencia
+    				if (cacheProductos.containsKey(codProducto)) {
+    					producto = (Productos)cacheProductos.get(codProducto);
+    				} else {
+    					producto = userFunctionsSrv.fugetProductoPorCLFun(codProducto);
+    					if (producto != null && !producto.isNull()) {
+    						cacheProductos.put(codProducto, producto);
+    					} else {
+    	                	oaTextoErrores += SolicitudConstants.MSG_ERR_SOLICITUDFISICALEER_PRODNOEXIST + "\n";
+    	                	ficheroResultado += linea + "^".repeat(5 - arrayDatos.length + 1) + SolicitudConstants.MSG_ERR_SOLICITUDFISICALEER_PRODNOEXIST + "\n";
+    	                	oaErrores++;
+        					continue;
+    					}
+    				}
+                    
+    				if (cacheFuncionarios.containsKey(numAsesor)) {
+    					funcionario = (Funcionario)cacheFuncionarios.get(numAsesor);
+    				} else {
+    					funcionario = userFunctionsSrv.fugetAgenteFun(numAsesor);
+    					if (funcionario != null && !funcionario.isNull()) {
+    						cacheFuncionarios.put(numAsesor, funcionario);
+    					} else {
+    	                	oaTextoErrores += SolicitudConstants.MSG_ERR_SOLICITUDFISICALEER_ASESOR + "\n";
+    	                	ficheroResultado += linea + "^".repeat(5 - arrayDatos.length + 1) + SolicitudConstants.MSG_ERR_SOLICITUDFISICALEER_ASESOR + "\n";
+    	                	oaErrores++;
+        					continue;
+    					}
+    				}
+    				
+        			
+    				// Buscamos la solicitud por numero de radicado
+    				try {
+
+    			        com.keralty.aesolicitudes.viewmodel.globalservices.siu.TGSOLICITUDFISICACARGARRequest stepCargar = new com.keralty.aesolicitudes.viewmodel.globalservices.siu.TGSOLICITUDFISICACARGARRequest();
+    			        stepCargar.setTGSOLICITUDFISICACARGARpCLProducto(codProducto);
+    			        stepCargar.setTGSOLICITUDFISICACARGARptpatrLOGIN(numAsesor);
+    			        stepCargar.setTGSOLICITUDFISICACARGARptpNUMEROSOLICITUD(numRadicado);
+    			        stepCargar.setTGSOLICITUDFISICACARGARptpSWESTADO(indicadorSolicitud);
+    					stepCargar.setTGSOLICITUDFISICACARGARptpFECHAESTADO(fechaEstado);
+    			        ServiceResponse resp = globalServicesSrv.tGSOLICITUDFISICACARGAR(stepCargar);
+    			        if (!resp.isOk()) {
+        					oaErrores++;
+        					oaTextoErrores += resp.getResultDescription() + " " + linea + "\n";
+                        	ficheroResultado += linea + "^".repeat(5 - arrayDatos.length + 1) + resp.getResultDescription() + "\n";
+    			        }
+    			        
+    				} catch (ModelException e) {
+    					oaErrores++;
+    					oaTextoErrores += e.getMessage() + " " + linea + "\n";
+                    	ficheroResultado += linea + "^".repeat(5 - arrayDatos.length + 1) + e.getMessage() + "\n";
+    				} catch (Exception e) {
+    					oaErrores++;
+    					oaTextoErrores += numRadicado + " : " + e.getMessage() + "\n";
+                    	ficheroResultado += linea + "^".repeat(5 - arrayDatos.length + 1) + e.getMessage() + "\n";
+    				}
+    			}
+
+    		} catch (Exception e) {
+        		org.slf4j.LoggerFactory.getLogger(this.getClass().getName()).error("Carga solicitudes fisicas\n" + e.getMessage());
+    			oaTextoErrores += "Error procesando fichero\n";
+    		}
+
+            String executionSummary = "";
+            if (oaErrores  == 0) {
+                executionSummary = SolicitudConstants.MSG_ERR_SOLICITUDFISICALEER_SUM_EXITO;
+            } else {
+                executionSummary += SolicitudConstants.MSG_ERR_SOLICITUDFISICALEER_SUM_ERROR + "\n";
+                executionSummary += SolicitudConstants.MSG_ERR_SOLICITUDFISICALEER_SUM_TOTALES + oaProcesados + "\n";
+                executionSummary += SolicitudConstants.MSG_ERR_SOLICITUDFISICALEER_SUM_CORRECTOS + (oaProcesados - oaErrores) + "\n";
+                executionSummary += SolicitudConstants.MSG_ERR_SOLICITUDFISICALEER_SUM_ERRONEOS + oaErrores + "\n";
+                executionSummary += "==============================\n";
+                executionSummary += SolicitudConstants.MSG_ERR_SOLICITUDFISICALEER_SUM_FININFORME + "\n";
+                executionSummary += "==============================\n";
+                executionSummary += oaTextoErrores + "\n";
+            }
+
+    		response.setOGSOLICITUDFISICALEERpsResultado(executionSummary);
+    		response.setOGSOLICITUDFISICALEERpsNombreArchivoResultado("ResultadoCargaSolicitudesFisicas.txt");
+    		response.setOGSOLICITUDFISICALEERpsArchivoResultado(ficheroResultado.getBytes());
         } catch (Exception e) {
             response.setException(e);
         }
@@ -95,28 +277,7 @@ public class GlobalServicesService extends AbstractService {
     public com.keralty.aesolicitudes.viewmodel.globalservices.siu.OGSOLICITUDFISICALEERResponse oGSOLICITUDFISICALEERImplementation(
             com.keralty.aesolicitudes.viewmodel.globalservices.siu.OGSOLICITUDFISICALEERRequest request) throws ModelException, SystemException {
         com.keralty.aesolicitudes.viewmodel.globalservices.siu.OGSOLICITUDFISICALEERResponse response = new com.keralty.aesolicitudes.viewmodel.globalservices.siu.OGSOLICITUDFISICALEERResponse();
-        byte[] oGSOLICITUDFISICALEERpArchivo = request.getOGSOLICITUDFISICALEERpArchivo();
 
-        request.checkArguments();
-
-        try {
-            com.keralty.aesolicitudes.viewmodel.globalservices.siu.TGSOLICITUDFISICACARGARRequest step1Request = new com.keralty.aesolicitudes.viewmodel.globalservices.siu.TGSOLICITUDFISICACARGARRequest();
-            step1Request.setTGSOLICITUDFISICACARGARpCLProducto("");
-            step1Request.setTGSOLICITUDFISICACARGARptpatrLOGIN("");
-            step1Request.setTGSOLICITUDFISICACARGARptpNUMEROSOLICITUD("");
-            step1Request.setTGSOLICITUDFISICACARGARptpSWESTADO("");
-            step1Request.setTGSOLICITUDFISICACARGARptpFECHAESTADO(STDFunctions.systemDateFun());
-            globalServicesSrv.tGSOLICITUDFISICACARGARTxn(step1Request);
-        } catch (Exception e) { }
-
-        try {
-            com.keralty.aesolicitudes.viewmodel.globalservices.siu.OGSOLICITUDFISICALEERRequest step2Request = new com.keralty.aesolicitudes.viewmodel.globalservices.siu.OGSOLICITUDFISICALEERRequest();
-            step2Request.setOGSOLICITUDFISICALEERpArchivo(oGSOLICITUDFISICALEERpArchivo);
-            com.keralty.aesolicitudes.viewmodel.globalservices.siu.OGSOLICITUDFISICALEERResponse step2Response = globalServicesSrv.oGSOLICITUDFISICALEERTxn(step2Request);
-            response.setOGSOLICITUDFISICALEERpsArchivoResultado(step2Response.getOGSOLICITUDFISICALEERpsArchivoResultado());
-            response.setOGSOLICITUDFISICALEERpsNombreArchivoResultado(step2Response.getOGSOLICITUDFISICALEERpsNombreArchivoResultado());
-            response.setOGSOLICITUDFISICALEERpsResultado(step2Response.getOGSOLICITUDFISICALEERpsResultado());
-        } catch (Exception e) { }
         return response;
     }
 
@@ -238,7 +399,9 @@ public class GlobalServicesService extends AbstractService {
                     step1Request.setOGANULARSOLAUXptPlanInstance(step1Entity.getPlanT());
                     step1Request.setOGANULARSOLAUXptFechaCad(STDFunctions.dateAddFun("d", Long.valueOf(-1) * step1Entity.getDominioDiasCaducidad(), STDFunctions.systemDateFun()));
                     globalServicesSrv.oGANULARSOLAUXTxn(step1Request);
-                } catch (Exception e) { }
+                } catch (Exception e) {
+                	org.slf4j.LoggerFactory.getLogger(this.getClass().getName()).info("\n   Error anulando solicitudes del Plan: " + step1Entity.getPlanT().getPlanesCodigoLegal() + " " + step1Entity.getPlanT().getPlanesNombre() + "\n" + e.getMessage());                	
+                }
             }
         } catch (Exception e) { }
         return response;
@@ -287,16 +450,26 @@ public class GlobalServicesService extends AbstractService {
 
         request.checkArguments();
 
+        int contador = 0;
+        int errores = 0;
+        String numRadicado = "";
         try {
             for(Solicitud step1Entity : globalServicesRepository.assocOperator136(oGANULARSOLAUXptPlan, oGANULARSOLAUXptFechaCad)) {
+            	numRadicado = step1Entity.getSolicitudNumRadicado().toString();
                 try {
                     com.keralty.aesolicitudes.viewmodel.solicitud.siu.TANULARAUTORequest step1Request = new com.keralty.aesolicitudes.viewmodel.solicitud.siu.TANULARAUTORequest();
                     step1Request.setSolicitudTANULARAUTOpthisSolicitudInstance(step1Entity);
                     solicitudSrv.tANULARAUTOTxn(step1Request);
-                } catch (Exception e) { }
-                globalServicesRepository.refreshEntity(oGANULARSOLAUXptPlan);
+                    contador++;
+                } catch (Exception e) {
+                	errores++;	
+                	org.slf4j.LoggerFactory.getLogger(this.getClass().getName()).info("\n   Error anulando solicitud: " + numRadicado + " - " + e.getMessage());
+                }
             }
         } catch (Exception e) { }
+        
+    	org.slf4j.LoggerFactory.getLogger(this.getClass().getName()).info("\n   Plan: " + oGANULARSOLAUXptPlan.getPlanesCodigoLegal() + " " + oGANULARSOLAUXptPlan.getPlanesNombre() + " solicitudes procesadas: " + contador + ".  Errores: " + errores);
+        
         return response;
     }
 
@@ -310,7 +483,131 @@ public class GlobalServicesService extends AbstractService {
             com.keralty.aesolicitudes.viewmodel.globalservices.siu.OGASIGUSUARIOSRequest request) {
         com.keralty.aesolicitudes.viewmodel.globalservices.siu.OGASIGUSUARIOSResponse response = new com.keralty.aesolicitudes.viewmodel.globalservices.siu.OGASIGUSUARIOSResponse();
         try {
-            response = globalServicesSrv.oGASIGUSUARIOSTxn(request);
+            byte[] oGASIGUSUARIOSptFichero = request.getOGASIGUSUARIOSptFichero();
+
+            request.checkArguments();
+
+    		String oaTextoErrores = "";
+    		Long oaErrores = 0L;
+    		Long oaProcesados = 0L;
+    		try {
+
+    			ByteArrayInputStream inputStream = new ByteArrayInputStream(oGASIGUSUARIOSptFichero);
+    			BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream)); 
+
+    			String linea = "";
+    			String numRadicado = "";
+    			String ldapUsrAfiliacion = "";
+    			String ldapUsrAreaMedica = "";
+    			Solicitud solicitud = null;
+    			SolicitudNovedad solicitudNovedad = null;
+    			Funcionario funcionarioAfil = null;
+    			Funcionario funcionarioAreaMedica= null;
+    			// Cache para los usuarios
+        		HashMap < String, Object > cacheUsrAfil = new HashMap < String, Object >();
+        		HashMap < String, Object > cacheUsrAreaMedica = new HashMap < String, Object >();
+    			while((linea = reader.readLine()) != null){
+
+    				String[] arrayDatos = linea.split(",");
+        			numRadicado = "";
+        			ldapUsrAfiliacion = "";
+        			ldapUsrAreaMedica = "";
+        			solicitud = null;
+        			funcionarioAfil = null;
+        			funcionarioAreaMedica = null;
+    				numRadicado = arrayDatos[0];
+    				if (arrayDatos.length > 1) {
+    					ldapUsrAfiliacion = arrayDatos[1];
+    					if (ldapUsrAfiliacion != null && !ldapUsrAfiliacion.isEmpty()) {
+        					if (cacheUsrAfil.containsKey(ldapUsrAfiliacion)) {
+        						funcionarioAfil = (Funcionario)cacheUsrAfil.get(ldapUsrAfiliacion);
+        					} else {
+        						funcionarioAfil = userFunctionsSrv.fugetFuncionarioPorLDAPFun(ldapUsrAfiliacion);
+        						if (funcionarioAfil != null && !funcionarioAfil.isNull()) {
+        							cacheUsrAfil.put(ldapUsrAfiliacion, funcionarioAfil);
+        						} else {
+    		    					oaErrores++;
+    		    					oaTextoErrores += numRadicado + " : Usuario no existente : " + ldapUsrAfiliacion + "\n";
+        						}
+        					}
+    					}
+    				}
+    				if (arrayDatos.length > 2) {
+    					ldapUsrAreaMedica = arrayDatos[2];
+    					if (ldapUsrAreaMedica != null && !ldapUsrAreaMedica.isEmpty()) {
+        					if (cacheUsrAreaMedica.containsKey(ldapUsrAreaMedica)) {
+        						funcionarioAreaMedica = (Funcionario)cacheUsrAreaMedica.get(ldapUsrAreaMedica);
+        					} else {
+        						funcionarioAreaMedica = userFunctionsSrv.fugetFuncionarioPorLDAPFun(ldapUsrAreaMedica);
+        						if (funcionarioAreaMedica != null && !funcionarioAreaMedica.isNull() && 
+        								funcionarioAreaMedica.getAreaMedicaFacet() != null && !funcionarioAreaMedica.getAreaMedicaFacet().isNull()) {
+        							cacheUsrAreaMedica.put(ldapUsrAreaMedica, funcionarioAreaMedica);
+        						} else {
+    		    					oaErrores++;
+    		    					oaTextoErrores += numRadicado + " : Usuario no existente : " + ldapUsrAreaMedica + "\n";
+        						}
+        					}
+    					}
+    				}
+    				
+    				if (numRadicado != null && !numRadicado.isEmpty()) {
+        				oaProcesados++;
+        				// Buscamos la solicitud por numero de radicado
+        				solicitud =  userFunctionsSrv.fugetSolicitudByNumeroFun(numRadicado);
+        				if (solicitud != null && !solicitud.isNull()) {
+    	    				try {
+    	    					
+    	    	                com.keralty.aesolicitudes.viewmodel.solicitud.siu.TREASIGNARUSUARIOSRequest stepTasignar = new com.keralty.aesolicitudes.viewmodel.solicitud.siu.TREASIGNARUSUARIOSRequest();
+    	    	                stepTasignar.setSolicitudTREASIGNARUSUARIOSpthisSolicitudInstance(solicitud);
+    	    	                stepTasignar.setSolicitudTREASIGNARUSUARIOSptUsrAfiliacionInstance(funcionarioAfil);
+    	    	                stepTasignar.setSolicitudTREASIGNARUSUARIOSptUsrAreaMedicaInstance(funcionarioAreaMedica != null && !funcionarioAreaMedica.isNull() ? funcionarioAreaMedica.getAreaMedicaFacet() : null);
+    	    	                com.keralty.aesolicitudes.viewmodel.solicitud.siu.TREASIGNARUSUARIOSResponse resp = solicitudSrv.tREASIGNARUSUARIOS(stepTasignar);
+    	    	                if (!resp.isOk()) {
+        	    					oaErrores++;
+        	    					oaTextoErrores += numRadicado + " : " + resp.getResultDescription() + "\n";
+    	    	                }
+    	
+    	    				} catch (Exception e) {
+    	    					oaErrores++;
+    	    					oaTextoErrores += numRadicado + " : " + e.getMessage() + "\n";
+    	    				}
+        					
+        				} else {
+    	    				// Si no la encontramos, la buscamos como solicitud de novedad
+        					solicitudNovedad = userFunctionsSrv.fugetSolicitudNovedadByNumRadicadoFun(numRadicado);
+    	    				try {
+    	    					if (solicitudNovedad != null && !solicitudNovedad.isNull()) {
+    	    						
+    	    			            com.keralty.aesolicitudes.viewmodel.solicitudnovedad.siu.TREASIGNARUSUARIOSRequest stepSolNov = new com.keralty.aesolicitudes.viewmodel.solicitudnovedad.siu.TREASIGNARUSUARIOSRequest();
+    	    			            stepSolNov.setSolicitudNovedadTREASIGNARUSUARIOSpthisSolicitudNovedadInstance(solicitudNovedad);
+    	    			            stepSolNov.setSolicitudNovedadTREASIGNARUSUARIOSptUsrAfiliacionInstance(funcionarioAfil);
+    	    			            ServiceResponse resp = solicitudNovedadSrv.tREASIGNARUSUARIOS(stepSolNov);
+    	    			            if (!resp.isOk()) {
+            	    					oaErrores++;
+            	    					oaTextoErrores += numRadicado + " : " + resp.getResultDescription() + "\n";
+        	    	                }    	    			            
+    	    					} else {
+    		    					oaErrores++;
+    		    					oaTextoErrores += numRadicado + " : Solicitud no existente\n";
+    	    					}
+    	
+    	    				} catch (Exception e) {
+    	    					oaErrores++;
+    	    					oaTextoErrores += numRadicado + " : " + e.getMessage() + "\n";
+    	    				}
+        					
+        				}
+    				}
+    			}
+
+    		} catch (Exception e) {
+        		org.slf4j.LoggerFactory.getLogger(this.getClass().getName()).error("Asignacion solicitudes\n" + e.getMessage());
+    			oaTextoErrores += "Error procesando fichero\n";
+    		}
+
+    		response.setOGASIGUSUARIOSoaProcesados(oaProcesados);
+    		response.setOGASIGUSUARIOSoaErrores(oaErrores);
+    		response.setOGASIGUSUARIOSoaTextoErrores(oaTextoErrores);
         } catch (Exception e) {
             response.setException(e);
         }
@@ -337,44 +634,6 @@ public class GlobalServicesService extends AbstractService {
     public com.keralty.aesolicitudes.viewmodel.globalservices.siu.OGASIGUSUARIOSResponse oGASIGUSUARIOSImplementation(
             com.keralty.aesolicitudes.viewmodel.globalservices.siu.OGASIGUSUARIOSRequest request) throws ModelException, SystemException {
         com.keralty.aesolicitudes.viewmodel.globalservices.siu.OGASIGUSUARIOSResponse response = new com.keralty.aesolicitudes.viewmodel.globalservices.siu.OGASIGUSUARIOSResponse();
-        byte[] oGASIGUSUARIOSptFichero = request.getOGASIGUSUARIOSptFichero();
-
-        request.checkArguments();
-
-        boolean guard1 = Long.valueOf(1) < Long.valueOf(2);
-
-        if (guard1) {
-            for(Solicitud step1Entity : globalServicesRepository.assocOperator141()) {
-                com.keralty.aesolicitudes.viewmodel.solicitud.siu.TREASIGNARUSUARIOSRequest step1Request = new com.keralty.aesolicitudes.viewmodel.solicitud.siu.TREASIGNARUSUARIOSRequest();
-                step1Request.setSolicitudTREASIGNARUSUARIOSpthisSolicitudInstance(step1Entity);
-                step1Request.setSolicitudTREASIGNARUSUARIOSptUsrAfiliacionInstance(step1Entity.getUsrAfiliacion());
-                step1Request.setSolicitudTREASIGNARUSUARIOSptUsrAreaMedicaInstance(step1Entity.getUsrAreaMedica());
-                com.keralty.aesolicitudes.viewmodel.solicitud.siu.TREASIGNARUSUARIOSResponse step1Response = solicitudSrv.tREASIGNARUSUARIOSImplementation(step1Request);
-        response.setOGASIGUSUARIOSoaProcesados(step1Response.getSolicitudTREASIGNARUSUARIOSoaNumProcesados());
-        response.setOGASIGUSUARIOSoaErrores(step1Response.getSolicitudTREASIGNARUSUARIOSoaNumErrores());
-        response.setOGASIGUSUARIOSoaTextoErrores(step1Response.getSolicitudTREASIGNARUSUARIOSoaTextoErrores());
-            }
-        }
-
-        for(SolicitudNovedad step2Entity : globalServicesRepository.assocOperator142()) {
-            com.keralty.aesolicitudes.viewmodel.solicitudnovedad.siu.TREASIGNARUSUARIOSRequest step2Request = new com.keralty.aesolicitudes.viewmodel.solicitudnovedad.siu.TREASIGNARUSUARIOSRequest();
-            step2Request.setSolicitudNovedadTREASIGNARUSUARIOSpthisSolicitudNovedadInstance(step2Entity);
-            step2Request.setSolicitudNovedadTREASIGNARUSUARIOSptUsrAfiliacionInstance(step2Entity.getUsrAfiliacion());
-            solicitudNovedadSrv.tREASIGNARUSUARIOSImplementation(step2Request);
-        }
-
-        com.keralty.aesolicitudes.viewmodel.logllamadasbh.siu.CreateinstanceRequest step3Request = new com.keralty.aesolicitudes.viewmodel.logllamadasbh.siu.CreateinstanceRequest();
-        step3Request.setLogLlamadasBHcreateinstancepatrFechaHora(STDFunctions.systemDateTimeFun());
-        step3Request.setLogLlamadasBHcreateinstancepatrUsuario("");
-        step3Request.setLogLlamadasBHcreateinstancepatrCapacidad("");
-        step3Request.setLogLlamadasBHcreateinstancepatrServicio("");
-        step3Request.setLogLlamadasBHcreateinstancepatrSolicitud("");
-        step3Request.setLogLlamadasBHcreateinstancepatrPeticion("");
-        step3Request.setLogLlamadasBHcreateinstancepatrRespuesta("");
-        step3Request.setLogLlamadasBHcreateinstancepatrTipoServicio("");
-        step3Request.setLogLlamadasBHcreateinstancepatrTiempoEjecucion(Utilities.convertToDouble(Long.valueOf(0)));
-        step3Request.setLogLlamadasBHcreateinstancepatrTextoError("");
-        logLlamadasBHSrv.createinstanceImplementation(step3Request);
         return response;
     }
 }
