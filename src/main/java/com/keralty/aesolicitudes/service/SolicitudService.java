@@ -7890,69 +7890,6 @@ public class SolicitudService extends AbstractService {
         return response;
     }
 
-    // Service: formarArchivoDocumentacion
-
-    /*
-     * Entry point for service formarArchivoDocumentacion
-     *
-     * @param request Service request viewmodel
-     *
-     * @returns Service response ViewModel encapsulating the execution results
-     */
-    @Transactional(Transactional.TxType.NOT_SUPPORTED)
-    public com.keralty.aesolicitudes.viewmodel.solicitud.siu.FormarArchivoDocumentacionResponse formarArchivoDocumentacion(
-            com.keralty.aesolicitudes.viewmodel.solicitud.siu.FormarArchivoDocumentacionRequest request) {
-        com.keralty.aesolicitudes.viewmodel.solicitud.siu.FormarArchivoDocumentacionResponse response = new com.keralty.aesolicitudes.viewmodel.solicitud.siu.FormarArchivoDocumentacionResponse();
-        try {
-            response = solicitudSrv.formarArchivoDocumentacionTxn(request);
-        } catch (Exception e) {
-            response.setException(e);
-        }
-        return response;
-    }
-
-    /*
-     * Transactional entry point for service formarArchivoDocumentacion
-     *
-     * @param request Service request viewmodel
-     *
-     * @returns Service response ViewModel encapsulating the execution results
-     */
-    @Transactional(Transactional.TxType.REQUIRES_NEW)
-    public com.keralty.aesolicitudes.viewmodel.solicitud.siu.FormarArchivoDocumentacionResponse formarArchivoDocumentacionTxn(
-            com.keralty.aesolicitudes.viewmodel.solicitud.siu.FormarArchivoDocumentacionRequest request) throws ModelException {
-        request.setSolicitudformarArchivoDocumentacionpthisSolicitudInstance(solicitudSrv.getByOIDWithHV(request.getSolicitudformarArchivoDocumentacionpthisSolicitud()));
-        return solicitudSrv.formarArchivoDocumentacionImplementation(request);
-    }
-
-    /*
-     * Implements service formarArchivoDocumentacion
-     *
-     * @param request Service request viewmodel
-     *
-     * @return Service response ViewModel encapsulating the execution results
-     */
-    @Transactional(Transactional.TxType.REQUIRED)
-    public com.keralty.aesolicitudes.viewmodel.solicitud.siu.FormarArchivoDocumentacionResponse formarArchivoDocumentacionImplementation(
-            com.keralty.aesolicitudes.viewmodel.solicitud.siu.FormarArchivoDocumentacionRequest request) throws ModelException {
-        com.keralty.aesolicitudes.viewmodel.solicitud.siu.FormarArchivoDocumentacionResponse response = new com.keralty.aesolicitudes.viewmodel.solicitud.siu.FormarArchivoDocumentacionResponse();
-        Solicitud solicitudformarArchivoDocumentacionpthisSolicitud = request.getSolicitudformarArchivoDocumentacionpthisSolicitudInstance();
-
-        request.checkArguments();
-        Solicitud instance = solicitudformarArchivoDocumentacionpthisSolicitud;
-
-
-        response.setInstance(repository.save(instance));
-        response.setInstanceSuppInfo(instance.buildICSolicitud());
-
-        // Value expressions for outgoing argument 'solicitudformarArchivoDocumentacionpsNombreArchivo'
-        // DEFAULT  : fuCrearZipDocumentacionAuto( THIS )
-        response.setSolicitudformarArchivoDocumentacionpsNombreArchivo(userFunctionsSrv.fuCrearZipDocumentacionAutoFun(solicitudformarArchivoDocumentacionpthisSolicitud));
-
-
-        return response;
-    }
-
     // Service: setCodTarifa
 
     /*

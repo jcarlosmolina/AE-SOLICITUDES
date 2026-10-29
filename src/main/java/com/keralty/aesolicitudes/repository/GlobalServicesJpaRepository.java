@@ -20,13 +20,13 @@ public interface GlobalServicesJpaRepository {
 
     Boolean assocOperator076(String tGSOLICITUDFISICACARGARptpNUMEROSOLICITUD) throws SystemException;
 
-    Collection<Dominio> assocOperator135() throws SystemException;
+    Collection<Dominio> assocOperator129() throws SystemException;
 
-    Collection<Solicitud> assocOperator136(Planes oGANULARSOLAUXptPlan, Date oGANULARSOLAUXptFechaCad) throws SystemException;
+    Collection<Solicitud> assocOperator130(Planes oGANULARSOLAUXptPlan, Date oGANULARSOLAUXptFechaCad) throws SystemException;
 
-    Collection<Solicitud> assocOperator141() throws SystemException;
+    Collection<Solicitud> assocOperator135() throws SystemException;
 
-    Collection<SolicitudNovedad> assocOperator142() throws SystemException;
+    Collection<SolicitudNovedad> assocOperator136() throws SystemException;
 
     void refreshEntity(Object object);
 }

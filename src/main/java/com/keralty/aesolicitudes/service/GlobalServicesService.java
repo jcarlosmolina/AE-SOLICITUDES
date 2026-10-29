@@ -66,14 +66,6 @@ public class GlobalServicesService extends AbstractService {
         this.userFunctionsSrv = userFunctionsSrv;
         this.globalServicesSrv = globalServicesSrv;
     }
-    
-    private String sanitizar(String valor) {
-        if (valor == null) {
-            return null;
-        }
-        // \R = any line break (\n, \r, \r\n, \u2028, ...).
-        return valor.replaceAll("\\R", "_");
-    }
 
     /*
      * Entry point for global service OGSOLICITUDFISICALEER
@@ -262,33 +254,9 @@ public class GlobalServicesService extends AbstractService {
         return response;
     }
 
-    /*
-     * Transactional entry point for global service OGSOLICITUDFISICALEER
-     * @param request Service request viewmodel
-     * @return Service response viewmodel with the execution results
-     */
-    @Transactional(Transactional.TxType.REQUIRES_NEW)
-    public com.keralty.aesolicitudes.viewmodel.globalservices.siu.OGSOLICITUDFISICALEERResponse oGSOLICITUDFISICALEERTxn(
-            com.keralty.aesolicitudes.viewmodel.globalservices.siu.OGSOLICITUDFISICALEERRequest request) throws ModelException, SystemException {
-        return globalServicesSrv.oGSOLICITUDFISICALEERImplementation(request);
-    }
 
-    /*
-     * Implements global service OGSOLICITUDFISICALEER
-     * @param request Service request viewmodel
-     * @return Service response viewmodel with the execution results
-     */
-    @Transactional(Transactional.TxType.REQUIRED)
-    public com.keralty.aesolicitudes.viewmodel.globalservices.siu.OGSOLICITUDFISICALEERResponse oGSOLICITUDFISICALEERImplementation(
-            com.keralty.aesolicitudes.viewmodel.globalservices.siu.OGSOLICITUDFISICALEERRequest request) throws ModelException, SystemException {
-        com.keralty.aesolicitudes.viewmodel.globalservices.siu.OGSOLICITUDFISICALEERResponse response = new com.keralty.aesolicitudes.viewmodel.globalservices.siu.OGSOLICITUDFISICALEERResponse();
 
-        if (request == null) {
-        	throw new IllegalArgumentException("request cannot be null in oGSOLICITUDFISICALEERImplementation");
-        }
-        
-        return response;
-    }
+
 
     /*
      * Entry point for global service TGSOLICITUDFISICACARGAR
@@ -402,7 +370,7 @@ public class GlobalServicesService extends AbstractService {
 
 
         try {
-            for(Dominio step1Entity : globalServicesRepository.assocOperator135()) {
+            for(Dominio step1Entity : globalServicesRepository.assocOperator129()) {
                 try {
                     com.keralty.aesolicitudes.viewmodel.globalservices.siu.OGANULARSOLAUXRequest step1Request = new com.keralty.aesolicitudes.viewmodel.globalservices.siu.OGANULARSOLAUXRequest();
                     step1Request.setOGANULARSOLAUXptPlanInstance(step1Entity.getPlanT());
@@ -445,6 +413,14 @@ public class GlobalServicesService extends AbstractService {
         return globalServicesSrv.oGANULARSOLAUXImplementation(request);
     }
 
+    private String sanitizar(String valor) {
+        if (valor == null) {
+            return null;
+        }
+        // \R = any line break (\n, \r, \r\n, \u2028, ...).
+        return valor.replaceAll("\\R", "_");
+    }
+
     /*
      * Implements global service OGANULARSOLAUX
      * @param request Service request viewmodel
@@ -463,7 +439,7 @@ public class GlobalServicesService extends AbstractService {
         int errores = 0;
         String numRadicado = "";
         try {
-            for(Solicitud step1Entity : globalServicesRepository.assocOperator136(oGANULARSOLAUXptPlan, oGANULARSOLAUXptFechaCad)) {
+            for(Solicitud step1Entity : globalServicesRepository.assocOperator130(oGANULARSOLAUXptPlan, oGANULARSOLAUXptFechaCad)) {
             	numRadicado = step1Entity.getSolicitudNumRadicado().toString();
                 try {
                     com.keralty.aesolicitudes.viewmodel.solicitud.siu.TANULARAUTORequest step1Request = new com.keralty.aesolicitudes.viewmodel.solicitud.siu.TANULARAUTORequest();
@@ -478,7 +454,6 @@ public class GlobalServicesService extends AbstractService {
         } catch (Exception e) { }
         
     	org.slf4j.LoggerFactory.getLogger(this.getClass().getName()).info(sanitizar("\n   Plan: " + oGANULARSOLAUXptPlan.getPlanesCodigoLegal() + " " + oGANULARSOLAUXptPlan.getPlanesNombre() + " solicitudes procesadas: " + contador + ".  Errores: " + errores));
-        
         return response;
     }
 
@@ -623,29 +598,7 @@ public class GlobalServicesService extends AbstractService {
         return response;
     }
 
-    /*
-     * Transactional entry point for global service OGASIGUSUARIOS
-     * @param request Service request viewmodel
-     * @return Service response viewmodel with the execution results
-     */
-    @Transactional(Transactional.TxType.REQUIRES_NEW)
-    public com.keralty.aesolicitudes.viewmodel.globalservices.siu.OGASIGUSUARIOSResponse oGASIGUSUARIOSTxn(
-            com.keralty.aesolicitudes.viewmodel.globalservices.siu.OGASIGUSUARIOSRequest request) throws ModelException, SystemException {
-        return globalServicesSrv.oGASIGUSUARIOSImplementation(request);
-    }
 
-    /*
-     * Implements global service OGASIGUSUARIOS
-     * @param request Service request viewmodel
-     * @return Service response viewmodel with the execution results
-     */
-    @Transactional(Transactional.TxType.REQUIRED)
-    public com.keralty.aesolicitudes.viewmodel.globalservices.siu.OGASIGUSUARIOSResponse oGASIGUSUARIOSImplementation(
-            com.keralty.aesolicitudes.viewmodel.globalservices.siu.OGASIGUSUARIOSRequest request) throws ModelException, SystemException {
-        com.keralty.aesolicitudes.viewmodel.globalservices.siu.OGASIGUSUARIOSResponse response = new com.keralty.aesolicitudes.viewmodel.globalservices.siu.OGASIGUSUARIOSResponse();
-        if(request == null) {
-        	throw new IllegalArgumentException("request cannot be null in oGASIGUSUARIOSImplementation");
-        }
-        return response;
-    }
+
+
 }
