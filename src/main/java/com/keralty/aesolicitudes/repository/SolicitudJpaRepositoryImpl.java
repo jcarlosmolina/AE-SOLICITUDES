@@ -6533,7 +6533,11 @@ public class SolicitudJpaRepositoryImpl extends AbstractRepository implements So
     public SQLExists assocOperator120Range1Query (Solicitud instance, SQLSelect superQuery) throws SystemException {
         try {
             // Path starts with a class in the subquery
-            return new SQLExists(superQuery, SolicitudConstants.CLASS_NAME, SolicitudConstants.ROLE_NAME_USUARIOS + "." + UsuarioConstants.ROLE_NAME_USUARIOPERSONA + "." + PersonaConstants.ROLE_NAME_ESTADOPERSONA);
+        	if (superQuery == null) {
+        		return new SQLExists(SolicitudConstants.CLASS_NAME, SolicitudConstants.ROLE_NAME_USUARIOS + "." + UsuarioConstants.ROLE_NAME_USUARIOPERSONA + "." + PersonaConstants.ROLE_NAME_ESTADOPERSONA, instance.getOid());
+        	} else {
+        		return new SQLExists(superQuery, SolicitudConstants.CLASS_NAME, SolicitudConstants.ROLE_NAME_USUARIOS + "." + UsuarioConstants.ROLE_NAME_USUARIOPERSONA + "." + PersonaConstants.ROLE_NAME_ESTADOPERSONA);
+        	}
         } catch (Exception e) {
             String exceptionMessage = "Definition Class: Solicitud, Assoc.Operator: AssocOperator120, Method: assocOperator120Range1Query";
             org.slf4j.LoggerFactory.getLogger(this.getClass()).error(exceptionMessage);
@@ -7456,7 +7460,11 @@ public class SolicitudJpaRepositoryImpl extends AbstractRepository implements So
     public SQLExists assocOperator136Range1Query (Solicitud instance, SQLSelect superQuery) throws SystemException {
         try {
             // Path starts with a class in the subquery
-            return new SQLExists(superQuery, SolicitudConstants.CLASS_NAME, SolicitudConstants.ROLE_NAME_USUARIOS + "." + UsuarioConstants.ROLE_NAME_COMPANYIA);
+        	if (superQuery == null) {
+        		return new SQLExists(SolicitudConstants.CLASS_NAME, SolicitudConstants.ROLE_NAME_USUARIOS + "." + UsuarioConstants.ROLE_NAME_COMPANYIA, instance.getOid());
+        	} else {
+        		return new SQLExists(superQuery, SolicitudConstants.CLASS_NAME, SolicitudConstants.ROLE_NAME_USUARIOS + "." + UsuarioConstants.ROLE_NAME_COMPANYIA);
+        	}
         } catch (Exception e) {
             String exceptionMessage = "Definition Class: Solicitud, Assoc.Operator: AssocOperator136, Method: assocOperator136Range1Query";
             org.slf4j.LoggerFactory.getLogger(this.getClass()).error(exceptionMessage);
@@ -7534,7 +7542,12 @@ public class SolicitudJpaRepositoryImpl extends AbstractRepository implements So
     public SQLExists assocOperator138Range1Query (Solicitud instance, SQLSelect superQuery) throws SystemException {
         try {
             // Path starts with a class in the subquery
-            SQLExists sql = new SQLExists(superQuery, SolicitudConstants.CLASS_NAME, SolicitudConstants.ROLE_NAME_USUARIOS + "." + UsuarioConstants.ROLE_NAME_USUARIOPERSONA + "." + PersonaConstants.ROLE_NAME_DIRECCIONES);
+            SQLExists sql = null;
+            if (superQuery == null) {
+            	sql = new SQLExists(SolicitudConstants.CLASS_NAME, SolicitudConstants.ROLE_NAME_USUARIOS + "." + UsuarioConstants.ROLE_NAME_USUARIOPERSONA + "." + PersonaConstants.ROLE_NAME_DIRECCIONES, instance.getOid());
+            } else {
+            	sql = new SQLExists(superQuery, SolicitudConstants.CLASS_NAME, SolicitudConstants.ROLE_NAME_USUARIOS + "." + UsuarioConstants.ROLE_NAME_USUARIOPERSONA + "." + PersonaConstants.ROLE_NAME_DIRECCIONES);
+            }
             SQLWhereConjunction conjunction = new SQLWhereConjunction();
 
             // Usuarios.UsuarioPersona.Direcciones.TipoDireccion.EsResidencia = true

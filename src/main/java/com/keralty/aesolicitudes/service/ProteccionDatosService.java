@@ -984,6 +984,10 @@ public class ProteccionDatosService extends AbstractService {
         com.keralty.aesolicitudes.viewmodel.protecciondatos.siu.TCREARSOLNOVEDADResponse response = new com.keralty.aesolicitudes.viewmodel.protecciondatos.siu.TCREARSOLNOVEDADResponse();
         ProteccionDatos instance;
 
+        if (request == null) {
+        	throw new IllegalArgumentException("request cannot be null in TCREARSOLNOVEDAD");
+        }
+        
         com.keralty.aesolicitudes.viewmodel.protecciondatos.siu.CrearRequest step1Request = new com.keralty.aesolicitudes.viewmodel.protecciondatos.siu.CrearRequest();
         step1Request.setProteccionDatoscrearpagrProductoTInstance(null);
         step1Request.setProteccionDatoscrearpagrSolicitudInstance(null);
@@ -1053,6 +1057,10 @@ public class ProteccionDatosService extends AbstractService {
             com.keralty.aesolicitudes.viewmodel.protecciondatos.siu.TCREARSOLNOVEDADEXCEPCIONRequest request) {
         com.keralty.aesolicitudes.viewmodel.protecciondatos.siu.TCREARSOLNOVEDADEXCEPCIONResponse response = new com.keralty.aesolicitudes.viewmodel.protecciondatos.siu.TCREARSOLNOVEDADEXCEPCIONResponse();
         ProteccionDatos instance;
+        
+        if (request == null) {
+        	throw new IllegalArgumentException("request cannot be null in TCREARSOLNOVEDADEXCEPCION");
+        }
 
         com.keralty.aesolicitudes.viewmodel.protecciondatos.siu.CrearRequest step1Request = new com.keralty.aesolicitudes.viewmodel.protecciondatos.siu.CrearRequest();
         step1Request.setProteccionDatoscrearpagrProductoTInstance(null);
